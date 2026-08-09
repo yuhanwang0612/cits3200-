@@ -1,0 +1,742 @@
+{
+  "source_page": "https://fbe.unimelb.edu.au/finance/our-research",
+  "staff_page": "https://fbe.unimelb.edu.au/about/academic-staff?queries_discipline_query=finance",
+  "harvested_at": "2026-08-08T16:54:41.234Z",
+  "record_count": 47,
+  "records": [
+    {
+      "name_display": "Dr Gil Aharoni",
+      "role": "Senior Lecturer",
+      "disciplines": "Finance",
+      "interests": [
+        "Asset pricing",
+        "Behavioural finance",
+        "Options"
+      ],
+      "department": "Department of Finance",
+      "email": "gaharoni@unimelb.edu.au",
+      "phone": "+61 3 8344 9062",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/144989",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Attila Balogh",
+      "role": "Senior Lecturer",
+      "disciplines": "Corporate Finance; Finance",
+      "interests": [
+        "Corporate governance",
+        "Purpose of the firm",
+        "Biodiversity finance"
+      ],
+      "department": "Department of Finance",
+      "email": "balogh@unimelb.edu.au",
+      "phone": "+61 3 8344 7898",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/954317",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Elizabeth Bowman",
+      "role": "Business Manager",
+      "disciplines": "Finance",
+      "interests": [
+        "Decision Neuroscience",
+        "Neuropharmacology",
+        "Clinical trials"
+      ],
+      "department": "Department of Finance",
+      "email": "eabowman@unimelb.edu.au",
+      "phone": "+61 3 9035 9950",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/elizabeth-bowman",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "possibly non-academic role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Associate Professor James Brugler",
+      "role": "Practitioner-in-Residence Program Coordinator",
+      "disciplines": "Finance; Financial Intermediation; Household Finance; Market Microstructure",
+      "interests": [
+        "Economics of financial markets",
+        "Empirical market microstructure"
+      ],
+      "department": "Department of Finance",
+      "email": "james.brugler@unimelb.edu.au",
+      "phone": "+61 3 8344 1164",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/761748",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Shuang Chen",
+      "role": "Senior Lecturer",
+      "disciplines": "Finance; Financial Intermediation; Household Finance; Sustainable Finance",
+      "interests": [
+        "Institutional Investors",
+        "Labor and Finance",
+        "Sustainable Finance"
+      ],
+      "department": "Department of Finance",
+      "email": "shuang.chen3@unimelb.edu.au",
+      "phone": "+61 3 9035 5291",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/shuang-chen",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Professor Carole Comerton-Forde",
+      "role": "Research and Executive Education",
+      "disciplines": "Finance; Market Microstructure",
+      "interests": [
+        "Market microstructure",
+        "Liquidity"
+      ],
+      "department": "Department of Finance",
+      "email": "carole.comerton-forde@unimelb.edu.au",
+      "phone": "+61 3 9035 6117",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/532357",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Associate Professor Jonathan Dark",
+      "role": "Honours Coordinator Associate Professor",
+      "disciplines": "Finance; Financial Econometrics; Sustainable Finance",
+      "interests": [
+        "Financial Econometrics"
+      ],
+      "department": "Department of Finance",
+      "email": "jdark@unimelb.edu.au",
+      "phone": "+61 3 8344 6866",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/181374",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Assaf Dekel",
+      "role": "Tutor - Education Focussed",
+      "disciplines": "Finance",
+      "interests": [
+        "Financial Literacy",
+        "Assessment Design",
+        "Peer Review"
+      ],
+      "department": "Department of Finance",
+      "email": "assaf.dekel@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/assaf-dekel",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Juan Pablo Franco",
+      "role": "Postdoctoral Fellow",
+      "disciplines": "Behavioural Finance; Decision Neuroscience; Finance",
+      "interests": [
+        "Human decision making",
+        "Decision neuroscience",
+        "Neuroeconomics"
+      ],
+      "department": "Department of Finance",
+      "email": "juan.franco@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/803361",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "appointment category requires client decision"
+    },
+    {
+      "name_display": "Jon Gauntlett",
+      "role": "Tutor - Education Focussed",
+      "disciplines": "Finance",
+      "interests": [
+        "Australian equities",
+        "Trading strategies",
+        "Management/regulation of financial institutions"
+      ],
+      "department": "Department of Finance",
+      "email": "jonathan.gauntlett@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/jon-gauntlett",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Marina Gertsberg",
+      "role": "Senior Lecturer",
+      "disciplines": "Corporate Finance; Finance",
+      "interests": [
+        "Empirical corporate finance",
+        "Economics of gender",
+        "Corporate governance"
+      ],
+      "department": "Department of Finance",
+      "email": "marina.gertsberg@unimelb.edu.au",
+      "phone": "+61 3 8344 6195",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/955361",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr André Gygax",
+      "role": "Program Director Senior Lecturer",
+      "disciplines": "Corporate Finance; Finance",
+      "interests": [
+        "The life cycle and sustainability of industries, firms, technologies and networks."
+      ],
+      "department": "Department of Finance",
+      "email": "agygax@unimelb.edu.au",
+      "phone": "+61 3 8344 9085",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/4210",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Professor John Handley",
+      "role": "Professor of Finance",
+      "disciplines": "Asset Pricing; Corporate Finance; Finance",
+      "interests": [
+        "Corporate Finance",
+        "Cost of Capital",
+        "Derivatives",
+        "Valuation"
+      ],
+      "department": "Department of Finance",
+      "email": "handleyj@unimelb.edu.au",
+      "phone": "+61 3 8344 7663",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/116",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Allan Horsfall",
+      "role": "Tutor - Education Focussed",
+      "disciplines": "Finance",
+      "interests": [],
+      "department": "Department of Finance",
+      "email": "a.horsfall@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/allan-horsfall",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Associate Professor Joachim Inkmann",
+      "role": "Deputy Honours Coordinator (Finance), Working Paper Series Coordinator",
+      "disciplines": "Finance; Household Finance",
+      "interests": [
+        "Household finance",
+        "Pensions"
+      ],
+      "department": "Department of Finance",
+      "email": "jinkmann@unimelb.edu.au",
+      "phone": "+61 3 9035 8177",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/250474",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Eduard Inozemtsev",
+      "role": "Senior Lecturer",
+      "disciplines": "Asset Pricing; Finance; Financial Intermediation",
+      "interests": [
+        "Corporate Bond Market",
+        "Distress Investing",
+        "Financial Intermediation",
+        "Asset Management"
+      ],
+      "department": "Department of Finance",
+      "email": "eduard.inozemtsev@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/1050858",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Associate Professor Hae Won (Henny) Jung",
+      "role": "Associate Professor of Finance & Deputy Program Director (Master of Finance)",
+      "disciplines": "Finance",
+      "interests": [
+        "Corporate Finance",
+        "Industrial Organization",
+        "Risk Management and Insurance"
+      ],
+      "department": "Department of Finance",
+      "email": "hae.jung@unimelb.edu.au",
+      "phone": "+61 3 9035 8641",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/510793",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Associate Professor Patrick J. Kelly",
+      "role": "Associate Professor of Finance & Joint PhD Program Director (Finance)",
+      "disciplines": "Asset Pricing; Corporate Finance; Finance; International Finance",
+      "interests": [
+        "The impact of the media on asset prices and corporate governance",
+        "Market efficiency",
+        "Behavioural Finance",
+        "Empirical Asset Pricing"
+      ],
+      "department": "Department of Finance",
+      "email": "patrick.kelly@unimelb.edu.au",
+      "phone": "+61 3 8344 3961",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/437404",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Minsoo Kim",
+      "role": "Senior Lecturer",
+      "disciplines": "Asset Pricing; Finance; Financial Intermediation; Household Finance",
+      "interests": [
+        "Financial Intermediation",
+        "Empirical Asset Pricing",
+        "International Finance"
+      ],
+      "department": "Department of Finance",
+      "email": "minsoo.kim@unimelb.edu.au",
+      "phone": "+61 3 8344 6408",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/minsoo-kim",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Professor Paul Kofman",
+      "role": "Emeritus Professor",
+      "disciplines": "Finance",
+      "interests": [
+        "Business Cycles and Default Risk (Asset pricing, Merton's default likelihood)",
+        "Constrained portfolio allocation",
+        "Diversification Breakdown and Downside Risk (Exceedance correlations, Portfolio allocation)",
+        "Extreme value analysis and financial applications",
+        "Financial econometrics",
+        "Insurance Pricing (Automobile insurance, Asymmetric Information)",
+        "Insurance rate making",
+        "Market Discipline of Financial Institutions (Credit spreads, Bank risk)",
+        "Price discovery in regulated financial markets",
+        "Regulation of Derivatives Exchanges (Limits, Spreads, Margins)"
+      ],
+      "department": "Department of Finance",
+      "email": "pkofman@unimelb.edu.au",
+      "phone": "+61 3 8344 5311",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/7994",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "appointment category requires client decision"
+    },
+    {
+      "name_display": "Associate Professor Asjeet Lamba",
+      "role": "Head of Department",
+      "disciplines": "Corporate Finance; Finance; International Finance",
+      "interests": [
+        "Corporate governance",
+        "Corporate litigation",
+        "Insider trading",
+        "Share buybacks"
+      ],
+      "department": "Department of Finance",
+      "email": "asjeet@unimelb.edu.au",
+      "phone": "+61 3 8344 7011",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/14988",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Gabriele Lattanzio",
+      "role": "Senior Lecturer",
+      "disciplines": "Corporate Finance; Finance; Financial Intermediation",
+      "interests": [],
+      "department": "Department of Finance",
+      "email": "gabriele.lattanzio@unimelb.edu.au",
+      "phone": "+613 8344 9584",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gabriele-lattanzio",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Natalie (Nhung) Le",
+      "role": "Tutor - Education Focussed",
+      "disciplines": "Corporate Finance; Finance",
+      "interests": [
+        "Corporate Finance",
+        "Institutional Investors",
+        "Market Misconducts",
+        "Curriculum & Assessment Design",
+        "Finance and AI Literacy"
+      ],
+      "department": "Department of Finance",
+      "email": "nhung.le@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/natalie-le",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Tania Lee",
+      "role": "Lecturer - Education Focussed",
+      "disciplines": "Finance",
+      "interests": [],
+      "department": "Department of Finance",
+      "email": "tania.lee1@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/tania-lee",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Bob Li",
+      "role": "Teaching Specialist",
+      "disciplines": "Finance",
+      "interests": [
+        "Short selling risk and activities"
+      ],
+      "department": "Department of Finance",
+      "email": "bob.li2@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/bob-li",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Associate Professor Bryan Lim",
+      "role": "Associate Professor of Finance",
+      "disciplines": "Finance",
+      "interests": [
+        "Empirical Asset Pricing",
+        "News and Information Transmission"
+      ],
+      "department": "Department of Finance",
+      "email": "blim@unimelb.edu.au",
+      "phone": "+61 3 8344 9088",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/193012",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Associate Professor Andrea Lu",
+      "role": "Associate Dean (International)",
+      "disciplines": "Asset Pricing; Finance; International Finance",
+      "interests": [
+        "Empirical Asset Pricing",
+        "Financial Market Frictions",
+        "International Finance"
+      ],
+      "department": "Department of Finance",
+      "email": "andrea.lu@unimelb.edu.au",
+      "phone": "+61 3 8344 3326",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/664549",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Lucie Lu",
+      "role": "Senior Lecturer",
+      "disciplines": "Asset Pricing; Finance; International Finance; Sustainable Finance",
+      "interests": [
+        "Asset Pricing",
+        "Credit Risk",
+        "International Finance",
+        "Sustainable Finance"
+      ],
+      "department": "Department of Finance",
+      "email": "lucie.lu@unimelb.edu.au",
+      "phone": "+61 3 9035 3208",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/lucie-lu",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Maurice McCourt",
+      "role": "Senior Lecturer - Education Focussed & Deputy Program Director (Master of Management (Finance))",
+      "disciplines": "Asset Pricing; Corporate Finance; Finance; Financial Intermediation",
+      "interests": [
+        "Empirical finance",
+        "Asset management",
+        "Private equity",
+        "Mutual funds"
+      ],
+      "department": "Department of Finance",
+      "email": "maurice.mccourt@unimelb.edu.au",
+      "phone": "+61 3 9035 9717",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/833272",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role"
+    },
+    {
+      "name_display": "Dr Mrinal Mishra",
+      "role": "Senior Lecturer",
+      "disciplines": "Behavioural Finance; Corporate Finance; Finance; Financial Intermediation; Household Finance",
+      "interests": [
+        "Financial Intermediation",
+        "Natural Language Processing",
+        "Fintech",
+        "Financial Inclusion"
+      ],
+      "department": "Department of Finance",
+      "email": "mrinal.mishra@unimelb.edu.au",
+      "phone": "+61 3 9035 3420",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/mrinal-mishra",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Professor Carsten Murawski",
+      "role": "",
+      "disciplines": "Behavioural Finance; Decision Neuroscience; Finance; Household Finance",
+      "interests": [
+        "Decision Neuroscience",
+        "Experimental Finance",
+        "Finance (Consumer finance, household finance, financial decision-making)"
+      ],
+      "department": "Department of Finance",
+      "email": "carstenm@unimelb.edu.au",
+      "phone": "+61 3 8344 9077",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/179115",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Professor Federico Nardari",
+      "role": "Joint Deputy Head of Department (Research and Engagement)",
+      "disciplines": "Finance",
+      "interests": [
+        "Econometrics (Volatility and Correlation Modelling, Forecasting, Bayesian Methods)",
+        "Financial Economics (Asset Allocation, Portfolio Choice, Relation between Financial Markets and Macro Economy, Mutual Funds Performance, Trading Activity)"
+      ],
+      "department": "Department of Finance",
+      "email": "federico.nardari@unimelb.edu.au",
+      "phone": "+61 3 9035 4133",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/551184",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Gaby Nardari",
+      "role": "Lecturer - Education Focussed",
+      "disciplines": "Asset Pricing; Finance",
+      "interests": [
+        "Financial and Economic Development",
+        "Financial Intermediation in Emerging Economies",
+        "Global Asset Allocation",
+        "Emerging Markets Finance",
+        "Asset Pricing and Investments"
+      ],
+      "department": "Department of Finance",
+      "email": "a.berhe@unimelb.edu.au",
+      "phone": "+61 03 8344 4429",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gaby-berhe-nardari",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Anthony Ng",
+      "role": "Senior Lecturer - Education Focussed",
+      "disciplines": "Finance",
+      "interests": [],
+      "department": "Department of Finance",
+      "email": "anthony.ng@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/anthony-ng",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Linh Nguyen",
+      "role": "Lecturer - Education Focussed & Program Director (Master of Applied Finance)",
+      "disciplines": "Finance; Financial Intermediation; Household Finance; International Finance; Sustainable Finance",
+      "interests": [],
+      "department": "Department of Finance",
+      "email": "linh.nguyen9@unimelb.edu.au",
+      "phone": "+61 3 9035 5691",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/999882",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role"
+    },
+    {
+      "name_display": "Dr Hoonsuk Park",
+      "role": "Senior Lecturer",
+      "disciplines": "Finance; Household Finance",
+      "interests": [
+        "Household finance",
+        "Behavioral finance"
+      ],
+      "department": "Department of Finance",
+      "email": "hoonsuk.park@unimelb.edu.au",
+      "phone": "+61 3 8344 7862",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/hoonsuk-park",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Hung (Harry) Viet Pham",
+      "role": "Tutor - Education Focussed",
+      "disciplines": "Corporate Finance; Finance; International Finance; Sustainable Finance",
+      "interests": [],
+      "department": "Department of Finance",
+      "email": "harry.pham@unimelb.edu.au",
+      "phone": "+61 3 9035 5654",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/hung-harry-viet-pham",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Associate Professor Sean Pinder",
+      "role": "Joint Deputy Head of Department (Teaching and Learning), Finance Major Coordinator",
+      "disciplines": "Corporate Finance; Finance",
+      "interests": [
+        "Capital raisings",
+        "Corporate finance decisions",
+        "Derivatives"
+      ],
+      "department": "Department of Finance",
+      "email": "spinder@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/6726",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Chander Shekhar",
+      "role": "Senior Lecturer Program Director (Master of Management (Finance))",
+      "disciplines": "Corporate Finance; Finance; Financial Intermediation",
+      "interests": [
+        "Corporate Finance (Law and Finance)"
+      ],
+      "department": "Department of Finance",
+      "email": "c.shekhar@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/1994",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Zhen Shi",
+      "role": "Senior Lecturer Program Director (Graduate Certificate in Business and Master of Business)",
+      "disciplines": "Asset Pricing; Finance",
+      "interests": [
+        "Portfolio choice under a Value-at-Risk constraint",
+        "Individual retirement and annuitization decisions",
+        "Corporate investment strategies"
+      ],
+      "department": "Department of Finance",
+      "email": "zshi@unimelb.edu.au",
+      "phone": "+61 3 9035 8173",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/250294",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Bryan Tan",
+      "role": "Tutor - Education Focussed",
+      "disciplines": "Asset Pricing; Behavioural Finance; Corporate Finance; Finance; Household Finance",
+      "interests": [
+        "Decision-making",
+        "Portfolio Allocation",
+        "Tax",
+        "Asset Pricing",
+        "International Equity Markets"
+      ],
+      "department": "Department of Finance",
+      "email": "bryan.tan@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/bryan-tan",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Associate Professor Ekaterina Volkova",
+      "role": "Assistant Dean (Graduate Research)",
+      "disciplines": "Corporate Finance; Finance",
+      "interests": [
+        "Corporate Disclosure",
+        "Corporate Governance",
+        "Financial Regulations",
+        "Large Shareholders"
+      ],
+      "department": "Department of Finance",
+      "email": "ekaterina.volkova@unimelb.edu.au",
+      "phone": "+61 3 9035 5110",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/810575",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr. Xiaoting Wei",
+      "role": "Lecturer - Education Focussed",
+      "disciplines": "Finance",
+      "interests": [],
+      "department": "Department of Finance",
+      "email": "xiaoting.wei@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/xiaoting-wei",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Associate Professor Qi Zeng",
+      "role": "Joint PhD Program Director (Finance)",
+      "disciplines": "Asset Pricing; Finance; Financial Intermediation; Household Finance",
+      "interests": [
+        "Asset Pricing",
+        "Household Finance",
+        "Mutual Fund"
+      ],
+      "department": "Department of Finance",
+      "email": "qzeng@unimelb.edu.au",
+      "phone": "+61 3 8344 5359",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/25878",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Associate Professor Zhuo Zhong",
+      "role": "Associate Professor of Finance",
+      "disciplines": "Asset Pricing; Finance; Financial Intermediation; Market Microstructure",
+      "interests": [
+        "Asset Pricing Theory",
+        "Market Microstructure",
+        "Network Economics"
+      ],
+      "department": "Department of Finance",
+      "email": "zhuo.zhong@unimelb.edu.au",
+      "phone": "+61 3 8344 2990",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/667468",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Yun (Tracy) Zhou",
+      "role": "Tutor - Education Focussed",
+      "disciplines": "Corporate Finance; Corporate Governance; Finance",
+      "interests": [
+        "Corporate Finance",
+        "Corporate Governance",
+        "Textual Analysis",
+        "FinTech",
+        "Curriculum & Assessment Design"
+      ],
+      "department": "Department of Finance",
+      "email": "tracy.zhou@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/yun-tracy-zhou",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Silvia Zia",
+      "role": "Lecturer - Education Focussed",
+      "disciplines": "Asset Pricing; Corporate Finance; Finance",
+      "interests": [
+        "Corporate Finance",
+        "Asset Pricing",
+        "Financial Literacy",
+        "Curriculum & Assessment Design"
+      ],
+      "department": "Department of Finance",
+      "email": "silvia.zia@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/silvia-zia",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    }
+  ]
+}
