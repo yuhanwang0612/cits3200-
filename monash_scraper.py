@@ -66,11 +66,26 @@ records = []
 
 for url, discipline in TARGETS:
     print(f"\nLoading {discipline} page...")
-    driver.get(url)
-    time.sleep(5)  # wait for JS
+    try:
+        driver.get(url)
+        time.sleep(5)  # wait for JS
+        page_source = driver.page_source
+    except Exception as e:
+        print(f"  ⚠️  Browser closed or crashed ({e}). Restarting Chrome...")
+        try:
+            driver.quit()
+        except Exception:
+            pass
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()),
+            options=options
+        )
+        driver.get(url)
+        time.sleep(5)
+        page_source = driver.page_source
 
-    soup = BeautifulSoup(driver.page_source, "html.parser")
-    print(f"  Page loaded ({len(driver.page_source)} bytes)")
+    soup = BeautifulSoup(page_source, "html.parser")
+    print(f"  Page loaded ({len(page_source)} bytes)")
 
     # Try card selectors
     CARD_SELECTORS = [
@@ -86,13 +101,30 @@ for url, discipline in TARGETS:
             break
     print(f"  Cards found: {len(cards)} (selector: {matched})")
 
-    # Fallback: collect profile links
+    # Fallback: collect profile links (only monash.edu or relative URLs)
     profile_links = []
     for a in soup.find_all("a", href=True):
         href = a["href"]
         text = a.get_text(strip=True)
+        # Skip social share URLs (Facebook etc. embed monash.edu in query string, so check domain explicitly)
+        ALLOWED = ("https://www.monash.edu", "https://monash.edu", "https://research.monash.edu")
+        if href.startswith("http") and not any(href.startswith(d) for d in ALLOWED):
+            continue
         if any(k in href for k in ["/profile/", "/people/", "/persons/", "/staff/", "/our-people/"]) and text:
             profile_links.append((text, href))
+
+    # Words that indicate a navigation link rather than a real person
+    NAV_WORDS = {"staff directory", "visiting scholars", "graduate research", "reset",
+                 "editorial roles", "distinguished visitor", "work with us", "seminar guests",
+                 "supervisors", "program"}
+
+    def is_real_person(name):
+        name_lower = name.lower()
+        if any(w in name_lower for w in NAV_WORDS):
+            return False
+        if len(name.split()) < 2:  # must have at least first + last name
+            return False
+        return True
 
     if cards:
         for card in cards:
@@ -100,6 +132,8 @@ for url, discipline in TARGETS:
             if not link:
                 continue
             raw = link.get_text(strip=True)
+            if not is_real_person(raw):
+                continue
             m = PREFIX.match(raw)
             title_tag = card.select_one("[class*='title'],[class*='position'],[class*='role']")
             title = title_tag.get_text(strip=True) if title_tag else None
@@ -113,6 +147,8 @@ for url, discipline in TARGETS:
     elif profile_links:
         print(f"  Using {len(profile_links)} profile links as fallback")
         for text, href in profile_links:
+            if not is_real_person(text):
+                continue
             m = PREFIX.match(text)
             records.append({
                 "university": UNIVERSITY, "discipline": discipline,
@@ -133,35 +169,73 @@ for r in records[:5]:
 # ── Phase 2: research profiles from research.monash.edu ──────────────
 print("\nFetching research profiles...")
 
-def fetch_research_profile(name):
+def find_research_url(profile_url, name):
+    """
+    Find the correct research.monash.edu URL for a researcher.
+    First checks their monash.edu/business profile page for a link to research.monash.edu.
+    Falls back to guessing from name if not found.
+    """
+    # Try following the business profile page to find the research portal link
+    if profile_url and "monash.edu" in profile_url:
+        try:
+            resp = requests.get(profile_url, headers=HEADERS, timeout=10)
+            if resp.status_code == 200 and resp.text:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                # Only accept a link if it contains part of the person's name
+                last_name = name_to_slug(name.split()[-1])  # e.g. "rankin"
+                first_name = name_to_slug(name.split()[0])  # e.g. "michaela"
+                for a in soup.find_all("a", href=True):
+                    href = a["href"]
+                    # Must start with research.monash.edu — not a Facebook share URL embedding it
+                    if not href.startswith("https://research.monash.edu/en/persons/"):
+                        continue
+                    slug_part = href.split("/en/persons/")[-1].rstrip("/")
+                    if last_name in slug_part or first_name in slug_part:
+                        return href.rstrip("/") + "/"
+        except Exception:
+            pass
+    # Fallback: guess from name
     slug = name_to_slug(name)
-    url  = f"https://research.monash.edu/en/persons/{slug}/"
-    try:
-        resp = requests.get(url, headers=HEADERS, timeout=10)
-        if resp.status_code != 200:
-            return None, url, 0
-        soup = BeautifulSoup(resp.text, "html.parser")
-        title_tag = soup.select_one(".person-details-info")
-        title = title_tag.get_text(strip=True) if title_tag else None
-        pub_count = 0
-        for a in soup.find_all("a", href=True):
-            if "/publications/" in a["href"]:
-                m = re.search(r"(\d+)", a.get_text())
-                if m:
-                    pub_count = max(pub_count, int(m.group(1)))
-        return title, url, pub_count
-    except Exception:
-        return None, url, 0
+    return f"https://research.monash.edu/en/persons/{slug}/"
+
+
+def fetch_research_profile(research_url):
+    for attempt in range(3):  # retry up to 3 times
+        try:
+            resp = requests.get(research_url, headers=HEADERS, timeout=15)
+            if resp.status_code == 429:  # rate limited
+                time.sleep(10 * (attempt + 1))
+                continue
+            if resp.status_code != 200 or not resp.text:
+                return None, 0
+            soup = BeautifulSoup(resp.text, "html.parser")
+            title_tag = soup.select_one(".person-details-info")
+            title = title_tag.get_text(strip=True) if title_tag else None
+            pub_count = 0
+            for a in soup.find_all("a", href=True):
+                if "/publications/" in a["href"]:
+                    txt = a.get_text()
+                    # Only accept realistic pub counts, not years (1891, 2004 etc.)
+                    m = re.search(r"(\d+)", txt)
+                    if m:
+                        n = int(m.group(1))
+                        if 1 <= n <= 999:
+                            pub_count = max(pub_count, n)
+            return title, pub_count
+        except Exception:
+            time.sleep(3)
+    return None, 0
 
 for r in records:
-    title, rurl, pubs = fetch_research_profile(r["name_clean"])
+    rurl = find_research_url(r.get("profile_url"), r["name_clean"])
+    r["research_url"] = rurl
+    title, pubs = fetch_research_profile(rurl)
     r["research_title"] = title
-    r["research_url"]   = rurl
     r["pub_count"]      = pubs
     if not r["level"]:
         r["level"] = level_from_title(title)
-    print(f"  {r['name_clean']:35s}  pubs={pubs}")
-    time.sleep(0.5)
+    print(f"  {r['name_clean']:35s}  pubs={pubs}  url={rurl}")
+    time.sleep(1.5)
 
 
 # ── Phase 3: fetch publications ───────────────────────────────────────
@@ -169,44 +243,48 @@ print("\nFetching publications...")
 
 def fetch_publications(research_url):
     """
-    Scrape publications from the researcher's PROFILE page (server-rendered).
-    The /publications/ sub-page is JS-rendered and won't work with requests.
+    Scrape publications from the researcher's profile page.
+    Strategy: find all links pointing to /en/publications/ and extract
+    info from their surrounding context. This is robust to CSS class changes.
     """
     pubs = []
     try:
         resp = requests.get(research_url, headers=HEADERS, timeout=10)
-        if resp.status_code != 200:
+        if resp.status_code != 200 or not resp.text:
             return pubs
     except Exception:
         return pubs
 
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    # Publications appear as <h3> links inside list items on the profile page
-    # Pattern: <li class="list-result-item"> containing <h3><a href="/en/publications/...">Title</a></h3>
-    items = soup.select("li.list-result-item, li.rendering")
-    if not items:
-        # Fallback: find all publication links directly
-        items = [a.find_parent("li") or a.find_parent("div")
-                 for a in soup.find_all("a", href=lambda h: h and "/en/publications/" in h)]
-        items = [i for i in items if i]
-
     seen = set()
-    for item in items:
-        title_tag = item.select_one("h3 a, h2 a, .title a")
-        if not title_tag:
+    # Find every link that points to a publication page
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if "/en/publications/" not in href:
             continue
-        title = title_tag.get_text(strip=True)
-        if not title or title in seen:
+        title = a.get_text(strip=True)
+        if not title or title in seen or len(title) < 10:
             continue
         seen.add(title)
-        pub_url = urljoin(research_url, title_tag.get("href", ""))
-        text = item.get_text(" ", strip=True)
+
+        pub_url = urljoin(research_url, href)
+
+        # Walk up to find the container block (li, div, article)
+        container = a.find_parent("li") or a.find_parent("article") or a.find_parent("div")
+        text = container.get_text(" ", strip=True) if container else a.get_text(" ", strip=True)
+
+        # Year: find 4-digit year in the container text
         m = re.search(r"\b(19|20)\d{2}\b", text)
         year = int(m.group()) if m else None
-        # Journal is usually in <em> or after "In:"
-        journal_tag = item.select_one("em")
-        journal = journal_tag.get_text(strip=True) if journal_tag else None
+
+        # Journal: text inside <em> in the container
+        journal = None
+        if container:
+            em = container.find("em")
+            if em:
+                journal = em.get_text(strip=True)
+
         pubs.append({"title": title, "year": year, "journal": journal, "pub_url": pub_url})
 
     return pubs
@@ -222,7 +300,7 @@ for r in records:
             "researcher": r["name_clean"], "level": r["level"], **p
         })
     print(f"  {r['name_clean']:35s}  {len(pubs)} publications")
-    time.sleep(0.3)
+    time.sleep(1.0)
 
 
 # ── Save CSVs ─────────────────────────────────────────────────────────
