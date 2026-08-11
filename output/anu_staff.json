@@ -1,0 +1,389 @@
+[
+  {
+    "name": "Sarah Adams",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/sarah-adams",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sarah-adams"
+  },
+  {
+    "name": "Bonnie Allan",
+    "job_title": "Casual Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/bonnie-allan",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Pat Barrett",
+    "job_title": "Distinguished Honorary Professor & Senior Fellow - ANCAAR",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/pat-barrett",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Yue Cai",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/yue-cai",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/yue-cai"
+  },
+  {
+    "name": "Lily Chen",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/lily-chen",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lily-chen"
+  },
+  {
+    "name": "Sorin Daniliuc",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/sorin-daniliuc",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sorin-daniliuc"
+  },
+  {
+    "name": "Neil Fargher",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/neil-fargher",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Susanna Ho",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/susanna-ho",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/susanna-ho"
+  },
+  {
+    "name": "Tejshree Kala",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/tejshree-kala",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/tejshree-kala"
+  },
+  {
+    "name": "Eunice Khoo",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/eunice-khoo",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/eunice-khoo"
+  },
+  {
+    "name": "Janet Lee",
+    "job_title": "Honorary Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/janet-lee",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Lingwei Li",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/lingwei-li",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lingwei-li"
+  },
+  {
+    "name": "Louise Lu",
+    "job_title": "Professor & Convenor of HDR, Co-Director of ANCAAR",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/louise-lu",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/louise-lu"
+  },
+  {
+    "name": "Scarlett Luo",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/scarlett-luo",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Ian McPhee",
+    "job_title": "Distinguished Honorary Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/ian-mcphee",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Juliana Ng",
+    "job_title": "Director, Research School of Accounting",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/juliana-ng",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Greg Shailer",
+    "job_title": "Professor, Director of ANCAAR",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/greg-shailer",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/greg-shailer"
+  },
+  {
+    "name": "Madhukar Singh",
+    "job_title": "Lecturer and Undergraduate Program Convenor",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/madhukar-singh",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/madhukar-singh"
+  },
+  {
+    "name": "Rebecca Tan",
+    "job_title": "Senior Lecturer & Masters Course Work Convenor",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/rebecca-tan",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/rebecca-tan"
+  },
+  {
+    "name": "Sonali Walpola",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/sonali-walpola",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sonali-walpola"
+  },
+  {
+    "name": "Alex Wang",
+    "job_title": "Senior Lecturer, CPA Liaison Officer at Research School of Accounting",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/alex-wang",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/zhichao-wang"
+  },
+  {
+    "name": "Isabel Wang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/isabel-wang",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/isabel-wang"
+  },
+  {
+    "name": "Kathy Wang",
+    "job_title": "Lecturer and course convenor",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/kathy-wang",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/kathy-wang"
+  },
+  {
+    "name": "Tracy (Kun) Wang",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/tracy-kun-wang",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/tracy-wang"
+  },
+  {
+    "name": "Marvin Wee",
+    "job_title": "Professor and Deputy Director Education",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/marvin-wee",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/marvin-wee"
+  },
+  {
+    "name": "Keturah Whitford",
+    "job_title": "Reader",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/keturah-whitford",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/keturah-whitford"
+  },
+  {
+    "name": "Mark Wilson",
+    "job_title": "Professor & Deputy Director (Research)",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/mark-wilson",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/mark-wilson"
+  },
+  {
+    "name": "Steven Wu",
+    "job_title": "Associate Professor, Director of HDR",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/steven-wu",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/steven-wu"
+  },
+  {
+    "name": "Jean You",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/jean-you",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Wei Zeng",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/wei-zeng",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/wei-zeng"
+  },
+  {
+    "name": "Lijuan Zhang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/lijuan-zhang",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lijuan-zhang"
+  },
+  {
+    "name": "Xiu-Ye Zhang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://rsa.anu.edu.au/people/xiu-ye-zhang",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/xiu-ye-zhang"
+  },
+  {
+    "name": "Mohammed Abdullah Al Mamun",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/mohammed-abdullah-al-mamun",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/mohammed-abdullah-al-mamun"
+  },
+  {
+    "name": "Antje Berndt",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/antje-berndt",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/antje-berndt"
+  },
+  {
+    "name": "Jenni Bettman",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/jenni-bettman",
+    "university": "Australian National University",
+    "research_portal_url": null
+  },
+  {
+    "name": "Hua Deng",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/hua-deng",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/hua-deng"
+  },
+  {
+    "name": "Ding Ding",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/ding-ding",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/ding-ding"
+  },
+  {
+    "name": "Jo Drienko",
+    "job_title": "Deputy Director (Education)",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/jo-drienko",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/jo-drienko"
+  },
+  {
+    "name": "Chao Gao",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/chao-gao",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/chao-gao"
+  },
+  {
+    "name": "Lin Hu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/lin-hu",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lin-hu"
+  },
+  {
+    "name": "Dean Katselas",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/dean-katselas",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/dean-katselas"
+  },
+  {
+    "name": "Nhan Le",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/nhan-le",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/nhan-le"
+  },
+  {
+    "name": "Kun Li",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://rsfas.anu.edu.au/people/kun-li",
+    "university": "Australian National University",
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/kun-li"
+  }
+]
