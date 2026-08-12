@@ -199,6 +199,35 @@ def find_research_url(profile_url, name):
     return f"https://research.monash.edu/en/persons/{slug}/"
 
 
+def extract_rank_from_soup(soup):
+    """
+    Try to extract academic rank from a research.monash.edu profile page.
+    Tries multiple CSS selectors used by Pure/Elsevier CMS, then falls back
+    to scanning the top of the page text for known rank keywords.
+    """
+    # Selectors that Pure CMS uses for job title / position
+    RANK_SELECTORS = [
+        ".person-details-info",
+        ".person-position",
+        ".person-details__position",
+        "[class*='person'][class*='position']",
+        "[class*='job-title']",
+        "[class*='title']",
+        ".rendering_person_short .type",
+        ".associate-group",
+        "span.type",
+    ]
+    for sel in RANK_SELECTORS:
+        el = soup.select_one(sel)
+        if el:
+            rank = level_from_title(el.get_text(strip=True))
+            if rank:
+                return rank
+    # Fallback: scan first 3000 chars of page text for rank keywords
+    body = soup.get_text(" ", strip=True)[:3000]
+    return level_from_title(body)
+
+
 def fetch_research_profile(research_url):
     for attempt in range(3):  # retry up to 3 times
         try:
@@ -209,8 +238,7 @@ def fetch_research_profile(research_url):
             if resp.status_code != 200 or not resp.text:
                 return None, 0
             soup = BeautifulSoup(resp.text, "html.parser")
-            title_tag = soup.select_one(".person-details-info")
-            title = title_tag.get_text(strip=True) if title_tag else None
+            rank = extract_rank_from_soup(soup)
             pub_count = 0
             for a in soup.find_all("a", href=True):
                 if "/publications/" in a["href"]:
@@ -221,7 +249,7 @@ def fetch_research_profile(research_url):
                         n = int(m.group(1))
                         if 1 <= n <= 999:
                             pub_count = max(pub_count, n)
-            return title, pub_count
+            return rank, pub_count
         except Exception:
             time.sleep(3)
     return None, 0
@@ -229,12 +257,11 @@ def fetch_research_profile(research_url):
 for r in records:
     rurl = find_research_url(r.get("profile_url"), r["name_clean"])
     r["research_url"] = rurl
-    title, pubs = fetch_research_profile(rurl)
-    r["research_title"] = title
-    r["pub_count"]      = pubs
+    rank, pubs = fetch_research_profile(rurl)
+    r["pub_count"] = pubs
     if not r["level"]:
-        r["level"] = level_from_title(title)
-    print(f"  {r['name_clean']:35s}  pubs={pubs}  url={rurl}")
+        r["level"] = rank
+    print(f"  {r['name_clean']:35s}  level={r['level']}  pubs={pubs}")
     time.sleep(1.5)
 
 
