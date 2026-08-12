@@ -1,0 +1,16 @@
+{
+  "name": "cits3200-uwa-accounting-pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "collect:staff": "node scrape_uwa_accounting_staff.mjs",
+    "collect:publications": "node scrape_uwa_accounting_publications.mjs",
+    "build:data": "node build_minutes_dataset.mjs",
+    "build:minutes": "node build_minutes_dataset.mjs",
+    "validate": "node validate_minutes_dataset.mjs",
+    "refresh": "node scrape_uwa_accounting_staff.mjs && node scrape_uwa_accounting_publications.mjs && node build_minutes_dataset.mjs && node validate_minutes_dataset.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2"
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "source_page": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+  "candidate_source_page": "https://research-repository.uwa.edu.au/en/organisations/accounting/persons/?format=rss",
+  "harvested_at": "2026-08-11T14:55:33.967Z",
+  "reported_profile_count": 20,
+  "candidate_profile_count": 20,
+  "extracted_accounting_profile_count": 20,
+  "count_reconciles": true,
+  "failed_profile_requests": [],
+  "records": [
+    {
+      "name_display": "Alex Yang",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "xing.yang@uwa.edu.au",
+      "orcid": "0000-0003-1973-260X",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57895210200",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/alex-yang-2/",
+      "reported_profile_output_count": 11,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/parent-subsidiary-dispersion-and-esg-rating-disparities-evidence-/",
+        "https://research-repository.uwa.edu.au/en/publications/ai-competition-and-firm-value-evidence-from-deepseeks-disruption/",
+        "https://research-repository.uwa.edu.au/en/publications/domestic-ai-competition-is-deepseek-a-competitor-or-catalyst-to-c/",
+        "https://research-repository.uwa.edu.au/en/publications/taming-the-dragon-stock-exchange-comment-letters-and-earnings-vol/",
+        "https://research-repository.uwa.edu.au/en/publications/the-effect-of-internal-control-quality-and-internal-control-discl/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Alex Zhang",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "alex.zhang@uwa.edu.au",
+      "orcid": "0000-0003-2089-0365",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57203939892",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/alex-zhang/",
+      "reported_profile_output_count": 29,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/does-artificial-intelligence-mitigate-climate-change-exposure/",
+        "https://research-repository.uwa.edu.au/en/publications/do-students-have-satisfying-educational-experiences-at-sustainabl/",
+        "https://research-repository.uwa.edu.au/en/publications/is-internal-carbon-pricing-an-agent-of-change-in-the-green-transi/",
+        "https://research-repository.uwa.edu.au/en/publications/a-global-study-of-climate-uncertainty-and-carbon-assurance/",
+        "https://research-repository.uwa.edu.au/en/publications/artificial-intelligence-innovation-and-stock-price-crash-risk/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Collette Chesters",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Doctor of Philosophy, Teaching",
+      "affiliations": [
+        {
+          "title": "",
+          "organisation": "UWA Business School",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+        },
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "collette.chesters@uwa.edu.au",
+      "orcid": "0009-0006-4135-7219",
+      "scopus_profile_url": "",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/collette-chesters/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/the-business-of-doing-good-an-australasian-perspective-on-corpora/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "David Gilchrist",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Professor",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "david.gilchrist@uwa.edu.au",
+      "orcid": "0000-0003-0937-8934",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=55696823900",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/",
+      "reported_profile_output_count": 285,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/a-new-commonwealth-individual-disability-advocacy-program-submiss/",
+        "https://research-repository.uwa.edu.au/en/publications/civil-society-and-social-capital-in-australia-and-new-zealand/",
+        "https://research-repository.uwa.edu.au/en/publications/the-role-of-management-controls-in-managing-competing-institution/",
+        "https://research-repository.uwa.edu.au/en/publications/aasb-research-centre-working-paper-no-26-02-service-performance-r/",
+        "https://research-repository.uwa.edu.au/en/publications/aasb-research-centre-working-paper-no-26-03-service-performance-r/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dhammi Azariadis",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "dhammi.azariadis@uwa.edu.au",
+      "orcid": "0009-0003-8724-2749",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57226470994",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/dr-dhammi-azariadis/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/from-demonized-other-to-idealized-other-cannibalism-in-maryse-con/",
+        "https://research-repository.uwa.edu.au/en/publications/a-comparative-analysis-of-works-of-maryse-conde-and-gisele-pineau/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Fangbin Lin",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "fangbin.lin@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57194399960",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/fangbin-lin/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/tough-ratings-tougher-sell-how-different-types-of-adjustment-affe/",
+        "https://research-repository.uwa.edu.au/en/publications/price-erosion-and-sales-volume-analysis-of-china-smart-phone-mark/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "George Shan",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Associate Professor",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "george.shan@uwa.edu.au",
+      "orcid": "0000-0002-5157-312X",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=44462005800",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/",
+      "reported_profile_output_count": 74,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/asymmetric-impact-of-compliance-management-reform-on-opportunisti/",
+        "https://research-repository.uwa.edu.au/en/publications/do-corporate-imitation-behaviors-of-csr-practices-affect-bank-loa/",
+        "https://research-repository.uwa.edu.au/en/publications/do-students-have-satisfying-educational-experiences-at-sustainabl/",
+        "https://research-repository.uwa.edu.au/en/publications/from-human-hands-to-machine-minds-financing-ai-driven-entrepreneu-2/",
+        "https://research-repository.uwa.edu.au/en/publications/grain-by-grain-how-rice-farming-cultivates-esg-rating-consistency/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Glen Hutchings",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "glen.hutchings@uwa.edu.au",
+      "orcid": "0000-0003-0500-656X",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57317371400",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/glen-hutchings/",
+      "reported_profile_output_count": 14,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/reducing-public-speaking-anxiety-in-accounting-students-a-guided-/",
+        "https://research-repository.uwa.edu.au/en/publications/the-impact-of-an-esg-nudge-on-retail-investor-engagement-in-susta/",
+        "https://research-repository.uwa.edu.au/en/publications/the-development-and-application-of-a-decision-useful-measure-of-e/",
+        "https://research-repository.uwa.edu.au/en/publications/enhancing-the-effectiveness-of-student-oral-presentations-a-novel/",
+        "https://research-repository.uwa.edu.au/en/publications/stakeholder-perceptions-of-the-potential-usefulness-and-applicati/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Leo Langa",
+      "academic_title": "Assistant Professor",
+      "academic_level": "",
+      "academic_level_source": "Assistant Professor mapping requires confirmation",
+      "department": "Accounting",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Assistant Professor",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "leo.langa@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57210595792",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/leo-langa/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/contract-farming-global-standards-or-market-forces-the-case-of-th/",
+        "https://research-repository.uwa.edu.au/en/publications/major-miners-and-junior-miners-investigating-the-changing-competi/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "academic level requires client confirmation; UWA Assistant Professor mapping requires confirmation; Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Lyndie Bayne",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "lyndie.bayne@uwa.edu.au",
+      "orcid": "0000-0002-2991-0265",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57195381543",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/lyndie-bayne/",
+      "reported_profile_output_count": 22,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/tax-planning-under-pressure-the-impact-of-carbon-emissions-manage/",
+        "https://research-repository.uwa.edu.au/en/publications/the-role-of-management-controls-in-managing-competing-institution/",
+        "https://research-repository.uwa.edu.au/en/publications/allocating-charities-financial-reporting-requirements-using-tiers/",
+        "https://research-repository.uwa.edu.au/en/publications/sustainable-development-goal-87-eradicating-modern-slavery-in-aus/",
+        "https://research-repository.uwa.edu.au/en/publications/determinants-of-esg-disclosure-among-listed-firms-under-voluntary/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Mark Holub",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "mark.holub@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=7006862381",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/mark-holub/",
+      "reported_profile_output_count": 15,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/developing-professional-scepticism-in-the-accounting-classroom-a-/",
+        "https://research-repository.uwa.edu.au/en/publications/a-toolkit-for-developing-professional-skepticism-in-the-accountin/",
+        "https://research-repository.uwa.edu.au/en/publications/professional-scepticism-and-the-accounting-classroom/",
+        "https://research-repository.uwa.edu.au/en/publications/bitcoin-price-anomalies-peer-to-peer-p2p-trading-on-localbitcoins/",
+        "https://research-repository.uwa.edu.au/en/publications/the-impact-of-the-bitcoin-bubble-of-2017-on-bitcoins-p2p-market/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Nikki Schonfeldt",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "nikki.schonfeldt@uwa.edu.au",
+      "orcid": "0000-0002-9726-6475",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57218822241",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/nikki-schonfeldt/",
+      "reported_profile_output_count": 9,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/consolidating-the-student-voice-using-think-aloud-protocols/",
+        "https://research-repository.uwa.edu.au/en/publications/ict-skill-development-using-excel-xero-and-tableau/",
+        "https://research-repository.uwa.edu.au/en/publications/the-use-of-case-studies-in-developing-students-understanding-of-t/",
+        "https://research-repository.uwa.edu.au/en/publications/threshold-concepts-in-the-preparation-of-consolidated-financial-s/",
+        "https://research-repository.uwa.edu.au/en/publications/aasb-working-paper-no-26-01-connectivity-of-non-financial-informa/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Phil Hancock",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Professor",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "phil.hancock@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57213948872",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/phil-hancock/",
+      "reported_profile_output_count": 82,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/the-british-accounting-review-special-issue-new-challenges-in-gov/",
+        "https://research-repository.uwa.edu.au/en/publications/threshold-concepts-in-the-preparation-of-consolidated-financial-s/",
+        "https://research-repository.uwa.edu.au/en/publications/aasb-research-centre-working-paper-no-26-03-service-performance-r/",
+        "https://research-repository.uwa.edu.au/en/publications/aasb-working-paper-no-26-01-connectivity-of-non-financial-informa/",
+        "https://research-repository.uwa.edu.au/en/publications/students-perceptions-of-different-assessment-modes-and-student-ex/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Prerana Agrawal",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "prerana.agrawal@uwa.edu.au",
+      "orcid": "0000-0001-9410-4844",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=55414052400",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/prerana-agrawal/",
+      "reported_profile_output_count": 15,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/developing-professional-scepticism-in-the-accounting-classroom-a-/",
+        "https://research-repository.uwa.edu.au/en/publications/allocating-charities-financial-reporting-requirements-using-tiers/",
+        "https://research-repository.uwa.edu.au/en/publications/a-toolkit-for-developing-professional-skepticism-in-the-accountin/",
+        "https://research-repository.uwa.edu.au/en/publications/relational-contracting-theory-and-internal-audit-chief-audit-exec/",
+        "https://research-repository.uwa.edu.au/en/publications/using-turnover-size-to-determine-charities-reporting-requirements/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Ricky Chung",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "ricky.chung@uwa.edu.au",
+      "orcid": "0000-0003-1875-7346",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=58056126600",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/ricky-chung/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/determinants-of-esg-disclosure-among-listed-firms-under-voluntary/",
+        "https://research-repository.uwa.edu.au/en/publications/stakeholder-responses-to-mandating-environmental-social-and-gover/",
+        "https://research-repository.uwa.edu.au/en/publications/the-impact-of-environmental-social-and-governance-esg-disclosure-/",
+        "https://research-repository.uwa.edu.au/en/publications/the-evolution-of-esg-reporting-in-hong-kong/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Simeng Liu",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "simeng.liu@uwa.edu.au",
+      "orcid": "0000-0002-6062-8743",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57227982900",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/simeng-liu/",
+      "reported_profile_output_count": 6,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/analyst-coverage-and-corporate-innovation-evidence-from-exogenous/",
+        "https://research-repository.uwa.edu.au/en/publications/corporate-governance-reforms-and-analyst-forecasts-international-/",
+        "https://research-repository.uwa.edu.au/en/publications/csr-contracting-and-stock-price-crash-risk-international-evidence/",
+        "https://research-repository.uwa.edu.au/en/publications/female-board-representation-and-the-adoption-of-corporate-social-/",
+        "https://research-repository.uwa.edu.au/en/publications/corporate-social-activities-and-stock-price-crash-risk-in-the-ban/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Stijn Masschelein",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "stijn.masschelein@uwa.edu.au",
+      "orcid": "0000-0002-1291-6222",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=55512028100",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/stijn-masschelein/",
+      "reported_profile_output_count": 10,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/testing-for-complementarities-between-accounting-practices/",
+        "https://research-repository.uwa.edu.au/en/publications/abc-information-fairness-perceptions-and-interfirm-negotiations/",
+        "https://research-repository.uwa.edu.au/en/publications/the-effects-of-performance-based-profit-sharing-schemes-and-clien/",
+        "https://research-repository.uwa.edu.au/en/publications/an-empirical-evaluation-of-the-resilience-shield-model/",
+        "https://research-repository.uwa.edu.au/en/publications/loss-aversion-in-asymmetric-anti-coordination-games/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Thanesvary Subraamanniam",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Accounting",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "thanesvary.subraamanniam@uwa.edu.au",
+      "orcid": "0000-0002-3040-9152",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=37065441000",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/thanesvary-subraamanniam/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/perceptions-of-reputation-drivers-evidence-from-australian-non-ac/",
+        "https://research-repository.uwa.edu.au/en/publications/transnational-education-is-it-a-reputation-driver/",
+        "https://research-repository.uwa.edu.au/en/publications/perceptions-of-reputation-drivers-in-business-schools-a-study-of-/",
+        "https://research-repository.uwa.edu.au/en/publications/the-impact-of-total-quality-management-adoption-on-small-and-medi/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Vincent Chong",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Professor",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        },
+        {
+          "title": "Head of Department",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "vincent.chong@uwa.edu.au",
+      "orcid": "0000-0003-4207-2718",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=7004645694",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/vincent-chong/",
+      "reported_profile_output_count": 62,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/the-role-of-management-controls-in-managing-competing-institution/",
+        "https://research-repository.uwa.edu.au/en/publications/do-client-protection-principles-matter-for-the-economic-and-socia/",
+        "https://research-repository.uwa.edu.au/en/publications/the-clock-ticks-temporal-effects-in-brand-donations/",
+        "https://research-repository.uwa.edu.au/en/publications/the-effect-of-stretch-goals-and-moral-justification-on-counterpro/",
+        "https://research-repository.uwa.edu.au/en/publications/the-effects-of-performance-based-profit-sharing-schemes-and-clien/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Warrick Van Zyl",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
+      "department": "Accounting",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Associate Professor",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        }
+      ],
+      "email": "warrick.vanzyl@uwa.edu.au",
+      "orcid": "0000-0001-8029-6611",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57203680176",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/warrick-van-zyl/",
+      "reported_profile_output_count": 9,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/developing-professional-scepticism-in-the-accounting-classroom-a-/",
+        "https://research-repository.uwa.edu.au/en/publications/a-toolkit-for-developing-professional-skepticism-in-the-accountin/",
+        "https://research-repository.uwa.edu.au/en/publications/fixing-diluted-earnings-per-share-recognising-the-dilutive-effect/",
+        "https://research-repository.uwa.edu.au/en/publications/professional-scepticism-and-the-accounting-classroom/",
+        "https://research-repository.uwa.edu.au/en/publications/the-state-of-executive-remuneration-disclosure-in-australia/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    }
+  ]
+}

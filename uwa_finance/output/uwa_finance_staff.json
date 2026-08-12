@@ -1,0 +1,698 @@
+{
+  "source_page": "https://research-repository.uwa.edu.au/en/organisations/finance-2/",
+  "candidate_source_page": "https://research-repository.uwa.edu.au/en/organisations/finance-2/persons/?format=rss",
+  "harvested_at": "2026-08-11T15:54:52.800Z",
+  "reported_profile_count": 24,
+  "candidate_profile_count": 24,
+  "extracted_finance_profile_count": 24,
+  "count_reconciles": true,
+  "failed_profile_requests": [],
+  "records": [
+    {
+      "name_display": "Chloe Ho",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "chloe.ho@uwa.edu.au",
+      "orcid": "0000-0001-6168-0490",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=59034665800",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/choy-yeing-ho/",
+      "reported_profile_output_count": 15,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/does-ceo-personal-environmental-value-matter/",
+        "https://research-repository.uwa.edu.au/en/publications/exposure-to-gun-violence-and-corporate-default-risk/",
+        "https://research-repository.uwa.edu.au/en/publications/does-cybersecurity-risk-stifle-corporate-innovation-activities/",
+        "https://research-repository.uwa.edu.au/en/publications/equity-in-capital-raising-empirical-evidence-from-structured-priv/",
+        "https://research-repository.uwa.edu.au/en/publications/the-cost-of-corporate-social-irresponsibility-for-acquirers/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Daniel Cahill",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "daniel.cahill@uwa.edu.au",
+      "orcid": "0000-0001-5676-4913",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57195954745",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/daniel-cahill/",
+      "reported_profile_output_count": 17,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/media-and-social-media-sentiment-and-ceo-pay-cuts/",
+        "https://research-repository.uwa.edu.au/en/publications/technical-talk-in-bitcoin-and-equity/",
+        "https://research-repository.uwa.edu.au/en/publications/investigating-proxies-for-retail-investor-attention-in-financial-/",
+        "https://research-repository.uwa.edu.au/en/publications/i-only-pay-attention-to-interesting-thingsand-thats-a-problem-inv/",
+        "https://research-repository.uwa.edu.au/en/publications/the-covid-19-pandemic-how-important-is-face-to-face-interaction-f/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dirk Baur",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Professor",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "dirk.baur@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=56264490400",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/dirk-baur/",
+      "reported_profile_output_count": 82,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/charging-up-on-lithium-the-metal-or-the-miner/",
+        "https://research-repository.uwa.edu.au/en/publications/decoding-dai-exploring-collateral-evolution-and-price-dynamics/",
+        "https://research-repository.uwa.edu.au/en/publications/do-investors-care-about-climate-commitments-evidence-from-net-zer/",
+        "https://research-repository.uwa.edu.au/en/publications/alternative-investment-behavior-of-households-during-crises-the-e/",
+        "https://research-repository.uwa.edu.au/en/publications/the-cost-of-financial-intermediation-in-australia/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Duc Vo",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "duc.vo@uwa.edu.au",
+      "orcid": "0000-0001-7823-0349",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57193902947",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/duc-vo/",
+      "reported_profile_output_count": 43,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/does-financial-literacy-improve-life-satisfaction-robust-evidence/",
+        "https://research-repository.uwa.edu.au/en/publications/financial-literacy-locus-of-control-and-gambling-behavior-in-aust/",
+        "https://research-repository.uwa.edu.au/en/publications/multi-market-trading-and-overnight-price-discovery-evidence-from-/",
+        "https://research-repository.uwa.edu.au/en/publications/the-differential-effects-of-prevention-and-restrictive-policies-i/",
+        "https://research-repository.uwa.edu.au/en/publications/when-nature-hits-the-bottom-line-transition-biodiversity-risk-and/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Elizabeth Ooi",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "elizabeth.ooi@uwa.edu.au",
+      "orcid": "0000-0002-0868-4561",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=55173857600",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/elizabeth-ooi/",
+      "reported_profile_output_count": 9,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/culture-and-confidence-in-financial-knowledge-testing/",
+        "https://research-repository.uwa.edu.au/en/publications/measurement-error-in-research-on-financial-literacy-how-much-erro/",
+        "https://research-repository.uwa.edu.au/en/publications/directors-who-serve-multiple-pension-funds-are-they-conflicted-or/",
+        "https://research-repository.uwa.edu.au/en/publications/give-mind-to-the-gap-measuring-gender-differences-in-financial-kn/",
+        "https://research-repository.uwa.edu.au/en/publications/when-boards-use-related-parties-outsourcing-and-superannuation-fu/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Farhan Shazia",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "farhan.shazia@uwa.edu.au",
+      "orcid": "0000-0003-2162-6451",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57733646100",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/farhan-shazia/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/crime-and-covenants/",
+        "https://research-repository.uwa.edu.au/en/publications/why-do-managers-announce-the-intention-to-sell-large-assets/",
+        "https://research-repository.uwa.edu.au/en/publications/reaching-out-to-the-unbanked-the-role-of-political-ideology-in-fi/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Frank Liu",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Associate Professor",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "frank.liu@uwa.edu.au",
+      "orcid": "0000-0001-9962-3854",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=56604411200",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/frank-liu/",
+      "reported_profile_output_count": 71,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/ai-may-raise-the-bar-and-thin-the-pipeline/",
+        "https://research-repository.uwa.edu.au/en/publications/a-test-of-through-the-cycle-ratings-moodys-response-to-covid-19/",
+        "https://research-repository.uwa.edu.au/en/publications/closer-and-greener-the-interplay-of-buyer-environmental-investmen/",
+        "https://research-repository.uwa.edu.au/en/publications/cutting-corners-cutting-dividends-evidence-from-reverse-mergers-i/",
+        "https://research-repository.uwa.edu.au/en/publications/do-corporate-site-visits-impactinsider-trading/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Gary Smith",
+      "academic_title": "Associate Lecturer",
+      "academic_level": "A",
+      "academic_level_source": "Associate Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Associate Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "gary.smith@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=56999417700",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/gary-smith/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/smb-arousal-disproportionate-reactions-and-the-size-premium/",
+        "https://research-repository.uwa.edu.au/en/publications/the-robustness-of-daily-momentum/",
+        "https://research-repository.uwa.edu.au/en/publications/in-americas-thrall-the-effects-of-the-us-market-and-us-security-c/",
+        "https://research-repository.uwa.edu.au/en/publications/momentum-in-australia-a-note/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Joey Yang",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Associate Professor",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "joeywenling.yang@uwa.edu.au",
+      "orcid": "0000-0001-7655-0568",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=35281149800",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/joey-yang/",
+      "reported_profile_output_count": 49,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/asymmetric-impact-of-compliance-management-reform-on-opportunisti/",
+        "https://research-repository.uwa.edu.au/en/publications/does-artificial-intelligence-mitigate-climate-change-exposure/",
+        "https://research-repository.uwa.edu.au/en/publications/does-ceo-personal-environmental-value-matter/",
+        "https://research-repository.uwa.edu.au/en/publications/grain-by-grain-how-rice-farming-cultivates-esg-rating-consistency/",
+        "https://research-repository.uwa.edu.au/en/publications/information-processing-gap-and-insider-trading-profitability-evid/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Kam Chan",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
+      "department": "Finance",
+      "person_type": "Staff, Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Associate Professor",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "kam.chan@uwa.edu.au",
+      "orcid": "0000-0002-3868-3842",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=56232766800",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/kam-chan/",
+      "reported_profile_output_count": 36,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/family-control-and-ownership-corporate-culture-and-esg-performanc/",
+        "https://research-repository.uwa.edu.au/en/publications/brokerage-firms-in-finras-spotlight/",
+        "https://research-repository.uwa.edu.au/en/publications/corporate-sexual-orientation-equality-and-default-risk/",
+        "https://research-repository.uwa.edu.au/en/publications/does-taxaggressive-behavior-motivate-more-csr-engagement/",
+        "https://research-repository.uwa.edu.au/en/publications/exposure-to-gun-violence-and-corporate-default-risk/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Kevin Na",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "kevin.na@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/kevin-na/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Lai Hoang",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "lai.hoang@uwa.edu.au",
+      "orcid": "0000-0002-4147-4611",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57225154198",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/lai-hoang/",
+      "reported_profile_output_count": 24,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/loaded-for-bear-bitcoin-private-wallets-exchange-reserves-and-pri/",
+        "https://research-repository.uwa.edu.au/en/publications/strategic-trading-by-insiders-in-the-presence-of-institutional-in/",
+        "https://research-repository.uwa.edu.au/en/publications/how-stable-are-stablecoins/",
+        "https://research-repository.uwa.edu.au/en/publications/a-crypto-safe-haven-against-bitcoin/",
+        "https://research-repository.uwa.edu.au/en/publications/financial-literacy-locus-of-control-and-gambling-behavior-in-aust/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Lee Smales",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Professor",
+          "organisation": "UWA Business School",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+        },
+        {
+          "title": "Professor",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "lee.smales@uwa.edu.au",
+      "orcid": "0000-0002-9094-9089",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=54685130500",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/lee-smales/",
+      "reported_profile_output_count": 83,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/a-test-of-through-the-cycle-ratings-moodys-response-to-covid-19/",
+        "https://research-repository.uwa.edu.au/en/publications/decoding-dai-exploring-collateral-evolution-and-price-dynamics/",
+        "https://research-repository.uwa.edu.au/en/publications/does-national-culture-affect-cash-holdings-of-social-enterprises-/",
+        "https://research-repository.uwa.edu.au/en/publications/national-culture-and-environmental-management-activism-of-microfi/",
+        "https://research-repository.uwa.edu.au/en/publications/predicting-serial-credit-rating-downgrades/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Mosharraf Hossain",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "mdmosharraf.hossain@uwa.edu.au",
+      "orcid": "0000-0002-6453-4437",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57191168630",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/mosharraf-hossain/",
+      "reported_profile_output_count": 12,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/does-national-culture-affect-cash-holdings-of-social-enterprises-/",
+        "https://research-repository.uwa.edu.au/en/publications/green-financing-policy-and-bank-performance-and-risk-evidence-fro/",
+        "https://research-repository.uwa.edu.au/en/publications/national-culture-and-environmental-management-activism-of-microfi/",
+        "https://research-repository.uwa.edu.au/en/publications/do-client-protection-principles-matter-for-the-economic-and-socia/",
+        "https://research-repository.uwa.edu.au/en/publications/green-finance-when-stakeholders-interests-collide-with-each-other/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Paul Gerrans",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Professor",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "paul.gerrans@uwa.edu.au",
+      "orcid": "0000-0002-5690-7141",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=15026227800",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-gerrans/",
+      "reported_profile_output_count": 53,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/great-retirement-expectations-a-review-of-retirement-income-polic/",
+        "https://research-repository.uwa.edu.au/en/publications/intergenerational-financial-literacy-transmission-sources-of-bias/",
+        "https://research-repository.uwa.edu.au/en/publications/integrating-career-health-and-finance-in-a-holistic-retirement-pl/",
+        "https://research-repository.uwa.edu.au/en/publications/more-than-objective-knowledge-exploring-heterogeneity-in-individu/",
+        "https://research-repository.uwa.edu.au/en/publications/the-important-role-of-intention-and-financial-literacy-in-pension/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Raymond Da Silva Rosa",
+      "academic_title": "Winthrop Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Winthrop Professor",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "ray.dasilvarosa@uwa.edu.au",
+      "orcid": "0000-0002-3610-3461",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=9336355300",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/raymond-da-silva-rosa/",
+      "reported_profile_output_count": 49,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/show-me-your-hand-an-examination-of-voting-methods-at-annual-gene/",
+        "https://research-repository.uwa.edu.au/en/publications/lower-defeat-thresholds-for-minority-shareholders-and-corporate-g/",
+        "https://research-repository.uwa.edu.au/en/publications/choice-of-acquisition-form-in-australia-and-the-post-takeover-emp/",
+        "https://research-repository.uwa.edu.au/en/publications/web-based-experimental-economics-software-how-do-they-compare-to-/",
+        "https://research-repository.uwa.edu.au/en/publications/comments-on-shan-and-walter-towards-a-set-of-design-principles-fo/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Rui Zhong",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Associate Professor",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "rui.zhong@uwa.edu.au",
+      "orcid": "0000-0002-9347-4146",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=56567472100",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/rui-zhong/",
+      "reported_profile_output_count": 38,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/the-eu-taxonomy-and-the-syndicated-loan-market/",
+        "https://research-repository.uwa.edu.au/en/publications/biodiversity-risk-and-payment-methods-in-mergers-amp-acquisitions/",
+        "https://research-repository.uwa.edu.au/en/publications/environmental-reputation-risk-and-the-cost-of-equity-the-impact-o/",
+        "https://research-repository.uwa.edu.au/en/publications/is-green-revenue-vanity-or-sanity-evidence-from-corporate-cash-ho/",
+        "https://research-repository.uwa.edu.au/en/publications/liability-of-foreignness-and-global-sustainable-strategy-evidence/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Russell Poskitt",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "russell.poskitt@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=9036138500",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/russell-poskitt/",
+      "reported_profile_output_count": 27,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/determinants-of-a-firms-decision-to-utilize-a-dividend-reinvestme/",
+        "https://research-repository.uwa.edu.au/en/publications/modelling-the-lowballing-of-the-libor-fixing/",
+        "https://research-repository.uwa.edu.au/en/publications/what-drives-issue-spreads-on-commercial-paper-evidence-from-new-z/",
+        "https://research-repository.uwa.edu.au/en/publications/what-drives-the-cost-of-us-dollar-bond-funding-for-banks/",
+        "https://research-repository.uwa.edu.au/en/publications/do-liquidity-or-credit-effects-explain-the-behavior-of-the-bkbm-l/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Thao Hoang",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "thao.hoang@uwa.edu.au",
+      "orcid": "0000-0003-0741-1817",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57193535692",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/thao-hoang/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/polarized-corporate-boards/",
+        "https://research-repository.uwa.edu.au/en/publications/common-lender-ex-banker-director-and-corporate-investment/",
+        "https://research-repository.uwa.edu.au/en/publications/managerial-optimism-and-corporate-cash-holdings/",
+        "https://research-repository.uwa.edu.au/en/publications/stock-liquidity-and-ownership-structure-during-and-after-the-2008/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Vincent Chong",
+      "academic_title": "Head of Department",
+      "academic_level": "",
+      "academic_level_source": "No standard UWA A-E title found",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Professor",
+          "organisation": "Accounting",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+        },
+        {
+          "title": "Head of Department",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "vincent.chong@uwa.edu.au",
+      "orcid": "0000-0003-4207-2718",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=7004645694",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/vincent-chong/",
+      "reported_profile_output_count": 62,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/the-role-of-management-controls-in-managing-competing-institution/",
+        "https://research-repository.uwa.edu.au/en/publications/do-client-protection-principles-matter-for-the-economic-and-socia/",
+        "https://research-repository.uwa.edu.au/en/publications/the-clock-ticks-temporal-effects-in-brand-donations/",
+        "https://research-repository.uwa.edu.au/en/publications/the-effect-of-stretch-goals-and-moral-justification-on-counterpro/",
+        "https://research-repository.uwa.edu.au/en/publications/the-effects-of-performance-based-profit-sharing-schemes-and-clien/"
+      ],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "academic level requires client confirmation"
+    },
+    {
+      "name_display": "Yeok-Fun Mah",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "fun.mah@uwa.edu.au",
+      "orcid": "",
+      "scopus_profile_url": "",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/yeok-fun-mah/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [],
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "Pure profile is not classified as research"
+    },
+    {
+      "name_display": "Yihui Lan",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "yihui.lan@uwa.edu.au",
+      "orcid": "0000-0002-0312-9868",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=16052842200",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/yihui-lan/",
+      "reported_profile_output_count": 43,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/from-human-hands-to-machine-minds-financing-ai-driven-entrepreneu-2/",
+        "https://research-repository.uwa.edu.au/en/publications/discretionary-tone-in-reward-based-crowdfunding-do-project-owners/",
+        "https://research-repository.uwa.edu.au/en/publications/the-cost-of-financial-intermediation-in-australia/",
+        "https://research-repository.uwa.edu.au/en/publications/a-closer-look-at-the-relationship-between-firm-specific-return-va/",
+        "https://research-repository.uwa.edu.au/en/publications/credit-rating-downgrades-and-stock-price-crash-risk-international/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Yuanji Wen",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Senior Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "yuanji.wen@uwa.edu.au",
+      "orcid": "0000-0002-9725-5741",
+      "scopus_profile_url": "https://www.scopus.com/authid/detail.uri?authorId=57188963482",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/yuanji-wen/",
+      "reported_profile_output_count": 9,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/brokerage-firms-in-finras-spotlight/",
+        "https://research-repository.uwa.edu.au/en/publications/the-relevance-of-dark-trading-for-information-acquisition-in-the-/",
+        "https://research-repository.uwa.edu.au/en/publications/tick-size-trading-strategies-and-market-quality/",
+        "https://research-repository.uwa.edu.au/en/publications/covid-19-vaccines-and-global-stock-markets/",
+        "https://research-repository.uwa.edu.au/en/publications/loss-aversion-in-asymmetric-anti-coordination-games/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Zhengge Zhou",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
+      "department": "Finance",
+      "person_type": "Teaching & Research",
+      "affiliations": [
+        {
+          "title": "Lecturer",
+          "organisation": "Finance",
+          "organisation_url": "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+        }
+      ],
+      "email": "zhengge.zhou@uwa.edu.au",
+      "orcid": "0009-0008-5926-2570",
+      "scopus_profile_url": "",
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/zhengge-zhou/",
+      "reported_profile_output_count": null,
+      "recent_publication_urls": [
+        "https://research-repository.uwa.edu.au/en/publications/optimal-automated-market-makers/"
+      ],
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    }
+  ]
+}

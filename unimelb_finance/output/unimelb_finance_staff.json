@@ -1,8 +1,12 @@
 {
   "source_page": "https://fbe.unimelb.edu.au/finance/our-research",
-  "staff_page": "https://fbe.unimelb.edu.au/about/academic-staff?queries_discipline_query=finance",
-  "harvested_at": "2026-08-08T16:54:41.234Z",
-  "record_count": 47,
+  "staff_page": "https://fbe.unimelb.edu.au/about/academic-staff?queries_tags_query=4895953",
+  "harvested_at": "2026-08-11T16:55:00.312Z",
+  "candidate_record_count": 49,
+  "record_count": 49,
+  "excluded_record_count": 0,
+  "excluded_records": [],
+  "filter_rule": "Department field contains 'Department of Finance' (case-insensitive)",
   "records": [
     {
       "name_display": "Dr Gil Aharoni",
@@ -17,6 +21,10 @@
       "email": "gaharoni@unimelb.edu.au",
       "phone": "+61 3 8344 9062",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/144989",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -33,6 +41,10 @@
       "email": "balogh@unimelb.edu.au",
       "phone": "+61 3 8344 7898",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/954317",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -49,8 +61,12 @@
       "email": "eabowman@unimelb.edu.au",
       "phone": "+61 3 9035 9950",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/elizabeth-bowman",
+      "department_source": "staff page field",
+      "academic_title": "Business Manager",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "possibly non-academic role; no Find an Expert profile linked"
+      "inclusion_review_reason": "possibly non-academic role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Associate Professor James Brugler",
@@ -64,6 +80,10 @@
       "email": "james.brugler@unimelb.edu.au",
       "phone": "+61 3 8344 1164",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/761748",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -80,6 +100,10 @@
       "email": "shuang.chen3@unimelb.edu.au",
       "phone": "+61 3 9035 5291",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/shuang-chen",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "no Find an Expert profile linked"
     },
@@ -95,6 +119,10 @@
       "email": "carole.comerton-forde@unimelb.edu.au",
       "phone": "+61 3 9035 6117",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/532357",
+      "department_source": "staff page field",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -109,6 +137,10 @@
       "email": "jdark@unimelb.edu.au",
       "phone": "+61 3 8344 6866",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/181374",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -125,8 +157,12 @@
       "email": "assaf.dekel@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/assaf-dekel",
+      "department_source": "staff page field",
+      "academic_title": "Tutor - Education Focussed",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Dr Juan Pablo Franco",
@@ -141,8 +177,12 @@
       "email": "juan.franco@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/803361",
+      "department_source": "staff page field",
+      "academic_title": "Postdoctoral Fellow",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "appointment category requires client decision"
+      "inclusion_review_reason": "appointment category requires client decision; academic level could not be mapped automatically"
     },
     {
       "name_display": "Jon Gauntlett",
@@ -157,8 +197,12 @@
       "email": "jonathan.gauntlett@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/jon-gauntlett",
+      "department_source": "staff page field",
+      "academic_title": "Tutor - Education Focussed",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Dr Marina Gertsberg",
@@ -173,6 +217,10 @@
       "email": "marina.gertsberg@unimelb.edu.au",
       "phone": "+61 3 8344 6195",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/955361",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -187,6 +235,10 @@
       "email": "agygax@unimelb.edu.au",
       "phone": "+61 3 8344 9085",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/4210",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -204,6 +256,10 @@
       "email": "handleyj@unimelb.edu.au",
       "phone": "+61 3 8344 7663",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/116",
+      "department_source": "staff page field",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -216,8 +272,12 @@
       "email": "a.horsfall@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/allan-horsfall",
+      "department_source": "staff page field",
+      "academic_title": "Tutor - Education Focussed",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Associate Professor Joachim Inkmann",
@@ -231,6 +291,10 @@
       "email": "jinkmann@unimelb.edu.au",
       "phone": "+61 3 9035 8177",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/250474",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -248,6 +312,10 @@
       "email": "eduard.inozemtsev@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/1050858",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -264,6 +332,10 @@
       "email": "hae.jung@unimelb.edu.au",
       "phone": "+61 3 9035 8641",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/510793",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -281,6 +353,10 @@
       "email": "patrick.kelly@unimelb.edu.au",
       "phone": "+61 3 8344 3961",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/437404",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -297,6 +373,10 @@
       "email": "minsoo.kim@unimelb.edu.au",
       "phone": "+61 3 8344 6408",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/minsoo-kim",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "no Find an Expert profile linked"
     },
@@ -320,6 +400,10 @@
       "email": "pkofman@unimelb.edu.au",
       "phone": "+61 3 8344 5311",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/7994",
+      "department_source": "staff page field",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "appointment category requires client decision"
     },
@@ -337,6 +421,10 @@
       "email": "asjeet@unimelb.edu.au",
       "phone": "+61 3 8344 7011",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/14988",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -349,6 +437,10 @@
       "email": "gabriele.lattanzio@unimelb.edu.au",
       "phone": "+613 8344 9584",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gabriele-lattanzio",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "no Find an Expert profile linked"
     },
@@ -367,8 +459,12 @@
       "email": "nhung.le@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/natalie-le",
+      "department_source": "staff page field",
+      "academic_title": "Tutor - Education Focussed",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Tania Lee",
@@ -379,6 +475,10 @@
       "email": "tania.lee1@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/tania-lee",
+      "department_source": "staff page field",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
     },
@@ -393,8 +493,12 @@
       "email": "bob.li2@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/bob-li",
+      "department_source": "staff page field",
+      "academic_title": "Teaching Specialist",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Associate Professor Bryan Lim",
@@ -408,6 +512,10 @@
       "email": "blim@unimelb.edu.au",
       "phone": "+61 3 8344 9088",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/193012",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -424,6 +532,10 @@
       "email": "andrea.lu@unimelb.edu.au",
       "phone": "+61 3 8344 3326",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/664549",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -441,6 +553,10 @@
       "email": "lucie.lu@unimelb.edu.au",
       "phone": "+61 3 9035 3208",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/lucie-lu",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "no Find an Expert profile linked"
     },
@@ -458,6 +574,10 @@
       "email": "maurice.mccourt@unimelb.edu.au",
       "phone": "+61 3 9035 9717",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/833272",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "teaching/education-focused role"
     },
@@ -475,6 +595,10 @@
       "email": "mrinal.mishra@unimelb.edu.au",
       "phone": "+61 3 9035 3420",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/mrinal-mishra",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "no Find an Expert profile linked"
     },
@@ -491,6 +615,10 @@
       "email": "carstenm@unimelb.edu.au",
       "phone": "+61 3 8344 9077",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/179115",
+      "department_source": "staff page field",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -506,6 +634,10 @@
       "email": "federico.nardari@unimelb.edu.au",
       "phone": "+61 3 9035 4133",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/551184",
+      "department_source": "staff page field",
+      "academic_title": "Professor",
+      "academic_level": "E",
+      "academic_level_source": "Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -524,6 +656,10 @@
       "email": "a.berhe@unimelb.edu.au",
       "phone": "+61 03 8344 4429",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gaby-berhe-nardari",
+      "department_source": "staff page field",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
     },
@@ -536,6 +672,10 @@
       "email": "anthony.ng@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/anthony-ng",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
     },
@@ -548,6 +688,10 @@
       "email": "linh.nguyen9@unimelb.edu.au",
       "phone": "+61 3 9035 5691",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/999882",
+      "department_source": "staff page field",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "teaching/education-focused role"
     },
@@ -563,6 +707,10 @@
       "email": "hoonsuk.park@unimelb.edu.au",
       "phone": "+61 3 8344 7862",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/hoonsuk-park",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "no Find an Expert profile linked"
     },
@@ -575,8 +723,12 @@
       "email": "harry.pham@unimelb.edu.au",
       "phone": "+61 3 9035 5654",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/hung-harry-viet-pham",
+      "department_source": "staff page field",
+      "academic_title": "Tutor - Education Focussed",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Associate Professor Sean Pinder",
@@ -591,6 +743,10 @@
       "email": "spinder@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/6726",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -605,6 +761,10 @@
       "email": "c.shekhar@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/1994",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -621,6 +781,10 @@
       "email": "zshi@unimelb.edu.au",
       "phone": "+61 3 9035 8173",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/250294",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -639,8 +803,12 @@
       "email": "bryan.tan@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/bryan-tan",
+      "department_source": "staff page field",
+      "academic_title": "Tutor - Education Focussed",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Associate Professor Ekaterina Volkova",
@@ -656,6 +824,10 @@
       "email": "ekaterina.volkova@unimelb.edu.au",
       "phone": "+61 3 9035 5110",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/810575",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -668,8 +840,51 @@
       "email": "xiaoting.wei@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/xiaoting-wei",
+      "department_source": "staff page field",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+    },
+    {
+      "name_display": "Dr Nitin Yadav",
+      "role": "Senior Lecturer PhD Coordinator (Centre for Brain, Mind and Markets)",
+      "disciplines": "",
+      "interests": [
+        "Complexity of Decision Making",
+        "Experimental Finance",
+        "Intelligent Agent Systems"
+      ],
+      "department": "Department of Finance",
+      "email": "nitin.yadav@unimelb.edu.au",
+      "phone": "+61 3 9035 3118",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/788118",
+      "department_source": "staff page field",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "inclusion_review_required": false,
+      "inclusion_review_reason": ""
+    },
+    {
+      "name_display": "Dr Jun Yu",
+      "role": "Senior Lecturer",
+      "disciplines": "Finance",
+      "interests": [
+        "Macro-finance",
+        "Asset Pricing"
+      ],
+      "department": "Department of Finance",
+      "email": "jun.yu1@unimelb.edu.au",
+      "phone": "",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/cabe/jun-yu",
+      "department_source": "official department filter query",
+      "academic_title": "Senior Lecturer",
+      "academic_level": "C",
+      "academic_level_source": "Senior Lecturer title",
+      "inclusion_review_required": true,
+      "inclusion_review_reason": "no Find an Expert profile linked"
     },
     {
       "name_display": "Associate Professor Qi Zeng",
@@ -684,6 +899,10 @@
       "email": "qzeng@unimelb.edu.au",
       "phone": "+61 3 8344 5359",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/25878",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -700,6 +919,10 @@
       "email": "zhuo.zhong@unimelb.edu.au",
       "phone": "+61 3 8344 2990",
       "profile_url": "https://findanexpert.unimelb.edu.au/profile/667468",
+      "department_source": "staff page field",
+      "academic_title": "Associate Professor",
+      "academic_level": "D",
+      "academic_level_source": "Associate Professor title",
       "inclusion_review_required": false,
       "inclusion_review_reason": ""
     },
@@ -718,8 +941,12 @@
       "email": "tracy.zhou@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/yun-tracy-zhou",
+      "department_source": "staff page field",
+      "academic_title": "Tutor - Education Focussed",
+      "academic_level": "",
+      "academic_level_source": "No A-E title found",
       "inclusion_review_required": true,
-      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
+      "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked; academic level could not be mapped automatically"
     },
     {
       "name_display": "Dr Silvia Zia",
@@ -735,6 +962,10 @@
       "email": "silvia.zia@unimelb.edu.au",
       "phone": "",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/silvia-zia",
+      "department_source": "staff page field",
+      "academic_title": "Lecturer",
+      "academic_level": "B",
+      "academic_level_source": "Lecturer title",
       "inclusion_review_required": true,
       "inclusion_review_reason": "teaching/education-focused role; no Find an Expert profile linked"
     }

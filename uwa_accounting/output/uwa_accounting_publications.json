@@ -1,0 +1,2259 @@
+{
+  "source_page": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+  "harvested_at": "2026-08-11T16:56:18.032Z",
+  "collection_method": "All publication URLs exposed by the official paginated Accounting publications RSS feed, enriched from individual Pure publication pages",
+  "reported_organisation_publication_count": 64,
+  "discovered_recent_publication_url_count": 64,
+  "extracted_accounting_publication_count": 64,
+  "count_reconciles": true,
+  "failed_publication_requests": [],
+  "publication_details_without_visible_accounting_affiliation": [
+    "https://research-repository.uwa.edu.au/en/publications/corporate-responses-to-the-climate-transition-evidence-on-transit/",
+    "https://research-repository.uwa.edu.au/en/publications/the-theory-of-adjusting-commitments-to-reestablish-balance-in-a-d/",
+    "https://research-repository.uwa.edu.au/en/publications/acquisition-year-earnings-and-operating-cash-flow-as-measures-of-/"
+  ],
+  "records": [
+    {
+      "publication_id": "a-new-commonwealth-individual-disability-advocacy-program-submiss",
+      "title": "A New Commonwealth Individual Disability Advocacy Program: Submission to the Department of Health, Ageing and Disability",
+      "publication_year": "2026",
+      "publication_status": "Published - 16 Jan 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/a-new-commonwealth-individual-disability-advocacy-program-submiss/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Working paper › Discussion paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "asymmetric-impact-of-compliance-management-reform-on-opportunisti",
+      "title": "Asymmetric impact of compliance management reform on opportunistic insider trading: Evidence from Chinese state-owned enterprises",
+      "publication_year": "2026",
+      "publication_status": "Published - Jun 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/asymmetric-impact-of-compliance-management-reform-on-opportunisti/",
+      "doi": "10.1016/j.ememar.2026.101438",
+      "journal": "Emerging Markets Review",
+      "issn": "1566-0141",
+      "eissn": "",
+      "volume": "72",
+      "issue": "",
+      "pages": "",
+      "authors": "Wencheng Cao, Yuan George Shan, Joey Wenling Yang",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        },
+        {
+          "name": "Joey Wenling Yang",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/joey-yang/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105027704502#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "civil-society-and-social-capital-in-australia-and-new-zealand",
+      "title": "Civil Society and Social Capital in Australia and New Zealand",
+      "publication_year": "2026",
+      "publication_status": "Published - 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/civil-society-and-social-capital-in-australia-and-new-zealand/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Chapter in Book/Conference paper › Entry for encyclopedia/dictionary › peer-review",
+      "open_access": false,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "corporate-responses-to-the-climate-transition-evidence-on-transit",
+      "title": "Corporate responses to the climate transition: evidence on transition planning, tax planning, and R&D investment",
+      "publication_year": "2026",
+      "publication_status": "Unpublished - 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/corporate-responses-to-the-climate-transition-evidence-on-transit/",
+      "doi": "10.26182/k4q4-hh21",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Aonan Sun",
+      "uwa_authors": [
+        {
+          "name": "Aonan Sun",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/sistine-sun/"
+        }
+      ],
+      "item_type": "Research output: Thesis › Doctoral Thesis",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105029058270#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": false,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "developing-professional-scepticism-in-the-accounting-classroom-a-",
+      "title": "Developing Professional Scepticism in the Accounting Classroom: A Case Study Approach",
+      "publication_year": "2026",
+      "publication_status": "Published - Jun 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/developing-professional-scepticism-in-the-accounting-classroom-a-/",
+      "doi": "10.1111/acfi.70206",
+      "journal": "Accounting & Finance",
+      "issn": "0810-5391",
+      "eissn": "",
+      "volume": "66",
+      "issue": "2",
+      "pages": "1847-1868",
+      "authors": "Prerana Agrawal, Jac Birt, Mark Holub, Warrick Van Zyl",
+      "uwa_authors": [
+        {
+          "name": "Prerana Agrawal",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/prerana-agrawal/"
+        },
+        {
+          "name": "Mark Holub",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/mark-holub/"
+        },
+        {
+          "name": "Warrick Van Zyl",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/warrick-van-zyl/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "do-corporate-imitation-behaviors-of-csr-practices-affect-bank-loa",
+      "title": "Do corporate imitation behaviors of CSR practices affect bank loan contracting? Evidence from a text-based measure",
+      "publication_year": "2026",
+      "publication_status": "Published - 3 Feb 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/do-corporate-imitation-behaviors-of-csr-practices-affect-bank-loa/",
+      "doi": "10.1108/IJMF-04-2025-0173",
+      "journal": "International Journal of Managerial Finance",
+      "issn": "1743-9132",
+      "eissn": "",
+      "volume": "22",
+      "issue": "1",
+      "pages": "90-127",
+      "authors": "Wencheng Cao, Yuan George Shan, Jianbo Song",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/105025444977",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "does-artificial-intelligence-mitigate-climate-change-exposure",
+      "title": "Does artificial intelligence mitigate climate change exposure?",
+      "publication_year": "2026",
+      "publication_status": "Published - Feb 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/does-artificial-intelligence-mitigate-climate-change-exposure/",
+      "doi": "10.1016/j.jbankfin.2025.107623",
+      "journal": "Journal of Banking & Finance",
+      "issn": "1872-6372",
+      "eissn": "",
+      "volume": "183",
+      "issue": "107623",
+      "pages": "",
+      "authors": "Alex Zhang, Le Luo, Joey Yang",
+      "uwa_authors": [
+        {
+          "name": "Alex Zhang",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/alex-zhang/"
+        },
+        {
+          "name": "Joey Yang",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/joey-yang/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105027186803#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/finance-2/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "from-human-hands-to-machine-minds-financing-ai-driven-entrepreneu-2",
+      "title": "From Human Hands to Machine Minds: Financing AI-Driven Entrepreneurship in Reward-Based Crowdfunding",
+      "publication_year": "2026",
+      "publication_status": "Published - Jun 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/from-human-hands-to-machine-minds-financing-ai-driven-entrepreneu-2/",
+      "doi": "10.1111/acfi.70207",
+      "journal": "Accounting and Finance",
+      "issn": "0810-5391",
+      "eissn": "",
+      "volume": "66",
+      "issue": "2",
+      "pages": "1055-1076",
+      "authors": "Zirui Song, Yihui Lan, Yuan George Shan",
+      "uwa_authors": [
+        {
+          "name": "Yihui Lan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/yihui-lan/"
+        },
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105032420795",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/finance-2/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "grain-by-grain-how-rice-farming-cultivates-esg-rating-consistency",
+      "title": "Grain by grain: How rice farming cultivates ESG rating consistency?",
+      "publication_year": "2026",
+      "publication_status": "Published - Sept 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/grain-by-grain-how-rice-farming-cultivates-esg-rating-consistency/",
+      "doi": "10.1016/j.ememar.2026.101525",
+      "journal": "Emerging Markets Review",
+      "issn": "1566-0141",
+      "eissn": "",
+      "volume": "74",
+      "issue": "",
+      "pages": "",
+      "authors": "Xin Wang, Wencheng Cao, Yuan George Shan, Joey Wenling Yang",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        },
+        {
+          "name": "Joey Wenling Yang",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/joey-yang/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "information-processing-gap-and-insider-trading-profitability-evid",
+      "title": "Information-processing gap and insider trading profitability: Evidence from the XBRL mandate",
+      "publication_year": "2026",
+      "publication_status": "E-pub ahead of print - 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/information-processing-gap-and-insider-trading-profitability-evid/",
+      "doi": "10.1016/j.bar.2026.101941",
+      "journal": "British Accounting Review",
+      "issn": "0890-8389",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Yuyun Huang, Jerry T. Parwada, Yuan George Shan, Joey W. Yang",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        },
+        {
+          "name": "Joey W. Yang",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/joey-yang/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "is-internal-carbon-pricing-an-agent-of-change-in-the-green-transi",
+      "title": "Is internal carbon pricing an agent of change in the green transition?",
+      "publication_year": "2026",
+      "publication_status": "Published - Jul 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/is-internal-carbon-pricing-an-agent-of-change-in-the-green-transi/",
+      "doi": "10.1016/j.bar.2025.101776",
+      "journal": "The British Accounting Review",
+      "issn": "0890-8389",
+      "eissn": "",
+      "volume": "58",
+      "issue": "4",
+      "pages": "",
+      "authors": "Huifa Chen, Yuan George Shan, Alex Zhang",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        },
+        {
+          "name": "Alex Zhang",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/alex-zhang/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105020819975#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "philanthropic-lottery-culture-and-corporate-social-responsibility",
+      "title": "Philanthropic lottery culture and corporate social responsibility: evidence from China",
+      "publication_year": "2026",
+      "publication_status": "E-pub ahead of print - 17 Jun 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/philanthropic-lottery-culture-and-corporate-social-responsibility/",
+      "doi": "10.1080/13504851.2026.2688892",
+      "journal": "Applied Economics Letters",
+      "issn": "1350-4851",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Jun Chen, Yuan George Shan, Yanfang Zhang",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/105042268509",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/finance-2/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "risk-factor-disclosures-tone-and-implied-cost-of-equity",
+      "title": "Risk factor disclosures tone and implied cost of equity",
+      "publication_year": "2026",
+      "publication_status": "Published - 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/risk-factor-disclosures-tone-and-implied-cost-of-equity/",
+      "doi": "10.1177/03128962261447079",
+      "journal": "Australian Journal of Management",
+      "issn": "0312-8962",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Muhammad Farhan Malik, Yuan George Shan, Zirui Song, Jamie Yixing Tong",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "tax-planning-under-pressure-the-impact-of-carbon-emissions-manage",
+      "title": "Tax Planning Under Pressure: The Impact of Carbon Emissions Management Post-Paris Agreement",
+      "publication_year": "2026",
+      "publication_status": "Accepted/In press - 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/tax-planning-under-pressure-the-impact-of-carbon-emissions-manage/",
+      "doi": "10.1111/acfi.70183",
+      "journal": "Accounting and Finance",
+      "issn": "0810-5391",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Aonan Sun, Yuan George Shan, Lyndie Bayne, Nishant Agarwal",
+      "uwa_authors": [
+        {
+          "name": "Aonan Sun",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/sistine-sun/"
+        },
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        },
+        {
+          "name": "Lyndie Bayne",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/lyndie-bayne/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105029058270#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-british-accounting-review-special-issue-new-challenges-in-gov",
+      "title": "The British Accounting Review: Special Issue New challenges in governance, sustainability and accountability of universities",
+      "publication_year": "2026",
+      "publication_status": "Published - Jan 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-british-accounting-review-special-issue-new-challenges-in-gov/",
+      "doi": "10.1016/j.bar.2025.101815",
+      "journal": "British Accounting Review",
+      "issn": "0890-8389",
+      "eissn": "",
+      "volume": "58",
+      "issue": "1",
+      "pages": "",
+      "authors": "Phil Hancock, Ilse Lubbe, Neil Marriott, Angus Duff",
+      "uwa_authors": [
+        {
+          "name": "Phil Hancock",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/phil-hancock/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105025575294",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-effect-of-csr-assurance-on-subsequent-corporate-greenwashing-",
+      "title": "The effect of CSR assurance on subsequent corporate greenwashing: Suggestion acquisition or opinion shopping?",
+      "publication_year": "2026",
+      "publication_status": "Published - Jul 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-effect-of-csr-assurance-on-subsequent-corporate-greenwashing-/",
+      "doi": "10.1016/j.bar.2025.101744",
+      "journal": "British Accounting Review",
+      "issn": "0890-8389",
+      "eissn": "",
+      "volume": "58",
+      "issue": "4",
+      "pages": "",
+      "authors": "Chao Xing, Yuan George Shan, Fan Yang, Yuming Zhang",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/105014961100#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-role-of-management-controls-in-managing-competing-institution",
+      "title": "The Role of Management Controls in Managing Competing Institutional Logics: A Case Study of a Non-Government Organization",
+      "publication_year": "2026",
+      "publication_status": "Published - May 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-role-of-management-controls-in-managing-competing-institution/",
+      "doi": "10.1111/faam.70023",
+      "journal": "Financial Accountability and Management",
+      "issn": "0267-4424",
+      "eissn": "",
+      "volume": "42",
+      "issue": "2",
+      "pages": "291-304",
+      "authors": "Frank Yuelong Ma, David Gilchrist, Vincent K. Chong, Lyndie Bayne",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Vincent K. Chong",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/vincent-chong/"
+        },
+        {
+          "name": "Lyndie Bayne",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/lyndie-bayne/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/105025550166",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-theory-of-adjusting-commitments-to-reestablish-balance-in-a-d",
+      "title": "The theory of adjusting commitments to reestablish balance in a disrupted life. A classic grounded theory of mature-age women’s perspectives on navigating university study.",
+      "publication_year": "2026",
+      "publication_status": "Unpublished - 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-theory-of-adjusting-commitments-to-reestablish-balance-in-a-d/",
+      "doi": "10.26182/ra1z-ah97",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Silvana Ilievska",
+      "uwa_authors": [],
+      "item_type": "Research output: Thesis › Doctoral Thesis",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": false,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-value-of-an-early-warning-from-crowdsourced-cybersecurity-vul",
+      "title": "The Value of an Early Warning from Crowdsourced Cybersecurity Vulnerabilities",
+      "publication_year": "2026",
+      "publication_status": "E-pub ahead of print - 13 Mar 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-value-of-an-early-warning-from-crowdsourced-cybersecurity-vul/",
+      "doi": "10.1080/08874417.2026.2641007",
+      "journal": "Journal of Computer Information Systems",
+      "issn": "0022-0310",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Wuqing Wu, Liuyi Zhang, Kaibin Zhang, Yuan George Shan",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105032888097",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "threshold-concepts-in-the-preparation-of-consolidated-financial-s",
+      "title": "Threshold Concepts in the Preparation of Consolidated Financial Statements",
+      "publication_year": "2026",
+      "publication_status": "Published - Jun 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/threshold-concepts-in-the-preparation-of-consolidated-financial-s/",
+      "doi": "10.1111/acfi.70163",
+      "journal": "Accounting and Finance",
+      "issn": "0810-5391",
+      "eissn": "",
+      "volume": "66",
+      "issue": "2",
+      "pages": "1833-1846",
+      "authors": "Nikki Schönfeldt, Phil Hancock, Jacqueline Birt",
+      "uwa_authors": [
+        {
+          "name": "Nikki Schönfeldt",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/nikki-schonfeldt/"
+        },
+        {
+          "name": "Phil Hancock",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/phil-hancock/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/105026406939#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "tough-ratings-tougher-sell-how-different-types-of-adjustment-affe",
+      "title": "Tough Ratings, Tougher Sell: How Different Types of Adjustment Affect Managers’ Asymmetric Algorithm Use in Performance Evaluation Judgments",
+      "publication_year": "2026",
+      "publication_status": "Published - May 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/tough-ratings-tougher-sell-how-different-types-of-adjustment-affe/",
+      "doi": "10.2308/TAR-2023-0610",
+      "journal": "Accounting Review",
+      "issn": "1558-7967",
+      "eissn": "",
+      "volume": "101",
+      "issue": "3",
+      "pages": "413-440",
+      "authors": "Fangbin Lin, Mandy Cheng, Kerry Humphreys",
+      "uwa_authors": [
+        {
+          "name": "Fangbin Lin",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/fangbin-lin/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "urban-rail-transit-and-labour-cost-stickiness-evidence-from-china",
+      "title": "Urban Rail Transit and Labour Cost Stickiness: Evidence From China",
+      "publication_year": "2026",
+      "publication_status": "E-pub ahead of print - 6 Apr 2026",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/urban-rail-transit-and-labour-cost-stickiness-evidence-from-china/",
+      "doi": "10.1111/acfi.70213",
+      "journal": "Accounting and Finance",
+      "issn": "0810-5391",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Guoliang Chen, Yuan George Shan, Wuqing Wu",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "a-new-approach-to-programs-for-families-and-children-submission-t",
+      "title": "A New Approach to Programs for Families and Children: Submission to the Department of Social Services, Australian Government",
+      "publication_year": "2025",
+      "publication_status": "Published - 8 Dec 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/a-new-approach-to-programs-for-families-and-children-submission-t/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Working paper › Discussion paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "aasb-research-centre-working-paper-no-26-02-service-performance-r",
+      "title": "AASB Research Centre Working Paper No. 26-02: Service Performance Reporting for Private Sector Not-for-profits - An Updated Literature Review",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/aasb-research-centre-working-paper-no-26-02-service-performance-r/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Ushi Ghoorah, David Gilchrist, Vien Chu, Mono Nikidehaghani, Cheri Yang, Yuyu Zhang",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Working paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "aasb-research-centre-working-paper-no-26-03-service-performance-r",
+      "title": "AASB Research Centre Working Paper No. 26-03: Service Performance Reporting - Insights from Domestic and International Experience",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/aasb-research-centre-working-paper-no-26-03-service-performance-r/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Ushi Ghoorah, David Gilchrist, Vien Chu, Phil Hancock, Mono Nikidehaghani, Cherrie Yang, Yuyu Zhang",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Phil Hancock",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/phil-hancock/"
+        }
+      ],
+      "item_type": "Research output: Working paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "aasb-working-paper-no-26-01-connectivity-of-non-financial-informa",
+      "title": "AASB Working Paper No. 26-01: Connectivity of Non-Financial Information and Financial Information - A NFP Private Sector Study",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/aasb-working-paper-no-26-01-connectivity-of-non-financial-informa/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Ushi Ghoorah, David Gilchrist, Craig Furneaux, Phil Hancock, Nikki Schonfeldt",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Phil Hancock",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/phil-hancock/"
+        },
+        {
+          "name": "Nikki Schonfeldt",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/nikki-schonfeldt/"
+        }
+      ],
+      "item_type": "Research output: Working paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "acquisition-year-earnings-and-operating-cash-flow-as-measures-of-",
+      "title": "Acquisition-year earnings and operating cash flow as measures of firm performance",
+      "publication_year": "2025",
+      "publication_status": "Unpublished - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/acquisition-year-earnings-and-operating-cash-flow-as-measures-of-/",
+      "doi": "10.26182/zjkq-s195",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Jian Liang",
+      "uwa_authors": [],
+      "item_type": "Research output: Thesis › Doctoral Thesis",
+      "open_access": false,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": false,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "carbon-management-system-and-firm-operational-efficiency",
+      "title": "Carbon Management System and Firm Operational Efficiency",
+      "publication_year": "2025",
+      "publication_status": "Published - Dec 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/carbon-management-system-and-firm-operational-efficiency/",
+      "doi": "10.1111/acfi.70086",
+      "journal": "Accounting and Finance",
+      "issn": "0810-5391",
+      "eissn": "",
+      "volume": "65",
+      "issue": "4",
+      "pages": "3710-3738",
+      "authors": "Pramila Shrestha, Bobae Choi, Le Luo, Junru Zhang",
+      "uwa_authors": [
+        {
+          "name": "Junru Zhang",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/alex-zhang/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": true,
+      "scopus_url": "https://www.scopus.com/pages/publications/105014623127#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "costing-amp-pricing-for-human-services-framework-a-component-of-t",
+      "title": "Costing & Pricing for Human Services Framework: A Component of the Human Services Costing & Pricing Resource Package",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/costing-amp-pricing-for-human-services-framework-a-component-of-t/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Working paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "costing-amp-pricing-modelling-handbook-a-component-of-the-human-s",
+      "title": "Costing & Pricing Modelling Handbook: A Component of the Human Services Costing & Pricing Resource Package",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/costing-amp-pricing-modelling-handbook-a-component-of-the-human-s/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Working paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "editorial-third-sector-review-3",
+      "title": "Editorial - Third Sector Review",
+      "publication_year": "2025",
+      "publication_status": "Published - 19 Dec 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/editorial-third-sector-review-3/",
+      "doi": "",
+      "journal": "Third Sector Review",
+      "issn": "1323-9163",
+      "eissn": "",
+      "volume": "31",
+      "issue": "2",
+      "pages": "1-2",
+      "authors": "David Gilchrist",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Editorial › peer-review",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "financial-strategic-alliance-and-corporate-risk-taking-evidence-f",
+      "title": "Financial Strategic Alliance and Corporate Risk-Taking: Evidence From China",
+      "publication_year": "2025",
+      "publication_status": "E-pub ahead of print - 28 Dec 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/financial-strategic-alliance-and-corporate-risk-taking-evidence-f/",
+      "doi": "10.1111/acfi.70158",
+      "journal": "Accounting and Finance",
+      "issn": "0810-5391",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Wencheng Cao, Yuan George Shan",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/105026069586",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "guest-editorial-carbon-emissions-trading-and-supply-chain-informa",
+      "title": "Guest editorial: Carbon emissions trading and supply chain, information disclosure, and sustainability reporting assurance",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/guest-editorial-carbon-emissions-trading-and-supply-chain-informa/",
+      "doi": "10.1108/SAMPJ-09-2025-961",
+      "journal": "Sustainability Accounting, Management and Policy Journal",
+      "issn": "2040-8021",
+      "eissn": "",
+      "volume": "16",
+      "issue": "5",
+      "pages": "1165-1168",
+      "authors": "Simone Domenico Scagnelli, Grantley Taylor, Yuan George Shan, Donghui Li",
+      "uwa_authors": [
+        {
+          "name": "Yuan George Shan",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Editorial › peer-review",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/105024476565",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "human-services-costing-amp-pricing-resource-package-single-produc",
+      "title": "Human Services Costing & Pricing Resource Package: Single Product Model",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/human-services-costing-amp-pricing-resource-package-single-produc/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "human-services-costing-amp-pricing-resource-package-training-vide",
+      "title": "Human Services Costing & Pricing Resource Package: Training Video 1 - Introduction",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/human-services-costing-amp-pricing-resource-package-training-vide/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "human-services-costing-amp-pricing-resource-package-video-2-costi",
+      "title": "Human Services Costing & Pricing Resource Package: Video 2 - Costing & Pricing Governance",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/human-services-costing-amp-pricing-resource-package-video-2-costi/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "human-services-costing-amp-pricing-resource-package-video-3-the-n",
+      "title": "Human Services Costing & Pricing Resource Package: Video 3 - The Nature of Costing",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/human-services-costing-amp-pricing-resource-package-video-3-the-n/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "human-services-costing-amp-pricing-resource-package-video-4-the-m",
+      "title": "Human Services Costing & Pricing Resource Package: Video 4 - The MS Excel Costing Models",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/human-services-costing-amp-pricing-resource-package-video-4-the-m/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "human-services-costing-amp-pricing-resource-package-video-5-costi",
+      "title": "Human Services Costing & Pricing Resource Package: Video 5 - Costing & Government Procurement",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/human-services-costing-amp-pricing-resource-package-video-5-costi/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "human-services-costing-amp-pricing-resources-package-service-prov",
+      "title": "Human Services Costing & Pricing Resources Package: Service Provider Model",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/human-services-costing-amp-pricing-resources-package-service-prov/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Zoe Callis, Paul Flatau, Leanne Lester",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Zoe Callis",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/zoe-callis/"
+        },
+        {
+          "name": "Paul Flatau",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-flatau/"
+        },
+        {
+          "name": "Leanne Lester",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/leanne-lester/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/school-of-psychological-science/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/",
+        "https://research-repository.uwa.edu.au/en/organisations/centre-for-social-impact/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "human-services-devolution-and-procurement-practice-the-australian",
+      "title": "Human Services: Devolution and Procurement Practice - The Australian Experience",
+      "publication_year": "2025",
+      "publication_status": "Published - 11 Nov 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/human-services-devolution-and-procurement-practice-the-australian/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Contribution to conference › Conference presentation/ephemera",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "ng-butlins-1959-monograph-colonial-socialism-in-australia-and-the",
+      "title": "N.G. Butlin's 1959 Monograph \"Colonial Socialism in Australia\" and the Discourse in Economic History",
+      "publication_year": "2025",
+      "publication_status": "Published - 19 Jul 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/ng-butlins-1959-monograph-colonial-socialism-in-australia-and-the/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Chapter in Book/Conference paper › Conference paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "open-university-uk-human-services-devolution-and-procurement-the-",
+      "title": "Open University, UK: Human Services Devolution and Procurement - The Australian Experience",
+      "publication_year": "2025",
+      "publication_status": "Published - 11 Nov 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/open-university-uk-human-services-devolution-and-procurement-the-/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Contribution to conference › Conference presentation/ephemera",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-cost-real-impact-case-study-series-northern-territory",
+      "title": "Real Cost, Real Impact Case Study Series: Northern Territory",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-cost-real-impact-case-study-series-northern-territory/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impact-case-study-series-australia-capital-territ",
+      "title": "Real Costs, Real Impact Case Study Series: Australia Capital Territory",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impact-case-study-series-australia-capital-territ/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impact-case-study-series-geraldton-western-austra",
+      "title": "Real Costs, Real Impact Case Study Series: Geraldton, Western Australia",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impact-case-study-series-geraldton-western-austra/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impacts-case-study-series-brisbane-queensland",
+      "title": "Real Costs, Real Impacts Case Study Series: Brisbane, Queensland",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impacts-case-study-series-brisbane-queensland/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impacts-case-study-series-victoria",
+      "title": "Real Costs, Real Impacts Case Study Series: Victoria",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impacts-case-study-series-victoria/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impacts-case-study-series-wilcannia-forbes-new-so",
+      "title": "Real Costs, Real Impacts Case Study Series: Wilcannia-Forbes, New South Wales",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impacts-case-study-series-wilcannia-forbes-new-so/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impacts-case-study-series-wollongong-new-south-wa",
+      "title": "Real Costs, Real Impacts Case Study Series: Wollongong, New South Wales",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impacts-case-study-series-wollongong-new-south-wa/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impacts-policy-summit-booklet",
+      "title": "Real Costs, Real Impacts Policy Summit Booklet",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impacts-policy-summit-booklet/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Other output",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impacts-research-summary",
+      "title": "Real Costs, Real Impacts Research Summary",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impacts-research-summary/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "real-costs-real-impacts-a-path-to-social-services-sustainability",
+      "title": "Real Costs, Real Impacts: a Path to Social Services Sustainability",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/real-costs-real-impacts-a-path-to-social-services-sustainability/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Ben Perks",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        },
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "school-of-education-sheffield-university-the-creation-of-public-v",
+      "title": "School of Education, Sheffield University: The Creation of Public Value in Human Services",
+      "publication_year": "2025",
+      "publication_status": "Published - 13 Nov 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/school-of-education-sheffield-university-the-creation-of-public-v/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Contribution to conference › Conference presentation/ephemera",
+      "open_access": false,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "summary-report-the-lifetime-price-of-harm-economic-costs-of-sexua",
+      "title": "Summary Report: The Lifetime Price of Harm - Economic Costs of Sexual Violence and the Case for Timely Intervention in Australia",
+      "publication_year": "2025",
+      "publication_status": "Published - Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/summary-report-the-lifetime-price-of-harm-economic-costs-of-sexua/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Ben Perks, David Gilchrist",
+      "uwa_authors": [
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        },
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Book/Report › Report",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "sustainable-development-goal-87-eradicating-modern-slavery-in-aus",
+      "title": "Sustainable Development Goal 8.7: Eradicating Modern Slavery in Australia",
+      "publication_year": "2025",
+      "publication_status": "Published - 28 Nov 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/sustainable-development-goal-87-eradicating-modern-slavery-in-aus/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Fiona McGaughey, Lyndie Bayne, Dominic Dagbanja, Rebecca Faugno",
+      "uwa_authors": [
+        {
+          "name": "Fiona McGaughey",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/fiona-mcgaughey/"
+        },
+        {
+          "name": "Lyndie Bayne",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/lyndie-bayne/"
+        },
+        {
+          "name": "Rebecca Faugno",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/rebecca-faugno/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-law-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-clock-ticks-temporal-effects-in-brand-donations",
+      "title": "The Clock Ticks: Temporal Effects in Brand Donations",
+      "publication_year": "2025",
+      "publication_status": "Published - Dec 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-clock-ticks-temporal-effects-in-brand-donations/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Kai Wang, Zelin Tong, Fang Liu, Vincent Chong, Liem Viet Ngo",
+      "uwa_authors": [
+        {
+          "name": "Fang Liu",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/fang-liu/"
+        },
+        {
+          "name": "Vincent Chong",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/vincent-chong/"
+        }
+      ],
+      "item_type": "Research output: Chapter in Book/Conference paper › Conference paper › peer-review",
+      "open_access": false,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/marketing/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-effectiveness-of-chatgpt-to-support-threshold-concepts-knowle",
+      "title": "The effectiveness of ChatGPT to support threshold concepts knowledge in financial accounting an exploratory study",
+      "publication_year": "2025",
+      "publication_status": "Published - 29 Oct 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-effectiveness-of-chatgpt-to-support-threshold-concepts-knowle/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "16--27",
+      "authors": "Ilse Lubbe, Nikki Schonfeldt",
+      "uwa_authors": [
+        {
+          "name": "Nikki Schonfeldt",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/nikki-schonfeldt/"
+        }
+      ],
+      "item_type": "Research output: Chapter in Book/Conference paper › Conference paper › peer-review",
+      "open_access": false,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-impact-of-an-esg-nudge-on-retail-investor-engagement-in-susta",
+      "title": "The impact of an ESG nudge on retail investor engagement in sustainable finance: evidence from an investment decision experiment",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-impact-of-an-esg-nudge-on-retail-investor-engagement-in-susta/",
+      "doi": "10.1108/SAMPJ-10-2024-1104",
+      "journal": "Sustainability Accounting, Management and Policy Journal",
+      "issn": "2040-8021",
+      "eissn": "",
+      "volume": "16",
+      "issue": "6",
+      "pages": "1807-1830",
+      "authors": "Glen Hutchings",
+      "uwa_authors": [
+        {
+          "name": "Glen Hutchings",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/glen-hutchings/"
+        }
+      ],
+      "item_type": "Research output: Contribution to journal › Article › peer-review",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/105024413061#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-irish-welfare-state-its-historical-and-contemporary-developme",
+      "title": "The Irish Welfare State: Its Historical and Contemporary Development",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-irish-welfare-state-its-historical-and-contemporary-developme/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Nurdan Colleran",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "the-lifetime-price-of-harm-economic-costs-of-sexual-violence-and--2",
+      "title": "The Lifetime Price of Harm - Economic Costs of Sexual Violence and the Case for Early Intervention in Australia",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-lifetime-price-of-harm-economic-costs-of-sexual-violence-and--2/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "Ben Perks, David Gilchrist",
+      "uwa_authors": [
+        {
+          "name": "Ben Perks",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/ben-perks/"
+        },
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Working paper",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "universite-lumiere-lyon-2-project-citizens-first-the-development-",
+      "title": "Universite Lumiere Lyon 2 - Project: Citizens First - The Development and Status of the French Welfare State",
+      "publication_year": "2025",
+      "publication_status": "Published - 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/universite-lumiere-lyon-2-project-citizens-first-the-development-/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist, Kate Searle, Rebeca Gomez Betancourt",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Other contribution",
+      "open_access": false,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/",
+        "https://research-repository.uwa.edu.au/en/organisations/multi-discipline/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "university-of-leicester-building-public-value-via-the-third-secto",
+      "title": "University of Leicester: Building Public Value Via The Third Sector - Direct and Indirect Value Adding",
+      "publication_year": "2025",
+      "publication_status": "Published - 19 Nov 2025",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/university-of-leicester-building-public-value-via-the-third-secto/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "authors": "David Gilchrist",
+      "uwa_authors": [
+        {
+          "name": "David Gilchrist",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+        }
+      ],
+      "item_type": "Research output: Contribution to conference › Conference presentation/ephemera",
+      "open_access": true,
+      "scopus_url": "",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-business-school/",
+        "https://research-repository.uwa.edu.au/en/organisations/uwa-public-policy-institute/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    },
+    {
+      "publication_id": "price-erosion-and-sales-volume-analysis-of-china-smart-phone-mark",
+      "title": "Price Erosion and Sales Volume Analysis of China Smart-Phone Market",
+      "publication_year": "2016",
+      "publication_status": "Published - 2016",
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/price-erosion-and-sales-volume-analysis-of-china-smart-phone-mark/",
+      "doi": "",
+      "journal": "",
+      "issn": "",
+      "eissn": "",
+      "volume": "",
+      "issue": "",
+      "pages": "16--57",
+      "authors": "Fangbin Lin",
+      "uwa_authors": [
+        {
+          "name": "Fangbin Lin",
+          "profile_url": "https://research-repository.uwa.edu.au/en/persons/fangbin-lin/"
+        }
+      ],
+      "item_type": "Research output: Chapter in Book/Conference paper › Chapter",
+      "open_access": false,
+      "scopus_url": "https://www.scopus.com/pages/publications/85019907243#tab=citedBy",
+      "organisation_urls": [
+        "https://research-repository.uwa.edu.au/en/organisations/accounting/"
+      ],
+      "accounting_affiliation_observed": true,
+      "source_url": "https://research-repository.uwa.edu.au/en/organisations/accounting/",
+      "harvested_at": "2026-08-11T16:56:18.032Z"
+    }
+  ]
+}

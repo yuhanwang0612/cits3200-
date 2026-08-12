@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-08-11T17:08:34.313Z",
+  "scope": "University of Melbourne Department of Finance proof of concept",
+  "staff_candidate_records": 49,
+  "staff_records": 49,
+  "staff_excluded_by_department_filter": 0,
+  "staff_records_with_academic_level": 39,
+  "staff_records_requiring_inclusion_review": 25,
+  "publication_records": 254,
+  "minerva_reported_record_count": 254,
+  "minerva_extracted_record_count": 254,
+  "minerva_count_reconciles": true,
+  "publications_with_year": 254,
+  "publications_with_article_url": 254,
+  "publications_with_abdc_rating": 146,
+  "publications_with_ambiguous_abdc_match": 0,
+  "researcher_publication_links": 145,
+  "publications_not_matched_to_current_staff": 124,
+  "publications_matched_to_multiple_current_staff": 14,
+  "warnings": [
+    "The Minerva Finance collection is not guaranteed to contain every publication for every current researcher.",
+    "Researcher-publication links are based on normalized full-name matching and require validation.",
+    "Staff inclusion rules for teaching-only, professional, emeritus, visitor and postdoctoral roles require client confirmation.",
+    "ABDC ratings use the official 2025-v2 list current to May 2026; confirm the required ranking version with the client."
+  ]
+}

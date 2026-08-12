@@ -5,7 +5,7 @@ const COLLECTION_ID = "c9dc98ca-3fac-599b-8dee-557a4fb3f5b9";
 const API_ROOT = "https://minerva-access.unimelb.edu.au/server/api";
 const COLLECTION_URL = `${API_ROOT}/core/collections/${COLLECTION_ID}`;
 const SEARCH_URL = `${API_ROOT}/discover/search/objects`;
-const OUTPUT_DIR = path.resolve(process.argv[2] || "unimelb_finance/output");
+const OUTPUT_DIR = path.resolve(process.argv[2] || "output");
 const PAGE_SIZE = 20;
 
 const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -48,18 +48,25 @@ function parseItem(wrapper) {
   if (!item || item.type !== "item") return null;
   const metadata = item.metadata || {};
 
+  const issuedDate = first(metadata, "dc.date.issued");
+  const doi = first(metadata, "dc.identifier.doi").replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, "");
+  const itemUrl = item.handle ? `https://hdl.handle.net/${item.handle}` : "";
+  const openAccessUrl = first(metadata, "melbourne.openaccess.url");
+
   return {
     item_uuid: item.uuid || item.id || "",
     handle: item.handle || "",
-    item_url: item.handle ? `https://hdl.handle.net/${item.handle}` : "",
+    item_url: itemUrl,
     title: first(metadata, "dc.title") || clean(item.name),
     authors: values(metadata, "dc.contributor.author"),
     melbourne_authors: values(metadata, "melbourne.contributor.author"),
     internal_author_ids: values(metadata, "melbourne.internal.authorids"),
-    issued_date: first(metadata, "dc.date.issued"),
+    issued_date: issuedDate,
+    publication_year: issuedDate.match(/\b(18|19|20)\d{2}\b/)?.[0] || "",
+    article_url: doi ? `https://doi.org/${doi}` : openAccessUrl || itemUrl,
     available_date: first(metadata, "dc.date.available"),
     item_type: first(metadata, "dc.type"),
-    doi: first(metadata, "dc.identifier.doi"),
+    doi,
     issn: first(metadata, "dc.identifier.issn"),
     eissn: first(metadata, "dc.identifier.eissn"),
     journal: first(metadata, "melbourne.source.title"),
@@ -73,7 +80,7 @@ function parseItem(wrapper) {
     citation_text: first(metadata, "dc.identifier.citation"),
     license: first(metadata, "dc.rights.license"),
     open_access_status: first(metadata, "melbourne.openaccess.status"),
-    open_access_url: first(metadata, "melbourne.openaccess.url"),
+    open_access_url: openAccessUrl,
     last_modified: item.lastModified || "",
   };
 }
@@ -138,6 +145,8 @@ const columns = [
   "melbourne_authors",
   "internal_author_ids",
   "issued_date",
+  "publication_year",
+  "article_url",
   "available_date",
   "item_type",
   "doi",

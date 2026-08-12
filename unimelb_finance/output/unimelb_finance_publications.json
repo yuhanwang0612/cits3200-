@@ -4,7 +4,7 @@
   "collection_handle": "11343/408",
   "collection_url": "https://minerva-access.unimelb.edu.au/collections/c9dc98ca-3fac-599b-8dee-557a4fb3f5b9",
   "api_url": "https://minerva-access.unimelb.edu.au/server/api/core/collections/c9dc98ca-3fac-599b-8dee-557a4fb3f5b9",
-  "harvested_at": "2026-08-08T17:07:27.024Z",
+  "harvested_at": "2026-08-09T15:09:32.158Z",
   "reported_record_count": 254,
   "extracted_record_count": 254,
   "records": [
@@ -29,6 +29,8 @@
         "Gygax, Andre; 223; 0000-0001-7265-9400"
       ],
       "issued_date": "2025-10-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.cja.2025.103454",
       "available_date": "2026-06-23T02:09:33Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.cja.2025.103454",
@@ -70,6 +72,8 @@
         "Didisheim, Antoine; 182622; 0009-0004-2846-1957"
       ],
       "issued_date": "2025-10",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.econlet.2025.112602",
       "available_date": "2026-06-23T01:53:29Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.econlet.2025.112602",
@@ -118,6 +122,8 @@
         "Andrabi, Syed; 163847; 0000-0003-3929-5195"
       ],
       "issued_date": "2025-01-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1080/02699931.2025.2597887",
       "available_date": "2026-06-22T04:58:19Z",
       "item_type": "Journal Article",
       "doi": "10.1080/02699931.2025.2597887",
@@ -167,6 +173,8 @@
         "Yadav, Nitin; 127160; 0000-0003-0132-1028"
       ],
       "issued_date": "2025-12-08",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1371/journal.pcbi.1013143",
       "available_date": "2026-03-13T02:25:47Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pcbi.1013143",
@@ -208,6 +216,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2025-10-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1371/journal.pdig.0001044",
       "available_date": "2026-03-13T02:13:49Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pdig.0001044",
@@ -249,6 +259,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2025-10-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1371/journal.pone.0328424",
       "available_date": "2026-03-13T02:13:44Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0328424",
@@ -293,6 +305,8 @@
         "Yadav, Nitin; 127160; 0000-0003-0132-1028"
       ],
       "issued_date": "2025",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1038/s44271-025-00355-x",
       "available_date": "2026-03-02T00:08:06Z",
       "item_type": "Journal Article",
       "doi": "10.1038/s44271-025-00355-x",
@@ -336,6 +350,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2025-03-15",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1162/coli_a_00536",
       "available_date": "2026-01-11T21:51:34Z",
       "item_type": "Journal Article",
       "doi": "10.1162/coli_a_00536",
@@ -380,6 +396,8 @@
         "Brugler, James; 117315; 0000-0002-3905-6007"
       ],
       "issued_date": "2025-06-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1111/jfir.12432",
       "available_date": "2026-01-11T21:48:09Z",
       "item_type": "Journal Article",
       "doi": "10.1111/jfir.12432",
@@ -419,6 +437,8 @@
         "Inozemtsev, Eduard; 184695; 0009-0005-3542-0392"
       ],
       "issued_date": "2025-05-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1017/S0022109024000206",
       "available_date": "2026-01-11T21:44:43Z",
       "item_type": "Journal Article",
       "doi": "10.1017/S0022109024000206",
@@ -461,6 +481,8 @@
         "Brugler, James; 117315; 0000-0002-3905-6007"
       ],
       "issued_date": "2025-06-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.jfineco.2025.104018",
       "available_date": "2026-01-11T21:44:41Z",
       "item_type": "Conference Paper",
       "doi": "10.1016/j.jfineco.2025.104018",
@@ -503,6 +525,8 @@
         "Pham, Hung Viet; 182729; 0000-0001-8163-4010"
       ],
       "issued_date": "2025-03",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.iref.2025.103844",
       "available_date": "2026-01-08T05:26:16Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.iref.2025.103844",
@@ -544,6 +568,8 @@
         "Zhou, Yun; 195949; 0000-0003-0115-3124"
       ],
       "issued_date": "2025-10",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.econmod.2025.107169",
       "available_date": "2026-01-08T05:21:00Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.econmod.2025.107169",
@@ -584,6 +610,8 @@
         "Garagnani, Michele; 184696; 0000-0002-2510-7109"
       ],
       "issued_date": "2025-04-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.actpsy.2025.104814",
       "available_date": "2026-01-07T02:26:45Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.actpsy.2025.104814",
@@ -632,6 +660,8 @@
         "Metha, Jeremy; 130351"
       ],
       "issued_date": "2025-09-13",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.bbr.2025.115691",
       "available_date": "2026-01-07T02:20:21Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.bbr.2025.115691",
@@ -673,6 +703,8 @@
         "Garagnani, Michele; 184696; 0000-0002-2510-7109"
       ],
       "issued_date": "2025-06-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1177/09567976251339195",
       "available_date": "2026-01-07T02:16:14Z",
       "item_type": "Journal Article",
       "doi": "10.1177/09567976251339195",
@@ -726,6 +758,8 @@
         "Turnbull, Robert; 157842; 0000-0003-1274-6750"
       ],
       "issued_date": "2025",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.34133/remotesensing.0780",
       "available_date": "2026-01-06T03:08:01Z",
       "item_type": "Journal Article",
       "doi": "10.34133/remotesensing.0780",
@@ -769,6 +803,8 @@
         "Park, Hoonsuk; 158952; 0000-0003-1271-4804"
       ],
       "issued_date": "2025-10",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.jfineco.2025.104143",
       "available_date": "2026-01-06T02:20:28Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jfineco.2025.104143",
@@ -810,6 +846,8 @@
         "Garagnani, Michele; 184696; 0000-0002-2510-7109"
       ],
       "issued_date": "2025-11",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.socscimed.2025.118472",
       "available_date": "2025-12-19T04:44:09Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.socscimed.2025.118472",
@@ -849,6 +887,8 @@
         "Pinder, Sean; 321; 0000-0003-3083-6047"
       ],
       "issued_date": "2026-06-01",
+      "publication_year": "2026",
+      "article_url": "https://doi.org/10.1111/jfir.12470",
       "available_date": "2025-12-01T02:31:03Z",
       "item_type": "Journal Article",
       "doi": "10.1111/jfir.12470",
@@ -888,6 +928,8 @@
         "Garagnani, Michele; 184696; 0000-0002-2510-7109"
       ],
       "issued_date": "2025-04-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1007/s11166-025-09451-z",
       "available_date": "2025-11-28T02:45:51Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s11166-025-09451-z",
@@ -928,6 +970,8 @@
         "Garagnani, Michele; 184696; 0000-0002-2510-7109"
       ],
       "issued_date": "2025-09-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1007/s00355-024-01580-9",
       "available_date": "2025-11-28T02:41:30Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s00355-024-01580-9",
@@ -973,6 +1017,8 @@
         "Keidel, Kristof; 168424; 0000-0002-1561-0157"
       ],
       "issued_date": "2025-03-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1093/schbul/sbad110",
       "available_date": "2025-09-18T00:54:49Z",
       "item_type": "Journal Article",
       "doi": "10.1093/schbul/sbad110",
@@ -1020,6 +1066,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2025-12-01",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1038/s41598-025-87601-8",
       "available_date": "2025-09-11T23:49:02Z",
       "item_type": "Journal Article",
       "doi": "10.1038/s41598-025-87601-8",
@@ -1061,6 +1109,8 @@
         "Ananyev, Maxim; 147478; 0000-0003-1749-4396"
       ],
       "issued_date": "2024-12-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1371/journal.pone.0315137",
       "available_date": "2025-09-11T23:45:20Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0315137",
@@ -1105,6 +1155,8 @@
         "Franco Ulloa, Juan Pablo; 130354; 0000-0003-2608-2035"
       ],
       "issued_date": "2024-09-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1371/journal.pcbi.1012447",
       "available_date": "2025-09-11T04:38:53Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pcbi.1012447",
@@ -1162,6 +1214,8 @@
         "Andrabi, Syed; 163847; 0000-0003-3929-5195"
       ],
       "issued_date": "2024-11-10",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1136/tc-2022-057655",
       "available_date": "2025-09-09T00:44:40Z",
       "item_type": "Journal Article",
       "doi": "10.1136/tc-2022-057655",
@@ -1205,6 +1259,8 @@
         "Brugler, James; 117315; 0000-0002-3905-6007"
       ],
       "issued_date": "2025-09",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.jfineco.2025.104086",
       "available_date": "2025-06-17T01:26:38Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jfineco.2025.104086",
@@ -1244,6 +1300,8 @@
         "Comerton-Forde, Carole; 25276; 0000-0002-1618-0371"
       ],
       "issued_date": "2025",
+      "publication_year": "2025",
+      "article_url": "https://doi.org/10.1016/j.finmar.2025.100983",
       "available_date": "2025-06-17T01:23:16Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.finmar.2025.100983",
@@ -1285,6 +1343,8 @@
         "Aramian, Fatemeh; 172447; 0009-0004-1050-9457"
       ],
       "issued_date": "2024-09-01",
+      "publication_year": "2024",
+      "article_url": "https://hdl.handle.net/11343/354032",
       "available_date": "2024-10-25T05:26:39Z",
       "item_type": "Report",
       "doi": "",
@@ -1326,6 +1386,8 @@
         "Aramian, Fatemeh; 172447; 0009-0004-1050-9457"
       ],
       "issued_date": "2024-10-01",
+      "publication_year": "2024",
+      "article_url": "https://hdl.handle.net/11343/354031",
       "available_date": "2024-10-25T05:21:49Z",
       "item_type": "Report",
       "doi": "",
@@ -1372,6 +1434,8 @@
         "Keidel, Kristof; 168424; 0000-0002-1561-0157"
       ],
       "issued_date": "2024-04-16",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1038/s44184-024-00060-3",
       "available_date": "2024-10-14T05:04:18Z",
       "item_type": "Journal Article",
       "doi": "10.1038/s44184-024-00060-3",
@@ -1423,6 +1487,8 @@
         "Metha, Jeremy; 130351"
       ],
       "issued_date": "2024-10-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1007/s00213-024-06628-3",
       "available_date": "2024-10-07T02:56:30Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s00213-024-06628-3",
@@ -1469,6 +1535,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2024-07-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1093/rof/rfae006",
       "available_date": "2024-10-03T22:18:50Z",
       "item_type": "Journal Article",
       "doi": "10.1093/rof/rfae006",
@@ -1513,6 +1581,8 @@
         "Bowman, Elizabeth; 14076; 0000-0002-6876-6446"
       ],
       "issued_date": "2024-03-21",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1186/s12889-024-18362-8",
       "available_date": "2024-10-03T22:12:57Z",
       "item_type": "Journal Article",
       "doi": "10.1186/s12889-024-18362-8",
@@ -1654,6 +1724,8 @@
         "Zhong, Zhuo; 54898; 0000-0001-6251-2552"
       ],
       "issued_date": "2024-06-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1111/jofi.13337",
       "available_date": "2024-10-03T03:14:53Z",
       "item_type": "Journal Article",
       "doi": "10.1111/jofi.13337",
@@ -1693,6 +1765,8 @@
         "Ng, Chi Yeung Anthony; 172980; 0000-0002-5098-5616"
       ],
       "issued_date": "2024-10-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1002/rfe.1209",
       "available_date": "2024-09-26T04:40:34Z",
       "item_type": "Journal Article",
       "doi": "10.1002/rfe.1209",
@@ -1738,6 +1812,8 @@
         "Murawski, Carsten; 5544; 0000-0002-1237-9535"
       ],
       "issued_date": "2024-02-15",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1002/hbm.26585",
       "available_date": "2024-09-25T02:57:40Z",
       "item_type": "Journal Article",
       "doi": "10.1002/hbm.26585",
@@ -1777,6 +1853,8 @@
         "Garagnani, Michele; 184696; 0000-0002-2510-7109"
       ],
       "issued_date": "2024-05-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1086/728666",
       "available_date": "2024-08-21T04:35:23Z",
       "item_type": "Journal Article",
       "doi": "10.1086/728666",
@@ -1815,6 +1893,8 @@
         "Gargano, Antonio; 605544A; 29212; 0000-0001-8542-6446; 0000-0002-0686-0576"
       ],
       "issued_date": "2024-01-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.15581/017.28.61-72",
       "available_date": "2024-08-21T03:07:31Z",
       "item_type": "Journal Article",
       "doi": "10.15581/017.28.61-72",
@@ -1855,6 +1935,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2024-09",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1016/j.jempfin.2024.101517",
       "available_date": "2024-08-21T02:12:48Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jempfin.2024.101517",
@@ -1893,6 +1975,8 @@
         "Inkmann, Joachim; 10095; 0000-0002-5526-7648"
       ],
       "issued_date": "2024-06",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1016/j.jempfin.2024.101494",
       "available_date": "2024-08-20T05:26:17Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jempfin.2024.101494",
@@ -1935,6 +2019,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2024-04",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1016/j.jfi.2024.101085",
       "available_date": "2024-08-20T05:23:31Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jfi.2024.101085",
@@ -1985,6 +2071,8 @@
         "Ponsonby, Anne-Louise; 10056; 0000-0002-6581-3657"
       ],
       "issued_date": "2024-03",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1016/j.finmar.2023.100881",
       "available_date": "2024-08-20T05:17:27Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.finmar.2023.100881",
@@ -2025,6 +2113,8 @@
         "Dark, Jonathan; 12012; 0000-0002-7688-0193"
       ],
       "issued_date": "2024-01-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1016/j.jempfin.2023.101463",
       "available_date": "2024-08-20T05:17:27Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jempfin.2023.101463",
@@ -2066,6 +2156,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2024-02",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2023.107074",
       "available_date": "2024-08-20T05:14:27Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2023.107074",
@@ -2106,6 +2198,8 @@
         "Ng, Chi Yeung Anthony; 172980; 0000-0002-5098-5616"
       ],
       "issued_date": "2024",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.3390/jrfm17070280",
       "available_date": "2024-07-10T01:24:35Z",
       "item_type": "Journal Article",
       "doi": "10.3390/jrfm17070280",
@@ -2147,6 +2241,8 @@
         "Aramian, Fatemeh; 172447; 0009-0004-1050-9457"
       ],
       "issued_date": "2023",
+      "publication_year": "2023",
+      "article_url": "https://hdl.handle.net/11343/345667",
       "available_date": "2024-06-19T02:17:45Z",
       "item_type": "Report",
       "doi": "",
@@ -2192,6 +2288,8 @@
         "Yadav, Nitin; 127160; 0000-0003-0132-1028"
       ],
       "issued_date": "2024-07",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1093/rof/rfae007",
       "available_date": "2024-06-03T02:42:32Z",
       "item_type": "Journal Article",
       "doi": "10.1093/rof/rfae007",
@@ -2246,6 +2344,8 @@
         "Lee, Min Shiuang; 145733; 0000-0003-0440-7716"
       ],
       "issued_date": "2024-06",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1016/j.jbef.2024.100906",
       "available_date": "2024-05-15T23:30:32Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbef.2024.100906",
@@ -2296,6 +2396,8 @@
         "Murawski, Carsten; 5544; 0000-0002-1237-9535"
       ],
       "issued_date": "2023",
+      "publication_year": "2023",
+      "article_url": "https://doi.org/10.1159/000533532",
       "available_date": "2024-05-15T23:30:30Z",
       "item_type": "Journal Article",
       "doi": "10.1159/000533532",
@@ -2341,6 +2443,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2024-06-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1287/mnsc.2023.4883",
       "available_date": "2024-01-22T03:14:14Z",
       "item_type": "Journal Article",
       "doi": "10.1287/mnsc.2023.4883",
@@ -2384,6 +2488,8 @@
         "Sotes-Paladino, Juan; 8446; 0000-0003-2447-7498"
       ],
       "issued_date": "2024-01-01",
+      "publication_year": "2024",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2023.107036",
       "available_date": "2024-01-22T01:28:01Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2023.107036",
@@ -2425,6 +2531,8 @@
         "Aramian, Fatemeh; 172447; 0009-0004-1050-9457"
       ],
       "issued_date": "2023-06-01",
+      "publication_year": "2023",
+      "article_url": "https://hdl.handle.net/11343/336902",
       "available_date": "2023-08-09T23:50:20Z",
       "item_type": "Working Paper",
       "doi": "",
@@ -2465,6 +2573,8 @@
         "Lattanzio, Gabriele; 182846; 0000-0003-1592-433X"
       ],
       "issued_date": "2023-05",
+      "publication_year": "2023",
+      "article_url": "https://doi.org/10.1016/j.finmar.2023.100836",
       "available_date": "2023-07-31T22:27:35Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.finmar.2023.100836",
@@ -2509,6 +2619,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2022-12-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1038/s41598-022-22278-x",
       "available_date": "2023-07-10T23:45:18Z",
       "item_type": "Journal Article",
       "doi": "10.1038/s41598-022-22278-x",
@@ -2550,6 +2662,8 @@
         "Aramian, Fatemeh; 172447; 0009-0004-1050-9457"
       ],
       "issued_date": "2023",
+      "publication_year": "2023",
+      "article_url": "https://hdl.handle.net/11343/329715",
       "available_date": "2023-05-01T05:06:36Z",
       "item_type": "Working Paper",
       "doi": "",
@@ -2588,6 +2702,8 @@
         "Balogh, Attila; 172695; 0000-0002-7026-1965"
       ],
       "issued_date": "2023",
+      "publication_year": "2023",
+      "article_url": "https://doi.org/10.1038/s41597-023-02147-6",
       "available_date": "2023-04-28T06:36:47Z",
       "item_type": "Journal Article",
       "doi": "10.1038/s41597-023-02147-6",
@@ -2626,6 +2742,8 @@
         "McCourt, Maurice; 141610; 0000-0002-1808-8675"
       ],
       "issued_date": "2022-06-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1111/jfir.12277",
       "available_date": "2022-11-03T22:30:37Z",
       "item_type": "Journal Article",
       "doi": "10.1111/jfir.12277",
@@ -2671,6 +2789,8 @@
         "van der Heijden, Thijs; 6041; 0000-0001-5999-9398"
       ],
       "issued_date": "2022-12-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1002/fut.22371",
       "available_date": "2022-10-25T03:06:04Z",
       "item_type": "Journal Article",
       "doi": "10.1002/fut.22371",
@@ -2721,6 +2841,8 @@
         "Doroc, Karlo; 128313; 0000-0003-0736-7131"
       ],
       "issued_date": "2022-12-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1038/s41598-022-16565-w",
       "available_date": "2022-10-06T02:16:54Z",
       "item_type": "Journal Article",
       "doi": "10.1038/s41598-022-16565-w",
@@ -2763,6 +2885,8 @@
         "Murawski, Carsten; 5544; 0000-0002-1237-9535"
       ],
       "issued_date": "2017-04-26",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.31234/osf.io/aps6u",
       "available_date": "2022-09-30T07:57:45Z",
       "item_type": "Preprint",
       "doi": "10.31234/osf.io/aps6u",
@@ -2803,6 +2927,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2022-05-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1371/journal.pbio.3001662",
       "available_date": "2022-09-29T07:01:25Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pbio.3001662",
@@ -2843,6 +2969,8 @@
         "Balogh, Attila; 172695; 0000-0002-7026-1965"
       ],
       "issued_date": "2022-07",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1016/j.irfa.2022.102047",
       "available_date": "2022-07-13T04:53:18Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.irfa.2022.102047",
@@ -2884,6 +3012,8 @@
         "Gertsberg, Marina; 169936; 0000-0003-4682-3654"
       ],
       "issued_date": "2022-05-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1016/j.euroecorev.2022.104083",
       "available_date": "2022-06-23T00:31:20Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.euroecorev.2022.104083",
@@ -2925,6 +3055,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2021-02-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1016/j.jcorpfin.2020.101800",
       "available_date": "2022-06-21T01:15:00Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jcorpfin.2020.101800",
@@ -2974,6 +3106,8 @@
         "de New, John; 16700; 0000-0002-9198-1814"
       ],
       "issued_date": "2022-06-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1111/1475-4932.12664",
       "available_date": "2022-06-10T04:34:01Z",
       "item_type": "Journal Article",
       "doi": "10.1111/1475-4932.12664",
@@ -3016,6 +3150,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2021-08-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1093/rfs/hhab046",
       "available_date": "2022-06-09T23:52:31Z",
       "item_type": "Journal Article",
       "doi": "10.1093/rfs/hhab046",
@@ -3056,6 +3192,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2022-01-12",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1371/journal.pone.0262513",
       "available_date": "2022-05-24T00:49:18Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0262513",
@@ -3096,6 +3234,8 @@
         "Gertsberg, Marina; 169936; 0000-0003-4682-3654"
       ],
       "issued_date": "2022-09-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1007/s10824-020-09403-2",
       "available_date": "2022-04-29T00:32:58Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s10824-020-09403-2",
@@ -3136,6 +3276,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2023-02",
+      "publication_year": "2023",
+      "article_url": "https://doi.org/10.1093/rof/rfac001",
       "available_date": "2022-04-29T00:31:21Z",
       "item_type": "Journal Article",
       "doi": "10.1093/rof/rfac001",
@@ -3180,6 +3322,8 @@
         "Bode, Stefan; 1642; 0000-0002-0258-7795"
       ],
       "issued_date": "2017-11-01",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.1037/xhp0000418",
       "available_date": "2022-04-03T06:34:20Z",
       "item_type": "Journal Article",
       "doi": "10.1037/xhp0000418",
@@ -3226,6 +3370,8 @@
         "Voigt, Katharina; 106104; 0000-0002-1027-9223"
       ],
       "issued_date": "2017-12",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.1037/xlm0000415",
       "available_date": "2022-04-03T06:32:07Z",
       "item_type": "Journal Article",
       "doi": "10.1037/xlm0000415",
@@ -3280,6 +3426,8 @@
         "Bennett, Daniel; 73780; 0000-0001-6608-9026"
       ],
       "issued_date": "2018",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1007/s42113-018-0012-6",
       "available_date": "2022-04-03T06:31:11Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s42113-018-0012-6",
@@ -3336,6 +3484,8 @@
         "Sewell, David; 94025"
       ],
       "issued_date": "2018-03-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1016/j.neuropsychologia.2018.01.040",
       "available_date": "2022-04-03T06:30:11Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.neuropsychologia.2018.01.040",
@@ -3393,6 +3543,8 @@
         "Summerell, Patrick; 128498"
       ],
       "issued_date": "2018-08-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1016/j.appet.2018.05.006",
       "available_date": "2022-04-03T06:29:21Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.appet.2018.05.006",
@@ -3442,6 +3594,8 @@
         "SPEER, SEBASTIAN; 117960"
       ],
       "issued_date": "2019-01-23",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1523/JNEUROSCI.1681-18.2018",
       "available_date": "2022-04-03T06:25:22Z",
       "item_type": "Journal Article",
       "doi": "10.1523/JNEUROSCI.1681-18.2018",
@@ -3484,6 +3638,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2021-09-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1111/pcn.13279",
       "available_date": "2022-01-21T00:57:45Z",
       "item_type": "Journal Article",
       "doi": "10.1111/pcn.13279",
@@ -3524,6 +3680,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2021-11-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.3390/brainsci11111384",
       "available_date": "2022-01-20T02:33:04Z",
       "item_type": "Journal Article",
       "doi": "10.3390/brainsci11111384",
@@ -3567,6 +3725,8 @@
         "Yadav, Nitin; 127160; 0000-0003-0132-1028"
       ],
       "issued_date": "2021-12-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1038/s41598-021-02596-2",
       "available_date": "2022-01-20T01:57:17Z",
       "item_type": "Journal Article",
       "doi": "10.1038/s41598-021-02596-2",
@@ -3609,6 +3769,8 @@
         "Easton, Stephen; 32413; 0000-0001-7855-8379"
       ],
       "issued_date": "2018-11-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1111/acfi.12298",
       "available_date": "2021-11-29T23:19:00Z",
       "item_type": "Journal Article",
       "doi": "10.1111/acfi.12298",
@@ -3655,6 +3817,8 @@
         "Wilkins, Roger; 12765; 0000-0002-8548-757X"
       ],
       "issued_date": "2018-12-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1111/roiw.12307",
       "available_date": "2021-11-29T22:47:29Z",
       "item_type": "Journal Article",
       "doi": "10.1111/roiw.12307",
@@ -3694,6 +3858,8 @@
         "Coleman, Patrick; 5196; 0000-0002-2728-6139"
       ],
       "issued_date": "2017-06",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.1111/1468-5973.12167",
       "available_date": "2021-11-25T23:17:48Z",
       "item_type": "Journal Article",
       "doi": "10.1111/1468-5973.12167",
@@ -3737,6 +3903,8 @@
         "Brown, Robert; 11184; 0000-0002-7424-4599"
       ],
       "issued_date": "2019-03-01",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1111/acfi.12255",
       "available_date": "2021-11-25T22:42:40Z",
       "item_type": "Journal Article",
       "doi": "10.1111/acfi.12255",
@@ -3779,6 +3947,8 @@
         "Zeng, Qi; 11502; 0000-0003-1228-0794"
       ],
       "issued_date": "2017-06-01",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.1111/1475-679X.12152",
       "available_date": "2021-11-16T23:47:45Z",
       "item_type": "Journal Article",
       "doi": "10.1111/1475-679X.12152",
@@ -3818,6 +3988,8 @@
         "Kelly, Patrick; 30764; 0000-0002-8540-7488"
       ],
       "issued_date": "2016-12-01",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1111/fima.12140",
       "available_date": "2021-11-16T23:29:23Z",
       "item_type": "Journal Article",
       "doi": "10.1111/fima.12140",
@@ -3856,6 +4028,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2016-12-01",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1111/apce.12128",
       "available_date": "2021-11-11T23:53:14Z",
       "item_type": "Journal Article",
       "doi": "10.1111/apce.12128",
@@ -3897,6 +4071,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2016-01-01",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1111/jbfa.12165",
       "available_date": "2021-11-11T22:40:34Z",
       "item_type": "Journal Article",
       "doi": "10.1111/jbfa.12165",
@@ -3936,6 +4112,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2022-04-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1287/mnsc.2021.3983",
       "available_date": "2021-10-26T00:12:54Z",
       "item_type": "Journal Article",
       "doi": "10.1287/mnsc.2021.3983",
@@ -3974,6 +4152,8 @@
         "Coleman, Patrick; 5196; 0000-0002-2728-6139"
       ],
       "issued_date": "2021-09-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.3390/sym13091696",
       "available_date": "2021-10-25T04:06:00Z",
       "item_type": "Journal Article",
       "doi": "10.3390/sym13091696",
@@ -4012,6 +4192,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2021-07-19",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.3389/fpsyg.2021.697375",
       "available_date": "2021-10-12T00:41:14Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fpsyg.2021.697375",
@@ -4062,6 +4244,8 @@
         "Bennett, Daniel; 73780; 0000-0001-6608-9026"
       ],
       "issued_date": "2019-07-05",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1111/psyp.13431",
       "available_date": "2021-10-07T01:41:19Z",
       "item_type": "Journal Article",
       "doi": "10.1111/psyp.13431",
@@ -4103,6 +4287,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2019-06-01",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1111/1467-8462.12321",
       "available_date": "2021-10-07T01:34:08Z",
       "item_type": "Journal Article",
       "doi": "10.1111/1467-8462.12321",
@@ -4142,6 +4328,8 @@
         "Lim, Bryan; 7805; 0000-0003-3756-3651"
       ],
       "issued_date": "2019-06-01",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1111/1475-4932.12456",
       "available_date": "2021-10-07T01:33:42Z",
       "item_type": "Journal Article",
       "doi": "10.1111/1475-4932.12456",
@@ -4182,6 +4370,8 @@
         "Kelly, Patrick; 30764; 0000-0002-8540-7488"
       ],
       "issued_date": "2021-12-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2021.106288",
       "available_date": "2021-09-28T23:25:43Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2021.106288",
@@ -4229,6 +4419,8 @@
         "Jung, Hae Won; 8445; 0000-0002-7268-7505"
       ],
       "issued_date": "2019-09-01",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1111/fima.12243",
       "available_date": "2021-09-27T23:04:16Z",
       "item_type": "Journal Article",
       "doi": "10.1111/fima.12243",
@@ -4271,6 +4463,8 @@
         "Galpin, Neal; 14725; 0000-0002-7187-0308"
       ],
       "issued_date": "2019-08-01",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1111/ehr.12783",
       "available_date": "2021-09-27T00:51:48Z",
       "item_type": "Journal Article",
       "doi": "10.1111/ehr.12783",
@@ -4310,6 +4504,8 @@
         "Zeng, Qi; 11502; 0000-0003-1228-0794"
       ],
       "issued_date": "2018-06-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1111/jori.12241",
       "available_date": "2021-09-17T00:38:00Z",
       "item_type": "Journal Article",
       "doi": "10.1111/jori.12241",
@@ -4350,6 +4546,8 @@
         "Gygax, Andre; 223; 0000-0001-7265-9400"
       ],
       "issued_date": "2013-08-01",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.1007/s11187-012-9442-z",
       "available_date": "2021-09-08T23:44:06Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s11187-012-9442-z",
@@ -4393,6 +4591,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2021-04-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1093/texcom/tgab018",
       "available_date": "2021-08-18T04:44:15Z",
       "item_type": "Journal Article",
       "doi": "10.1093/texcom/tgab018",
@@ -4431,6 +4631,8 @@
         "Coleman, Patrick; 5196; 0000-0002-2728-6139"
       ],
       "issued_date": "2021-03-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.3390/sym13030510",
       "available_date": "2021-08-15T23:43:14Z",
       "item_type": "Journal Article",
       "doi": "10.3390/sym13030510",
@@ -4469,6 +4671,8 @@
         "Dark, Jonathan; 12012; 0000-0002-7688-0193"
       ],
       "issued_date": "2021-11-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1002/fut.22247",
       "available_date": "2021-07-20T02:02:06Z",
       "item_type": "Journal Article",
       "doi": "10.1002/fut.22247",
@@ -4513,6 +4717,8 @@
         "Keidel, Kristof; 168424; 0000-0002-1561-0157"
       ],
       "issued_date": "2021-04-08",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.3389/fpsyg.2021.643670",
       "available_date": "2021-07-13T23:04:51Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fpsyg.2021.643670",
@@ -4554,6 +4760,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2021-03-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.2471/BLT.20.268037",
       "available_date": "2021-07-13T00:37:48Z",
       "item_type": "Journal Article",
       "doi": "10.2471/BLT.20.268037",
@@ -4605,6 +4813,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2018-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1016/S2214-109X(17)30453-9",
       "available_date": "2021-07-12T01:09:38Z",
       "item_type": "Journal Article",
       "doi": "10.1016/S2214-109X(17)30453-9",
@@ -4645,6 +4855,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2015",
+      "publication_year": "2015",
+      "article_url": "https://doi.org/10.1371/journal.pone.0144400",
       "available_date": "2021-07-12T00:32:17Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0144400",
@@ -4692,6 +4904,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2012-08-10",
+      "publication_year": "2012",
+      "article_url": "https://doi.org/10.1186/1475-2875-11-274",
       "available_date": "2021-07-12T00:10:04Z",
       "item_type": "Journal Article",
       "doi": "10.1186/1475-2875-11-274",
@@ -4731,6 +4945,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.1155/2008/708218",
       "available_date": "2021-07-11T23:56:53Z",
       "item_type": "Journal Article",
       "doi": "10.1155/2008/708218",
@@ -4775,6 +4991,8 @@
         "Yadav, Nitin; 127160; 0000-0003-0132-1028"
       ],
       "issued_date": "2020-12-01",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.3390/risks8040113",
       "available_date": "2021-05-18T01:16:23Z",
       "item_type": "Journal Article",
       "doi": "10.3390/risks8040113",
@@ -4816,6 +5034,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2021-04-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1002/hbm.25296",
       "available_date": "2021-05-11T02:16:53Z",
       "item_type": "Journal Article",
       "doi": "10.1002/hbm.25296",
@@ -4857,6 +5077,8 @@
         "Easton, Stephen; 32413; 0000-0001-7855-8379"
       ],
       "issued_date": "2022-03-01",
+      "publication_year": "2022",
+      "article_url": "https://doi.org/10.1111/acfi.12802",
       "available_date": "2021-05-09T02:02:06Z",
       "item_type": "Journal Article",
       "doi": "10.1111/acfi.12802",
@@ -4896,6 +5118,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2013-03-25",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.1038/srep01435",
       "available_date": "2021-04-30T02:05:33Z",
       "item_type": "Journal Article",
       "doi": "10.1038/srep01435",
@@ -4937,6 +5161,8 @@
         "Crone, Damien Lucas; 20561; 0000-0003-3081-4710"
       ],
       "issued_date": "2019-07-01",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1177/1948550618780732",
       "available_date": "2021-04-29T00:46:05Z",
       "item_type": "Journal Article",
       "doi": "10.1177/1948550618780732",
@@ -4977,6 +5203,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2015-01-01",
+      "publication_year": "2015",
+      "article_url": "https://doi.org/10.1371/journal.pcbi.1004558",
       "available_date": "2021-04-22T01:19:37Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pcbi.1004558",
@@ -5018,6 +5246,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2010-01-01",
+      "publication_year": "2010",
+      "article_url": "https://doi.org/10.3389/fnhum.2010.00235",
       "available_date": "2021-04-22T01:17:39Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnhum.2010.00235",
@@ -5057,6 +5287,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2011-12-01",
+      "publication_year": "2011",
+      "article_url": "https://doi.org/10.3389/fnins.2011.00002",
       "available_date": "2021-04-22T01:17:35Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnins.2011.00002",
@@ -5095,6 +5327,8 @@
         "Coleman, Patrick; 5196; 0000-0002-2728-6139"
       ],
       "issued_date": "2023-07-01",
+      "publication_year": "2023",
+      "article_url": "https://doi.org/10.1002/ijfe.2568",
       "available_date": "2021-03-15T02:02:06Z",
       "item_type": "Journal Article",
       "doi": "10.1002/ijfe.2568",
@@ -5135,6 +5369,8 @@
         "Wang, Huijun; 149546; 0000-0002-3598-5618"
       ],
       "issued_date": "2021-12-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1111/fima.12340",
       "available_date": "2021-03-03T02:02:06Z",
       "item_type": "Journal Article",
       "doi": "10.1111/fima.12340",
@@ -5174,6 +5410,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2016-04-01",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1093/cercor/bhw013",
       "available_date": "2021-02-16T22:31:24Z",
       "item_type": "Journal Article",
       "doi": "10.1093/cercor/bhw013",
@@ -5224,6 +5462,8 @@
         "Bowman, Elizabeth; 14076; 0000-0002-6876-6446"
       ],
       "issued_date": "2015-12-21",
+      "publication_year": "2015",
+      "article_url": "https://doi.org/10.1186/s13023-015-0377-8",
       "available_date": "2021-02-16T22:22:02Z",
       "item_type": "Journal Article",
       "doi": "10.1186/s13023-015-0377-8",
@@ -5272,6 +5512,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2008-12-12",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.1098/rstb.2008.0152",
       "available_date": "2021-02-16T22:03:19Z",
       "item_type": "Journal Article",
       "doi": "10.1098/rstb.2008.0152",
@@ -5314,6 +5556,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2013-01-01",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.1371/journal.pcbi.1002918",
       "available_date": "2021-02-16T22:03:12Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pcbi.1002918",
@@ -5353,6 +5597,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2012-12-17",
+      "publication_year": "2012",
+      "article_url": "https://doi.org/10.3389/fnins.2012.00150",
       "available_date": "2021-02-16T00:33:38Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnins.2012.00150",
@@ -5396,6 +5642,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2013-01-01",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.3389/fnins.2013.00146",
       "available_date": "2021-02-16T00:33:30Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnins.2013.00146",
@@ -5435,6 +5683,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2011-01-01",
+      "publication_year": "2011",
+      "article_url": "https://doi.org/10.1371/journal.pcbi.1001048",
       "available_date": "2021-02-16T00:31:19Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pcbi.1001048",
@@ -5475,6 +5725,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2011-02-28",
+      "publication_year": "2011",
+      "article_url": "https://doi.org/10.1371/journal.pone.0016838",
       "available_date": "2021-02-16T00:31:07Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0016838",
@@ -5515,6 +5767,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2013-01-01",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.1371/journal.pcbi.1002895",
       "available_date": "2021-02-16T00:30:56Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pcbi.1002895",
@@ -5557,6 +5811,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2013-09-18",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.1016/j.neuron.2013.07.003",
       "available_date": "2021-02-16T00:30:48Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.neuron.2013.07.003",
@@ -5597,6 +5853,8 @@
         "Kelly, Patrick; 30764; 0000-0002-8540-7488"
       ],
       "issued_date": "2020-09-01",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1016/j.jempfin.2020.07.003",
       "available_date": "2021-01-20T22:11:49Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jempfin.2020.07.003",
@@ -5636,6 +5894,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2020-10-01",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1016/j.irfa.2020.101535",
       "available_date": "2021-01-06T01:48:53Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.irfa.2020.101535",
@@ -5674,6 +5934,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2020-03-01",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1111/irfi.12218",
       "available_date": "2021-01-06T01:43:55Z",
       "item_type": "Journal Article",
       "doi": "10.1111/irfi.12218",
@@ -5711,6 +5973,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2020",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1111/fima.12259",
       "available_date": "2021-01-06T01:39:01Z",
       "item_type": "Journal Article",
       "doi": "10.1111/fima.12259",
@@ -5748,6 +6012,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2020-06-01",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1016/j.jcorpfin.2020.101576",
       "available_date": "2021-01-06T01:36:39Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jcorpfin.2020.101576",
@@ -5784,6 +6050,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2020-04-15",
+      "publication_year": "2020",
+      "article_url": "https://hdl.handle.net/11343/258565",
       "available_date": "2021-01-06T01:02:24Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -5821,6 +6089,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2020-07-01",
+      "publication_year": "2020",
+      "article_url": "https://hdl.handle.net/11343/258564",
       "available_date": "2021-01-06T00:47:13Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -5857,6 +6127,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2020-03-01",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1057/s41261-019-00094-0",
       "available_date": "2021-01-06T00:30:01Z",
       "item_type": "Journal Article",
       "doi": "10.1057/s41261-019-00094-0",
@@ -5893,6 +6165,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2020-09-01",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1111/auar.12266",
       "available_date": "2021-01-06T00:25:25Z",
       "item_type": "Journal Article",
       "doi": "10.1111/auar.12266",
@@ -5932,6 +6206,8 @@
         "Comerton-Forde, Carole; 25276; 0000-0002-1618-0371"
       ],
       "issued_date": "2021-01-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1093/jjfinec/nbz005",
       "available_date": "2021-01-06T00:15:33Z",
       "item_type": "Journal Article",
       "doi": "10.1093/jjfinec/nbz005",
@@ -5972,6 +6248,8 @@
         "Comerton-Forde, Carole; 25276; 0000-0002-1618-0371"
       ],
       "issued_date": "2021-08-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1017/S0022109020000381",
       "available_date": "2021-01-06T00:14:01Z",
       "item_type": "Journal Article",
       "doi": "10.1017/S0022109020000381",
@@ -6012,6 +6290,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2014-06-05",
+      "publication_year": "2014",
+      "article_url": "https://doi.org/10.1038/srep05182",
       "available_date": "2020-12-22T02:44:49Z",
       "item_type": "Journal Article",
       "doi": "10.1038/srep05182",
@@ -6051,6 +6331,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2017-10-30",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.7554/eLife.29718",
       "available_date": "2020-12-21T04:06:28Z",
       "item_type": "Journal Article",
       "doi": "10.7554/eLife.29718",
@@ -6096,6 +6378,8 @@
         "Murawski, Carsten; 5544; 0000-0002-1237-9535"
       ],
       "issued_date": "2018-08-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1002/hbm.24184",
       "available_date": "2020-12-17T03:27:36Z",
       "item_type": "Journal Article",
       "doi": "10.1002/hbm.24184",
@@ -6135,6 +6419,8 @@
         "Wang, Huijun; 149546; 0000-0002-3598-5618"
       ],
       "issued_date": "2021-01-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1016/j.jmoneco.2020.03.016",
       "available_date": "2020-12-14T05:57:20Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jmoneco.2020.03.016",
@@ -6171,6 +6457,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2018-12-04",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.3389/fnint.2018.00061",
       "available_date": "2020-12-10T00:42:52Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnint.2018.00061",
@@ -6210,6 +6498,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2021",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1111/fima.12331",
       "available_date": "2020-11-27T00:41:37Z",
       "item_type": "Journal Article",
       "doi": "10.1111/fima.12331",
@@ -6249,6 +6539,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2020",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.3389/fdata.2020.00008",
       "available_date": "2020-11-27T00:34:23Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fdata.2020.00008",
@@ -6291,6 +6583,8 @@
         "Murawski, Carsten; 5544; 0000-0002-1237-9535"
       ],
       "issued_date": "2018-12-31",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1098/rstb.2018.0138",
       "available_date": "2020-11-09T23:41:44Z",
       "item_type": "Journal Article",
       "doi": "10.1098/rstb.2018.0138",
@@ -6328,6 +6622,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2020",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.3389/fnbeh.2020.00131",
       "available_date": "2020-10-13T01:29:09Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnbeh.2020.00131",
@@ -6379,6 +6675,8 @@
         "YOUSSEF, GEORGE; 59496"
       ],
       "issued_date": "2019-03-15",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1007/s11065-019-09404-9",
       "available_date": "2020-10-13T00:53:53Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s11065-019-09404-9",
@@ -6438,6 +6736,8 @@
         "Metha, Jeremy; 130351"
       ],
       "issued_date": "2020-01-09",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.3389/fnbeh.2019.00270",
       "available_date": "2020-10-13T00:29:52Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnbeh.2019.00270",
@@ -6478,6 +6778,8 @@
         "Suzuki, Shinsuke; 149050; 0000-0002-9816-9423"
       ],
       "issued_date": "2013-07-05",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.1371/journal.pone.0067702",
       "available_date": "2020-10-11T23:33:23Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0067702",
@@ -6526,6 +6828,8 @@
         "DOMINGUEZ, JUAN; 57073"
       ],
       "issued_date": "2012-03-30",
+      "publication_year": "2012",
+      "article_url": "https://doi.org/10.1371/journal.pone.0034155",
       "available_date": "2020-07-07T04:22:46Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0034155",
@@ -6571,6 +6875,8 @@
         "Murawski, Carsten; 5544; 0000-0002-1237-9535"
       ],
       "issued_date": "2020-04-03",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1002/hbm.24999",
       "available_date": "2020-06-23T05:34:19Z",
       "item_type": "Journal Article",
       "doi": "10.1002/hbm.24999",
@@ -6611,6 +6917,8 @@
         "Brugler, James; 117315; 0000-0002-3905-6007"
       ],
       "issued_date": "2018-09-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1142/S2382626619500084",
       "available_date": "2020-06-02T01:27:28Z",
       "item_type": "Journal Article",
       "doi": "10.1142/S2382626619500084",
@@ -6650,6 +6958,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2021-09-01",
+      "publication_year": "2021",
+      "article_url": "https://doi.org/10.1111/irfi.12307",
       "available_date": "2020-05-04T01:22:29Z",
       "item_type": "Journal Article",
       "doi": "10.1111/irfi.12307",
@@ -6694,6 +7004,8 @@
         "Grundy, Bruce; 6588; 0000-0002-7438-1374"
       ],
       "issued_date": "2020-09-01",
+      "publication_year": "2020",
+      "article_url": "https://doi.org/10.1287/mnsc.2019.3398",
       "available_date": "2020-03-16T23:49:49Z",
       "item_type": "Journal Article",
       "doi": "10.1287/mnsc.2019.3398",
@@ -6748,6 +7060,8 @@
         "Sacks-Davis, Rachel; 114248"
       ],
       "issued_date": "2011-07-26",
+      "publication_year": "2011",
+      "article_url": "https://doi.org/10.1186/1471-2458-11-583",
       "available_date": "2020-02-06T04:20:21Z",
       "item_type": "Journal Article",
       "doi": "10.1186/1471-2458-11-583",
@@ -6794,6 +7108,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.3917/redp.181.0075",
       "available_date": "2019-11-24T01:23:03Z",
       "item_type": "Journal Article",
       "doi": "10.3917/redp.181.0075",
@@ -6831,6 +7147,8 @@
         "Sotes-Paladino, Juan; 8446; 0000-0003-2447-7498"
       ],
       "issued_date": "2019-04-01",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1093/rfs/hhy074",
       "available_date": "2019-09-02T00:56:39Z",
       "item_type": "Journal Article",
       "doi": "10.1093/rfs/hhy074",
@@ -6868,6 +7186,8 @@
         "Grundy, Bruce; 6588; 0000-0002-7438-1374"
       ],
       "issued_date": "2019-02-01",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1093/rof/rfx025",
       "available_date": "2019-08-07T03:50:46Z",
       "item_type": "Journal Article",
       "doi": "10.1093/rof/rfx025",
@@ -6918,6 +7238,8 @@
         "Campbell, Leith; 49132"
       ],
       "issued_date": "2019-01-07",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.3390/en12010184",
       "available_date": "2019-07-18T06:19:26Z",
       "item_type": "Journal Article",
       "doi": "10.3390/en12010184",
@@ -6956,6 +7278,8 @@
         "Crain, Nicholas; 140630; 0000-0002-4453-4309"
       ],
       "issued_date": "2018-04",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1016/j.jcorpfin.2017.12.004",
       "available_date": "2019-03-13T04:37:35Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jcorpfin.2017.12.004",
@@ -6994,6 +7318,8 @@
         "Kelly, Patrick; 30764; 0000-0002-8540-7488"
       ],
       "issued_date": "2018-12-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2018.09.020",
       "available_date": "2018-12-09T22:15:50Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2018.09.020",
@@ -7032,6 +7358,8 @@
         "Gargano, Antonio; 29212; 0000-0002-0686-0576"
       ],
       "issued_date": "2019-02",
+      "publication_year": "2019",
+      "article_url": "https://doi.org/10.1287/mnsc.2017.2829",
       "available_date": "2018-12-09T22:03:42Z",
       "item_type": "Journal Article",
       "doi": "10.1287/mnsc.2017.2829",
@@ -7069,6 +7397,8 @@
         "Gargano, Antonio; 29212; 0000-0002-0686-0576"
       ],
       "issued_date": "2018-12-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1093/rfs/hhy050",
       "available_date": "2018-12-09T22:01:24Z",
       "item_type": "Journal Article",
       "doi": "10.1093/rfs/hhy050",
@@ -7106,6 +7436,8 @@
         "Volkova, Ekaterina; 133551; 0000-0002-6589-0433"
       ],
       "issued_date": "2018-02-01",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1007/s10436-017-0314-z",
       "available_date": "2018-07-15T22:58:30Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s10436-017-0314-z",
@@ -7151,6 +7483,8 @@
         "Brydevall, Maja; 120681"
       ],
       "issued_date": "2018-04-17",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1038/s41598-018-24566-x",
       "available_date": "2018-05-28T23:02:54Z",
       "item_type": "Journal Article",
       "doi": "10.1038/s41598-018-24566-x",
@@ -7204,6 +7538,8 @@
         "Wakefield, Melanie; 2240"
       ],
       "issued_date": "2018",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1016/j.nicl.2018.03.004",
       "available_date": "2018-05-01T22:18:28Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.nicl.2018.03.004",
@@ -7250,6 +7586,8 @@
         "Crone, Damien Lucas; 20561; 0000-0003-3081-4710"
       ],
       "issued_date": "2018-01-24",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1371/journal.pone.0190954",
       "available_date": "2018-03-29T22:50:14Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0190954",
@@ -7298,6 +7636,8 @@
         "Crone, Damien Lucas; 20561; 0000-0003-3081-4710"
       ],
       "issued_date": "2017",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.3389/fnbeh.2017.00001",
       "available_date": "2018-03-29T22:48:13Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnbeh.2017.00001",
@@ -7341,6 +7681,8 @@
         "Fung, Bowen; 75331"
       ],
       "issued_date": "2017-02-22",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.1098/rspb.2016.2759",
       "available_date": "2018-03-29T22:47:26Z",
       "item_type": "Journal Article",
       "doi": "10.1098/rspb.2016.2759",
@@ -7378,6 +7720,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2017-12-01",
+      "publication_year": "2017",
+      "article_url": "https://hdl.handle.net/11343/198400",
       "available_date": "2018-02-27T04:24:54Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -7422,6 +7766,8 @@
         "Walterfang, Mark; 4503; 0000-0002-1389-3691"
       ],
       "issued_date": "2018",
+      "publication_year": "2018",
+      "article_url": "https://doi.org/10.1007/8904_2017_42",
       "available_date": "2018-02-11T23:06:20Z",
       "item_type": "Journal Article",
       "doi": "10.1007/8904_2017_42",
@@ -7466,6 +7812,8 @@
         "ZHENG, QIONG; 84111"
       ],
       "issued_date": "2017-06-01",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.1007/s10888-016-9342-6",
       "available_date": "2018-01-11T03:47:14Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s10888-016-9342-6",
@@ -7509,6 +7857,8 @@
         "Bode, Stefan; 1642; 0000-0002-0258-7795"
       ],
       "issued_date": "2015-01-01",
+      "publication_year": "2015",
+      "article_url": "https://doi.org/10.1523/ENEURO.0076-15.2015",
       "available_date": "2017-08-04T01:46:00Z",
       "item_type": "Journal Article",
       "doi": "10.1523/ENEURO.0076-15.2015",
@@ -7565,6 +7915,8 @@
         "Nirmalathas, Ampalavanapillai; 2749; 0000-0001-7328-5359"
       ],
       "issued_date": "2016-12-01",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1109/JSAC.2016.2611978",
       "available_date": "2017-07-17T03:15:15Z",
       "item_type": "Journal Article",
       "doi": "10.1109/JSAC.2016.2611978",
@@ -7610,6 +7962,8 @@
         "CHEN, ZHUO; 124286"
       ],
       "issued_date": "2017-02",
+      "publication_year": "2017",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2016.11.010",
       "available_date": "2017-06-18T23:50:53Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2016.11.010",
@@ -7661,6 +8015,8 @@
         "Bennett, Daniel; 73780; 0000-0001-6608-9026"
       ],
       "issued_date": "2016-07-01",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1371/journal.pcbi.1005020",
       "available_date": "2017-05-22T06:40:44Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pcbi.1005020",
@@ -7701,6 +8057,8 @@
         "Grundy, Bruce; 6588; 0000-0002-7438-1374"
       ],
       "issued_date": "2016-02-01",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1111/jofi.12363",
       "available_date": "2017-02-06T22:36:08Z",
       "item_type": "Journal Article",
       "doi": "10.1111/jofi.12363",
@@ -7742,6 +8100,8 @@
         "Gray, Philip; 182838; 0000-0002-5388-8248"
       ],
       "issued_date": "2016-03-01",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2015.12.009",
       "available_date": "2016-12-06T04:10:50Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2015.12.009",
@@ -7781,6 +8141,8 @@
         "Bossaerts, Peter; 27438; 0000-0003-2308-2603"
       ],
       "issued_date": "2016-10-07",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1038/srep34851",
       "available_date": "2016-10-25T04:34:57Z",
       "item_type": "Journal Article",
       "doi": "10.1038/srep34851",
@@ -7822,6 +8184,8 @@
         "Bode, Stefan; 1642; 0000-0002-0258-7795"
       ],
       "issued_date": "2015-10-15",
+      "publication_year": "2015",
+      "article_url": "https://doi.org/10.3389/fnbeh.2015.00278",
       "available_date": "2016-09-08T06:13:36Z",
       "item_type": "Journal Article",
       "doi": "10.3389/fnbeh.2015.00278",
@@ -7874,6 +8238,8 @@
         "Hinton, Kerry; 2380"
       ],
       "issued_date": "2016-03-15",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1016/j.apenergy.2016.01.007",
       "available_date": "2016-05-19T05:25:16Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.apenergy.2016.01.007",
@@ -7927,6 +8293,8 @@
         "Hinton, Kerry; 2380"
       ],
       "issued_date": "2015-11-15",
+      "publication_year": "2015",
+      "article_url": "https://doi.org/10.1109/MCOM.2015.7321989",
       "available_date": "2015-11-18T00:37:26Z",
       "item_type": "Journal Article",
       "doi": "10.1109/MCOM.2015.7321989",
@@ -7966,6 +8334,8 @@
         "Comerton-Forde, Carole; 25276; 0000-0002-1618-0371"
       ],
       "issued_date": "2014",
+      "publication_year": "2014",
+      "article_url": "https://doi.org/10.1093/rof/rfs040",
       "available_date": "2015-09-23T06:16:25Z",
       "item_type": "Journal Article",
       "doi": "10.1093/rof/rfs040",
@@ -8002,6 +8372,8 @@
         "Comerton-Forde, Carole; 25276; 0000-0002-1618-0371"
       ],
       "issued_date": "2012",
+      "publication_year": "2012",
+      "article_url": "https://www.finsia.com/docs/default-source/jassa-new/jassa-2012/jassa-2012-issue-3/is-australia-hft-friendly.pdf?sfvrsn=5",
       "available_date": "2015-09-23T06:14:45Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -8040,6 +8412,8 @@
         "Comerton-Forde, Carole; 25276; 0000-0002-1618-0371"
       ],
       "issued_date": "2016",
+      "publication_year": "2016",
+      "article_url": "https://doi.org/10.1016/j.jfineco.2016.05.002",
       "available_date": "2015-09-23T06:10:57Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jfineco.2016.05.002",
@@ -8077,6 +8451,8 @@
         "Comerton-Forde, Carole; 25276; 0000-0002-1618-0371"
       ],
       "issued_date": "2015-10-01",
+      "publication_year": "2015",
+      "article_url": "https://doi.org/10.1016/j.jfineco.2015.06.013",
       "available_date": "2015-09-23T06:08:20Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jfineco.2015.06.013",
@@ -8111,6 +8487,8 @@
       ],
       "internal_author_ids": [],
       "issued_date": "2015-02-10",
+      "publication_year": "2015",
+      "article_url": "https://minerva-access.unimelb.edu.au/handle/11343/45203",
       "available_date": "2015-08-27T00:38:47Z",
       "item_type": "PhD thesis",
       "doi": "",
@@ -8145,6 +8523,8 @@
       ],
       "internal_author_ids": [],
       "issued_date": "2015",
+      "publication_year": "2015",
+      "article_url": "https://hdl.handle.net/11343/55324",
       "available_date": "2015-08-04T06:41:42Z",
       "item_type": "PhD thesis",
       "doi": "",
@@ -8190,6 +8570,8 @@
         "Murawski, Carsten; 5544; 0000-0002-1237-9535"
       ],
       "issued_date": "2014-10-01",
+      "publication_year": "2014",
+      "article_url": "https://doi.org/10.1371/journal.pone.0109070",
       "available_date": "2015-04-07T22:46:18Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0109070",
@@ -8234,6 +8616,8 @@
         "WONG, LING; 33910"
       ],
       "issued_date": "2015-05",
+      "publication_year": "2015",
+      "article_url": "https://doi.org/10.1016/j.socnet.2014.12.002",
       "available_date": "2015-02-09T05:30:56Z",
       "item_type": "Conference Paper",
       "doi": "10.1016/j.socnet.2014.12.002",
@@ -8272,6 +8656,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2013-04-01",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.1016/j.pacfin.2012.10.004",
       "available_date": "2014-05-22T08:20:51Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.pacfin.2012.10.004",
@@ -8308,6 +8694,8 @@
       ],
       "internal_author_ids": [],
       "issued_date": "2013",
+      "publication_year": "2013",
+      "article_url": "https://hdl.handle.net/11343/33206",
       "available_date": "2014-05-22T08:20:40Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -8344,6 +8732,8 @@
       ],
       "internal_author_ids": [],
       "issued_date": "2013",
+      "publication_year": "2013",
+      "article_url": "https://hdl.handle.net/11343/33205",
       "available_date": "2014-05-22T08:20:29Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -8382,6 +8772,8 @@
         "Dark, Jonathan; 12012; 0000-0002-7688-0193"
       ],
       "issued_date": "2013-04-01",
+      "publication_year": "2013",
+      "article_url": "https://doi.org/10.1007/s10151-012-0908-4",
       "available_date": "2014-05-22T08:00:02Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s10151-012-0908-4",
@@ -8436,6 +8828,8 @@
         "Bowman, Elizabeth; 14076; 0000-0002-6876-6446"
       ],
       "issued_date": "2012-11-30",
+      "publication_year": "2012",
+      "article_url": "https://doi.org/10.1371/journal.pone.0050947",
       "available_date": "2014-05-22T07:23:21Z",
       "item_type": "Journal Article",
       "doi": "10.1371/journal.pone.0050947",
@@ -8485,6 +8879,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2012-11-01",
+      "publication_year": "2012",
+      "article_url": "https://doi.org/10.1016/j.jfineco.2012.05.013",
       "available_date": "2014-05-22T05:33:51Z",
       "item_type": "Conference Paper",
       "doi": "10.1016/j.jfineco.2012.05.013",
@@ -8522,6 +8918,8 @@
         "Martin, James; 10145; 0000-0001-5453-6001"
       ],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://hdl.handle.net/11343/32265",
       "available_date": "2014-05-22T05:33:41Z",
       "item_type": "Conference Paper",
       "doi": "",
@@ -8562,6 +8960,8 @@
         "Zeng, Qi; 11502; 0000-0003-1228-0794"
       ],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://hdl.handle.net/11343/32264",
       "available_date": "2014-05-22T05:33:32Z",
       "item_type": "Conference Paper",
       "doi": "",
@@ -8602,6 +9002,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2007",
+      "publication_year": "2007",
+      "article_url": "https://hdl.handle.net/11343/32263",
       "available_date": "2014-05-22T05:33:24Z",
       "item_type": "Conference Paper",
       "doi": "",
@@ -8644,6 +9046,8 @@
         "MAHESWARAN, KOGULAKRISHNAN; 33401"
       ],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://hdl.handle.net/11343/32261",
       "available_date": "2014-05-22T05:33:06Z",
       "item_type": "Conference Paper",
       "doi": "",
@@ -8682,6 +9086,8 @@
         "Martin, James; 10145; 0000-0001-5453-6001"
       ],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://hdl.handle.net/11343/32260",
       "available_date": "2014-05-22T05:32:54Z",
       "item_type": "Conference Paper",
       "doi": "",
@@ -8721,6 +9127,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.22495/cocv6i2c3p7",
       "available_date": "2014-05-22T03:39:03Z",
       "item_type": "Journal Article",
       "doi": "10.22495/cocv6i2c3p7",
@@ -8758,6 +9166,8 @@
         "Shekhar, Chander; 105; 0000-0003-4689-5172"
       ],
       "issued_date": "2005-03-01",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1108/eb043433",
       "available_date": "2014-05-22T02:29:07Z",
       "item_type": "Journal Article",
       "doi": "10.1108/eb043433",
@@ -8798,6 +9208,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2009-07-01",
+      "publication_year": "2009",
+      "article_url": "https://doi.org/10.1007/s11156-009-0107-1",
       "available_date": "2014-05-21T23:16:06Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s11156-009-0107-1",
@@ -8835,6 +9247,8 @@
         "Pinder, Sean; 321; 0000-0003-3083-6047"
       ],
       "issued_date": "2007-11-01",
+      "publication_year": "2007",
+      "article_url": "https://doi.org/10.1016/j.pacfin.2006.12.001",
       "available_date": "2014-05-21T23:15:59Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.pacfin.2006.12.001",
@@ -8871,6 +9285,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2005-01-01",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1108/03074350510769938",
       "available_date": "2014-05-21T23:15:53Z",
       "item_type": "Journal Article",
       "doi": "10.1108/03074350510769938",
@@ -8907,6 +9323,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2006-01-01",
+      "publication_year": "2006",
+      "article_url": "https://doi.org/10.1007/s11149-005-5128-7",
       "available_date": "2014-05-21T23:15:41Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s11149-005-5128-7",
@@ -8945,6 +9363,8 @@
         "Martin, James; 10145; 0000-0001-5453-6001"
       ],
       "issued_date": "2005-10-01",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1111/j.1540-6261.2005.00807.x",
       "available_date": "2014-05-21T23:15:36Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1540-6261.2005.00807.x",
@@ -8983,6 +9403,8 @@
         "Lamba, Asjeet; 2727; 0000-0002-7541-967X"
       ],
       "issued_date": "2005",
+      "publication_year": "2005",
+      "article_url": "https://hdl.handle.net/11343/29531",
       "available_date": "2014-05-21T23:15:30Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -9020,6 +9442,8 @@
         "Grundy, Bruce; 6588; 0000-0002-7438-1374"
       ],
       "issued_date": "2010-10-01",
+      "publication_year": "2010",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2010.03.020",
       "available_date": "2014-05-21T23:15:23Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2010.03.020",
@@ -9057,6 +9481,8 @@
         "Verwijmeren, Patrick; 1439; 0000-0002-1437-0665"
       ],
       "issued_date": "2010-05-01",
+      "publication_year": "2010",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2009.10.006",
       "available_date": "2014-05-21T23:15:18Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2009.10.006",
@@ -9094,6 +9520,8 @@
         "Gygax, Andre; 223; 0000-0001-7265-9400"
       ],
       "issued_date": "2010-10-01",
+      "publication_year": "2010",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2010.04.007",
       "available_date": "2014-05-21T23:15:11Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2010.04.007",
@@ -9133,6 +9561,8 @@
         "BROWN, CHRISTINE; 33373"
       ],
       "issued_date": "2009-03-01",
+      "publication_year": "2009",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2008.08.016",
       "available_date": "2014-05-21T23:15:04Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jbankfin.2008.08.016",
@@ -9169,6 +9599,8 @@
       ],
       "internal_author_ids": [],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://hdl.handle.net/11343/29525",
       "available_date": "2014-05-21T23:14:52Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -9206,6 +9638,8 @@
         "SCHEULE, HARALD; 13878"
       ],
       "issued_date": "2010",
+      "publication_year": "2010",
+      "article_url": "https://hdl.handle.net/11343/29524",
       "available_date": "2014-05-21T23:14:46Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -9243,6 +9677,8 @@
         "Lamba, Asjeet; 2727; 0000-0002-7541-967X"
       ],
       "issued_date": "2010-09",
+      "publication_year": "2010",
+      "article_url": "https://doi.org/10.1111/j.1468-2443.2010.01118.x",
       "available_date": "2014-05-21T23:14:40Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1468-2443.2010.01118.x",
@@ -9280,6 +9716,8 @@
         "Lamba, Asjeet; 2727; 0000-0002-7541-967X"
       ],
       "issued_date": "2006",
+      "publication_year": "2006",
+      "article_url": "https://hdl.handle.net/11343/29522",
       "available_date": "2014-05-21T23:14:34Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -9314,6 +9752,8 @@
       ],
       "internal_author_ids": [],
       "issued_date": "2006",
+      "publication_year": "2006",
+      "article_url": "https://hdl.handle.net/11343/29521",
       "available_date": "2014-05-21T23:14:28Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -9353,6 +9793,8 @@
         "STAPLEDON, GEOFREY; 10700"
       ],
       "issued_date": "2007-01-01",
+      "publication_year": "2007",
+      "article_url": "https://doi.org/10.1111/j.1467-8683.2007.00639.x",
       "available_date": "2014-05-21T23:14:22Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1467-8683.2007.00639.x",
@@ -9390,6 +9832,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2009-01-01",
+      "publication_year": "2009",
+      "article_url": "https://doi.org/10.1177/031289620903400104",
       "available_date": "2014-05-21T23:14:16Z",
       "item_type": "Journal Article",
       "doi": "10.1177/031289620903400104",
@@ -9429,6 +9873,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2009-01-01",
+      "publication_year": "2009",
+      "article_url": "https://doi.org/10.1177/031289620903400105",
       "available_date": "2014-05-21T23:14:08Z",
       "item_type": "Journal Article",
       "doi": "10.1177/031289620903400105",
@@ -9465,6 +9911,8 @@
         "Coleman, Patrick; 5196; 0000-0002-2728-6139"
       ],
       "issued_date": "2007-03-01",
+      "publication_year": "2007",
+      "article_url": "https://doi.org/10.1080/09603100600675565",
       "available_date": "2014-05-21T23:13:32Z",
       "item_type": "Journal Article",
       "doi": "10.1080/09603100600675565",
@@ -9507,6 +9955,8 @@
         "Hazledine, Matthew; 58327"
       ],
       "issued_date": "2010-07-01",
+      "publication_year": "2010",
+      "article_url": "https://doi.org/10.1007/s10436-008-0116-4",
       "available_date": "2014-05-21T23:13:13Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s10436-008-0116-4",
@@ -9546,6 +9996,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2007-07-01",
+      "publication_year": "2007",
+      "article_url": "https://doi.org/10.1007/s11156-007-0023-1",
       "available_date": "2014-05-21T23:13:02Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s11156-007-0023-1",
@@ -9582,6 +10034,8 @@
         "Handley, John; 14958; 0000-0003-0734-5119"
       ],
       "issued_date": "2005-08-01",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1007/s11147-005-0381-6",
       "available_date": "2014-05-21T23:12:56Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s11147-005-0381-6",
@@ -9620,6 +10074,8 @@
         "Kofman, Paul; 6753; 0000-0003-0479-5026"
       ],
       "issued_date": "2005-09-01",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1007/s10693-005-1804-0",
       "available_date": "2014-05-21T23:12:15Z",
       "item_type": "Journal Article",
       "doi": "10.1007/s10693-005-1804-0",
@@ -9654,6 +10110,8 @@
       ],
       "internal_author_ids": [],
       "issued_date": "2006-12-01",
+      "publication_year": "2006",
+      "article_url": "https://doi.org/10.1108/10309610680000684",
       "available_date": "2014-05-21T22:35:09Z",
       "item_type": "Journal Article",
       "doi": "10.1108/10309610680000684",
@@ -9693,6 +10151,8 @@
         "MAHESWARAN, KOGULAKRISHNAN; 33401"
       ],
       "issued_date": "2005-12-01",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1111/j.1467-629X.2005.00140.x",
       "available_date": "2014-05-21T22:34:47Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1467-629X.2005.00140.x",
@@ -9730,6 +10190,8 @@
         "Brown, Robert; 11184; 0000-0002-7424-4599"
       ],
       "issued_date": "2005-07-01",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1111/j.1467-629x.2004.00127.x",
       "available_date": "2014-05-21T22:34:42Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1467-629x.2004.00127.x",
@@ -9772,6 +10234,8 @@
         "MAHESWARAN, KOGULAKRISHNAN; 33401"
       ],
       "issued_date": "2010-09-01",
+      "publication_year": "2010",
+      "article_url": "https://doi.org/10.1111/j.1467-629X.2010.00343.x",
       "available_date": "2014-05-21T22:34:02Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1467-629X.2010.00343.x",
@@ -9811,6 +10275,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2009-09-13",
+      "publication_year": "2009",
+      "article_url": "https://doi.org/10.1108/10309610911005572",
       "available_date": "2014-05-21T22:33:11Z",
       "item_type": "Journal Article",
       "doi": "10.1108/10309610911005572",
@@ -9849,6 +10315,8 @@
         "Handley, John; 14958; 0000-0003-0734-5119"
       ],
       "issued_date": "2008-03-01",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.1111/j.1467-629X.2007.00231.x",
       "available_date": "2014-05-21T22:32:54Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1467-629X.2007.00231.x",
@@ -9888,6 +10356,8 @@
         "Gygax, Andre; 223; 0000-0001-7265-9400"
       ],
       "issued_date": "2008-09-01",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.1111/j.1467-629X.2008.00275.x",
       "available_date": "2014-05-21T22:32:49Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1467-629X.2008.00275.x",
@@ -9930,6 +10400,8 @@
         "PAAY, JENIECE MICHELLE; 99857"
       ],
       "issued_date": "2007-01-01",
+      "publication_year": "2007",
+      "article_url": "https://doi.org/10.1068/b3239",
       "available_date": "2014-05-21T21:06:14Z",
       "item_type": "Journal Article",
       "doi": "10.1068/b3239",
@@ -9973,6 +10445,8 @@
         "Kofman, Paul; 6753; 0000-0003-0479-5026"
       ],
       "issued_date": "2005-01-01",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1080/10835547.2005.12091153",
       "available_date": "2014-05-21T21:02:46Z",
       "item_type": "Journal Article",
       "doi": "10.1080/10835547.2005.12091153",
@@ -10010,6 +10484,8 @@
         "Pinder, Sean; 321; 0000-0003-3083-6047"
       ],
       "issued_date": "2007",
+      "publication_year": "2007",
+      "article_url": "https://hdl.handle.net/11343/27938",
       "available_date": "2014-05-21T20:57:39Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -10048,6 +10524,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2007-01-01",
+      "publication_year": "2007",
+      "article_url": "https://doi.org/10.1177/031289620703200204",
       "available_date": "2014-05-21T20:57:34Z",
       "item_type": "Journal Article",
       "doi": "10.1177/031289620703200204",
@@ -10087,6 +10565,8 @@
         "Kofman, Paul; 6753; 0000-0003-0479-5026"
       ],
       "issued_date": "2008-03-01",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.1016/j.jempfin.2007.01.001",
       "available_date": "2014-05-21T20:57:26Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jempfin.2007.01.001",
@@ -10124,6 +10604,8 @@
         "SCHEULE, HARALD; 13878"
       ],
       "issued_date": "2008",
+      "publication_year": "2008",
+      "article_url": "https://hdl.handle.net/11343/27934",
       "available_date": "2014-05-21T20:57:22Z",
       "item_type": "Chapter",
       "doi": "",
@@ -10160,6 +10642,8 @@
         "BROWN, CHRISTINE; 33373"
       ],
       "issued_date": "2007-12",
+      "publication_year": "2007",
+      "article_url": "https://doi.org/10.1177/031289620703200210",
       "available_date": "2014-05-21T20:57:18Z",
       "item_type": "Journal Article",
       "doi": "10.1177/031289620703200210",
@@ -10196,6 +10680,8 @@
         "Handley, John; 14958; 0000-0003-0734-5119"
       ],
       "issued_date": "2008-02-01",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.1016/j.jfineco.2007.02.002",
       "available_date": "2014-05-21T20:57:10Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jfineco.2007.02.002",
@@ -10232,6 +10718,8 @@
         "Handley, John; 14958; 0000-0003-0734-5119"
       ],
       "issued_date": "2003-01-01",
+      "publication_year": "2003",
+      "article_url": "https://doi.org/10.1177/031289620302800101",
       "available_date": "2014-05-21T20:57:06Z",
       "item_type": "Journal Article",
       "doi": "10.1177/031289620302800101",
@@ -10271,6 +10759,8 @@
         "EFTHIM, KATRINA FRANCES; 96790"
       ],
       "issued_date": "2006",
+      "publication_year": "2006",
+      "article_url": "https://hdl.handle.net/11343/27929",
       "available_date": "2014-05-21T20:57:02Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -10307,6 +10797,8 @@
         "Kofman, Paul; 6753; 0000-0003-0479-5026"
       ],
       "issued_date": "2003-06-01",
+      "publication_year": "2003",
+      "article_url": "https://doi.org/10.1093/jjfinec/nbg013",
       "available_date": "2014-05-21T20:56:50Z",
       "item_type": "Journal Article",
       "doi": "10.1093/jjfinec/nbg013",
@@ -10346,6 +10838,8 @@
         "Chan, Howard; 13717; 0000-0001-9288-0727"
       ],
       "issued_date": "2007",
+      "publication_year": "2007",
+      "article_url": "https://hdl.handle.net/11343/27925",
       "available_date": "2014-05-21T20:56:46Z",
       "item_type": "Journal Article",
       "doi": "",
@@ -10382,6 +10876,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2005",
+      "publication_year": "2005",
+      "article_url": "https://doi.org/10.1007/0-387-24563-4_5",
       "available_date": "2014-05-21T20:56:42Z",
       "item_type": "Chapter",
       "doi": "10.1007/0-387-24563-4_5",
@@ -10420,6 +10916,8 @@
         "Zeng, Qi; 11502; 0000-0003-1228-0794"
       ],
       "issued_date": "2004-09-01",
+      "publication_year": "2004",
+      "article_url": "https://doi.org/10.1016/j.jedc.2003.09.003",
       "available_date": "2014-05-21T20:44:29Z",
       "item_type": "Journal Article",
       "doi": "10.1016/j.jedc.2003.09.003",
@@ -10458,6 +10956,8 @@
         "Schwann, Gregory; 15317; 0000-0001-6224-8237"
       ],
       "issued_date": "2003-05-01",
+      "publication_year": "2003",
+      "article_url": "https://doi.org/10.1080/0042098032000074317",
       "available_date": "2014-05-21T20:43:29Z",
       "item_type": "Journal Article",
       "doi": "10.1080/0042098032000074317",
@@ -10495,6 +10995,8 @@
         "Schwann, Gregory; 15317; 0000-0001-6224-8237"
       ],
       "issued_date": "2003-09-01",
+      "publication_year": "2003",
+      "article_url": "https://doi.org/10.1023/A:1024732521745",
       "available_date": "2014-05-21T20:43:25Z",
       "item_type": "Journal Article",
       "doi": "10.1023/A:1024732521745",
@@ -10535,6 +11037,8 @@
         "Schwann, Gregory; 15317; 0000-0001-6224-8237"
       ],
       "issued_date": "2008-03-01",
+      "publication_year": "2008",
+      "article_url": "https://doi.org/10.1111/j.1540-6229.2008.00210.x",
       "available_date": "2014-05-21T20:41:42Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1540-6229.2008.00210.x",
@@ -10571,6 +11075,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2009-12-01",
+      "publication_year": "2009",
+      "article_url": "https://doi.org/10.1111/j.1467-8462.2009.00568.x",
       "available_date": "2014-05-21T20:40:34Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1467-8462.2009.00568.x",
@@ -10607,6 +11113,8 @@
         "Davis, Kevin; 4668; 0000-0002-5810-7172"
       ],
       "issued_date": "2009-09-01",
+      "publication_year": "2009",
+      "article_url": "https://doi.org/10.1111/j.1759-3441.2009.00028.x",
       "available_date": "2014-05-21T20:40:30Z",
       "item_type": "Journal Article",
       "doi": "10.1111/j.1759-3441.2009.00028.x",

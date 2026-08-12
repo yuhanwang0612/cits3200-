@@ -1,51 +1,46 @@
-# University of Melbourne Finance scraping feasibility report
+# University of Melbourne Finance implementation report
 
-Harvest date: 2026-08-09
+Harvest date: 2026-08-10
 
-## Result
+## Current result
 
-The task is technically feasible.
+The University of Melbourne Finance data pipeline now produces the fields confirmed in the 5 August client
+meeting and exposes unresolved records rather than hiding them.
 
-- The FBE Finance research page is an overview page rather than a researcher dataset.
-- Its official academic-staff link leads to a server-rendered directory that can be extracted with a headless browser.
-- Its Recent Publications link leads to a DSpace collection with a public REST API, so publication metadata should be harvested through the API rather than scraped from rendered pages.
+- 47 current staff-directory records collected.
+- 37 staff records mapped automatically to academic levels B-E.
+- 10 non-standard roles left unmapped and flagged for review; there were no explicit Level A roles.
+- 254 Minerva Finance collection records collected with a title, year and article/repository link.
+- 146 publication records matched to an ABDC 2025 rating.
+- 136 researcher-publication links produced by normalized full-name matching.
+- Per-researcher publication and ABDC-grade counts produced and reconciled by the validator.
 
-## Extracted datasets
+The generated `unimelb_finance_data_quality.json` file is the authoritative run summary; counts can change when
+the upstream sources change.
 
-### Current Finance staff directory
+## What is complete
 
-- 47 records labelled `Department of Finance`
-- 27 records link to a Find an Expert profile
-- 24 records are automatically flagged for inclusion review
-- Extracted fields: displayed name, role, disciplines, interests, department, email, phone and profile URL
+1. Collection of current Finance staff candidates and academic titles.
+2. Explicit A-E mapping rules for standard titles.
+3. Collection of publication title, year and stable article/repository URL.
+4. ABDC merge using ISSN/eISSN first and normalized journal title as a fallback.
+5. First-pass attribution of Minerva publications to current staff.
+6. Per-researcher publication counts and A*/A/B/C counts.
+7. Machine-readable JSON/CSV outputs, a review workbook and automated reconciliation checks.
 
-The flagged group includes education-focused or teaching roles, professional/administrative roles, emeritus or postdoctoral appointments, and people without a linked Find an Expert profile. These flags are prompts for client review, not automatic exclusions.
+## What still requires client or team validation
 
-### Finance - Research Publications collection
+1. Confirm the population: research-active only, or also education-focused, postdoctoral, emeritus and other
+   appointments.
+2. Confirm whether ABDC 2025 or ABDC 2022 is the required ranking version.
+3. Manually validate researcher-publication links and replace name matching with persistent IDs where possible.
+4. Decide whether the Minerva collection is sufficient or whether OpenAlex is needed to extend career coverage.
+5. Complete the separate University of Melbourne Accounting pipeline if the allocated university task includes
+   both disciplines.
 
-- 254 of 254 archived collection items extracted
-- 236 Journal Articles
-- 227 records with a DOI
-- issued-year range in the current collection: 2003-2026
-- 247 records containing Melbourne internal author identifiers
+## Interpretation
 
-Extracted metadata includes title, authors, Melbourne authors, internal author IDs/ORCIDs where supplied, year, item type, DOI, ISSN/eISSN, journal, volume, issue, pages, publisher, department, faculty, citation text, licence and open-access information.
-
-## Data-quality interpretation
-
-The two datasets have different meanings:
-
-- The staff directory is the best source for deciding who currently belongs to the Department of Finance.
-- The Minerva collection is a department-level repository collection. It may include former staff and collaborators and may omit publications belonging to current staff.
-
-Therefore, the collection should not be described as a guaranteed complete historical publication record for every current Finance researcher. A researcher-publication reconciliation stage is still required. Internal IDs and ORCIDs should be used first, followed by carefully reviewed name matching.
-
-## Recommended project approach
-
-1. Use the staff directory to create the current candidate researcher list.
-2. Ask the client which appointment categories are included in rankings.
-3. Use OpenAlex as the main publication/citation source after matching each approved researcher.
-4. Use Minerva metadata to validate OpenAlex results and fill identified gaps.
-5. Record match confidence and route ambiguous researchers or publications for manual review.
-
-This is substantially more realistic than writing a separate full-publication HTML scraper for every university.
+This is a suitable Sprint-stage dataset and a valid implementation of the meeting's required structure. It is not
+yet evidence that every current researcher and every career publication has been captured correctly. The data
+quality report and review flags should remain visible when the data is migrated to SQL or exposed through the web
+application.
