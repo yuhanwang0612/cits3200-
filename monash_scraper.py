@@ -236,98 +236,194 @@ def fetch_research_profile(research_url):
                 time.sleep(10 * (attempt + 1))
                 continue
             if resp.status_code != 200 or not resp.text:
-                return None, 0
+                return None, 0, None
             soup = BeautifulSoup(resp.text, "html.parser")
             rank = extract_rank_from_soup(soup)
             pub_count = 0
             for a in soup.find_all("a", href=True):
                 if "/publications/" in a["href"]:
                     txt = a.get_text()
-                    # Only accept realistic pub counts, not years (1891, 2004 etc.)
                     m = re.search(r"(\d+)", txt)
                     if m:
                         n = int(m.group(1))
                         if 1 <= n <= 999:
                             pub_count = max(pub_count, n)
-            return rank, pub_count
+            # Extract ORCID from profile page (Pure always links to orcid.org)
+            orcid = None
+            for a in soup.find_all("a", href=True):
+                m = re.search(r"orcid\.org/(\d{4}-\d{4}-\d{4}-\d{3}[\dX])", a["href"])
+                if m:
+                    orcid = m.group(1)
+                    break
+            return rank, pub_count, orcid
         except Exception:
             time.sleep(3)
-    return None, 0
+    return None, 0, None
 
 for r in records:
     rurl = find_research_url(r.get("profile_url"), r["name_clean"])
     r["research_url"] = rurl
-    rank, pubs = fetch_research_profile(rurl)
+    rank, pubs, orcid = fetch_research_profile(rurl)
     r["pub_count"] = pubs
+    r["orcid"] = orcid
     if not r["level"]:
         r["level"] = rank
-    print(f"  {r['name_clean']:35s}  level={r['level']}  pubs={pubs}")
+    print(f"  {r['name_clean']:35s}  level={r['level']}  pubs={pubs}  orcid={orcid}")
     time.sleep(1.5)
 
 
-# ── Phase 3: fetch publications ───────────────────────────────────────
-print("\nFetching publications...")
+# ── Load ABDC journal rankings ────────────────────────────────────────
+abdc_lookup = {}  # journal name (lowercase) → rating
+try:
+    with open("journals.csv", newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            name = row.get("journal", "").strip().lower()
+            canonical = row.get("journal_canonical", "").strip().lower()
+            rating = row.get("abdc", "").strip()
+            if name and rating:
+                abdc_lookup[name] = rating
+            if canonical and rating:
+                abdc_lookup[canonical] = rating
+    print(f"Loaded {len(abdc_lookup)} ABDC journal entries")
+except FileNotFoundError:
+    print("journals.csv not found — ABDC ratings will be blank")
 
-def fetch_publications(research_url):
+def get_abdc(journal_name):
+    if not journal_name:
+        return None
+    return abdc_lookup.get(journal_name.strip().lower())
+
+
+# ── Phase 3: fetch ALL publications via OpenAlex ─────────────────────
+print("\nFetching all publications via OpenAlex...")
+
+OA_HEADERS = {"User-Agent": "monash-research-scraper/1.0 (mailto:wyuhan577@gmail.com)"}
+
+def oa_get(url, params):
+    """OpenAlex GET with retry on 429/timeout."""
+    for attempt in range(3):
+        try:
+            resp = requests.get(url, params=params, headers=OA_HEADERS, timeout=20)
+            if resp.status_code == 429:
+                print(f"    ⏳ OpenAlex rate limit — waiting 30s...")
+                time.sleep(30)
+                continue
+            return resp
+        except Exception as e:
+            print(f"    ⚠️  OpenAlex error: {e}")
+            time.sleep(10)
+    return None
+
+def parse_oa_works(works):
+    """Convert OpenAlex work records to publication dicts."""
+    pubs = []
+    for w in works:
+        title = (w.get("title") or "").strip()
+        if not title or len(title) < 5:
+            continue
+        year = w.get("publication_year")
+        doi = (w.get("doi") or "").replace("https://doi.org/", "").strip()
+        loc = w.get("primary_location") or {}
+        source = loc.get("source") or {}
+        journal = source.get("display_name") or None
+        author_count = len(w.get("authorships") or [])
+        pubs.append({
+            "title": title, "year": year, "doi": doi,
+            "journal": journal, "author_count": author_count,
+            "pub_url": f"https://doi.org/{doi}" if doi else "",
+            "abdc_rank": get_abdc(journal),
+        })
+    return pubs
+
+def fetch_pubs_openalex(name, orcid=None):
     """
-    Scrape publications from the researcher's profile page.
-    Strategy: find all links pointing to /en/publications/ and extract
-    info from their surrounding context. This is robust to CSS class changes.
+    Fetch all publications from OpenAlex.
+    Strategy:
+      1. If ORCID known → look up OpenAlex author by ORCID → get their author ID
+         → fetch all works by that author ID (much better coverage than ORCID filter).
+      2. If no ORCID → search by name → only proceed if a result has Monash as
+         their institution (avoids false positives from common names).
     """
     pubs = []
-    try:
-        resp = requests.get(research_url, headers=HEADERS, timeout=10)
-        if resp.status_code != 200 or not resp.text:
-            return pubs
-    except Exception:
-        return pubs
+    author_id = None
 
-    soup = BeautifulSoup(resp.text, "html.parser")
+    if orcid:
+        # ORCID → OpenAlex author lookup → author ID
+        resp = oa_get("https://api.openalex.org/authors",
+                      {"filter": f"orcid:{orcid}", "per-page": 1})
+        if resp and resp.status_code == 200:
+            results = resp.json().get("results", [])
+            if results:
+                author_id = results[0]["id"]
+        time.sleep(1)
+        if not author_id:
+            return []  # ORCID not in OpenAlex
 
-    seen = set()
-    # Find every link that points to a publication page
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        if "/en/publications/" not in href:
-            continue
-        title = a.get_text(strip=True)
-        if not title or title in seen or len(title) < 10:
-            continue
-        seen.add(title)
+    else:
+        # Name search → require Monash affiliation to avoid wrong matches
+        resp = oa_get("https://api.openalex.org/authors",
+                      {"search": name, "per-page": 10})
+        if not resp or resp.status_code != 200:
+            return []
+        results = resp.json().get("results", [])
+        monash_match = next(
+            (r for r in results
+             if any("monash" in (i.get("display_name") or "").lower()
+                    for i in (r.get("last_known_institutions") or []))),
+            None
+        )
+        if not monash_match:
+            return []  # no Monash-affiliated match → skip rather than guess
+        author_id = monash_match["id"]
+        time.sleep(1)
 
-        pub_url = urljoin(research_url, href)
+    author_filter = f"authorships.author.id:{author_id}"
 
-        # Walk up to find the container block (li, div, article)
-        container = a.find_parent("li") or a.find_parent("article") or a.find_parent("div")
-        text = container.get_text(" ", strip=True) if container else a.get_text(" ", strip=True)
-
-        # Year: find 4-digit year in the container text
-        m = re.search(r"\b(19|20)\d{2}\b", text)
-        year = int(m.group()) if m else None
-
-        # Journal: text inside <em> in the container
-        journal = None
-        if container:
-            em = container.find("em")
-            if em:
-                journal = em.get_text(strip=True)
-
-        pubs.append({"title": title, "year": year, "journal": journal, "pub_url": pub_url})
+    # ── Fetch all works (cursor pagination) ──────────────────────────
+    cursor = "*"
+    while True:
+        resp = oa_get("https://api.openalex.org/works", {
+            "filter": author_filter,
+            "per-page": 200,
+            "cursor": cursor,
+            "select": "title,publication_year,doi,primary_location,authorships",
+        })
+        if not resp or resp.status_code != 200:
+            break
+        data = resp.json()
+        works = data.get("results", [])
+        if not works:
+            break
+        pubs.extend(parse_oa_works(works))
+        cursor = data.get("meta", {}).get("next_cursor")
+        if not cursor:
+            break
+        time.sleep(0.5)
 
     return pubs
 
 all_pubs = []
 for r in records:
-    if not r.get("research_url"):
+    name = r["name_clean"]
+    if len(name.split()) < 2 or len(name) > 60:
         continue
-    pubs = fetch_publications(r["research_url"])
+    orcid = r.get("orcid")
+    pubs = fetch_pubs_openalex(name, orcid=orcid)
+    # Sanity check: if name-match returns >5x the Pure pub_count, discard
+    profile_count = r.get("pub_count", 0) or 0
+    if not orcid and profile_count == 0 and len(pubs) > 50:
+        pubs = []  # profile shows 0 pubs → don't trust name match
+    elif not orcid and profile_count > 0 and len(pubs) > profile_count * 5:
+        pubs = []  # way more than profile → wrong person
+
     for p in pubs:
         all_pubs.append({
             "university": r["university"], "discipline": r["discipline"],
-            "researcher": r["name_clean"], "level": r["level"], **p
+            "researcher": name, "level": r["level"], **p
         })
-    print(f"  {r['name_clean']:35s}  {len(pubs)} publications")
-    time.sleep(1.0)
+    tag = "[ORCID]" if orcid else "[name→Monash]"
+    print(f"  {name:35s}  {len(pubs)} publications {tag}")
+    time.sleep(3)  # polite rate limiting — avoids 429
 
 
 # ── Save CSVs ─────────────────────────────────────────────────────────
@@ -340,7 +436,7 @@ with open(staff_file, "w", newline="", encoding="utf-8") as f:
     w.writeheader()
     w.writerows(records)
 
-pub_cols = ["university","discipline","researcher","level","title","year","journal","pub_url"]
+pub_cols = ["university","discipline","researcher","level","title","year","doi","author_count","journal","abdc_rank","pub_url"]
 with open(pubs_file, "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=pub_cols, extrasaction="ignore")
     w.writeheader()
