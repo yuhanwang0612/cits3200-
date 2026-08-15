@@ -9,7 +9,10 @@
       "2213-3933"
     ],
     "abdc": "A",
-    "doi": "10.1142/s1094406025410057"
+    "sjr": 0.436,
+    "sjr_quartile": "Q2",
+    "h_index": 75,
+    "cites_per_doc_2y": 1.71
   },
   {
     "journal_key": "SSRN Electronic Journal",
@@ -20,7 +23,10 @@
       "1556-5068"
     ],
     "abdc": null,
-    "doi": "10.2139/ssrn.4584928"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Quarterly Review of Economics and Finance",
@@ -31,7 +37,10 @@
       "1062-9769"
     ],
     "abdc": "B",
-    "doi": "10.1016/j.qref.2023.07.003"
+    "sjr": 0.705,
+    "sjr_quartile": "Q2",
+    "h_index": 77,
+    "cites_per_doc_2y": 4.21
   },
   {
     "journal_key": "Review of Financial Economics",
@@ -43,7 +52,10 @@
       "1873-5924"
     ],
     "abdc": "B",
-    "doi": "10.1002/rfe.1172"
+    "sjr": 0.326,
+    "sjr_quartile": "Q3",
+    "h_index": 49,
+    "cites_per_doc_2y": 1.8
   },
   {
     "journal_key": "Journal of Real Estate Finance and Economics",
@@ -55,7 +67,10 @@
       "1573-045X"
     ],
     "abdc": "A",
-    "doi": "10.1007/s11146-021-09883-9"
+    "sjr": 0.882,
+    "sjr_quartile": "Q1",
+    "h_index": 78,
+    "cites_per_doc_2y": 3.01
   },
   {
     "journal_key": "Real Estate Economics",
@@ -67,7 +82,10 @@
       "1540-6229"
     ],
     "abdc": "A",
-    "doi": "10.1111/1540-6229.12332"
+    "sjr": 1.474,
+    "sjr_quartile": "Q1",
+    "h_index": 76,
+    "cites_per_doc_2y": 2.98
   },
   {
     "journal_key": "Advances in Decision Sciences",
@@ -79,7 +97,10 @@
       "2090-3359"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": 0.24,
+    "sjr_quartile": "Q3",
+    "h_index": 25,
+    "cites_per_doc_2y": 1.53
   },
   {
     "journal_key": "Journal of Property Research",
@@ -91,7 +112,10 @@
       "1466-4453"
     ],
     "abdc": "B",
-    "doi": "10.1080/09599916.2012.721381"
+    "sjr": 0.375,
+    "sjr_quartile": "Q2",
+    "h_index": 43,
+    "cites_per_doc_2y": 2.0
   },
   {
     "journal_key": "Journal of International Money and Finance",
@@ -103,7 +127,10 @@
       "1873-0639"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.jimonfin.2012.05.020"
+    "sjr": 1.364,
+    "sjr_quartile": "Q1",
+    "h_index": 126,
+    "cites_per_doc_2y": 4.2
   },
   {
     "journal_key": "The Journal of Portfolio Management",
@@ -115,7 +142,10 @@
       "2168-8656"
     ],
     "abdc": "A",
-    "doi": "10.3905/jpm.2011.37.5.170"
+    "sjr": 0.449,
+    "sjr_quartile": "Q2",
+    "h_index": 67,
+    "cites_per_doc_2y": 1.05
   },
   {
     "journal_key": "The Journal of Business",
@@ -127,7 +157,10 @@
       "1537-5374"
     ],
     "abdc": null,
-    "doi": "10.1086/503649"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "The European Journal of Finance",
@@ -139,7 +172,10 @@
       "1466-4364"
     ],
     "abdc": "A",
-    "doi": "10.1080/13518470500459808"
+    "sjr": 0.998,
+    "sjr_quartile": "Q1",
+    "h_index": 61,
+    "cites_per_doc_2y": 4.85
   },
   {
     "journal_key": "The Journal of Asset Management",
@@ -151,7 +187,10 @@
       "1479-179X"
     ],
     "abdc": "B",
-    "doi": "10.1057/palgrave.jam.2240197"
+    "sjr": 0.448,
+    "sjr_quartile": "Q2",
+    "h_index": 28,
+    "cites_per_doc_2y": 2.01
   },
   {
     "journal_key": "Applied Mathematical Finance",
@@ -163,7 +202,10 @@
       "1466-4313"
     ],
     "abdc": "B",
-    "doi": "10.1080/1350486022000015850"
+    "sjr": 0.543,
+    "sjr_quartile": "Q2",
+    "h_index": 40,
+    "cites_per_doc_2y": 1.58
   },
   {
     "journal_key": "International Review of Economics & Finance",
@@ -175,7 +217,10 @@
       "1873-8036"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.iref.2025.103991"
+    "sjr": 1.485,
+    "sjr_quartile": "Q1",
+    "h_index": 101,
+    "cites_per_doc_2y": 8.27
   },
   {
     "journal_key": "Finance Research Letters",
@@ -186,7 +231,10 @@
       "1544-6123"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.frl.2023.104011"
+    "sjr": 1.672,
+    "sjr_quartile": "Q1",
+    "h_index": 143,
+    "cites_per_doc_2y": 8.17
   },
   {
     "journal_key": "Journal of Contemporary Accounting and Economics",
@@ -198,7 +246,10 @@
       "2352-3298"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.jcae.2026.100571"
+    "sjr": 0.801,
+    "sjr_quartile": "Q2",
+    "h_index": 46,
+    "cites_per_doc_2y": 4.18
   },
   {
     "journal_key": "Journal of Accounting Literature",
@@ -210,7 +261,10 @@
       "2452-1469"
     ],
     "abdc": "A",
-    "doi": "10.1108/jal-02-2025-0058"
+    "sjr": 0.912,
+    "sjr_quartile": "Q2",
+    "h_index": 31,
+    "cites_per_doc_2y": 3.8
   },
   {
     "journal_key": "Financial Review (US)",
@@ -222,7 +276,10 @@
       "1540-6288"
     ],
     "abdc": "A",
-    "doi": "10.1111/fire.70034"
+    "sjr": 0.56,
+    "sjr_quartile": "Q2",
+    "h_index": 57,
+    "cites_per_doc_2y": 2.2
   },
   {
     "journal_key": "British Accounting Review",
@@ -234,7 +291,10 @@
       "1095-8347"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.bar.2025.101671"
+    "sjr": 1.705,
+    "sjr_quartile": "Q1",
+    "h_index": 100,
+    "cites_per_doc_2y": 8.33
   },
   {
     "journal_key": "Journal of Financial Research",
@@ -246,7 +306,10 @@
       "1475-6803"
     ],
     "abdc": "A",
-    "doi": "10.1111/jfir.70021"
+    "sjr": 0.436,
+    "sjr_quartile": "Q2",
+    "h_index": 58,
+    "cites_per_doc_2y": 1.85
   },
   {
     "journal_key": "Global Finance Journal",
@@ -258,7 +321,10 @@
       "1873-5665"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.gfj.2025.101173"
+    "sjr": 1.254,
+    "sjr_quartile": "Q1",
+    "h_index": 59,
+    "cites_per_doc_2y": 6.49
   },
   {
     "journal_key": "Corporate Governance: an international review",
@@ -270,7 +336,10 @@
       "1467-8683"
     ],
     "abdc": "A",
-    "doi": "10.1111/corg.12623"
+    "sjr": 1.992,
+    "sjr_quartile": "Q1",
+    "h_index": 120,
+    "cites_per_doc_2y": 8.85
   },
   {
     "journal_key": "Accounting and Finance",
@@ -282,7 +351,10 @@
       "1467-629X"
     ],
     "abdc": "A",
-    "doi": "10.1111/acfi.70023"
+    "sjr": 0.814,
+    "sjr_quartile": "Q1",
+    "h_index": 77,
+    "cites_per_doc_2y": 3.53
   },
   {
     "journal_key": "Journal of Financial Stability",
@@ -294,7 +366,10 @@
       "1878-0962"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jfs.2025.101384"
+    "sjr": 1.589,
+    "sjr_quartile": "Q1",
+    "h_index": 90,
+    "cites_per_doc_2y": 5.1
   },
   {
     "journal_key": "The European Accounting Review",
@@ -306,7 +381,10 @@
       "1468-4497"
     ],
     "abdc": "A*",
-    "doi": "10.1080/09638180.2024.2368129"
+    "sjr": 2.272,
+    "sjr_quartile": "Q1",
+    "h_index": 98,
+    "cites_per_doc_2y": 6.0
   },
   {
     "journal_key": "Journal of Business Finance & Accounting",
@@ -318,7 +396,10 @@
       "1468-5957"
     ],
     "abdc": "A*",
-    "doi": "10.1111/jbfa.12787"
+    "sjr": 1.202,
+    "sjr_quartile": "Q1",
+    "h_index": 102,
+    "cites_per_doc_2y": 3.81
   },
   {
     "journal_key": "Journal of Banking & Finance",
@@ -330,7 +411,10 @@
       "1872-6372"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jbankfin.2023.106877"
+    "sjr": 1.954,
+    "sjr_quartile": "Q1",
+    "h_index": 225,
+    "cites_per_doc_2y": 5.11
   },
   {
     "journal_key": "Pacific-Basin Finance Journal",
@@ -341,7 +425,10 @@
       "0927-538X"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.pacfin.2023.102008"
+    "sjr": 1.322,
+    "sjr_quartile": "Q1",
+    "h_index": 92,
+    "cites_per_doc_2y": 6.12
   },
   {
     "journal_key": "Journal of Behavioral and Experimental Finance",
@@ -352,7 +439,10 @@
       "2214-6350"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.jbef.2022.100648"
+    "sjr": 0.965,
+    "sjr_quartile": "Q1",
+    "h_index": 54,
+    "cites_per_doc_2y": 4.68
   },
   {
     "journal_key": "Australian Journal of Management",
@@ -364,7 +454,10 @@
       "1327-2020"
     ],
     "abdc": "A",
-    "doi": "10.1177/0312896220974417"
+    "sjr": 0.778,
+    "sjr_quartile": "Q1",
+    "h_index": 57,
+    "cites_per_doc_2y": 3.96
   },
   {
     "journal_key": "Journal of Corporate Finance",
@@ -376,7 +469,10 @@
       "1872-6313"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jcorpfin.2020.101774"
+    "sjr": 2.706,
+    "sjr_quartile": "Q1",
+    "h_index": 166,
+    "cites_per_doc_2y": 7.97
   },
   {
     "journal_key": "Journal of Business Research",
@@ -388,7 +484,10 @@
       "1873-7978"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.jbusres.2020.01.035"
+    "sjr": 3.498,
+    "sjr_quartile": "Q1",
+    "h_index": 322,
+    "cites_per_doc_2y": 15.01
   },
   {
     "journal_key": "The Journal of Finance",
@@ -400,7 +499,10 @@
       "1540-6261"
     ],
     "abdc": "A*",
-    "doi": "10.1111/jofi.13337"
+    "sjr": 22.27,
+    "sjr_quartile": "Q1",
+    "h_index": 386,
+    "cites_per_doc_2y": 12.3
   },
   {
     "journal_key": "International Review of Financial Analysis",
@@ -411,7 +513,10 @@
       "1057-5219"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.irfa.2024.103109"
+    "sjr": 2.373,
+    "sjr_quartile": "Q1",
+    "h_index": 129,
+    "cites_per_doc_2y": 11.33
   },
   {
     "journal_key": "Materiały i Studia",
@@ -423,7 +528,10 @@
       "2084-6258"
     ],
     "abdc": null,
-    "doi": "10.5604/01.3001.0055.7897"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "International Review of Finance",
@@ -435,7 +543,10 @@
       "1468-2443"
     ],
     "abdc": "A",
-    "doi": "10.1111/irfi.12360"
+    "sjr": 0.636,
+    "sjr_quartile": "Q2",
+    "h_index": 35,
+    "cites_per_doc_2y": 2.96
   },
   {
     "journal_key": "Journal of Financial Markets",
@@ -446,7 +557,10 @@
       "1386-4181"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.finmar.2020.100576"
+    "sjr": 1.544,
+    "sjr_quartile": "Q1",
+    "h_index": 77,
+    "cites_per_doc_2y": 2.7
   },
   {
     "journal_key": "Financial Management",
@@ -458,7 +572,10 @@
       "1755-053X"
     ],
     "abdc": "A*",
-    "doi": "10.1111/fima.70049"
+    "sjr": 3.477,
+    "sjr_quartile": "Q1",
+    "h_index": 88,
+    "cites_per_doc_2y": 9.5
   },
   {
     "journal_key": "Organization Science",
@@ -470,7 +587,10 @@
       "1526-5455"
     ],
     "abdc": "A*",
-    "doi": "10.1287/orsc.2022.16493"
+    "sjr": 7.929,
+    "sjr_quartile": "Q1",
+    "h_index": 308,
+    "cites_per_doc_2y": 7.93
   },
   {
     "journal_key": "Management Science",
@@ -482,7 +602,10 @@
       "1526-5501"
     ],
     "abdc": "A*",
-    "doi": "10.1287/mnsc.2023.03556"
+    "sjr": 6.428,
+    "sjr_quartile": "Q1",
+    "h_index": 321,
+    "cites_per_doc_2y": 7.69
   },
   {
     "journal_key": "European Financial Management",
@@ -494,7 +617,10 @@
       "1468-036X"
     ],
     "abdc": "A",
-    "doi": "10.1111/eufm.12180"
+    "sjr": 1.188,
+    "sjr_quartile": "Q1",
+    "h_index": 82,
+    "cites_per_doc_2y": 5.58
   },
   {
     "journal_key": "Journal of Financial and Quantitative Analysis",
@@ -506,7 +632,10 @@
       "1756-6916"
     ],
     "abdc": "A*",
-    "doi": "10.1017/S0022109017000497"
+    "sjr": 4.404,
+    "sjr_quartile": "Q1",
+    "h_index": 164,
+    "cites_per_doc_2y": 4.15
   },
   {
     "journal_key": "Accounting Auditing and Accountability Journal",
@@ -518,7 +647,10 @@
       "1758-4205"
     ],
     "abdc": "A*",
-    "doi": "10.1108/aaaj-06-2025-8039"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "One Earth",
@@ -530,7 +662,10 @@
       "2590-3330"
     ],
     "abdc": null,
-    "doi": "10.1016/j.oneear.2025.101550"
+    "sjr": 4.141,
+    "sjr_quartile": "Q1",
+    "h_index": 89,
+    "cites_per_doc_2y": 9.21
   },
   {
     "journal_key": "Nature Climate Change",
@@ -542,7 +677,10 @@
       "1758-6798"
     ],
     "abdc": null,
-    "doi": "10.1038/s41558-025-02467-y"
+    "sjr": 7.978,
+    "sjr_quartile": "Q1",
+    "h_index": 322,
+    "cites_per_doc_2y": 11.93
   },
   {
     "journal_key": "Global Environmental Change",
@@ -554,7 +692,10 @@
       "1872-9495"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.gloenvcha.2022.102492"
+    "sjr": 3.283,
+    "sjr_quartile": "Q1",
+    "h_index": 255,
+    "cites_per_doc_2y": 10.11
   },
   {
     "journal_key": "Journal of Cleaner Production",
@@ -565,7 +706,10 @@
       "0959-6526"
     ],
     "abdc": "C",
-    "doi": "10.1016/j.jclepro.2021.129827"
+    "sjr": 2.019,
+    "sjr_quartile": "Q1",
+    "h_index": 397,
+    "cites_per_doc_2y": 11.78
   },
   {
     "journal_key": "Business and Society",
@@ -577,7 +721,10 @@
       "1552-4205"
     ],
     "abdc": "A",
-    "doi": "10.1177/0007650319825764"
+    "sjr": 2.832,
+    "sjr_quartile": "Q1",
+    "h_index": 114,
+    "cites_per_doc_2y": 6.1
   },
   {
     "journal_key": "Journal of Business Ethics",
@@ -589,7 +736,10 @@
       "0167-4544"
     ],
     "abdc": "A",
-    "doi": "10.1007/s10551-015-2583-7"
+    "sjr": 3.138,
+    "sjr_quartile": "Q1",
+    "h_index": 304,
+    "cites_per_doc_2y": 10.35
   },
   {
     "journal_key": "Abacus",
@@ -601,7 +751,10 @@
       "1467-6281"
     ],
     "abdc": "A",
-    "doi": "10.1111/j.1467-6281.2012.00374.x"
+    "sjr": 0.762,
+    "sjr_quartile": "Q2",
+    "h_index": 60,
+    "cites_per_doc_2y": 3.2
   },
   {
     "journal_key": "Ethical Investor",
@@ -612,7 +765,10 @@
       "1445-1832"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "The Australian Economic Review",
@@ -624,7 +780,10 @@
       "1467-8462"
     ],
     "abdc": "B",
-    "doi": "10.1111/1467-8462.12239"
+    "sjr": 0.292,
+    "sjr_quartile": "Q3",
+    "h_index": 37,
+    "cites_per_doc_2y": 0.79
   },
   {
     "journal_key": "Economic Modelling",
@@ -636,7 +795,10 @@
       "1873-6122"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.econmod.2017.08.025"
+    "sjr": 1.348,
+    "sjr_quartile": "Q1",
+    "h_index": 133,
+    "cites_per_doc_2y": 6.5
   },
   {
     "journal_key": "Journal of Accounting and Management Information Systems (JAMIS)",
@@ -648,7 +810,10 @@
       "1843-8105"
     ],
     "abdc": "C",
-    "doi": "10.24818/jamis.2017.02007"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Accounting Research Journal",
@@ -660,7 +825,10 @@
       "1839-5465"
     ],
     "abdc": "B",
-    "doi": "10.1108/ARJ-07-2013-0048"
+    "sjr": 0.62,
+    "sjr_quartile": "Q2",
+    "h_index": 37,
+    "cites_per_doc_2y": 5.11
   },
   {
     "journal_key": "Journal of International Financial Markets, Institutions and Money",
@@ -672,7 +840,10 @@
       "1873-0612"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.intfin.2024.102000"
+    "sjr": 1.389,
+    "sjr_quartile": "Q1",
+    "h_index": 94,
+    "cites_per_doc_2y": 7.71
   },
   {
     "journal_key": "British Journal of Management",
@@ -684,7 +855,10 @@
       "1045-3172"
     ],
     "abdc": "A*",
-    "doi": "10.1111/1467-8551.12541"
+    "sjr": 2.694,
+    "sjr_quartile": "Q1",
+    "h_index": 149,
+    "cites_per_doc_2y": 9.98
   },
   {
     "journal_key": "Review of Quantitative Finance and Accounting",
@@ -696,7 +870,10 @@
       "0924-865X"
     ],
     "abdc": "B",
-    "doi": "10.1007/s11156-021-01002-2"
+    "sjr": 0.7,
+    "sjr_quartile": "Q2",
+    "h_index": 63,
+    "cites_per_doc_2y": 3.24
   },
   {
     "journal_key": "Managerial Finance",
@@ -708,7 +885,10 @@
       "1758-7743"
     ],
     "abdc": "B",
-    "doi": "10.1108/MF-07-2016-0187"
+    "sjr": 0.555,
+    "sjr_quartile": "Q2",
+    "h_index": 56,
+    "cites_per_doc_2y": 3.42
   },
   {
     "journal_key": "Journal of Multinational Financial Management",
@@ -720,7 +900,10 @@
       "1873-1309"
     ],
     "abdc": "B",
-    "doi": "10.1016/j.mulfin.2016.01.001"
+    "sjr": 1.199,
+    "sjr_quartile": "Q1",
+    "h_index": 65,
+    "cites_per_doc_2y": 6.3
   },
   {
     "journal_key": "Corporate Ownership and Control",
@@ -732,7 +915,10 @@
       "1810-3057"
     ],
     "abdc": null,
-    "doi": "10.22495/cocv3i2p11"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Journal of Economic Behavior and Organization",
@@ -743,7 +929,10 @@
       "0167-2681"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jebo.2022.02.013"
+    "sjr": 1.266,
+    "sjr_quartile": "Q1",
+    "h_index": 153,
+    "cites_per_doc_2y": 3.06
   },
   {
     "journal_key": "Journal of Financial Economics",
@@ -754,7 +943,10 @@
       "0304-405X"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jfineco.2021.05.032"
+    "sjr": 18.748,
+    "sjr_quartile": "Q1",
+    "h_index": 355,
+    "cites_per_doc_2y": 8.99
   },
   {
     "journal_key": "Applied Financial Economics",
@@ -766,7 +958,10 @@
       "1466-4305"
     ],
     "abdc": "B",
-    "doi": "10.1080/0960310042000281149"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Journal of Economics and Business",
@@ -777,7 +972,10 @@
       "0148-6195"
     ],
     "abdc": "B",
-    "doi": "10.1016/S0148-6195(99)00018-1"
+    "sjr": 0.783,
+    "sjr_quartile": "Q1",
+    "h_index": 65,
+    "cites_per_doc_2y": 3.2
   },
   {
     "journal_key": "Meditari Accountancy Research",
@@ -789,7 +987,10 @@
       "2049-3738"
     ],
     "abdc": "A",
-    "doi": "10.1108/MEDAR-12-2023-2249"
+    "sjr": 0.974,
+    "sjr_quartile": "Q1",
+    "h_index": 59,
+    "cites_per_doc_2y": 5.94
   },
   {
     "journal_key": "Accounting and Business Research",
@@ -801,7 +1002,10 @@
       "2159-4260"
     ],
     "abdc": "A",
-    "doi": "10.1080/00014788.2023.2165031"
+    "sjr": 1.065,
+    "sjr_quartile": "Q1",
+    "h_index": 77,
+    "cites_per_doc_2y": 3.62
   },
   {
     "journal_key": "International Journal of Managerial Finance",
@@ -813,7 +1017,10 @@
       "1758-6569"
     ],
     "abdc": "A",
-    "doi": "10.1108/ijmf-12-2019-0467"
+    "sjr": 0.635,
+    "sjr_quartile": "Q2",
+    "h_index": 47,
+    "cites_per_doc_2y": 3.19
   },
   {
     "journal_key": "Nature Communications",
@@ -824,7 +1031,10 @@
       "2041-1723"
     ],
     "abdc": null,
-    "doi": "10.1038/s41467-026-72703-2"
+    "sjr": 4.904,
+    "sjr_quartile": "Q1",
+    "h_index": 634,
+    "cites_per_doc_2y": 16.6
   },
   {
     "journal_key": "Scientific Reports",
@@ -835,7 +1045,10 @@
       "2045-2322"
     ],
     "abdc": null,
-    "doi": "10.1038/s41598-026-42790-8"
+    "sjr": 0.893,
+    "sjr_quartile": "Q1",
+    "h_index": 382,
+    "cites_per_doc_2y": 5.01
   },
   {
     "journal_key": "The International Journal of Life Cycle Assessment",
@@ -847,7 +1060,10 @@
       "1614-7502"
     ],
     "abdc": null,
-    "doi": "10.1007/s11367-026-02614-3"
+    "sjr": 1.535,
+    "sjr_quartile": "Q1",
+    "h_index": 149,
+    "cites_per_doc_2y": 6.39
   },
   {
     "journal_key": "California Management Review",
@@ -859,7 +1075,10 @@
       "2162-8564"
     ],
     "abdc": "A",
-    "doi": "10.1177/00081256251408087"
+    "sjr": 2.746,
+    "sjr_quartile": "Q1",
+    "h_index": 171,
+    "cites_per_doc_2y": 7.02
   },
   {
     "journal_key": "Journal of Environmental Psychology",
@@ -871,7 +1090,10 @@
       "1522-9610"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.jenvp.2025.102680"
+    "sjr": 2.508,
+    "sjr_quartile": "Q1",
+    "h_index": 210,
+    "cites_per_doc_2y": 7.74
   },
   {
     "journal_key": "Climatic Change",
@@ -883,7 +1105,10 @@
       "1573-1480"
     ],
     "abdc": null,
-    "doi": "10.1007/s10584-024-03740-3"
+    "sjr": 1.396,
+    "sjr_quartile": "Q1",
+    "h_index": 240,
+    "cites_per_doc_2y": 5.05
   },
   {
     "journal_key": "Renewable and Sustainable Energy Reviews",
@@ -895,7 +1120,10 @@
       "1879-0690"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.rser.2022.112586"
+    "sjr": 3.995,
+    "sjr_quartile": "Q1",
+    "h_index": 501,
+    "cites_per_doc_2y": 21.02
   },
   {
     "journal_key": "Electronic Markets",
@@ -907,7 +1135,10 @@
       "1422-8890"
     ],
     "abdc": "A",
-    "doi": "10.1007/s12525-015-0195-9"
+    "sjr": 2.143,
+    "sjr_quartile": "Q1",
+    "h_index": 76,
+    "cites_per_doc_2y": 11.32
   },
   {
     "journal_key": "Accounting and Management Information Systems",
@@ -918,7 +1149,10 @@
       "1843-8105"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "International Journal of Accounting and Information Management",
@@ -930,7 +1164,10 @@
       "1758-9037"
     ],
     "abdc": "B",
-    "doi": "10.1108/18347641311312267"
+    "sjr": 1.106,
+    "sjr_quartile": "Q1",
+    "h_index": 46,
+    "cites_per_doc_2y": 7.07
   },
   {
     "journal_key": "Emerging Markets Review",
@@ -942,7 +1179,10 @@
       "1566-0141"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.ememar.2020.100742"
+    "sjr": 1.115,
+    "sjr_quartile": "Q1",
+    "h_index": 83,
+    "cites_per_doc_2y": 5.16
   },
   {
     "journal_key": "European Journal of Operational Research",
@@ -954,7 +1194,10 @@
       "1872-6860"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.ejor.2020.04.009"
+    "sjr": 2.373,
+    "sjr_quartile": "Q1",
+    "h_index": 333,
+    "cites_per_doc_2y": 8.17
   },
   {
     "journal_key": "Research Policy",
@@ -965,7 +1208,10 @@
       "0048-7333"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.respol.2025.105310"
+    "sjr": 4.471,
+    "sjr_quartile": "Q1",
+    "h_index": 318,
+    "cites_per_doc_2y": 10.7
   },
   {
     "journal_key": "Economics Letters",
@@ -977,7 +1223,10 @@
       "1873-7374"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.econlet.2019.108740"
+    "sjr": 0.718,
+    "sjr_quartile": "Q2",
+    "h_index": 142,
+    "cites_per_doc_2y": 2.2
   },
   {
     "journal_key": "Journal of Financial Intermediation",
@@ -989,7 +1238,10 @@
       "1096-0473"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jfi.2017.05.005"
+    "sjr": 2.275,
+    "sjr_quartile": "Q1",
+    "h_index": 101,
+    "cites_per_doc_2y": 2.97
   },
   {
     "journal_key": "The Economic Record",
@@ -1001,7 +1253,10 @@
       "1475-4932"
     ],
     "abdc": "A",
-    "doi": "10.1111/j.1475-4932.2012.00831.x"
+    "sjr": 0.469,
+    "sjr_quartile": "Q2",
+    "h_index": 53,
+    "cites_per_doc_2y": 1.27
   },
   {
     "journal_key": "Humanities and Social Sciences Communications",
@@ -1012,7 +1267,10 @@
       "2662-9992"
     ],
     "abdc": null,
-    "doi": "10.1057/s41599-025-05203-1"
+    "sjr": 0.904,
+    "sjr_quartile": "Q1",
+    "h_index": 84,
+    "cites_per_doc_2y": 5.68
   },
   {
     "journal_key": "Applied Economics",
@@ -1024,7 +1282,10 @@
       "1466-4283"
     ],
     "abdc": "A",
-    "doi": "10.1080/00036846.2025.2538814"
+    "sjr": 0.625,
+    "sjr_quartile": "Q2",
+    "h_index": 126,
+    "cites_per_doc_2y": 3.31
   },
   {
     "journal_key": "China Economic Review",
@@ -1036,7 +1297,10 @@
       "1873-7781"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.chieco.2020.101479"
+    "sjr": 1.599,
+    "sjr_quartile": "Q1",
+    "h_index": 117,
+    "cites_per_doc_2y": 5.99
   },
   {
     "journal_key": "The Accounting Review",
@@ -1048,7 +1312,10 @@
       "1558-7967"
     ],
     "abdc": "A*",
-    "doi": "10.2308/tar-2023-0073"
+    "sjr": 4.403,
+    "sjr_quartile": "Q1",
+    "h_index": 217,
+    "cites_per_doc_2y": 3.71
   },
   {
     "journal_key": "Critical Finance Review",
@@ -1060,7 +1327,10 @@
       "2164-5744"
     ],
     "abdc": "A*",
-    "doi": "10.1561/104.00000121"
+    "sjr": 6.838,
+    "sjr_quartile": "Q1",
+    "h_index": 17,
+    "cites_per_doc_2y": 1.6
   },
   {
     "journal_key": "Journal of Empirical Finance",
@@ -1071,7 +1341,10 @@
       "0927-5398"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.jempfin.2021.04.006"
+    "sjr": 1.139,
+    "sjr_quartile": "Q1",
+    "h_index": 101,
+    "cites_per_doc_2y": 3.05
   },
   {
     "journal_key": "International Journal of Tourism Research",
@@ -1083,7 +1356,10 @@
       "1099-2340"
     ],
     "abdc": "A",
-    "doi": "10.1002/jtr.2416"
+    "sjr": 1.01,
+    "sjr_quartile": "Q1",
+    "h_index": 96,
+    "cites_per_doc_2y": 6.55
   },
   {
     "journal_key": "Biometrics",
@@ -1095,7 +1371,10 @@
       "1541-0420"
     ],
     "abdc": null,
-    "doi": "10.1111/biom.13262"
+    "sjr": 1.311,
+    "sjr_quartile": "Q1",
+    "h_index": 160,
+    "cites_per_doc_2y": 1.96
   },
   {
     "journal_key": "Land Use Policy",
@@ -1107,7 +1386,10 @@
       "1873-5754"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.landusepol.2017.08.038"
+    "sjr": 1.686,
+    "sjr_quartile": "Q1",
+    "h_index": 186,
+    "cites_per_doc_2y": 7.43
   },
   {
     "journal_key": "Social Choice and Welfare",
@@ -1119,7 +1401,10 @@
       "1432-217X"
     ],
     "abdc": "A",
-    "doi": "10.1007/s00355-016-1009-5"
+    "sjr": 0.489,
+    "sjr_quartile": "Q2",
+    "h_index": 64,
+    "cites_per_doc_2y": 1.41
   },
   {
     "journal_key": "Asia-Pacific Journal of Financial Studies",
@@ -1131,7 +1416,10 @@
       "2041-9945"
     ],
     "abdc": "B",
-    "doi": "10.1111/ajfs.12152"
+    "sjr": 0.542,
+    "sjr_quartile": "Q2",
+    "h_index": 29,
+    "cites_per_doc_2y": 1.54
   },
   {
     "journal_key": "Computational Statistics and Data Analysis",
@@ -1143,7 +1431,10 @@
       "1872-7352"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.csda.2014.11.002"
+    "sjr": 0.926,
+    "sjr_quartile": "Q1",
+    "h_index": 145,
+    "cites_per_doc_2y": 1.87
   },
   {
     "journal_key": "Journal of Financial Econometrics",
@@ -1155,7 +1446,10 @@
       "1479-8417"
     ],
     "abdc": "A*",
-    "doi": "10.1093/jjfinec/nbs011"
+    "sjr": 1.782,
+    "sjr_quartile": "Q1",
+    "h_index": 58,
+    "cites_per_doc_2y": 2.39
   },
   {
     "journal_key": "Biostatistics",
@@ -1167,7 +1461,10 @@
       "1468-4357"
     ],
     "abdc": "A",
-    "doi": "10.1093/biostatistics/kxp002"
+    "sjr": 1.24,
+    "sjr_quartile": "Q1",
+    "h_index": 100,
+    "cites_per_doc_2y": 2.32
   },
   {
     "journal_key": "Psychological Methods",
@@ -1178,7 +1475,10 @@
       "1082-989X"
     ],
     "abdc": "B",
-    "doi": "10.1037/1082-989X.13.1.58"
+    "sjr": 4.769,
+    "sjr_quartile": "Q1",
+    "h_index": 204,
+    "cites_per_doc_2y": 7.04
   },
   {
     "journal_key": "Journal of Computational and Graphical Statistics",
@@ -1190,7 +1490,10 @@
       "1537-2715"
     ],
     "abdc": "A*",
-    "doi": "10.1198/106186007x180156"
+    "sjr": 1.333,
+    "sjr_quartile": "Q1",
+    "h_index": 114,
+    "cites_per_doc_2y": 2.02
   },
   {
     "journal_key": "Biometrika",
@@ -1202,7 +1505,10 @@
       "1464-3510"
     ],
     "abdc": "A*",
-    "doi": "10.1093/biomet/93.2.459"
+    "sjr": 3.4,
+    "sjr_quartile": "Q1",
+    "h_index": 142,
+    "cites_per_doc_2y": 3.66
   },
   {
     "journal_key": "Sankhya: The Indian Journal of Statistics",
@@ -1213,7 +1519,10 @@
       "0972-7671"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": 0.112,
+    "sjr_quartile": "Q4",
+    "h_index": 21,
+    "cites_per_doc_2y": 0.0
   },
   {
     "journal_key": "Statistics & Probability Letters",
@@ -1224,7 +1533,10 @@
       "0167-7152"
     ],
     "abdc": "B",
-    "doi": "10.1016/j.spl.2004.11.014"
+    "sjr": 0.421,
+    "sjr_quartile": "Q3",
+    "h_index": 79,
+    "cites_per_doc_2y": 0.72
   },
   {
     "journal_key": "Journal of Accounting and Public Policy",
@@ -1236,7 +1548,10 @@
       "1873-2070"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jaccpubpol.2026.107418"
+    "sjr": 0.97,
+    "sjr_quartile": "Q1",
+    "h_index": 104,
+    "cites_per_doc_2y": 2.74
   },
   {
     "journal_key": "Contemporary Accounting Research",
@@ -1248,7 +1563,10 @@
       "1911-3846"
     ],
     "abdc": "A*",
-    "doi": "10.1111/1911-3846.12921"
+    "sjr": 3.686,
+    "sjr_quartile": "Q1",
+    "h_index": 141,
+    "cites_per_doc_2y": 6.37
   },
   {
     "journal_key": "Australasian Accounting Business and Finance Journal",
@@ -1260,7 +1578,10 @@
       "1834-2000"
     ],
     "abdc": "B",
-    "doi": "10.14453/aabfj.v17i3.06"
+    "sjr": 0.386,
+    "sjr_quartile": "Q2",
+    "h_index": 32,
+    "cites_per_doc_2y": 1.54
   },
   {
     "journal_key": "Managerial Auditing Journal",
@@ -1272,7 +1593,10 @@
       "1758-7735"
     ],
     "abdc": "A",
-    "doi": "10.1108/maj-09-2014-1092"
+    "sjr": 0.676,
+    "sjr_quartile": "Q1",
+    "h_index": 83,
+    "cites_per_doc_2y": 3.39
   },
   {
     "journal_key": "E-Journal of Business Education and Scholarship of Teaching",
@@ -1283,7 +1607,10 @@
       "1835-9132"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Cogent Business & Management",
@@ -1294,7 +1621,10 @@
       "2331-1975"
     ],
     "abdc": "C",
-    "doi": "10.1080/23311975.2026.2677341"
+    "sjr": 0.647,
+    "sjr_quartile": "Q2",
+    "h_index": 68,
+    "cites_per_doc_2y": 5.27
   },
   {
     "journal_key": "Journal of Accounting Auditing and Finance",
@@ -1306,7 +1636,10 @@
       "0148-558X"
     ],
     "abdc": "A",
-    "doi": "10.1177/0148558x241264668"
+    "sjr": 0.965,
+    "sjr_quartile": "Q1",
+    "h_index": 68,
+    "cites_per_doc_2y": 1.91
   },
   {
     "journal_key": "Australian Tax Forum",
@@ -1317,7 +1650,10 @@
       "0812-695X"
     ],
     "abdc": "A*",
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Journal of International Accounting Research",
@@ -1329,7 +1665,10 @@
       "1558-8025"
     ],
     "abdc": "A",
-    "doi": "10.2308/jiar-2021-019"
+    "sjr": 0.526,
+    "sjr_quartile": "Q2",
+    "h_index": 34,
+    "cites_per_doc_2y": 1.98
   },
   {
     "journal_key": "Australian Accounting Review",
@@ -1341,7 +1680,10 @@
       "1835-2561"
     ],
     "abdc": "B",
-    "doi": "10.1111/auar.12347"
+    "sjr": 0.702,
+    "sjr_quartile": "Q2",
+    "h_index": 54,
+    "cites_per_doc_2y": 3.1
   },
   {
     "journal_key": "Health Policy and Technology",
@@ -1353,7 +1695,10 @@
       "2211-8845"
     ],
     "abdc": null,
-    "doi": "10.1016/j.hlpt.2020.08.010"
+    "sjr": 0.876,
+    "sjr_quartile": "Q2",
+    "h_index": 47,
+    "cites_per_doc_2y": 4.01
   },
   {
     "journal_key": "Company and Securities Law Journal",
@@ -1364,7 +1709,10 @@
       "0729-2775"
     ],
     "abdc": "A",
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "World Journal of Surgical Oncology",
@@ -1375,7 +1723,10 @@
       "1477-7819"
     ],
     "abdc": null,
-    "doi": "10.1186/s12957-015-0522-9"
+    "sjr": 0.761,
+    "sjr_quartile": "Q1",
+    "h_index": 87,
+    "cites_per_doc_2y": 2.72
   },
   {
     "journal_key": "Clinical Imaging",
@@ -1387,7 +1738,10 @@
       "1873-4499"
     ],
     "abdc": null,
-    "doi": "10.1016/j.clinimag.2012.08.006"
+    "sjr": 0.565,
+    "sjr_quartile": "Q2",
+    "h_index": 63,
+    "cites_per_doc_2y": 2.08
   },
   {
     "journal_key": "Pacific Accounting Review",
@@ -1399,7 +1753,10 @@
       "0114-0582"
     ],
     "abdc": "B",
-    "doi": "10.1108/01140581311318968"
+    "sjr": 0.521,
+    "sjr_quartile": "Q2",
+    "h_index": 40,
+    "cites_per_doc_2y": 2.84
   },
   {
     "journal_key": "Global Economic Review",
@@ -1411,7 +1768,10 @@
       "1744-3873"
     ],
     "abdc": "C",
-    "doi": "10.1080/12265081003696403"
+    "sjr": 0.273,
+    "sjr_quartile": "Q3",
+    "h_index": 27,
+    "cites_per_doc_2y": 1.51
   },
   {
     "journal_key": "Journal of International Financial Management and Accounting",
@@ -1423,7 +1783,10 @@
       "1467-646X"
     ],
     "abdc": "A",
-    "doi": "10.1111/j.1467-646X.2008.01024.x"
+    "sjr": 1.639,
+    "sjr_quartile": "Q1",
+    "h_index": 55,
+    "cites_per_doc_2y": 6.94
   },
   {
     "journal_key": "Society and Natural Resources",
@@ -1435,7 +1798,10 @@
       "1521-0723"
     ],
     "abdc": null,
-    "doi": "10.1080/08941920.2012.719999"
+    "sjr": 0.668,
+    "sjr_quartile": "Q1",
+    "h_index": 110,
+    "cites_per_doc_2y": 2.32
   },
   {
     "journal_key": "CA Magazine",
@@ -1446,7 +1812,10 @@
       "1352-9021"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Allgemeine Forst- und Jagdzeitung (Journal for Forestry and Forest Science )",
@@ -1457,7 +1826,10 @@
       "0002-5852"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": 0.119,
+    "sjr_quartile": "Q4",
+    "h_index": 27,
+    "cites_per_doc_2y": 0.0
   },
   {
     "journal_key": "Centralblatt fuer das Gesamte Forstwesen",
@@ -1468,7 +1840,10 @@
       "0379-5292"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Intheblack",
@@ -1479,7 +1854,10 @@
       "1832-0899"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Small-Scale Forest Economics, Management and Policy",
@@ -1490,7 +1868,10 @@
       "1447-1825"
     ],
     "abdc": null,
-    "doi": "10.1007/s11842-006-0009-1"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Accounting, Organizations and Society",
@@ -1501,7 +1882,10 @@
       "0361-3682"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.aos.2005.01.001"
+    "sjr": 3.098,
+    "sjr_quartile": "Q1",
+    "h_index": 170,
+    "cites_per_doc_2y": 5.0
   },
   {
     "journal_key": "Economic Analysis and Policy",
@@ -1512,7 +1896,10 @@
       "0313-5926"
     ],
     "abdc": "A",
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Society & Natural Resources",
@@ -1523,7 +1910,10 @@
       "0894-1920"
     ],
     "abdc": null,
-    "doi": "10.1080/08941920050121936"
+    "sjr": 0.668,
+    "sjr_quartile": "Q1",
+    "h_index": 110,
+    "cites_per_doc_2y": 2.32
   },
   {
     "journal_key": "Forest Ecology and Management",
@@ -1534,7 +1924,10 @@
       "0378-1127"
     ],
     "abdc": null,
-    "doi": "10.1016/S0378-1127(99)00137-1"
+    "sjr": 1.333,
+    "sjr_quartile": "Q1",
+    "h_index": 227,
+    "cites_per_doc_2y": 4.34
   },
   {
     "journal_key": "Australian Forestry",
@@ -1545,7 +1938,10 @@
       "0004-9158"
     ],
     "abdc": null,
-    "doi": "10.1080/00049158.1998.10674744"
+    "sjr": 0.318,
+    "sjr_quartile": "Q2",
+    "h_index": 42,
+    "cites_per_doc_2y": 1.34
   },
   {
     "journal_key": "Journal of Management Accounting Research",
@@ -1557,7 +1953,10 @@
       "1558-8033"
     ],
     "abdc": "A*",
-    "doi": "10.2308/jmar-52030"
+    "sjr": 1.248,
+    "sjr_quartile": "Q1",
+    "h_index": 38,
+    "cites_per_doc_2y": 1.91
   },
   {
     "journal_key": "Issues in Accounting Education",
@@ -1569,7 +1968,10 @@
       "1558-7983"
     ],
     "abdc": "A",
-    "doi": "10.2308/issues-2020-093"
+    "sjr": 0.502,
+    "sjr_quartile": "Q2",
+    "h_index": 36,
+    "cites_per_doc_2y": 2.26
   },
   {
     "journal_key": "Long Range Planning",
@@ -1581,7 +1983,10 @@
       "1873-1872"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.lrp.2018.03.004"
+    "sjr": 2.815,
+    "sjr_quartile": "Q1",
+    "h_index": 142,
+    "cites_per_doc_2y": 7.5
   },
   {
     "journal_key": "International Journal of Accounting Information Systems",
@@ -1593,7 +1998,10 @@
       "1873-4723"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.accinf.2018.03.005"
+    "sjr": 1.747,
+    "sjr_quartile": "Q1",
+    "h_index": 74,
+    "cites_per_doc_2y": 12.21
   },
   {
     "journal_key": "IMA Educational Case Journal",
@@ -1604,7 +2012,10 @@
       "1940-204X"
     ],
     "abdc": "C",
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Advances in Accounting Education: teaching and curriculum innovations",
@@ -1615,7 +2026,10 @@
       "1085-4622"
     ],
     "abdc": "C",
-    "doi": "10.1108/s1085-462220220000026012"
+    "sjr": 0.175,
+    "sjr_quartile": "Q4",
+    "h_index": 13,
+    "cites_per_doc_2y": 0.55
   },
   {
     "journal_key": "Strategic Finance",
@@ -1626,7 +2040,10 @@
       "1524-833X"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "International Journal of Hospitality Management",
@@ -1638,7 +2055,10 @@
       "1873-4693"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.ijhm.2020.102453"
+    "sjr": 2.316,
+    "sjr_quartile": "Q1",
+    "h_index": 204,
+    "cites_per_doc_2y": 10.38
   },
   {
     "journal_key": "Cornell Hospitality Quarterly",
@@ -1650,7 +2070,10 @@
       "1938-9663"
     ],
     "abdc": "A",
-    "doi": "10.1177/1938965518779538"
+    "sjr": 1.13,
+    "sjr_quartile": "Q1",
+    "h_index": 100,
+    "cites_per_doc_2y": 5.5
   },
   {
     "journal_key": "Advances in Management Accounting",
@@ -1661,7 +2084,10 @@
       "1474-7871"
     ],
     "abdc": "A",
-    "doi": "10.1108/s1474-787120190000031002"
+    "sjr": NaN,
+    "sjr_quartile": "-",
+    "h_index": 20,
+    "cites_per_doc_2y": 1.22
   },
   {
     "journal_key": "International Journal of Hospitality and Tourism Administration",
@@ -1673,7 +2099,10 @@
       "1525-6499"
     ],
     "abdc": "B",
-    "doi": "10.1080/15256480.2018.1429342"
+    "sjr": 0.715,
+    "sjr_quartile": "Q2",
+    "h_index": 47,
+    "cites_per_doc_2y": 4.86
   },
   {
     "journal_key": "Journal of Hospitality and Tourism Management",
@@ -1685,7 +2114,10 @@
       "1839-5260"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jhtm.2017.09.004"
+    "sjr": 2.267,
+    "sjr_quartile": "Q1",
+    "h_index": 98,
+    "cites_per_doc_2y": 12.0
   },
   {
     "journal_key": "Sport Management Review",
@@ -1697,7 +2129,10 @@
       "1839-2083"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.smr.2015.08.003"
+    "sjr": 1.568,
+    "sjr_quartile": "Q1",
+    "h_index": 93,
+    "cites_per_doc_2y": 5.93
   },
   {
     "journal_key": "Advances in Accounting Behavioral Research",
@@ -1708,7 +2143,10 @@
       "1475-1488"
     ],
     "abdc": "A",
-    "doi": "10.1108/S1475-148820140000017002"
+    "sjr": NaN,
+    "sjr_quartile": "-",
+    "h_index": 15,
+    "cites_per_doc_2y": 0.44
   },
   {
     "journal_key": "Journal of Hotel & Business Management",
@@ -1719,7 +2157,10 @@
       "2169-0286"
     ],
     "abdc": null,
-    "doi": "10.4172/2169-0286.1000e107"
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Qualitative Research in Accounting and Management",
@@ -1731,7 +2172,10 @@
       "1758-7654"
     ],
     "abdc": "A",
-    "doi": "10.1108/11766091111189882"
+    "sjr": 1.027,
+    "sjr_quartile": "Q1",
+    "h_index": 42,
+    "cites_per_doc_2y": 3.7
   },
   {
     "journal_key": "Journal of Hospitality and Tourism Research",
@@ -1742,7 +2186,10 @@
       "1096-3480"
     ],
     "abdc": "A",
-    "doi": "10.1177/1096348010370855"
+    "sjr": 1.953,
+    "sjr_quartile": "Q1",
+    "h_index": 100,
+    "cites_per_doc_2y": 10.5
   },
   {
     "journal_key": "Journal of Accounting & Organizational Change",
@@ -1754,7 +2201,10 @@
       "1839-5473"
     ],
     "abdc": "B",
-    "doi": "10.1108/JAOC-03-2018-0033"
+    "sjr": 0.805,
+    "sjr_quartile": "Q1",
+    "h_index": 43,
+    "cites_per_doc_2y": 5.59
   },
   {
     "journal_key": "Management Accounting Research",
@@ -1766,7 +2216,10 @@
       "1096-1224"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.mar.2009.11.002"
+    "sjr": 1.625,
+    "sjr_quartile": "Q1",
+    "h_index": 109,
+    "cites_per_doc_2y": 5.19
   },
   {
     "journal_key": "Australian Business Law Review",
@@ -1777,7 +2230,10 @@
       "0310-1053"
     ],
     "abdc": "A",
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Auditing: A Journal of Practice and Theory",
@@ -1789,7 +2245,10 @@
       "1558-7991"
     ],
     "abdc": "A*",
-    "doi": "10.2308/aud.2002.21.2.7"
+    "sjr": 2.32,
+    "sjr_quartile": "Q1",
+    "h_index": 111,
+    "cites_per_doc_2y": 4.48
   },
   {
     "journal_key": "Journal of Accounting and Economics",
@@ -1800,7 +2259,10 @@
       "0165-4101"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.jacceco.2021.101425"
+    "sjr": 8.748,
+    "sjr_quartile": "Q1",
+    "h_index": 207,
+    "cites_per_doc_2y": 8.48
   },
   {
     "journal_key": "Pacific Asia Conference on Information Systems",
@@ -1811,7 +2273,10 @@
       "2689-6354"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": 0.152,
+    "sjr_quartile": "Q3",
+    "h_index": 13,
+    "cites_per_doc_2y": 0.18
   },
   {
     "journal_key": "BMJ Leader",
@@ -1822,7 +2287,10 @@
       "2398-631X"
     ],
     "abdc": null,
-    "doi": "10.1136/leader-2025-001434"
+    "sjr": 0.459,
+    "sjr_quartile": "Q2",
+    "h_index": 22,
+    "cites_per_doc_2y": 1.7
   },
   {
     "journal_key": "Collegian",
@@ -1834,7 +2302,10 @@
       "1876-7575"
     ],
     "abdc": null,
-    "doi": "10.1016/j.colegn.2025.12.002"
+    "sjr": 0.683,
+    "sjr_quartile": "Q1",
+    "h_index": 50,
+    "cites_per_doc_2y": 2.47
   },
   {
     "journal_key": "Asia Pacific Journal of Health Management",
@@ -1846,7 +2317,10 @@
       "1833-3818"
     ],
     "abdc": "C",
-    "doi": "10.24083/apjhm.v18i2.2347"
+    "sjr": 0.214,
+    "sjr_quartile": "Q4",
+    "h_index": 13,
+    "cites_per_doc_2y": 0.64
   },
   {
     "journal_key": "Accounting Education",
@@ -1858,7 +2332,10 @@
       "1468-4489"
     ],
     "abdc": "A",
-    "doi": "10.1080/09639284.2022.2041056"
+    "sjr": 0.879,
+    "sjr_quartile": "Q1",
+    "h_index": 58,
+    "cites_per_doc_2y": 5.76
   },
   {
     "journal_key": "Research in the Sociology of Organizations",
@@ -1869,7 +2346,10 @@
       "0733-558X"
     ],
     "abdc": "B",
-    "doi": "10.1108/s0733-558x20220000083002"
+    "sjr": NaN,
+    "sjr_quartile": "-",
+    "h_index": 55,
+    "cites_per_doc_2y": 1.11
   },
   {
     "journal_key": "The Practice Manager",
@@ -1878,7 +2358,10 @@
     "publisher": null,
     "issns": [],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "The Practice Manager Journal",
@@ -1887,7 +2370,10 @@
     "publisher": null,
     "issns": [],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Business Horizons",
@@ -1899,7 +2385,10 @@
       "1873-6068"
     ],
     "abdc": "B",
-    "doi": "10.1016/j.bushor.2012.07.006"
+    "sjr": 2.744,
+    "sjr_quartile": "Q1",
+    "h_index": 141,
+    "cites_per_doc_2y": 12.58
   },
   {
     "journal_key": "Computers and Security",
@@ -1911,7 +2400,10 @@
       "1872-6208"
     ],
     "abdc": null,
-    "doi": "10.1016/j.cose.2026.104900"
+    "sjr": 1.598,
+    "sjr_quartile": "Q1",
+    "h_index": 148,
+    "cites_per_doc_2y": 9.96
   },
   {
     "journal_key": "Journal of Management Control",
@@ -1923,7 +2415,10 @@
       "2191-477X"
     ],
     "abdc": "A",
-    "doi": "10.1007/s00187-026-00418-y"
+    "sjr": 0.922,
+    "sjr_quartile": "Q1",
+    "h_index": 37,
+    "cites_per_doc_2y": 4.4
   },
   {
     "journal_key": "Journal of Cybersecurity",
@@ -1935,7 +2430,10 @@
       "2057-2093"
     ],
     "abdc": null,
-    "doi": "10.1093/cybsec/tyaf040"
+    "sjr": 0.818,
+    "sjr_quartile": "Q1",
+    "h_index": 38,
+    "cites_per_doc_2y": 5.06
   },
   {
     "journal_key": "ISACA journal",
@@ -1947,7 +2445,10 @@
       "1944-1975"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Australasian Journal of Information Systems",
@@ -1959,7 +2460,10 @@
       "1449-8618"
     ],
     "abdc": "A",
-    "doi": "10.3127/ajis.v29.5323"
+    "sjr": 0.468,
+    "sjr_quartile": "Q2",
+    "h_index": 37,
+    "cites_per_doc_2y": 2.16
   },
   {
     "journal_key": "Internal Auditor",
@@ -1970,7 +2474,10 @@
       "0020-5745"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "International Journal of Auditing",
@@ -1982,7 +2489,10 @@
       "1099-1123"
     ],
     "abdc": "A",
-    "doi": "10.1111/ijau.12365"
+    "sjr": 0.681,
+    "sjr_quartile": "Q1",
+    "h_index": 42,
+    "cites_per_doc_2y": 3.19
   },
   {
     "journal_key": "ISACA Journal",
@@ -1995,7 +2505,10 @@
       "1944-1975"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Safety Science",
@@ -2006,7 +2519,10 @@
       "0925-7535"
     ],
     "abdc": "A",
-    "doi": "10.1016/j.ssci.2022.106022"
+    "sjr": 1.443,
+    "sjr_quartile": "Q1",
+    "h_index": 178,
+    "cites_per_doc_2y": 7.9
   },
   {
     "journal_key": "Journal of Organizational Computing and Electronic Commerce",
@@ -2018,7 +2534,10 @@
       "1532-7744"
     ],
     "abdc": "A",
-    "doi": "10.1080/10919392.2022.2068906"
+    "sjr": 0.419,
+    "sjr_quartile": "Q2",
+    "h_index": 56,
+    "cites_per_doc_2y": 2.89
   },
   {
     "journal_key": "Behavioral Research in Accounting",
@@ -2030,7 +2549,10 @@
       "1558-8009"
     ],
     "abdc": "A",
-    "doi": "10.2308/bria-2020-021"
+    "sjr": 0.679,
+    "sjr_quartile": "Q2",
+    "h_index": 36,
+    "cites_per_doc_2y": 1.83
   },
   {
     "journal_key": "Frontiers in Psychology",
@@ -2041,7 +2563,10 @@
       "1664-1078"
     ],
     "abdc": null,
-    "doi": "10.3389/fpsyg.2016.00093"
+    "sjr": 0.941,
+    "sjr_quartile": "Q1",
+    "h_index": 241,
+    "cites_per_doc_2y": 3.94
   },
   {
     "journal_key": "Economic and Business Review",
@@ -2052,7 +2577,10 @@
       "1580-0466"
     ],
     "abdc": "C",
-    "doi": null
+    "sjr": 0.164,
+    "sjr_quartile": "Q3",
+    "h_index": 3,
+    "cites_per_doc_2y": 1.24
   },
   {
     "journal_key": "Journal of Management and Governance",
@@ -2064,7 +2592,10 @@
       "1572-963X"
     ],
     "abdc": "C",
-    "doi": "10.1007/s10997-014-9297-6"
+    "sjr": 1.145,
+    "sjr_quartile": "Q1",
+    "h_index": 71,
+    "cites_per_doc_2y": 6.7
   },
   {
     "journal_key": "Journal of Business Economics and Management",
@@ -2076,7 +2607,10 @@
       "2029-4433"
     ],
     "abdc": "B",
-    "doi": "10.3846/16111699.2013.858076"
+    "sjr": 0.491,
+    "sjr_quartile": "Q2",
+    "h_index": 59,
+    "cites_per_doc_2y": 3.42
   },
   {
     "journal_key": "Bančni vestnik (The Banking Journal)",
@@ -2087,7 +2621,10 @@
       "0005-4631"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Revizor: revija o reviziji",
@@ -2098,7 +2635,10 @@
       "0353-7935"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "International Journal of Human Resource Management",
@@ -2110,7 +2650,10 @@
       "1466-4399"
     ],
     "abdc": "A",
-    "doi": "10.1080/09585192.2012.664962"
+    "sjr": 2.058,
+    "sjr_quartile": "Q1",
+    "h_index": 158,
+    "cites_per_doc_2y": 7.07
   },
   {
     "journal_key": "Revizor: Revija o reviziji",
@@ -2121,7 +2664,10 @@
       "0353-7935"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Gozdarski vestnik",
@@ -2132,7 +2678,10 @@
       "0017-2723"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Management Control & Accounting",
@@ -2143,7 +2692,10 @@
       "1386-3452"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Management Executive",
@@ -2154,7 +2706,10 @@
       "1571-862X"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Organizacija : revija za management, informatiko in kadre",
@@ -2165,7 +2720,10 @@
       "1318-5454"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": 0.339,
+    "sjr_quartile": "Q3",
+    "h_index": 24,
+    "cites_per_doc_2y": 1.82
   },
   {
     "journal_key": "Revue internationale de sociologie",
@@ -2177,7 +2735,10 @@
       "1469-9273"
     ],
     "abdc": null,
-    "doi": "10.1080/0390670032000139485"
+    "sjr": 0.541,
+    "sjr_quartile": "Q2",
+    "h_index": 39,
+    "cites_per_doc_2y": 2.25
   },
   {
     "journal_key": "Računovodstvo i financije",
@@ -2188,7 +2749,10 @@
       "0350-4506"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Journal of International Business Studies",
@@ -2200,7 +2764,10 @@
       "0047-2506"
     ],
     "abdc": "A*",
-    "doi": "10.1057/s41267-026-00869-4"
+    "sjr": 4.454,
+    "sjr_quartile": "Q1",
+    "h_index": 254,
+    "cites_per_doc_2y": 10.07
   },
   {
     "journal_key": "Asian Review of Accounting",
@@ -2211,7 +2778,10 @@
       "1321-7348"
     ],
     "abdc": null,
-    "doi": "10.1108/ara-03-2022-0055"
+    "sjr": 0.556,
+    "sjr_quartile": "Q2",
+    "h_index": 38,
+    "cites_per_doc_2y": 4.6
   },
   {
     "journal_key": "The Journal of Law and Economics",
@@ -2223,7 +2793,10 @@
       "1537-5285"
     ],
     "abdc": "A*",
-    "doi": "10.1086/718853"
+    "sjr": 1.592,
+    "sjr_quartile": "Q1",
+    "h_index": 98,
+    "cites_per_doc_2y": 1.58
   },
   {
     "journal_key": "Business Ethics Quarterly",
@@ -2234,7 +2807,10 @@
       "1052-150X"
     ],
     "abdc": "A",
-    "doi": "10.1017/beq.2021.19"
+    "sjr": 1.834,
+    "sjr_quartile": "Q1",
+    "h_index": 103,
+    "cites_per_doc_2y": 5.02
   },
   {
     "journal_key": "International Journal of Management Accounting Research",
@@ -2245,7 +2821,10 @@
       "2163-3843"
     ],
     "abdc": null,
-    "doi": null
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null
   },
   {
     "journal_key": "Business Strategy and the Environment",
@@ -2257,7 +2836,10 @@
       "1099-0836"
     ],
     "abdc": "A",
-    "doi": "10.1002/bse.70754"
+    "sjr": 3.678,
+    "sjr_quartile": "Q1",
+    "h_index": 199,
+    "cites_per_doc_2y": 19.04
   },
   {
     "journal_key": "China Accounting and Finance Review",
@@ -2268,7 +2850,10 @@
       "2307-3055"
     ],
     "abdc": "A",
-    "doi": "10.1108/cafr-07-2023-0073"
+    "sjr": NaN,
+    "sjr_quartile": "-",
+    "h_index": 2,
+    "cites_per_doc_2y": 0.0
   },
   {
     "journal_key": "Journal of Applied Accounting Research",
@@ -2279,7 +2864,10 @@
       "0967-5426"
     ],
     "abdc": "B",
-    "doi": "10.1108/jaar-08-2022-0223"
+    "sjr": 1.225,
+    "sjr_quartile": "Q1",
+    "h_index": 50,
+    "cites_per_doc_2y": 8.05
   },
   {
     "journal_key": "Academy of Management. Annual Meeting Proceedings",
@@ -2291,7 +2879,10 @@
       "2151-6561"
     ],
     "abdc": null,
-    "doi": "10.5465/ambpp.2022.10295abstract"
+    "sjr": 0.182,
+    "sjr_quartile": "-",
+    "h_index": 27,
+    "cites_per_doc_2y": 0.22
   },
   {
     "journal_key": "Journal of Environmental Management",
@@ -2302,7 +2893,10 @@
       "0301-4797"
     ],
     "abdc": null,
-    "doi": "10.1016/j.jenvman.2022.115253"
+    "sjr": 1.923,
+    "sjr_quartile": "Q1",
+    "h_index": 296,
+    "cites_per_doc_2y": 10.3
   },
   {
     "journal_key": "Sustainability Accounting, Management and Policy Journal",
@@ -2314,7 +2908,10 @@
       "2040-803X"
     ],
     "abdc": "A",
-    "doi": "10.1108/SAMPJ-05-2020-0166"
+    "sjr": 1.808,
+    "sjr_quartile": "Q1",
+    "h_index": 68,
+    "cites_per_doc_2y": 12.14
   },
   {
     "journal_key": "Asia Pacific Journal of Management",
@@ -2326,7 +2923,10 @@
       "1572-9958"
     ],
     "abdc": "A",
-    "doi": "10.1007/s10490-019-09672-2"
+    "sjr": 1.297,
+    "sjr_quartile": "Q1",
+    "h_index": 105,
+    "cites_per_doc_2y": 6.27
   },
   {
     "journal_key": "Energy Economics",
@@ -2338,7 +2938,10 @@
       "1873-6181"
     ],
     "abdc": "A*",
-    "doi": "10.1016/j.eneco.2021.105193"
+    "sjr": 3.448,
+    "sjr_quartile": "Q1",
+    "h_index": 252,
+    "cites_per_doc_2y": 14.6
   },
   {
     "journal_key": "Applied Economics Letters",
@@ -2350,7 +2953,10 @@
       "1466-4291"
     ],
     "abdc": "B",
-    "doi": "10.1080/13504851.2019.1645272"
+    "sjr": 0.387,
+    "sjr_quartile": "Q3",
+    "h_index": 72,
+    "cites_per_doc_2y": 1.78
   },
   {
     "journal_key": "Journal of Intellectual Capital",
@@ -2362,7 +2968,10 @@
       "1758-7468"
     ],
     "abdc": "B",
-    "doi": "10.1108/JIC-01-2019-0007"
+    "sjr": 1.382,
+    "sjr_quartile": "Q1",
+    "h_index": 124,
+    "cites_per_doc_2y": 9.78
   },
   {
     "journal_key": "Academy of Management Proceedings",
@@ -2374,7 +2983,10 @@
       "2151-6561"
     ],
     "abdc": null,
-    "doi": "10.5465/ambpp.2019.16620abstract"
+    "sjr": 0.182,
+    "sjr_quartile": "-",
+    "h_index": 27,
+    "cites_per_doc_2y": 0.22
   },
   {
     "journal_key": "Emerald Emerging Markets Case Studies",
@@ -2385,7 +2997,10 @@
       "2045-0621"
     ],
     "abdc": null,
-    "doi": "10.1108/EEMCS-02-2018-0011"
+    "sjr": 0.201,
+    "sjr_quartile": "Q4",
+    "h_index": 11,
+    "cites_per_doc_2y": 0.43
   },
   {
     "journal_key": "Social Responsibility Journal",
@@ -2397,7 +3012,10 @@
       "1758-857X"
     ],
     "abdc": "B",
-    "doi": "10.1108/SRJ-10-2017-0204"
+    "sjr": 0.973,
+    "sjr_quartile": "Q1",
+    "h_index": 71,
+    "cites_per_doc_2y": 7.24
   },
   {
     "journal_key": "Measuring Business Excellence",
@@ -2409,6 +3027,9 @@
       "1758-8057"
     ],
     "abdc": "B",
-    "doi": "10.1108/MBE-12-2015-0055"
+    "sjr": 0.634,
+    "sjr_quartile": "Q2",
+    "h_index": 58,
+    "cites_per_doc_2y": 4.68
   }
 ]
