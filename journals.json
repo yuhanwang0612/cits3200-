@@ -8,7 +8,8 @@
       "1094-4060",
       "2213-3933"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1142/s1094406025410057"
   },
   {
     "journal_key": "SSRN Electronic Journal",
@@ -18,7 +19,8 @@
     "issns": [
       "1556-5068"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.2139/ssrn.4584928"
   },
   {
     "journal_key": "Quarterly Review of Economics and Finance",
@@ -28,7 +30,8 @@
     "issns": [
       "1062-9769"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1016/j.qref.2023.07.003"
   },
   {
     "journal_key": "Review of Financial Economics",
@@ -39,7 +42,8 @@
       "1058-3300",
       "1873-5924"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1002/rfe.1172"
   },
   {
     "journal_key": "Journal of Real Estate Finance and Economics",
@@ -50,7 +54,8 @@
       "0895-5638",
       "1573-045X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1007/s11146-021-09883-9"
   },
   {
     "journal_key": "Real Estate Economics",
@@ -61,7 +66,8 @@
       "1080-8620",
       "1540-6229"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/1540-6229.12332"
   },
   {
     "journal_key": "Advances in Decision Sciences",
@@ -72,7 +78,8 @@
       "2090-3367",
       "2090-3359"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Journal of Property Research",
@@ -83,7 +90,8 @@
       "0959-9916",
       "1466-4453"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1080/09599916.2012.721381"
   },
   {
     "journal_key": "Journal of International Money and Finance",
@@ -94,7 +102,8 @@
       "0261-5606",
       "1873-0639"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.jimonfin.2012.05.020"
   },
   {
     "journal_key": "The Journal of Portfolio Management",
@@ -105,7 +114,8 @@
       "0095-4918",
       "2168-8656"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.3905/jpm.2011.37.5.170"
   },
   {
     "journal_key": "The Journal of Business",
@@ -116,7 +126,8 @@
       "0021-9398",
       "1537-5374"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1086/503649"
   },
   {
     "journal_key": "The European Journal of Finance",
@@ -127,7 +138,8 @@
       "1351-847X",
       "1466-4364"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1080/13518470500459808"
   },
   {
     "journal_key": "The Journal of Asset Management",
@@ -138,7 +150,8 @@
       "1470-8272",
       "1479-179X"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1057/palgrave.jam.2240197"
   },
   {
     "journal_key": "Applied Mathematical Finance",
@@ -149,7 +162,8 @@
       "1350-486X",
       "1466-4313"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1080/1350486022000015850"
   },
   {
     "journal_key": "International Review of Economics & Finance",
@@ -160,7 +174,8 @@
       "1059-0560",
       "1873-8036"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.iref.2025.103991"
   },
   {
     "journal_key": "Finance Research Letters",
@@ -170,7 +185,8 @@
     "issns": [
       "1544-6123"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.frl.2023.104011"
   },
   {
     "journal_key": "Journal of Contemporary Accounting and Economics",
@@ -181,7 +197,8 @@
       "1815-5669",
       "2352-3298"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.jcae.2026.100571"
   },
   {
     "journal_key": "Journal of Accounting Literature",
@@ -192,7 +209,8 @@
       "0737-4607",
       "2452-1469"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/jal-02-2025-0058"
   },
   {
     "journal_key": "Financial Review (US)",
@@ -203,7 +221,8 @@
       "0732-8516",
       "1540-6288"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/fire.70034"
   },
   {
     "journal_key": "British Accounting Review",
@@ -214,7 +233,8 @@
       "0890-8389",
       "1095-8347"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.bar.2025.101671"
   },
   {
     "journal_key": "Journal of Financial Research",
@@ -225,7 +245,8 @@
       "0270-2592",
       "1475-6803"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/jfir.70021"
   },
   {
     "journal_key": "Global Finance Journal",
@@ -236,7 +257,8 @@
       "1044-0283",
       "1873-5665"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.gfj.2025.101173"
   },
   {
     "journal_key": "Corporate Governance: an international review",
@@ -247,7 +269,8 @@
       "0964-8410",
       "1467-8683"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/corg.12623"
   },
   {
     "journal_key": "Accounting and Finance",
@@ -258,7 +281,8 @@
       "0810-5391",
       "1467-629X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/acfi.70023"
   },
   {
     "journal_key": "Journal of Financial Stability",
@@ -269,7 +293,8 @@
       "1572-3089",
       "1878-0962"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jfs.2025.101384"
   },
   {
     "journal_key": "The European Accounting Review",
@@ -280,7 +305,8 @@
       "0963-8180",
       "1468-4497"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1080/09638180.2024.2368129"
   },
   {
     "journal_key": "Journal of Business Finance & Accounting",
@@ -291,7 +317,8 @@
       "0306-686X",
       "1468-5957"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1111/jbfa.12787"
   },
   {
     "journal_key": "Journal of Banking & Finance",
@@ -302,7 +329,8 @@
       "0378-4266",
       "1872-6372"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jbankfin.2023.106877"
   },
   {
     "journal_key": "Pacific-Basin Finance Journal",
@@ -312,7 +340,8 @@
     "issns": [
       "0927-538X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.pacfin.2023.102008"
   },
   {
     "journal_key": "Journal of Behavioral and Experimental Finance",
@@ -322,7 +351,8 @@
     "issns": [
       "2214-6350"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.jbef.2022.100648"
   },
   {
     "journal_key": "Australian Journal of Management",
@@ -333,7 +363,8 @@
       "0312-8962",
       "1327-2020"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1177/0312896220974417"
   },
   {
     "journal_key": "Journal of Corporate Finance",
@@ -344,7 +375,8 @@
       "0929-1199",
       "1872-6313"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jcorpfin.2020.101774"
   },
   {
     "journal_key": "Journal of Business Research",
@@ -355,7 +387,8 @@
       "0148-2963",
       "1873-7978"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.jbusres.2020.01.035"
   },
   {
     "journal_key": "The Journal of Finance",
@@ -366,7 +399,8 @@
       "0022-1082",
       "1540-6261"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1111/jofi.13337"
   },
   {
     "journal_key": "International Review of Financial Analysis",
@@ -376,7 +410,8 @@
     "issns": [
       "1057-5219"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.irfa.2024.103109"
   },
   {
     "journal_key": "Materiały i Studia",
@@ -387,7 +422,8 @@
       "2084-6258",
       "2084-6258"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.5604/01.3001.0055.7897"
   },
   {
     "journal_key": "International Review of Finance",
@@ -398,7 +434,8 @@
       "1369-412X",
       "1468-2443"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/irfi.12360"
   },
   {
     "journal_key": "Journal of Financial Markets",
@@ -408,7 +445,8 @@
     "issns": [
       "1386-4181"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.finmar.2020.100576"
   },
   {
     "journal_key": "Financial Management",
@@ -419,7 +457,8 @@
       "0046-3892",
       "1755-053X"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1111/fima.70049"
   },
   {
     "journal_key": "Organization Science",
@@ -430,7 +469,8 @@
       "1047-7039",
       "1526-5455"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1287/orsc.2022.16493"
   },
   {
     "journal_key": "Management Science",
@@ -441,7 +481,8 @@
       "0025-1909",
       "1526-5501"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1287/mnsc.2023.03556"
   },
   {
     "journal_key": "European Financial Management",
@@ -452,7 +493,8 @@
       "1354-7798",
       "1468-036X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/eufm.12180"
   },
   {
     "journal_key": "Journal of Financial and Quantitative Analysis",
@@ -463,7 +505,8 @@
       "0022-1090",
       "1756-6916"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1017/S0022109017000497"
   },
   {
     "journal_key": "Accounting Auditing and Accountability Journal",
@@ -474,7 +517,8 @@
       "1368-0668",
       "1758-4205"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1108/aaaj-06-2025-8039"
   },
   {
     "journal_key": "One Earth",
@@ -485,7 +529,8 @@
       "2590-3322",
       "2590-3330"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1016/j.oneear.2025.101550"
   },
   {
     "journal_key": "Nature Climate Change",
@@ -496,7 +541,8 @@
       "1758-678X",
       "1758-6798"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1038/s41558-025-02467-y"
   },
   {
     "journal_key": "Global Environmental Change",
@@ -507,7 +553,8 @@
       "0959-3780",
       "1872-9495"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.gloenvcha.2022.102492"
   },
   {
     "journal_key": "Journal of Cleaner Production",
@@ -517,7 +564,8 @@
     "issns": [
       "0959-6526"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": "10.1016/j.jclepro.2021.129827"
   },
   {
     "journal_key": "Business and Society",
@@ -528,7 +576,8 @@
       "0007-6503",
       "1552-4205"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1177/0007650319825764"
   },
   {
     "journal_key": "Journal of Business Ethics",
@@ -539,7 +588,8 @@
       "1573-0697",
       "0167-4544"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1007/s10551-015-2583-7"
   },
   {
     "journal_key": "Abacus",
@@ -550,7 +600,8 @@
       "0001-3072",
       "1467-6281"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/j.1467-6281.2012.00374.x"
   },
   {
     "journal_key": "Ethical Investor",
@@ -560,7 +611,8 @@
     "issns": [
       "1445-1832"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "The Australian Economic Review",
@@ -571,7 +623,8 @@
       "0004-9018",
       "1467-8462"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1111/1467-8462.12239"
   },
   {
     "journal_key": "Economic Modelling",
@@ -582,7 +635,8 @@
       "0264-9993",
       "1873-6122"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.econmod.2017.08.025"
   },
   {
     "journal_key": "Journal of Accounting and Management Information Systems (JAMIS)",
@@ -593,7 +647,8 @@
       "1583-4387",
       "1843-8105"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": "10.24818/jamis.2017.02007"
   },
   {
     "journal_key": "Accounting Research Journal",
@@ -604,7 +659,8 @@
       "1030-9616",
       "1839-5465"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/ARJ-07-2013-0048"
   },
   {
     "journal_key": "Journal of International Financial Markets, Institutions and Money",
@@ -615,7 +671,8 @@
       "1042-4431",
       "1873-0612"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.intfin.2024.102000"
   },
   {
     "journal_key": "British Journal of Management",
@@ -626,7 +683,8 @@
       "1467-8551",
       "1045-3172"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1111/1467-8551.12541"
   },
   {
     "journal_key": "Review of Quantitative Finance and Accounting",
@@ -637,7 +695,8 @@
       "1573-7179",
       "0924-865X"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1007/s11156-021-01002-2"
   },
   {
     "journal_key": "Managerial Finance",
@@ -648,7 +707,8 @@
       "0307-4358",
       "1758-7743"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/MF-07-2016-0187"
   },
   {
     "journal_key": "Journal of Multinational Financial Management",
@@ -659,7 +719,8 @@
       "1042-444X",
       "1873-1309"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1016/j.mulfin.2016.01.001"
   },
   {
     "journal_key": "Corporate Ownership and Control",
@@ -670,7 +731,8 @@
       "1727-9232",
       "1810-3057"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.22495/cocv3i2p11"
   },
   {
     "journal_key": "Journal of Economic Behavior and Organization",
@@ -680,7 +742,8 @@
     "issns": [
       "0167-2681"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jebo.2022.02.013"
   },
   {
     "journal_key": "Journal of Financial Economics",
@@ -690,7 +753,8 @@
     "issns": [
       "0304-405X"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jfineco.2021.05.032"
   },
   {
     "journal_key": "Applied Financial Economics",
@@ -701,7 +765,8 @@
       "0960-3107",
       "1466-4305"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1080/0960310042000281149"
   },
   {
     "journal_key": "Journal of Economics and Business",
@@ -711,7 +776,8 @@
     "issns": [
       "0148-6195"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1016/S0148-6195(99)00018-1"
   },
   {
     "journal_key": "Meditari Accountancy Research",
@@ -722,7 +788,8 @@
       "2049-372X",
       "2049-3738"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/MEDAR-12-2023-2249"
   },
   {
     "journal_key": "Accounting and Business Research",
@@ -733,7 +800,8 @@
       "0001-4788",
       "2159-4260"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1080/00014788.2023.2165031"
   },
   {
     "journal_key": "International Journal of Managerial Finance",
@@ -744,7 +812,8 @@
       "1743-9132",
       "1758-6569"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/ijmf-12-2019-0467"
   },
   {
     "journal_key": "Nature Communications",
@@ -754,7 +823,8 @@
     "issns": [
       "2041-1723"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1038/s41467-026-72703-2"
   },
   {
     "journal_key": "Scientific Reports",
@@ -764,7 +834,8 @@
     "issns": [
       "2045-2322"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1038/s41598-026-42790-8"
   },
   {
     "journal_key": "The International Journal of Life Cycle Assessment",
@@ -775,7 +846,8 @@
       "0948-3349",
       "1614-7502"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1007/s11367-026-02614-3"
   },
   {
     "journal_key": "California Management Review",
@@ -786,7 +858,8 @@
       "0008-1256",
       "2162-8564"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1177/00081256251408087"
   },
   {
     "journal_key": "Journal of Environmental Psychology",
@@ -797,7 +870,8 @@
       "0272-4944",
       "1522-9610"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.jenvp.2025.102680"
   },
   {
     "journal_key": "Climatic Change",
@@ -808,7 +882,8 @@
       "0165-0009",
       "1573-1480"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1007/s10584-024-03740-3"
   },
   {
     "journal_key": "Renewable and Sustainable Energy Reviews",
@@ -819,7 +894,8 @@
       "1364-0321",
       "1879-0690"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.rser.2022.112586"
   },
   {
     "journal_key": "Electronic Markets",
@@ -830,7 +906,8 @@
       "1019-6781",
       "1422-8890"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1007/s12525-015-0195-9"
   },
   {
     "journal_key": "Accounting and Management Information Systems",
@@ -840,7 +917,8 @@
     "issns": [
       "1843-8105"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "International Journal of Accounting and Information Management",
@@ -851,7 +929,8 @@
       "1834-7649",
       "1758-9037"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/18347641311312267"
   },
   {
     "journal_key": "Emerging Markets Review",
@@ -862,7 +941,8 @@
       "1873-6173",
       "1566-0141"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.ememar.2020.100742"
   },
   {
     "journal_key": "European Journal of Operational Research",
@@ -873,7 +953,8 @@
       "0377-2217",
       "1872-6860"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.ejor.2020.04.009"
   },
   {
     "journal_key": "Research Policy",
@@ -883,7 +964,8 @@
     "issns": [
       "0048-7333"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.respol.2025.105310"
   },
   {
     "journal_key": "Economics Letters",
@@ -894,7 +976,8 @@
       "0165-1765",
       "1873-7374"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.econlet.2019.108740"
   },
   {
     "journal_key": "Journal of Financial Intermediation",
@@ -905,7 +988,8 @@
       "1042-9573",
       "1096-0473"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jfi.2017.05.005"
   },
   {
     "journal_key": "The Economic Record",
@@ -916,7 +1000,8 @@
       "0013-0249",
       "1475-4932"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/j.1475-4932.2012.00831.x"
   },
   {
     "journal_key": "Humanities and Social Sciences Communications",
@@ -926,7 +1011,8 @@
     "issns": [
       "2662-9992"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1057/s41599-025-05203-1"
   },
   {
     "journal_key": "Applied Economics",
@@ -937,7 +1023,8 @@
       "0003-6846",
       "1466-4283"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1080/00036846.2025.2538814"
   },
   {
     "journal_key": "China Economic Review",
@@ -948,7 +1035,8 @@
       "1043-951X",
       "1873-7781"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.chieco.2020.101479"
   },
   {
     "journal_key": "The Accounting Review",
@@ -959,7 +1047,8 @@
       "0001-4826",
       "1558-7967"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.2308/tar-2023-0073"
   },
   {
     "journal_key": "Critical Finance Review",
@@ -970,7 +1059,8 @@
       "2164-5760",
       "2164-5744"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1561/104.00000121"
   },
   {
     "journal_key": "Journal of Empirical Finance",
@@ -980,7 +1070,8 @@
     "issns": [
       "0927-5398"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.jempfin.2021.04.006"
   },
   {
     "journal_key": "International Journal of Tourism Research",
@@ -991,7 +1082,8 @@
       "1522-1970",
       "1099-2340"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1002/jtr.2416"
   },
   {
     "journal_key": "Biometrics",
@@ -1002,7 +1094,8 @@
       "0006-341X",
       "1541-0420"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1111/biom.13262"
   },
   {
     "journal_key": "Land Use Policy",
@@ -1013,7 +1106,8 @@
       "0264-8377",
       "1873-5754"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.landusepol.2017.08.038"
   },
   {
     "journal_key": "Social Choice and Welfare",
@@ -1024,7 +1118,8 @@
       "0176-1714",
       "1432-217X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1007/s00355-016-1009-5"
   },
   {
     "journal_key": "Asia-Pacific Journal of Financial Studies",
@@ -1035,7 +1130,8 @@
       "2041-6156",
       "2041-9945"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1111/ajfs.12152"
   },
   {
     "journal_key": "Computational Statistics and Data Analysis",
@@ -1046,7 +1142,8 @@
       "0167-9473",
       "1872-7352"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.csda.2014.11.002"
   },
   {
     "journal_key": "Journal of Financial Econometrics",
@@ -1057,7 +1154,8 @@
       "1479-8409",
       "1479-8417"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1093/jjfinec/nbs011"
   },
   {
     "journal_key": "Biostatistics",
@@ -1068,7 +1166,8 @@
       "1465-4644",
       "1468-4357"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1093/biostatistics/kxp002"
   },
   {
     "journal_key": "Psychological Methods",
@@ -1078,7 +1177,8 @@
     "issns": [
       "1082-989X"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1037/1082-989X.13.1.58"
   },
   {
     "journal_key": "Journal of Computational and Graphical Statistics",
@@ -1089,7 +1189,8 @@
       "1061-8600",
       "1537-2715"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1198/106186007x180156"
   },
   {
     "journal_key": "Biometrika",
@@ -1100,7 +1201,8 @@
       "0006-3444",
       "1464-3510"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1093/biomet/93.2.459"
   },
   {
     "journal_key": "Sankhya: The Indian Journal of Statistics",
@@ -1110,7 +1212,8 @@
     "issns": [
       "0972-7671"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Statistics & Probability Letters",
@@ -1120,7 +1223,8 @@
     "issns": [
       "0167-7152"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1016/j.spl.2004.11.014"
   },
   {
     "journal_key": "Journal of Accounting and Public Policy",
@@ -1131,7 +1235,8 @@
       "0278-4254",
       "1873-2070"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jaccpubpol.2026.107418"
   },
   {
     "journal_key": "Contemporary Accounting Research",
@@ -1142,7 +1247,8 @@
       "0823-9150",
       "1911-3846"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1111/1911-3846.12921"
   },
   {
     "journal_key": "Australasian Accounting Business and Finance Journal",
@@ -1153,7 +1259,8 @@
       "1834-2019",
       "1834-2000"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.14453/aabfj.v17i3.06"
   },
   {
     "journal_key": "Managerial Auditing Journal",
@@ -1164,7 +1271,8 @@
       "0268-6902",
       "1758-7735"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/maj-09-2014-1092"
   },
   {
     "journal_key": "E-Journal of Business Education and Scholarship of Teaching",
@@ -1174,7 +1282,8 @@
     "issns": [
       "1835-9132"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Cogent Business & Management",
@@ -1184,7 +1293,8 @@
     "issns": [
       "2331-1975"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": "10.1080/23311975.2026.2677341"
   },
   {
     "journal_key": "Journal of Accounting Auditing and Finance",
@@ -1195,7 +1305,8 @@
       "2160-4061",
       "0148-558X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1177/0148558x241264668"
   },
   {
     "journal_key": "Australian Tax Forum",
@@ -1205,7 +1316,8 @@
     "issns": [
       "0812-695X"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": null
   },
   {
     "journal_key": "Journal of International Accounting Research",
@@ -1216,7 +1328,8 @@
       "1542-6297",
       "1558-8025"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.2308/jiar-2021-019"
   },
   {
     "journal_key": "Australian Accounting Review",
@@ -1227,7 +1340,8 @@
       "1035-6908",
       "1835-2561"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1111/auar.12347"
   },
   {
     "journal_key": "Health Policy and Technology",
@@ -1238,7 +1352,8 @@
       "2211-8837",
       "2211-8845"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1016/j.hlpt.2020.08.010"
   },
   {
     "journal_key": "Company and Securities Law Journal",
@@ -1248,7 +1363,8 @@
     "issns": [
       "0729-2775"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": null
   },
   {
     "journal_key": "World Journal of Surgical Oncology",
@@ -1258,7 +1374,8 @@
     "issns": [
       "1477-7819"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1186/s12957-015-0522-9"
   },
   {
     "journal_key": "Clinical Imaging",
@@ -1269,7 +1386,8 @@
       "0899-7071",
       "1873-4499"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1016/j.clinimag.2012.08.006"
   },
   {
     "journal_key": "Pacific Accounting Review",
@@ -1280,7 +1398,8 @@
       "2041-5494",
       "0114-0582"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/01140581311318968"
   },
   {
     "journal_key": "Global Economic Review",
@@ -1291,7 +1410,8 @@
       "1226-508X",
       "1744-3873"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": "10.1080/12265081003696403"
   },
   {
     "journal_key": "Journal of International Financial Management and Accounting",
@@ -1302,7 +1422,8 @@
       "0954-1314",
       "1467-646X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/j.1467-646X.2008.01024.x"
   },
   {
     "journal_key": "Society and Natural Resources",
@@ -1313,7 +1434,8 @@
       "0894-1920",
       "1521-0723"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1080/08941920.2012.719999"
   },
   {
     "journal_key": "CA Magazine",
@@ -1323,7 +1445,8 @@
     "issns": [
       "1352-9021"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Allgemeine Forst- und Jagdzeitung (Journal for Forestry and Forest Science )",
@@ -1333,7 +1456,8 @@
     "issns": [
       "0002-5852"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Centralblatt fuer das Gesamte Forstwesen",
@@ -1343,7 +1467,8 @@
     "issns": [
       "0379-5292"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Intheblack",
@@ -1353,7 +1478,8 @@
     "issns": [
       "1832-0899"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Small-Scale Forest Economics, Management and Policy",
@@ -1363,7 +1489,8 @@
     "issns": [
       "1447-1825"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1007/s11842-006-0009-1"
   },
   {
     "journal_key": "Accounting, Organizations and Society",
@@ -1373,7 +1500,8 @@
     "issns": [
       "0361-3682"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.aos.2005.01.001"
   },
   {
     "journal_key": "Economic Analysis and Policy",
@@ -1383,7 +1511,8 @@
     "issns": [
       "0313-5926"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": null
   },
   {
     "journal_key": "Society & Natural Resources",
@@ -1393,7 +1522,8 @@
     "issns": [
       "0894-1920"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1080/08941920050121936"
   },
   {
     "journal_key": "Forest Ecology and Management",
@@ -1403,7 +1533,8 @@
     "issns": [
       "0378-1127"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1016/S0378-1127(99)00137-1"
   },
   {
     "journal_key": "Australian Forestry",
@@ -1413,7 +1544,8 @@
     "issns": [
       "0004-9158"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1080/00049158.1998.10674744"
   },
   {
     "journal_key": "Journal of Management Accounting Research",
@@ -1424,7 +1556,8 @@
       "1049-2127",
       "1558-8033"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.2308/jmar-52030"
   },
   {
     "journal_key": "Issues in Accounting Education",
@@ -1435,7 +1568,8 @@
       "0739-3172",
       "1558-7983"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.2308/issues-2020-093"
   },
   {
     "journal_key": "Long Range Planning",
@@ -1446,7 +1580,8 @@
       "0024-6301",
       "1873-1872"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.lrp.2018.03.004"
   },
   {
     "journal_key": "International Journal of Accounting Information Systems",
@@ -1457,7 +1592,8 @@
       "1467-0895",
       "1873-4723"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.accinf.2018.03.005"
   },
   {
     "journal_key": "IMA Educational Case Journal",
@@ -1467,7 +1603,8 @@
     "issns": [
       "1940-204X"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": null
   },
   {
     "journal_key": "Advances in Accounting Education: teaching and curriculum innovations",
@@ -1477,7 +1614,8 @@
     "issns": [
       "1085-4622"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": "10.1108/s1085-462220220000026012"
   },
   {
     "journal_key": "Strategic Finance",
@@ -1487,7 +1625,8 @@
     "issns": [
       "1524-833X"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "International Journal of Hospitality Management",
@@ -1498,7 +1637,8 @@
       "0278-4319",
       "1873-4693"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.ijhm.2020.102453"
   },
   {
     "journal_key": "Cornell Hospitality Quarterly",
@@ -1509,7 +1649,8 @@
       "1938-9655",
       "1938-9663"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1177/1938965518779538"
   },
   {
     "journal_key": "Advances in Management Accounting",
@@ -1519,7 +1660,8 @@
     "issns": [
       "1474-7871"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/s1474-787120190000031002"
   },
   {
     "journal_key": "International Journal of Hospitality and Tourism Administration",
@@ -1530,7 +1672,8 @@
       "1525-6480",
       "1525-6499"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1080/15256480.2018.1429342"
   },
   {
     "journal_key": "Journal of Hospitality and Tourism Management",
@@ -1541,7 +1684,8 @@
       "1447-6770",
       "1839-5260"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jhtm.2017.09.004"
   },
   {
     "journal_key": "Sport Management Review",
@@ -1552,7 +1696,8 @@
       "1441-3523",
       "1839-2083"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.smr.2015.08.003"
   },
   {
     "journal_key": "Advances in Accounting Behavioral Research",
@@ -1562,7 +1707,8 @@
     "issns": [
       "1475-1488"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/S1475-148820140000017002"
   },
   {
     "journal_key": "Journal of Hotel & Business Management",
@@ -1572,7 +1718,8 @@
     "issns": [
       "2169-0286"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.4172/2169-0286.1000e107"
   },
   {
     "journal_key": "Qualitative Research in Accounting and Management",
@@ -1583,7 +1730,8 @@
       "1176-6093",
       "1758-7654"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/11766091111189882"
   },
   {
     "journal_key": "Journal of Hospitality and Tourism Research",
@@ -1593,7 +1741,8 @@
     "issns": [
       "1096-3480"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1177/1096348010370855"
   },
   {
     "journal_key": "Journal of Accounting & Organizational Change",
@@ -1604,7 +1753,8 @@
       "1832-5912",
       "1839-5473"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/JAOC-03-2018-0033"
   },
   {
     "journal_key": "Management Accounting Research",
@@ -1615,7 +1765,8 @@
       "1044-5005",
       "1096-1224"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.mar.2009.11.002"
   },
   {
     "journal_key": "Australian Business Law Review",
@@ -1625,7 +1776,8 @@
     "issns": [
       "0310-1053"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": null
   },
   {
     "journal_key": "Auditing: A Journal of Practice and Theory",
@@ -1636,7 +1788,8 @@
       "0278-0380",
       "1558-7991"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.2308/aud.2002.21.2.7"
   },
   {
     "journal_key": "Journal of Accounting and Economics",
@@ -1646,7 +1799,8 @@
     "issns": [
       "0165-4101"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.jacceco.2021.101425"
   },
   {
     "journal_key": "Pacific Asia Conference on Information Systems",
@@ -1656,7 +1810,8 @@
     "issns": [
       "2689-6354"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "BMJ Leader",
@@ -1666,7 +1821,8 @@
     "issns": [
       "2398-631X"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1136/leader-2025-001434"
   },
   {
     "journal_key": "Collegian",
@@ -1677,7 +1833,8 @@
       "1322-7696",
       "1876-7575"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1016/j.colegn.2025.12.002"
   },
   {
     "journal_key": "Asia Pacific Journal of Health Management",
@@ -1688,7 +1845,8 @@
       "2204-3136",
       "1833-3818"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": "10.24083/apjhm.v18i2.2347"
   },
   {
     "journal_key": "Accounting Education",
@@ -1699,7 +1857,8 @@
       "0963-9284",
       "1468-4489"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1080/09639284.2022.2041056"
   },
   {
     "journal_key": "Research in the Sociology of Organizations",
@@ -1709,7 +1868,8 @@
     "issns": [
       "0733-558X"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/s0733-558x20220000083002"
   },
   {
     "journal_key": "The Practice Manager",
@@ -1717,7 +1877,8 @@
     "journal_canonical": null,
     "publisher": null,
     "issns": [],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "The Practice Manager Journal",
@@ -1725,7 +1886,8 @@
     "journal_canonical": null,
     "publisher": null,
     "issns": [],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Business Horizons",
@@ -1736,7 +1898,8 @@
       "0007-6813",
       "1873-6068"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1016/j.bushor.2012.07.006"
   },
   {
     "journal_key": "Computers and Security",
@@ -1747,7 +1910,8 @@
       "0167-4048",
       "1872-6208"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1016/j.cose.2026.104900"
   },
   {
     "journal_key": "Journal of Management Control",
@@ -1758,7 +1922,8 @@
       "2191-4761",
       "2191-477X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1007/s00187-026-00418-y"
   },
   {
     "journal_key": "Journal of Cybersecurity",
@@ -1769,7 +1934,8 @@
       "2057-2085",
       "2057-2093"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1093/cybsec/tyaf040"
   },
   {
     "journal_key": "ISACA journal",
@@ -1780,7 +1946,8 @@
       "1944-1967",
       "1944-1975"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Australasian Journal of Information Systems",
@@ -1791,7 +1958,8 @@
       "1326-2238",
       "1449-8618"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.3127/ajis.v29.5323"
   },
   {
     "journal_key": "Internal Auditor",
@@ -1801,7 +1969,8 @@
     "issns": [
       "0020-5745"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "International Journal of Auditing",
@@ -1812,7 +1981,8 @@
       "1090-6738",
       "1099-1123"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1111/ijau.12365"
   },
   {
     "journal_key": "ISACA Journal",
@@ -1824,7 +1994,8 @@
       "1944-1967",
       "1944-1975"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Safety Science",
@@ -1834,7 +2005,8 @@
     "issns": [
       "0925-7535"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1016/j.ssci.2022.106022"
   },
   {
     "journal_key": "Journal of Organizational Computing and Electronic Commerce",
@@ -1845,7 +2017,8 @@
       "1091-9392",
       "1532-7744"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1080/10919392.2022.2068906"
   },
   {
     "journal_key": "Behavioral Research in Accounting",
@@ -1856,7 +2029,8 @@
       "1050-4753",
       "1558-8009"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.2308/bria-2020-021"
   },
   {
     "journal_key": "Frontiers in Psychology",
@@ -1866,7 +2040,8 @@
     "issns": [
       "1664-1078"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.3389/fpsyg.2016.00093"
   },
   {
     "journal_key": "Economic and Business Review",
@@ -1876,7 +2051,8 @@
     "issns": [
       "1580-0466"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": null
   },
   {
     "journal_key": "Journal of Management and Governance",
@@ -1887,7 +2063,8 @@
       "1385-3457",
       "1572-963X"
     ],
-    "abdc": "C"
+    "abdc": "C",
+    "doi": "10.1007/s10997-014-9297-6"
   },
   {
     "journal_key": "Journal of Business Economics and Management",
@@ -1898,7 +2075,8 @@
       "1611-1699",
       "2029-4433"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.3846/16111699.2013.858076"
   },
   {
     "journal_key": "Bančni vestnik (The Banking Journal)",
@@ -1908,7 +2086,8 @@
     "issns": [
       "0005-4631"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Revizor: revija o reviziji",
@@ -1918,7 +2097,8 @@
     "issns": [
       "0353-7935"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "International Journal of Human Resource Management",
@@ -1929,7 +2109,8 @@
       "0958-5192",
       "1466-4399"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1080/09585192.2012.664962"
   },
   {
     "journal_key": "Revizor: Revija o reviziji",
@@ -1939,7 +2120,8 @@
     "issns": [
       "0353-7935"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Gozdarski vestnik",
@@ -1949,7 +2131,8 @@
     "issns": [
       "0017-2723"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Management Control & Accounting",
@@ -1959,7 +2142,8 @@
     "issns": [
       "1386-3452"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Management Executive",
@@ -1969,7 +2153,8 @@
     "issns": [
       "1571-862X"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Organizacija : revija za management, informatiko in kadre",
@@ -1979,7 +2164,8 @@
     "issns": [
       "1318-5454"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Revue internationale de sociologie",
@@ -1990,7 +2176,8 @@
       "0390-6701",
       "1469-9273"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1080/0390670032000139485"
   },
   {
     "journal_key": "Računovodstvo i financije",
@@ -2000,7 +2187,8 @@
     "issns": [
       "0350-4506"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Journal of International Business Studies",
@@ -2011,7 +2199,8 @@
       "1478-6990",
       "0047-2506"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1057/s41267-026-00869-4"
   },
   {
     "journal_key": "Asian Review of Accounting",
@@ -2021,7 +2210,8 @@
     "issns": [
       "1321-7348"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1108/ara-03-2022-0055"
   },
   {
     "journal_key": "The Journal of Law and Economics",
@@ -2032,7 +2222,8 @@
       "0022-2186",
       "1537-5285"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1086/718853"
   },
   {
     "journal_key": "Business Ethics Quarterly",
@@ -2042,7 +2233,8 @@
     "issns": [
       "1052-150X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1017/beq.2021.19"
   },
   {
     "journal_key": "International Journal of Management Accounting Research",
@@ -2052,7 +2244,8 @@
     "issns": [
       "2163-3843"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": null
   },
   {
     "journal_key": "Business Strategy and the Environment",
@@ -2063,7 +2256,8 @@
       "0964-4733",
       "1099-0836"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1002/bse.70754"
   },
   {
     "journal_key": "China Accounting and Finance Review",
@@ -2073,7 +2267,8 @@
     "issns": [
       "2307-3055"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/cafr-07-2023-0073"
   },
   {
     "journal_key": "Journal of Applied Accounting Research",
@@ -2083,7 +2278,8 @@
     "issns": [
       "0967-5426"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/jaar-08-2022-0223"
   },
   {
     "journal_key": "Academy of Management. Annual Meeting Proceedings",
@@ -2094,7 +2290,8 @@
       "0065-0668",
       "2151-6561"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.5465/ambpp.2022.10295abstract"
   },
   {
     "journal_key": "Journal of Environmental Management",
@@ -2104,7 +2301,8 @@
     "issns": [
       "0301-4797"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1016/j.jenvman.2022.115253"
   },
   {
     "journal_key": "Sustainability Accounting, Management and Policy Journal",
@@ -2115,7 +2313,8 @@
       "2040-8021",
       "2040-803X"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1108/SAMPJ-05-2020-0166"
   },
   {
     "journal_key": "Asia Pacific Journal of Management",
@@ -2126,7 +2325,8 @@
       "0217-4561",
       "1572-9958"
     ],
-    "abdc": "A"
+    "abdc": "A",
+    "doi": "10.1007/s10490-019-09672-2"
   },
   {
     "journal_key": "Energy Economics",
@@ -2137,7 +2337,8 @@
       "0140-9883",
       "1873-6181"
     ],
-    "abdc": "A*"
+    "abdc": "A*",
+    "doi": "10.1016/j.eneco.2021.105193"
   },
   {
     "journal_key": "Applied Economics Letters",
@@ -2148,7 +2349,8 @@
       "1350-4851",
       "1466-4291"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1080/13504851.2019.1645272"
   },
   {
     "journal_key": "Journal of Intellectual Capital",
@@ -2159,7 +2361,8 @@
       "1469-1930",
       "1758-7468"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/JIC-01-2019-0007"
   },
   {
     "journal_key": "Academy of Management Proceedings",
@@ -2170,7 +2373,8 @@
       "0065-0668",
       "2151-6561"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.5465/ambpp.2019.16620abstract"
   },
   {
     "journal_key": "Emerald Emerging Markets Case Studies",
@@ -2180,7 +2384,8 @@
     "issns": [
       "2045-0621"
     ],
-    "abdc": null
+    "abdc": null,
+    "doi": "10.1108/EEMCS-02-2018-0011"
   },
   {
     "journal_key": "Social Responsibility Journal",
@@ -2191,7 +2396,8 @@
       "1747-1117",
       "1758-857X"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/SRJ-10-2017-0204"
   },
   {
     "journal_key": "Measuring Business Excellence",
@@ -2202,6 +2408,7 @@
       "1368-3047",
       "1758-8057"
     ],
-    "abdc": "B"
+    "abdc": "B",
+    "doi": "10.1108/MBE-12-2015-0055"
   }
 ]
