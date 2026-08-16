@@ -1,0 +1,932 @@
+[
+  {
+    "name": "Nicole Ang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/nicole-ang",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Maria Balatbat",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/maria-balatbat",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Francisco Barillas Bedoya",
+    "job_title": "Head of School",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/francisco-barillas-bedoya",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Dale Boccabella",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/dale-boccabella",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Rodney Brown",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/rodney-brown",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Elizabeth Carson",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/elizabeth-carson",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Linda Chang",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/linda-chang",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Wei Chen",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/wei-chen",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Zongxi Chen",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/zongxi-chen",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Mandy Cheng",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/mandy-cheng",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Demi Chung",
+    "job_title": "Adjunct Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/demi-chung",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Oleg Chuprinin",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/oleg-chuprinin",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Victoria Clout",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/victoria-clout",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Conor Clune",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/conor-clune",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "David Colwell",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/david-colwell",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Jeff Coulton",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/jeff-coulton",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Lili Dai",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/lili-dai",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Sander De Groote",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/sander-de-groote",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Wesley Deng",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/wesley-deng",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Alexander Dickerson",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/alexander-dickerson",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "David Feldman",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/david-feldman",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Tanya Fiedler",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/tanya-fiedler",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Kingsley Fong",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/kingsley-fong",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Mathieu Fournier",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/mathieu-fournier",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Luis Filipe Goncalves-Pinto",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/luis-filipe-goncalves-pinto",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Jennie Granger",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/jennie-granger",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Ed Harbor",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/ed-harbor",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Noel Harding",
+    "job_title": "Head of School",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/noel-harding",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Hien Hoang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/hien-hoang",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Sarowar Hossain",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/sarowar-hossain",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Mark Humphery-Jenner",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/mark-humphery-jenner",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Kerry Humphreys",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/kerry-humphreys",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Andrew Jackson",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/andrew-jackson",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Yeejin Jang",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/yeejin-jang",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Alexandre Jeanneret",
+    "job_title": "Deputy Head of School - Research",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/alexandre-jeanneret",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Helen Kang",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/helen-kang",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Ann Kayis-Kumar",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/ann-kayis-kumar",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Amy Kwan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/amy-kwan",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Evelyn Lai",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/evelyn-lai",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Suk Lee",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/suk-lee",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Rachael Lewis",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/rachael-lewis",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Leonard Leye Li",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/leonard-leye-li",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Youngdeok Lim",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/youngdeok-lim",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Yiping Lin",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/yiping-lin",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Benjamin Loos",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/benjamin-loos",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Jing Lu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/jing-lu",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Gordon Mackenzie",
+    "job_title": "Adjunct Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/gordon-mackenzie",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Faiza Majid",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/faiza-majid",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Fiona Martin",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/fiona-martin",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Ronald Masulis",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/ronald-masulis",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Edouard Mattille",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/edouard-mattille",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Malcolm Miller",
+    "job_title": "Honorary Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/malcolm-miller",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Gary Monroe",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/gary-monroe",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Kate Morgan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/kate-morgan",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Richard Morris",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/richard-morris1",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Fariborz Moshirian",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/fariborz-moshirian",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Peter O'Neill",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/peter-o-neill",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Natalie Oh",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/natalie-oh",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Jerry Parwada",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/jerry-parwada",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Elise Payzan",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/elise-payzan",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Zihang Peng",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/zihang-peng",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Gordon Phillips",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/gordon-phillips",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Yee Shih Phua",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/yee-shih-phua",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Jonathan Reeves",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/jonathan-reeves",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Greg Richins",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/greg-richins",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Kristle Romero Cortes",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/kristle-romero-cortes",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Breno Schmidt",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/breno-schmidt",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Rik Sen",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/rik-sen",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Jianfeng Shen",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/jianfeng-shen",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Janghoon Shon",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/janghoon-shon",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Edward Shore",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/edward-shore",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Roger Simnett",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/roger-simnett",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Elvira Sojli",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/elvira-sojli",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Peter Swan",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/peter-swan",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Stuart Taylor",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/stuart-taylor",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Andrew Terry",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/andrew-terry",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Wing Wah Tham",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/wing-wah-tham",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Binh Tran-Nam",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/binh-tran-nam",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Michael Triguboff",
+    "job_title": "Adjunct Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/michael-triguboff",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Ken Trotman",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/ken-trotman",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Robert Tumarkin",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/robert-tumarkin",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Kristina Vojvoda",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/kristina-vojvoda",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Michael Walpole",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/michael-walpole",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Neil Warren",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/neil-warren",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Su-Ming Wong",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/su-ming-wong",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Yan Xu",
+    "job_title": "Scientia Professor",
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/yan-xu",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  },
+  {
+    "name": "Yuchen Xu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/yuchen-xu",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Zhaoxia Xu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/zhaoxia-xu",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Li Yang",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/li-yang",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Henry Yip",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/henry-yip",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Jason Zein",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/jason-zein",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Sherry Zhang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "field_of_research": "Finance",
+    "profile_url": "https://www.unsw.edu.au/staff/sherry-zhang",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Banking and Finance"
+  },
+  {
+    "name": "Fahim Khondaker",
+    "job_title": null,
+    "academic_level": "E",
+    "field_of_research": "Accounting",
+    "profile_url": "https://www.unsw.edu.au/staff/fahim-khondaker",
+    "university": "UNSW Sydney",
+    "research_portal_url": null,
+    "school": "School of Accounting, Auditing and Taxation"
+  }
+]
