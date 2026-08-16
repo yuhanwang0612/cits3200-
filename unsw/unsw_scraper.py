@@ -349,14 +349,164 @@ def fetch_profile_html(session, profile_url, delay, use_cache=True):
     return resp.text, False
 
 
-def parse_profile(html):
+def parse_profile(soup):
     """Read UNSW's own profile-* meta tags. These are authoritative."""
-    soup = BeautifulSoup(html, "html.parser")
     out = {}
     for field in META_FIELDS:
         tag = soup.find("meta", attrs={"name": field})
         out[field] = tag["content"].strip() if tag and tag.get("content") else None
     return out
+
+
+# ---------------------------------------------------------------------------
+# Stage 2 — publications
+#
+# Publications are on the same profile page we already fetched, inside the
+# Publications tab, and they are server-rendered — no browser and no extra
+# request needed. Most entries carry structured spans from UNSW's research
+# gateway feed:
+#
+#   .publication-item
+#       .publication-category   "Journal articles" / "Book Chapters" / ...
+#       .publication-year       "2026"
+#       .rg-author              "Li H;  Liu L;  Masulis R;  Zein J"
+#       .rg-title               "'Does common ownership raise antitrust concerns?'"
+#       .rg-source-title        "Journal of Corporate Finance"      (journal)
+#       .rg-volume / .rg-page / .rg-publisher
+#       a[href*="doi.org"]      DOI link
+#
+# A minority are a bare paragraph of free text with no spans at all. Those are
+# NOT guessed at — they go to unsw_unparsed_publications.csv with the raw text,
+# matching how the ANU scraper handles the same problem. Silently dropping them
+# would understate a researcher's output; silently mis-parsing them would be
+# worse.
+# ---------------------------------------------------------------------------
+PUB_ITEM = ".publication-item"
+YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+DOI_RE = re.compile(r"10\.\d{4,9}/\S+", re.IGNORECASE)
+# Journal articles are the only type ABDC ranks, so the type is kept as a
+# column rather than filtered here — that decision belongs downstream.
+JOURNAL_TYPE = re.compile(r"journal", re.IGNORECASE)
+
+
+def _text(node, selector):
+    found = node.select_one(selector)
+    if not found:
+        return None
+    value = found.get_text(" ", strip=True)
+    return value or None
+
+
+def _clean_title(title):
+    """Titles arrive wrapped in single quotes: 'Some title'."""
+    if not title:
+        return None
+    return title.strip().strip("'‘’\"").strip() or None
+
+
+def _split_authors(raw):
+    """UNSW separates authors with semicolons: 'Li H;  Liu L;  Masulis R'."""
+    if not raw:
+        return None
+    parts = [p.strip() for p in raw.split(";")]
+    return "; ".join(p for p in parts if p) or None
+
+
+def parse_publications(soup, person):
+    """Return (publications, unparsed) for one researcher."""
+    pubs, unparsed, seen = [], [], set()
+
+    for item in soup.select(PUB_ITEM):
+        category = _text(item, ".publication-category")
+        year = _text(item, ".rg-year") or _text(item, ".publication-year")
+        title = _clean_title(_text(item, ".rg-title"))
+
+        # A few entries carry more than one link. Prefer the DOI — it is the
+        # stable identifier and the join key for OpenAlex later. Fall back to
+        # whatever link is there (often a publisher or UNSW-hosted PDF).
+        #
+        # Some entries link to a bare "http://dx.doi.org" with no identifier
+        # after it. That is a broken link on UNSW's side, not a DOI, so it is
+        # discarded rather than written out as an article_url that goes nowhere.
+        links = [a["href"].strip() for a in item.select("a[href]") if a.get("href")]
+        doi = None
+        doi_link = None
+        for candidate in links:
+            match = DOI_RE.search(candidate)
+            if match:
+                doi = match.group(0).rstrip(".,;)")
+                doi_link = candidate
+                break
+        others = [u for u in links if "doi.org" not in u]
+        url = doi_link or (others[0] if others else None)
+
+        if not title:
+            # No structured title — record it rather than guess at the fields.
+            raw = item.get_text(" ", strip=True)
+            if raw:
+                year_guess = YEAR_RE.search(raw)
+                unparsed.append({
+                    "researcher_name": person["name"],
+                    "researcher_profile_url": person["profile_url"],
+                    "university": UNIVERSITY,
+                    "publication_type": category,
+                    "year": year or (year_guess.group(0) if year_guess else None),
+                    "raw_citation": raw,
+                    "reason": "no structured title on the page",
+                })
+            continue
+
+        # Some outputs are listed twice on the same page under two different
+        # DOIs — the 1986 Journal of Finance paper below appears once with its
+        # JSTOR DOI and once with its Wiley one, and two SSRN versions of the
+        # same working paper appear under two SSRN IDs. Counting those twice
+        # would inflate the productivity measure, so the DOI is deliberately
+        # NOT part of the identity.
+        #
+        # Title alone is too loose in the other direction: the same title
+        # legitimately appears as a 2015 conference paper and a 2019 book, and
+        # those are two different outputs. Title + year + type + journal keeps
+        # those apart while collapsing the true duplicates.
+        identity = (title.lower(), year, category,
+                    (journal or "").lower() if (journal := _text(item, ".rg-source-title")) else "")
+        if identity in seen:
+            # Keep whichever copy carries a DOI — it is the more useful record.
+            if doi:
+                for existing in pubs:
+                    if existing["_identity"] == identity and not existing["doi"]:
+                        existing["doi"] = doi
+                        existing["article_url"] = url or existing["article_url"]
+                        break
+            continue
+        seen.add(identity)
+
+        pubs.append({
+            "_identity": identity,
+            "researcher_name": person["name"],
+            "researcher_profile_url": person["profile_url"],
+            "university": UNIVERSITY,
+            "field_of_research": person["field_of_research"],
+            "title": title,
+            "journal_name": journal,
+            "year": year,
+            "publication_type": category,
+            "doi": doi,
+            "article_url": url,
+            "coauthors": _split_authors(_text(item, ".rg-author")),
+            "volume": _text(item, ".rg-volume"),
+            "pages": _text(item, ".rg-page"),
+            "publisher": _text(item, ".rg-publisher"),
+            "abdc_self_reported": None,   # joined from the ABDC list downstream
+            "citation_percentile": None,  # joined from OpenAlex downstream
+            "source": "UNSW staff profile",
+        })
+
+    # The dedup key is internal bookkeeping — drop it so callers only ever see
+    # the documented columns.
+    for pub in pubs:
+        pub.pop("_identity", None)
+
+    return pubs, unparsed
 
 
 # ---------------------------------------------------------------------------
@@ -368,20 +518,49 @@ STAFF_COLUMNS = [
 ]
 
 
-def write_output(records):
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    csv_path = os.path.join(OUTPUT_DIR, "unsw_staff.csv")
-    json_path = os.path.join(OUTPUT_DIR, "unsw_staff.json")
+PUB_COLUMNS = [
+    "researcher_name", "researcher_profile_url", "university", "field_of_research",
+    "title", "journal_name", "year", "publication_type", "doi", "article_url",
+    "coauthors", "volume", "pages", "publisher",
+    "abdc_self_reported", "citation_percentile", "source",
+]
 
-    with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=STAFF_COLUMNS, extrasaction="ignore")
+UNPARSED_COLUMNS = [
+    "researcher_name", "researcher_profile_url", "university",
+    "publication_type", "year", "raw_citation", "reason",
+]
+
+NO_PUBS_COLUMNS = ["name", "profile_url", "university", "field_of_research",
+                   "job_title", "academic_level"]
+
+
+def _write_csv(name, columns, rows):
+    path = os.path.join(OUTPUT_DIR, name)
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=columns, extrasaction="ignore")
         writer.writeheader()
-        writer.writerows(records)
+        writer.writerows(rows)
+    return path
 
+
+def write_output(records, pubs, unparsed, no_pubs):
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    written = [
+        _write_csv("unsw_staff.csv", STAFF_COLUMNS, records),
+        _write_csv("unsw_publications.csv", PUB_COLUMNS, pubs),
+    ]
+    # These two are written even when empty, so "no problems" is visibly
+    # different from "the file was never produced".
+    written.append(_write_csv("unsw_unparsed_publications.csv",
+                              UNPARSED_COLUMNS, unparsed))
+    written.append(_write_csv("unsw_no_publications.csv",
+                              NO_PUBS_COLUMNS, no_pubs))
+
+    json_path = os.path.join(OUTPUT_DIR, "unsw_staff.json")
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(records, f, indent=2, ensure_ascii=False)
-
-    return csv_path, json_path
+    written.append(json_path)
+    return written
 
 
 # ---------------------------------------------------------------------------
@@ -441,13 +620,15 @@ def main():
     session.headers.update({"User-Agent": USER_AGENT})
 
     records, skipped, failed, excluded = [], [], [], []
+    all_pubs, all_unparsed, no_pubs = [], [], []
     for i, card in enumerate(targets, 1):
         html, cached = fetch_profile_html(session, card["profile_url"], delay,
                                           use_cache=not args.no_cache)
         if html is None:
             failed.append(card["profile_url"])
             continue
-        meta = parse_profile(html)
+        soup = BeautifulSoup(html, "html.parser")
+        meta = parse_profile(soup)
         school = meta["profile-school"]
         discipline = TARGET_SCHOOLS.get(school)
         if discipline is None:
@@ -464,7 +645,7 @@ def main():
         if canonical == "Exclude":
             excluded.append((full_name, job_title))
 
-        records.append({
+        person = {
             # Plain name — rank lives in job_title/academic_level, matching the
             # ANU and UQ scrapers so the columns line up.
             "name": PREFIX.sub("", full_name).strip(),
@@ -473,23 +654,33 @@ def main():
             "field_of_research": discipline,
             "profile_url": card["profile_url"],
             "university": UNIVERSITY,
-            "research_portal_url": None,   # filled in stage 2
+            "research_portal_url": None,
             "school": school,
-        })
+        }
+        records.append(person)
+
+        pubs, unparsed = parse_publications(soup, person)
+        all_pubs += pubs
+        all_unparsed += unparsed
+        if not pubs and not unparsed:
+            no_pubs.append(person)
+
         print(f"  {i:>3}/{len(targets)}  {'cache' if cached else 'fetch'}  "
-              f"{records[-1]['name']:<34} {discipline:<10} {str(level or '?')}")
+              f"{person['name']:<34} {discipline:<10} {str(level or '?'):<3} "
+              f"{len(pubs):>4} pubs"
+              + (f"  ({len(unparsed)} unparsed)" if unparsed else ""))
 
     if not records:
         print("\nNo one matched the two target schools. Check that the school names in")
         print("TARGET_SCHOOLS still match what UNSW publishes in profile-school.")
         return
 
-    csv_path, json_path = write_output(records)
+    written = write_output(records, all_pubs, all_unparsed, no_pubs)
 
     from collections import Counter
-    print(f"\nStage 1 complete: {len(records)} academics")
-    print(f"  {csv_path}")
-    print(f"  {json_path}")
+    print(f"\nComplete: {len(records)} academics, {len(all_pubs)} publications")
+    for path in written:
+        print(f"  {path}")
     print("\n  by discipline:", dict(Counter(r["field_of_research"] for r in records)))
     print("  by level:     ", dict(Counter(r["academic_level"] for r in records)))
     print("  level unknown:", sum(1 for r in records if not r["academic_level"]))
@@ -502,6 +693,16 @@ def main():
         # FR1: a profile that no longer resolves means the person has left,
         # following the client's guidance on Stephen Gray at UQ.
         print(f"      {url}")
+
+    journals = [p for p in all_pubs if p["publication_type"]
+                and JOURNAL_TYPE.search(p["publication_type"])]
+    print(f"\n  publications: {len(all_pubs)}"
+          f"  ({len(journals)} journal articles — the ones ABDC ranks)")
+    print("  by type:      ", dict(Counter(p["publication_type"] for p in all_pubs)))
+    print(f"  with a DOI:    {sum(1 for p in all_pubs if p['doi'])}")
+    print(f"  with a journal name: {sum(1 for p in all_pubs if p['journal_name'])}")
+    print(f"  unparsed (logged, not guessed at): {len(all_unparsed)}")
+    print(f"  researchers with no publications listed: {len(no_pubs)}")
 
 
 if __name__ == "__main__":

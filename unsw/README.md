@@ -62,7 +62,7 @@ We do not attempt to bypass any access control or bot protection.
 ## Run it
 
 ```bash
-python -m pip install requests beautifulsoup4 selenium webdriver-manager
+python -m pip install -r requirements.txt
 python unsw_scraper.py --headless
 ```
 
@@ -83,16 +83,78 @@ Writes to `./output/`:
 | File | Contents |
 |---|---|
 | `unsw_staff.csv` / `.json` | One row per academic — name, job_title, academic_level (A–E), field_of_research, profile_url, university, research_portal_url, school |
+| `unsw_publications.csv` | One row per publication — title, journal_name, year, publication_type, doi, article_url, coauthors, volume, pages, publisher, plus blank `abdc_self_reported` and `citation_percentile` columns to be filled downstream |
+| `unsw_unparsed_publications.csv` | Entries we could not parse, with the raw text — see below |
+| `unsw_no_publications.csv` | Academics whose profile lists nothing at all |
 
 Field names match the **Scope of Work data dictionary (section 3.5.4)** and the ANU
 scraper's output, so this loads into the shared database with no reshaping.
 
+## Publications
+
+Publications are on the same profile page, inside the Publications tab, and they are
+**server-rendered** — so they cost no extra request and no browser. Most entries carry
+structured markup from UNSW's research gateway feed, which is why the fields come out
+clean rather than being pulled apart with regular expressions:
+
+```html
+<div class="publication-item">
+  <span class="publication-category">Journal articles</span>
+  <span class="rg-author">Li H;  Liu L;  Masulis R;  Zein J</span>
+  <span class="rg-title">'Does common ownership raise antitrust concerns?'</span>
+  <i    class="rg-source-title">Journal of Corporate Finance</i>
+  <span class="rg-volume">100</span>
+  <a href="http://dx.doi.org/10.1016/j.jcorpfin.2026.103037">…</a>
+</div>
+```
+
+Three things are deliberate:
+
+- **Nothing is guessed at.** A small number of entries are a bare paragraph of free
+  text with no structure. Those go to `unsw_unparsed_publications.csv` with the raw
+  citation rather than being parsed heuristically. Dropping them silently would
+  understate someone's output; mis-parsing them would be worse.
+- **`publication_type` is kept, not filtered.** ABDC only ranks journal articles, but
+  book chapters, working papers and preprints are still real output. Deciding what
+  counts is the client's call, so the type is carried through as a column.
+- **Some entries genuinely have no year** — mostly SSRN preprints, where UNSW's own
+  page shows no date. The year is left blank rather than inferred from the DOI.
+
+Two data-quality problems on UNSW's side are handled explicitly: a number of entries
+link to a bare `http://dx.doi.org` with no identifier after it (discarded, since it
+resolves nowhere), and a few are listed twice, identical in every field (deduplicated
+on title + year + type + DOI, so a title that legitimately appears as both a
+conference paper and a later book is kept as two records).
+
+## Tests
+
+```bash
+python -m pytest test_unsw_scraper.py -v
+```
+
+38 tests, all offline against fixtures defined in the test file — nothing touches
+unsw.edu.au, so the suite runs in about a second and is safe in CI.
+
+They are not there for coverage. Each one pins a rule that was actually wrong at
+some point, or that is subtle enough to be "simplified" back into a bug later:
+
+- `Associate Professor` must not be read as `Associate Lecturer` — ladder ordering
+- `Head of School` is not a rank, so the level comes from the name prefix instead
+- `Emeritus Scientia Professor Roger Simnett` — honorifics stack
+- a bare `http://dx.doi.org` link is discarded, not written out as a URL
+- the same paper under a JSTOR DOI and a Wiley DOI is **one** publication
+- the same title as a 2015 conference paper and a 2019 book is **two**
+- free-text entries go to the unparsed log rather than being guessed at
+- `TARGET_SCHOOLS` holds `School of Banking and Finance`, not the directory's
+  display label `Banking & Finance` — confusing the two is what made the first
+  version of this scraper return zero staff
+
 ## Progress
 
-- [x] Stage 1 — staff directory collection (this commit)
-- [ ] Stage 2 — publications from staff profile pages
-- [ ] Stage 3 — unparsed / no-publication logging
-- [ ] Stage 4 — DOI, author count and re-run behaviour
+- [x] Stage 1 — staff directory collection
+- [x] Stage 2 — publications from staff profile pages
+- [x] Stage 3 — unparsed / no-publication logging
+- [ ] Stage 4 — join to the ABDC list and OpenAlex citation percentiles
 
 ## Known limitations so far
 

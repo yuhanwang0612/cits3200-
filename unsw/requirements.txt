@@ -1,0 +1,13 @@
+# UNSW scraper — CITS3200 Group 20
+# Install with:  python -m pip install -r requirements.txt
+
+requests>=2.31
+beautifulsoup4>=4.12
+
+# Selenium is needed only for the staff listing, which is rendered by
+# JavaScript. Profile pages and publications are read with plain requests.
+selenium>=4.20
+webdriver-manager>=4.0
+
+# Tests only — they run offline against fixtures in test_unsw_scraper.py
+pytest>=8.0
