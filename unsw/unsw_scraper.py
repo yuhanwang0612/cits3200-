@@ -404,12 +404,15 @@ def _clean_title(title):
     return title.strip().strip("'‘’\"").strip() or None
 
 
-def _split_authors(raw):
+def _author_list(raw):
     """UNSW separates authors with semicolons: 'Li H;  Liu L;  Masulis R'."""
     if not raw:
-        return None
-    parts = [p.strip() for p in raw.split(";")]
-    return "; ".join(p for p in parts if p) or None
+        return []
+    return [p.strip() for p in raw.split(";") if p.strip()]
+
+
+def _split_authors(raw):
+    return "; ".join(_author_list(raw)) or None
 
 
 def parse_publications(soup, person):
@@ -420,6 +423,7 @@ def parse_publications(soup, person):
         category = _text(item, ".publication-category")
         year = _text(item, ".rg-year") or _text(item, ".publication-year")
         title = _clean_title(_text(item, ".rg-title"))
+        authors = _text(item, ".rg-author")
 
         # A few entries carry more than one link. Prefer the DOI — it is the
         # stable identifier and the join key for OpenAlex later. Fall back to
@@ -492,7 +496,13 @@ def parse_publications(soup, person):
             "publication_type": category,
             "doi": doi,
             "article_url": url,
-            "coauthors": _split_authors(_text(item, ".rg-author")),
+            "coauthors": _split_authors(authors),
+            # Requested by the client on 12 August, for every publication.
+            # Counted from the page's own author list rather than by splitting
+            # the joined string later, so a name containing a semicolon cannot
+            # inflate it. Left blank rather than set to 0 when no authors are
+            # listed — "we don't know" and "zero authors" are different.
+            "n_authors": len(_author_list(authors)) or None,
             "volume": _text(item, ".rg-volume"),
             "pages": _text(item, ".rg-page"),
             "publisher": _text(item, ".rg-publisher"),
@@ -521,7 +531,7 @@ STAFF_COLUMNS = [
 PUB_COLUMNS = [
     "researcher_name", "researcher_profile_url", "university", "field_of_research",
     "title", "journal_name", "year", "publication_type", "doi", "article_url",
-    "coauthors", "volume", "pages", "publisher",
+    "coauthors", "n_authors", "volume", "pages", "publisher",
     "abdc_self_reported", "citation_percentile", "source",
 ]
 
@@ -572,6 +582,12 @@ def main():
     parser.add_argument("--limit", type=int, help="only check this many profiles (testing)")
     parser.add_argument("--delay", type=float, help="seconds between profile fetches")
     parser.add_argument("--no-cache", action="store_true", help="ignore the profile cache")
+    parser.add_argument("--journals-only", action="store_true",
+                        help="write only journal articles. The client asked for "
+                             "journals only, but the authoritative filter lives in "
+                             "the shared merge step so that 'journal article' means "
+                             "the same thing across all eight universities — this "
+                             "flag is for checking UNSW on its own.")
     parser.add_argument("--timeout", type=int, default=PAGE_TIMEOUT,
                         help=f"seconds to wait for the listing (default {PAGE_TIMEOUT})")
     args = parser.parse_args()
@@ -674,6 +690,13 @@ def main():
         print("\nNo one matched the two target schools. Check that the school names in")
         print("TARGET_SCHOOLS still match what UNSW publishes in profile-school.")
         return
+
+    if args.journals_only:
+        kept = [p for p in all_pubs if p["publication_type"]
+                and JOURNAL_TYPE.search(p["publication_type"])]
+        print(f"\n--journals-only: keeping {len(kept)} of {len(all_pubs)} publications "
+              f"({len(all_pubs) - len(kept)} other types dropped from the output)")
+        all_pubs = kept
 
     written = write_output(records, all_pubs, all_unparsed, no_pubs)
 

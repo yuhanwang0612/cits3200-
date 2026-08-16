@@ -74,6 +74,7 @@ Useful flags:
 | `--delay 1` | seconds between profile fetches |
 | `--no-cache` | refetch profiles instead of reusing `output/profile_cache/` |
 | `--timeout 60` | wait longer for the listing to render |
+| `--journals-only` | write only journal articles — see below |
 
 Profile pages are cached in `output/profile_cache/`, so the full crawl is a one-off
 cost and every later run is effectively instant. The cache is not committed.
@@ -83,7 +84,7 @@ Writes to `./output/`:
 | File | Contents |
 |---|---|
 | `unsw_staff.csv` / `.json` | One row per academic — name, job_title, academic_level (A–E), field_of_research, profile_url, university, research_portal_url, school |
-| `unsw_publications.csv` | One row per publication — title, journal_name, year, publication_type, doi, article_url, coauthors, volume, pages, publisher, plus blank `abdc_self_reported` and `citation_percentile` columns to be filled downstream |
+| `unsw_publications.csv` | One row per publication — title, journal_name, year, publication_type, doi, article_url, coauthors, n_authors, volume, pages, publisher, plus blank `abdc_self_reported` and `citation_percentile` columns to be filled downstream |
 | `unsw_unparsed_publications.csv` | Entries we could not parse, with the raw text — see below |
 | `unsw_no_publications.csv` | Academics whose profile lists nothing at all |
 
@@ -114,9 +115,20 @@ Three things are deliberate:
   text with no structure. Those go to `unsw_unparsed_publications.csv` with the raw
   citation rather than being parsed heuristically. Dropping them silently would
   understate someone's output; mis-parsing them would be worse.
-- **`publication_type` is kept, not filtered.** ABDC only ranks journal articles, but
-  book chapters, working papers and preprints are still real output. Deciding what
-  counts is the client's call, so the type is carried through as a column.
+- **`publication_type` is kept, not filtered.** The client asked on 12 August for
+  journals only, and that filter is applied in the shared merge step rather than
+  here. Two reasons: re-scraping is expensive and discarding data we already hold
+  is irreversible, and the eight scrapers use different type vocabularies — UNSW
+  says "Journal articles" — so filtering in each scraper would make "journal
+  article" quietly mean eight different things, against the client's stated
+  priority of standardisation. `--journals-only` applies it locally for checking
+  UNSW on its own.
+- **`n_authors` is counted from the page's own author list**, not by splitting the
+  joined string afterwards, so a name containing a semicolon cannot inflate it.
+  It is left blank rather than 0 when no authors are listed — "we don't know" and
+  "zero authors" are different claims. The largest genuine value in the data is
+  341, on the *Non-Standard Errors* paper, which really does have that many
+  authors; it is not a parsing failure.
 - **Some entries genuinely have no year** — mostly SSRN preprints, where UNSW's own
   page shows no date. The year is left blank rather than inferred from the DOI.
 
