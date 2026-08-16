@@ -492,20 +492,6 @@
   {
     "espace_id": "2254822",
     "name": "Hasibul Chowdhury",
-    "journal_key": "Financial Review (US)",
-    "title": "Does a CEO's network capital affect workplace safety?",
-    "year": "2026",
-    "n_authors": 3,
-    "authors": "Chowdhury, Hasibul; Han, Hien Duc; Krishnamurti, Chandrasekhar",
-    "abdc": "A",
-    "sjr_quartile": "Q2",
-    "link": "https://espace.library.uq.edu.au/view/UQ:aa730be",
-    "doi": "10.1111/fire.70034",
-    "doi_url": "https://doi.org/10.1111/fire.70034"
-  },
-  {
-    "espace_id": "2254822",
-    "name": "Hasibul Chowdhury",
     "journal_key": "British Accounting Review",
     "title": "Institutional shareholder distraction and workplace safety",
     "year": "2026",
@@ -516,6 +502,20 @@
     "link": "https://espace.library.uq.edu.au/view/UQ:7ce7474",
     "doi": "10.1016/j.bar.2025.101671",
     "doi_url": "https://doi.org/10.1016/j.bar.2025.101671"
+  },
+  {
+    "espace_id": "2254822",
+    "name": "Hasibul Chowdhury",
+    "journal_key": "Financial Review (US)",
+    "title": "Does a CEO's network capital affect workplace safety?",
+    "year": "2026",
+    "n_authors": 3,
+    "authors": "Chowdhury, Hasibul; Han, Hien Duc; Krishnamurti, Chandrasekhar",
+    "abdc": "A",
+    "sjr_quartile": "Q2",
+    "link": "https://espace.library.uq.edu.au/view/UQ:aa730be",
+    "doi": "10.1111/fire.70034",
+    "doi_url": "https://doi.org/10.1111/fire.70034"
   },
   {
     "espace_id": "2254822",
@@ -1024,20 +1024,6 @@
   {
     "espace_id": "7275857",
     "name": "Nicolas Eugster",
-    "journal_key": "Pacific-Basin Finance Journal",
-    "title": "Family firms and financial analyst activity",
-    "year": "2019",
-    "n_authors": 1,
-    "authors": "Eugster, Nicolas",
-    "abdc": "A",
-    "sjr_quartile": "Q1",
-    "link": "https://espace.library.uq.edu.au/view/UQ:f64d0f9",
-    "doi": "10.1016/j.pacfin.2018.03.002",
-    "doi_url": "https://doi.org/10.1016/j.pacfin.2018.03.002"
-  },
-  {
-    "espace_id": "7275857",
-    "name": "Nicolas Eugster",
     "journal_key": "Journal of Banking & Finance",
     "title": "Founding family ownership, stock market returns, and agency problems",
     "year": "2019",
@@ -1048,6 +1034,20 @@
     "link": "https://espace.library.uq.edu.au/view/UQ:c04561b",
     "doi": "10.1016/j.jbankfin.2019.07.020",
     "doi_url": "https://doi.org/10.1016/j.jbankfin.2019.07.020"
+  },
+  {
+    "espace_id": "7275857",
+    "name": "Nicolas Eugster",
+    "journal_key": "Pacific-Basin Finance Journal",
+    "title": "Family firms and financial analyst activity",
+    "year": "2019",
+    "n_authors": 1,
+    "authors": "Eugster, Nicolas",
+    "abdc": "A",
+    "sjr_quartile": "Q1",
+    "link": "https://espace.library.uq.edu.au/view/UQ:f64d0f9",
+    "doi": "10.1016/j.pacfin.2018.03.002",
+    "doi_url": "https://doi.org/10.1016/j.pacfin.2018.03.002"
   },
   {
     "espace_id": "87704",
@@ -5658,20 +5658,6 @@
   {
     "espace_id": "1736",
     "name": "Kathleen Herbohn",
-    "journal_key": "Accounting Research Journal",
-    "title": "Job satisfaction dimensions in public accounting practice",
-    "year": "2005",
-    "n_authors": 1,
-    "authors": "Herbohn, K. F.",
-    "abdc": "B",
-    "sjr_quartile": "Q2",
-    "link": "https://espace.library.uq.edu.au/view/UQ:75001",
-    "doi": "10.1108/10309610580000676",
-    "doi_url": "https://doi.org/10.1108/10309610580000676"
-  },
-  {
-    "espace_id": "1736",
-    "name": "Kathleen Herbohn",
     "journal_key": "Accounting, Organizations and Society",
     "title": "A full cost environmental accounting experiment",
     "year": "2005",
@@ -5682,6 +5668,20 @@
     "link": "https://espace.library.uq.edu.au/view/UQ:74695",
     "doi": "10.1016/j.aos.2005.01.001",
     "doi_url": "https://doi.org/10.1016/j.aos.2005.01.001"
+  },
+  {
+    "espace_id": "1736",
+    "name": "Kathleen Herbohn",
+    "journal_key": "Accounting Research Journal",
+    "title": "Job satisfaction dimensions in public accounting practice",
+    "year": "2005",
+    "n_authors": 1,
+    "authors": "Herbohn, K. F.",
+    "abdc": "B",
+    "sjr_quartile": "Q2",
+    "link": "https://espace.library.uq.edu.au/view/UQ:75001",
+    "doi": "10.1108/10309610580000676",
+    "doi_url": "https://doi.org/10.1108/10309610580000676"
   },
   {
     "espace_id": "1736",
@@ -5704,20 +5704,6 @@
     "title": "Forestry managers' perceptions of the feasibility of incorporating non-market value estimates into financial environmental reporting",
     "year": "2002",
     "n_authors": 2,
-    "authors": "Herbohn, Kathleen F.; Henderson, Scott",
-    "abdc": "A",
-    "sjr_quartile": null,
-    "link": "https://espace.library.uq.edu.au/view/UQ:61253",
-    "doi": null,
-    "doi_url": null
-  },
-  {
-    "espace_id": "1736",
-    "name": "Kathleen Herbohn",
-    "journal_key": "Economic Analysis and Policy",
-    "title": "Forestry managers' perceptions of the feasibility of incorporating non-market value estimates into financial environmental reporting",
-    "year": "2002",
-    "n_authors": 2,
     "authors": "Herbohn, Kathleen; Henderson, Scott",
     "abdc": "A",
     "sjr_quartile": null,
@@ -5728,16 +5714,16 @@
   {
     "espace_id": "1736",
     "name": "Kathleen Herbohn",
-    "journal_key": "Society & Natural Resources",
-    "title": "An alternative approach to accounting for natural resources: The case of multipurpose forestry in Australia",
-    "year": "2000",
-    "n_authors": 3,
-    "authors": "Herbohn, Kathleen F.; Harrison, Steve R.; Herbohn, John L.",
-    "abdc": null,
-    "sjr_quartile": "Q1",
-    "link": "https://espace.library.uq.edu.au/view/UQ:141557",
-    "doi": "10.1080/08941920050121936",
-    "doi_url": "https://doi.org/10.1080/08941920050121936"
+    "journal_key": "Economic Analysis and Policy",
+    "title": "Forestry managers' perceptions of the feasibility of incorporating non-market value estimates into financial environmental reporting",
+    "year": "2002",
+    "n_authors": 2,
+    "authors": "Herbohn, Kathleen F.; Henderson, Scott",
+    "abdc": "A",
+    "sjr_quartile": null,
+    "link": "https://espace.library.uq.edu.au/view/UQ:61253",
+    "doi": null,
+    "doi_url": null
   },
   {
     "espace_id": "1736",
@@ -5752,6 +5738,20 @@
     "link": "https://espace.library.uq.edu.au/view/UQ:142252",
     "doi": "10.1016/S0378-1127(99)00137-1",
     "doi_url": "https://doi.org/10.1016/S0378-1127(99)00137-1"
+  },
+  {
+    "espace_id": "1736",
+    "name": "Kathleen Herbohn",
+    "journal_key": "Society & Natural Resources",
+    "title": "An alternative approach to accounting for natural resources: The case of multipurpose forestry in Australia",
+    "year": "2000",
+    "n_authors": 3,
+    "authors": "Herbohn, Kathleen F.; Harrison, Steve R.; Herbohn, John L.",
+    "abdc": null,
+    "sjr_quartile": "Q1",
+    "link": "https://espace.library.uq.edu.au/view/UQ:141557",
+    "doi": "10.1080/08941920050121936",
+    "doi_url": "https://doi.org/10.1080/08941920050121936"
   },
   {
     "espace_id": "1736",
@@ -7031,20 +7031,6 @@
     "espace_id": "326",
     "name": "Peter Clarkson",
     "journal_key": "Accounting and Finance",
-    "title": "Market reaction to takeover rumour in internet discussion sites",
-    "year": "2006",
-    "n_authors": 3,
-    "authors": "Clarkson, P. M.; Joyce, D.; Tutticci, I. M.",
-    "abdc": "A",
-    "sjr_quartile": "Q1",
-    "link": "https://espace.library.uq.edu.au/view/UQ:76746",
-    "doi": "10.1111/j.1467-629X.2006.00160.x",
-    "doi_url": "https://doi.org/10.1111/j.1467-629X.2006.00160.x"
-  },
-  {
-    "espace_id": "326",
-    "name": "Peter Clarkson",
-    "journal_key": "Accounting and Finance",
     "title": "Chief executive officer remuneration disclosure quality: Corporate responses to an evolving disclosure environment",
     "year": "2006",
     "n_authors": 3,
@@ -7054,6 +7040,20 @@
     "link": "https://espace.library.uq.edu.au/view/UQ:79014",
     "doi": "10.1111/j.1467-629x.2006.00197.x",
     "doi_url": "https://doi.org/10.1111/j.1467-629x.2006.00197.x"
+  },
+  {
+    "espace_id": "326",
+    "name": "Peter Clarkson",
+    "journal_key": "Accounting and Finance",
+    "title": "Market reaction to takeover rumour in internet discussion sites",
+    "year": "2006",
+    "n_authors": 3,
+    "authors": "Clarkson, P. M.; Joyce, D.; Tutticci, I. M.",
+    "abdc": "A",
+    "sjr_quartile": "Q1",
+    "link": "https://espace.library.uq.edu.au/view/UQ:76746",
+    "doi": "10.1111/j.1467-629X.2006.00160.x",
+    "doi_url": "https://doi.org/10.1111/j.1467-629X.2006.00160.x"
   },
   {
     "espace_id": "326",

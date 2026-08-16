@@ -267,21 +267,6 @@
     "cites_per_doc_2y": 3.8
   },
   {
-    "journal_key": "Financial Review (US)",
-    "journal": "The Financial Review",
-    "journal_canonical": "The Financial Review",
-    "publisher": "Wiley-Blackwell Publishing, Inc.",
-    "issns": [
-      "0732-8516",
-      "1540-6288"
-    ],
-    "abdc": "A",
-    "sjr": 0.56,
-    "sjr_quartile": "Q2",
-    "h_index": 57,
-    "cites_per_doc_2y": 2.2
-  },
-  {
     "journal_key": "British Accounting Review",
     "journal": "The British Accounting Review",
     "journal_canonical": "The British Accounting Review",
@@ -295,6 +280,21 @@
     "sjr_quartile": "Q1",
     "h_index": 100,
     "cites_per_doc_2y": 8.33
+  },
+  {
+    "journal_key": "Financial Review (US)",
+    "journal": "The Financial Review",
+    "journal_canonical": "The Financial Review",
+    "publisher": "Wiley-Blackwell Publishing, Inc.",
+    "issns": [
+      "0732-8516",
+      "1540-6288"
+    ],
+    "abdc": "A",
+    "sjr": 0.56,
+    "sjr_quartile": "Q2",
+    "h_index": 57,
+    "cites_per_doc_2y": 2.2
   },
   {
     "journal_key": "Journal of Financial Research",
@@ -1902,20 +1902,6 @@
     "cites_per_doc_2y": null
   },
   {
-    "journal_key": "Society & Natural Resources",
-    "journal": "Society & Natural Resources",
-    "journal_canonical": "Society & Natural Resources",
-    "publisher": "Taylor & Francis Inc.",
-    "issns": [
-      "0894-1920"
-    ],
-    "abdc": null,
-    "sjr": 0.668,
-    "sjr_quartile": "Q1",
-    "h_index": 110,
-    "cites_per_doc_2y": 2.32
-  },
-  {
     "journal_key": "Forest Ecology and Management",
     "journal": "Forest Ecology and Management",
     "journal_canonical": "Forest Ecology and Management",
@@ -1928,6 +1914,20 @@
     "sjr_quartile": "Q1",
     "h_index": 227,
     "cites_per_doc_2y": 4.34
+  },
+  {
+    "journal_key": "Society & Natural Resources",
+    "journal": "Society & Natural Resources",
+    "journal_canonical": "Society & Natural Resources",
+    "publisher": "Taylor & Francis Inc.",
+    "issns": [
+      "0894-1920"
+    ],
+    "abdc": null,
+    "sjr": 0.668,
+    "sjr_quartile": "Q1",
+    "h_index": 110,
+    "cites_per_doc_2y": 2.32
   },
   {
     "journal_key": "Australian Forestry",

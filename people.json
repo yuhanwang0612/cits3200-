@@ -2,6 +2,7 @@
   {
     "name": "Jon Aster",
     "rank": "Associate Lecturer",
+    "level": "A",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": null,
@@ -10,6 +11,7 @@
   {
     "name": "Chris Bell",
     "rank": null,
+    "level": null,
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": null,
@@ -18,6 +20,7 @@
   {
     "name": "Shaun Bond",
     "rank": "Professor",
+    "level": "E",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "6079108",
@@ -26,6 +29,7 @@
   {
     "name": "Alexander Cameron",
     "rank": "Associate Lecturer",
+    "level": "A",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "97219",
@@ -34,6 +38,7 @@
   {
     "name": "Yong Ming Chen",
     "rank": "Teaching Associate",
+    "level": null,
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "7627091",
@@ -42,6 +47,7 @@
   {
     "name": "Hasibul Chowdhury",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "2254822",
@@ -50,6 +56,7 @@
   {
     "name": "Nicolas Eugster",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "7275857",
@@ -58,6 +65,7 @@
   {
     "name": "Stephen Gray",
     "rank": "Professor",
+    "level": "E",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": null,
@@ -66,6 +74,7 @@
   {
     "name": "Khoa Hoang",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "87704",
@@ -74,6 +83,7 @@
   {
     "name": "Weiting Hu",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "7639113",
@@ -82,6 +92,7 @@
   {
     "name": "Ronghong Huang",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "87707",
@@ -90,6 +101,7 @@
   {
     "name": "Shirina Lin",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "6004495",
@@ -98,6 +110,7 @@
   {
     "name": "Leo Luong",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "5497249",
@@ -106,6 +119,7 @@
   {
     "name": "Jacquelyn Humphrey",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "6336",
@@ -114,6 +128,7 @@
   {
     "name": "Lin Mi",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "78774",
@@ -122,6 +137,7 @@
   {
     "name": "Suman Neupane-Joshi",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "4329687",
@@ -130,6 +146,7 @@
   {
     "name": "Lily Nguyen",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "5508774",
@@ -138,6 +155,7 @@
   {
     "name": "Vanitha Ragunathan",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "1055",
@@ -146,6 +164,7 @@
   {
     "name": "Dewan Rahman",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "2284981",
@@ -154,6 +173,7 @@
   {
     "name": "Saphira Rekker",
     "rank": "Senior Research Fellow",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "93285",
@@ -162,6 +182,7 @@
   {
     "name": "Eric Tan",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "4818628",
@@ -170,6 +191,7 @@
   {
     "name": "Kelvin Tan",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "8472",
@@ -178,6 +200,7 @@
   {
     "name": "Elizabeth Zhu",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "92037",
@@ -186,6 +209,7 @@
   {
     "name": "Min Zhu",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Finance",
     "espace_id": "4503669",
@@ -194,6 +218,7 @@
   {
     "name": "Ankit Jain",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "4930238",
@@ -202,6 +227,7 @@
   {
     "name": "Byungki Kim",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "4850515",
@@ -210,6 +236,7 @@
   {
     "name": "Kirsty Dunbar",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "7635606",
@@ -218,6 +245,7 @@
   {
     "name": "Bobae Choi",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "7646522",
@@ -226,6 +254,7 @@
   {
     "name": "Debbie Jeffery",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": null,
@@ -234,6 +263,7 @@
   {
     "name": "Mia Han",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "7642804",
@@ -242,6 +272,7 @@
   {
     "name": "Kathleen Herbohn",
     "rank": "Professor",
+    "level": "E",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "1736",
@@ -250,6 +281,7 @@
   {
     "name": "Grace Hsu",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "1009",
@@ -258,6 +290,7 @@
   {
     "name": "Mark Wallis",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "4940317",
@@ -266,6 +299,7 @@
   {
     "name": "Matthew Peters",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "3804387",
@@ -274,6 +308,7 @@
   {
     "name": "Michael Turner",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "77962",
@@ -282,6 +317,7 @@
   {
     "name": "Natalie Peng",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "87748",
@@ -290,6 +326,7 @@
   {
     "name": "Peter Clarkson",
     "rank": "Professor",
+    "level": "E",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "326",
@@ -298,6 +335,7 @@
   {
     "name": "Peter Do",
     "rank": "Senior Lecturer",
+    "level": "C",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "4469982",
@@ -306,6 +344,7 @@
   {
     "name": "Robyn King",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "6621",
@@ -314,6 +353,7 @@
   {
     "name": "Sergeja Slapnicar",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "5402627",
@@ -322,6 +362,7 @@
   {
     "name": "Xin Yu",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "115914",
@@ -330,6 +371,7 @@
   {
     "name": "Yang Xu",
     "rank": "Lecturer",
+    "level": "B",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "4336037",
@@ -338,6 +380,7 @@
   {
     "name": "Muhammad Nadeem",
     "rank": "Associate Professor",
+    "level": "D",
     "university": "University of Queensland",
     "discipline": "Accounting",
     "espace_id": "7634085",
