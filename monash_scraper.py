@@ -294,6 +294,63 @@ def get_abdc(journal_name):
     return abdc_lookup.get(journal_name.strip().lower())
 
 
+# ── Load / download Scimago journal rankings ──────────────────────────
+import re as _re
+
+def _norm(s):
+    """Lowercase, strip punctuation for fuzzy journal matching."""
+    return _re.sub(r"[^a-z0-9 ]", "", (s or "").lower()).strip()
+
+scimago_lookup = {}  # normalised title → (sjr_score, quartile)
+
+SCIMAGO_FILE = "scimago.csv"
+SCIMAGO_URL  = "https://www.scimagojr.com/journalrank.php?out=xls"
+
+def _load_scimago_csv(path):
+    loaded = 0
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        # Scimago exports semicolon-separated despite the .xls extension
+        reader = csv.DictReader(f, delimiter=";")
+        for row in reader:
+            title = row.get("Title", "").strip()
+            sjr   = row.get("SJR", "").replace(",", ".").strip()
+            q     = row.get("SJR Best Quartile", "").strip()
+            if title and sjr:
+                key = _norm(title)
+                try:
+                    scimago_lookup[key] = (float(sjr), q or None)
+                    loaded += 1
+                except ValueError:
+                    pass
+    return loaded
+
+import os as _os
+if _os.path.exists(SCIMAGO_FILE):
+    n = _load_scimago_csv(SCIMAGO_FILE)
+    print(f"Loaded {n} Scimago journal entries from {SCIMAGO_FILE}")
+else:
+    print(f"Downloading Scimago journal rankings (this may take a moment)...")
+    try:
+        r = requests.get(SCIMAGO_URL,
+                         headers={"User-Agent": "Mozilla/5.0"},
+                         timeout=60)
+        r.raise_for_status()
+        with open(SCIMAGO_FILE, "wb") as f:
+            f.write(r.content)
+        n = _load_scimago_csv(SCIMAGO_FILE)
+        print(f"Downloaded and loaded {n} Scimago journal entries")
+    except Exception as e:
+        print(f"Could not download Scimago data: {e} — scimago columns will be blank")
+
+def get_scimago(journal_name):
+    if not journal_name:
+        return None, None
+    result = scimago_lookup.get(_norm(journal_name))
+    if result:
+        return result
+    return None, None
+
+
 # ── Phase 3: fetch ALL publications via OpenAlex ─────────────────────
 print("\nFetching all publications via OpenAlex...")
 
@@ -327,11 +384,14 @@ def parse_oa_works(works):
         source = loc.get("source") or {}
         journal = source.get("display_name") or None
         author_count = len(w.get("authorships") or [])
+        sjr_score, sjr_quartile = get_scimago(journal)
         pubs.append({
             "title": title, "year": year, "doi": doi,
             "journal": journal, "author_count": author_count,
             "pub_url": f"https://doi.org/{doi}" if doi else "",
             "abdc_rank": get_abdc(journal),
+            "scimago_sjr": sjr_score,
+            "scimago_quartile": sjr_quartile,
         })
     return pubs
 
@@ -436,7 +496,7 @@ with open(staff_file, "w", newline="", encoding="utf-8") as f:
     w.writeheader()
     w.writerows(records)
 
-pub_cols = ["university","discipline","researcher","level","title","year","doi","author_count","journal","abdc_rank","pub_url"]
+pub_cols = ["university","discipline","researcher","level","title","year","doi","author_count","journal","abdc_rank","scimago_sjr","scimago_quartile","pub_url"]
 with open(pubs_file, "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=pub_cols, extrasaction="ignore")
     w.writeheader()
