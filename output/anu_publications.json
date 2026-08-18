@@ -36,8 +36,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.702,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Sarah Adams",
@@ -96,8 +96,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0001-4826",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 4.403,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lily Chen",
@@ -116,8 +116,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "1049-2127",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.248,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lily Chen",
@@ -136,8 +136,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0306-686X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lily Chen",
@@ -156,8 +156,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "1542-6297",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.526,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Lily Chen",
@@ -176,8 +176,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "2049-372X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.974,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Lily Chen",
@@ -196,8 +196,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Lily Chen",
@@ -216,8 +216,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "2049-372X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.974,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Lily Chen",
@@ -236,8 +236,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Lily Chen",
@@ -276,8 +276,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0361-3682",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 3.098,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lily Chen",
@@ -316,8 +316,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0378-4266",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.954,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lily Chen",
@@ -356,8 +356,8 @@
     "author_count": 6,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.636,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Sorin Daniliuc",
@@ -376,8 +376,8 @@
     "author_count": 6,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -396,8 +396,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -456,8 +456,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -516,8 +516,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.702,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -536,8 +536,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.681,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -556,8 +556,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -596,8 +596,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -616,8 +616,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.087,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -636,8 +636,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.801,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -656,8 +656,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.521,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -736,8 +736,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.611,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -756,8 +756,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.702,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -776,8 +776,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.436,
+    "scimago_quartile": "Q3"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -996,8 +996,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Tejshree Kala",
@@ -1016,8 +1016,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Eunice Khoo",
@@ -1056,8 +1056,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Eunice Khoo",
@@ -1156,8 +1156,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0306-686X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Eunice Khoo",
@@ -1256,8 +1256,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1276,8 +1276,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.574,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1296,8 +1296,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1316,8 +1316,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.065,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1356,8 +1356,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.436,
+    "scimago_quartile": "Q3"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1376,8 +1376,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.702,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1436,8 +1436,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.702,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1456,8 +1456,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.087,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1556,8 +1556,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.188,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1596,8 +1596,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1616,8 +1616,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1636,8 +1636,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1656,8 +1656,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.97,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1696,8 +1696,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1716,8 +1716,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1736,8 +1736,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1756,8 +1756,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.705,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1776,8 +1776,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 8.251,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1796,8 +1796,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 9.774,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1816,8 +1816,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1856,8 +1856,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.706,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1876,8 +1876,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1916,8 +1916,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 4.403,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1936,8 +1936,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1956,8 +1956,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.32,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1976,8 +1976,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1996,8 +1996,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 8.748,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Scarlett Luo",
@@ -2016,8 +2016,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.762,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2036,8 +2036,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2076,8 +2076,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2096,8 +2096,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.065,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2176,8 +2176,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.702,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2196,8 +2196,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.625,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2256,8 +2256,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0148-558X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.965,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2276,8 +2276,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2316,8 +2316,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2356,8 +2356,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "1059-0560",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.485,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2376,8 +2376,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1743-9132",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.635,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2396,8 +2396,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "1090-6738",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.681,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2416,8 +2416,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0890-8389",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.705,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2436,8 +2436,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0890-8389",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.705,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2476,8 +2476,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0020-7063",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.436,
+    "scimago_quartile": "Q3"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2516,8 +2516,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0001-3072",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.762,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2576,8 +2576,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "1059-0560",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.485,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2596,8 +2596,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2676,8 +2676,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0306-686X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2716,8 +2716,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1369-412X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.636,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2756,8 +2756,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0278-4254",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.97,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2816,8 +2816,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0823-9150",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 3.686,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Madhukar Singh",
@@ -2896,8 +2896,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": "0963-8180",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -3076,8 +3076,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.922,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3096,8 +3096,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 3.686,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3116,8 +3116,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.574,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3136,8 +3136,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3156,8 +3156,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.705,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3296,8 +3296,8 @@
     "author_count": 5,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3316,8 +3316,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.922,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3336,8 +3336,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.681,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3356,8 +3356,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3376,8 +3376,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3396,8 +3396,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.521,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Kathy Wang",
@@ -3436,8 +3436,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Kathy Wang",
@@ -3456,8 +3456,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3476,8 +3476,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3496,8 +3496,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.544,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3536,8 +3536,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.544,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3556,8 +3556,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3616,8 +3616,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3636,8 +3636,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3656,8 +3656,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3696,8 +3696,8 @@
     "author_count": 28,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3716,8 +3716,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3736,8 +3736,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.62,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3756,8 +3756,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3776,8 +3776,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3796,8 +3796,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3816,8 +3816,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3836,8 +3836,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3856,8 +3856,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3876,8 +3876,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3896,8 +3896,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.188,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3936,8 +3936,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3976,8 +3976,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3996,8 +3996,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -4036,8 +4036,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -4136,8 +4136,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.19,
+    "scimago_quartile": "Q4"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4156,8 +4156,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4216,8 +4216,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0929-1199",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.706,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4236,8 +4236,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1044-5005",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.625,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4256,8 +4256,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4276,8 +4276,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.272,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4316,8 +4316,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0001-4788",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.065,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4376,8 +4376,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0001-3072",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.762,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4396,8 +4396,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0020-7063",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.436,
+    "scimago_quartile": "Q3"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4416,8 +4416,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1030-9616",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.62,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Wei Zeng",
@@ -4436,8 +4436,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 4.403,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4456,8 +4456,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 3.686,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4476,8 +4476,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.436,
+    "scimago_quartile": "Q3"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4636,8 +4636,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.705,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Xiu-Ye Zhang",
@@ -4656,8 +4656,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.188,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Xiu-Ye Zhang",
@@ -4676,8 +4676,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Xiu-Ye Zhang",
@@ -4736,8 +4736,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 8.748,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Richard (Ruichao) Zhu",
@@ -4756,8 +4756,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.202,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Richard (Ruichao) Zhu",
@@ -4856,8 +4856,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0963-8008",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.69,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4876,8 +4876,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0895-5638",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.882,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4896,8 +4896,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 9.87,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4916,8 +4916,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.474,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4936,8 +4936,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.921,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4956,8 +4956,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 6.262,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4976,8 +4976,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.484,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5016,8 +5016,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 17.406,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5036,8 +5036,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 9.87,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5056,8 +5056,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 6.262,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5136,8 +5136,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Jenni Bettman",
@@ -5156,8 +5156,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Jenni Bettman",
@@ -5256,8 +5256,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 4.404,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Hua Deng",
@@ -5316,8 +5316,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.139,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5336,8 +5336,8 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0015-198X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.425,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5356,8 +5356,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.139,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5376,8 +5376,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5396,8 +5396,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 2.706,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5416,8 +5416,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 6.838,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5436,8 +5436,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5456,8 +5456,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.954,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5476,8 +5476,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Chao Gao",
@@ -5496,8 +5496,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 3.477,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Chao Gao",
@@ -5516,8 +5516,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 4.404,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Chao Gao",
@@ -5536,8 +5536,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.611,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Lin Hu",
@@ -5556,8 +5556,8 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.11,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Lin Hu",
@@ -5616,8 +5616,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.636,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5636,8 +5636,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.139,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5656,8 +5656,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5676,8 +5676,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.762,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5696,8 +5696,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5716,8 +5716,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5736,8 +5736,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.322,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5756,8 +5756,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.814,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5796,8 +5796,8 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.027,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5836,8 +5836,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 0.702,
+    "scimago_quartile": "Q2"
   },
   {
     "researcher_name": "Nhan Le",
@@ -5876,8 +5876,8 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "scimago_sjr": 1.544,
+    "scimago_quartile": "Q1"
   },
   {
     "researcher_name": "Nhan Le",

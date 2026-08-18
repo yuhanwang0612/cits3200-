@@ -1475,11 +1475,17 @@ def _normalize_journal_key(name: str) -> str:
     """
     Build a normalised matching key so a Scimago export's "Title" column
     and our own parsed journal_name land on the same key despite case,
-    "&"/"and", and punctuation differences. Deliberately does NOT try to
-    guess at deeper abbreviation variants (e.g. "Intl" vs "International",
-    or a missing/extra "The") — that risks a false match more than it's
-    worth. Anything that doesn't line up after this normalisation gets
-    logged to anu_unmatched_journals.csv rather than force-matched.
+    "&"/"and", punctuation, and leading-"The" differences (Scimago
+    consistently omits a leading article — "Accounting Review", "British
+    Accounting Review", "International Journal of Accounting", confirmed
+    against the actual export rather than assumed). Deliberately does NOT
+    try to guess at deeper abbreviation variants (e.g. "Intl" vs
+    "International", or Scimago's own occasional short-form titles like
+    "Auditing" for "Auditing: A Journal of Practice & Theory") — those
+    aren't a consistent, confirmable rule the way the leading article is,
+    and guessing at them risks a false match more than it's worth.
+    Anything that doesn't line up after this normalisation gets logged to
+    anu_unmatched_journals.csv rather than force-matched.
     """
     if not name:
         return ""
@@ -1487,7 +1493,9 @@ def _normalize_journal_key(name: str) -> str:
     s = re.sub(r"\([^)]*\)", " ", s)   # drop parenthetical annotations, e.g. "(ABDC: A)"
     s = s.replace("&", " and ")
     s = re.sub(r"[^a-z0-9]+", " ", s)  # all punctuation -> space
-    return re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"^the\s+", "", s)
+    return s
 
 
 def find_scimago_csvs(search_dir: Path | None = None) -> list[Path]:
@@ -1543,7 +1551,13 @@ def load_scimago_rankings(paths: list[Path]) -> tuple[dict[str, tuple[float | No
                         sjr = float(sjr_raw.replace(",", "."))
                     except ValueError:
                         sjr = None
-                quartile = (row.get("SJR Best Quartile") or "").strip() or None
+                # Scimago itself uses a literal "-" for "not ranked this
+                # year" (seen on a couple of book-series entries with no
+                # SJR score at all) — that's not a real Q1-Q4 value, so it
+                # maps to None rather than being stored as a fifth quartile.
+                quartile = (row.get("SJR Quartile") or "").strip() or None
+                if quartile == "-":
+                    quartile = None
                 mapping[key] = (sjr, quartile)
     return mapping, total_rows
 
@@ -1606,7 +1620,13 @@ def main() -> None:
                 continue
             key = _normalize_journal_key(p.journal_name)
             hit = scimago_map.get(key)
-            if hit:
+            # A hit with BOTH fields None (a journal Scimago lists but with
+            # no rank data that year — e.g. a book series with "-" for
+            # quartile and no SJR score at all) isn't a usable "ranked
+            # journal" match even though the name matched, so it's logged
+            # to anu_unmatched_journals.csv the same as a genuine miss
+            # rather than counted as matched with nothing to show for it.
+            if hit and (hit[0] is not None or hit[1] is not None):
                 p.scimago_sjr, p.scimago_quartile = hit
                 scimago_matched += 1
             else:
