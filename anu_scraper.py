@@ -201,6 +201,17 @@ class Publication:
     # string; downgraded to a named reason when it's just the bare default
     # (see the author_count assignment in parse_publication).
     author_count_confidence: str = "ok"
+    # Backfilled post-parse from CrossRef, keyed on `doi` — see
+    # fetch_issn() and the ISSN backfill pass in main(). Blank (not a
+    # guess) when there's no DOI to look up, or the lookup doesn't resolve.
+    issn: str | None = None
+    # Backfilled post-parse from a Scimago journal-rank export, keyed on a
+    # normalised `journal_name` — see match_scimago() and the Scimago join
+    # pass in main(). Both nullable: blank when journal_name doesn't
+    # confidently match a ranked journal (logged to
+    # anu_unmatched_journals.csv instead of guessed).
+    scimago_sjr: float | None = None
+    scimago_quartile: str | None = None
 
 
 # ----------------------------------------------------------------------------
@@ -256,6 +267,54 @@ def get(url: str) -> requests.Response | None:
         print(f"  [http {r.status_code}] {url}", file=sys.stderr)
         return None
     return r
+
+
+# CrossRef has no robots.txt at all (api.crossref.org/robots.txt 404s) and
+# is a public REST API meant for exactly this kind of programmatic lookup —
+# unlike the HTML directory/profile pages above, there's no bot-detection
+# concern here. Identifying the client descriptively (rather than the
+# browser UA used for the HTML fetches above) and pacing requests is still
+# the polite way to use it; CROSSREF_DELAY is deliberately shorter than
+# REQUEST_DELAY since this is a lightweight JSON API, not a page render.
+CROSSREF_UA = "cits3200-anu-scraper/1.0 (educational research project; no contact email on file)"
+CROSSREF_DELAY = 0.5
+
+
+def fetch_issn(doi: str) -> str | None:
+    """
+    Look up a DOI's ISSN via the CrossRef API. A journal is often
+    registered with both a print and an electronic ISSN — CrossRef's
+    "issn-type" list distinguishes them when available, so this prefers
+    "print" (the more commonly cited "the" ISSN of a journal) and falls
+    back to whichever ISSN is listed first when CrossRef doesn't
+    distinguish types at all. Returns None on any failure (not found,
+    timeout, malformed response) rather than guessing — a blank issn is
+    honest; a wrong one isn't.
+    """
+    try:
+        r = requests.get(
+            f"https://api.crossref.org/works/{doi}",
+            headers={"User-Agent": CROSSREF_UA},
+            timeout=15,
+        )
+    except requests.RequestException as e:
+        print(f"  [error] CrossRef lookup failed for {doi}: {e}", file=sys.stderr)
+        r = None
+    time.sleep(CROSSREF_DELAY)
+    if r is None or r.status_code != 200:
+        return None
+    try:
+        message = r.json().get("message", {})
+    except ValueError:
+        return None
+    for entry in message.get("issn-type") or []:
+        if entry.get("type") == "print" and entry.get("value"):
+            return entry["value"]
+    for entry in message.get("issn-type") or []:
+        if entry.get("value"):
+            return entry["value"]
+    issn_list = message.get("ISSN") or []
+    return issn_list[0] if issn_list else None
 
 
 # ----------------------------------------------------------------------------
@@ -732,7 +791,15 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     doi = None
     doi_href = next((href for _, href in links if "doi.org" in href.lower()), None)
     if doi_href:
-        m = re.search(r"doi\.org/(.+)$", doi_href, re.IGNORECASE)
+        # Capture only the legal DOI character class after "doi.org/" —
+        # NOT "everything to end of string". A profile occasionally has a
+        # data-entry typo baked right into its own href (e.g. trailing
+        # "%20=" copy-paste residue), which a greedy "(.+)$" would swallow
+        # into the "DOI" wholesale. Stopping at the first character outside
+        # the legal set (matching DOI_RE's own character class below) means
+        # a clean href parses exactly as before, and a dirty one gets
+        # trimmed back to the real DOI instead of carrying the garbage.
+        m = re.search(r"doi\.org/([-._;()/:A-Za-z0-9]+)", doi_href, re.IGNORECASE)
         doi = m.group(1).rstrip(".)") if m else None
     if not doi:
         doi_m = DOI_RE.search(text)
@@ -1391,6 +1458,97 @@ def write_json(path: Path, rows: list[dict]) -> None:
 
 
 # ----------------------------------------------------------------------------
+# Scimago journal-rank enrichment (client-agreed requirement, 12 Aug)
+# ----------------------------------------------------------------------------
+#
+# scimagojr.com's robots.txt disallows the "category="/"area="
+# query params that a subject-filtered CSV export needs, for every
+# crawler — so this data is NOT fetched automatically. Instead, a
+# human exports the Accounting and Finance category CSVs via
+# Scimago's own "Download data" button and drops them anywhere
+# directly under the project directory; find_scimago_csvs() picks
+# them up by their header shape (Scimago doesn't let you choose the
+# filename) and the join below runs automatically on the next
+# scrape.
+
+def _normalize_journal_key(name: str) -> str:
+    """
+    Build a normalised matching key so a Scimago export's "Title" column
+    and our own parsed journal_name land on the same key despite case,
+    "&"/"and", and punctuation differences. Deliberately does NOT try to
+    guess at deeper abbreviation variants (e.g. "Intl" vs "International",
+    or a missing/extra "The") — that risks a false match more than it's
+    worth. Anything that doesn't line up after this normalisation gets
+    logged to anu_unmatched_journals.csv rather than force-matched.
+    """
+    if not name:
+        return ""
+    s = name.lower()
+    s = re.sub(r"\([^)]*\)", " ", s)   # drop parenthetical annotations, e.g. "(ABDC: A)"
+    s = s.replace("&", " and ")
+    s = re.sub(r"[^a-z0-9]+", " ", s)  # all punctuation -> space
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def find_scimago_csvs(search_dir: Path | None = None) -> list[Path]:
+    """
+    Look for Scimago journal-rank export CSVs dropped directly under the
+    project directory. Identified by header shape (';'-delimited, with
+    "Title" and "SJR" columns) rather than filename, since Scimago's
+    "Download data" button names the file itself (e.g. "scimagojr 2024
+    Accounting.csv") and that name isn't something we control.
+    """
+    search_dir = search_dir or Path(__file__).resolve().parent
+    candidates = []
+    for path in sorted(search_dir.glob("*.csv")):
+        try:
+            with path.open(encoding="utf-8-sig", newline="") as f:
+                header = f.readline()
+        except OSError:
+            continue
+        if ";" in header and "Title" in header and "SJR" in header:
+            candidates.append(path)
+    return candidates
+
+
+def load_scimago_rankings(paths: list[Path]) -> tuple[dict[str, tuple[float | None, str | None]], int]:
+    """
+    Parse one or more Scimago journal-rank CSV exports into
+    {normalised_title: (sjr, quartile)}. Scimago's export uses ';' as the
+    field delimiter (so it can use ',' as the SJR decimal separator, e.g.
+    "1,234" for 1.234) — both are handled here rather than assuming '.'.
+    A journal already seen in an earlier path (e.g. cross-listed in both
+    the Accounting and Finance category exports, where its quartile can
+    legitimately differ between the two subject rankings) keeps its FIRST
+    value rather than being overwritten; the order the caller passes paths
+    in decides precedence.
+    """
+    mapping: dict[str, tuple[float | None, str | None]] = {}
+    total_rows = 0
+    for path in paths:
+        with path.open(encoding="utf-8-sig", newline="") as f:
+            reader = csv.DictReader(f, delimiter=";")
+            for row in reader:
+                title = row.get("Title")
+                if not title:
+                    continue
+                total_rows += 1
+                key = _normalize_journal_key(title)
+                if not key or key in mapping:
+                    continue
+                sjr_raw = (row.get("SJR") or "").strip()
+                sjr = None
+                if sjr_raw:
+                    try:
+                        sjr = float(sjr_raw.replace(",", "."))
+                    except ValueError:
+                        sjr = None
+                quartile = (row.get("SJR Best Quartile") or "").strip() or None
+                mapping[key] = (sjr, quartile)
+    return mapping, total_rows
+
+
+# ----------------------------------------------------------------------------
 # Main
 # ----------------------------------------------------------------------------
 
@@ -1417,6 +1575,53 @@ def main() -> None:
         if not had_section:
             no_pub_people.append(r)
 
+    # 2b. ISSN backfill (CrossRef), keyed on DOI — applied to every
+    # publication with a DOI, confident or not, since it's a cheap per-DOI
+    # lookup with no dependency on how well the citation itself parsed.
+    with_doi = [p for p in all_pubs + unparsed if p.doi]
+    print(f"\nLooking up ISSN for {len(with_doi)} publication(s) with a DOI via CrossRef...")
+    issn_hits = 0
+    for i, p in enumerate(with_doi, 1):
+        p.issn = fetch_issn(p.doi)
+        if p.issn:
+            issn_hits += 1
+        print(f"  [{i}/{len(with_doi)}] {p.doi} -> {p.issn or 'not found'}")
+
+    # 2c. Scimago journal-rank join (SJR, quartile), keyed on a normalised
+    # journal_name — see find_scimago_csvs()/load_scimago_rankings() above.
+    # Only applied to CONFIDENT publications: an unparsed entry's
+    # journal_name (when it has one at all) hasn't been trusted as correct
+    # in the first place, so matching it against Scimago would just be
+    # attaching a rank to a guess.
+    scimago_paths = find_scimago_csvs()
+    scimago_matched = 0
+    unmatched_counts: dict[str, dict] = {}
+    if scimago_paths:
+        scimago_map, scimago_rows = load_scimago_rankings(scimago_paths)
+        print(f"\nLoaded {scimago_rows} journal-rank row(s) from "
+              f"{len(scimago_paths)} Scimago export(s): "
+              f"{', '.join(p.name for p in scimago_paths)}")
+        for p in all_pubs:
+            if not p.journal_name:
+                continue
+            key = _normalize_journal_key(p.journal_name)
+            hit = scimago_map.get(key)
+            if hit:
+                p.scimago_sjr, p.scimago_quartile = hit
+                scimago_matched += 1
+            else:
+                entry = unmatched_counts.setdefault(
+                    key, {"journal_name": p.journal_name, "normalized_key": key, "publication_count": 0}
+                )
+                entry["publication_count"] += 1
+        print(f"Scimago match: {scimago_matched}/{len(all_pubs)} publications "
+              f"matched to a ranked journal.")
+    else:
+        print("\nNo Scimago export CSVs found under the project directory — "
+              "scimago_sjr/scimago_quartile left blank. Drop the Accounting "
+              "and Finance category exports from scimagojr.com's \"Download "
+              "data\" button anywhere under the repo and re-run to populate them.")
+
     # 3. write everything
     staff_fields = ["name", "job_title", "academic_level", "field_of_research",
                     "profile_url", "university", "research_portal_url"]
@@ -1425,9 +1630,10 @@ def main() -> None:
     write_json(OUTPUT_DIR / "anu_staff.json", [asdict(r) for r in researchers])
 
     pub_fields = ["researcher_name", "researcher_profile_url", "title",
-                  "journal_name", "year", "doi", "article_url",
+                  "journal_name", "year", "doi", "issn", "article_url",
                   "abdc_self_reported", "coauthors", "author_count",
-                  "author_count_confidence", "publication_type", "source",
+                  "author_count_confidence", "publication_type",
+                  "scimago_sjr", "scimago_quartile", "source",
                   "citation_percentile", "raw"]
     write_csv(OUTPUT_DIR / "anu_publications.csv",
               [asdict(p) for p in all_pubs], pub_fields)
@@ -1438,6 +1644,10 @@ def main() -> None:
               [asdict(p) for p in unparsed], pub_fields)
     write_csv(OUTPUT_DIR / "anu_no_publications.csv",
               [asdict(r) for r in no_pub_people], staff_fields)
+    if scimago_paths:
+        write_csv(OUTPUT_DIR / "anu_unmatched_journals.csv",
+                  sorted(unmatched_counts.values(), key=lambda r: -r["publication_count"]),
+                  ["journal_name", "normalized_key", "publication_count"])
 
     # 4. summary
     print("\n" + "=" * 60)
@@ -1449,6 +1659,13 @@ def main() -> None:
     print(f"Publications parsed (confident):      {len(all_pubs)}")
     print(f"Publications logged for review:       {len(unparsed)}  "
           f"(see anu_unparsed_publications.csv)")
+    print(f"ISSN backfilled:                      {issn_hits}/{len(with_doi)} "
+          f"publication(s) with a DOI")
+    if scimago_paths:
+        print(f"Scimago SJR/quartile matched:         {scimago_matched}/{len(all_pubs)} "
+              f"confident publication(s)  (see anu_unmatched_journals.csv)")
+    else:
+        print("Scimago SJR/quartile matched:         skipped — no export CSVs found")
     print(f"Output written to:                    {OUTPUT_DIR}")
     print("=" * 60)
 
