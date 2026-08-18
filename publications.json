@@ -6241,9 +6241,9 @@
     "article_url": "https://doi.org/10.1080/23311975.2026.2677341",
     "link": "https://espace.library.uq.edu.au/view/UQ:70621df",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9597246,
-    "cited_by_count": 0,
-    "fwci": 0.0
+    "citation_percentile": null,
+    "cited_by_count": null,
+    "fwci": null
   },
   {
     "espace_id": "7646522",
@@ -8715,24 +8715,6 @@
     "espace_id": "326",
     "name": "Peter Clarkson",
     "journal_name": "Accounting and Finance",
-    "title": "Chief executive officer remuneration disclosure quality: Corporate responses to an evolving disclosure environment",
-    "year": "2006",
-    "author_count": 3,
-    "authors": "Clarkson, P. M.; Van Bueren, A. L.; Walker, J K",
-    "quality_rank": "A",
-    "sjr_quartile": "Q1",
-    "doi": "10.1111/j.1467-629x.2006.00197.x",
-    "article_url": "https://doi.org/10.1111/j.1467-629x.2006.00197.x",
-    "link": "https://espace.library.uq.edu.au/view/UQ:79014",
-    "source": "UQ eSpace",
-    "citation_percentile": 0.96647856,
-    "cited_by_count": 85,
-    "fwci": 7.2316
-  },
-  {
-    "espace_id": "326",
-    "name": "Peter Clarkson",
-    "journal_name": "Accounting and Finance",
     "title": "Market reaction to takeover rumour in internet discussion sites",
     "year": "2006",
     "author_count": 3,
@@ -8746,6 +8728,24 @@
     "citation_percentile": 0.95919052,
     "cited_by_count": 99,
     "fwci": 6.0293
+  },
+  {
+    "espace_id": "326",
+    "name": "Peter Clarkson",
+    "journal_name": "Accounting and Finance",
+    "title": "Chief executive officer remuneration disclosure quality: Corporate responses to an evolving disclosure environment",
+    "year": "2006",
+    "author_count": 3,
+    "authors": "Clarkson, P. M.; Van Bueren, A. L.; Walker, J K",
+    "quality_rank": "A",
+    "sjr_quartile": "Q1",
+    "doi": "10.1111/j.1467-629x.2006.00197.x",
+    "article_url": "https://doi.org/10.1111/j.1467-629x.2006.00197.x",
+    "link": "https://espace.library.uq.edu.au/view/UQ:79014",
+    "source": "UQ eSpace",
+    "citation_percentile": 0.96647856,
+    "cited_by_count": 85,
+    "fwci": 7.2316
   },
   {
     "espace_id": "326",
