@@ -190,6 +190,17 @@ class Publication:
     source: str = "ANU RSA/RSFAS profile page"
     citation_percentile: float | None = None  # filled later in pipeline (OpenAlex)
     raw: str = ""                   # original paragraph, for auditing
+    # "journal_article" unless classified otherwise below (see
+    # TEXTBOOK_EDITION_RE) — the client's 12 Aug instruction was journals
+    # only, so a non-journal item (textbook, industry report, commissioned
+    # study) is tagged rather than left with a silently blank journal_name
+    # that would otherwise look like an unexplained parser miss.
+    publication_type: str = "journal_article"
+    author_count: int = 1
+    # "ok" once author_count is actually derived from a real coauthors
+    # string; downgraded to a named reason when it's just the bare default
+    # (see the author_count assignment in parse_publication).
+    author_count_confidence: str = "ok"
 
 
 # ----------------------------------------------------------------------------
@@ -218,12 +229,25 @@ def _robots_ok(url: str) -> bool:
     return rp.can_fetch(HEADERS["User-Agent"], url)
 
 
+# A single persistent session for the whole run, not a bare requests.get()
+# per call. RSFAS sits behind a load balancer that hands out a routing
+# cookie (COOKIE-TERRA-WEB) on first contact — a client that never sends it
+# back on later requests can get silently routed to a fallback backend that
+# serves a generic landing page instead of the real staff directory (200
+# OK, so nothing here treats it as an error at all). A plain requests.get()
+# opens a new connection with an empty cookie jar every single time, so it
+# can hit this at any point in a run; a shared Session carries the cookie
+# forward the same way a real browser tab would.
+_session = requests.Session()
+_session.headers.update(HEADERS)
+
+
 def get(url: str) -> requests.Response | None:
     if not _robots_ok(url):
         print(f"  [robots] disallowed, skipping: {url}", file=sys.stderr)
         return None
     try:
-        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        r = _session.get(url, timeout=TIMEOUT)
     except requests.RequestException as e:
         print(f"  [error] {url}: {e}", file=sys.stderr)
         return None
@@ -404,6 +428,104 @@ def _split_bare_with_clause(text_after_with: str) -> tuple[str, str]:
     return authors, rest
 
 
+# The "YEAR. Author, Author, Author. Title[. Journal, vol(issue), pages]"
+# citation shape (seen on some profiles, e.g. co-authored ML/accounting
+# crossover work) — LEADING_YEAR_RE above only FLAGS this shape because a
+# bare leading year gives no clean boundary between the author list and the
+# title by itself. This regex instead consumes the author list one
+# "Surname, Initial[.]" token at a time (an optional leading "&"/"and"
+# handles the final author; an optional lowercase name-particle handles
+# surnames like "de Villiers"), so whatever's left over once tokens stop
+# matching is the title. A second initial glued onto the same token (e.g.
+# "Cahan, S. F.") is only absorbed when it truly looks like a second
+# initial — NOT followed by a lowercase letter, directly or after a space —
+# since a single capital letter word that starts a title (e.g. "Chen, L. A
+# framework for...") would otherwise be misread as one more initial on the
+# same author and swallowed into the author list.
+AUTHOR_TOKEN_RE = re.compile(
+    r"(?:,\s*|&\s*|and\s+)?"
+    r"(?:(?:de|van|von|der|la|le)\s+)?"
+    r"[A-Z][A-Za-z'\-]+"
+    r",\s*[A-Z](?:\.\s?[A-Z](?![a-z])(?!\s[a-z]))*\.?"
+    r",?\s*"
+)
+
+
+def _split_leading_year_authors(before: str) -> tuple[str, str] | None:
+    """
+    Split the "YEAR. Author, Author, Author. Title..." shape (see
+    AUTHOR_TOKEN_RE) into (authors, title). Returns None if no author token
+    matched at all, or if what's left doesn't look like a real title —
+    too short, or starting mid-word/lowercase, which happens on the rare
+    citation with a malformed author list (e.g. a missing initial) that
+    makes one token swallow the first letter of the next author's surname
+    instead of stopping cleanly. Falling back to None in that case lets the
+    caller flag the publication for manual review rather than trust a
+    garbled split.
+    """
+    m = LEADING_YEAR_RE.match(before)
+    if not m:
+        return None
+    rest = before[m.end():]
+    pos = 0
+    end = 0
+    count = 0
+    while True:
+        tm = AUTHOR_TOKEN_RE.match(rest, pos)
+        if not tm or tm.end() == pos:
+            break
+        pos = tm.end()
+        end = pos
+        count += 1
+    if count == 0:
+        return None
+    authors = rest[:end].strip(" ,")
+    title = rest[end:].strip()
+    if len(title) < 15 or not title[:1].isupper():
+        return None
+    return authors, title
+
+
+# A distinct comma-flow citation shape some academics use for every field:
+# "Title, Journal, Vol, Pages" — no period anywhere between the title and
+# the journal (unlike the far more common "Title. Journal, Vol: Pages"
+# shape SENTENCE_SPLIT_RE is built for), so the ". "-splitter can't place
+# the title/journal boundary at all and swallows the whole "Title, Journal,
+# Vol, Pages" run as if it were the title alone. Splitting at the FIRST
+# comma instead would be wrong just as often, since titles in this style
+# can themselves contain a comma (e.g. "Exploration Intensity, Analysts'
+# Private Information Development and Their Forecast Performance"). This
+# works from the RIGHT instead: a trailing volume number and a trailing
+# page range are both distinctively numeric-shaped (unlike a title or
+# journal name), so they're popped off first; whatever comma-segment is
+# left just before them is the journal, and everything still further left —
+# however many commas it contains — is the title.
+NUMERIC_TAIL_SEGMENT_RE = re.compile(r"^\(?\d+\)?[a-z]?$|^\d+\s*[\-–]\s*\d+\.?$")
+
+
+def _split_comma_flow_title_journal(text: str) -> tuple[str, str] | None:
+    """
+    Given a "Title, Journal, Vol, Pages"-shaped string (already isolated
+    from authors/year and any trailing DOI/URL by the caller), split it
+    into (title, journal). Returns None if the shape doesn't actually look
+    like this — e.g. it's genuinely just a plain title with an internal
+    comma and no separate journal segment at all — so the caller can keep
+    whatever it already had instead of trusting a bad split.
+    """
+    segments = [s.strip() for s in text.strip(" .").split(",")]
+    while segments and (not segments[-1] or NUMERIC_TAIL_SEGMENT_RE.match(segments[-1])):
+        segments.pop()
+    if len(segments) < 2:
+        return None
+    journal = segments[-1].strip(" .")
+    if not journal or JOURNAL_SKIP_RE.match(journal) or not re.search(r"[A-Za-z]", journal):
+        return None
+    title = ", ".join(segments[:-1]).strip(" .")
+    if len(title) < 15:
+        return None
+    return title, journal
+
+
 def _clean_journal_tail(journal: str) -> str | None:
     """
     Strip trailing cruft glued onto an otherwise-correct journal name with
@@ -541,6 +663,53 @@ NON_PUBLICATION_SUBSTRINGS = (
     "also see anu researcher profile",
 )
 
+# A textbook citation reliably names its edition (e.g. "Pearson Education
+# Australia. 10th Edition, 2016.") — no academic journal article does this,
+# so it's a clean, low-false-positive signal for "publication_type =
+# textbook" among the handful of confidently-parsed entries that end up
+# with no journal name at all (see the publication_type assignment below).
+TEXTBOOK_EDITION_RE = re.compile(r"\b\d+(?:st|nd|rd|th)\s+Edition\b", re.IGNORECASE)
+
+# A token that's PURELY initials (e.g. "S.", "E.S.", "H.C", "A. M.") belongs
+# to the author named just before it in the coauthors string — it's the
+# "Initial" half of a "Surname, Initial" pair, not a separate person — so
+# it must NOT be counted as its own author. Deliberately allows a missing
+# trailing period (some profiles write "Tam, K" with no period at all) and
+# an optional space between multiple initials ("S. F." / "A.M.").
+INITIALS_ONLY_RE = re.compile(r"^[A-Z]\.?(?:\s?[A-Z]\.?)*$")
+
+
+def count_named_authors(coauthors: str | None) -> int:
+    """
+    Best-effort count of distinct named authors in a free-text coauthors
+    string. The corpus mixes several citation styles with no consistent
+    separator: "Surname, Initial" comma lists (where the comma is used BOTH
+    between authors AND between a surname and its own initial), "Initial
+    Surname" lists, and plain "First Last" full-name lists — sometimes all
+    three within the same string. A naive split on every comma badly
+    over-counts the "Surname, Initial" style (each person contributes two
+    comma-separated tokens, not one).
+
+    Instead: split on "and"/"&" first (an unambiguous author boundary in
+    every style seen), then within each resulting group split on comma —
+    but only start a NEW author at a comma-token that isn't itself just a
+    bare initials fragment (see INITIALS_ONLY_RE); a bare-initials token
+    merges into the author named immediately before it instead. An "et al"
+    suffix is dropped rather than guessed at, since the true additional
+    count isn't recoverable from the text — this counts NAMED authors only,
+    consistent with what the caller asked for.
+    """
+    if not coauthors or not coauthors.strip():
+        return 0
+    text = re.sub(r"\s*&\s*", " and ", coauthors.strip())
+    text = re.sub(r"\bet\s+al\.?\b", "", text, flags=re.IGNORECASE)
+    count = 0
+    for group in re.split(r"\s+and\s+", text, flags=re.IGNORECASE):
+        for token in (t.strip() for t in group.split(",")):
+            if token and not INITIALS_ONLY_RE.match(token):
+                count += 1
+    return count
+
 
 def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication | None, bool]:
     """
@@ -568,6 +737,23 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     if not doi:
         doi_m = DOI_RE.search(text)
         doi = doi_m.group(0).rstrip(".)") if doi_m else None
+    if not doi:
+        # Some publisher links carry the DOI without ever routing through
+        # doi.org at all — either embedded directly in the URL path (e.g.
+        # Wiley/Tandfonline "/doi/full/10.xxxx/..." links, or Springer
+        # "/referenceworkentry/10.xxxx/..." links, whose DOI IS the path
+        # segment) or tucked into a query parameter (e.g. a Wiley
+        # "share/author/..." link with "?target=10.xxxx/..."). DOI_RE finds
+        # the same "10.xxxx/..." shape wherever it sits in the href, so
+        # reusing it against every link (not just doi.org ones) recovers
+        # these without risking a false match — publisher links that carry
+        # no DOI at all (e.g. a ScienceDirect "pii/S..." identifier, or a
+        # plain product-page URL) simply have nothing for DOI_RE to match.
+        for _, href in links:
+            m = DOI_RE.search(href)
+            if m:
+                doi = m.group(0).rstrip(".)")
+                break
 
     # article_url: prefer the first real link on the paragraph (usually the
     # title itself, or a "link"/"internet appendix" link); fall back to a
@@ -578,7 +764,10 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
         article_url = url_m.group(0) if url_m else None
 
     abdc_m = ABDC_RE.search(text)
-    abdc = abdc_m.group(1).upper() if abdc_m else None
+    # Literal "none" rather than blank — an empty cell reads as "we don't
+    # know", but an academic simply not self-reporting an ABDC rating on
+    # their own profile page is itself a known, meaningful fact.
+    abdc = abdc_m.group(1).upper() if abdc_m else "none"
 
     # Find a real italic journal name from the DOM (see extract_publications_block)
     # and locate exactly where it sits in `text`. Knowing its position lets us
@@ -587,9 +776,20 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     journal = None
     journal_pos: tuple[int, int] | None = None
     for raw_it in block.get("italics", []):
-        if raw_it and raw_it in text:
-            idx = text.index(raw_it)
-            journal, journal_pos = raw_it, (idx, idx + len(raw_it))
+        # Normalise whitespace the same way `text` was normalised above
+        # (text = " ".join(raw_text.split())) before searching for it — an
+        # italic run that contains a non-breaking space (\xa0, common where
+        # a profile's CMS inserts one between the journal name and a
+        # trailing comma) would otherwise never be found as a substring of
+        # `text` at all, since \xa0 there has already been collapsed to a
+        # plain space. That silent lookup failure sends the paragraph down
+        # the no-journal-found fallback below even though the real,
+        # correctly-italicised journal name was sitting right there in the
+        # DOM the whole time.
+        it_norm = " ".join(raw_it.split()) if raw_it else ""
+        if it_norm and it_norm in text:
+            idx = text.index(it_norm)
+            journal, journal_pos = it_norm, (idx, idx + len(it_norm))
             break
 
     title = None
@@ -614,11 +814,17 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
         # itself (e.g. "Fine-grained entity typing with a type taxonomy...")
         # — searching for "with" first would wrongly cut the title in half
         # there. A title starting with a bare year is a much more specific,
-        # reliable signal that this is the ambiguous "Year. Authors. Title"
-        # shape, which should be flagged rather than parsed by guessing.
+        # reliable signal that this is the "Year. Authors. Title" shape,
+        # which _split_leading_year_authors can usually resolve cleanly
+        # (see AUTHOR_TOKEN_RE); only fall back to flagging it when that
+        # split can't confidently find an author list AND a real title.
         elif LEADING_YEAR_RE.match(before):
-            title = before
-            confident = False
+            split = _split_leading_year_authors(before)
+            if split:
+                coauthors, title = split
+            else:
+                title = before
+                confident = False
         else:
             paren_with_m = COAUTHOR_PAREN_RE.search(before)
             with_m = re.search(r"\bwith\b", before, re.IGNORECASE)
@@ -748,10 +954,15 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
                 # not the whole text. Otherwise a short surname, or an
                 # initials-heavy author list, reads as a complete sentence
                 # to the splitter and gets mistaken for the title itself.
-                # Skipped for the ambiguous "YEAR. Authors. Title" shape
-                # (year right at the very start), for the same reason
-                # LEADING_YEAR_RE exists above — there's no clean boundary
-                # to find there either.
+                # For the "YEAR. Authors. Title" shape (year right at the
+                # very start), the ordinary year-boundary search below can't
+                # place a clean cut — the year itself sits before ANY of the
+                # author list, not after it — so try the same
+                # author-token-consuming split the italics branch above
+                # uses instead (see AUTHOR_TOKEN_RE). Only when that can't
+                # confidently find an author list does this fall through to
+                # the older "no boundary" behaviour (whole text handed to
+                # the blind ". "-splitter below).
                 # Only look for a year boundary — and only truncate the
                 # search text to after it — when co-authors aren't already
                 # known from an explicit "(with ...)" clause above. If
@@ -761,22 +972,42 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
                 # truncating to it would discard the title and journal that
                 # sit before it.
                 boundary = None
-                if coauthors is None and not LEADING_YEAR_RE.match(text_clean):
-                    boundary = _find_year_boundary(text_clean)
                 search_text = text_clean
-                if boundary:
-                    candidate = text_clean[:boundary.start()]
-                    if candidate.strip():
-                        coauthors = candidate
-                        search_text = text_clean[boundary.end():]
+                if coauthors is None and LEADING_YEAR_RE.match(text_clean):
+                    lead_split = _split_leading_year_authors(text_clean)
+                    if lead_split:
+                        coauthors, search_text = lead_split
+                elif coauthors is None:
+                    boundary = _find_year_boundary(text_clean)
+                    if boundary:
+                        candidate = text_clean[:boundary.start()]
+                        if candidate.strip():
+                            coauthors = candidate
+                            search_text = text_clean[boundary.end():]
 
                 parts = [p.strip() for p in SENTENCE_SPLIT_RE.split(search_text) if p.strip()]
                 if len(parts) >= 2:
                     title = parts[0]
-                    journal = _clean_journal_tail(re.sub(r"\(.*", "", parts[1]).strip(" .,"))
+                    journal_candidate = re.sub(r"\(.*", "", parts[1]).strip(" .,")
+                    journal = _pick_journal_segment(journal_candidate.split(","))
+                    if journal is None and "," in title:
+                        # The period-based split found no sentence break at
+                        # all before the DOI/URL, so parts[0] above is
+                        # actually the WHOLE "Title, Journal, Vol, Pages"
+                        # comma-flow run (see _split_comma_flow_title_journal)
+                        # rather than just the title — re-split it from the
+                        # right instead of trusting it wholesale.
+                        comma_split = _split_comma_flow_title_journal(title)
+                        if comma_split:
+                            title, journal = comma_split
                 elif parts:
                     title = parts[0]
-                    confident = False  # couldn't isolate a journal
+                    if "," in title:
+                        comma_split = _split_comma_flow_title_journal(title)
+                        if comma_split:
+                            title, journal = comma_split
+                    if journal is None:
+                        confident = False  # couldn't isolate a journal
                 else:
                     confident = False
 
@@ -811,12 +1042,56 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     # behind unbalanced parens, or it was a bare fragment like a volume
     # number. Demote to low-confidence (reviewed by hand via
     # anu_unparsed_publications.csv) instead of trusting it outright.
+    # A real citation title always starts with a capital letter (or a digit,
+    # for the rare title that opens with a number). A title starting
+    # lowercase is a tell-tale sign of a mis-split — seen on one malformed
+    # "YEAR. Authors. Title" citation with a missing author initial, which
+    # let one author token absorb the first letter of the next author's
+    # surname and leave the title starting mid-word (e.g. "hen, L., Jia,
+    # X.... Fine-grained entity typing...").
     if title and (
         AUTHOR_LIST_PATTERN_RE.search(title)
         or title.count("(") != title.count(")")
         or len(title) < 15
+        or title[:1].islower()
     ):
         confident = False
+
+    # A confidently-parsed entry with no journal at all (year present, so it
+    # wasn't already demoted by the check below) is very unlikely to be a
+    # journal article the parser simply missed the venue for — every real
+    # journal citation in this corpus carries either an italicised/quoted
+    # journal name or a DOI, both of which are now recovered by the fixes
+    # above. What's left in this bucket are textbooks, industry reports and
+    # similar non-journal items — tagged here rather than shipped with a
+    # silently blank journal_name that would look like an unexplained
+    # parser miss. Client's 12 Aug instruction was journals only.
+    publication_type = "journal_article"
+    if journal and re.match(r"(?i)^book chapters?\b", journal):
+        # The blind ". "-splitter fallback (no italics, no quoted title) has
+        # no concept of a book chapter's citation shape, so on a paragraph
+        # like "...integrated reporting. Book chapter of Routledge Handbook
+        # of Integrated Reporting..." it picks up "Book chapter of ..." as
+        # if it were the journal name. That text is real, just not a
+        # journal — reclassify rather than leave a fake "journal" in place.
+        publication_type = "book_chapter"
+        journal = None
+    elif confident and journal is None and year is not None:
+        publication_type = (
+            "textbook" if TEXTBOOK_EDITION_RE.search(raw_text) else "industry_report"
+        )
+
+    # author_count is a best-effort count of NAMED authors in `coauthors`
+    # (see count_named_authors) — not a source-of-truth headcount, since a
+    # profile's own free-text listing can itself be incomplete (e.g. an
+    # "et al" suffix). Where there's no coauthors text to count at all, the
+    # field still needs *a* value downstream, so it defaults to 1 (the
+    # researcher themself) — but that default is a guess, not a measured
+    # fact, so author_count_confidence flags it explicitly rather than
+    # presenting it as being on the same footing as a real count.
+    named = count_named_authors(coauthors)
+    author_count = named if named > 0 else 1
+    author_count_confidence = "ok" if named > 0 else "low - no coauthor text found"
 
     pub = Publication(
         researcher_name=researcher.name,
@@ -829,6 +1104,9 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
         abdc_self_reported=abdc,
         coauthors=coauthors,
         raw=raw_text.strip(),
+        publication_type=publication_type,
+        author_count=author_count,
+        author_count_confidence=author_count_confidence,
     )
     # low-confidence if we found neither a journal nor a year
     if journal is None and year is None:
@@ -967,6 +1245,17 @@ def scrape_directory(source: dict) -> list[Researcher]:
     base = source["base"]
     researchers: list[Researcher] = []
     seen: set[str] = set()
+
+    # Warm-up request: hit the directory page itself with no query string
+    # first (the site root alone does NOT set this cookie — has to be the
+    # directory path), so the session picks up this host's load-balancer
+    # routing cookie (see the `get()`/`_session` comment above) before the
+    # real, query-string directory request goes out. Skipping this risks
+    # that very first directory request being routed to a fallback backend
+    # that serves a generic landing page instead of the real listing — a
+    # plain 200 OK with zero staff cards, not an error the caller could
+    # otherwise detect.
+    get(f"{base}{source['directory_path']}")
 
     extra_query = source.get("directory_query", "")
     for page in range(MAX_DIRECTORY_PAGES):
@@ -1137,7 +1426,8 @@ def main() -> None:
 
     pub_fields = ["researcher_name", "researcher_profile_url", "title",
                   "journal_name", "year", "doi", "article_url",
-                  "abdc_self_reported", "coauthors", "source",
+                  "abdc_self_reported", "coauthors", "author_count",
+                  "author_count_confidence", "publication_type", "source",
                   "citation_percentile", "raw"]
     write_csv(OUTPUT_DIR / "anu_publications.csv",
               [asdict(p) for p in all_pubs], pub_fields)
