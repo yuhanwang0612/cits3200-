@@ -1,0 +1,7 @@
+# Shared modules — CITS3200 Group 20
+# Install with:  python -m pip install -r requirements.txt
+
+openpyxl>=3.1          # reads the ABDC Journal Quality List workbook
+
+# Tests only — they run offline against a workbook generated at runtime
+pytest>=8.0
