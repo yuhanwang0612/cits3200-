@@ -1,0 +1,17 @@
+# CITS3200 — researcher productivity / publication rankings tool
+# Install:  pip install -r requirements.txt
+ 
+# --- scraping & HTTP ---
+requests>=2.32,<3
+beautifulsoup4>=4.12,<5
+ 
+# --- data handling ---
+pandas>=2.2,<4
+openpyxl>=3.1,<4          # required by pandas to read the ABDC .xlsx
+ 
+# --- database ---
+SQLAlchemy>=2.0,<3
+ 
+# --- web app ---
+Flask>=3.0,<4
+ 
