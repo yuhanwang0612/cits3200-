@@ -84,7 +84,7 @@ Writes to `./output/`:
 | File | Contents |
 |---|---|
 | `unsw_staff.csv` / `.json` | One row per academic — name, job_title, academic_level (A–E), field_of_research, profile_url, university, research_portal_url, school |
-| `unsw_publications.csv` | One row per publication — title, journal_name, year, publication_type, doi, article_url, coauthors, n_authors, volume, pages, publisher, plus blank `abdc_self_reported` and `citation_percentile` columns to be filled downstream |
+| `unsw_publications.csv` | One row per publication — title, journal_name, year, publication_type, doi, article_url, coauthors, author_count, volume, pages, publisher, plus blank `abdc_self_reported` and `citation_percentile` columns to be filled downstream |
 | `unsw_unparsed_publications.csv` | Entries we could not parse, with the raw text — see below |
 | `unsw_no_publications.csv` | Academics whose profile lists nothing at all |
 
@@ -123,7 +123,7 @@ Three things are deliberate:
   article" quietly mean eight different things, against the client's stated
   priority of standardisation. `--journals-only` applies it locally for checking
   UNSW on its own.
-- **`n_authors` is counted from the page's own author list**, not by splitting the
+- **`author_count` is counted from the page's own author list**, not by splitting the
   joined string afterwards, so a name containing a semicolon cannot inflate it.
   It is left blank rather than 0 when no authors are listed — "we don't know" and
   "zero authors" are different claims. The largest genuine value in the data is
@@ -144,7 +144,7 @@ conference paper and a later book is kept as two records).
 python -m pytest test_unsw_scraper.py -v
 ```
 
-38 tests, all offline against fixtures defined in the test file — nothing touches
+42 tests, all offline against fixtures defined in the test file — nothing touches
 unsw.edu.au, so the suite runs in about a second and is safe in CI.
 
 They are not there for coverage. Each one pins a rule that was actually wrong at

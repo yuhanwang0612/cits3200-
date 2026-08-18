@@ -141,7 +141,7 @@ def test_structured_entry_maps_to_the_right_columns():
     assert p["publication_type"] == "Journal articles"
     assert p["doi"] == "10.1016/j.jcorpfin.2026.103037"
     assert p["coauthors"] == "Li H; Liu L; Masulis R; Zein J"
-    assert p["n_authors"] == 4
+    assert p["author_count"] == 4
     assert p["volume"] == "100"
     assert p["pages"] == "pp. 131 - 167"
     assert p["university"] == s.UNIVERSITY
@@ -166,24 +166,24 @@ def test_authors_split_on_semicolons_and_lose_double_spaces():
 def test_author_count_is_recorded():
     """Requested by the client on 12 August, for every publication."""
     pubs, _ = parse(item(author="Li H;  Liu L;  Masulis R;  Zein J"))
-    assert pubs[0]["n_authors"] == 4
+    assert pubs[0]["author_count"] == 4
     assert pubs[0]["coauthors"] == "Li H; Liu L; Masulis R; Zein J"
 
 
 def test_single_author_counts_as_one():
     pubs, _ = parse(item(author="Masulis R"))
-    assert pubs[0]["n_authors"] == 1
+    assert pubs[0]["author_count"] == 1
 
 
 def test_trailing_separator_does_not_inflate_the_count():
     pubs, _ = parse(item(author="Li H;  Liu L;  "))
-    assert pubs[0]["n_authors"] == 2
+    assert pubs[0]["author_count"] == 2
 
 
 def test_no_authors_listed_is_blank_not_zero():
     """'We don't know' and 'zero authors' are different claims."""
     pubs, _ = parse(item(author=None))
-    assert pubs[0]["n_authors"] is None
+    assert pubs[0]["author_count"] is None
 
 
 def test_bare_dx_doi_link_is_discarded():

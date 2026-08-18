@@ -502,7 +502,7 @@ def parse_publications(soup, person):
             # the joined string later, so a name containing a semicolon cannot
             # inflate it. Left blank rather than set to 0 when no authors are
             # listed — "we don't know" and "zero authors" are different.
-            "n_authors": len(_author_list(authors)) or None,
+            "author_count": len(_author_list(authors)) or None,
             "volume": _text(item, ".rg-volume"),
             "pages": _text(item, ".rg-page"),
             "publisher": _text(item, ".rg-publisher"),
@@ -531,7 +531,7 @@ STAFF_COLUMNS = [
 PUB_COLUMNS = [
     "researcher_name", "researcher_profile_url", "university", "field_of_research",
     "title", "journal_name", "year", "publication_type", "doi", "article_url",
-    "coauthors", "n_authors", "volume", "pages", "publisher",
+    "coauthors", "author_count", "volume", "pages", "publisher",
     "abdc_self_reported", "citation_percentile", "source",
 ]
 
