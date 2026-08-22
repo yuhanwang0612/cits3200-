@@ -45,6 +45,7 @@ import csv
 import json
 import os
 import re
+import sys
 import time
 import urllib.robotparser
 from collections import Counter, OrderedDict
@@ -61,6 +62,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
 UNIVERSITY = "UNSW Sydney"
+# What we call ourselves in the `source` column and in the harvest record.
+SOURCE_NAME = "UNSW staff profile"
 LISTING = "https://www.unsw.edu.au/business/our-people"
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/151.0 Safari/537.36")
@@ -556,7 +559,7 @@ def parse_publications(soup, person):
             "publisher": _text(item, ".rg-publisher"),
             "abdc_self_reported": None,   # joined from the ABDC list downstream
             "citation_percentile": None,  # joined from OpenAlex downstream
-            "source": "UNSW staff profile",
+            "source": SOURCE_NAME,
         })
 
     # The dedup key is internal bookkeeping — drop it so callers only ever see
@@ -599,6 +602,40 @@ def _write_csv(name, columns, rows):
         writer.writeheader()
         writer.writerows(rows)
     return path
+
+
+# The harvest record (data dictionary 3.5.4) lives with the shared ranking
+# tooling, because every source script writes into the same file. This scraper
+# sits a directory above it, so the import is guarded: a missing rankings/
+# folder should cost you the harvest row, not the whole scrape.
+def _harvest_module():
+    try:
+        import harvest                                   # already importable
+        return harvest
+    except ImportError:
+        pass
+    here = os.path.dirname(os.path.abspath(__file__))
+    for candidate in (os.path.join(here, "rankings"), os.path.join(here, "..", "rankings")):
+        if os.path.exists(os.path.join(candidate, "harvest.py")):
+            sys.path.insert(0, os.path.abspath(candidate))
+            try:
+                import harvest
+                return harvest
+            except ImportError:
+                return None
+    return None
+
+
+def record_harvest(pubs):
+    """Write this scrape into output/harvest.csv. Never fatal."""
+    harvest = _harvest_module()
+    if harvest is None:
+        print("\n  (no harvest row: rankings/harvest.py not found next to this script)")
+        return None
+    row = harvest.record(UNIVERSITY, SOURCE_NAME,
+                         harvest.latest_year_in(pubs), OUTPUT_DIR)
+    print(f"  {os.path.join(OUTPUT_DIR, 'harvest.csv')}")
+    return row
 
 
 def write_output(records, pubs, unparsed, no_pubs, everything=None):
@@ -794,6 +831,7 @@ def main():
     print(f"\nComplete: {len(records)} academics, {len(all_pubs)} publications")
     for path in written:
         print(f"  {path}")
+    record_harvest(all_pubs)
     print("\n  by discipline:", dict(Counter(r["field_of_research"] for r in records)))
     print("  by level:     ", dict(Counter(r["academic_level"] for r in records)))
     print("  level unknown:", sum(1 for r in records if not r["academic_level"]))

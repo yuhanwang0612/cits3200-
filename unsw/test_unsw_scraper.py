@@ -452,3 +452,26 @@ def test_the_run_summary_does_not_reuse_the_excluded_name():
     assert bindings == 1, (
         f"`excluded` is bound {bindings} times in main(); the publication-type "
         f"Counter must stay named `excluded_types`")
+
+
+# ---------------------------------------------------------------------------
+# Harvest record — data dictionary 3.5.4 / FR14
+# ---------------------------------------------------------------------------
+def test_the_source_column_and_the_harvest_row_use_one_constant():
+    """If the publications file says one thing and the harvest row says
+    another, nobody can join them, and the mismatch is invisible until someone
+    tries."""
+    import inspect
+    assert s.SOURCE_NAME == "UNSW staff profile"
+    body = inspect.getsource(s)
+    # The literal should appear once: where the constant is defined.
+    assert body.count('"UNSW staff profile"') == 1
+
+
+def test_the_harvest_module_is_optional():
+    """The scraper lives a directory above rankings/. A missing rankings folder
+    should cost the harvest row, not the whole scrape."""
+    import inspect
+    body = inspect.getsource(s.record_harvest)
+    assert "if harvest is None" in body
+    assert "return None" in body

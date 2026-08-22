@@ -77,6 +77,12 @@ Useful flags:
 | `--all-types` | keep every publication type in the main file — see below |
 | `--from-staff` | skip Chrome and reuse the roster from the last run's `unsw_staff.csv` |
 
+Every run also writes a row into `output/harvest.csv` recording when this
+source last ran and the newest publication year it found. That is the Harvest
+entity from data dictionary 3.5.4 and it lives in `rankings/harvest.py`, shared
+with the ranking steps so all four sources land in one file. If `rankings/` is
+not next to the scraper the row is skipped and the scrape still succeeds.
+
 `--from-staff` exists because the browser is only needed for the **listing**. Once a
 run has recorded who works there, the profile pages are cached and server-rendered,
 so a re-run that changes only how the output is filtered has no reason to start
@@ -97,6 +103,7 @@ Writes to `./output/`:
 | `unsw_publications_all_types.csv` | Every publication including the types the client excluded: conference papers, media, book chapters, preprints |
 | `unsw_unparsed_publications.csv` | Entries we could not parse, with the raw text — see below |
 | `unsw_no_publications.csv` | Academics whose profile lists nothing at all |
+| `harvest.csv` / `.json` | One row per source: when it last ran and the newest year it found (3.5.4, FR14) |
 
 Field names match the **Scope of Work data dictionary (section 3.5.4)** and the ANU
 scraper's output, so this loads into the shared database with no reshaping.
@@ -157,7 +164,7 @@ conference paper and a later book is kept as two records).
 python -m pytest test_unsw_scraper.py -v
 ```
 
-50 tests, all offline against fixtures defined in the test file — nothing touches
+52 tests, all offline against fixtures defined in the test file — nothing touches
 unsw.edu.au, so the suite runs in about a second and is safe in CI.
 
 They are not there for coverage. Each one pins a rule that was actually wrong at
