@@ -1,0 +1,389 @@
+[
+  {
+    "name": "Jon Aster",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": null,
+    "profile_url": "https://business.uq.edu.au/profile/9542/jon-aster"
+  },
+  {
+    "name": "Chris Bell",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": null,
+    "profile_url": "https://business.uq.edu.au/profile/17730/chris-bell"
+  },
+  {
+    "name": "Shaun Bond",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "6079108",
+    "profile_url": "https://business.uq.edu.au/profile/6239/shaun-bond"
+  },
+  {
+    "name": "Alexander Cameron",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "97219",
+    "profile_url": "https://business.uq.edu.au/profile/18606/alexander-cameron"
+  },
+  {
+    "name": "Yong Ming Chen",
+    "job_title": "Teaching Associate",
+    "academic_level": null,
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "7627091",
+    "profile_url": "https://business.uq.edu.au/profile/12939/yong-ming-chen"
+  },
+  {
+    "name": "Hasibul Chowdhury",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "2254822",
+    "profile_url": "https://business.uq.edu.au/profile/1865/hasibul-chowdhury"
+  },
+  {
+    "name": "Nicolas Eugster",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "7275857",
+    "profile_url": "https://business.uq.edu.au/profile/8977/nicolas-eugster"
+  },
+  {
+    "name": "Stephen Gray",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": null,
+    "profile_url": "https://business.uq.edu.au/profile/830/stephen-gray"
+  },
+  {
+    "name": "Khoa Hoang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "87704",
+    "profile_url": "https://business.uq.edu.au/profile/404/khoa-hoang"
+  },
+  {
+    "name": "Weiting Hu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "7639113",
+    "profile_url": "https://business.uq.edu.au/profile/17174/weiting-hu"
+  },
+  {
+    "name": "Ronghong Huang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "87707",
+    "profile_url": "https://business.uq.edu.au/profile/407/ronghong-huang"
+  },
+  {
+    "name": "Shirina Lin",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "6004495",
+    "profile_url": "https://business.uq.edu.au/profile/6020/shirina-lin"
+  },
+  {
+    "name": "Leo Luong",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "5497249",
+    "profile_url": "https://business.uq.edu.au/profile/2530/leo-luong"
+  },
+  {
+    "name": "Jacquelyn Humphrey",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "6336",
+    "profile_url": "https://business.uq.edu.au/profile/572/jacquelyn-humphrey"
+  },
+  {
+    "name": "Lin Mi",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "78774",
+    "profile_url": "https://business.uq.edu.au/profile/896/lin-mi"
+  },
+  {
+    "name": "Suman Neupane-Joshi",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "4329687",
+    "profile_url": "https://business.uq.edu.au/profile/1079/suman-neupane-joshi"
+  },
+  {
+    "name": "Lily Nguyen",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "5508774",
+    "profile_url": "https://business.uq.edu.au/profile/2569/lily-nguyen"
+  },
+  {
+    "name": "Vanitha Ragunathan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "1055",
+    "profile_url": "https://business.uq.edu.au/profile/89/vanitha-ragunathan"
+  },
+  {
+    "name": "Dewan Rahman",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "2284981",
+    "profile_url": "https://business.uq.edu.au/profile/1868/dewan-rahman"
+  },
+  {
+    "name": "Saphira Rekker",
+    "job_title": "Senior Research Fellow",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "93285",
+    "profile_url": "https://business.uq.edu.au/profile/542/saphira-rekker"
+  },
+  {
+    "name": "Eric Tan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "4818628",
+    "profile_url": "https://business.uq.edu.au/profile/1085/eric-tan"
+  },
+  {
+    "name": "Kelvin Tan",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "8472",
+    "profile_url": "https://business.uq.edu.au/profile/248/kelvin-tan"
+  },
+  {
+    "name": "Elizabeth Zhu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "92037",
+    "profile_url": "https://business.uq.edu.au/profile/482/elizabeth-zhu"
+  },
+  {
+    "name": "Min Zhu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "espace_id": "4503669",
+    "profile_url": "https://business.uq.edu.au/profile/1448/min-zhu"
+  },
+  {
+    "name": "Ankit Jain",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "4930238",
+    "profile_url": "https://business.uq.edu.au/profile/1433/ankit-jain"
+  },
+  {
+    "name": "Byungki Kim",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "4850515",
+    "profile_url": "https://business.uq.edu.au/profile/1424/byungki-kim"
+  },
+  {
+    "name": "Kirsty Dunbar",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "7635606",
+    "profile_url": "https://business.uq.edu.au/profile/19153/kirsty-dunbar"
+  },
+  {
+    "name": "Bobae Choi",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "7646522",
+    "profile_url": "https://business.uq.edu.au/profile/18873/bobae-choi"
+  },
+  {
+    "name": "Debbie Jeffery",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": null,
+    "profile_url": "https://business.uq.edu.au/profile/791/debbie-jeffery"
+  },
+  {
+    "name": "Mia Han",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "7642804",
+    "profile_url": "https://business.uq.edu.au/profile/18291/mia-han"
+  },
+  {
+    "name": "Kathleen Herbohn",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "1736",
+    "profile_url": "https://business.uq.edu.au/profile/170/kathleen-herbohn"
+  },
+  {
+    "name": "Grace Hsu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "1009",
+    "profile_url": "https://business.uq.edu.au/profile/68/grace-hsu"
+  },
+  {
+    "name": "Mark Wallis",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "4940317",
+    "profile_url": "https://business.uq.edu.au/profile/1418/mark-wallis"
+  },
+  {
+    "name": "Matthew Peters",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "3804387",
+    "profile_url": "https://business.uq.edu.au/profile/1040/matthew-peters"
+  },
+  {
+    "name": "Michael Turner",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "77962",
+    "profile_url": "https://business.uq.edu.au/profile/887/michael-turner"
+  },
+  {
+    "name": "Natalie Peng",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "87748",
+    "profile_url": "https://business.uq.edu.au/profile/410/natalie-peng"
+  },
+  {
+    "name": "Peter Clarkson",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "326",
+    "profile_url": "https://business.uq.edu.au/profile/812/peter-clarkson"
+  },
+  {
+    "name": "Peter Do",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "4469982",
+    "profile_url": "https://business.uq.edu.au/profile/1445/peter-do"
+  },
+  {
+    "name": "Robyn King",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "6621",
+    "profile_url": "https://business.uq.edu.au/profile/230/robyn-king"
+  },
+  {
+    "name": "Sergeja Slapnicar",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "5402627",
+    "profile_url": "https://business.uq.edu.au/profile/2386/sergeja-slapnicar"
+  },
+  {
+    "name": "Xin Yu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "115914",
+    "profile_url": "https://business.uq.edu.au/profile/2201/xin-yu"
+  },
+  {
+    "name": "Yang Xu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "4336037",
+    "profile_url": "https://business.uq.edu.au/profile/1487/yang-xu"
+  },
+  {
+    "name": "Muhammad Nadeem",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Accounting",
+    "espace_id": "7634085",
+    "profile_url": "https://business.uq.edu.au/profile/15364/muhammad-nadeem"
+  }
+]
