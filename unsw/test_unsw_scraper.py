@@ -13,6 +13,8 @@ test exists so they do not quietly come back.
 Run:  python -m pytest test_unsw_scraper.py -v
 """
 
+import textwrap
+
 import pytest
 from bs4 import BeautifulSoup
 
@@ -180,6 +182,25 @@ def test_trailing_separator_does_not_inflate_the_count():
     assert pubs[0]["author_count"] == 2
 
 
+def test_journal_articles_are_identified():
+    """The client decided on 19 August that the dataset is journal articles
+    only. UNSW writes the type as "Journal articles"."""
+    assert s.is_journal_article({"publication_type": "Journal articles"})
+    assert s.is_journal_article({"publication_type": "Journal Articles"})
+    assert not s.is_journal_article({"publication_type": "Media"})
+    assert not s.is_journal_article({"publication_type": "Conference Papers"})
+    assert not s.is_journal_article({"publication_type": "Book Chapters"})
+    assert not s.is_journal_article({"publication_type": "Preprints"})
+
+
+def test_missing_type_is_not_a_journal_article():
+    """Absent is not a journal. Better to leave it out of the dataset and keep
+    it in the all-types file than to guess it in."""
+    assert not s.is_journal_article({"publication_type": None})
+    assert not s.is_journal_article({"publication_type": ""})
+    assert not s.is_journal_article({})
+
+
 def test_no_authors_listed_is_blank_not_zero():
     """'We don't know' and 'zero authors' are different claims."""
     pubs, _ = parse(item(author=None))
@@ -341,3 +362,93 @@ def test_target_schools_use_the_full_school_names_not_the_filter_labels():
     first version of this scraper return zero staff."""
     assert "School of Banking and Finance" in s.TARGET_SCHOOLS
     assert "Banking & Finance" not in s.TARGET_SCHOOLS
+
+
+# ---------------------------------------------------------------------------
+# Re-running without a browser
+# ---------------------------------------------------------------------------
+def _staff_csv(rows):
+    import csv as _csv
+    import os as _os
+    import tempfile as _tempfile
+    path = _os.path.join(_tempfile.mkdtemp(), "unsw_staff.csv")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = _csv.DictWriter(f, fieldnames=s.STAFF_COLUMNS)
+        w.writeheader()
+        for row in rows:
+            w.writerow({c: row.get(c, "") for c in s.STAFF_COLUMNS})
+    return path
+
+
+def test_from_staff_rebuilds_the_roster_without_a_browser():
+    """The listing is the only part that needs Chrome. When only the output
+    rules have changed — the journals-only decision, for one — re-paging the
+    directory buys nothing, and a browser that will not start should not be
+    able to block that re-run."""
+    path = _staff_csv([
+        {"name": "Nicole Ang", "job_title": "Senior Lecturer",
+         "profile_url": "https://www.unsw.edu.au/staff/nicole-ang"},
+        {"name": "Roger Simnett", "job_title": "Professor",
+         "profile_url": "https://www.unsw.edu.au/staff/roger-simnett"},
+    ])
+    cards = s.cards_from_staff(path)
+    assert len(cards) == 2
+    card = cards["https://www.unsw.edu.au/staff/nicole-ang"]
+    assert card["raw_name"] == "Nicole Ang"
+    assert card["card_role"] == "Senior Lecturer"
+    assert card["profile_url"] == "https://www.unsw.edu.au/staff/nicole-ang"
+
+
+def test_from_staff_keeps_the_order_of_the_file():
+    path = _staff_csv([
+        {"name": "B", "profile_url": "https://www.unsw.edu.au/staff/b"},
+        {"name": "A", "profile_url": "https://www.unsw.edu.au/staff/a"},
+    ])
+    assert list(s.cards_from_staff(path)) == [
+        "https://www.unsw.edu.au/staff/b", "https://www.unsw.edu.au/staff/a"]
+
+
+def test_from_staff_skips_rows_with_no_profile_url():
+    path = _staff_csv([
+        {"name": "Nicole Ang", "profile_url": "https://www.unsw.edu.au/staff/nicole-ang"},
+        {"name": "Ghost", "profile_url": ""},
+    ])
+    assert len(s.cards_from_staff(path)) == 1
+
+
+def test_from_staff_refuses_a_missing_file_rather_than_running_on_nothing():
+    """Falling through to an empty roster would write empty output files over
+    good ones and look like a successful run."""
+    with pytest.raises(SystemExit):
+        s.cards_from_staff("no/such/unsw_staff.csv")
+
+
+def test_from_staff_refuses_a_file_with_no_usable_rows():
+    with pytest.raises(SystemExit):
+        s.cards_from_staff(_staff_csv([]))
+
+
+def test_the_run_summary_does_not_reuse_the_excluded_name():
+    """A real crash. The journals-only filter introduced a second local called
+    `excluded`, holding a Counter of publication types, over the list of
+    education-focused academics built earlier in the same function. The summary
+    then printed the number of *types* as a headcount and died unpacking a
+    Counter's keys into (name, title) — after every output file had already been
+    written, so a clean run looked like a failure.
+
+    Counting the bindings rather than eyeballing them, because the two uses are
+    sixty lines apart and the shadow is invisible at either end."""
+    import ast
+    import inspect
+
+    tree = ast.parse(textwrap.dedent(inspect.getsource(s.main)))
+    bindings = 0
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign):
+            for target in node.targets:
+                names = target.elts if isinstance(target, ast.Tuple) else [target]
+                bindings += sum(1 for n in names
+                                if isinstance(n, ast.Name) and n.id == "excluded")
+    assert bindings == 1, (
+        f"`excluded` is bound {bindings} times in main(); the publication-type "
+        f"Counter must stay named `excluded_types`")

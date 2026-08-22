@@ -47,6 +47,7 @@ import os
 import re
 import time
 import urllib.robotparser
+from collections import Counter, OrderedDict
 from urllib.parse import urljoin, urlparse
 
 import requests
@@ -244,6 +245,42 @@ def wait_for_results(driver):
     return previous
 
 
+def cards_from_staff(path):
+    """Rebuild the listing result from a previous run's unsw_staff.csv.
+
+    The listing is the only part of this scraper that needs a browser, and it is
+    also the only part that can be skipped: once a run has written unsw_staff.csv
+    we already know every profile URL, and the profile pages themselves are
+    cached and server-rendered. So a re-run that only changes how the output is
+    *filtered* — the journals-only decision, say — has no reason to start Chrome
+    at all.
+
+    This is not a shortcut around a broken environment; it is the honest scope of
+    the work. It does mean the run cannot discover a newly appointed academic, so
+    it prints that plainly rather than letting a stale roster pass as a fresh one.
+    """
+    if not os.path.exists(path):
+        raise SystemExit(
+            f"--from-staff needs {path}, which does not exist yet. The first run "
+            f"has to page the directory with Chrome to find out who is there.")
+    cards = OrderedDict()
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            url = (row.get("profile_url") or "").strip()
+            if not url:
+                continue
+            cards[url] = {
+                "raw_name": (row.get("name") or "").strip(),
+                "card_role": (row.get("job_title") or "").strip() or None,
+                "profile_url": url,
+            }
+    if not cards:
+        raise SystemExit(f"{path} has no profile_url values to work from.")
+    print(f"Reusing the roster from {path}: {len(cards)} academics, no browser needed.")
+    print("This cannot pick up a newly appointed academic — drop --from-staff for that.")
+    return cards
+
+
 def collect_listing(driver, max_pages=20):
     """Page the whole Business School directory. Returns {profile_url: card dict}."""
     found, start, page, total = {}, 1, 0, None
@@ -384,9 +421,20 @@ def parse_profile(soup):
 PUB_ITEM = ".publication-item"
 YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
 DOI_RE = re.compile(r"10\.\d{4,9}/\S+", re.IGNORECASE)
-# Journal articles are the only type ABDC ranks, so the type is kept as a
-# column rather than filtered here — that decision belongs downstream.
+# The client decided on 19 August that the dataset is journal articles only.
+# The prompt for that decision was Mark Humphery-Jenner: 410 publications, of
+# which 293 are media commentary and 44 are journal articles. A raw count put
+# him top at UNSW on the strength of newspaper columns.
+#
+# Everything else is still collected and written to
+# unsw_publications_all_types.csv, because re-scraping is expensive and a
+# decision can be revisited. What changes is which file is the dataset.
 JOURNAL_TYPE = re.compile(r"journal", re.IGNORECASE)
+
+
+def is_journal_article(publication):
+    kind = publication.get("publication_type")
+    return bool(kind and JOURNAL_TYPE.search(kind))
 
 
 def _text(node, selector):
@@ -553,12 +601,17 @@ def _write_csv(name, columns, rows):
     return path
 
 
-def write_output(records, pubs, unparsed, no_pubs):
+def write_output(records, pubs, unparsed, no_pubs, everything=None):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     written = [
         _write_csv("unsw_staff.csv", STAFF_COLUMNS, records),
         _write_csv("unsw_publications.csv", PUB_COLUMNS, pubs),
     ]
+    # The types the client excluded are still collected and still written. A
+    # decision can be revisited; a re-scrape costs an hour.
+    if everything is not None:
+        written.append(_write_csv("unsw_publications_all_types.csv",
+                                  PUB_COLUMNS, everything))
     # These two are written even when empty, so "no problems" is visibly
     # different from "the file was never produced".
     written.append(_write_csv("unsw_unparsed_publications.csv",
@@ -582,12 +635,17 @@ def main():
     parser.add_argument("--limit", type=int, help="only check this many profiles (testing)")
     parser.add_argument("--delay", type=float, help="seconds between profile fetches")
     parser.add_argument("--no-cache", action="store_true", help="ignore the profile cache")
-    parser.add_argument("--journals-only", action="store_true",
-                        help="write only journal articles. The client asked for "
-                             "journals only, but the authoritative filter lives in "
-                             "the shared merge step so that 'journal article' means "
-                             "the same thing across all eight universities — this "
-                             "flag is for checking UNSW on its own.")
+    parser.add_argument("--from-staff", nargs="?", const=os.path.join(OUTPUT_DIR, "unsw_staff.csv"),
+                        metavar="CSV",
+                        help="skip the browser and reuse the roster from a previous "
+                             "run's unsw_staff.csv. Use this when only the output "
+                             "rules changed, not who works there.")
+    parser.add_argument("--all-types", action="store_true",
+                        help="put every publication type in unsw_publications.csv. "
+                             "By default that file holds journal articles only, as "
+                             "the client decided on 19 August; the other types are "
+                             "always written to unsw_publications_all_types.csv "
+                             "either way, so nothing is lost.")
     parser.add_argument("--timeout", type=int, default=PAGE_TIMEOUT,
                         help=f"seconds to wait for the listing (default {PAGE_TIMEOUT})")
     args = parser.parse_args()
@@ -603,27 +661,43 @@ def main():
         print(f"robots.txt declares Crawl-delay: {declared}s; using {delay}s between "
               f"profile fetches (pages are cached, so this is a one-off cost).")
 
-    options = webdriver.ChromeOptions()
-    if args.headless:
-        options.add_argument("--headless=new")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument(f"--user-agent={USER_AGENT}")
+    if args.from_staff:
+        cards = cards_from_staff(args.from_staff)
+    else:
+        options = webdriver.ChromeOptions()
+        if args.headless:
+            options.add_argument("--headless=new")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument(f"--user-agent={USER_AGENT}")
 
-    print("Starting Chrome...")
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
-                              options=options)
-    try:
-        print("\nListing: UNSW Business School")
-        cards = collect_listing(driver)
-    finally:
-        driver.quit()
+        print("Starting Chrome...")
+        try:
+            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
+                                      options=options)
+        except WebDriverException as exc:
+            # Almost always a Chrome/ChromeDriver version mismatch on the machine
+            # running this, not a problem with the site or the code. Say so,
+            # rather than making the reader work it out from a Selenium stack
+            # trace, and point at the run that does not need a browser.
+            print(f"\nChrome would not start: {str(exc).splitlines()[0]}")
+            print("\nThis is a local browser problem, not a scraping one. Either:")
+            print("  - update Chrome, then delete C:\\Users\\<you>\\.wdm to clear the")
+            print("    cached driver so a matching one is downloaded; or")
+            print("  - if output/unsw_staff.csv already exists, skip the browser:")
+            print("        python unsw_scraper.py --from-staff")
+            return
+        try:
+            print("\nListing: UNSW Business School")
+            cards = collect_listing(driver)
+        finally:
+            driver.quit()
 
-    if not cards:
-        print("\nNothing in the listing. Check output/debug_listing.html — if the")
-        print("staff links are missing from it the markup has changed; if they are")
-        print("present the wait needs to be longer (try --timeout 60).")
-        return
+        if not cards:
+            print("\nNothing in the listing. Check output/debug_listing.html — if the")
+            print("staff links are missing from it the markup has changed; if they are")
+            print("present the wait needs to be longer (try --timeout 60).")
+            return
 
     targets = list(cards.values())
     if args.limit:
@@ -691,16 +765,32 @@ def main():
         print("TARGET_SCHOOLS still match what UNSW publishes in profile-school.")
         return
 
-    if args.journals_only:
-        kept = [p for p in all_pubs if p["publication_type"]
-                and JOURNAL_TYPE.search(p["publication_type"])]
-        print(f"\n--journals-only: keeping {len(kept)} of {len(all_pubs)} publications "
-              f"({len(all_pubs) - len(kept)} other types dropped from the output)")
-        all_pubs = kept
+    # Everything is kept on disk; the filter decides which file is the dataset.
+    everything = all_pubs
+    journals = [p for p in all_pubs if is_journal_article(p)]
+    if args.all_types:
+        print(f"\n--all-types: unsw_publications.csv holds all "
+              f"{len(everything)} publications")
+    else:
+        # Named `excluded_types`, not `excluded`: that name already holds the
+        # education-focused academics, and shadowing it here made the summary
+        # below report the number of publication types as a headcount and then
+        # crash trying to unpack a Counter's keys.
+        excluded_types = Counter(p["publication_type"] for p in everything
+                                 if not is_journal_article(p))
+        print(f"\nJournal articles only (client decision, 19 August): "
+              f"{len(journals)} of {len(everything)} publications kept")
+        print(f"  the other {len(everything) - len(journals)} are in "
+              f"unsw_publications_all_types.csv:")
+        for kind, n in excluded_types.most_common(6):
+            print(f"     {n:>4}  {kind}")
+        if len(excluded_types) > 6:
+            print(f"     ...and {len(excluded_types) - 6} more types")
+        all_pubs = journals
 
-    written = write_output(records, all_pubs, all_unparsed, no_pubs)
+    written = write_output(records, all_pubs, all_unparsed, no_pubs,
+                           everything if not args.all_types else None)
 
-    from collections import Counter
     print(f"\nComplete: {len(records)} academics, {len(all_pubs)} publications")
     for path in written:
         print(f"  {path}")
@@ -717,11 +807,15 @@ def main():
         # following the client's guidance on Stephen Gray at UQ.
         print(f"      {url}")
 
-    journals = [p for p in all_pubs if p["publication_type"]
-                and JOURNAL_TYPE.search(p["publication_type"])]
-    print(f"\n  publications: {len(all_pubs)}"
-          f"  ({len(journals)} journal articles — the ones ABDC ranks)")
-    print("  by type:      ", dict(Counter(p["publication_type"] for p in all_pubs)))
+    kept_journals = [p for p in all_pubs if is_journal_article(p)]
+    if args.all_types:
+        print(f"\n  publications: {len(all_pubs)}"
+              f"  ({len(kept_journals)} journal articles — the ones ABDC ranks)")
+        print("  by type:      ",
+              dict(Counter(p["publication_type"] for p in all_pubs)))
+    else:
+        print(f"\n  publications in the dataset: {len(all_pubs)} journal articles"
+              f"  ({len(everything) - len(all_pubs)} other types set aside)")
     print(f"  with a DOI:    {sum(1 for p in all_pubs if p['doi'])}")
     print(f"  with a journal name: {sum(1 for p in all_pubs if p['journal_name'])}")
     print(f"  unparsed (logged, not guessed at): {len(all_unparsed)}")

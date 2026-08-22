@@ -74,7 +74,16 @@ Useful flags:
 | `--delay 1` | seconds between profile fetches |
 | `--no-cache` | refetch profiles instead of reusing `output/profile_cache/` |
 | `--timeout 60` | wait longer for the listing to render |
-| `--journals-only` | write only journal articles — see below |
+| `--all-types` | keep every publication type in the main file — see below |
+| `--from-staff` | skip Chrome and reuse the roster from the last run's `unsw_staff.csv` |
+
+`--from-staff` exists because the browser is only needed for the **listing**. Once a
+run has recorded who works there, the profile pages are cached and server-rendered,
+so a re-run that changes only how the output is filtered has no reason to start
+Chrome at all. It cannot discover a newly appointed academic, and prints that when it
+runs rather than letting a stale roster pass as a fresh one. It is also the way past a
+local Chrome/ChromeDriver version mismatch, which the scraper now reports as the local
+problem it is instead of a Selenium stack trace.
 
 Profile pages are cached in `output/profile_cache/`, so the full crawl is a one-off
 cost and every later run is effectively instant. The cache is not committed.
@@ -84,7 +93,8 @@ Writes to `./output/`:
 | File | Contents |
 |---|---|
 | `unsw_staff.csv` / `.json` | One row per academic — name, job_title, academic_level (A–E), field_of_research, profile_url, university, research_portal_url, school |
-| `unsw_publications.csv` | One row per publication — title, journal_name, year, publication_type, doi, article_url, coauthors, author_count, volume, pages, publisher, plus blank `abdc_self_reported` and `citation_percentile` columns to be filled downstream |
+| `unsw_publications.csv` | One row per **journal article** — title, journal_name, year, publication_type, doi, article_url, coauthors, author_count, volume, pages, publisher, plus blank `abdc_self_reported` and `citation_percentile` columns to be filled downstream |
+| `unsw_publications_all_types.csv` | Every publication including the types the client excluded: conference papers, media, book chapters, preprints |
 | `unsw_unparsed_publications.csv` | Entries we could not parse, with the raw text — see below |
 | `unsw_no_publications.csv` | Academics whose profile lists nothing at all |
 
@@ -115,14 +125,17 @@ Three things are deliberate:
   text with no structure. Those go to `unsw_unparsed_publications.csv` with the raw
   citation rather than being parsed heuristically. Dropping them silently would
   understate someone's output; mis-parsing them would be worse.
-- **`publication_type` is kept, not filtered.** The client asked on 12 August for
-  journals only, and that filter is applied in the shared merge step rather than
-  here. Two reasons: re-scraping is expensive and discarding data we already hold
-  is irreversible, and the eight scrapers use different type vocabularies — UNSW
-  says "Journal articles" — so filtering in each scraper would make "journal
-  article" quietly mean eight different things, against the client's stated
-  priority of standardisation. `--journals-only` applies it locally for checking
-  UNSW on its own.
+- **The dataset is journal articles only, and everything else is still kept.**
+  The client confirmed this on 19 August. `unsw_publications.csv` holds the 2,000
+  journal articles; the other 2,210 rows go to
+  `unsw_publications_all_types.csv`. Re-scraping is expensive and a decision can
+  be revisited, so what the filter changes is which file is the dataset, not what
+  gets collected. `--all-types` puts everything back in the main file.
+
+  The reason for the decision is worth recording: Mark Humphery-Jenner has 410
+  publications, of which **293 are media commentary** and 44 are journal
+  articles. Counting raw publications put him top at UNSW on the strength of
+  newspaper columns.
 - **`author_count` is counted from the page's own author list**, not by splitting the
   joined string afterwards, so a name containing a semicolon cannot inflate it.
   It is left blank rather than 0 when no authors are listed — "we don't know" and
@@ -144,7 +157,7 @@ conference paper and a later book is kept as two records).
 python -m pytest test_unsw_scraper.py -v
 ```
 
-42 tests, all offline against fixtures defined in the test file — nothing touches
+50 tests, all offline against fixtures defined in the test file — nothing touches
 unsw.edu.au, so the suite runs in about a second and is safe in CI.
 
 They are not there for coverage. Each one pins a rule that was actually wrong at
@@ -160,6 +173,12 @@ some point, or that is subtle enough to be "simplified" back into a bug later:
 - `TARGET_SCHOOLS` holds `School of Banking and Finance`, not the directory's
   display label `Banking & Finance` — confusing the two is what made the first
   version of this scraper return zero staff
+- `--from-staff` on a missing or empty roster file must **stop**, not fall through
+  to an empty run — that would overwrite good output files and still look like a success
+- `excluded` is bound exactly once in `main()`. The journals-only filter briefly
+  reused the name for a Counter of publication types, which made the run summary
+  report a type count as a headcount and then crash — after every file had already
+  been written correctly
 
 ## Progress
 
