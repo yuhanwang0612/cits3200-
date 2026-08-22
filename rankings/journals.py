@@ -38,8 +38,10 @@ unmatched list is the useful part: it is the to-do list for improving coverage.
 import argparse
 import csv
 import os
+import re
 from collections import Counter, OrderedDict
 
+import harvest
 import journal_match as jm
 import abdc as abdc_mod
 import scimago as scimago_mod
@@ -72,6 +74,22 @@ COLUMNS = [
     "scimago_match_type",
     "issn_conflict",         # set when the two sources point at different journals
 ]
+
+
+def edition_year(path):
+    """The four-digit year in a reference file's name, e.g. 'scimagojr 2025.csv'.
+
+    Scimago's export carries no edition field inside the file, and the download
+    page only offers one year at a time, so the filename is the only record of
+    which edition was used. Returns None rather than a guess when the name has
+    no year in it, because a wrong edition is worse than an unknown one.
+    """
+    if not path:
+        return None
+    stem = os.path.basename(path)
+    years = [int(m.group(0))
+             for m in re.finditer(r"(?<!\d)(?:19|20)\d{2}(?!\d)", stem)]
+    return str(max(years)) if years else None
 
 
 def resolve_conflict(record, abdc_rec, abdc_how, sci_rec, sci_how):
@@ -140,6 +158,23 @@ def build(publications_path, abdc_path=None, scimago_path=None,
           f"in '{column}'"
           + (f"; {len(issn_by_journal)} of them have an ISSN in '{issn_column}'"
              if issn_column else ""))
+
+    # Say so, loudly, when there is no ISSN to match on. Matching on titles
+    # alone is not an error and produces no warning of its own: it just returns
+    # a worse result that looks exactly like a good one. That is precisely how
+    # a full run on the UNSW data came back with match counts identical to the
+    # pre-OpenAlex run and took a while to explain.
+    if not issn_column:
+        have_doi = sum(1 for r in rows
+                       if str(r.get("doi") or r.get("DOI") or "").strip())
+        print("\n  ! No ISSN column in this file, so every journal will be")
+        print("    matched on its title alone, which matches fewer of them.")
+        if have_doi:
+            print(f"    {have_doi} of these {len(rows)} rows have a DOI, so OpenAlex")
+            print("    can supply an ISSN for them. Run this instead:")
+            print("        python pipeline.py --publications <this file> "
+                  "--abdc <...> --scimago <...>")
+        print()
 
     abdc_index = abdc_aliases = None
     list_year = None
@@ -243,6 +278,18 @@ def build(publications_path, abdc_path=None, scimago_path=None,
         writer = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(out)
+
+    # FR14 / data dictionary 3.5.4. A ranking list is a source like any other,
+    # and it is the one the client's 19 August instruction is about: for
+    # citation figures the date that counts is when *we* read the list, not the
+    # date the list itself carries. `latest_year` is the edition we used.
+    university = harvest.university_in(rows)
+    if university:
+        if abdc_index:
+            harvest.record(university, f"ABDC JQL {list_year}" if list_year else "ABDC JQL",
+                           list_year, base)
+        if sci_index:
+            harvest.record(university, "Scimago", edition_year(scimago_path), base)
 
     print(f"\n  {path}   ({len(out)} journals)")
     for key in ("matched at least one", "abdc", "scimago", "unmatched by both",

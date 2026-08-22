@@ -57,6 +57,7 @@ from collections import Counter
 
 import requests
 
+import harvest
 import journal_match as jm
 
 API = "https://api.openalex.org/works"
@@ -222,6 +223,14 @@ def enrich(publications_path, mailto=None, limit=None, use_cache=True):
                                 extrasaction="ignore")
         writer.writeheader()
         writer.writerows(notfound)
+
+    # FR14 / data dictionary 3.5.4: record that OpenAlex ran, and when. The
+    # university is read out of the file rather than passed in, so the row
+    # cannot claim a university the data does not contain.
+    university = harvest.university_in(rows)
+    if university:
+        harvest.record(university, "OpenAlex", harvest.latest_year_in(rows),
+                       os.path.dirname(os.path.abspath(out_path)))
 
     print(f"\n  {out_path}")
     print(f"  {notfound_path}")

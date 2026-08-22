@@ -48,7 +48,13 @@ except ImportError:                                   # pragma: no cover
     sys.exit("openpyxl is required:  python -m pip install openpyxl")
 
 
-ADDED_COLUMNS = ["abdc_rating", "abdc_for_code", "abdc_matched_title",
+# `quality_rank`, not `abdc_rating` as this used to be. The Scope of Work data
+# dictionary (3.5.4) names this field on the Journal entity, journals.csv here
+# already used that name, and Sean's UQ export uses it too — this module was the
+# odd one out, which meant our own two output files disagreed with each other.
+# The abdc_* columns beside it are provenance, not the rating, so they keep the
+# prefix.
+ADDED_COLUMNS = ["quality_rank", "abdc_for_code", "abdc_matched_title",
                  "abdc_match_type", "abdc_list_year"]
 
 # Column names to look for in the ABDC workbook and in publications CSVs.
@@ -68,7 +74,7 @@ ABDC_FOR_HEADERS = ("for", "for code", "field of research", "for")
 
 VALID_RATINGS = {"A*", "A", "B", "C"}
 
-# Written into abdc_rating when a journal is named but is not on the ABDC list.
+# Written into quality_rank when a journal is named but is not on the ABDC list.
 # Requested by the client, 12 August 2026.
 UNRATED = "none"
 
@@ -250,13 +256,13 @@ def enrich(publications_path, abdc_path, year=None, use_fuzzy=False,
                 # A journal that exists but is unranked is a finding; a blank
                 # cell reads as "we didn't check". Rows with no journal at all
                 # are left blank, because there was nothing to rate.
-                row["abdc_rating"] = UNRATED
+                row["quality_rank"] = UNRATED
             else:
                 counts["no journal name"] += 1
             continue
         counts[how] += 1
         row.update({
-            "abdc_rating": record["rating"],
+            "quality_rank": record["rating"],
             "abdc_for_code": record["for_code"],
             "abdc_matched_title": record["title"],
             "abdc_match_type": how,

@@ -283,15 +283,15 @@ def test_enrich_adds_columns_and_keeps_the_originals(workbook):
     assert [r["title"] for r in rows] == ["p1", "p2", "p3"]      # nothing dropped
     assert all(c in rows[0] for c in ["title", "journal_name"])  # originals kept
     assert all(c in rows[0] for c in abdc.ADDED_COLUMNS)
-    assert rows[0]["abdc_rating"] == "A*"
+    assert rows[0]["quality_rank"] == "A*"
     # A real journal that ABDC does not rank: "none", per the client's request
     # on 12 August. Not a guess, and not silence.
-    assert rows[1]["abdc_rating"] == "none"
+    assert rows[1]["quality_rank"] == "none"
     assert rows[1]["abdc_match_type"] == ""
     # No journal at all (a book chapter) — nothing to rate, so left blank.
     # "none" here would assert something untrue about a journal that does not
     # exist for this record.
-    assert rows[2]["abdc_rating"] == ""
+    assert rows[2]["quality_rank"] == ""
 
     # The unmatched report is a to-do list, and must not include blank journals.
     names = [r["journal_name"] for r in read_csv(unmatched)]
@@ -307,7 +307,7 @@ def test_enrich_works_on_another_universitys_column_name(workbook):
         {"name": "x", "journal_key": "Journal of Finance"},
     ], ["name", "journal_key"])
     rows = read_csv(abdc.enrich(path, workbook)[0])
-    assert rows[0]["abdc_rating"] == "A*"
+    assert rows[0]["quality_rank"] == "A*"
 
 
 def test_enrich_fails_clearly_when_no_journal_column_exists(workbook):
@@ -324,5 +324,17 @@ def test_list_year_is_recorded_on_every_matched_row(workbook):
     path = write_publications(directory, [
         {"title": "p", "journal_name": "Australian Tax Review"}], ["title", "journal_name"])
     rows = read_csv(abdc.enrich(path, workbook)[0])
-    assert rows[0]["abdc_rating"] == "B"
+    assert rows[0]["quality_rank"] == "B"
     assert rows[0]["abdc_list_year"] == "2025"
+
+
+def test_the_rating_column_is_named_quality_rank():
+    """Scope of Work 3.5.4 names this field `quality_rank` on the Journal
+    entity, journals.csv here writes it under that name, and Sean's UQ export
+    uses it too. This module called it `abdc_rating` until 22 August, which
+    meant our own two output files disagreed about the name of the same value
+    and neither matched the dictionary."""
+    assert abdc.ADDED_COLUMNS[0] == "quality_rank"
+    assert "abdc_rating" not in abdc.ADDED_COLUMNS
+    # The abdc_ prefix still belongs on the provenance columns.
+    assert all(c.startswith("abdc_") for c in abdc.ADDED_COLUMNS[1:])

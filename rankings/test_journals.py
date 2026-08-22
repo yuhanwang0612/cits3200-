@@ -252,3 +252,50 @@ def test_blank_journal_names_are_ignored(refs):
 def test_needs_at_least_one_source(refs):
     with pytest.raises(SystemExit):
         journals.build(make_publications(["Journal of Finance"]))
+
+
+# ---------------------------------------------------------------------------
+# Harvest record — data dictionary 3.5.4 / FR14
+# ---------------------------------------------------------------------------
+def test_a_ranking_list_is_recorded_as_a_source(refs):
+    """The client's 19 August instruction: for citation figures the date that
+    counts is when we read the list, not the date the list carries."""
+    import harvest
+    abdc, scimago = refs
+    d = tempfile.mkdtemp()
+    path = os.path.join(d, "pubs.csv")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=["title", "journal_name", "university"])
+        w.writeheader()
+        w.writerow({"title": "p", "journal_name": "Journal of Finance",
+                    "university": "University of New South Wales"})
+    journals.build(path, abdc, scimago)
+
+    by_source = {r["source"]: r for r in harvest.read(d)}
+    assert "ABDC JQL 2025" in by_source
+    assert "Scimago" in by_source
+    assert by_source["ABDC JQL 2025"]["university"] == "University of New South Wales"
+    assert by_source["ABDC JQL 2025"]["last_run"].endswith("+00:00")
+
+
+def test_no_harvest_row_when_the_file_has_no_university(refs):
+    """Rather than inventing one. Older publication exports have no university
+    column, and a row naming the wrong institution is worse than no row."""
+    import harvest
+    abdc, scimago = refs
+    path = make_publications(["Journal of Finance"])   # no university column
+    journals.build(path, abdc, scimago)
+    assert harvest.read(os.path.dirname(path)) == []
+
+
+def test_edition_year_reads_the_year_out_of_the_filename():
+    """Scimago's export carries no edition field inside the file, so the
+    filename is the only record of which edition was used."""
+    assert journals.edition_year("scimagojr 2025.csv") == "2025"
+    assert journals.edition_year("../data/ABDC-JQL-2025-v2-270526.xlsx") == "2025"
+
+
+def test_edition_year_is_none_rather_than_a_guess():
+    assert journals.edition_year("scimago.csv") is None
+    assert journals.edition_year("list12345.csv") is None
+    assert journals.edition_year(None) is None

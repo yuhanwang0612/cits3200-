@@ -10,22 +10,45 @@ it's here.
 
 Everything has tests. Please run them before changing anything.
 
-## Order matters
+## Run it with `pipeline.py`
 
 ```bash
-python openalex.py --publications <your>_publications.csv     # adds an issn column
-python journals.py --publications <your>_publications_with_openalex.csv \
-                   --abdc "<ABDC>.xlsx" --scimago "<scimago>.csv"
+python pipeline.py --publications ../output/unsw_publications.csv \
+                   --abdc "../ABDC-JQL-2025-v2-270526.xlsx" \
+                   --scimago "../scimagojr 2025.csv"
 ```
 
-`openalex.py` first, then feed **its** output to the ranking steps. Run them the
-other way round and every journal is matched on its title, because the ISSN
-column does not exist yet. That is not hypothetical: it cost a full run on the
-UNSW data, which came back with match counts identical to the pre-OpenAlex run
-and looked at first like the join was broken.
+One command. It runs the OpenAlex step, then the journal table, and passes the
+intermediate filename between them itself.
 
-Check the path you pass, too. A stale copy of an output folder will run happily
-and produce numbers that are quietly a week old.
+The steps do have to run in that order, because `openalex.py` is what creates
+the `issn` column and the ranking step matches on it. But order was never
+really the problem. The problem is that each step writes a **new file with a
+suffix**, and a human has to type the right one into the next command:
+
+```
+unsw_publications.csv
+  -> unsw_publications_with_openalex.csv     (openalex.py)
+    -> journals.csv                          (journals.py)
+```
+
+Two chances to point at the wrong file, and on this project both have already
+been taken: once by handing the raw file to the ranking step, so the ISSNs were
+ignored and the match counts came back identical to the run before OpenAlex
+existed, and once by running against a copy of the output folder that was a
+week old. Neither failed. Both produced a plausible number.
+
+So the filenames are not typed any more. Name the inputs once and the chain
+threads itself.
+
+The individual modules still run on their own, and are documented below,
+because you need that to debug one step. If you run `journals.py` directly on a
+file with no `issn` column it now says so before it starts, rather than
+silently matching on titles alone.
+
+Add `--skip-openalex` to rank on titles without touching the network. The match
+rate is worse; it is for working offline, not for the numbers we give the
+client.
 
 ---
 
@@ -45,10 +68,10 @@ Writes two files next to the input:
 
 | File | Contents |
 |---|---|
-| `<name>_with_abdc.csv` | every original column, plus `abdc_rating`, `abdc_for_code`, `abdc_matched_title`, `abdc_match_type`, `abdc_list_year` |
+| `<name>_with_abdc.csv` | every original column, plus `quality_rank`, `abdc_for_code`, `abdc_matched_title`, `abdc_match_type`, `abdc_list_year` |
 | `<name>_abdc_unmatched.csv` | journals it could not rate, most frequent first |
 
-A journal that exists but is **not on the ABDC list** gets `abdc_rating = none`,
+A journal that exists but is **not on the ABDC list** gets `quality_rank = none`,
 as the client asked on 12 August — an unranked outlet is a finding, and a blank
 cell would read as "we didn't check". Rows with no journal at all (book chapters,
 media) are left blank, because there was nothing to rate.
@@ -284,6 +307,41 @@ Responses are cached next to the input, so a second run costs nothing.
 
 ---
 
+## `harvest.py` — how current is this data, and where did it come from
+
+The fourth entity in the data dictionary (3.5.4), and the one most of us did not
+have. Sean's UQ export already writes it; this matches his file exactly so the
+eight universities concatenate:
+
+| university | source | last_run | latest_year |
+|---|---|---|---|
+| UNSW Sydney | UNSW staff profile | 2026-08-22T09:41:02+00:00 | 2026 |
+| UNSW Sydney | ABDC JQL 2025 | 2026-08-22T09:44:18+00:00 | 2025 |
+| UNSW Sydney | OpenAlex | 2026-08-22T09:43:55+00:00 | 2026 |
+| UNSW Sydney | Scimago | 2026-08-22T09:44:19+00:00 | 2025 |
+
+Nobody runs this by hand. Each script records its own row when it finishes, so
+`last_run` is the moment that source actually ran. Rows are keyed on
+(university, source) and upserted, which is the point: re-running `openalex.py`
+updates the OpenAlex row and leaves the scraper's alone. If it overwrote the
+whole file, `last_run` would only ever tell you when you last ran *anything*.
+
+`python harvest.py --show ../output` prints what is currently recorded.
+
+### This is where the client's 19 August instruction lives
+
+For citation figures the date that counts is **the date we scraped**, not the
+date Scimago published theirs. `last_run` is that date. `latest_year` is a
+different thing: for a publication source it is the newest publication year we
+found, and for a ranking list it is the edition we used.
+
+Scimago's export carries no edition field inside the file and the download page
+only offers one year at a time, so the edition is read out of the filename.
+Keep the year in the name (`scimagojr 2025.csv`) or that column comes out blank
+rather than wrong.
+
+---
+
 ## `journal_match.py` — the matching all three use
 
 Not run directly. All three import it, so a journal that ABDC matches is
@@ -297,7 +355,7 @@ other than a stray subtitle.
 python -m pytest -v
 ```
 
-**108 tests, fully offline** — the ABDC workbook and Scimago export they run
+**138 tests, fully offline** — the ABDC workbook and Scimago export they run
 against are generated in temp directories, the OpenAlex call is stubbed with a
 real response shape, so no downloaded file is needed, no key, and nothing hits
 the network.
