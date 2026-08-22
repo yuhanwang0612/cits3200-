@@ -184,6 +184,49 @@ def test_equal_strength_conflict_is_flagged_not_resolved():
     assert "needs a human" in row["issn_conflict"]
 
 
+# ---------------------------------------------------------------------------
+# Using an ISSN the publications file already carries
+# ---------------------------------------------------------------------------
+def test_issn_in_the_publications_file_is_used_to_match(refs):
+    """openalex.py adds an `issn` column. If this is ignored, every journal is
+    matched on its title and the ISSN might as well not be there — which is
+    exactly what happened the first time this ran on real data: identical match
+    counts before and after OpenAlex."""
+    abdc, scimago = refs
+    d = tempfile.mkdtemp()
+    path = os.path.join(d, "pubs.csv")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=["title", "journal_name", "issn"])
+        w.writeheader()
+        # A title no reference list would ever match, but a real ISSN.
+        w.writerow({"title": "p", "journal_name": "J. Fin. (typo'd)",
+                    "issn": "0022-1082"})
+    out = journals.build(path, abdc, scimago)
+    with open(out, newline="", encoding="utf-8") as f:
+        row = list(csv.DictReader(f))[0]
+    assert row["quality_rank"] == "A*"
+    assert row["abdc_match_type"] == "issn"
+    assert row["sjr_quartile"] == "Q1"
+
+
+def test_issn_from_the_publications_file_survives_even_with_no_match(refs):
+    """A journal nothing rates still keeps the ISSN we already knew, so the
+    Clarivate join later can still find it."""
+    abdc, scimago = refs
+    d = tempfile.mkdtemp()
+    path = os.path.join(d, "pubs.csv")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=["title", "journal_name", "issn"])
+        w.writeheader()
+        w.writerow({"title": "p", "journal_name": "Weekly Tax Bulletin",
+                    "issn": "1234-5678"})
+    out = journals.build(path, abdc, scimago)
+    with open(out, newline="", encoding="utf-8") as f:
+        row = list(csv.DictReader(f))[0]
+    assert row["quality_rank"] == "none"
+    assert row["issn"] == "1234-5678"
+
+
 def test_at_least_one_drops_unmatched_journals(refs):
     abdc, scimago = refs
     path = make_publications(["Journal of Finance", "Weekly Tax Bulletin"])

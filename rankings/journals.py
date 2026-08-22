@@ -121,14 +121,25 @@ def build(publications_path, abdc_path=None, scimago_path=None,
 
     # Count publications per journal, keeping the first spelling we saw so the
     # output joins back to the publications file on the exact string.
-    counts = OrderedDict()
+    #
+    # The ISSN is collected here too. Without it every journal would be matched
+    # on its title even when the publications file already carries an ISSN
+    # (openalex.py adds one), which throws away the only unambiguous key we
+    # have and leaves the match rate exactly where it was.
+    counts, issn_by_journal = OrderedDict(), {}
     for row in rows:
         name = (row.get(column) or "").strip()
         if not name:
             continue
         counts[name] = counts.get(name, 0) + 1
+        if issn_column and name not in issn_by_journal:
+            issn = jm.normalise_issn(row.get(issn_column))
+            if issn:
+                issn_by_journal[name] = issn
     print(f"Publications: {len(rows)} rows, {len(counts)} distinct journals "
-          f"in '{column}'")
+          f"in '{column}'"
+          + (f"; {len(issn_by_journal)} of them have an ISSN in '{issn_column}'"
+             if issn_column else ""))
 
     abdc_index = abdc_aliases = None
     list_year = None
@@ -152,15 +163,21 @@ def build(publications_path, abdc_path=None, scimago_path=None,
         record = {c: None for c in COLUMNS}
         record["journal_name"] = name
         record["publication_count"] = count
+        # An ISSN the publications file already carries beats anything we can
+        # derive from a title match, so it goes in first and is used as the
+        # match key below.
+        known_issn = issn_by_journal.get(name)
+        record["issn"] = known_issn
 
         abdc_rec = sci_rec = None
         if abdc_index:
-            abdc_rec, how = abdc_mod.match_journal(name, None, abdc_index, abdc_aliases)
+            abdc_rec, how = abdc_mod.match_journal(name, known_issn, abdc_index,
+                                                   abdc_aliases)
             record["abdc_match_type"] = how
             if abdc_rec:
                 record.update({
                     "journal_canonical": abdc_rec["title"],
-                    "issn": abdc_rec.get("issn"),
+                    "issn": known_issn or abdc_rec.get("issn"),
                     "issn_online": abdc_rec.get("issn_online"),
                     "quality_rank": abdc_rec["rating"],
                     "abdc_for_code": abdc_rec.get("for_code"),
@@ -174,7 +191,7 @@ def build(publications_path, abdc_path=None, scimago_path=None,
                 record["abdc_list_year"] = list_year
 
         if sci_index:
-            sci_rec, how = jm.match_journal(name, None, sci_index, sci_aliases)
+            sci_rec, how = jm.match_journal(name, known_issn, sci_index, sci_aliases)
             record["scimago_match_type"] = how
             if sci_rec and abdc_rec:
                 sci_rec, note = resolve_conflict(
