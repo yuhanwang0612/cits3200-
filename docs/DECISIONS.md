@@ -175,6 +175,25 @@ between scrape dates, not a code change, and it adds 1 row back into the
 confident set (295 → 296). Net: 297 − 2 + 1 = 296. Both halves verified,
 neither accidental.
 
+## anu_journals.csv's issn column verified against Sean's Clarivate lookup format
+
+**What:** checked, no change needed. `anu_journals.csv`'s `issn` column
+already carries the exact format `jcr_lookup(issn)` (Sean's Clarivate JCR
+notebook, `UQ.ipynb` on `main`) expects — a hyphenated `NNNN-NNNN` string,
+e.g. `0810-5391`.
+
+**Why it's already right:** `anu_journals.csv`'s ISSNs come from Zarin's
+`journal_match.normalise_issn()`, which always outputs the hyphenated
+form regardless of input shape. Sean's own ABDC-matching code in the same
+notebook matches eSpace's ISSNs against the ABDC list by direct string
+equality with no hyphen stripping, which only works if both sides are
+already hyphenated — so his own pipeline already assumes this format, and
+mine already produces it. No conversion needed on either side.
+
+**The numbers:** 103 of 129 distinct ANU journals carry a well-formed
+ISSN (checked against the standard `\d{4}-\d{3}[\dX]` pattern — no
+malformed values found), covering 260 of 296 publications.
+
 ## Methodology gap: profile-page source is selected, not complete — cross-university comparison isn't valid yet
 
 **The numbers:** of the 258 ANU publications with an ABDC rating, 240
