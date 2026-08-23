@@ -144,10 +144,31 @@ LEVEL_LADDER = [
     ("E", r"\bprofessor\b"),  # plain "Professor" only reaches here if the
                               # more specific "associate professor" above
                               # didn't already match
-    ("C", r"senior lecturer|senior research fellow"),
+    # Client's 19 Aug rule: Senior Research Fellow and (plain) Senior
+    # Fellow are the SAME academic level, C — checked before the bare
+    # "research fellow" pattern below (level B) so "Senior Research
+    # Fellow" doesn't fall through to it first. "Senior Fellow" alone
+    # previously matched no pattern in this ladder at all (it contains
+    # neither "lecturer" nor "research fellow"), so it silently got
+    # academic_level = None — see is_less_research_intensive below for
+    # how the two are still told apart at the same level.
+    ("C", r"senior lecturer|senior research fellow|senior fellow"),
     ("B", r"\blecturer\b|research fellow|postdoctoral"),
     ("A", r"associate lecturer|assistant lecturer|tutor"),
 ]
+# Client's 19 Aug rule, second half: a Senior Fellow is the same level as
+# a Senior Research Fellow but is NOT as research-intensive — carry that
+# as a flag rather than flattening the distinction into one label. Only
+# ever true for the plain "Senior Fellow" title, never "Senior Research
+# Fellow" (checked first, longest-match-first, so a title containing both
+# words matches "senior research fellow" and this stays False).
+LESS_RESEARCH_INTENSIVE_RE = re.compile(r"senior fellow", re.IGNORECASE)
+SENIOR_RESEARCH_FELLOW_RE = re.compile(r"senior research fellow", re.IGNORECASE)
+
+
+def is_less_research_intensive(job_title: str) -> bool:
+    t = job_title or ""
+    return bool(LESS_RESEARCH_INTENSIVE_RE.search(t)) and not SENIOR_RESEARCH_FELLOW_RE.search(t)
 
 TITLE_PREFIX = re.compile(
     r"^(Emeritus Professor|Distinguished Honorary Professor|Distinguished Professor"
@@ -174,6 +195,10 @@ class Researcher:
     profile_url: str
     university: str = UNIVERSITY
     research_portal_url: str | None = None  # Pure link if present (bonus)
+    # See is_less_research_intensive() — True only for a plain "Senior
+    # Fellow" title, never "Senior Research Fellow", both of which map to
+    # the same academic_level ("C") per the client's 19 Aug rule.
+    less_research_intensive: bool = False
 
 
 @dataclass
@@ -1379,6 +1404,7 @@ def scrape_directory(source: dict) -> list[Researcher]:
                 field_of_research=source["default_field"],
                 profile_url=p["profile_url"],
                 research_portal_url=p["research_portal_url"],
+                less_research_intensive=is_less_research_intensive(p["job_title"]),
             ))
 
         print(f"  kept {new_this_page} new academic researcher(s) from this page")
@@ -1519,7 +1545,8 @@ def main() -> None:
 
     # 3. write everything
     staff_fields = ["name", "job_title", "academic_level", "field_of_research",
-                    "profile_url", "university", "research_portal_url"]
+                    "profile_url", "university", "research_portal_url",
+                    "less_research_intensive"]
     write_csv(OUTPUT_DIR / "anu_staff.csv",
               [asdict(r) for r in researchers], staff_fields)
     write_json(OUTPUT_DIR / "anu_staff.json", [asdict(r) for r in researchers])
