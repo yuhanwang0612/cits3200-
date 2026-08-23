@@ -205,13 +205,17 @@ class Publication:
     # fetch_issn() and the ISSN backfill pass in main(). Blank (not a
     # guess) when there's no DOI to look up, or the lookup doesn't resolve.
     issn: str | None = None
-    # Backfilled post-parse from a Scimago journal-rank export, keyed on a
-    # normalised `journal_name` — see match_scimago() and the Scimago join
-    # pass in main(). Both nullable: blank when journal_name doesn't
-    # confidently match a ranked journal (logged to
-    # anu_unmatched_journals.csv instead of guessed).
-    scimago_sjr: float | None = None
-    scimago_quartile: str | None = None
+    # Set only when the source text explicitly uses the word "forthcoming"
+    # (or "in press") — the client's 19 Aug rule is to count a working
+    # paper as forthcoming ONLY on an explicit label, never inferred from a
+    # missing journal or year, so this is a literal text match, not a guess.
+    forthcoming: bool = False
+    # Which university/field this row belongs to — needed so a
+    # concatenated cross-university publications file stays attributable,
+    # and so harvest.py's university_in() can find a university at all
+    # (see docs/DECISIONS.md).
+    university: str = UNIVERSITY
+    field_of_research: str = ""
 
 
 # ----------------------------------------------------------------------------
@@ -1160,6 +1164,11 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     author_count = named if named > 0 else 1
     author_count_confidence = "ok" if named > 0 else "low - no coauthor text found"
 
+    # Client's 19 Aug rule: count a working paper as forthcoming only when
+    # the source text explicitly says so — a literal (case-insensitive)
+    # word match, never inferred from a missing journal/year.
+    forthcoming = bool(re.search(r"\bforthcoming\b|\bin press\b", text, re.IGNORECASE))
+
     pub = Publication(
         researcher_name=researcher.name,
         researcher_profile_url=researcher.profile_url,
@@ -1174,6 +1183,9 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
         publication_type=publication_type,
         author_count=author_count,
         author_count_confidence=author_count_confidence,
+        forthcoming=forthcoming,
+        university=researcher.university,
+        field_of_research=researcher.field_of_research,
     )
     # low-confidence if we found neither a journal nor a year
     if journal is None and year is None:
@@ -1458,113 +1470,17 @@ def write_json(path: Path, rows: list[dict]) -> None:
 
 
 # ----------------------------------------------------------------------------
-# Scimago journal-rank enrichment (client-agreed requirement, 12 Aug)
-# ----------------------------------------------------------------------------
-#
-# scimagojr.com's robots.txt disallows the "category="/"area="
-# query params that a subject-filtered CSV export needs, for every
-# crawler — so this data is NOT fetched automatically. Instead, a
-# human exports the Accounting and Finance category CSVs via
-# Scimago's own "Download data" button and drops them anywhere
-# directly under the project directory; find_scimago_csvs() picks
-# them up by their header shape (Scimago doesn't let you choose the
-# filename) and the join below runs automatically on the next
-# scrape.
-
-def _normalize_journal_key(name: str) -> str:
-    """
-    Build a normalised matching key so a Scimago export's "Title" column
-    and our own parsed journal_name land on the same key despite case,
-    "&"/"and", punctuation, and leading-"The" differences (Scimago
-    consistently omits a leading article — "Accounting Review", "British
-    Accounting Review", "International Journal of Accounting", confirmed
-    against the actual export rather than assumed). Deliberately does NOT
-    try to guess at deeper abbreviation variants (e.g. "Intl" vs
-    "International", or Scimago's own occasional short-form titles like
-    "Auditing" for "Auditing: A Journal of Practice & Theory") — those
-    aren't a consistent, confirmable rule the way the leading article is,
-    and guessing at them risks a false match more than it's worth.
-    Anything that doesn't line up after this normalisation gets logged to
-    anu_unmatched_journals.csv rather than force-matched.
-    """
-    if not name:
-        return ""
-    s = name.lower()
-    s = re.sub(r"\([^)]*\)", " ", s)   # drop parenthetical annotations, e.g. "(ABDC: A)"
-    s = s.replace("&", " and ")
-    s = re.sub(r"[^a-z0-9]+", " ", s)  # all punctuation -> space
-    s = re.sub(r"\s+", " ", s).strip()
-    s = re.sub(r"^the\s+", "", s)
-    return s
-
-
-def find_scimago_csvs(search_dir: Path | None = None) -> list[Path]:
-    """
-    Look for Scimago journal-rank export CSVs dropped directly under the
-    project directory. Identified by header shape (';'-delimited, with
-    "Title" and "SJR" columns) rather than filename, since Scimago's
-    "Download data" button names the file itself (e.g. "scimagojr 2024
-    Accounting.csv") and that name isn't something we control.
-    """
-    search_dir = search_dir or Path(__file__).resolve().parent
-    candidates = []
-    for path in sorted(search_dir.glob("*.csv")):
-        try:
-            with path.open(encoding="utf-8-sig", newline="") as f:
-                header = f.readline()
-        except OSError:
-            continue
-        if ";" in header and "Title" in header and "SJR" in header:
-            candidates.append(path)
-    return candidates
-
-
-def load_scimago_rankings(paths: list[Path]) -> tuple[dict[str, tuple[float | None, str | None]], int]:
-    """
-    Parse one or more Scimago journal-rank CSV exports into
-    {normalised_title: (sjr, quartile)}. Scimago's export uses ';' as the
-    field delimiter (so it can use ',' as the SJR decimal separator, e.g.
-    "1,234" for 1.234) — both are handled here rather than assuming '.'.
-    A journal already seen in an earlier path (e.g. cross-listed in both
-    the Accounting and Finance category exports, where its quartile can
-    legitimately differ between the two subject rankings) keeps its FIRST
-    value rather than being overwritten; the order the caller passes paths
-    in decides precedence.
-    """
-    mapping: dict[str, tuple[float | None, str | None]] = {}
-    total_rows = 0
-    for path in paths:
-        with path.open(encoding="utf-8-sig", newline="") as f:
-            reader = csv.DictReader(f, delimiter=";")
-            for row in reader:
-                title = row.get("Title")
-                if not title:
-                    continue
-                total_rows += 1
-                key = _normalize_journal_key(title)
-                if not key or key in mapping:
-                    continue
-                sjr_raw = (row.get("SJR") or "").strip()
-                sjr = None
-                if sjr_raw:
-                    try:
-                        sjr = float(sjr_raw.replace(",", "."))
-                    except ValueError:
-                        sjr = None
-                # Scimago itself uses a literal "-" for "not ranked this
-                # year" (seen on a couple of book-series entries with no
-                # SJR score at all) — that's not a real Q1-Q4 value, so it
-                # maps to None rather than being stored as a fifth quartile.
-                quartile = (row.get("SJR Quartile") or "").strip() or None
-                if quartile == "-":
-                    quartile = None
-                mapping[key] = (sjr, quartile)
-    return mapping, total_rows
-
-
-# ----------------------------------------------------------------------------
 # Main
 # ----------------------------------------------------------------------------
+#
+# No inline Scimago/ABDC join here any more — rankings/scimago.py and
+# rankings/abdc.py (Zarin's package, on zarin-branch) do this properly:
+# ISSN-first matching, subtitle/prefix variants, and cross-checking ABDC
+# and Scimago against each other to catch a mismatched subtitle stealing
+# someone else's rating. My own hand-rolled version (normalised title
+# only, no ISSN, no cross-check) predated that package and was strictly
+# weaker — keeping both risked the two disagreeing on the same journal
+# for no reason. See docs/DECISIONS.md.
 
 def main() -> None:
     OUTPUT_DIR.mkdir(exist_ok=True)
@@ -1601,47 +1517,6 @@ def main() -> None:
             issn_hits += 1
         print(f"  [{i}/{len(with_doi)}] {p.doi} -> {p.issn or 'not found'}")
 
-    # 2c. Scimago journal-rank join (SJR, quartile), keyed on a normalised
-    # journal_name — see find_scimago_csvs()/load_scimago_rankings() above.
-    # Only applied to CONFIDENT publications: an unparsed entry's
-    # journal_name (when it has one at all) hasn't been trusted as correct
-    # in the first place, so matching it against Scimago would just be
-    # attaching a rank to a guess.
-    scimago_paths = find_scimago_csvs()
-    scimago_matched = 0
-    unmatched_counts: dict[str, dict] = {}
-    if scimago_paths:
-        scimago_map, scimago_rows = load_scimago_rankings(scimago_paths)
-        print(f"\nLoaded {scimago_rows} journal-rank row(s) from "
-              f"{len(scimago_paths)} Scimago export(s): "
-              f"{', '.join(p.name for p in scimago_paths)}")
-        for p in all_pubs:
-            if not p.journal_name:
-                continue
-            key = _normalize_journal_key(p.journal_name)
-            hit = scimago_map.get(key)
-            # A hit with BOTH fields None (a journal Scimago lists but with
-            # no rank data that year — e.g. a book series with "-" for
-            # quartile and no SJR score at all) isn't a usable "ranked
-            # journal" match even though the name matched, so it's logged
-            # to anu_unmatched_journals.csv the same as a genuine miss
-            # rather than counted as matched with nothing to show for it.
-            if hit and (hit[0] is not None or hit[1] is not None):
-                p.scimago_sjr, p.scimago_quartile = hit
-                scimago_matched += 1
-            else:
-                entry = unmatched_counts.setdefault(
-                    key, {"journal_name": p.journal_name, "normalized_key": key, "publication_count": 0}
-                )
-                entry["publication_count"] += 1
-        print(f"Scimago match: {scimago_matched}/{len(all_pubs)} publications "
-              f"matched to a ranked journal.")
-    else:
-        print("\nNo Scimago export CSVs found under the project directory — "
-              "scimago_sjr/scimago_quartile left blank. Drop the Accounting "
-              "and Finance category exports from scimagojr.com's \"Download "
-              "data\" button anywhere under the repo and re-run to populate them.")
-
     # 3. write everything
     staff_fields = ["name", "job_title", "academic_level", "field_of_research",
                     "profile_url", "university", "research_portal_url"]
@@ -1652,8 +1527,8 @@ def main() -> None:
     pub_fields = ["researcher_name", "researcher_profile_url", "title",
                   "journal_name", "year", "doi", "issn", "article_url",
                   "abdc_self_reported", "coauthors", "author_count",
-                  "author_count_confidence", "publication_type",
-                  "scimago_sjr", "scimago_quartile", "source",
+                  "author_count_confidence", "publication_type", "forthcoming",
+                  "university", "field_of_research", "source",
                   "citation_percentile", "raw"]
     write_csv(OUTPUT_DIR / "anu_publications.csv",
               [asdict(p) for p in all_pubs], pub_fields)
@@ -1664,10 +1539,6 @@ def main() -> None:
               [asdict(p) for p in unparsed], pub_fields)
     write_csv(OUTPUT_DIR / "anu_no_publications.csv",
               [asdict(r) for r in no_pub_people], staff_fields)
-    if scimago_paths:
-        write_csv(OUTPUT_DIR / "anu_unmatched_journals.csv",
-                  sorted(unmatched_counts.values(), key=lambda r: -r["publication_count"]),
-                  ["journal_name", "normalized_key", "publication_count"])
 
     # 4. summary
     print("\n" + "=" * 60)
@@ -1681,11 +1552,6 @@ def main() -> None:
           f"(see anu_unparsed_publications.csv)")
     print(f"ISSN backfilled:                      {issn_hits}/{len(with_doi)} "
           f"publication(s) with a DOI")
-    if scimago_paths:
-        print(f"Scimago SJR/quartile matched:         {scimago_matched}/{len(all_pubs)} "
-              f"confident publication(s)  (see anu_unmatched_journals.csv)")
-    else:
-        print("Scimago SJR/quartile matched:         skipped — no export CSVs found")
     print(f"Output written to:                    {OUTPUT_DIR}")
     print("=" * 60)
 
