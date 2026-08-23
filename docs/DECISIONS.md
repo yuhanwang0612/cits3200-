@@ -161,6 +161,20 @@ Full detail is in the commit message for `668b3bd`; the short version:
    that's the parser's own stated design working as intended, not a
    regression in the confident-publication count.
 
+**Why the confident-publication count reads 297 → 296, not 297 → 295:**
+two independent things, not one. Fixing the Moshirian bug (above) moves
+exactly 2 rows out of the confident set (297 → 295) — that part is
+intentional, it's the bug fix. Separately, Eunice Khoo's live RSA profile
+gained a publication that did not exist in the original 18 Aug baseline
+scrape at all: "Superstitious CEO and corporate misconduct: Evidence from
+China," *Journal of Accounting, Auditing & Finance*, marked Forthcoming.
+Confirmed by diffing the two committed snapshots by researcher+title (her
+old list had 9 entries, none matching this title) and by fetching her live
+profile directly, where it's present now. That's the source data changing
+between scrape dates, not a code change, and it adds 1 row back into the
+confident set (295 → 296). Net: 297 − 2 + 1 = 296. Both halves verified,
+neither accidental.
+
 ## Methodology gap: profile-page source is selected, not complete — cross-university comparison isn't valid yet
 
 **The numbers:** of the 258 ANU publications with an ABDC rating, 240
