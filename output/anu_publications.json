@@ -16,8 +16,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sarah Adams",
@@ -36,8 +37,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.702,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sarah Adams",
@@ -56,8 +58,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -76,8 +79,9 @@
     "author_count": 8,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -96,8 +100,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0001-4826",
-    "scimago_sjr": 4.403,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -116,8 +121,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "1049-2127",
-    "scimago_sjr": 1.248,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -136,8 +142,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0306-686X",
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -156,8 +163,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "1542-6297",
-    "scimago_sjr": 0.526,
-    "scimago_quartile": "Q2"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -176,8 +184,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "2049-372X",
-    "scimago_sjr": 0.974,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -196,8 +205,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -216,8 +226,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "2049-372X",
-    "scimago_sjr": 0.974,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -236,14 +247,15 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/lily-chen",
     "title": "A framework for the practice of corporate environmental responsibility in China",
-    "journal_name": "Journal of Cleaner Production, 235",
+    "journal_name": "Journal of Cleaner Production",
     "year": 2019,
     "doi": "10.1016/j.jclepro.2019.06.245",
     "article_url": "https://doi.org/10.1016/j.jclepro.2019.06.245",
@@ -256,8 +268,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0959-6526",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -276,8 +289,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0361-3682",
-    "scimago_sjr": 3.098,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -296,8 +310,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0167-4544",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -316,8 +331,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0378-4266",
-    "scimago_sjr": 1.954,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lily Chen",
@@ -336,8 +352,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sorin Daniliuc",
@@ -356,8 +373,9 @@
     "author_count": 6,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.636,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sorin Daniliuc",
@@ -376,8 +394,9 @@
     "author_count": 6,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -396,8 +415,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -416,8 +436,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -436,8 +457,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -456,8 +478,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -476,8 +499,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -496,8 +520,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -516,8 +541,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.702,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -536,8 +562,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.681,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -556,8 +583,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -576,8 +604,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -596,8 +625,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -616,8 +646,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.087,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -636,8 +667,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.801,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -656,8 +688,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.521,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -676,8 +709,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -696,8 +730,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -716,8 +751,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -736,8 +772,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.611,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -756,8 +793,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.702,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Neil Fargher",
@@ -776,8 +814,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.436,
-    "scimago_quartile": "Q3"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -796,8 +835,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -816,8 +856,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -836,8 +877,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -856,8 +898,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -876,8 +919,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -896,8 +940,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -916,8 +961,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -936,8 +982,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -956,8 +1003,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Susanna Ho",
@@ -976,8 +1024,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Tejshree Kala",
@@ -996,8 +1045,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Tejshree Kala",
@@ -1016,8 +1066,30 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
+  },
+  {
+    "researcher_name": "Eunice Khoo",
+    "researcher_profile_url": "https://rsa.anu.edu.au/people/eunice-khoo",
+    "title": "Superstitious CEO and corporate misconduct: Evidence from China",
+    "journal_name": "Journal of Accounting, Auditing & Finance",
+    "year": 2026,
+    "doi": null,
+    "article_url": null,
+    "abdc_self_reported": "none",
+    "coauthors": "Guo, D., E.S. Khoo, and J.J. Zhang",
+    "source": "ANU RSA/RSFAS profile page",
+    "citation_percentile": null,
+    "raw": "Guo, D., E.S. Khoo, and J.J. Zhang. 2026. Superstitious CEO and corporate misconduct: Evidence from China. Journal of Accounting, Auditing & Finance . Forthcoming.",
+    "publication_type": "journal_article",
+    "author_count": 3,
+    "author_count_confidence": "ok",
+    "issn": null,
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
@@ -1036,8 +1108,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0148-2963",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
@@ -1056,8 +1129,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
@@ -1076,8 +1150,9 @@
     "author_count": 5,
     "author_count_confidence": "ok",
     "issn": "0278-0380",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
@@ -1096,14 +1171,15 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0278-0380",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/eunice-khoo",
     "title": "Climate Change Disclosure and the Information Environment in the Initial Public Offering Market",
-    "journal_name": "Accounting & Finance, 63",
+    "journal_name": "Accounting & Finance",
     "year": 2023,
     "doi": "10.1111/acfi.13085",
     "article_url": "http://doi.org/10.1111/acfi.13085",
@@ -1116,14 +1192,15 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/eunice-khoo",
     "title": "Shareholder Election of CSR Committee Members and its Effects on CSR Performance",
-    "journal_name": "Journal of Business Finance and Accounting, 50",
+    "journal_name": "Journal of Business Finance and Accounting",
     "year": 2023,
     "doi": "10.1111/jbfa.12643",
     "article_url": "https://doi.org/10.1111/jbfa.12643",
@@ -1136,8 +1213,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0306-686X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
@@ -1156,14 +1234,15 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0306-686X",
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/eunice-khoo",
     "title": "Audit Committee Members’ Reputation Incentives and Their Effectiveness in Monitoring the Financial Reporting Process",
-    "journal_name": "Abacus, 56",
+    "journal_name": "Abacus",
     "year": 2020,
     "doi": "10.1111/abac.12201",
     "article_url": "https://doi.org/10.1111/abac.12201",
@@ -1176,14 +1255,15 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0001-3072",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Eunice Khoo",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/eunice-khoo",
     "title": "The Impact of Corporate Reputation on the Timeliness of External Audit and Earnings Announcement",
-    "journal_name": "International Journal of Auditing, 24",
+    "journal_name": "International Journal of Auditing",
     "year": 2020,
     "doi": "10.1111/ijau.12202",
     "article_url": "https://doi.org/10.1111/ijau.12202",
@@ -1196,8 +1276,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "1090-6738",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1216,8 +1297,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1236,8 +1318,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1256,8 +1339,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1276,8 +1360,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 1.574,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1296,8 +1381,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1316,8 +1402,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 1.065,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1336,8 +1423,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1356,8 +1444,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.436,
-    "scimago_quartile": "Q3"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1376,8 +1465,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.702,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1396,8 +1486,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1416,8 +1507,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1436,8 +1528,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.702,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1456,8 +1549,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 1.087,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1476,8 +1570,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1496,8 +1591,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Janet Lee",
@@ -1516,8 +1612,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1536,8 +1633,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1556,8 +1654,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.188,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1576,8 +1675,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1596,8 +1696,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1616,8 +1717,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lingwei Li",
@@ -1636,8 +1738,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1656,8 +1759,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.97,
-    "scimago_quartile": "Q2"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1676,8 +1780,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1696,8 +1801,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1716,8 +1822,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1736,8 +1843,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1756,8 +1864,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.705,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1776,8 +1885,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 8.251,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1796,8 +1906,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 9.774,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1816,8 +1927,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1836,8 +1948,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1856,8 +1969,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.706,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1876,8 +1990,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1896,8 +2011,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1916,8 +2032,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 4.403,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1936,8 +2053,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1956,8 +2074,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.32,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1976,8 +2095,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Louise Lu",
@@ -1996,8 +2116,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 8.748,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Scarlett Luo",
@@ -2016,8 +2137,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.762,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2036,8 +2158,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2056,8 +2179,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2076,8 +2200,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2096,8 +2221,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 1.065,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2116,8 +2242,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2136,8 +2263,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2156,8 +2284,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2176,8 +2305,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.702,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2196,8 +2326,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 1.625,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2216,8 +2347,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Juliana Ng",
@@ -2236,8 +2368,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2256,8 +2389,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0148-558X",
-    "scimago_sjr": 0.965,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2276,8 +2410,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2296,8 +2431,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "1754-3037",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2316,8 +2452,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2336,8 +2473,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": "2520-1654",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2356,8 +2494,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "1059-0560",
-    "scimago_sjr": 1.485,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2376,8 +2515,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1743-9132",
-    "scimago_sjr": 0.635,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2396,8 +2536,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "1090-6738",
-    "scimago_sjr": 0.681,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2416,8 +2557,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0890-8389",
-    "scimago_sjr": 1.705,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2436,8 +2578,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0890-8389",
-    "scimago_sjr": 1.705,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2456,8 +2599,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": "2213-106X",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2476,8 +2620,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0020-7063",
-    "scimago_sjr": 0.436,
-    "scimago_quartile": "Q3"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2496,8 +2641,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0278-0380",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2516,8 +2662,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0001-3072",
-    "scimago_sjr": 0.762,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2536,8 +2683,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2556,8 +2704,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2576,8 +2725,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "1059-0560",
-    "scimago_sjr": 1.485,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2596,8 +2746,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2616,8 +2767,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0167-4544",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2636,8 +2788,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2656,8 +2809,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2676,8 +2830,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0306-686X",
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2696,8 +2851,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0950-0804",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2716,8 +2872,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1369-412X",
-    "scimago_sjr": 0.636,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2736,8 +2893,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0742-1222",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2756,8 +2914,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0278-4254",
-    "scimago_sjr": 0.97,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2776,8 +2935,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1035-6908",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Greg Shailer",
@@ -2796,8 +2956,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0278-0380",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Madhukar Singh",
@@ -2816,8 +2977,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0823-9150",
-    "scimago_sjr": 3.686,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Madhukar Singh",
@@ -2836,8 +2998,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0278-0380",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -2856,8 +3019,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -2876,8 +3040,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -2896,8 +3061,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": "0963-8180",
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -2916,8 +3082,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -2936,8 +3103,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -2956,8 +3124,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -2976,8 +3145,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -2996,8 +3166,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -3016,8 +3187,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Sonali Walpola",
@@ -3036,8 +3208,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3056,8 +3229,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3076,8 +3250,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.922,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3096,8 +3271,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 3.686,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3116,8 +3292,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.574,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3136,8 +3313,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3156,8 +3334,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.705,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
@@ -3176,14 +3355,15 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/alex-wang",
     "title": "Strategizing in the Midst of Management Controls: A Longitudinal Case Study on The Relationship between Management Controls and Promises on Strategies, Global Management Accounting Research Symposium (GMARS), University of New South Wales, Sydney",
-    "journal_name": "Australia",
+    "journal_name": null,
     "year": 2017,
     "doi": null,
     "article_url": null,
@@ -3192,18 +3372,19 @@
     "source": "ANU RSA/RSFAS profile page",
     "citation_percentile": null,
     "raw": "Strategizing in the Midst of Management Controls: A Longitudinal Case Study on The Relationship between Management Controls and Promises on Strategies, Global Management Accounting Research Symposium (GMARS), University of New South Wales, Sydney, Australia, 2017.",
-    "publication_type": "journal_article",
+    "publication_type": "conference_paper",
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/alex-wang",
     "title": "Experimenting with Risks and Management Control Systems in Inter-firm Alliances, Accounting and Finance Association of Australia and New Zealand (AFAANZ), Gold Coast",
-    "journal_name": "Australia",
+    "journal_name": null,
     "year": 2016,
     "doi": null,
     "article_url": null,
@@ -3212,18 +3393,19 @@
     "source": "ANU RSA/RSFAS profile page",
     "citation_percentile": null,
     "raw": "Experimenting with Risks and Management Control Systems in Inter-firm Alliances, Accounting and Finance Association of Australia and New Zealand (AFAANZ), Gold Coast, Australia, 2016.",
-    "publication_type": "journal_article",
+    "publication_type": "conference_paper",
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Alex Wang",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/alex-wang",
     "title": "· Experimenting with Risks and Management Control Systems in Inter-firm Alliances, Global Management Accounting Research Symposium (GMARS), Michigan State University",
-    "journal_name": "USA",
+    "journal_name": null,
     "year": 2016,
     "doi": null,
     "article_url": null,
@@ -3232,12 +3414,13 @@
     "source": "ANU RSA/RSFAS profile page",
     "citation_percentile": null,
     "raw": "·   Experimenting with Risks and Management Control Systems in Inter-firm Alliances, Global Management Accounting Research Symposium (GMARS), Michigan State University, USA, 2016.",
-    "publication_type": "journal_article",
+    "publication_type": "conference_paper",
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3256,8 +3439,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3276,8 +3460,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3296,8 +3481,9 @@
     "author_count": 5,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3316,8 +3502,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.922,
-    "scimago_quartile": "Q2"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3336,8 +3523,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.681,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3356,8 +3544,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3376,8 +3565,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Isabel Wang",
@@ -3396,8 +3586,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.521,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Kathy Wang",
@@ -3416,8 +3607,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Kathy Wang",
@@ -3436,8 +3628,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Kathy Wang",
@@ -3456,8 +3649,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3476,8 +3670,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3496,8 +3691,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.544,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3516,8 +3712,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3536,8 +3733,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.544,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3556,8 +3754,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3576,8 +3775,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3596,8 +3796,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3616,8 +3817,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3636,8 +3838,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3656,8 +3859,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3676,8 +3880,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3696,8 +3901,9 @@
     "author_count": 28,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3716,8 +3922,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3736,8 +3943,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.62,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3756,8 +3964,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3776,8 +3985,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3796,8 +4006,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3816,8 +4027,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3836,8 +4048,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3856,8 +4069,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3876,8 +4090,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3896,8 +4111,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.188,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3916,8 +4132,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3936,8 +4153,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3956,8 +4174,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3976,8 +4195,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -3996,8 +4216,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -4016,8 +4237,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -4036,8 +4258,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -4056,8 +4279,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -4076,8 +4300,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -4096,8 +4321,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Marvin Wee",
@@ -4116,8 +4342,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4136,8 +4363,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.19,
-    "scimago_quartile": "Q4"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4156,8 +4384,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4176,8 +4405,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0167-4544",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4196,8 +4426,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0312-8962",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4216,8 +4447,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0929-1199",
-    "scimago_sjr": 2.706,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4236,8 +4468,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1044-5005",
-    "scimago_sjr": 1.625,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4256,8 +4489,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4276,8 +4510,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0963-8180",
-    "scimago_sjr": 2.272,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4296,8 +4531,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0312-8962",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4316,8 +4552,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0001-4788",
-    "scimago_sjr": 1.065,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4336,8 +4573,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0278-0380",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4356,8 +4594,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": "0312-8962",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4376,8 +4615,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0001-3072",
-    "scimago_sjr": 0.762,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4396,8 +4636,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0020-7063",
-    "scimago_sjr": 0.436,
-    "scimago_quartile": "Q3"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Steven Wu",
@@ -4416,8 +4657,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "1030-9616",
-    "scimago_sjr": 0.62,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Wei Zeng",
@@ -4436,8 +4678,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 4.403,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4456,8 +4699,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 3.686,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4476,8 +4720,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.436,
-    "scimago_quartile": "Q3"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4496,8 +4741,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4516,8 +4762,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4536,8 +4783,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4556,8 +4804,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4576,8 +4825,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4596,8 +4846,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Lijuan Zhang",
@@ -4616,8 +4867,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Xiu-Ye Zhang",
@@ -4636,8 +4888,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.705,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Xiu-Ye Zhang",
@@ -4656,8 +4909,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.188,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Xiu-Ye Zhang",
@@ -4676,14 +4930,15 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Xiu-Ye Zhang",
     "researcher_profile_url": "https://rsa.anu.edu.au/people/xiu-ye-zhang",
     "title": "The geography of corporate tax avoidance",
-    "journal_name": "EJournal of Tax Research, 20",
+    "journal_name": "EJournal of Tax Research",
     "year": 2023,
     "doi": null,
     "article_url": "https://www.proquest.com/scholarly-journals/geography-corporate-tax-avoidance/docview/2812108145/se-2",
@@ -4696,8 +4951,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Xiu-Ye Zhang",
@@ -4716,8 +4972,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0964-8410",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Richard (Ruichao) Zhu",
@@ -4736,8 +4993,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 8.748,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Richard (Ruichao) Zhu",
@@ -4756,8 +5014,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.202,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Richard (Ruichao) Zhu",
@@ -4776,8 +5035,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Richard (Ruichao) Zhu",
@@ -4796,8 +5056,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Richard (Ruichao) Zhu",
@@ -4816,8 +5077,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Accounting"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4836,8 +5098,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": "0002-8282",
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4856,8 +5119,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0963-8008",
-    "scimago_sjr": 1.69,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4876,8 +5140,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0895-5638",
-    "scimago_sjr": 0.882,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4896,8 +5161,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 9.87,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4916,8 +5182,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.474,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4936,8 +5203,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 2.921,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4956,8 +5224,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 6.262,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4976,8 +5245,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.484,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -4996,8 +5266,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5016,8 +5287,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 17.406,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5036,8 +5308,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 9.87,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5056,8 +5329,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 6.262,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5076,8 +5350,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Antje Berndt",
@@ -5096,8 +5371,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jenni Bettman",
@@ -5116,8 +5392,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jenni Bettman",
@@ -5136,8 +5413,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jenni Bettman",
@@ -5156,8 +5434,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jenni Bettman",
@@ -5176,8 +5455,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jenni Bettman",
@@ -5196,8 +5476,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jenni Bettman",
@@ -5216,8 +5497,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Hua Deng",
@@ -5236,8 +5518,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Hua Deng",
@@ -5256,48 +5539,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 4.404,
-    "scimago_quartile": "Q1"
-  },
-  {
-    "researcher_name": "Hua Deng",
-    "researcher_profile_url": "https://rsfas.anu.edu.au/people/hua-deng",
-    "title": "The information environment and the borrowing costs in the international bond market",
-    "journal_name": "Moshirian",
-    "year": 2018,
-    "doi": null,
-    "article_url": null,
-    "abdc_self_reported": "none",
-    "coauthors": null,
-    "source": "ANU RSA/RSFAS profile page",
-    "citation_percentile": null,
-    "raw": "“The information environment and the borrowing costs in the international bond market”, working paper with F. Moshirian, Y. Qi and B. Zhang, 2018.",
-    "publication_type": "journal_article",
-    "author_count": 1,
-    "author_count_confidence": "low - no coauthor text found",
-    "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
-  },
-  {
-    "researcher_name": "Hua Deng",
-    "researcher_profile_url": "https://rsfas.anu.edu.au/people/hua-deng",
-    "title": "Competition and the inflation of credit rating. Evidence from Moody’s public listing",
-    "journal_name": "Moshirian",
-    "year": 2020,
-    "doi": null,
-    "article_url": null,
-    "abdc_self_reported": "none",
-    "coauthors": null,
-    "source": "ANU RSA/RSFAS profile page",
-    "citation_percentile": null,
-    "raw": "“Competition and the inflation of credit rating. Evidence from Moody’s public listing”, working paper with F. Moshirian, Y. Qi and B. Zhang, 2020.",
-    "publication_type": "journal_article",
-    "author_count": 1,
-    "author_count_confidence": "low - no coauthor text found",
-    "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5316,8 +5560,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.139,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5336,8 +5581,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": "0015-198X",
-    "scimago_sjr": 1.425,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5356,8 +5602,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.139,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5376,8 +5623,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5396,8 +5644,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 2.706,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5416,8 +5665,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 6.838,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5436,8 +5686,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5456,8 +5707,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.954,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Jo Drienko",
@@ -5476,8 +5728,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": "0810-5391",
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Chao Gao",
@@ -5496,8 +5749,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 3.477,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Chao Gao",
@@ -5516,8 +5770,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 4.404,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Chao Gao",
@@ -5536,8 +5791,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.611,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Lin Hu",
@@ -5556,8 +5812,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.11,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Lin Hu",
@@ -5576,8 +5833,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Lin Hu",
@@ -5596,8 +5854,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5616,8 +5875,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 0.636,
-    "scimago_quartile": "Q2"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5636,8 +5896,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 1.139,
-    "scimago_quartile": "Q1"
+    "forthcoming": true,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5656,8 +5917,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5676,8 +5938,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.762,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5696,8 +5959,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5716,8 +5980,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5736,8 +6001,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 1.322,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5756,8 +6022,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.814,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5776,8 +6043,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5796,8 +6064,9 @@
     "author_count": 2,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.027,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5816,8 +6085,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Dean Katselas",
@@ -5836,8 +6106,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": 0.702,
-    "scimago_quartile": "Q2"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Nhan Le",
@@ -5856,8 +6127,9 @@
     "author_count": 4,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Nhan Le",
@@ -5876,8 +6148,9 @@
     "author_count": 3,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": 1.544,
-    "scimago_quartile": "Q1"
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Nhan Le",
@@ -5896,8 +6169,9 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Nhan Le",
@@ -5916,8 +6190,9 @@
     "author_count": 1,
     "author_count_confidence": "ok",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   },
   {
     "researcher_name": "Kun Li",
@@ -5936,7 +6211,8 @@
     "author_count": 1,
     "author_count_confidence": "low - no coauthor text found",
     "issn": null,
-    "scimago_sjr": null,
-    "scimago_quartile": null
+    "forthcoming": false,
+    "university": "Australian National University",
+    "field_of_research": "Finance"
   }
 ]

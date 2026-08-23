@@ -6,7 +6,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/sarah-adams",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sarah-adams"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sarah-adams",
+    "less_research_intensive": false
   },
   {
     "name": "Bonnie Allan",
@@ -15,7 +16,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/bonnie-allan",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Pat Barrett",
@@ -24,7 +26,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/pat-barrett",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": true
   },
   {
     "name": "Yue Cai",
@@ -33,7 +36,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/yue-cai",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/yue-cai"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/yue-cai",
+    "less_research_intensive": false
   },
   {
     "name": "Lily Chen",
@@ -42,7 +46,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/lily-chen",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lily-chen"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lily-chen",
+    "less_research_intensive": false
   },
   {
     "name": "Sorin Daniliuc",
@@ -51,7 +56,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/sorin-daniliuc",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sorin-daniliuc"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sorin-daniliuc",
+    "less_research_intensive": false
   },
   {
     "name": "Neil Fargher",
@@ -60,7 +66,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/neil-fargher",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Susanna Ho",
@@ -69,7 +76,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/susanna-ho",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/susanna-ho"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/susanna-ho",
+    "less_research_intensive": false
   },
   {
     "name": "Tejshree Kala",
@@ -78,7 +86,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/tejshree-kala",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/tejshree-kala"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/tejshree-kala",
+    "less_research_intensive": false
   },
   {
     "name": "Eunice Khoo",
@@ -87,7 +96,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/eunice-khoo",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/eunice-khoo"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/eunice-khoo",
+    "less_research_intensive": false
   },
   {
     "name": "Janet Lee",
@@ -96,7 +106,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/janet-lee",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Lingwei Li",
@@ -105,7 +116,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/lingwei-li",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lingwei-li"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lingwei-li",
+    "less_research_intensive": false
   },
   {
     "name": "Louise Lu",
@@ -114,7 +126,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/louise-lu",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/louise-lu"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/louise-lu",
+    "less_research_intensive": false
   },
   {
     "name": "Scarlett Luo",
@@ -123,7 +136,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/scarlett-luo",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Ian McPhee",
@@ -132,7 +146,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/ian-mcphee",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Juliana Ng",
@@ -141,7 +156,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/juliana-ng",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Greg Shailer",
@@ -150,7 +166,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/greg-shailer",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/greg-shailer"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/greg-shailer",
+    "less_research_intensive": false
   },
   {
     "name": "Madhukar Singh",
@@ -159,7 +176,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/madhukar-singh",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/madhukar-singh"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/madhukar-singh",
+    "less_research_intensive": false
   },
   {
     "name": "Rebecca Tan",
@@ -168,7 +186,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/rebecca-tan",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/rebecca-tan"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/rebecca-tan",
+    "less_research_intensive": false
   },
   {
     "name": "Sonali Walpola",
@@ -177,7 +196,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/sonali-walpola",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sonali-walpola"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/sonali-walpola",
+    "less_research_intensive": false
   },
   {
     "name": "Alex Wang",
@@ -186,7 +206,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/alex-wang",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/zhichao-wang"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/zhichao-wang",
+    "less_research_intensive": false
   },
   {
     "name": "Isabel Wang",
@@ -195,7 +216,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/isabel-wang",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/isabel-wang"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/isabel-wang",
+    "less_research_intensive": false
   },
   {
     "name": "Kathy Wang",
@@ -204,7 +226,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/kathy-wang",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/kathy-wang"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/kathy-wang",
+    "less_research_intensive": false
   },
   {
     "name": "Tracy (Kun) Wang",
@@ -213,7 +236,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/tracy-kun-wang",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/tracy-wang"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/tracy-wang",
+    "less_research_intensive": false
   },
   {
     "name": "Marvin Wee",
@@ -222,7 +246,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/marvin-wee",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/marvin-wee"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/marvin-wee",
+    "less_research_intensive": false
   },
   {
     "name": "Keturah Whitford",
@@ -231,7 +256,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/keturah-whitford",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/keturah-whitford"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/keturah-whitford",
+    "less_research_intensive": false
   },
   {
     "name": "Mark Wilson",
@@ -240,7 +266,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/mark-wilson",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/mark-wilson"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/mark-wilson",
+    "less_research_intensive": false
   },
   {
     "name": "Steven Wu",
@@ -249,7 +276,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/steven-wu",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/steven-wu"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/steven-wu",
+    "less_research_intensive": false
   },
   {
     "name": "Jean You",
@@ -258,7 +286,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/jean-you",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Wei Zeng",
@@ -267,7 +296,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/wei-zeng",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/wei-zeng"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/wei-zeng",
+    "less_research_intensive": false
   },
   {
     "name": "Lijuan Zhang",
@@ -276,7 +306,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/lijuan-zhang",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lijuan-zhang"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lijuan-zhang",
+    "less_research_intensive": false
   },
   {
     "name": "Xiu-Ye Zhang",
@@ -285,7 +316,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/xiu-ye-zhang",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/xiu-ye-zhang"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/xiu-ye-zhang",
+    "less_research_intensive": false
   },
   {
     "name": "Richard (Ruichao) Zhu",
@@ -294,7 +326,8 @@
     "field_of_research": "Accounting",
     "profile_url": "https://rsa.anu.edu.au/people/richard-ruichao-zhu",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Mohammed Abdullah Al Mamun",
@@ -303,7 +336,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/mohammed-abdullah-al-mamun",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/mohammed-abdullah-al-mamun"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/mohammed-abdullah-al-mamun",
+    "less_research_intensive": false
   },
   {
     "name": "Antje Berndt",
@@ -312,7 +346,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/antje-berndt",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/antje-berndt"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/antje-berndt",
+    "less_research_intensive": false
   },
   {
     "name": "Jenni Bettman",
@@ -321,7 +356,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/jenni-bettman",
     "university": "Australian National University",
-    "research_portal_url": null
+    "research_portal_url": null,
+    "less_research_intensive": false
   },
   {
     "name": "Hua Deng",
@@ -330,7 +366,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/hua-deng",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/hua-deng"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/hua-deng",
+    "less_research_intensive": false
   },
   {
     "name": "Ding Ding",
@@ -339,7 +376,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/ding-ding",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/ding-ding"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/ding-ding",
+    "less_research_intensive": false
   },
   {
     "name": "Jo Drienko",
@@ -348,7 +386,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/jo-drienko",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/jo-drienko"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/jo-drienko",
+    "less_research_intensive": false
   },
   {
     "name": "Chao Gao",
@@ -357,7 +396,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/chao-gao",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/chao-gao"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/chao-gao",
+    "less_research_intensive": false
   },
   {
     "name": "Lin Hu",
@@ -366,7 +406,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/lin-hu",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lin-hu"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/lin-hu",
+    "less_research_intensive": false
   },
   {
     "name": "Dean Katselas",
@@ -375,7 +416,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/dean-katselas",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/dean-katselas"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/dean-katselas",
+    "less_research_intensive": false
   },
   {
     "name": "Nhan Le",
@@ -384,7 +426,8 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/nhan-le",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/nhan-le"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/nhan-le",
+    "less_research_intensive": false
   },
   {
     "name": "Kun Li",
@@ -393,6 +436,7 @@
     "field_of_research": "Finance",
     "profile_url": "https://rsfas.anu.edu.au/people/kun-li",
     "university": "Australian National University",
-    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/kun-li"
+    "research_portal_url": "https://researchportalplus.anu.edu.au/en/persons/kun-li",
+    "less_research_intensive": false
   }
 ]
