@@ -217,9 +217,10 @@ class Publication:
     raw: str = ""                   # original paragraph, for auditing
     # "journal_article" unless classified otherwise below (see
     # TEXTBOOK_EDITION_RE) — the client's 12 Aug instruction was journals
-    # only, so a non-journal item (textbook, industry report, commissioned
-    # study) is tagged rather than left with a silently blank journal_name
-    # that would otherwise look like an unexplained parser miss.
+    # only, so a non-journal item (textbook, industry report, conference
+    # paper, commissioned study) is tagged rather than left with a
+    # silently blank journal_name that would otherwise look like an
+    # unexplained parser miss.
     publication_type: str = "journal_article"
     author_count: int = 1
     # "ok" once author_count is actually derived from a real coauthors
@@ -488,7 +489,13 @@ IN_EDITOR_PREFIX_RE = re.compile(r"^\s*,?\s*in\s+[^,]+\(eds?\.?\)\s*,\s*", re.IG
 # "Accounting for financial instruments with characteristics of debt and
 # equity") — matching an in-text "with" instead of the real clause-opening
 # one truncates the title at the wrong point.
-BARE_WITH_RE = re.compile(r"^[\s,.]*with\s+", re.IGNORECASE)
+# The optional "working paper " immediately before "with" handles a
+# distinct shape confirmed on Hua Deng's live RSFAS profile: "'Title',
+# working paper with Authors, Year." — no bare "with" at the very start
+# here, "working paper" sits in front of it. Still start-anchored, so
+# it's exactly as safe against a coincidental in-title "with" as the
+# plain form was; "working paper" is specific enough not to false-match.
+BARE_WITH_RE = re.compile(r"^[\s,.]*(?:working paper\s+)?with\s+", re.IGNORECASE)
 # Where a bare (unparenthesised) "with ..." co-author clause ends: either a
 # comma immediately followed by the publication year (co-authors are simply
 # comma-separated up to that point), or a sentence period before the journal
@@ -664,9 +671,16 @@ def _extract_journal_from_suffix(suffix: str) -> str | None:
     # all (a no-op) and, for the ones that do, only ever narrows the
     # candidate further — the genuine journal name still ends up as one of
     # the resulting pieces either way.
+    # Uses SENTENCE_SPLIT_RE rather than a bare ". " split, confirmed as a
+    # real bug on Hua Deng's profile: a coauthor list containing a single
+    # initial (e.g. "F. Moshirian") was getting split into "F" and
+    # "Moshirian" by a plain ". " split, and the surname alone then passed
+    # every remaining check and got picked as the "journal". Reusing the
+    # same initial-protecting regex the rest of the parser already relies
+    # on fixes this without adding a second, differently-behaved rule.
     segments = []
     for part in s.split(","):
-        segments.extend(part.split(". "))
+        segments.extend(SENTENCE_SPLIT_RE.split(part))
     return _pick_journal_segment(segments)
 
 
@@ -797,6 +811,51 @@ def count_named_authors(coauthors: str | None) -> int:
             if token and not INITIALS_ONLY_RE.match(token):
                 count += 1
     return count
+
+
+# A trailing ", <volume>" and/or ", <page range>" glued onto an otherwise-
+# correct journal name by the source page's own markup — confirmed on 7
+# distinct journals across the corpus: most carry just a volume number
+# ("Accounting & Finance, 63", "Abacus, 56"), one carries both a volume
+# AND a page range in the same italic run ("Journal of Cleaner
+# Production, 235, 426-452"). That's why these were logged as unmatched
+# rather than joining to a real ABDC/Scimago rating despite being real,
+# common journals. _clean_journal_tail() above doesn't catch this shape
+# because that function only runs on the no-italics fallback path; this
+# applies uniformly, after journal_name is finalised, regardless of which
+# extraction path produced it. Reuses NUMERIC_TAIL_SEGMENT_RE (already
+# relied on elsewhere to recognise exactly these two numeric-tail shapes)
+# and pops trailing segments repeatedly, since a volume-then-pages run is
+# two numeric segments deep, not one.
+def _strip_trailing_numeric_segments(journal: str) -> str:
+    segments = [s.strip() for s in journal.split(",")]
+    # An empty trailing segment (a dangling comma at the end of the
+    # italic run itself — confirmed on the live Journal of Cleaner
+    # Production case, whose italics read "...235," with the comma
+    # included) has to be popped too, or it blocks the loop from ever
+    # reaching the real numeric segment sitting underneath it.
+    while len(segments) > 1 and (not segments[-1] or NUMERIC_TAIL_SEGMENT_RE.match(segments[-1].rstrip("."))):
+        segments.pop()
+    return ", ".join(segments)
+
+
+# A bare country/region name landing in journal_name is the fingerprint of
+# a conference citation whose venue location ("...Institution, City,
+# Country, Year.") got mistaken for a journal by the comma-flow splitter —
+# confirmed on Alex Wang's live RSA profile (two GMARS/AFAANZ conference
+# presentations, journal_name coming out as "Australia"/"USA"). A real
+# journal is never just a country name, so this check is safe regardless
+# of which extraction path produced the value. The client's 12 Aug rule is
+# journals only, conference papers excluded — this reclassifies the whole
+# entry as a conference paper rather than leave a fake "journal" in place.
+CONFERENCE_LOCATION_NAMES = {
+    "australia", "new zealand", "usa", "united states", "united states of america",
+    "uk", "united kingdom", "canada", "china", "hong kong", "singapore",
+}
+
+
+def _looks_like_conference_location(journal: str | None) -> bool:
+    return bool(journal) and journal.strip().lower() in CONFERENCE_LOCATION_NAMES
 
 
 def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication | None, bool]:
@@ -1115,6 +1174,9 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
         s = re.sub(r"\s+", " ", s)
         return s.strip(" .,;:–—-'\"\u2018\u2019") or None
 
+    if journal:
+        journal = _strip_trailing_numeric_segments(journal)
+
     title = _tidy(title)
     journal = _tidy(journal)
     coauthors = _tidy(coauthors)
@@ -1163,7 +1225,10 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     # silently blank journal_name that would look like an unexplained
     # parser miss. Client's 12 Aug instruction was journals only.
     publication_type = "journal_article"
-    if journal and re.match(r"(?i)^book chapters?\b", journal):
+    if _looks_like_conference_location(journal):
+        publication_type = "conference_paper"
+        journal = None
+    elif journal and re.match(r"(?i)^book chapters?\b", journal):
         # The blind ". "-splitter fallback (no italics, no quoted title) has
         # no concept of a book chapter's citation shape, so on a paragraph
         # like "...integrated reporting. Book chapter of Routledge Handbook
