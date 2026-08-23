@@ -1608,6 +1608,21 @@ def main() -> None:
             issn_hits += 1
         print(f"  [{i}/{len(with_doi)}] {p.doi} -> {p.issn or 'not found'}")
 
+    # 2c. Client's 19 Aug Emeritus rule: exclude an Emeritus Professor if
+    # they have no recorded research output — flagged to a review file
+    # rather than silently dropped, since "no recorded output" here only
+    # means "no inline Publications section AND nothing this parser could
+    # extract from it," and the client herself said this needs manual
+    # judgement. Keyed on the literal word "emeritus" in job_title rather
+    # than academic_level == "E", since that level is shared with plain
+    # "Professor" and "Distinguished Professor" — neither of which this
+    # rule is about.
+    had_output = {p.researcher_name for p in all_pubs + unparsed}
+    emeritus_no_output = [
+        r for r in researchers
+        if "emeritus" in (r.job_title or "").lower() and r.name not in had_output
+    ]
+
     # 3. write everything
     staff_fields = ["name", "job_title", "academic_level", "field_of_research",
                     "profile_url", "university", "research_portal_url",
@@ -1631,6 +1646,8 @@ def main() -> None:
               [asdict(p) for p in unparsed], pub_fields)
     write_csv(OUTPUT_DIR / "anu_no_publications.csv",
               [asdict(r) for r in no_pub_people], staff_fields)
+    write_csv(OUTPUT_DIR / "anu_review_emeritus_no_output.csv",
+              [asdict(r) for r in emeritus_no_output], staff_fields)
 
     # 4. summary
     print("\n" + "=" * 60)
@@ -1639,6 +1656,8 @@ def main() -> None:
     print(f"Researchers (academic, acc+fin):     {len(researchers)}")
     print(f"  with no inline Publications block:  {len(no_pub_people)}  "
           f"(coverage gap — see anu_no_publications.csv)")
+    print(f"  Emeritus with zero output:           {len(emeritus_no_output)}  "
+          f"(review file, not auto-excluded — see anu_review_emeritus_no_output.csv)")
     print(f"Publications parsed (confident):      {len(all_pubs)}")
     print(f"Publications logged for review:       {len(unparsed)}  "
           f"(see anu_unparsed_publications.csv)")
