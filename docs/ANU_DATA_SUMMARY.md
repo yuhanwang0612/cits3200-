@@ -6,6 +6,21 @@ Statistics (RSFAS) — the two ANU schools within scope. Every number below
 was computed directly from the current data files; the command is shown so
 it can be re-run.
 
+## One caveat before the numbers
+
+My figures come from each academic's RSA/RSFAS profile page, which lists
+a self-curated selection of their publications, not a complete output
+list. Three other universities in this project (UQ, Monash, UniMelb) read
+from a complete institutional source instead (an eSpace/Minerva
+repository, or OpenAlex via ORCID). That difference cuts both ways here:
+ANU's publication counts below are a floor, not a full count, and the
+proportion rated A\*/A is upward-biased relative to a complete-output
+university, since a self-curated list keeps the strongest work and drops
+the rest. None of the individual numbers below are wrong for what they
+measure — but a direct ANU-vs-another-university comparison on volume or
+average quality isn't valid until ANU also moves to a complete-output
+source, which is the next piece of work, not something already done.
+
 ## Headline numbers
 
 - **44 researchers** (33 Accounting, 11 Finance), all with an academic

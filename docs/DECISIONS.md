@@ -161,13 +161,59 @@ Full detail is in the commit message for `668b3bd`; the short version:
    that's the parser's own stated design working as intended, not a
    regression in the confident-publication count.
 
+## Methodology gap: profile-page source is selected, not complete — cross-university comparison isn't valid yet
+
+**The numbers:** of the 258 ANU publications with an ABDC rating, 240
+(93%) are A\* or A (101 A\*, 139 A, 14 B, 4 C). The join itself is clean —
+verified 40 ISSN matches, 60 exact-title matches, 1 prefix match, 0 fuzzy,
+against `anu_journals.csv` directly — so this isn't a matching artefact.
+
+**Why it isn't a bug:** it's the source. I scrape each academic's RSA/
+RSFAS profile page, which lists a self-curated set of publications — by
+its own heading, "selected" or "significant" work, not a complete output
+list. UQ reads the eSpace institutional repository API, Monash reads
+OpenAlex via each researcher's ORCID, and UniMelb reads Minerva — all
+three are complete-output sources with no individual curation step.
+A profile page a researcher maintains to represent themselves well will
+systematically keep the high-impact work and drop the rest, for
+completely ordinary, non-malicious reasons (space, relevance, self-
+presentation) — that selection pressure pushes in exactly one direction on
+both axes at once: fewer publications counted (understated volume) and a
+higher proportion of top-tier journals among the ones that remain
+(overstated quality ratio).
+
+**What this invalidates:** the client's own stated goal is "to classify
+publications... and make comparisons across universities." Right now,
+neither an ANU researcher's raw publication count nor their A\*/A
+proportion is comparable to a UQ, Monash, or UniMelb researcher's —
+not because ANU academics publish less or better, but because the two
+sides of the comparison are drawing from structurally different kinds of
+source. This applies to any aggregate or cross-university view built on
+top of the current data (a university-level productivity ranking, an
+average-quality comparison), not to any single ANU researcher's own
+figures in isolation, which are accurate as far as the source goes.
+
+**The fix:** move ANU onto a complete-output source, the same way Monash
+did — an ORCID → OpenAlex author-level harvest, matching each researcher
+to their OpenAlex author record and pulling their full output, not just
+what their profile page chose to list. This is exactly the item logged
+below as cut from this sprint. It was framed there as a coverage
+improvement (raises citation-data reach past the ~25% DOI ceiling); it
+is better understood as the fix for this methodology gap — it's what
+would make the client's core cross-university comparison actually valid
+for ANU, not an optional enhancement on top of an already-valid number.
+Ranking it top of the list for the next round of work, not just "queued."
+
 ## Cut from this sprint: ORCID → OpenAlex author-level harvest
 
 **What:** not built. `anu_publications.csv` still reaches citation data
-only for the ~25% of rows OpenAlex can match by DOI.
+only for the ~25% of rows OpenAlex can match by DOI, and — per the entry
+above — the underlying publication list itself is a curated selection,
+not a complete output list, until this is built.
 
-**Why:** the team's own priority read (from the 22 Aug repo audit) ranks
-ANU's missing ABDC rating above this — now fixed, this sprint. Yuhan's
+**Why:** the team's own priority read (from the 22 Aug repo audit) ranked
+ANU's missing ABDC rating above this at the time — that's now fixed, this
+sprint, which changes the ranking: this is next, not "eventually." Yuhan's
 ORCID/OpenAlex logic on `sprint1-monash-scraper` is written specifically
 against Monash's Pure-portal profile pages (that's where the ORCID gets
 extracted from), so it isn't a drop-in module for ANU's data as it stands.
