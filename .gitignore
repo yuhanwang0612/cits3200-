@@ -18,5 +18,8 @@ scimagojr*.csv
 # publications file so re-runs don't re-hit the API. Regenerated freely.
 openalex_cache.json
 
+# Personal working notes — not a project artefact
+docs/HANDOFF.md
+
 # Editors / OS
 .DS_Store
