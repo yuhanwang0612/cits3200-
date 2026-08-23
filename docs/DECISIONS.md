@@ -283,3 +283,30 @@ only has UQ's row, even though Alex's UniMelb/UWA data merged after it. How
 that combination actually happens (manual CSV merge vs. re-running
 `harvest.record()` against a shared file) is an open question for whoever
 does that merge, not something I've resolved here.
+
+## Two renames staged, neither applied to this branch
+
+**What:** `researcher_name` → `name` (matching uq_/unimelb_/uwa_
+publications.csv's 3-to-1 convention) and `harvest.csv` → `anu_harvest.csv`
+(avoiding the collision documented above) both exist as commits on a local
+scratch branch, `scratch/staged-renames`, built on top of this branch's
+tip. Neither is applied here.
+
+**Why staged rather than decided:** both are genuinely the team's call, not
+mine — the naming one because three other people's files already exist
+under one convention, the harvest one because `anu-scraper` doesn't
+currently collide with anything on `main` (only with the unmerged Monash
+branch), so renaming it pre-emptively isn't obviously correct either. The
+point of staging is that once either question is actually answered, it's
+one `git merge`/cherry-pick, not a rebuild.
+
+**What's still open even if the harvest rename is applied:**
+`rankings/harvest.py` hardcodes its own output filename (`FILENAME =
+"harvest"`), so every future pipeline run would still produce
+`output/harvest.csv` and need a manual rename to `anu_harvest.csv` at the
+repo root — fixing that means either extending `build_deliverable.py` to
+do the rename automatically, or asking Zarin to make the filename
+configurable, and that choice hasn't been made.
+
+**The scratch branch is local only** — not pushed to `origin`, so it's
+not visible to the team yet and isn't cluttering anyone's `git fetch`.
