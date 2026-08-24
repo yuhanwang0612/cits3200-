@@ -48,6 +48,22 @@ def level_from_title(title, prefix=None):
         return prefix
     return None
 
+LEVEL_CODE = {
+    "Emeritus Professor":     "E",
+    "Distinguished Professor":"E",
+    "Professor":              "E",
+    "Associate Professor":    "D",
+    "Senior Lecturer":        "C",
+    "Senior Research Fellow": "C",
+    "Lecturer":               "B",
+    "Research Fellow":        "B",
+    "Associate Lecturer":     "A",
+    "Teaching Associate":     "A",
+}
+
+def level_code(level_text):
+    return LEVEL_CODE.get(level_text)
+
 def name_to_slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 
@@ -63,6 +79,7 @@ driver = webdriver.Chrome(
 )
 
 records = []
+seen_profile_urls = set()  # prevent duplicate staff entries
 
 for url, discipline in TARGETS:
     print(f"\nLoading {discipline} page...")
@@ -116,13 +133,20 @@ for url, discipline in TARGETS:
     # Words that indicate a navigation link rather than a real person
     NAV_WORDS = {"staff directory", "visiting scholars", "graduate research", "reset",
                  "editorial roles", "distinguished visitor", "work with us", "seminar guests",
-                 "supervisors", "program"}
+                 "supervisors", "program", "view all", "explore network", "research outputs",
+                 "activities", "projects", "prizes"}
 
     def is_real_person(name):
         name_lower = name.lower()
         if any(w in name_lower for w in NAV_WORDS):
             return False
         if len(name.split()) < 2:  # must have at least first + last name
+            return False
+        # Reject "Surname, F." abbreviated name format (these are co-authors, not staff)
+        if re.match(r"^[A-Z][a-z]+,\s+[A-Z]\.?\s*[A-Z]?\.?$", name):
+            return False
+        # Reject strings with digits (e.g. "View all 21")
+        if re.search(r"\d", name):
             return False
         return True
 
@@ -134,6 +158,10 @@ for url, discipline in TARGETS:
             raw = link.get_text(strip=True)
             if not is_real_person(raw):
                 continue
+            profile_url = urljoin(url, link.get("href", ""))
+            if profile_url in seen_profile_urls:
+                continue
+            seen_profile_urls.add(profile_url)
             m = PREFIX.match(raw)
             title_tag = card.select_one("[class*='title'],[class*='position'],[class*='role']")
             title = title_tag.get_text(strip=True) if title_tag else None
@@ -142,20 +170,24 @@ for url, discipline in TARGETS:
                 "name_clean": PREFIX.sub("", raw).strip(),
                 "title_raw": title,
                 "level": level_from_title(title, m.group(1) if m else None),
-                "profile_url": urljoin(url, link.get("href", "")),
+                "profile_url": profile_url,
             })
     elif profile_links:
         print(f"  Using {len(profile_links)} profile links as fallback")
         for text, href in profile_links:
             if not is_real_person(text):
                 continue
+            profile_url = urljoin(url, href)
+            if profile_url in seen_profile_urls:
+                continue
+            seen_profile_urls.add(profile_url)
             m = PREFIX.match(text)
             records.append({
                 "university": UNIVERSITY, "discipline": discipline,
                 "name_clean": PREFIX.sub("", text).strip(),
                 "title_raw": None,
                 "level": level_from_title(None, m.group(1) if m else None),
-                "profile_url": urljoin(url, href),
+                "profile_url": profile_url,
             })
     else:
         print(f"  ⚠️  Nothing found for {discipline} — page may not have loaded")
@@ -301,7 +333,7 @@ def _norm(s):
     """Lowercase, strip punctuation for fuzzy journal matching."""
     return _re.sub(r"[^a-z0-9 ]", "", (s or "").lower()).strip()
 
-scimago_lookup = {}  # normalised title → (sjr_score, quartile)
+scimago_lookup = {}  # normalised title → (sjr_score, quartile, cites_per_doc_2y)
 
 SCIMAGO_FILE = "scimago.csv"
 SCIMAGO_URL  = "https://www.scimagojr.com/journalrank.php?out=xls"
@@ -315,10 +347,17 @@ def _load_scimago_csv(path):
             title = row.get("Title", "").strip()
             sjr   = row.get("SJR", "").replace(",", ".").strip()
             q     = row.get("SJR Best Quartile", "").strip()
+            # "Cites / Doc. (2years)" column name varies slightly by year
+            cites_key = next((k for k in row if "cites" in k.lower() and "2" in k), None)
+            cites = row.get(cites_key, "").replace(",", ".").strip() if cites_key else ""
             if title and sjr:
                 key = _norm(title)
                 try:
-                    scimago_lookup[key] = (float(sjr), q or None)
+                    scimago_lookup[key] = (
+                        float(sjr),
+                        q or None,
+                        float(cites) if cites else None
+                    )
                     loaded += 1
                 except ValueError:
                     pass
@@ -344,11 +383,11 @@ else:
 
 def get_scimago(journal_name):
     if not journal_name:
-        return None, None
+        return None, None, None
     result = scimago_lookup.get(_norm(journal_name))
     if result:
-        return result
-    return None, None
+        return result  # (sjr_score, quartile, cites_per_doc_2y)
+    return None, None, None
 
 
 # ── Phase 3: fetch ALL publications via OpenAlex ─────────────────────
@@ -379,19 +418,34 @@ def parse_oa_works(works):
         if not title or len(title) < 5:
             continue
         year = w.get("publication_year")
-        doi = (w.get("doi") or "").replace("https://doi.org/", "").strip()
-        loc = w.get("primary_location") or {}
-        source = loc.get("source") or {}
-        journal = source.get("display_name") or None
-        author_count = len(w.get("authorships") or [])
-        sjr_score, sjr_quartile = get_scimago(journal)
+        doi  = (w.get("doi") or "").replace("https://doi.org/", "").strip()
+        pub_type = w.get("type") or None
+        loc    = w.get("primary_location") or {}
+        src    = loc.get("source") or {}
+        journal_name = src.get("display_name") or None
+        issn_list    = src.get("issn") or []
+        issn         = issn_list[0] if issn_list else (src.get("issn_l") or None)
+        authorships  = w.get("authorships") or []
+        author_count = len(authorships)
+        authors = "; ".join(
+            a.get("author", {}).get("display_name", "")
+            for a in authorships
+            if a.get("author", {}).get("display_name")
+        )
+        sjr_score, sjr_quartile, cites_per_doc = get_scimago(journal_name)
         pubs.append({
             "title": title, "year": year, "doi": doi,
-            "journal": journal, "author_count": author_count,
-            "pub_url": f"https://doi.org/{doi}" if doi else "",
-            "abdc_rank": get_abdc(journal),
+            "article_url": f"https://doi.org/{doi}" if doi else "",
+            "author_count": author_count, "authors": authors,
+            "publication_type": pub_type,
+            "source": journal_name,
+            "journal_name": journal_name,
+            "issn": issn,
+            "quality_rank": get_abdc(journal_name),
             "scimago_sjr": sjr_score,
             "scimago_quartile": sjr_quartile,
+            "cites_per_doc_2y": cites_per_doc,
+            "impact_factor": None,  # filled when JIF CSV is available
         })
     return pubs
 
@@ -406,25 +460,27 @@ def fetch_pubs_openalex(name, orcid=None):
     """
     pubs = []
     author_id = None
+    h_index = None
 
     if orcid:
-        # ORCID → OpenAlex author lookup → author ID
+        # ORCID → OpenAlex author lookup → author ID + h_index
         resp = oa_get("https://api.openalex.org/authors",
                       {"filter": f"orcid:{orcid}", "per-page": 1})
         if resp and resp.status_code == 200:
             results = resp.json().get("results", [])
             if results:
                 author_id = results[0]["id"]
+                h_index = (results[0].get("summary_stats") or {}).get("h_index")
         time.sleep(1)
         if not author_id:
-            return []  # ORCID not in OpenAlex
+            return [], None  # ORCID not in OpenAlex
 
     else:
         # Name search → require Monash affiliation to avoid wrong matches
         resp = oa_get("https://api.openalex.org/authors",
                       {"search": name, "per-page": 10})
         if not resp or resp.status_code != 200:
-            return []
+            return [], None
         results = resp.json().get("results", [])
         monash_match = next(
             (r for r in results
@@ -433,8 +489,9 @@ def fetch_pubs_openalex(name, orcid=None):
             None
         )
         if not monash_match:
-            return []  # no Monash-affiliated match → skip rather than guess
+            return [], None  # no Monash-affiliated match → skip rather than guess
         author_id = monash_match["id"]
+        h_index = (monash_match.get("summary_stats") or {}).get("h_index")
         time.sleep(1)
 
     author_filter = f"authorships.author.id:{author_id}"
@@ -446,7 +503,7 @@ def fetch_pubs_openalex(name, orcid=None):
             "filter": author_filter,
             "per-page": 200,
             "cursor": cursor,
-            "select": "title,publication_year,doi,primary_location,authorships",
+            "select": "title,publication_year,doi,type,primary_location,authorships",
         })
         if not resp or resp.status_code != 200:
             break
@@ -460,7 +517,7 @@ def fetch_pubs_openalex(name, orcid=None):
             break
         time.sleep(0.5)
 
-    return pubs
+    return pubs, h_index
 
 all_pubs = []
 for r in records:
@@ -468,7 +525,7 @@ for r in records:
     if len(name.split()) < 2 or len(name) > 60:
         continue
     orcid = r.get("orcid")
-    pubs = fetch_pubs_openalex(name, orcid=orcid)
+    pubs, h_index = fetch_pubs_openalex(name, orcid=orcid)
     # Sanity check: if name-match returns >5x the Pure pub_count, discard
     profile_count = r.get("pub_count", 0) or 0
     if not orcid and profile_count == 0 and len(pubs) > 50:
@@ -476,13 +533,20 @@ for r in records:
     elif not orcid and profile_count > 0 and len(pubs) > profile_count * 5:
         pubs = []  # way more than profile → wrong person
 
+    r["h_index"] = h_index
+    r["level_code"] = level_code(r.get("level"))
+
     for p in pubs:
         all_pubs.append({
-            "university": r["university"], "discipline": r["discipline"],
-            "researcher": name, "level": r["level"], **p
+            "university": r["university"],
+            "field_of_research": r.get("discipline") or r.get("field_of_research"),
+            "researcher": name,
+            "academic_level": r["level"],
+            "level_code": r["level_code"],
+            **p
         })
     tag = "[ORCID]" if orcid else "[name→Monash]"
-    print(f"  {name:35s}  {len(pubs)} publications {tag}")
+    print(f"  {name:35s}  {len(pubs)} pubs  h={h_index}  {tag}")
     time.sleep(3)  # polite rate limiting — avoids 429
 
 
@@ -490,13 +554,24 @@ for r in records:
 staff_file = "monash_staff.csv"
 pubs_file  = "monash_publications.csv"
 
-staff_cols = ["university","discipline","name_clean","level","title_raw","research_url","pub_count"]
+# Rename record keys to Scope 3.5.4 naming before writing
+for r in records:
+    r["name"]              = r.pop("name_clean", r.get("name_clean"))
+    r["job_title"]         = r.pop("title_raw", None)
+    r["academic_level"]    = r.get("level")
+    r["field_of_research"] = r.pop("discipline", None)
+
+staff_cols = ["university","name","job_title","academic_level","level_code","h_index",
+              "field_of_research","profile_url","pub_count"]
 with open(staff_file, "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=staff_cols, extrasaction="ignore")
     w.writeheader()
     w.writerows(records)
 
-pub_cols = ["university","discipline","researcher","level","title","year","doi","author_count","journal","abdc_rank","scimago_sjr","scimago_quartile","pub_url"]
+pub_cols = ["university","field_of_research","researcher","academic_level","level_code",
+            "title","year","doi","article_url","author_count","authors","publication_type",
+            "source","journal_name","issn","quality_rank","scimago_sjr","scimago_quartile",
+            "cites_per_doc_2y","impact_factor"]
 with open(pubs_file, "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=pub_cols, extrasaction="ignore")
     w.writeheader()
