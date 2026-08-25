@@ -75,8 +75,12 @@ def run(publications, abdc=None, scimago=None, mailto=None,
         source = enriched
 
     print("\nStep 2/2  Journal table")
+    # write_back=True: the ratings go onto every publication row as well as
+    # into journals.csv. UQ, Monash and Adelaide all carry quality_rank on the
+    # publication row, and a merge that expects it there reads UNSW as unrated
+    # otherwise.
     journals_path = journals_mod.build(source, abdc, scimago, journal_column,
-                                       year, at_least_one)
+                                       year, at_least_one, write_back=True)
 
     print("\nDone.")
     if enriched:

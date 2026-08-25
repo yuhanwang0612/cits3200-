@@ -17,6 +17,7 @@ import tempfile
 import pytest
 from openpyxl import Workbook
 
+import journal_match as jm
 import journals
 
 
@@ -299,3 +300,166 @@ def test_edition_year_is_none_rather_than_a_guess():
     assert journals.edition_year("scimago.csv") is None
     assert journals.edition_year("list12345.csv") is None
     assert journals.edition_year(None) is None
+
+
+# ---------------------------------------------------------------------------
+# Writing the ratings back onto the publication rows
+# ---------------------------------------------------------------------------
+def pubs_with(rows, columns, path=None):
+    d = tempfile.mkdtemp()
+    path = path or os.path.join(d, "pubs.csv")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(columns))
+        w.writeheader()
+        for row in rows:
+            w.writerow({c: row.get(c, "") for c in columns})
+    return path
+
+
+def read_rows(path):
+    with open(path, newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def test_write_back_puts_the_rating_on_every_publication_row(refs):
+    """UQ, Monash and Adelaide all carry quality_rank on the publication row.
+    Keeping it only in journals.csv makes UNSW read as unrated in a merge."""
+    abdc, scimago = refs
+    path = pubs_with(
+        [{"title": "a", "journal_name": "Journal of Finance"},
+         {"title": "b", "journal_name": "Journal of Finance"},
+         {"title": "c", "journal_name": "Accounting and Finance"}],
+        ["title", "journal_name"])
+    journals.build(path, abdc, scimago, write_back=True)
+    rows = read_rows(path)
+    assert [r["quality_rank"] for r in rows] == ["A*", "A*", "A"]
+    assert [r["sjr_quartile"] for r in rows] == ["Q1", "Q1", "Q2"]
+
+
+def test_write_back_is_off_by_default(refs):
+    abdc, scimago = refs
+    path = pubs_with([{"title": "a", "journal_name": "Journal of Finance"}],
+                     ["title", "journal_name"])
+    journals.build(path, abdc, scimago)
+    assert "quality_rank" not in read_rows(path)[0]
+
+
+def test_write_back_never_overwrites_an_issn_from_openalex(refs):
+    """An ISSN already on the row came from the publisher via a DOI lookup. One
+    derived from a title match is a weaker claim and must not replace it."""
+    abdc, scimago = refs
+    path = pubs_with(
+        [{"title": "a", "journal_name": "Journal of Finance", "issn": "9999-0000"}],
+        ["title", "journal_name", "issn"])
+    journals.build(path, abdc, scimago, write_back=True)
+    assert read_rows(path)[0]["issn"] == "9999-0000"
+
+
+def test_write_back_fills_an_issn_the_row_did_not_have(refs):
+    abdc, scimago = refs
+    path = pubs_with([{"title": "a", "journal_name": "Journal of Finance"}],
+                     ["title", "journal_name"])
+    journals.build(path, abdc, scimago, write_back=True)
+    assert read_rows(path)[0]["issn"] == "0022-1082"
+
+
+def test_write_back_drops_the_dead_placeholder_column(refs):
+    """abdc_self_reported has never been filled, is not in the data dictionary,
+    and the team's merge script maps it onto quality_rank — so leaving it in
+    would blank out the ratings this very function just added."""
+    abdc, scimago = refs
+    path = pubs_with(
+        [{"title": "a", "journal_name": "Journal of Finance",
+          "abdc_self_reported": ""}],
+        ["title", "journal_name", "abdc_self_reported"])
+    journals.build(path, abdc, scimago, write_back=True)
+    row = read_rows(path)[0]
+    assert "abdc_self_reported" not in row
+    assert row["quality_rank"] == "A*"
+
+
+def test_write_back_marks_an_unrated_journal_none_not_blank(refs):
+    """The client's 12 August wording. Blank reads as "we did not check"."""
+    abdc, scimago = refs
+    path = pubs_with([{"title": "a", "journal_name": "Weekly Tax Bulletin"}],
+                     ["title", "journal_name"])
+    journals.build(path, abdc, scimago, write_back=True)
+    assert read_rows(path)[0]["quality_rank"] == "none"
+
+
+def test_write_back_leaves_a_row_with_no_journal_blank(refs):
+    """A book chapter has no journal, so it has no rating — which is different
+    from being an unrated journal."""
+    abdc, scimago = refs
+    path = pubs_with(
+        [{"title": "chapter", "journal_name": ""},
+         {"title": "paper", "journal_name": "Journal of Finance"}],
+        ["title", "journal_name"])
+    journals.build(path, abdc, scimago, write_back=True)
+    rows = read_rows(path)
+    assert rows[0]["quality_rank"] == ""
+    assert rows[1]["quality_rank"] == "A*"
+
+
+def test_write_back_does_not_carry_the_audit_columns_onto_publications(refs):
+    """abdc_match_type and issn_conflict describe how the *journal* matched.
+    They belong in journals.csv, not repeated on 2,000 paper rows."""
+    abdc, scimago = refs
+    path = pubs_with([{"title": "a", "journal_name": "Journal of Finance"}],
+                     ["title", "journal_name"])
+    journals.build(path, abdc, scimago, write_back=True)
+    row = read_rows(path)[0]
+    for column in ("abdc_match_type", "scimago_match_type", "issn_conflict",
+                   "publication_count", "journal_canonical"):
+        assert column not in row
+
+
+def test_write_back_keeps_every_original_column_and_row(refs):
+    abdc, scimago = refs
+    original = ["title", "journal_name", "doi", "year", "researcher_name"]
+    path = pubs_with(
+        [{"title": "a", "journal_name": "Journal of Finance", "doi": "10.1/x",
+          "year": "2024", "researcher_name": "Someone"}] * 3, original)
+    journals.build(path, abdc, scimago, write_back=True)
+    rows = read_rows(path)
+    assert len(rows) == 3
+    for column in original:
+        assert column in rows[0]
+    assert rows[0]["doi"] == "10.1/x"
+
+
+def test_write_back_uses_the_cross_checked_rating_not_a_fresh_lookup(refs):
+    """The rating has to come from journals.csv, where a match has already been
+    cross-checked against the other source's ISSN. "Journal of Banking and
+    Finance: Law and Practice" is ABDC A; a fresh Scimago lookup hands it the
+    top-tier journal's Q1 and SJR 1.954. Only the cross-check catches it."""
+    abdc, scimago = refs
+    path = pubs_with(
+        [{"title": "a",
+          "journal_name": "Journal of Banking and Finance: Law and Practice"}],
+        ["title", "journal_name"])
+    journals.build(path, abdc, scimago, write_back=True)
+    row = read_rows(path)[0]
+    assert row["quality_rank"] == "A"        # ABDC kept
+    assert row["sjr_quartile"] == ""         # the wrong Scimago match rejected
+    assert row["sjr"] == ""
+
+
+def test_unrated_rows_are_counted_separately_from_graded_ones(refs):
+    """"none" is the client's wording for a journal ABDC does not rate. It is a
+    finding about the outlet, not a grade. Counting the two together reported
+    1,985 of 2,000 UNSW rows as rated when the real figure was 1,544."""
+    abdc, scimago = refs
+    path = pubs_with(
+        [{"title": "a", "journal_name": "Journal of Finance"},
+         {"title": "b", "journal_name": "Weekly Tax Bulletin"},
+         {"title": "c", "journal_name": "Weekly Tax Bulletin"},
+         {"title": "d", "journal_name": ""}],
+        ["title", "journal_name"])
+    rows, fieldnames = jm.read_publications(path)
+    records = [{"journal_name": "Journal of Finance", "quality_rank": "A*",
+                "issn": "0022-1082"},
+               {"journal_name": "Weekly Tax Bulletin", "quality_rank": "none"}]
+    graded, unrated, issns = journals.apply_to_publications(
+        path, records, "journal_name", rows, fieldnames)
+    assert (graded, unrated) == (1, 2)

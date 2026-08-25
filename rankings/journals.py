@@ -76,6 +76,78 @@ COLUMNS = [
 ]
 
 
+# Fields carried from the journal table back onto each publication row.
+# The names are Sean's UQ names, not new ones — `sjr`, `sjr_quartile` and
+# `cites_per_doc_2y` already match his export, so UQ and UNSW rows line up in a
+# merge without either of us renaming anything.
+CARRIED = ["quality_rank", "sjr", "sjr_quartile", "cites_per_doc_2y",
+           "impact_factor", "impact_factor_5yr"]
+
+# Never written to a publication row: they describe how the *journal* matched,
+# which is an audit trail for journals.csv, not a fact about the paper.
+DEAD = ["abdc_self_reported"]
+
+
+def apply_to_publications(publications_path, records, column, rows, fieldnames):
+    """Write the journal-level ratings back onto every publication row.
+
+    Other universities carry `quality_rank` on the publication row; this
+    pipeline kept it only at journal level, which is arguably the more correct
+    reading of data dictionary 3.5.4 but means UNSW rows arrive in a merge
+    looking unrated. So the ratings are joined back on.
+
+    They are taken from `journals.csv` rather than from a fresh ABDC lookup on
+    purpose. journals.py is where a match is cross-checked against the other
+    source's ISSN, so a rating that reached the journal table has already
+    survived that check. Running abdc.py over the publications instead would
+    reintroduce every match the cross-check threw out, starting with "Journal
+    of Banking and Finance: Law and Practice" being rated as the top-tier
+    journal it is not.
+
+    Rewrites the file in place, adding no new artefact. `abdc_self_reported` is
+    dropped: it has been blank in every row ever written, it is not in the data
+    dictionary, and it is what a merge script would otherwise map onto
+    quality_rank and blank it out.
+
+    Returns (rows_graded, rows_unrated, issns_added). `rows_unrated` is the
+    count carrying the client's "none" — a real finding about an outlet, not a
+    grade, and counting the two together would overstate coverage by hundreds
+    of rows.
+    """
+    by_journal = {r["journal_name"]: r for r in records}
+    graded = unrated = issns = 0
+
+    for row in rows:
+        name = (row.get(column) or "").strip()
+        record = by_journal.get(name)
+        for field in CARRIED:
+            row[field] = (record or {}).get(field) or ""
+        if record:
+            # An ISSN the row already carries came from OpenAlex, i.e. from the
+            # publisher, so it is never overwritten by one derived from a title
+            # match.
+            if not (row.get("issn") or "").strip() and record.get("issn"):
+                row["issn"] = record["issn"]
+                issns += 1
+            if row["quality_rank"] == abdc_mod.UNRATED:
+                unrated += 1
+            elif row["quality_rank"]:
+                graded += 1
+        for field in DEAD:
+            row.pop(field, None)
+
+    out_fields = [f for f in fieldnames if f not in DEAD]
+    for field in CARRIED + ["issn"]:
+        if field not in out_fields:
+            out_fields.append(field)
+
+    with open(publications_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=out_fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
+    return graded, unrated, issns
+
+
 def edition_year(path):
     """The four-digit year in a reference file's name, e.g. 'scimagojr 2025.csv'.
 
@@ -127,7 +199,8 @@ def resolve_conflict(record, abdc_rec, abdc_how, sci_rec, sci_how):
 
 
 def build(publications_path, abdc_path=None, scimago_path=None,
-          journal_column=None, year=None, at_least_one=False):
+          journal_column=None, year=None, at_least_one=False,
+          write_back=False):
     # Guarded here rather than only in main(): with neither source this would
     # write a table of journal names and empty columns, which looks like a
     # successful run that found nothing.
@@ -291,6 +364,16 @@ def build(publications_path, abdc_path=None, scimago_path=None,
         if sci_index:
             harvest.record(university, "Scimago", edition_year(scimago_path), base)
 
+    if write_back:
+        graded, unrated, issns = apply_to_publications(
+            publications_path, out, column, rows, fieldnames)
+        print(f"\n  {publications_path}")
+        print(f"     {graded} of {len(rows)} publication rows carry an ABDC grade")
+        print(f"     {unrated} are in a journal ABDC does not rate "
+              f"('{abdc_mod.UNRATED}'), {len(rows) - graded - unrated} have no journal")
+        if issns:
+            print(f"     {issns} rows gained an ISSN from the journal table")
+
     print(f"\n  {path}   ({len(out)} journals)")
     for key in ("matched at least one", "abdc", "scimago", "unmatched by both",
                 "has an issn", "issn from scimago", "issn conflict",
@@ -313,11 +396,16 @@ def main():
     parser.add_argument("--journal-column", help="override the journal-name column")
     parser.add_argument("--at-least-one", action="store_true",
                         help="only write journals that matched a source")
+    parser.add_argument("--write-back", action="store_true",
+                        help="also write quality_rank and the Scimago figures "
+                             "back onto every publication row, so the "
+                             "publications file matches the shape the other "
+                             "universities export")
     args = parser.parse_args()
     if not args.abdc and not args.scimago:
         raise SystemExit("Give at least one of --abdc or --scimago.")
     build(args.publications, args.abdc, args.scimago, args.journal_column,
-          args.year, args.at_least_one)
+          args.year, args.at_least_one, args.write_back)
 
 
 if __name__ == "__main__":

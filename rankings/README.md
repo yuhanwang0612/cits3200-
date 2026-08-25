@@ -307,6 +307,36 @@ Responses are cached next to the input, so a second run costs nothing.
 
 ---
 
+### The ratings also land on the publication rows
+
+`pipeline.py` finishes by writing `quality_rank`, `sjr`, `sjr_quartile` and
+`cites_per_doc_2y` back onto every publication row, in place, adding no new
+file. On UNSW that is **1,544 rows with an ABDC grade**, 441 in a journal ABDC
+does not rate (`none`), and 15 with no journal at all.
+
+Those three are reported separately on purpose. `none` is the client's wording
+for an outlet ABDC has not assessed, which is a finding about the outlet rather
+than a grade; counting it as one made the first run claim 1,985 of 2,000 rows
+were rated when the real figure was 1,544.
+
+That is a concession to how everyone else exports. UQ, Monash and Adelaide all
+carry `quality_rank` on the publication row; keeping it only in `journals.csv`
+is arguably the better reading of 3.5.4, but it means UNSW rows arrive in the
+team's merge looking unrated.
+
+They come **from `journals.csv`**, not from a fresh ABDC lookup, and that
+distinction matters. `journals.py` is where a match gets cross-checked against
+the other source's ISSN, so anything that reached the journal table has already
+survived that check. Running `abdc.py` over the publications instead would
+reintroduce every match the cross-check threw out.
+
+`abdc_self_reported` is dropped on the way through. It was a placeholder that
+nothing ever filled, it is not in the data dictionary, and the team's merge
+script maps it onto `quality_rank` — so leaving it in would blank out the
+ratings that were just added.
+
+---
+
 ## `harvest.py` — how current is this data, and where did it come from
 
 The fourth entity in the data dictionary (3.5.4), and the one most of us did not
@@ -355,7 +385,7 @@ other than a stray subtitle.
 python -m pytest -v
 ```
 
-**138 tests, fully offline** — the ABDC workbook and Scimago export they run
+**149 tests, fully offline** — the ABDC workbook and Scimago export they run
 against are generated in temp directories, the OpenAlex call is stubbed with a
 real response shape, so no downloaded file is needed, no key, and nothing hits
 the network.
