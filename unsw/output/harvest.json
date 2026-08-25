@@ -13,6 +13,12 @@
   },
   {
     "university": "UNSW Sydney",
+    "source": "OpenAlex authors",
+    "last_run": "2026-08-25T12:28:56.149135+00:00",
+    "latest_year": ""
+  },
+  {
+    "university": "UNSW Sydney",
     "source": "Scimago",
     "last_run": "2026-08-25T09:48:39.797696+00:00",
     "latest_year": "2025"
