@@ -35,12 +35,12 @@ from dotenv import load_dotenv
 # Configuration
 # --------------------------------------------------------------------------
 
-OUT_DIR = "."                       # where the four CSV/JSON pairs are written
-ABDC_FILE = "ABDC-JQL-2025-v1-260326.xlsx"
+OUT_DIR = "output/uq"                       # where the four CSV/JSON pairs are written
+ABDC_FILE = "data/ABDC-JQL-2025-v1-260326.xlsx"
 ABDC_SHEET = "2025 JQL"
 ABDC_HEADER = 7                     # header row differs between JQL editions
 ABDC_RATING_COL = "2025 rating"
-SCIMAGO_FILE = "scimagojr 2025.csv"
+SCIMAGO_FILE = "data/scimagojr 2025.csv"
 
 JCR_YEAR = 2025
 JCR_SLEEP = 0.3                     # Clarivate allows 5 req/sec; 2 calls per journal
