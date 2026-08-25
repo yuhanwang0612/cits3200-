@@ -49,7 +49,7 @@
     "article_url": "https://doi.org/10.1016/j.qref.2023.07.003",
     "link": "https://espace.library.uq.edu.au/view/UQ:4a30105",
     "source": "UQ eSpace",
-    "citation_percentile": 0.13637029,
+    "citation_percentile": 0.126331,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -67,7 +67,7 @@
     "article_url": "https://doi.org/10.1002/rfe.1172",
     "link": "https://espace.library.uq.edu.au/view/UQ:6345a6d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.13339921,
+    "citation_percentile": 0.11322693,
     "cited_by_count": 3,
     "fwci": 0.0
   },
@@ -85,9 +85,9 @@
     "article_url": "https://doi.org/10.1007/s11146-021-09883-9",
     "link": "https://espace.library.uq.edu.au/view/UQ:4466e5b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.77857183,
+    "citation_percentile": 0.7824947,
     "cited_by_count": 7,
-    "fwci": 1.1687
+    "fwci": 1.1878
   },
   {
     "espace_id": "6079108",
@@ -103,9 +103,9 @@
     "article_url": "https://doi.org/10.1111/1540-6229.12332",
     "link": "https://espace.library.uq.edu.au/view/UQ:997d766",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9201153,
+    "citation_percentile": 0.90036166,
     "cited_by_count": 15,
-    "fwci": 2.1742
+    "fwci": 1.7348
   },
   {
     "espace_id": "6079108",
@@ -121,9 +121,9 @@
     "article_url": "https://doi.org/10.1111/1540-6229.12248",
     "link": "https://espace.library.uq.edu.au/view/UQ:35cafca",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90223567,
+    "citation_percentile": 0.89248899,
     "cited_by_count": 10,
-    "fwci": 2.604
+    "fwci": 2.3797
   },
   {
     "espace_id": "6079108",
@@ -139,9 +139,9 @@
     "article_url": "https://doi.org/10.1007/s11146-018-9680-1",
     "link": "https://espace.library.uq.edu.au/view/UQ:64825b6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.83693738,
+    "citation_percentile": 0.83914935,
     "cited_by_count": 11,
-    "fwci": 1.6378
+    "fwci": 1.6616
   },
   {
     "espace_id": "6079108",
@@ -157,9 +157,9 @@
     "article_url": "https://doi.org/10.1007/s11146-016-9573-0",
     "link": "https://espace.library.uq.edu.au/view/UQ:dcd1924",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98405395,
+    "citation_percentile": 0.98444731,
     "cited_by_count": 50,
-    "fwci": 13.7515
+    "fwci": 14.1118
   },
   {
     "espace_id": "6079108",
@@ -175,9 +175,9 @@
     "article_url": "https://doi.org/10.1007/s11146-015-9525-0",
     "link": "https://espace.library.uq.edu.au/view/UQ:59c81ba",
     "source": "UQ eSpace",
-    "citation_percentile": 0.8423735,
+    "citation_percentile": 0.84612653,
     "cited_by_count": 16,
-    "fwci": 1.6781
+    "fwci": 1.717
   },
   {
     "espace_id": "6079108",
@@ -193,9 +193,9 @@
     "article_url": "https://doi.org/10.1007/s11146-015-9499-y",
     "link": "https://espace.library.uq.edu.au/view/UQ:d1ca517",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97053571,
+    "citation_percentile": 0.97127179,
     "cited_by_count": 80,
-    "fwci": 7.7277
+    "fwci": 7.8983
   },
   {
     "espace_id": "6079108",
@@ -211,9 +211,9 @@
     "article_url": "https://doi.org/10.1111/1540-6229.12061",
     "link": "https://espace.library.uq.edu.au/view/UQ:62d5177",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92487421,
-    "cited_by_count": 19,
-    "fwci": 3.2225
+    "citation_percentile": 0.91636881,
+    "cited_by_count": 20,
+    "fwci": 2.9246
   },
   {
     "espace_id": "6079108",
@@ -247,9 +247,9 @@
     "article_url": "https://doi.org/10.1016/j.jimonfin.2012.05.020",
     "link": "https://espace.library.uq.edu.au/view/UQ:4e0e874",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94559415,
+    "citation_percentile": 0.94592046,
     "cited_by_count": 20,
-    "fwci": 4.3515
+    "fwci": 4.3779
   },
   {
     "espace_id": "6079108",
@@ -265,9 +265,9 @@
     "article_url": "https://doi.org/10.1111/j.1540-6229.2011.00327.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:52587d8",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97134502,
+    "citation_percentile": 0.97145371,
     "cited_by_count": 26,
-    "fwci": 8.7044
+    "fwci": 8.7439
   },
   {
     "espace_id": "6079108",
@@ -283,9 +283,9 @@
     "article_url": "https://doi.org/10.3905/jpm.2011.37.5.170",
     "link": "https://espace.library.uq.edu.au/view/UQ:82a7179",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91991125,
+    "citation_percentile": 0.92024509,
     "cited_by_count": 12,
-    "fwci": 2.6155
+    "fwci": 2.6365
   },
   {
     "espace_id": "6079108",
@@ -301,9 +301,9 @@
     "article_url": "https://doi.org/10.1007/s11146-009-9230-y",
     "link": "https://espace.library.uq.edu.au/view/UQ:b33029f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9781746,
+    "citation_percentile": 0.97829278,
     "cited_by_count": 54,
-    "fwci": 10.2004
+    "fwci": 10.2464
   },
   {
     "espace_id": "6079108",
@@ -319,7 +319,7 @@
     "article_url": "https://doi.org/10.1007/s11146-008-9110-x",
     "link": "https://espace.library.uq.edu.au/view/UQ:57a895e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.15091208,
+    "citation_percentile": 0.1520059,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -337,9 +337,9 @@
     "article_url": "https://doi.org/10.1007/s11146-007-9096-9",
     "link": "https://espace.library.uq.edu.au/view/UQ:90cf448",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95304185,
+    "citation_percentile": 0.95288201,
     "cited_by_count": 33,
-    "fwci": 5.4635
+    "fwci": 5.434
   },
   {
     "espace_id": "6079108",
@@ -355,9 +355,9 @@
     "article_url": "https://doi.org/10.1111/j.1540-6229.2007.00193.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:fca057b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98338373,
+    "citation_percentile": 0.98316269,
     "cited_by_count": 47,
-    "fwci": 13.1635
+    "fwci": 12.6794
   },
   {
     "espace_id": "6079108",
@@ -373,9 +373,9 @@
     "article_url": "https://doi.org/10.1007/s11146-007-9022-1",
     "link": "https://espace.library.uq.edu.au/view/UQ:136523",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98986287,
+    "citation_percentile": 0.98984656,
     "cited_by_count": 64,
-    "fwci": 18.1595
+    "fwci": 18.1134
   },
   {
     "espace_id": "6079108",
@@ -391,9 +391,9 @@
     "article_url": "https://doi.org/10.3905/jpm.2007.698908",
     "link": "https://espace.library.uq.edu.au/view/UQ:130262",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93381607,
+    "citation_percentile": 0.93379468,
     "cited_by_count": 31,
-    "fwci": 3.6307
+    "fwci": 3.6227
   },
   {
     "espace_id": "6079108",
@@ -445,9 +445,9 @@
     "article_url": "https://doi.org/10.1057/palgrave.jam.2240197",
     "link": "https://espace.library.uq.edu.au/view/UQ:2fb1834",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89752899,
+    "citation_percentile": 0.89763296,
     "cited_by_count": 8,
-    "fwci": 1.8774
+    "fwci": 1.8848
   },
   {
     "espace_id": "6079108",
@@ -499,9 +499,9 @@
     "article_url": "https://doi.org/10.1046/j.1080-8620.2003.00077.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:488af6c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96746517,
+    "citation_percentile": 0.95509331,
     "cited_by_count": 38,
-    "fwci": 7.6637
+    "fwci": 5.5856
   },
   {
     "espace_id": "6079108",
@@ -517,9 +517,9 @@
     "article_url": "https://doi.org/10.1111/1540-6229.00074",
     "link": "https://espace.library.uq.edu.au/view/UQ:6a45bb9",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99009079,
+    "citation_percentile": 0.99000935,
     "cited_by_count": 149,
-    "fwci": 18.745
+    "fwci": 18.6187
   },
   {
     "espace_id": "6079108",
@@ -553,9 +553,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2025.103991",
     "link": "https://espace.library.uq.edu.au/view/UQ:28c34e5",
     "source": "UQ eSpace",
-    "citation_percentile": 0.75258525,
+    "citation_percentile": 0.73578898,
     "cited_by_count": 1,
-    "fwci": 1.2866
+    "fwci": 1.2202
   },
   {
     "espace_id": "7627091",
@@ -571,9 +571,9 @@
     "article_url": "https://doi.org/10.1016/j.frl.2023.104011",
     "link": "https://espace.library.uq.edu.au/view/UQ:861e9fe",
     "source": "UQ eSpace",
-    "citation_percentile": 0.8696079,
+    "citation_percentile": 0.85386543,
     "cited_by_count": 4,
-    "fwci": 1.8975
+    "fwci": 1.6315
   },
   {
     "espace_id": "2254822",
@@ -589,7 +589,7 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2026.100571",
     "link": "https://espace.library.uq.edu.au/view/UQ:e5571c6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.76941069,
+    "citation_percentile": 0.67028925,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -607,9 +607,9 @@
     "article_url": "https://doi.org/10.1108/jal-02-2025-0058",
     "link": "https://espace.library.uq.edu.au/view/UQ:77c9c2a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9298456,
-    "cited_by_count": 0,
-    "fwci": 0.0
+    "citation_percentile": null,
+    "cited_by_count": null,
+    "fwci": null
   },
   {
     "espace_id": "2254822",
@@ -625,9 +625,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2025.101671",
     "link": "https://espace.library.uq.edu.au/view/UQ:7ce7474",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93343036,
+    "citation_percentile": 0.93177864,
     "cited_by_count": 2,
-    "fwci": 4.3595
+    "fwci": 4.246
   },
   {
     "espace_id": "2254822",
@@ -643,9 +643,9 @@
     "article_url": "https://doi.org/10.1111/fire.70034",
     "link": "https://espace.library.uq.edu.au/view/UQ:aa730be",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90033574,
+    "citation_percentile": 0.89814682,
     "cited_by_count": 1,
-    "fwci": 2.1797
+    "fwci": 2.123
   },
   {
     "espace_id": "2254822",
@@ -661,9 +661,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2026.104949",
     "link": "https://espace.library.uq.edu.au/view/UQ:361654c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99092258,
+    "citation_percentile": 0.98953862,
     "cited_by_count": 2,
-    "fwci": 31.8642
+    "fwci": 29.2289
   },
   {
     "espace_id": "2254822",
@@ -697,7 +697,7 @@
     "article_url": "https://doi.org/10.1108/jal-02-2025-0074",
     "link": "https://espace.library.uq.edu.au/view/UQ:e5bee2d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.43606961,
+    "citation_percentile": 0.4094399,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -715,7 +715,7 @@
     "article_url": "https://doi.org/10.1111/jfir.70021",
     "link": "https://espace.library.uq.edu.au/view/UQ:a599169",
     "source": "UQ eSpace",
-    "citation_percentile": 0.35307684,
+    "citation_percentile": 0.31944644,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -733,7 +733,7 @@
     "article_url": "https://doi.org/10.1016/j.gfj.2025.101173",
     "link": "https://espace.library.uq.edu.au/view/UQ:93297bb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.28135103,
+    "citation_percentile": 0.25190837,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -751,9 +751,9 @@
     "article_url": "https://doi.org/10.1111/jfir.70010",
     "link": "https://espace.library.uq.edu.au/view/UQ:8fc07ed",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90151741,
+    "citation_percentile": 0.88735654,
     "cited_by_count": 1,
-    "fwci": 2.4837
+    "fwci": 2.123
   },
   {
     "espace_id": "2254822",
@@ -769,9 +769,9 @@
     "article_url": "https://doi.org/10.1111/corg.12623",
     "link": "https://espace.library.uq.edu.au/view/UQ:7f62600",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87819301,
+    "citation_percentile": 0.86255194,
     "cited_by_count": 2,
-    "fwci": 1.7215
+    "fwci": 1.4495
   },
   {
     "espace_id": "2254822",
@@ -787,9 +787,9 @@
     "article_url": "https://doi.org/10.1111/acfi.70023",
     "link": "https://espace.library.uq.edu.au/view/UQ:6d4c97c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.84401885,
+    "citation_percentile": 0.8352319,
     "cited_by_count": 1,
-    "fwci": 1.5295
+    "fwci": 1.4858
   },
   {
     "espace_id": "2254822",
@@ -805,9 +805,9 @@
     "article_url": "https://doi.org/10.1016/j.jfs.2025.101384",
     "link": "https://espace.library.uq.edu.au/view/UQ:f860431",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99379786,
+    "citation_percentile": 0.99343587,
     "cited_by_count": 12,
-    "fwci": 23.9772
+    "fwci": 23.2326
   },
   {
     "espace_id": "2254822",
@@ -823,9 +823,9 @@
     "article_url": "https://doi.org/10.1080/1351847x.2025.2461212",
     "link": "https://espace.library.uq.edu.au/view/UQ:e8d829e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.83822273,
+    "citation_percentile": 0.8398256,
     "cited_by_count": 2,
-    "fwci": 2.1036
+    "fwci": 2.1121
   },
   {
     "espace_id": "2254822",
@@ -859,9 +859,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12787",
     "link": "https://espace.library.uq.edu.au/view/UQ:009856d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93663326,
-    "cited_by_count": 8,
-    "fwci": 4.3725
+    "citation_percentile": 0.94706198,
+    "cited_by_count": 9,
+    "fwci": 5.0819
   },
   {
     "espace_id": "2254822",
@@ -877,9 +877,9 @@
     "article_url": "https://doi.org/10.1016/j.gfj.2024.100962",
     "link": "https://espace.library.uq.edu.au/view/UQ:4efc793",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9548559,
+    "citation_percentile": 0.95547561,
     "cited_by_count": 7,
-    "fwci": 5.8081
+    "fwci": 5.916
   },
   {
     "espace_id": "2254822",
@@ -895,9 +895,9 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2023.100353",
     "link": "https://espace.library.uq.edu.au/view/UQ:8104ac3",
     "source": "UQ eSpace",
-    "citation_percentile": 0.74445587,
+    "citation_percentile": 0.74615922,
     "cited_by_count": 2,
-    "fwci": 0.8226
+    "fwci": 0.8157
   },
   {
     "espace_id": "2254822",
@@ -913,9 +913,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2023.106877",
     "link": "https://espace.library.uq.edu.au/view/UQ:ed665cb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.8770141,
+    "citation_percentile": 0.87730036,
     "cited_by_count": 5,
-    "fwci": 2.0596
+    "fwci": 2.0393
   },
   {
     "espace_id": "2254822",
@@ -931,9 +931,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2023.102008",
     "link": "https://espace.library.uq.edu.au/view/UQ:6287fa7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94345707,
+    "citation_percentile": 0.94278034,
     "cited_by_count": 15,
-    "fwci": 4.4298
+    "fwci": 4.3837
   },
   {
     "espace_id": "2254822",
@@ -949,9 +949,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2022.106730",
     "link": "https://espace.library.uq.edu.au/view/UQ:65a2304",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91657137,
+    "citation_percentile": 0.9176167,
     "cited_by_count": 12,
-    "fwci": 3.0248
+    "fwci": 3.0628
   },
   {
     "espace_id": "2254822",
@@ -967,9 +967,9 @@
     "article_url": "https://doi.org/10.1016/j.gfj.2022.100801",
     "link": "https://espace.library.uq.edu.au/view/UQ:eadc80d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93710668,
+    "citation_percentile": 0.9382368,
     "cited_by_count": 26,
-    "fwci": 4.031
+    "fwci": 4.1055
   },
   {
     "espace_id": "2254822",
@@ -985,9 +985,9 @@
     "article_url": "https://doi.org/10.1016/j.gfj.2022.100747",
     "link": "https://espace.library.uq.edu.au/view/UQ:ea2ec2a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86674118,
+    "citation_percentile": 0.86843226,
     "cited_by_count": 8,
-    "fwci": 1.9282
+    "fwci": 1.949
   },
   {
     "espace_id": "2254822",
@@ -1003,9 +1003,9 @@
     "article_url": "https://doi.org/10.1016/j.jbef.2022.100648",
     "link": "https://espace.library.uq.edu.au/view/UQ:1fabc95",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93807019,
+    "citation_percentile": 0.93878881,
     "cited_by_count": 15,
-    "fwci": 4.1247
+    "fwci": 4.1765
   },
   {
     "espace_id": "2254822",
@@ -1021,9 +1021,9 @@
     "article_url": "https://doi.org/10.1016/j.jbef.2021.100617",
     "link": "https://espace.library.uq.edu.au/view/UQ:3ff33f3",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87270063,
+    "citation_percentile": 0.87486226,
     "cited_by_count": 12,
-    "fwci": 1.6923
+    "fwci": 1.721
   },
   {
     "espace_id": "2254822",
@@ -1039,9 +1039,9 @@
     "article_url": "https://doi.org/10.1016/j.jbef.2021.100551",
     "link": "https://espace.library.uq.edu.au/view/UQ:8c0a52e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96101233,
+    "citation_percentile": 0.96160191,
     "cited_by_count": 34,
-    "fwci": 5.8175
+    "fwci": 5.9088
   },
   {
     "espace_id": "2254822",
@@ -1057,9 +1057,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12637",
     "link": "https://espace.library.uq.edu.au/view/UQ:d29ce99",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91321522,
+    "citation_percentile": 0.90300048,
     "cited_by_count": 17,
-    "fwci": 2.8924
+    "fwci": 2.6057
   },
   {
     "espace_id": "2254822",
@@ -1075,9 +1075,9 @@
     "article_url": "https://doi.org/10.1177/0312896220974417",
     "link": "https://espace.library.uq.edu.au/view/UQ:5a4ec2c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.79448402,
+    "citation_percentile": 0.79744123,
     "cited_by_count": 6,
-    "fwci": 0.9172
+    "fwci": 0.9307
   },
   {
     "espace_id": "2254822",
@@ -1093,9 +1093,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2020.101774",
     "link": "https://espace.library.uq.edu.au/view/UQ:951d2ae",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97765471,
+    "citation_percentile": 0.9781097,
     "cited_by_count": 60,
-    "fwci": 8.8453
+    "fwci": 8.9965
   },
   {
     "espace_id": "2254822",
@@ -1111,9 +1111,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12710",
     "link": "https://espace.library.uq.edu.au/view/UQ:53f7f51",
     "source": "UQ eSpace",
-    "citation_percentile": 0.83925371,
+    "citation_percentile": 0.82653726,
     "cited_by_count": 10,
-    "fwci": 1.3355
+    "fwci": 1.2409
   },
   {
     "espace_id": "2254822",
@@ -1129,9 +1129,9 @@
     "article_url": "https://doi.org/10.1177/0312896220950394",
     "link": "https://espace.library.uq.edu.au/view/UQ:3e720de",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90664927,
+    "citation_percentile": 0.90812866,
     "cited_by_count": 36,
-    "fwci": 2.4863
+    "fwci": 2.5253
   },
   {
     "espace_id": "2254822",
@@ -1147,9 +1147,9 @@
     "article_url": "https://doi.org/10.1016/j.jbusres.2020.01.035",
     "link": "https://espace.library.uq.edu.au/view/UQ:a5a0fa7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98284338,
+    "citation_percentile": 0.98314348,
     "cited_by_count": 116,
-    "fwci": 11.384
+    "fwci": 11.5742
   },
   {
     "espace_id": "7275857",
@@ -1165,9 +1165,9 @@
     "article_url": "https://doi.org/10.1111/jfir.70010",
     "link": "https://espace.library.uq.edu.au/view/UQ:8fc07ed",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90151741,
+    "citation_percentile": 0.88735654,
     "cited_by_count": 1,
-    "fwci": 2.4837
+    "fwci": 2.123
   },
   {
     "espace_id": "7275857",
@@ -1183,9 +1183,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2024.102672",
     "link": "https://espace.library.uq.edu.au/view/UQ:c4aa964",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99505595,
+    "citation_percentile": 0.99502113,
     "cited_by_count": 35,
-    "fwci": 18.4856
+    "fwci": 18.3669
   },
   {
     "espace_id": "7275857",
@@ -1202,8 +1202,8 @@
     "link": "https://espace.library.uq.edu.au/view/UQ:fb225ce",
     "source": "UQ eSpace",
     "citation_percentile": 1.0,
-    "cited_by_count": 99,
-    "fwci": 63.1692
+    "cited_by_count": 101,
+    "fwci": 65.1955
   },
   {
     "espace_id": "7275857",
@@ -1219,9 +1219,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2024.103109",
     "link": "https://espace.library.uq.edu.au/view/UQ:b78c04d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99889617,
-    "cited_by_count": 57,
-    "fwci": 40.7747
+    "citation_percentile": 0.99892512,
+    "cited_by_count": 58,
+    "fwci": 42.1071
   },
   {
     "espace_id": "7275857",
@@ -1237,7 +1237,7 @@
     "article_url": "https://doi.org/10.5604/01.3001.0055.7897",
     "link": "https://espace.library.uq.edu.au/view/UQ:8ffd289",
     "source": "UQ eSpace",
-    "citation_percentile": 0.48893733,
+    "citation_percentile": 0.49269624,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1255,9 +1255,9 @@
     "article_url": "https://doi.org/10.1016/j.gfj.2022.100799",
     "link": "https://espace.library.uq.edu.au/view/UQ:71e3335",
     "source": "UQ eSpace",
-    "citation_percentile": 0.8988518,
+    "citation_percentile": 0.9001779,
     "cited_by_count": 13,
-    "fwci": 2.4701
+    "fwci": 2.5059
   },
   {
     "espace_id": "7275857",
@@ -1273,9 +1273,9 @@
     "article_url": "https://doi.org/10.1111/irfi.12360",
     "link": "https://espace.library.uq.edu.au/view/UQ:7c1fe13",
     "source": "UQ eSpace",
-    "citation_percentile": 0.78096831,
+    "citation_percentile": 0.784068,
     "cited_by_count": 4,
-    "fwci": 1.1099
+    "fwci": 1.1255
   },
   {
     "espace_id": "7275857",
@@ -1291,9 +1291,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2021.101789",
     "link": "https://espace.library.uq.edu.au/view/UQ:a72ee9a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.77945709,
+    "citation_percentile": 0.78231925,
     "cited_by_count": 8,
-    "fwci": 1.039
+    "fwci": 1.0547
   },
   {
     "espace_id": "7275857",
@@ -1309,9 +1309,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2019.07.020",
     "link": "https://espace.library.uq.edu.au/view/UQ:c04561b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9640418,
+    "citation_percentile": 0.96495386,
     "cited_by_count": 34,
-    "fwci": 6.9535
+    "fwci": 7.1316
   },
   {
     "espace_id": "7275857",
@@ -1327,9 +1327,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2018.03.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:f64d0f9",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88680563,
+    "citation_percentile": 0.88918502,
     "cited_by_count": 10,
-    "fwci": 2.3281
+    "fwci": 2.3797
   },
   {
     "espace_id": "87704",
@@ -1345,7 +1345,7 @@
     "article_url": "https://doi.org/10.1108/jal-02-2025-0074",
     "link": "https://espace.library.uq.edu.au/view/UQ:e5bee2d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.43606961,
+    "citation_percentile": 0.4094399,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1363,7 +1363,7 @@
     "article_url": "https://doi.org/10.1111/jfir.70021",
     "link": "https://espace.library.uq.edu.au/view/UQ:a599169",
     "source": "UQ eSpace",
-    "citation_percentile": 0.35307684,
+    "citation_percentile": 0.31944644,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1381,9 +1381,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2023.102183",
     "link": "https://espace.library.uq.edu.au/view/UQ:c4d1858",
     "source": "UQ eSpace",
-    "citation_percentile": 0.56755725,
+    "citation_percentile": 0.57231527,
     "cited_by_count": 1,
-    "fwci": 0.2421
+    "fwci": 0.2389
   },
   {
     "espace_id": "87704",
@@ -1399,9 +1399,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2022.101808",
     "link": "https://espace.library.uq.edu.au/view/UQ:1da2e10",
     "source": "UQ eSpace",
-    "citation_percentile": 0.74687192,
+    "citation_percentile": 0.74808745,
     "cited_by_count": 2,
-    "fwci": 0.4272
+    "fwci": 0.4293
   },
   {
     "espace_id": "87704",
@@ -1417,9 +1417,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12637",
     "link": "https://espace.library.uq.edu.au/view/UQ:d29ce99",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91321522,
+    "citation_percentile": 0.90300048,
     "cited_by_count": 17,
-    "fwci": 2.8924
+    "fwci": 2.6057
   },
   {
     "espace_id": "87704",
@@ -1435,9 +1435,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2020.101453",
     "link": "https://espace.library.uq.edu.au/view/UQ:9690529",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88869093,
+    "citation_percentile": 0.88999692,
     "cited_by_count": 10,
-    "fwci": 2.1454
+    "fwci": 2.1714
   },
   {
     "espace_id": "87704",
@@ -1453,9 +1453,9 @@
     "article_url": "https://doi.org/10.1016/j.finmar.2020.100576",
     "link": "https://espace.library.uq.edu.au/view/UQ:0e5ab16",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86984403,
+    "citation_percentile": 0.85924527,
     "cited_by_count": 13,
-    "fwci": 1.871
+    "fwci": 1.7371
   },
   {
     "espace_id": "87704",
@@ -1471,7 +1471,7 @@
     "article_url": "https://doi.org/10.1111/acfi.12557",
     "link": "https://espace.library.uq.edu.au/view/UQ:f5063d7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.1948067,
+    "citation_percentile": 0.19053175,
     "cited_by_count": 4,
     "fwci": 0.0
   },
@@ -1489,9 +1489,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2019.101191",
     "link": "https://espace.library.uq.edu.au/view/UQ:4ce00b8",
     "source": "UQ eSpace",
-    "citation_percentile": 0.69149658,
+    "citation_percentile": 0.69406167,
     "cited_by_count": 6,
-    "fwci": 0.508
+    "fwci": 0.5114
   },
   {
     "espace_id": "87704",
@@ -1507,9 +1507,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12548",
     "link": "https://espace.library.uq.edu.au/view/UQ:d28645c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.64962348,
+    "citation_percentile": 0.61986624,
     "cited_by_count": 2,
-    "fwci": 0.288
+    "fwci": 0.2557
   },
   {
     "espace_id": "87704",
@@ -1525,9 +1525,9 @@
     "article_url": "https://doi.org/10.1177/0312896213496800",
     "link": "https://espace.library.uq.edu.au/view/UQ:305721",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93018838,
+    "citation_percentile": 0.92225437,
     "cited_by_count": 28,
-    "fwci": 3.4621
+    "fwci": 3.1404
   },
   {
     "espace_id": "7639113",
@@ -1543,7 +1543,7 @@
     "article_url": "https://doi.org/10.1111/fima.70049",
     "link": "https://espace.library.uq.edu.au/view/UQ:2ff0f37",
     "source": "UQ eSpace",
-    "citation_percentile": 0.69212675,
+    "citation_percentile": 0.46161902,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1561,7 +1561,7 @@
     "article_url": "https://doi.org/10.1108/jal-02-2025-0074",
     "link": "https://espace.library.uq.edu.au/view/UQ:e5bee2d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.43606961,
+    "citation_percentile": 0.4094399,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1579,9 +1579,9 @@
     "article_url": "https://doi.org/10.1287/orsc.2022.16493",
     "link": "https://espace.library.uq.edu.au/view/UQ:6c5adea",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96362796,
+    "citation_percentile": 0.96320315,
     "cited_by_count": 9,
-    "fwci": 6.5636
+    "fwci": 6.5339
   },
   {
     "espace_id": "87707",
@@ -1597,9 +1597,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2023.102183",
     "link": "https://espace.library.uq.edu.au/view/UQ:c4d1858",
     "source": "UQ eSpace",
-    "citation_percentile": 0.56755725,
+    "citation_percentile": 0.57231527,
     "cited_by_count": 1,
-    "fwci": 0.2421
+    "fwci": 0.2389
   },
   {
     "espace_id": "87707",
@@ -1615,9 +1615,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2023.101186",
     "link": "https://espace.library.uq.edu.au/view/UQ:54c8f86",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87430503,
+    "citation_percentile": 0.87286639,
     "cited_by_count": 9,
-    "fwci": 2.181
+    "fwci": 2.1497
   },
   {
     "espace_id": "87707",
@@ -1633,9 +1633,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2022.101808",
     "link": "https://espace.library.uq.edu.au/view/UQ:1da2e10",
     "source": "UQ eSpace",
-    "citation_percentile": 0.74687192,
+    "citation_percentile": 0.74808745,
     "cited_by_count": 2,
-    "fwci": 0.4272
+    "fwci": 0.4293
   },
   {
     "espace_id": "87707",
@@ -1651,9 +1651,9 @@
     "article_url": "https://doi.org/10.1016/j.finmar.2020.100576",
     "link": "https://espace.library.uq.edu.au/view/UQ:0e5ab16",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86984403,
+    "citation_percentile": 0.85924527,
     "cited_by_count": 13,
-    "fwci": 1.871
+    "fwci": 1.7371
   },
   {
     "espace_id": "87707",
@@ -1669,9 +1669,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2019.101191",
     "link": "https://espace.library.uq.edu.au/view/UQ:4ce00b8",
     "source": "UQ eSpace",
-    "citation_percentile": 0.69149658,
+    "citation_percentile": 0.69406167,
     "cited_by_count": 6,
-    "fwci": 0.508
+    "fwci": 0.5114
   },
   {
     "espace_id": "87707",
@@ -1687,9 +1687,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2015.10.009",
     "link": "https://espace.library.uq.edu.au/view/UQ:374513",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99417661,
+    "citation_percentile": 0.99424335,
     "cited_by_count": 236,
-    "fwci": 25.8728
+    "fwci": 26.2864
   },
   {
     "espace_id": "6004495",
@@ -1705,7 +1705,7 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2026.107704",
     "link": "https://espace.library.uq.edu.au/view/UQ:ff2011f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.56021047,
+    "citation_percentile": 0.32657286,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1723,9 +1723,9 @@
     "article_url": "https://doi.org/10.1111/corg.12623",
     "link": "https://espace.library.uq.edu.au/view/UQ:7f62600",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87819301,
+    "citation_percentile": 0.86255194,
     "cited_by_count": 2,
-    "fwci": 1.7215
+    "fwci": 1.4495
   },
   {
     "espace_id": "5497249",
@@ -1741,9 +1741,9 @@
     "article_url": "https://doi.org/10.1287/mnsc.2023.03556",
     "link": "https://espace.library.uq.edu.au/view/UQ:95040df",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98056054,
+    "citation_percentile": 0.98128052,
     "cited_by_count": 43,
-    "fwci": 7.3235
+    "fwci": 7.5875
   },
   {
     "espace_id": "5497249",
@@ -1759,9 +1759,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2023.102249",
     "link": "https://espace.library.uq.edu.au/view/UQ:f2fa420",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94759809,
+    "citation_percentile": 0.94722322,
     "cited_by_count": 7,
-    "fwci": 5.1012
+    "fwci": 5.0819
   },
   {
     "espace_id": "5497249",
@@ -1777,9 +1777,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2020.101697",
     "link": "https://espace.library.uq.edu.au/view/UQ:ca03952",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98879959,
+    "citation_percentile": 0.98901284,
     "cited_by_count": 76,
-    "fwci": 13.1111
+    "fwci": 13.3396
   },
   {
     "espace_id": "5497249",
@@ -1795,9 +1795,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2019.101430",
     "link": "https://espace.library.uq.edu.au/view/UQ:a807b8f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97537593,
+    "citation_percentile": 0.97600671,
     "cited_by_count": 133,
-    "fwci": 8.5925
+    "fwci": 8.8096
   },
   {
     "espace_id": "5497249",
@@ -1813,9 +1813,9 @@
     "article_url": "https://doi.org/10.1111/eufm.12180",
     "link": "https://espace.library.uq.edu.au/view/UQ:f662033",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97523805,
+    "citation_percentile": 0.97570485,
     "cited_by_count": 71,
-    "fwci": 8.8742
+    "fwci": 9.043
   },
   {
     "espace_id": "5497249",
@@ -1831,9 +1831,9 @@
     "article_url": "https://doi.org/10.1017/S0022109017000497",
     "link": "https://espace.library.uq.edu.au/view/UQ:b1ba16c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99871726,
-    "cited_by_count": 505,
-    "fwci": 46.1712
+    "citation_percentile": 0.99874648,
+    "cited_by_count": 508,
+    "fwci": 47.1873
   },
   {
     "espace_id": "5497249",
@@ -1849,7 +1849,7 @@
     "article_url": "https://doi.org/10.1111/irfi.12038",
     "link": "https://espace.library.uq.edu.au/view/UQ:2885421",
     "source": "UQ eSpace",
-    "citation_percentile": 0.08324129,
+    "citation_percentile": 0.08385003,
     "cited_by_count": 1,
     "fwci": 0.0
   },
@@ -1867,7 +1867,7 @@
     "article_url": "https://doi.org/10.1108/aaaj-06-2025-8039",
     "link": "https://espace.library.uq.edu.au/view/UQ:3ca5b65",
     "source": "UQ eSpace",
-    "citation_percentile": 0.80865592,
+    "citation_percentile": 0.68930435,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1885,7 +1885,7 @@
     "article_url": "https://doi.org/10.1016/j.oneear.2025.101550",
     "link": "https://espace.library.uq.edu.au/view/UQ:8187444",
     "source": "UQ eSpace",
-    "citation_percentile": 0.44077517,
+    "citation_percentile": 0.32020362,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1903,9 +1903,9 @@
     "article_url": "https://doi.org/10.1038/s41558-025-02467-y",
     "link": "https://espace.library.uq.edu.au/view/UQ:ef95707",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97995209,
+    "citation_percentile": 0.97931561,
     "cited_by_count": 7,
-    "fwci": 10.7216
+    "fwci": 10.4007
   },
   {
     "espace_id": "6336",
@@ -1921,7 +1921,7 @@
     "article_url": "https://doi.org/10.1016/j.gfj.2025.101173",
     "link": "https://espace.library.uq.edu.au/view/UQ:93297bb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.28135103,
+    "citation_percentile": 0.25190837,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1939,7 +1939,7 @@
     "article_url": "https://doi.org/10.1108/aaaj-09-2023-6642",
     "link": "https://espace.library.uq.edu.au/view/UQ:4c733e7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.0280937,
+    "citation_percentile": 0.02590612,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -1957,9 +1957,9 @@
     "article_url": "https://doi.org/10.1287/mnsc.2023.03556",
     "link": "https://espace.library.uq.edu.au/view/UQ:95040df",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98056054,
+    "citation_percentile": 0.98128052,
     "cited_by_count": 43,
-    "fwci": 7.3235
+    "fwci": 7.5875
   },
   {
     "espace_id": "6336",
@@ -1975,9 +1975,9 @@
     "article_url": "https://doi.org/10.1016/j.gloenvcha.2022.102492",
     "link": "https://espace.library.uq.edu.au/view/UQ:a076327",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98575809,
+    "citation_percentile": 0.98613277,
     "cited_by_count": 42,
-    "fwci": 12.098
+    "fwci": 12.3898
   },
   {
     "espace_id": "6336",
@@ -1993,9 +1993,9 @@
     "article_url": "https://doi.org/10.1016/j.jclepro.2021.129827",
     "link": "https://espace.library.uq.edu.au/view/UQ:9d77957",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96935319,
-    "cited_by_count": 178,
-    "fwci": 5.0136
+    "citation_percentile": 0.96959883,
+    "cited_by_count": 179,
+    "fwci": 5.0533
   },
   {
     "espace_id": "6336",
@@ -2011,9 +2011,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2021.106167",
     "link": "https://espace.library.uq.edu.au/view/UQ:dbc4110",
     "source": "UQ eSpace",
-    "citation_percentile": 0.77673574,
+    "citation_percentile": 0.77987307,
     "cited_by_count": 11,
-    "fwci": 1.1076
+    "fwci": 1.1238
   },
   {
     "espace_id": "6336",
@@ -2029,9 +2029,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2021.106098",
     "link": "https://espace.library.uq.edu.au/view/UQ:33b4d96",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97885144,
+    "citation_percentile": 0.9789517,
     "cited_by_count": 69,
-    "fwci": 10.2523
+    "fwci": 10.3003
   },
   {
     "espace_id": "6336",
@@ -2047,9 +2047,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2020.101453",
     "link": "https://espace.library.uq.edu.au/view/UQ:9690529",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88869093,
+    "citation_percentile": 0.88999692,
     "cited_by_count": 10,
-    "fwci": 2.1454
+    "fwci": 2.1714
   },
   {
     "espace_id": "6336",
@@ -2065,9 +2065,9 @@
     "article_url": "https://doi.org/10.1177/0007650319825764",
     "link": "https://espace.library.uq.edu.au/view/UQ:7a7da83",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96652064,
-    "cited_by_count": 54,
-    "fwci": 7.5868
+    "citation_percentile": 0.96702566,
+    "cited_by_count": 55,
+    "fwci": 7.6882
   },
   {
     "espace_id": "6336",
@@ -2083,9 +2083,9 @@
     "article_url": "https://doi.org/10.1038/s41558-018-0158-1",
     "link": "https://espace.library.uq.edu.au/view/UQ:91c8493",
     "source": "UQ eSpace",
-    "citation_percentile": 0.63807183,
+    "citation_percentile": 0.64318916,
     "cited_by_count": 30,
-    "fwci": 0.6869
+    "fwci": 0.6964
   },
   {
     "espace_id": "6336",
@@ -2101,9 +2101,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2015.09.003",
     "link": "https://espace.library.uq.edu.au/view/UQ:374981",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91363491,
+    "citation_percentile": 0.91460948,
     "cited_by_count": 12,
-    "fwci": 3.1311
+    "fwci": 3.1543
   },
   {
     "espace_id": "6336",
@@ -2119,9 +2119,9 @@
     "article_url": "https://doi.org/10.1007/s10551-015-2583-7",
     "link": "https://espace.library.uq.edu.au/view/UQ:353353",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90377459,
+    "citation_percentile": 0.90531596,
     "cited_by_count": 61,
-    "fwci": 2.666
+    "fwci": 2.7068
   },
   {
     "espace_id": "6336",
@@ -2137,9 +2137,9 @@
     "article_url": "https://doi.org/10.1007/s10551-013-1785-0",
     "link": "https://espace.library.uq.edu.au/view/UQ:329934",
     "source": "UQ eSpace",
-    "citation_percentile": 0.85284066,
+    "citation_percentile": 0.85448947,
     "cited_by_count": 68,
-    "fwci": 1.7303
+    "fwci": 1.7523
   },
   {
     "espace_id": "6336",
@@ -2155,9 +2155,9 @@
     "article_url": "https://doi.org/10.1007/s10551-013-1741-z",
     "link": "https://espace.library.uq.edu.au/view/UQ:323654",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97356305,
+    "citation_percentile": 0.97385286,
     "cited_by_count": 129,
-    "fwci": 7.7698
+    "fwci": 7.8511
   },
   {
     "espace_id": "6336",
@@ -2173,7 +2173,7 @@
     "article_url": "https://doi.org/10.1111/j.1467-6281.2012.00374.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:287156",
     "source": "UQ eSpace",
-    "citation_percentile": 0.10728407,
+    "citation_percentile": 0.10936999,
     "cited_by_count": 8,
     "fwci": 0.0
   },
@@ -2191,9 +2191,9 @@
     "article_url": "https://doi.org/10.1177/0312896211410081",
     "link": "https://espace.library.uq.edu.au/view/UQ:256374",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95888594,
-    "cited_by_count": 102,
-    "fwci": 5.2941
+    "citation_percentile": 0.95593207,
+    "cited_by_count": 103,
+    "fwci": 5.0307
   },
   {
     "espace_id": "6336",
@@ -2209,9 +2209,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2012.03.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:272217",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99165004,
+    "citation_percentile": 0.99176987,
     "cited_by_count": 273,
-    "fwci": 19.3043
+    "fwci": 19.4939
   },
   {
     "espace_id": "6336",
@@ -2227,9 +2227,9 @@
     "article_url": "https://doi.org/10.1007/s10551-011-0836-7",
     "link": "https://espace.library.uq.edu.au/view/UQ:241091",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98400862,
+    "citation_percentile": 0.98523052,
     "cited_by_count": 162,
-    "fwci": 10.9419
+    "fwci": 11.5786
   },
   {
     "espace_id": "6336",
@@ -2245,9 +2245,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2009.00336.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:224098",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98127385,
+    "citation_percentile": 0.9789098,
     "cited_by_count": 154,
-    "fwci": 10.3766
+    "fwci": 9.4824
   },
   {
     "espace_id": "6336",
@@ -2263,7 +2263,7 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2009.00317.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:185293",
     "source": "UQ eSpace",
-    "citation_percentile": 0.21417873,
+    "citation_percentile": 0.21698485,
     "cited_by_count": 19,
     "fwci": 0.0
   },
@@ -2281,9 +2281,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2007.12.013",
     "link": "https://espace.library.uq.edu.au/view/UQ:135205",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93978349,
-    "cited_by_count": 302,
-    "fwci": 3.9003
+    "citation_percentile": 0.9403873,
+    "cited_by_count": 303,
+    "fwci": 3.914
   },
   {
     "espace_id": "6336",
@@ -2299,9 +2299,9 @@
     "article_url": "https://doi.org/10.1007/s10551-006-0003-8",
     "link": "https://espace.library.uq.edu.au/view/UQ:78766",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96167673,
-    "cited_by_count": 192,
-    "fwci": 6.2384
+    "citation_percentile": 0.96220599,
+    "cited_by_count": 193,
+    "fwci": 6.3094
   },
   {
     "espace_id": "78774",
@@ -2317,9 +2317,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2024.101449",
     "link": "https://espace.library.uq.edu.au/view/UQ:af75fb2",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95764831,
+    "citation_percentile": 0.95840201,
     "cited_by_count": 8,
-    "fwci": 5.7111
+    "fwci": 5.8079
   },
   {
     "espace_id": "78774",
@@ -2335,9 +2335,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2024.107233",
     "link": "https://espace.library.uq.edu.au/view/UQ:1bf0b9d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9986754,
-    "cited_by_count": 54,
-    "fwci": 37.9133
+    "citation_percentile": 0.99874624,
+    "cited_by_count": 55,
+    "fwci": 39.1363
   },
   {
     "espace_id": "78774",
@@ -2353,9 +2353,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2021.106324",
     "link": "https://espace.library.uq.edu.au/view/UQ:aa2cc1e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90517583,
+    "citation_percentile": 0.90666239,
     "cited_by_count": 16,
-    "fwci": 2.7702
+    "fwci": 2.8137
   },
   {
     "espace_id": "78774",
@@ -2371,9 +2371,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2021.106103",
     "link": "https://espace.library.uq.edu.au/view/UQ:d1ebcc4",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9351461,
+    "citation_percentile": 0.93610246,
     "cited_by_count": 25,
-    "fwci": 4.1526
+    "fwci": 4.2206
   },
   {
     "espace_id": "78774",
@@ -2389,7 +2389,7 @@
     "article_url": "https://doi.org/10.1111/irfi.12345",
     "link": "https://espace.library.uq.edu.au/view/UQ:3c1184a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.02559903,
+    "citation_percentile": 0.02413236,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -2407,9 +2407,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12375",
     "link": "https://espace.library.uq.edu.au/view/UQ:697faa3",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93241525,
+    "citation_percentile": 0.91091442,
     "cited_by_count": 16,
-    "fwci": 3.224
+    "fwci": 2.4481
   },
   {
     "espace_id": "78774",
@@ -2425,9 +2425,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2017.12.009",
     "link": "https://espace.library.uq.edu.au/view/UQ:725750",
     "source": "UQ eSpace",
-    "citation_percentile": 0.68012757,
+    "citation_percentile": 0.68322678,
     "cited_by_count": 5,
-    "fwci": 0.5491
+    "fwci": 0.5539
   },
   {
     "espace_id": "78774",
@@ -2443,9 +2443,9 @@
     "article_url": "https://doi.org/10.1111/1467-8462.12239",
     "link": "https://espace.library.uq.edu.au/view/UQ:705139",
     "source": "UQ eSpace",
-    "citation_percentile": 0.82036622,
+    "citation_percentile": 0.79743863,
     "cited_by_count": 6,
-    "fwci": 1.0676
+    "fwci": 0.9297
   },
   {
     "espace_id": "78774",
@@ -2461,9 +2461,9 @@
     "article_url": "https://doi.org/10.1016/j.econmod.2017.08.025",
     "link": "https://espace.library.uq.edu.au/view/UQ:685468",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95385391,
+    "citation_percentile": 0.94842495,
     "cited_by_count": 9,
-    "fwci": 4.1404
+    "fwci": 3.6848
   },
   {
     "espace_id": "78774",
@@ -2515,9 +2515,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2025.101699",
     "link": "https://espace.library.uq.edu.au/view/UQ:0c0a040",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95995444,
+    "citation_percentile": 0.95723416,
     "cited_by_count": 4,
-    "fwci": 6.3469
+    "fwci": 5.9432
   },
   {
     "espace_id": "4329687",
@@ -2533,9 +2533,9 @@
     "article_url": "https://doi.org/10.1016/j.jbef.2024.101003",
     "link": "https://espace.library.uq.edu.au/view/UQ:117097a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.84938236,
+    "citation_percentile": 0.85414021,
     "cited_by_count": 4,
-    "fwci": 1.6443
+    "fwci": 1.699
   },
   {
     "espace_id": "4329687",
@@ -2551,9 +2551,9 @@
     "article_url": "https://doi.org/10.1016/j.intfin.2024.102000",
     "link": "https://espace.library.uq.edu.au/view/UQ:a389925",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95106663,
+    "citation_percentile": 0.93855996,
     "cited_by_count": 6,
-    "fwci": 5.1458
+    "fwci": 4.0909
   },
   {
     "espace_id": "4329687",
@@ -2569,9 +2569,9 @@
     "article_url": "https://doi.org/10.1016/j.intfin.2024.101962",
     "link": "https://espace.library.uq.edu.au/view/UQ:833f12e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95565992,
+    "citation_percentile": 0.95509765,
     "cited_by_count": 8,
-    "fwci": 5.83
+    "fwci": 5.7882
   },
   {
     "espace_id": "4329687",
@@ -2587,9 +2587,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2023.102954",
     "link": "https://espace.library.uq.edu.au/view/UQ:ffbc4cd",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98522963,
+    "citation_percentile": 0.98490388,
     "cited_by_count": 28,
-    "fwci": 11.1054
+    "fwci": 11.0123
   },
   {
     "espace_id": "4329687",
@@ -2605,9 +2605,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2023.106786",
     "link": "https://espace.library.uq.edu.au/view/UQ:a78db90",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92108668,
+    "citation_percentile": 0.91627477,
     "cited_by_count": 8,
-    "fwci": 3.4469
+    "fwci": 3.259
   },
   {
     "espace_id": "4329687",
@@ -2641,9 +2641,9 @@
     "article_url": "https://doi.org/10.1111/1467-8551.12541",
     "link": "https://espace.library.uq.edu.au/view/UQ:20b5346",
     "source": "UQ eSpace",
-    "citation_percentile": 0.83581189,
+    "citation_percentile": 0.82981307,
     "cited_by_count": 9,
-    "fwci": 1.4401
+    "fwci": 1.4059
   },
   {
     "espace_id": "4329687",
@@ -2659,9 +2659,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2020.101827",
     "link": "https://espace.library.uq.edu.au/view/UQ:de177aa",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98594487,
+    "citation_percentile": 0.98614986,
     "cited_by_count": 110,
-    "fwci": 10.4029
+    "fwci": 10.5446
   },
   {
     "espace_id": "4329687",
@@ -2677,9 +2677,9 @@
     "article_url": "https://doi.org/10.1016/j.econmod.2022.105778",
     "link": "https://espace.library.uq.edu.au/view/UQ:79ace9b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87768322,
+    "citation_percentile": 0.87925635,
     "cited_by_count": 11,
-    "fwci": 2.1998
+    "fwci": 2.2275
   },
   {
     "espace_id": "4329687",
@@ -2695,9 +2695,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2021.101940",
     "link": "https://espace.library.uq.edu.au/view/UQ:e2044d4",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89039123,
+    "citation_percentile": 0.89195381,
     "cited_by_count": 12,
-    "fwci": 2.4973
+    "fwci": 2.5323
   },
   {
     "espace_id": "4329687",
@@ -2713,9 +2713,9 @@
     "article_url": "https://doi.org/10.1007/s11156-021-01002-2",
     "link": "https://espace.library.uq.edu.au/view/UQ:b35965b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89303204,
+    "citation_percentile": 0.89481763,
     "cited_by_count": 13,
-    "fwci": 2.4919
+    "fwci": 2.5323
   },
   {
     "espace_id": "4329687",
@@ -2731,9 +2731,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2018.08.007",
     "link": "https://espace.library.uq.edu.au/view/UQ:ad9a683",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99171563,
+    "citation_percentile": 0.99187386,
     "cited_by_count": 151,
-    "fwci": 17.2757
+    "fwci": 17.6072
   },
   {
     "espace_id": "4329687",
@@ -2749,9 +2749,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2019.02.004",
     "link": "https://espace.library.uq.edu.au/view/UQ:f66db32",
     "source": "UQ eSpace",
-    "citation_percentile": 0.65509962,
+    "citation_percentile": 0.66409396,
     "cited_by_count": 3,
-    "fwci": 0.4092
+    "fwci": 0.4195
   },
   {
     "espace_id": "4329687",
@@ -2767,9 +2767,9 @@
     "article_url": "https://doi.org/10.1007/s11156-019-00793-9",
     "link": "https://espace.library.uq.edu.au/view/UQ:524cef8",
     "source": "UQ eSpace",
-    "citation_percentile": 0.72585234,
+    "citation_percentile": 0.72761947,
     "cited_by_count": 6,
-    "fwci": 0.763
+    "fwci": 0.7672
   },
   {
     "espace_id": "4329687",
@@ -2785,9 +2785,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2017.09.015",
     "link": "https://espace.library.uq.edu.au/view/UQ:8e82f32",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93063284,
+    "citation_percentile": 0.9322101,
     "cited_by_count": 19,
-    "fwci": 3.9254
+    "fwci": 4.0286
   },
   {
     "espace_id": "4329687",
@@ -2803,9 +2803,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2017.10.005",
     "link": "https://espace.library.uq.edu.au/view/UQ:2363e3a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95620339,
+    "citation_percentile": 0.95724089,
     "cited_by_count": 30,
-    "fwci": 5.6077
+    "fwci": 5.7551
   },
   {
     "espace_id": "4329687",
@@ -2821,9 +2821,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2016.11.011",
     "link": "https://espace.library.uq.edu.au/view/UQ:2ee896a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94627984,
-    "cited_by_count": 30,
-    "fwci": 4.2683
+    "citation_percentile": 0.94739393,
+    "cited_by_count": 31,
+    "fwci": 4.3598
   },
   {
     "espace_id": "4329687",
@@ -2839,9 +2839,9 @@
     "article_url": "https://doi.org/10.1108/MF-07-2016-0187",
     "link": "https://espace.library.uq.edu.au/view/UQ:d70488b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.82709881,
+    "citation_percentile": 0.83083319,
     "cited_by_count": 7,
-    "fwci": 1.1226
+    "fwci": 1.151
   },
   {
     "espace_id": "4329687",
@@ -2857,9 +2857,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2016.10.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:d453b97",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86962883,
+    "citation_percentile": 0.87241532,
     "cited_by_count": 20,
-    "fwci": 1.4225
+    "fwci": 1.4532
   },
   {
     "espace_id": "4329687",
@@ -2875,9 +2875,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2016.06.011",
     "link": "https://espace.library.uq.edu.au/view/UQ:0c2b141",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91894445,
+    "citation_percentile": 0.92045191,
     "cited_by_count": 29,
-    "fwci": 2.8513
+    "fwci": 2.9063
   },
   {
     "espace_id": "4329687",
@@ -2893,9 +2893,9 @@
     "article_url": "https://doi.org/10.1016/j.mulfin.2016.01.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:75ab772",
     "source": "UQ eSpace",
-    "citation_percentile": 0.78624585,
+    "citation_percentile": 0.77920627,
     "cited_by_count": 7,
-    "fwci": 0.7703
+    "fwci": 0.7266
   },
   {
     "espace_id": "4329687",
@@ -2911,9 +2911,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2014.04.010",
     "link": "https://espace.library.uq.edu.au/view/UQ:010d34e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95475385,
+    "citation_percentile": 0.95545243,
     "cited_by_count": 48,
-    "fwci": 4.8103
+    "fwci": 4.8931
   },
   {
     "espace_id": "4329687",
@@ -2929,9 +2929,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2013.01.011",
     "link": "https://espace.library.uq.edu.au/view/UQ:9d582e0",
     "source": "UQ eSpace",
-    "citation_percentile": 0.80077908,
+    "citation_percentile": 0.78902845,
     "cited_by_count": 11,
-    "fwci": 0.847
+    "fwci": 0.7851
   },
   {
     "espace_id": "4329687",
@@ -2947,9 +2947,9 @@
     "article_url": "https://doi.org/10.1016/j.intfin.2012.11.005",
     "link": "https://espace.library.uq.edu.au/view/UQ:9234194",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93594666,
+    "citation_percentile": 0.93239286,
     "cited_by_count": 33,
-    "fwci": 3.8374
+    "fwci": 3.6445
   },
   {
     "espace_id": "4329687",
@@ -2965,9 +2965,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2012.03.010",
     "link": "https://espace.library.uq.edu.au/view/UQ:e79f7ad",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97479232,
+    "citation_percentile": 0.97550262,
     "cited_by_count": 82,
-    "fwci": 9.2699
+    "fwci": 9.4757
   },
   {
     "espace_id": "4329687",
@@ -3001,9 +3001,9 @@
     "article_url": "https://doi.org/10.1287/mnsc.2023.03556",
     "link": "https://espace.library.uq.edu.au/view/UQ:95040df",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98056054,
+    "citation_percentile": 0.98128052,
     "cited_by_count": 43,
-    "fwci": 7.3235
+    "fwci": 7.5875
   },
   {
     "espace_id": "5508774",
@@ -3019,9 +3019,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2023.102249",
     "link": "https://espace.library.uq.edu.au/view/UQ:f2fa420",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94759809,
+    "citation_percentile": 0.94722322,
     "cited_by_count": 7,
-    "fwci": 5.1012
+    "fwci": 5.0819
   },
   {
     "espace_id": "5508774",
@@ -3037,9 +3037,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2023.102515",
     "link": "https://espace.library.uq.edu.au/view/UQ:59fdc3d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.77315556,
+    "citation_percentile": 0.77443733,
     "cited_by_count": 3,
-    "fwci": 0.6926
+    "fwci": 0.6844
   },
   {
     "espace_id": "5508774",
@@ -3055,9 +3055,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12686",
     "link": "https://espace.library.uq.edu.au/view/UQ:a099ea9",
     "source": "UQ eSpace",
-    "citation_percentile": 0.61435808,
+    "citation_percentile": 0.61918776,
     "cited_by_count": 2,
-    "fwci": 0.4816
+    "fwci": 0.4777
   },
   {
     "espace_id": "5508774",
@@ -3073,9 +3073,9 @@
     "article_url": "https://doi.org/10.1016/j.jebo.2022.02.013",
     "link": "https://espace.library.uq.edu.au/view/UQ:8236a44",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96567198,
+    "citation_percentile": 0.96612463,
     "cited_by_count": 25,
-    "fwci": 6.3344
+    "fwci": 6.404
   },
   {
     "espace_id": "5508774",
@@ -3091,9 +3091,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2020.100938",
     "link": "https://espace.library.uq.edu.au/view/UQ:986f676",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95856306,
-    "cited_by_count": 44,
-    "fwci": 5.7957
+    "citation_percentile": 0.95928657,
+    "cited_by_count": 45,
+    "fwci": 5.8943
   },
   {
     "espace_id": "5508774",
@@ -3109,7 +3109,7 @@
     "article_url": "https://doi.org/10.1111/acfi.12429",
     "link": "https://espace.library.uq.edu.au/view/UQ:b61ae57",
     "source": "UQ eSpace",
-    "citation_percentile": 0.00588596,
+    "citation_percentile": 0.00640969,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -3127,9 +3127,9 @@
     "article_url": "https://doi.org/10.1111/fire.12243",
     "link": "https://espace.library.uq.edu.au/view/UQ:f779e71",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94006458,
-    "cited_by_count": 38,
-    "fwci": 4.2706
+    "citation_percentile": 0.94103065,
+    "cited_by_count": 39,
+    "fwci": 4.3431
   },
   {
     "espace_id": "5508774",
@@ -3145,9 +3145,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2020.101703",
     "link": "https://espace.library.uq.edu.au/view/UQ:128259b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98532799,
-    "cited_by_count": 121,
-    "fwci": 11.3139
+    "citation_percentile": 0.98546249,
+    "cited_by_count": 122,
+    "fwci": 11.4783
   },
   {
     "espace_id": "5508774",
@@ -3163,9 +3163,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2020.101697",
     "link": "https://espace.library.uq.edu.au/view/UQ:ca03952",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98879959,
+    "citation_percentile": 0.98901284,
     "cited_by_count": 76,
-    "fwci": 13.1111
+    "fwci": 13.3396
   },
   {
     "espace_id": "5508774",
@@ -3181,9 +3181,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12641",
     "link": "https://espace.library.uq.edu.au/view/UQ:8538c19",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9118176,
+    "citation_percentile": 0.91330014,
     "cited_by_count": 16,
-    "fwci": 3.0485
+    "fwci": 3.1022
   },
   {
     "espace_id": "5508774",
@@ -3199,9 +3199,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2019.101430",
     "link": "https://espace.library.uq.edu.au/view/UQ:a807b8f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97537593,
+    "citation_percentile": 0.97600671,
     "cited_by_count": 133,
-    "fwci": 8.5925
+    "fwci": 8.8096
   },
   {
     "espace_id": "5508774",
@@ -3217,9 +3217,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2019.105666",
     "link": "https://espace.library.uq.edu.au/view/UQ:5975cbe",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98122338,
+    "citation_percentile": 0.98173238,
     "cited_by_count": 93,
-    "fwci": 10.6592
+    "fwci": 10.9071
   },
   {
     "espace_id": "5508774",
@@ -3235,9 +3235,9 @@
     "article_url": "https://doi.org/10.1111/eufm.12180",
     "link": "https://espace.library.uq.edu.au/view/UQ:f662033",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97523805,
+    "citation_percentile": 0.97570485,
     "cited_by_count": 71,
-    "fwci": 8.8742
+    "fwci": 9.043
   },
   {
     "espace_id": "5508774",
@@ -3253,9 +3253,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2018.04.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:1c8d48d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98042101,
+    "citation_percentile": 0.9792511,
     "cited_by_count": 67,
-    "fwci": 11.0128
+    "fwci": 10.4708
   },
   {
     "espace_id": "5508774",
@@ -3271,9 +3271,9 @@
     "article_url": "https://doi.org/10.1016/j.finmar.2017.07.003",
     "link": "https://espace.library.uq.edu.au/view/UQ:5d2d6a8",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9329473,
+    "citation_percentile": 0.93449762,
     "cited_by_count": 21,
-    "fwci": 3.9251
+    "fwci": 4.0286
   },
   {
     "espace_id": "5508774",
@@ -3289,9 +3289,9 @@
     "article_url": "https://doi.org/10.1017/S0022109017000497",
     "link": "https://espace.library.uq.edu.au/view/UQ:b1ba16c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99871726,
-    "cited_by_count": 505,
-    "fwci": 46.1712
+    "citation_percentile": 0.99874648,
+    "cited_by_count": 508,
+    "fwci": 47.1873
   },
   {
     "espace_id": "5508774",
@@ -3307,9 +3307,9 @@
     "article_url": "https://doi.org/10.1111/fima.12071",
     "link": "https://espace.library.uq.edu.au/view/UQ:8aab443",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97400069,
+    "citation_percentile": 0.97264953,
     "cited_by_count": 70,
-    "fwci": 8.499
+    "fwci": 8.1551
   },
   {
     "espace_id": "5508774",
@@ -3325,7 +3325,7 @@
     "article_url": "https://doi.org/10.1111/irfi.12038",
     "link": "https://espace.library.uq.edu.au/view/UQ:2885421",
     "source": "UQ eSpace",
-    "citation_percentile": 0.08324129,
+    "citation_percentile": 0.08385003,
     "cited_by_count": 1,
     "fwci": 0.0
   },
@@ -3343,9 +3343,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2012.06.012",
     "link": "https://espace.library.uq.edu.au/view/UQ:c47d59e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95331308,
+    "citation_percentile": 0.95446866,
     "cited_by_count": 35,
-    "fwci": 4.9851
+    "fwci": 5.1023
   },
   {
     "espace_id": "1055",
@@ -3361,9 +3361,9 @@
     "article_url": "https://doi.org/10.1016/j.jfineco.2021.05.032",
     "link": "https://espace.library.uq.edu.au/view/UQ:5f22901",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98226143,
+    "citation_percentile": 0.98251924,
     "cited_by_count": 57,
-    "fwci": 9.432
+    "fwci": 9.5666
   },
   {
     "espace_id": "1055",
@@ -3379,9 +3379,9 @@
     "article_url": "https://doi.org/10.1017/s0022109020000198",
     "link": "https://espace.library.uq.edu.au/view/UQ:5eb7a0d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98151591,
+    "citation_percentile": 0.98189038,
     "cited_by_count": 63,
-    "fwci": 9.7631
+    "fwci": 9.9324
   },
   {
     "espace_id": "1055",
@@ -3397,9 +3397,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12310",
     "link": "https://espace.library.uq.edu.au/view/UQ:699140",
     "source": "UQ eSpace",
-    "citation_percentile": 0.76260078,
+    "citation_percentile": 0.76805824,
     "cited_by_count": 4,
-    "fwci": 0.5608
+    "fwci": 0.5755
   },
   {
     "espace_id": "1055",
@@ -3415,9 +3415,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629x.2007.00256.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:159064",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89359892,
+    "citation_percentile": 0.89089818,
     "cited_by_count": 57,
-    "fwci": 1.2576
+    "fwci": 1.1812
   },
   {
     "espace_id": "1055",
@@ -3433,9 +3433,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629x.2007.00216.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:130937",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94279505,
+    "citation_percentile": 0.94599394,
     "cited_by_count": 62,
-    "fwci": 3.9409
+    "fwci": 4.2606
   },
   {
     "espace_id": "1055",
@@ -3451,9 +3451,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2006.00192.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:79011",
     "source": "UQ eSpace",
-    "citation_percentile": 0.81319948,
+    "citation_percentile": 0.81531864,
     "cited_by_count": 58,
-    "fwci": 1.1009
+    "fwci": 1.1134
   },
   {
     "espace_id": "1055",
@@ -3469,9 +3469,9 @@
     "article_url": "https://doi.org/10.1177/031289620603100208",
     "link": "https://espace.library.uq.edu.au/view/UQ:712863",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96155505,
+    "citation_percentile": 0.96218666,
     "cited_by_count": 108,
-    "fwci": 6.6391
+    "fwci": 6.7375
   },
   {
     "espace_id": "1055",
@@ -3523,7 +3523,7 @@
     "article_url": "https://doi.org/10.1111/1468-2443.00031",
     "link": "https://espace.library.uq.edu.au/view/UQ:62070",
     "source": "UQ eSpace",
-    "citation_percentile": 0.24922646,
+    "citation_percentile": 0.25226663,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -3559,9 +3559,9 @@
     "article_url": "https://doi.org/10.1016/S1042-4431(98)00030-4",
     "link": "https://espace.library.uq.edu.au/view/UQ:2ab8872",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92276252,
+    "citation_percentile": 0.91601085,
     "cited_by_count": 54,
-    "fwci": 2.7952
+    "fwci": 2.5898
   },
   {
     "espace_id": "1055",
@@ -3595,7 +3595,7 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2026.107704",
     "link": "https://espace.library.uq.edu.au/view/UQ:ff2011f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.56021047,
+    "citation_percentile": 0.32657286,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -3631,9 +3631,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2024.107205",
     "link": "https://espace.library.uq.edu.au/view/UQ:263ed2e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97983611,
+    "citation_percentile": 0.97995342,
     "cited_by_count": 15,
-    "fwci": 10.0402
+    "fwci": 10.1638
   },
   {
     "espace_id": "2284981",
@@ -3649,9 +3649,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2024.02.032",
     "link": "https://espace.library.uq.edu.au/view/UQ:3388a46",
     "source": "UQ eSpace",
-    "citation_percentile": 0.82104762,
+    "citation_percentile": 0.82992512,
     "cited_by_count": 4,
-    "fwci": 1.6204
+    "fwci": 1.699
   },
   {
     "espace_id": "2284981",
@@ -3667,9 +3667,9 @@
     "article_url": "https://doi.org/10.1016/j.intfin.2024.101944",
     "link": "https://espace.library.uq.edu.au/view/UQ:7549740",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94065584,
+    "citation_percentile": 0.93687511,
     "cited_by_count": 6,
-    "fwci": 4.6337
+    "fwci": 4.3411
   },
   {
     "espace_id": "2284981",
@@ -3685,9 +3685,9 @@
     "article_url": "https://doi.org/10.1080/00014788.2023.2165031",
     "link": "https://espace.library.uq.edu.au/view/UQ:4627df4",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98594398,
+    "citation_percentile": 0.98584896,
     "cited_by_count": 29,
-    "fwci": 11.7186
+    "fwci": 11.8066
   },
   {
     "espace_id": "2284981",
@@ -3721,9 +3721,9 @@
     "article_url": "https://doi.org/10.1177/03128962211025118",
     "link": "https://espace.library.uq.edu.au/view/UQ:227615d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89134572,
+    "citation_percentile": 0.88274377,
     "cited_by_count": 14,
-    "fwci": 2.3952
+    "fwci": 2.251
   },
   {
     "espace_id": "2284981",
@@ -3739,9 +3739,9 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2021.100265",
     "link": "https://espace.library.uq.edu.au/view/UQ:e61ee5d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91148036,
+    "citation_percentile": 0.91280242,
     "cited_by_count": 24,
-    "fwci": 3.052
+    "fwci": 3.0951
   },
   {
     "espace_id": "2284981",
@@ -3775,9 +3775,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2020.101792",
     "link": "https://espace.library.uq.edu.au/view/UQ:0e8a21c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96648917,
+    "citation_percentile": 0.9670175,
     "cited_by_count": 53,
-    "fwci": 6.7093
+    "fwci": 6.8249
   },
   {
     "espace_id": "2284981",
@@ -3793,9 +3793,9 @@
     "article_url": "https://doi.org/10.1177/0312896220946384",
     "link": "https://espace.library.uq.edu.au/view/UQ:f3f6f01",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87924471,
+    "citation_percentile": 0.86899435,
     "cited_by_count": 16,
-    "fwci": 2.005
+    "fwci": 1.8613
   },
   {
     "espace_id": "2284981",
@@ -3811,9 +3811,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2020.105821",
     "link": "https://espace.library.uq.edu.au/view/UQ:4935739",
     "source": "UQ eSpace",
-    "citation_percentile": 0.81769975,
+    "citation_percentile": 0.81983921,
     "cited_by_count": 17,
-    "fwci": 1.2872
+    "fwci": 1.3029
   },
   {
     "espace_id": "93285",
@@ -3829,7 +3829,7 @@
     "article_url": "https://doi.org/10.1007/s10551-026-06422-5",
     "link": "https://espace.library.uq.edu.au/view/UQ:4de5923",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91069562,
+    "citation_percentile": 0.87040661,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -3847,7 +3847,7 @@
     "article_url": "https://doi.org/10.1038/s41467-026-72703-2",
     "link": "https://espace.library.uq.edu.au/view/UQ:5fc605c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.00178628,
+    "citation_percentile": 0.00187179,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -3865,9 +3865,9 @@
     "article_url": "https://doi.org/10.1016/j.oneear.2026.101654",
     "link": "https://espace.library.uq.edu.au/view/UQ:6a4b21d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99472933,
+    "citation_percentile": 0.99243658,
     "cited_by_count": 2,
-    "fwci": 35.502
+    "fwci": 29.0299
   },
   {
     "espace_id": "93285",
@@ -3883,9 +3883,9 @@
     "article_url": "https://doi.org/10.1038/s41598-026-42790-8",
     "link": "https://espace.library.uq.edu.au/view/UQ:b81096b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97950275,
+    "citation_percentile": 0.97916958,
     "cited_by_count": 1,
-    "fwci": 18.6529
+    "fwci": 18.4062
   },
   {
     "espace_id": "93285",
@@ -3901,7 +3901,7 @@
     "article_url": "https://doi.org/10.1007/s11367-026-02614-3",
     "link": "https://espace.library.uq.edu.au/view/UQ:87d07ee",
     "source": "UQ eSpace",
-    "citation_percentile": 0.27205432,
+    "citation_percentile": 0.22595127,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -3919,7 +3919,7 @@
     "article_url": "https://doi.org/10.1177/00081256251408087",
     "link": "https://espace.library.uq.edu.au/view/UQ:84cffa8",
     "source": "UQ eSpace",
-    "citation_percentile": 0.05249988,
+    "citation_percentile": 0.04972364,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -3937,7 +3937,7 @@
     "article_url": "https://doi.org/10.1016/j.oneear.2025.101550",
     "link": "https://espace.library.uq.edu.au/view/UQ:8187444",
     "source": "UQ eSpace",
-    "citation_percentile": 0.44077517,
+    "citation_percentile": 0.32020362,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -3955,9 +3955,9 @@
     "article_url": "https://doi.org/10.1038/s41558-025-02467-y",
     "link": "https://espace.library.uq.edu.au/view/UQ:ef95707",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97995209,
+    "citation_percentile": 0.97931561,
     "cited_by_count": 7,
-    "fwci": 10.7216
+    "fwci": 10.4007
   },
   {
     "espace_id": "93285",
@@ -3973,9 +3973,9 @@
     "article_url": "https://doi.org/10.1038/s41558-025-02425-8",
     "link": "https://espace.library.uq.edu.au/view/UQ:105512a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99631249,
+    "citation_percentile": 0.9961249,
     "cited_by_count": 12,
-    "fwci": 27.4666
+    "fwci": 27.5596
   },
   {
     "espace_id": "93285",
@@ -3991,9 +3991,9 @@
     "article_url": "https://doi.org/10.1016/j.jenvp.2025.102680",
     "link": "https://espace.library.uq.edu.au/view/UQ:6da1bf1",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88695549,
-    "cited_by_count": 1,
-    "fwci": 2.4024
+    "citation_percentile": 0.94035938,
+    "cited_by_count": 2,
+    "fwci": 4.5933
   },
   {
     "espace_id": "93285",
@@ -4009,9 +4009,9 @@
     "article_url": "https://doi.org/10.1007/s10584-024-03740-3",
     "link": "https://espace.library.uq.edu.au/view/UQ:db4ebfb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98525221,
+    "citation_percentile": 0.98547468,
     "cited_by_count": 15,
-    "fwci": 12.3597
+    "fwci": 12.6772
   },
   {
     "espace_id": "93285",
@@ -4027,9 +4027,9 @@
     "article_url": "https://doi.org/10.1016/j.jclepro.2023.139674",
     "link": "https://espace.library.uq.edu.au/view/UQ:eae001b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95776589,
+    "citation_percentile": 0.95776365,
     "cited_by_count": 12,
-    "fwci": 5.6666
+    "fwci": 5.6956
   },
   {
     "espace_id": "93285",
@@ -4045,9 +4045,9 @@
     "article_url": "https://doi.org/10.1038/s41558-023-01734-0",
     "link": "https://espace.library.uq.edu.au/view/UQ:07d9cb5",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97394573,
+    "citation_percentile": 0.9730772,
     "cited_by_count": 49,
-    "fwci": 5.8293
+    "fwci": 5.8085
   },
   {
     "espace_id": "93285",
@@ -4063,9 +4063,9 @@
     "article_url": "https://doi.org/10.1016/j.jclepro.2023.137040",
     "link": "https://espace.library.uq.edu.au/view/UQ:e8e6de2",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95824157,
+    "citation_percentile": 0.95856189,
     "cited_by_count": 19,
-    "fwci": 5.9027
+    "fwci": 5.9494
   },
   {
     "espace_id": "93285",
@@ -4081,9 +4081,9 @@
     "article_url": "https://doi.org/10.1038/s41467-022-31143-4",
     "link": "https://espace.library.uq.edu.au/view/UQ:6469c45",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98107418,
+    "citation_percentile": 0.98112861,
     "cited_by_count": 61,
-    "fwci": 10.5044
+    "fwci": 10.5176
   },
   {
     "espace_id": "93285",
@@ -4099,9 +4099,9 @@
     "article_url": "https://doi.org/10.1016/j.rser.2022.112586",
     "link": "https://espace.library.uq.edu.au/view/UQ:db95c32",
     "source": "UQ eSpace",
-    "citation_percentile": 0.61818182,
+    "citation_percentile": 0.6146789,
     "cited_by_count": 35,
-    "fwci": 0.8753
+    "fwci": 0.8655
   },
   {
     "espace_id": "93285",
@@ -4117,9 +4117,9 @@
     "article_url": "https://doi.org/10.1038/s41558-020-00936-0",
     "link": "https://espace.library.uq.edu.au/view/UQ:80d1908",
     "source": "UQ eSpace",
-    "citation_percentile": 0.52633786,
+    "citation_percentile": 0.53301866,
     "cited_by_count": 14,
-    "fwci": 0.4282
+    "fwci": 0.4344
   },
   {
     "espace_id": "93285",
@@ -4135,9 +4135,9 @@
     "article_url": "https://doi.org/10.1177/0007650319825764",
     "link": "https://espace.library.uq.edu.au/view/UQ:7a7da83",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96652064,
-    "cited_by_count": 54,
-    "fwci": 7.5868
+    "citation_percentile": 0.96702566,
+    "cited_by_count": 55,
+    "fwci": 7.6882
   },
   {
     "espace_id": "93285",
@@ -4153,9 +4153,9 @@
     "article_url": "https://doi.org/10.1038/s41558-018-0158-1",
     "link": "https://espace.library.uq.edu.au/view/UQ:91c8493",
     "source": "UQ eSpace",
-    "citation_percentile": 0.63807183,
+    "citation_percentile": 0.64318916,
     "cited_by_count": 30,
-    "fwci": 0.6869
+    "fwci": 0.6964
   },
   {
     "espace_id": "93285",
@@ -4189,9 +4189,9 @@
     "article_url": "https://doi.org/10.1007/s12525-015-0195-9",
     "link": "https://espace.library.uq.edu.au/view/UQ:366836",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94706297,
+    "citation_percentile": 0.94877448,
     "cited_by_count": 39,
-    "fwci": 4.9058
+    "fwci": 5.0614
   },
   {
     "espace_id": "93285",
@@ -4207,9 +4207,9 @@
     "article_url": "https://doi.org/10.1177/0312896215569794",
     "link": "https://espace.library.uq.edu.au/view/UQ:348014",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99364424,
-    "cited_by_count": 54,
-    "fwci": 27.0005
+    "citation_percentile": 0.99371258,
+    "cited_by_count": 55,
+    "fwci": 27.217
   },
   {
     "espace_id": "93285",
@@ -4261,7 +4261,7 @@
     "article_url": "https://doi.org/10.1111/fima.70049",
     "link": "https://espace.library.uq.edu.au/view/UQ:2ff0f37",
     "source": "UQ eSpace",
-    "citation_percentile": 0.69212675,
+    "citation_percentile": 0.46161902,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -4279,9 +4279,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2024.107287",
     "link": "https://espace.library.uq.edu.au/view/UQ:ad0829f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92155213,
+    "citation_percentile": 0.91601576,
     "cited_by_count": 4,
-    "fwci": 3.1405
+    "fwci": 2.9039
   },
   {
     "espace_id": "4818628",
@@ -4297,9 +4297,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2024.103414",
     "link": "https://espace.library.uq.edu.au/view/UQ:716e139",
     "source": "UQ eSpace",
-    "citation_percentile": 0.78928571,
+    "citation_percentile": 0.80071813,
     "cited_by_count": 3,
-    "fwci": 1.2153
+    "fwci": 1.2742
   },
   {
     "espace_id": "4818628",
@@ -4315,9 +4315,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2024.103309",
     "link": "https://espace.library.uq.edu.au/view/UQ:1281e16",
     "source": "UQ eSpace",
-    "citation_percentile": 0.71393142,
+    "citation_percentile": 0.72991198,
     "cited_by_count": 2,
-    "fwci": 0.8221
+    "fwci": 0.8495
   },
   {
     "espace_id": "4818628",
@@ -4333,9 +4333,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2023.102930",
     "link": "https://espace.library.uq.edu.au/view/UQ:799582e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90046787,
+    "citation_percentile": 0.89997535,
     "cited_by_count": 6,
-    "fwci": 2.4679
+    "fwci": 2.4472
   },
   {
     "espace_id": "4818628",
@@ -4351,9 +4351,9 @@
     "article_url": "https://doi.org/10.1111/acfi.13040",
     "link": "https://espace.library.uq.edu.au/view/UQ:dd5e3b9",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90722004,
+    "citation_percentile": 0.90047856,
     "cited_by_count": 9,
-    "fwci": 2.6499
+    "fwci": 2.5059
   },
   {
     "espace_id": "4818628",
@@ -4369,9 +4369,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2022.102401",
     "link": "https://espace.library.uq.edu.au/view/UQ:5be17ba",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99240535,
-    "cited_by_count": 83,
-    "fwci": 12.8595
+    "citation_percentile": 0.99274796,
+    "cited_by_count": 84,
+    "fwci": 13.2639
   },
   {
     "espace_id": "4818628",
@@ -4405,9 +4405,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12603",
     "link": "https://espace.library.uq.edu.au/view/UQ:d99dbe7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9634746,
+    "citation_percentile": 0.9640295,
     "cited_by_count": 29,
-    "fwci": 6.0583
+    "fwci": 6.1413
   },
   {
     "espace_id": "4818628",
@@ -4423,9 +4423,9 @@
     "article_url": "https://doi.org/10.1111/irfi.12338",
     "link": "https://espace.library.uq.edu.au/view/UQ:a940161",
     "source": "UQ eSpace",
-    "citation_percentile": 0.8425739,
+    "citation_percentile": 0.82998256,
     "cited_by_count": 5,
-    "fwci": 1.3355
+    "fwci": 1.2409
   },
   {
     "espace_id": "4818628",
@@ -4441,9 +4441,9 @@
     "article_url": "https://doi.org/10.1016/j.ememar.2020.100742",
     "link": "https://espace.library.uq.edu.au/view/UQ:da48d1a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.82562024,
+    "citation_percentile": 0.82761499,
     "cited_by_count": 17,
-    "fwci": 1.2872
+    "fwci": 1.3029
   },
   {
     "espace_id": "4818628",
@@ -4459,9 +4459,9 @@
     "article_url": "https://doi.org/10.1016/j.ejor.2020.04.009",
     "link": "https://espace.library.uq.edu.au/view/UQ:708bf3e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94235551,
-    "cited_by_count": 25,
-    "fwci": 4.0581
+    "citation_percentile": 0.936388,
+    "cited_by_count": 26,
+    "fwci": 3.6914
   },
   {
     "espace_id": "4818628",
@@ -4477,9 +4477,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2019.08.003",
     "link": "https://espace.library.uq.edu.au/view/UQ:931fe0a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.68989862,
+    "citation_percentile": 0.69262534,
     "cited_by_count": 5,
-    "fwci": 0.5077
+    "fwci": 0.5114
   },
   {
     "espace_id": "4818628",
@@ -4495,9 +4495,9 @@
     "article_url": "https://doi.org/10.1017/S0022109017000060",
     "link": "https://espace.library.uq.edu.au/view/UQ:67cdb8c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.80041598,
+    "citation_percentile": 0.80379936,
     "cited_by_count": 10,
-    "fwci": 0.9141
+    "fwci": 0.9297
   },
   {
     "espace_id": "4818628",
@@ -4513,9 +4513,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12265",
     "link": "https://espace.library.uq.edu.au/view/UQ:dbb3e23",
     "source": "UQ eSpace",
-    "citation_percentile": 0.81819954,
+    "citation_percentile": 0.80518652,
     "cited_by_count": 7,
-    "fwci": 0.6286
+    "fwci": 0.5755
   },
   {
     "espace_id": "8472",
@@ -4531,7 +4531,25 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2026.100571",
     "link": "https://espace.library.uq.edu.au/view/UQ:e5571c6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.76941069,
+    "citation_percentile": 0.67028925,
+    "cited_by_count": 0,
+    "fwci": 0.0
+  },
+  {
+    "espace_id": "8472",
+    "name": "Kelvin Tan",
+    "journal_name": "Journal of Banking & Finance",
+    "title": "TheDual Roles of Short Sellers in the Lifecycle of Securities Litigation",
+    "year": "2026",
+    "author_count": 3,
+    "authors": "Liu, Chelsea; Nguyen, Lily H.G.; Tan, Kelvin Jui Keng",
+    "quality_rank": "A*",
+    "sjr_quartile": "Q1",
+    "doi": "10.1016/j.jbankfin.2026.107801",
+    "article_url": "https://doi.org/10.1016/j.jbankfin.2026.107801",
+    "link": "https://espace.library.uq.edu.au/view/UQ:8b1775e",
+    "source": "UQ eSpace",
+    "citation_percentile": 0.96348076,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -4549,9 +4567,9 @@
     "article_url": "https://doi.org/10.1016/j.respol.2025.105310",
     "link": "https://espace.library.uq.edu.au/view/UQ:241379b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.85000351,
+    "citation_percentile": 0.84394784,
     "cited_by_count": 1,
-    "fwci": 1.2813
+    "fwci": 1.1811
   },
   {
     "espace_id": "8472",
@@ -4567,9 +4585,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2025.101699",
     "link": "https://espace.library.uq.edu.au/view/UQ:0c0a040",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95995444,
+    "citation_percentile": 0.95723416,
     "cited_by_count": 4,
-    "fwci": 6.3469
+    "fwci": 5.9432
   },
   {
     "espace_id": "8472",
@@ -4585,9 +4603,9 @@
     "article_url": "https://doi.org/10.1016/j.jfs.2025.101384",
     "link": "https://espace.library.uq.edu.au/view/UQ:f860431",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99379786,
+    "citation_percentile": 0.99343587,
     "cited_by_count": 12,
-    "fwci": 23.9772
+    "fwci": 23.2326
   },
   {
     "espace_id": "8472",
@@ -4621,9 +4639,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2024.103314",
     "link": "https://espace.library.uq.edu.au/view/UQ:87f5695",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91112346,
+    "citation_percentile": 0.90938732,
     "cited_by_count": 5,
-    "fwci": 2.96
+    "fwci": 2.9039
   },
   {
     "espace_id": "8472",
@@ -4639,9 +4657,9 @@
     "article_url": "https://doi.org/10.1287/orsc.2022.16493",
     "link": "https://espace.library.uq.edu.au/view/UQ:6c5adea",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96362796,
+    "citation_percentile": 0.96320315,
     "cited_by_count": 9,
-    "fwci": 6.5636
+    "fwci": 6.5339
   },
   {
     "espace_id": "8472",
@@ -4657,9 +4675,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12755",
     "link": "https://espace.library.uq.edu.au/view/UQ:b80b879",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9123334,
+    "citation_percentile": 0.91309974,
     "cited_by_count": 8,
-    "fwci": 2.8353
+    "fwci": 2.855
   },
   {
     "espace_id": "8472",
@@ -4675,9 +4693,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2024.102504",
     "link": "https://espace.library.uq.edu.au/view/UQ:a307815",
     "source": "UQ eSpace",
-    "citation_percentile": 0.933074,
+    "citation_percentile": 0.93219276,
     "cited_by_count": 5,
-    "fwci": 3.7001
+    "fwci": 3.6299
   },
   {
     "espace_id": "8472",
@@ -4693,9 +4711,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2023.101186",
     "link": "https://espace.library.uq.edu.au/view/UQ:54c8f86",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87430503,
+    "citation_percentile": 0.87286639,
     "cited_by_count": 9,
-    "fwci": 2.181
+    "fwci": 2.1497
   },
   {
     "espace_id": "8472",
@@ -4711,9 +4729,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2023.102008",
     "link": "https://espace.library.uq.edu.au/view/UQ:6287fa7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94345707,
+    "citation_percentile": 0.94278034,
     "cited_by_count": 15,
-    "fwci": 4.4298
+    "fwci": 4.3837
   },
   {
     "espace_id": "8472",
@@ -4729,9 +4747,9 @@
     "article_url": "https://doi.org/10.1111/fima.12421",
     "link": "https://espace.library.uq.edu.au/view/UQ:513eba7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96249864,
+    "citation_percentile": 0.96126063,
     "cited_by_count": 22,
-    "fwci": 5.3314
+    "fwci": 5.2549
   },
   {
     "espace_id": "8472",
@@ -4747,9 +4765,9 @@
     "article_url": "https://doi.org/10.1038/s41598-022-09783-9",
     "link": "https://espace.library.uq.edu.au/view/UQ:b7e8ead",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99921315,
-    "cited_by_count": 150,
-    "fwci": 38.0885
+    "citation_percentile": 0.99921947,
+    "cited_by_count": 151,
+    "fwci": 38.929
   },
   {
     "espace_id": "8472",
@@ -4765,9 +4783,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2022.102251",
     "link": "https://espace.library.uq.edu.au/view/UQ:fc9e182",
     "source": "UQ eSpace",
-    "citation_percentile": 0.6812535,
+    "citation_percentile": 0.68617674,
     "cited_by_count": 2,
-    "fwci": 0.549
+    "fwci": 0.5569
   },
   {
     "espace_id": "8472",
@@ -4801,9 +4819,9 @@
     "article_url": "https://doi.org/10.1016/j.jbef.2022.100648",
     "link": "https://espace.library.uq.edu.au/view/UQ:1fabc95",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93807019,
+    "citation_percentile": 0.93878881,
     "cited_by_count": 15,
-    "fwci": 4.1247
+    "fwci": 4.1765
   },
   {
     "espace_id": "8472",
@@ -4819,9 +4837,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2021.106208",
     "link": "https://espace.library.uq.edu.au/view/UQ:af07d11",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91586207,
+    "citation_percentile": 0.91264205,
     "cited_by_count": 17,
-    "fwci": 3.1684
+    "fwci": 3.0951
   },
   {
     "espace_id": "8472",
@@ -4837,9 +4855,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12482",
     "link": "https://espace.library.uq.edu.au/view/UQ:8679f71",
     "source": "UQ eSpace",
-    "citation_percentile": 0.8503839,
+    "citation_percentile": 0.8380076,
     "cited_by_count": 12,
-    "fwci": 1.6694
+    "fwci": 1.5511
   },
   {
     "espace_id": "8472",
@@ -4855,7 +4873,7 @@
     "article_url": "https://doi.org/10.1016/j.econlet.2019.108740",
     "link": "https://espace.library.uq.edu.au/view/UQ:9274c4d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.18032787,
+    "citation_percentile": 0.17804111,
     "cited_by_count": 7,
     "fwci": 0.0
   },
@@ -4873,9 +4891,9 @@
     "article_url": "https://doi.org/10.1016/j.jfi.2017.05.005",
     "link": "https://espace.library.uq.edu.au/view/UQ:599623",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96198369,
+    "citation_percentile": 0.9630037,
     "cited_by_count": 40,
-    "fwci": 6.1693
+    "fwci": 6.3306
   },
   {
     "espace_id": "8472",
@@ -4891,9 +4909,9 @@
     "article_url": "https://doi.org/10.1111/abac.12111",
     "link": "https://espace.library.uq.edu.au/view/UQ:578307",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96666537,
+    "citation_percentile": 0.96238059,
     "cited_by_count": 19,
-    "fwci": 6.9
+    "fwci": 6.1414
   },
   {
     "espace_id": "8472",
@@ -4909,9 +4927,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2016.06.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:390746",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9897372,
-    "cited_by_count": 135,
-    "fwci": 17.1866
+    "citation_percentile": 0.98988409,
+    "cited_by_count": 136,
+    "fwci": 17.4466
   },
   {
     "espace_id": "8472",
@@ -4927,9 +4945,9 @@
     "article_url": "https://doi.org/10.1177/0312896216632032",
     "link": "https://espace.library.uq.edu.au/view/UQ:386816",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95563448,
+    "citation_percentile": 0.95645301,
     "cited_by_count": 16,
-    "fwci": 4.9801
+    "fwci": 5.086
   },
   {
     "espace_id": "8472",
@@ -4945,9 +4963,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2015.10.009",
     "link": "https://espace.library.uq.edu.au/view/UQ:374513",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99417661,
+    "citation_percentile": 0.99424335,
     "cited_by_count": 236,
-    "fwci": 25.8728
+    "fwci": 26.2864
   },
   {
     "espace_id": "8472",
@@ -4963,9 +4981,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12125",
     "link": "https://espace.library.uq.edu.au/view/UQ:351123",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89299137,
+    "citation_percentile": 0.88110181,
     "cited_by_count": 5,
-    "fwci": 1.9825
+    "fwci": 1.8024
   },
   {
     "espace_id": "8472",
@@ -4981,9 +4999,9 @@
     "article_url": "https://doi.org/10.1007/s11146-012-9379-7",
     "link": "https://espace.library.uq.edu.au/view/UQ:284069",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97846957,
+    "citation_percentile": 0.97859453,
     "cited_by_count": 36,
-    "fwci": 10.4469
+    "fwci": 10.5069
   },
   {
     "espace_id": "8472",
@@ -4999,9 +5017,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2010.00397.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:229067",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97166002,
+    "citation_percentile": 0.96901303,
     "cited_by_count": 58,
-    "fwci": 8.3232
+    "fwci": 7.7844
   },
   {
     "espace_id": "8472",
@@ -5017,9 +5035,9 @@
     "article_url": "https://doi.org/10.1111/j.1475-4932.2012.00831.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:284067",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91920799,
+    "citation_percentile": 0.9159749,
     "cited_by_count": 9,
-    "fwci": 2.9438
+    "fwci": 2.9185
   },
   {
     "espace_id": "92037",
@@ -5053,9 +5071,9 @@
     "article_url": "https://doi.org/10.1007/s10551-025-06076-9",
     "link": "https://espace.library.uq.edu.au/view/UQ:372e4db",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98700717,
+    "citation_percentile": 0.98610735,
     "cited_by_count": 12,
-    "fwci": 14.5987
+    "fwci": 14.1727
   },
   {
     "espace_id": "92037",
@@ -5071,9 +5089,9 @@
     "article_url": "https://doi.org/10.1057/s41599-025-05203-1",
     "link": "https://espace.library.uq.edu.au/view/UQ:b8e1c0f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95075306,
+    "citation_percentile": 0.94738123,
     "cited_by_count": 4,
-    "fwci": 4.9926
+    "fwci": 4.7035
   },
   {
     "espace_id": "92037",
@@ -5089,9 +5107,9 @@
     "article_url": "https://doi.org/10.1111/abac.70011",
     "link": "https://espace.library.uq.edu.au/view/UQ:c15bceb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.82480198,
+    "citation_percentile": 0.80639201,
     "cited_by_count": 1,
-    "fwci": 1.2512
+    "fwci": 1.2202
   },
   {
     "espace_id": "92037",
@@ -5107,7 +5125,7 @@
     "article_url": "https://doi.org/10.1111/acfi.70095",
     "link": "https://espace.library.uq.edu.au/view/UQ:1fe81f1",
     "source": "UQ eSpace",
-    "citation_percentile": 0.33292818,
+    "citation_percentile": 0.30094654,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -5143,9 +5161,9 @@
     "article_url": "https://doi.org/10.1016/j.frl.2024.105118",
     "link": "https://espace.library.uq.edu.au/view/UQ:2e4ae86",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97682179,
+    "citation_percentile": 0.97708882,
     "cited_by_count": 16,
-    "fwci": 10.7371
+    "fwci": 10.9091
   },
   {
     "espace_id": "92037",
@@ -5161,9 +5179,9 @@
     "article_url": "https://doi.org/10.1016/j.econlet.2024.111562",
     "link": "https://espace.library.uq.edu.au/view/UQ:addad6c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98639351,
+    "citation_percentile": 0.97875551,
     "cited_by_count": 17,
-    "fwci": 17.2497
+    "fwci": 11.5909
   },
   {
     "espace_id": "92037",
@@ -5179,9 +5197,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2022.101146",
     "link": "https://espace.library.uq.edu.au/view/UQ:f5bdd1a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.78594053,
+    "citation_percentile": 0.77239763,
     "cited_by_count": 6,
-    "fwci": 1.0496
+    "fwci": 0.9898
   },
   {
     "espace_id": "92037",
@@ -5197,9 +5215,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2021.101620",
     "link": "https://espace.library.uq.edu.au/view/UQ:f9c4814",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89657472,
+    "citation_percentile": 0.89701606,
     "cited_by_count": 12,
-    "fwci": 1.8633
+    "fwci": 1.8728
   },
   {
     "espace_id": "92037",
@@ -5215,9 +5233,9 @@
     "article_url": "https://doi.org/10.1177/0312896220981109",
     "link": "https://espace.library.uq.edu.au/view/UQ:9c16173",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90847521,
+    "citation_percentile": 0.90120968,
     "cited_by_count": 16,
-    "fwci": 2.9905
+    "fwci": 2.8137
   },
   {
     "espace_id": "92037",
@@ -5233,9 +5251,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12752",
     "link": "https://espace.library.uq.edu.au/view/UQ:5655770",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97534278,
-    "cited_by_count": 59,
-    "fwci": 8.0461
+    "citation_percentile": 0.97571481,
+    "cited_by_count": 60,
+    "fwci": 8.1597
   },
   {
     "espace_id": "92037",
@@ -5251,9 +5269,9 @@
     "article_url": "https://doi.org/10.1016/j.chieco.2020.101479",
     "link": "https://espace.library.uq.edu.au/view/UQ:f04237e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90189933,
+    "citation_percentile": 0.89323754,
     "cited_by_count": 20,
-    "fwci": 2.6736
+    "fwci": 2.4818
   },
   {
     "espace_id": "92037",
@@ -5269,7 +5287,7 @@
     "article_url": "https://doi.org/10.1111/abac.12198",
     "link": "https://espace.library.uq.edu.au/view/UQ:9620cdc",
     "source": "UQ eSpace",
-    "citation_percentile": 0.11199381,
+    "citation_percentile": 0.11126292,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -5287,9 +5305,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12314",
     "link": "https://espace.library.uq.edu.au/view/UQ:709644",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95070519,
+    "citation_percentile": 0.94562731,
     "cited_by_count": 28,
-    "fwci": 5.0264
+    "fwci": 4.6041
   },
   {
     "espace_id": "92037",
@@ -5305,9 +5323,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12301",
     "link": "https://espace.library.uq.edu.au/view/UQ:690169",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91288207,
+    "citation_percentile": 0.90309164,
     "cited_by_count": 32,
-    "fwci": 2.2831
+    "fwci": 2.0662
   },
   {
     "espace_id": "92037",
@@ -5323,9 +5341,9 @@
     "article_url": "https://doi.org/10.1177/0312896219871979",
     "link": "https://espace.library.uq.edu.au/view/UQ:fa26c6e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90564976,
+    "citation_percentile": 0.90801694,
     "cited_by_count": 18,
-    "fwci": 2.5349
+    "fwci": 2.5984
   },
   {
     "espace_id": "92037",
@@ -5341,9 +5359,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2017.04.005",
     "link": "https://espace.library.uq.edu.au/view/UQ:576205",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98925383,
+    "citation_percentile": 0.98941302,
     "cited_by_count": 127,
-    "fwci": 13.4067
+    "fwci": 13.6358
   },
   {
     "espace_id": "92037",
@@ -5359,9 +5377,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2016.06.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:390746",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9897372,
-    "cited_by_count": 135,
-    "fwci": 17.1866
+    "citation_percentile": 0.98988409,
+    "cited_by_count": 136,
+    "fwci": 17.4466
   },
   {
     "espace_id": "92037",
@@ -5377,9 +5395,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12205",
     "link": "https://espace.library.uq.edu.au/view/UQ:381302",
     "source": "UQ eSpace",
-    "citation_percentile": 0.79268921,
+    "citation_percentile": 0.78161162,
     "cited_by_count": 4,
-    "fwci": 0.798
+    "fwci": 0.7266
   },
   {
     "espace_id": "92037",
@@ -5395,9 +5413,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2015.12.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:376032",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97325445,
+    "citation_percentile": 0.97377964,
     "cited_by_count": 42,
-    "fwci": 7.6042
+    "fwci": 7.6604
   },
   {
     "espace_id": "92037",
@@ -5413,9 +5431,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12188",
     "link": "https://espace.library.uq.edu.au/view/UQ:377871",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88559682,
+    "citation_percentile": 0.87514265,
     "cited_by_count": 8,
-    "fwci": 2.0584
+    "fwci": 1.8541
   },
   {
     "espace_id": "92037",
@@ -5431,9 +5449,9 @@
     "article_url": "https://doi.org/10.1111/abac.12048",
     "link": "https://espace.library.uq.edu.au/view/UQ:362626",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99465836,
+    "citation_percentile": 0.99478849,
     "cited_by_count": 124,
-    "fwci": 27.5191
+    "fwci": 28.0388
   },
   {
     "espace_id": "92037",
@@ -5449,9 +5467,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12126",
     "link": "https://espace.library.uq.edu.au/view/UQ:357324",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95564096,
+    "citation_percentile": 0.9531359,
     "cited_by_count": 7,
-    "fwci": 5.5524
+    "fwci": 5.2553
   },
   {
     "espace_id": "92037",
@@ -5467,9 +5485,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12133",
     "link": "https://espace.library.uq.edu.au/view/UQ:356941",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94761384,
+    "citation_percentile": 0.94302224,
     "cited_by_count": 12,
-    "fwci": 4.7601
+    "fwci": 4.3811
   },
   {
     "espace_id": "92037",
@@ -5503,9 +5521,9 @@
     "article_url": "https://doi.org/10.1177/0312896211429159",
     "link": "https://espace.library.uq.edu.au/view/UQ:284514",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97818191,
+    "citation_percentile": 0.97693867,
     "cited_by_count": 21,
-    "fwci": 9.9771
+    "fwci": 9.4757
   },
   {
     "espace_id": "92037",
@@ -5521,9 +5539,9 @@
     "article_url": "https://doi.org/10.1177/0312896212461640",
     "link": "https://espace.library.uq.edu.au/view/UQ:286440",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96060075,
+    "citation_percentile": 0.95703103,
     "cited_by_count": 15,
-    "fwci": 6.2271
+    "fwci": 5.8312
   },
   {
     "espace_id": "4503669",
@@ -5539,7 +5557,7 @@
     "article_url": "https://doi.org/10.1108/JAL-05-2024-0094",
     "link": "https://espace.library.uq.edu.au/view/UQ:810baab",
     "source": "UQ eSpace",
-    "citation_percentile": 0.21563397,
+    "citation_percentile": 0.20544608,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -5557,9 +5575,9 @@
     "article_url": "https://doi.org/10.2308/tar-2023-0073",
     "link": "https://espace.library.uq.edu.au/view/UQ:dc8ae23",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90690063,
+    "citation_percentile": 0.90593709,
     "cited_by_count": 1,
-    "fwci": 2.1144
+    "fwci": 2.0899
   },
   {
     "espace_id": "4503669",
@@ -5575,9 +5593,9 @@
     "article_url": "https://doi.org/10.1016/j.frl.2024.105739",
     "link": "https://espace.library.uq.edu.au/view/UQ:72d9b04",
     "source": "UQ eSpace",
-    "citation_percentile": 0.81703014,
+    "citation_percentile": 0.8004554,
     "cited_by_count": 3,
-    "fwci": 1.4147
+    "fwci": 1.2742
   },
   {
     "espace_id": "4503669",
@@ -5611,7 +5629,7 @@
     "article_url": "https://doi.org/10.1016/j.iref.2022.02.036",
     "link": "https://espace.library.uq.edu.au/view/UQ:5986913",
     "source": "UQ eSpace",
-    "citation_percentile": 0.02728304,
+    "citation_percentile": 0.02698935,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -5629,9 +5647,9 @@
     "article_url": "https://doi.org/10.1016/j.jempfin.2021.04.006",
     "link": "https://espace.library.uq.edu.au/view/UQ:f790f2f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.52968944,
+    "citation_percentile": 0.53551324,
     "cited_by_count": 1,
-    "fwci": 0.208
+    "fwci": 0.2109
   },
   {
     "espace_id": "4503669",
@@ -5647,9 +5665,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12526",
     "link": "https://espace.library.uq.edu.au/view/UQ:2e99203",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87124141,
+    "citation_percentile": 0.87124683,
     "cited_by_count": 11,
-    "fwci": 1.4043
+    "fwci": 1.4046
   },
   {
     "espace_id": "4503669",
@@ -5665,9 +5683,9 @@
     "article_url": "https://doi.org/10.1002/jtr.2416",
     "link": "https://espace.library.uq.edu.au/view/UQ:00cada6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94077434,
+    "citation_percentile": 0.92814235,
     "cited_by_count": 23,
-    "fwci": 3.0122
+    "fwci": 2.4783
   },
   {
     "espace_id": "4503669",
@@ -5683,7 +5701,7 @@
     "article_url": "https://doi.org/10.1111/biom.13262",
     "link": "https://espace.library.uq.edu.au/view/UQ:3c16704",
     "source": "UQ eSpace",
-    "citation_percentile": 0.05108923,
+    "citation_percentile": 0.05079775,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -5701,9 +5719,9 @@
     "article_url": "https://doi.org/10.1016/j.jfineco.2018.06.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:9a320fb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99336433,
+    "citation_percentile": 0.99347363,
     "cited_by_count": 164,
-    "fwci": 15.8297
+    "fwci": 16.0626
   },
   {
     "espace_id": "4503669",
@@ -5719,9 +5737,9 @@
     "article_url": "https://doi.org/10.1111/fima.12180",
     "link": "https://espace.library.uq.edu.au/view/UQ:d504009",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93705689,
+    "citation_percentile": 0.93788687,
     "cited_by_count": 71,
-    "fwci": 3.9706
+    "fwci": 4.0288
   },
   {
     "espace_id": "4503669",
@@ -5737,9 +5755,9 @@
     "article_url": "https://doi.org/10.1016/j.landusepol.2017.08.038",
     "link": "https://espace.library.uq.edu.au/view/UQ:3e70a37",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98663694,
+    "citation_percentile": 0.98666681,
     "cited_by_count": 40,
-    "fwci": 17.1891
+    "fwci": 17.1959
   },
   {
     "espace_id": "4503669",
@@ -5755,9 +5773,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2017.10.020",
     "link": "https://espace.library.uq.edu.au/view/UQ:d07081d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.84958484,
+    "citation_percentile": 0.85246531,
     "cited_by_count": 10,
-    "fwci": 1.5174
+    "fwci": 1.5495
   },
   {
     "espace_id": "4503669",
@@ -5773,9 +5791,9 @@
     "article_url": "https://doi.org/10.1016/j.econmod.2017.04.006",
     "link": "https://espace.library.uq.edu.au/view/UQ:a1bbac9",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96644217,
+    "citation_percentile": 0.9663947,
     "cited_by_count": 28,
-    "fwci": 7.351
+    "fwci": 7.3697
   },
   {
     "espace_id": "4503669",
@@ -5809,9 +5827,9 @@
     "article_url": "https://doi.org/10.1111/ajfs.12152",
     "link": "https://espace.library.uq.edu.au/view/UQ:53ccdc6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.79374543,
+    "citation_percentile": 0.79595072,
     "cited_by_count": 6,
-    "fwci": 0.8357
+    "fwci": 0.8493
   },
   {
     "espace_id": "4503669",
@@ -5827,7 +5845,7 @@
     "article_url": "https://doi.org/10.1016/j.csda.2014.11.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:349383",
     "source": "UQ eSpace",
-    "citation_percentile": 0.03870192,
+    "citation_percentile": 0.04059613,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -5845,7 +5863,7 @@
     "article_url": "https://doi.org/10.1093/jjfinec/nbs011",
     "link": "https://espace.library.uq.edu.au/view/UQ:c654aa5",
     "source": "UQ eSpace",
-    "citation_percentile": 0.21933543,
+    "citation_percentile": 0.21925442,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -5863,7 +5881,7 @@
     "article_url": "https://doi.org/10.1111/biom.12039",
     "link": "https://espace.library.uq.edu.au/view/UQ:5637b15",
     "source": "UQ eSpace",
-    "citation_percentile": 0.07597905,
+    "citation_percentile": 0.07620697,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -5881,9 +5899,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2012.10.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:da4edbe",
     "source": "UQ eSpace",
-    "citation_percentile": 0.83711159,
+    "citation_percentile": 0.83841699,
     "cited_by_count": 4,
-    "fwci": 1.1564
+    "fwci": 1.1674
   },
   {
     "espace_id": "4503669",
@@ -5899,9 +5917,9 @@
     "article_url": "https://doi.org/10.1057/jam.2012.17",
     "link": "https://espace.library.uq.edu.au/view/UQ:decb377",
     "source": "UQ eSpace",
-    "citation_percentile": 0.85332846,
+    "citation_percentile": 0.85460083,
     "cited_by_count": 19,
-    "fwci": 1.4085
+    "fwci": 1.4279
   },
   {
     "espace_id": "4503669",
@@ -5917,9 +5935,9 @@
     "article_url": "https://doi.org/10.3905/jpm.2011.38.1.100",
     "link": "https://espace.library.uq.edu.au/view/UQ:df9bdca",
     "source": "UQ eSpace",
-    "citation_percentile": 0.85165257,
+    "citation_percentile": 0.85465724,
     "cited_by_count": 23,
-    "fwci": 1.8747
+    "fwci": 1.9115
   },
   {
     "espace_id": "4503669",
@@ -5935,9 +5953,9 @@
     "article_url": "https://doi.org/10.1016/j.csda.2009.03.012",
     "link": "https://espace.library.uq.edu.au/view/UQ:221256",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91214953,
+    "citation_percentile": 0.91314266,
     "cited_by_count": 27,
-    "fwci": 2.876
+    "fwci": 2.9145
   },
   {
     "espace_id": "4503669",
@@ -5953,9 +5971,9 @@
     "article_url": "https://doi.org/10.1093/biostatistics/kxp002",
     "link": "https://espace.library.uq.edu.au/view/UQ:221219",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92610563,
+    "citation_percentile": 0.92200386,
     "cited_by_count": 51,
-    "fwci": 3.3273
+    "fwci": 3.1795
   },
   {
     "espace_id": "4503669",
@@ -5971,9 +5989,9 @@
     "article_url": "https://doi.org/10.1037/1082-989X.13.1.58",
     "link": "https://espace.library.uq.edu.au/view/UQ:762fdd5",
     "source": "UQ eSpace",
-    "citation_percentile": 0.78037183,
+    "citation_percentile": 0.76690296,
     "cited_by_count": 6,
-    "fwci": 0.8733
+    "fwci": 0.7887
   },
   {
     "espace_id": "4503669",
@@ -5989,9 +6007,9 @@
     "article_url": "https://doi.org/10.1198/106186007x180156",
     "link": "https://espace.library.uq.edu.au/view/UQ:221251",
     "source": "UQ eSpace",
-    "citation_percentile": 0.7708434,
+    "citation_percentile": 0.77287973,
     "cited_by_count": 80,
-    "fwci": 0.8285
+    "fwci": 0.8352
   },
   {
     "espace_id": "4503669",
@@ -6007,9 +6025,9 @@
     "article_url": "https://doi.org/10.1093/biomet/93.2.459",
     "link": "https://espace.library.uq.edu.au/view/UQ:221265",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87720622,
+    "citation_percentile": 0.86912167,
     "cited_by_count": 26,
-    "fwci": 2.168
+    "fwci": 2.0592
   },
   {
     "espace_id": "4503669",
@@ -6025,9 +6043,9 @@
     "article_url": "https://doi.org/10.1111/j.1541-0420.2005.00354.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:222311",
     "source": "UQ eSpace",
-    "citation_percentile": 0.82286064,
+    "citation_percentile": 0.82330781,
     "cited_by_count": 49,
-    "fwci": 1.5963
+    "fwci": 1.6096
   },
   {
     "espace_id": "4503669",
@@ -6043,7 +6061,7 @@
     "article_url": "https://doi.org/10.1016/j.spl.2004.11.014",
     "link": "https://espace.library.uq.edu.au/view/UQ:221264",
     "source": "UQ eSpace",
-    "citation_percentile": 0.11890767,
+    "citation_percentile": 0.12370883,
     "cited_by_count": 6,
     "fwci": 0.0
   },
@@ -6061,9 +6079,9 @@
     "article_url": "https://doi.org/10.1108/ijmf-04-2021-0168",
     "link": "https://espace.library.uq.edu.au/view/UQ:e97533a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.54959972,
+    "citation_percentile": 0.55515318,
     "cited_by_count": 1,
-    "fwci": 0.2078
+    "fwci": 0.2109
   },
   {
     "espace_id": "4930238",
@@ -6079,9 +6097,9 @@
     "article_url": "https://doi.org/10.1016/j.jaccpubpol.2026.107418",
     "link": "https://espace.library.uq.edu.au/view/UQ:ef055ac",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98047395,
+    "citation_percentile": 0.98013567,
     "cited_by_count": 1,
-    "fwci": 23.8711
+    "fwci": 23.1718
   },
   {
     "espace_id": "4930238",
@@ -6097,9 +6115,9 @@
     "article_url": "https://doi.org/10.1080/09638180.2023.2270655",
     "link": "https://espace.library.uq.edu.au/view/UQ:93c2492",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93906279,
+    "citation_percentile": 0.93941883,
     "cited_by_count": 11,
-    "fwci": 4.0409
+    "fwci": 4.0737
   },
   {
     "espace_id": "4930238",
@@ -6115,9 +6133,9 @@
     "article_url": "https://doi.org/10.1016/j.econlet.2024.111574",
     "link": "https://espace.library.uq.edu.au/view/UQ:b02c127",
     "source": "UQ eSpace",
-    "citation_percentile": 0.69828326,
+    "citation_percentile": 0.71515523,
     "cited_by_count": 2,
-    "fwci": 0.8237
+    "fwci": 0.8495
   },
   {
     "espace_id": "4930238",
@@ -6133,9 +6151,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12640",
     "link": "https://espace.library.uq.edu.au/view/UQ:f06a8e8",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95299427,
+    "citation_percentile": 0.95349653,
     "cited_by_count": 25,
-    "fwci": 4.9581
+    "fwci": 5.0118
   },
   {
     "espace_id": "4930238",
@@ -6151,9 +6169,9 @@
     "article_url": "https://doi.org/10.1016/j.jbankfin.2019.03.012",
     "link": "https://espace.library.uq.edu.au/view/UQ:c128892",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86339437,
+    "citation_percentile": 0.8514296,
     "cited_by_count": 11,
-    "fwci": 1.9404
+    "fwci": 1.7901
   },
   {
     "espace_id": "4850515",
@@ -6169,9 +6187,9 @@
     "article_url": "https://doi.org/10.1111/1911-3846.12921",
     "link": "https://espace.library.uq.edu.au/view/UQ:b8ecb20",
     "source": "UQ eSpace",
-    "citation_percentile": 0.69442918,
+    "citation_percentile": 0.67633367,
     "cited_by_count": 2,
-    "fwci": 0.5215
+    "fwci": 0.4777
   },
   {
     "espace_id": "4850515",
@@ -6187,9 +6205,9 @@
     "article_url": "https://doi.org/10.1007/s10551-016-3415-0",
     "link": "https://espace.library.uq.edu.au/view/UQ:07855a2",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95262729,
+    "citation_percentile": 0.95323266,
     "cited_by_count": 47,
-    "fwci": 5.311
+    "fwci": 5.372
   },
   {
     "espace_id": "7635606",
@@ -6205,9 +6223,9 @@
     "article_url": "https://doi.org/10.14453/aabfj.v17i3.06",
     "link": "https://espace.library.uq.edu.au/view/UQ:53b19ed",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89099831,
+    "citation_percentile": 0.89202097,
     "cited_by_count": 6,
-    "fwci": 1.8642
+    "fwci": 1.8787
   },
   {
     "espace_id": "7635606",
@@ -6241,9 +6259,9 @@
     "article_url": "https://doi.org/10.1080/23311975.2026.2677341",
     "link": "https://espace.library.uq.edu.au/view/UQ:70621df",
     "source": "UQ eSpace",
-    "citation_percentile": null,
-    "cited_by_count": null,
-    "fwci": null
+    "citation_percentile": 0.9597246,
+    "cited_by_count": 0,
+    "fwci": 0.0
   },
   {
     "espace_id": "7646522",
@@ -6259,7 +6277,7 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2025.100535",
     "link": "https://espace.library.uq.edu.au/view/UQ:5df4223",
     "source": "UQ eSpace",
-    "citation_percentile": 0.63439022,
+    "citation_percentile": 0.6084991,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -6277,9 +6295,9 @@
     "article_url": "https://doi.org/10.1177/0148558x241264668",
     "link": "https://espace.library.uq.edu.au/view/UQ:88d4c58",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94919076,
+    "citation_percentile": 0.94907083,
     "cited_by_count": 12,
-    "fwci": 5.0582
+    "fwci": 5.0648
   },
   {
     "espace_id": "7646522",
@@ -6295,9 +6313,9 @@
     "article_url": "https://doi.org/10.1111/acfi.70086",
     "link": "https://espace.library.uq.edu.au/view/UQ:6728e1d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88906005,
+    "citation_percentile": 0.88968923,
     "cited_by_count": 2,
-    "fwci": 2.1591
+    "fwci": 2.1581
   },
   {
     "espace_id": "7646522",
@@ -6313,7 +6331,7 @@
     "article_url": "https://doi.org/10.1177/03128962251350336",
     "link": "https://espace.library.uq.edu.au/view/UQ:eece8ea",
     "source": "UQ eSpace",
-    "citation_percentile": 0.23999802,
+    "citation_percentile": 0.22897413,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -6349,9 +6367,9 @@
     "article_url": "https://doi.org/10.1142/s1094406023500014",
     "link": "https://espace.library.uq.edu.au/view/UQ:bd386a9",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93670843,
+    "citation_percentile": 0.93639529,
     "cited_by_count": 24,
-    "fwci": 4.451
+    "fwci": 4.4381
   },
   {
     "espace_id": "7646522",
@@ -6385,9 +6403,9 @@
     "article_url": "https://doi.org/10.1016/j.frl.2021.102609",
     "link": "https://espace.library.uq.edu.au/view/UQ:57c074e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96401357,
+    "citation_percentile": 0.96446573,
     "cited_by_count": 35,
-    "fwci": 6.1044
+    "fwci": 6.1902
   },
   {
     "espace_id": "7646522",
@@ -6403,9 +6421,9 @@
     "article_url": "https://doi.org/10.1111/auar.12347",
     "link": "https://espace.library.uq.edu.au/view/UQ:236ca4d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95826766,
+    "citation_percentile": 0.95691892,
     "cited_by_count": 39,
-    "fwci": 5.8262
+    "fwci": 5.7368
   },
   {
     "espace_id": "7646522",
@@ -6421,9 +6439,9 @@
     "article_url": "https://doi.org/10.1177/0312896220918642",
     "link": "https://espace.library.uq.edu.au/view/UQ:2e9fd82",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97367805,
+    "citation_percentile": 0.97407322,
     "cited_by_count": 88,
-    "fwci": 8.5017
+    "fwci": 8.628
   },
   {
     "espace_id": "7646522",
@@ -6439,9 +6457,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2020.100909",
     "link": "https://espace.library.uq.edu.au/view/UQ:a40b02b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98988971,
+    "citation_percentile": 0.99004082,
     "cited_by_count": 264,
-    "fwci": 15.3429
+    "fwci": 15.5726
   },
   {
     "espace_id": "7646522",
@@ -6457,9 +6475,9 @@
     "article_url": "https://doi.org/10.1016/j.hlpt.2020.08.010",
     "link": "https://espace.library.uq.edu.au/view/UQ:1a888f9",
     "source": "UQ eSpace",
-    "citation_percentile": 0.79214021,
+    "citation_percentile": 0.7929308,
     "cited_by_count": 32,
-    "fwci": 0.7908
+    "fwci": 0.7943
   },
   {
     "espace_id": "7646522",
@@ -6475,9 +6493,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2020.101374",
     "link": "https://espace.library.uq.edu.au/view/UQ:a36dfe8",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94664058,
-    "cited_by_count": 51,
-    "fwci": 4.7606
+    "citation_percentile": 0.94753737,
+    "cited_by_count": 52,
+    "fwci": 4.8401
   },
   {
     "espace_id": "7646522",
@@ -6493,9 +6511,9 @@
     "article_url": "https://doi.org/10.1177/0312896218797163",
     "link": "https://espace.library.uq.edu.au/view/UQ:0b88ce3",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96267191,
+    "citation_percentile": 0.96323895,
     "cited_by_count": 73,
-    "fwci": 6.6808
+    "fwci": 6.7822
   },
   {
     "espace_id": "7646522",
@@ -6529,9 +6547,9 @@
     "article_url": "https://doi.org/10.1186/s12957-015-0522-9",
     "link": "https://espace.library.uq.edu.au/view/UQ:31ef537",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89419544,
+    "citation_percentile": 0.89609176,
     "cited_by_count": 51,
-    "fwci": 2.6897
+    "fwci": 2.7369
   },
   {
     "espace_id": "7646522",
@@ -6547,9 +6565,9 @@
     "article_url": "https://doi.org/10.1111/1911-3846.12090",
     "link": "https://espace.library.uq.edu.au/view/UQ:a78a122",
     "source": "UQ eSpace",
-    "citation_percentile": 0.78261829,
+    "citation_percentile": 0.78419287,
     "cited_by_count": 9,
-    "fwci": 0.8292
+    "fwci": 0.8356
   },
   {
     "espace_id": "7646522",
@@ -6583,9 +6601,9 @@
     "article_url": "https://doi.org/10.1016/j.clinimag.2012.08.006",
     "link": "https://espace.library.uq.edu.au/view/UQ:0c2038c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90083303,
+    "citation_percentile": 0.90136324,
     "cited_by_count": 73,
-    "fwci": 2.8982
+    "fwci": 2.9159
   },
   {
     "espace_id": "7646522",
@@ -6601,9 +6619,9 @@
     "article_url": "https://doi.org/10.1108/01140581311318968",
     "link": "https://espace.library.uq.edu.au/view/UQ:7023645",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97540175,
-    "cited_by_count": 480,
-    "fwci": 10.0297
+    "citation_percentile": 0.97563355,
+    "cited_by_count": 483,
+    "fwci": 10.1232
   },
   {
     "espace_id": "7646522",
@@ -6619,9 +6637,9 @@
     "article_url": "https://doi.org/10.1111/corg.12033",
     "link": "https://espace.library.uq.edu.au/view/UQ:6a4da91",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98624984,
-    "cited_by_count": 317,
-    "fwci": 15.7592
+    "citation_percentile": 0.98642452,
+    "cited_by_count": 318,
+    "fwci": 15.9164
   },
   {
     "espace_id": "7646522",
@@ -6637,9 +6655,9 @@
     "article_url": "https://doi.org/10.1186/1477-7819-10-126",
     "link": "https://espace.library.uq.edu.au/view/UQ:6205ba7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94763694,
+    "citation_percentile": 0.94871795,
     "cited_by_count": 72,
-    "fwci": 4.4735
+    "fwci": 4.5712
   },
   {
     "espace_id": "7646522",
@@ -6673,7 +6691,7 @@
     "article_url": "https://doi.org/10.1111/j.1467-646X.2008.01024.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:493bae7",
     "source": "UQ eSpace",
-    "citation_percentile": 0.17733754,
+    "citation_percentile": 0.1672252,
     "cited_by_count": 5,
     "fwci": 0.0
   },
@@ -6691,7 +6709,7 @@
     "article_url": "https://doi.org/10.1177/03128962261425895",
     "link": "https://espace.library.uq.edu.au/view/UQ:7aaee31",
     "source": "UQ eSpace",
-    "citation_percentile": 0.41582078,
+    "citation_percentile": 0.26542061,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -6709,7 +6727,7 @@
     "article_url": "https://doi.org/10.1111/acfi.70165",
     "link": "https://espace.library.uq.edu.au/view/UQ:38dbbcb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.05297561,
+    "citation_percentile": 0.03479702,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -6727,9 +6745,9 @@
     "article_url": "https://doi.org/10.1111/acfi.70042",
     "link": "https://espace.library.uq.edu.au/view/UQ:0dfdca4",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94449869,
-    "cited_by_count": 2,
-    "fwci": 4.6952
+    "citation_percentile": 0.94106727,
+    "cited_by_count": 3,
+    "fwci": 4.4303
   },
   {
     "espace_id": "7642804",
@@ -6745,7 +6763,7 @@
     "article_url": "https://doi.org/10.1111/acfi.70081",
     "link": "https://espace.library.uq.edu.au/view/UQ:3e47182",
     "source": "UQ eSpace",
-    "citation_percentile": 0.50545295,
+    "citation_percentile": 0.46302713,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -6763,9 +6781,9 @@
     "article_url": "https://doi.org/10.1111/acfi.13215",
     "link": "https://espace.library.uq.edu.au/view/UQ:d57ebae",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99200552,
-    "cited_by_count": 38,
-    "fwci": 15.4617
+    "citation_percentile": 0.99233897,
+    "cited_by_count": 39,
+    "fwci": 15.9066
   },
   {
     "espace_id": "1736",
@@ -6781,9 +6799,9 @@
     "article_url": "https://doi.org/10.1111/abac.12344",
     "link": "https://espace.library.uq.edu.au/view/UQ:32f0fcb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88903186,
-    "cited_by_count": 7,
-    "fwci": 2.2908
+    "citation_percentile": 0.90049825,
+    "cited_by_count": 8,
+    "fwci": 2.615
   },
   {
     "espace_id": "1736",
@@ -6799,9 +6817,9 @@
     "article_url": "https://doi.org/10.1111/acfi.13155",
     "link": "https://espace.library.uq.edu.au/view/UQ:d24af31",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96021398,
+    "citation_percentile": 0.95380792,
     "cited_by_count": 13,
-    "fwci": 5.9976
+    "fwci": 5.3022
   },
   {
     "espace_id": "1736",
@@ -6817,9 +6835,9 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2020.100201",
     "link": "https://espace.library.uq.edu.au/view/UQ:baf5816",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96978574,
+    "citation_percentile": 0.97027373,
     "cited_by_count": 38,
-    "fwci": 7.3203
+    "fwci": 7.4454
   },
   {
     "espace_id": "1736",
@@ -6835,9 +6853,9 @@
     "article_url": "https://doi.org/10.1007/s10551-017-3711-3",
     "link": "https://espace.library.uq.edu.au/view/UQ:689961",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97322125,
-    "cited_by_count": 184,
-    "fwci": 7.3127
+    "citation_percentile": 0.97361793,
+    "cited_by_count": 185,
+    "fwci": 7.4377
   },
   {
     "espace_id": "1736",
@@ -6853,9 +6871,9 @@
     "article_url": "https://doi.org/10.1007/s10551-016-3207-6",
     "link": "https://espace.library.uq.edu.au/view/UQ:388776",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99283233,
-    "cited_by_count": 767,
-    "fwci": 21.7797
+    "citation_percentile": 0.99293215,
+    "cited_by_count": 768,
+    "fwci": 22.0127
   },
   {
     "espace_id": "1736",
@@ -6871,9 +6889,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12181",
     "link": "https://espace.library.uq.edu.au/view/UQ:378915",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86023542,
+    "citation_percentile": 0.86314103,
     "cited_by_count": 10,
-    "fwci": 1.424
+    "fwci": 1.4532
   },
   {
     "espace_id": "1736",
@@ -6889,9 +6907,9 @@
     "article_url": "https://doi.org/10.1111/abac.12036",
     "link": "https://espace.library.uq.edu.au/view/UQ:349958",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98881377,
+    "citation_percentile": 0.98893466,
     "cited_by_count": 183,
-    "fwci": 17.3925
+    "fwci": 17.5605
   },
   {
     "espace_id": "1736",
@@ -6907,9 +6925,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12066",
     "link": "https://espace.library.uq.edu.au/view/UQ:327127",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96304807,
+    "citation_percentile": 0.96342852,
     "cited_by_count": 62,
-    "fwci": 7.1762
+    "fwci": 7.2399
   },
   {
     "espace_id": "1736",
@@ -6925,7 +6943,7 @@
     "article_url": "https://doi.org/10.1080/08941920.2012.719999",
     "link": "https://espace.library.uq.edu.au/view/UQ:294500",
     "source": "UQ eSpace",
-    "citation_percentile": 0.16554445,
+    "citation_percentile": 0.16864227,
     "cited_by_count": 5,
     "fwci": 0.0
   },
@@ -6943,9 +6961,9 @@
     "article_url": "https://doi.org/10.1111/j.1835-2561.2012.00171.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:271170",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90970925,
+    "citation_percentile": 0.89221118,
     "cited_by_count": 14,
-    "fwci": 2.1156
+    "fwci": 1.7511
   },
   {
     "espace_id": "1736",
@@ -6961,9 +6979,9 @@
     "article_url": "https://doi.org/10.1111/j.1468-5957.2010.02207.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:218726",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89962549,
+    "citation_percentile": 0.90125252,
     "cited_by_count": 47,
-    "fwci": 1.9657
+    "fwci": 2.0027
   },
   {
     "espace_id": "1736",
@@ -6979,9 +6997,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2009.00307.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:185288",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9444567,
+    "citation_percentile": 0.93990909,
     "cited_by_count": 44,
-    "fwci": 4.1949
+    "fwci": 3.8893
   },
   {
     "espace_id": "1736",
@@ -6997,9 +7015,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629x.2007.00256.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:159064",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89359892,
+    "citation_percentile": 0.89089818,
     "cited_by_count": 57,
-    "fwci": 1.2576
+    "fwci": 1.1812
   },
   {
     "espace_id": "1736",
@@ -7015,9 +7033,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629x.2007.00216.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:130937",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94279505,
+    "citation_percentile": 0.94599394,
     "cited_by_count": 62,
-    "fwci": 3.9409
+    "fwci": 4.2606
   },
   {
     "espace_id": "1736",
@@ -7033,9 +7051,9 @@
     "article_url": "https://doi.org/10.1007/s11842-006-0009-1",
     "link": "https://espace.library.uq.edu.au/view/UQ:195955",
     "source": "UQ eSpace",
-    "citation_percentile": 0.58078497,
+    "citation_percentile": 0.58615652,
     "cited_by_count": 58,
-    "fwci": 0.2258
+    "fwci": 0.2289
   },
   {
     "espace_id": "1736",
@@ -7051,9 +7069,9 @@
     "article_url": "https://doi.org/10.1111/j.1835-2561.2006.tb00361.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:75002",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94532799,
+    "citation_percentile": 0.94179295,
     "cited_by_count": 32,
-    "fwci": 4.3326
+    "fwci": 4.0425
   },
   {
     "espace_id": "1736",
@@ -7069,9 +7087,9 @@
     "article_url": "https://doi.org/10.1016/j.aos.2005.01.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:74695",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98540074,
-    "cited_by_count": 186,
-    "fwci": 15.3335
+    "citation_percentile": 0.98563939,
+    "cited_by_count": 187,
+    "fwci": 15.4953
   },
   {
     "espace_id": "1736",
@@ -7105,9 +7123,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2004.05.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:69621",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90330218,
+    "citation_percentile": 0.90415414,
     "cited_by_count": 55,
-    "fwci": 2.8696
+    "fwci": 2.8924
   },
   {
     "espace_id": "1736",
@@ -7123,9 +7141,9 @@
     "article_url": "https://doi.org/10.1016/S0313-5926(02)50022-9",
     "link": "https://espace.library.uq.edu.au/view/UQ:704122",
     "source": "UQ eSpace",
-    "citation_percentile": 0.66182481,
+    "citation_percentile": 0.66159947,
     "cited_by_count": 4,
-    "fwci": 0.546
+    "fwci": 0.5455
   },
   {
     "espace_id": "1736",
@@ -7141,9 +7159,9 @@
     "article_url": "https://doi.org/10.1016/S0378-1127(99)00137-1",
     "link": "https://espace.library.uq.edu.au/view/UQ:142252",
     "source": "UQ eSpace",
-    "citation_percentile": 0.7864539,
+    "citation_percentile": 0.78697577,
     "cited_by_count": 22,
-    "fwci": 1.1108
+    "fwci": 1.1157
   },
   {
     "espace_id": "1736",
@@ -7177,7 +7195,7 @@
     "article_url": "https://doi.org/10.1080/00049158.1998.10674744",
     "link": "https://espace.library.uq.edu.au/view/UQ:2a5bc7d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.11259031,
+    "citation_percentile": 0.11383495,
     "cited_by_count": 3,
     "fwci": 0.0
   },
@@ -7195,9 +7213,9 @@
     "article_url": "https://doi.org/10.1111/j.1835-2561.1998.tb00080.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:ed62a59",
     "source": "UQ eSpace",
-    "citation_percentile": 0.76952812,
+    "citation_percentile": 0.74983819,
     "cited_by_count": 16,
-    "fwci": 1.0461
+    "fwci": 0.9674
   },
   {
     "espace_id": "1009",
@@ -7213,9 +7231,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2020.101431",
     "link": "https://espace.library.uq.edu.au/view/UQ:3215d66",
     "source": "UQ eSpace",
-    "citation_percentile": 0.79713775,
+    "citation_percentile": 0.80055353,
     "cited_by_count": 8,
-    "fwci": 1.0668
+    "fwci": 1.0857
   },
   {
     "espace_id": "1009",
@@ -7249,9 +7267,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2011.00451.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:260978",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92942939,
+    "citation_percentile": 0.92421884,
     "cited_by_count": 14,
-    "fwci": 3.0266
+    "fwci": 2.8307
   },
   {
     "espace_id": "1009",
@@ -7267,9 +7285,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2008.00288.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:158993",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94217799,
+    "citation_percentile": 0.94352385,
     "cited_by_count": 34,
-    "fwci": 3.7653
+    "fwci": 3.8893
   },
   {
     "espace_id": "1009",
@@ -7285,9 +7303,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-8683.2005.00472.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:2945",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96767007,
-    "cited_by_count": 156,
-    "fwci": 7.0335
+    "citation_percentile": 0.96826527,
+    "cited_by_count": 157,
+    "fwci": 7.1555
   },
   {
     "espace_id": "4940317",
@@ -7303,9 +7321,9 @@
     "article_url": "https://doi.org/10.1111/acfi.70127",
     "link": "https://espace.library.uq.edu.au/view/UQ:0e58dc1",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92374728,
+    "citation_percentile": 0.90261616,
     "cited_by_count": 1,
-    "fwci": 2.7847
+    "fwci": 2.123
   },
   {
     "espace_id": "4940317",
@@ -7321,9 +7339,9 @@
     "article_url": "https://doi.org/10.1111/abac.12292",
     "link": "https://espace.library.uq.edu.au/view/UQ:918c61b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86708594,
+    "citation_percentile": 0.85384489,
     "cited_by_count": 4,
-    "fwci": 1.8454
+    "fwci": 1.6315
   },
   {
     "espace_id": "4940317",
@@ -7339,7 +7357,7 @@
     "article_url": "https://doi.org/10.1111/acfi.12716",
     "link": "https://espace.library.uq.edu.au/view/UQ:7661d74",
     "source": "UQ eSpace",
-    "citation_percentile": 0.21320908,
+    "citation_percentile": 0.21037373,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -7429,9 +7447,9 @@
     "article_url": "https://doi.org/10.1016/j.lrp.2018.03.004",
     "link": "https://espace.library.uq.edu.au/view/UQ:729150",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93518353,
+    "citation_percentile": 0.93620302,
     "cited_by_count": 46,
-    "fwci": 4.1451
+    "fwci": 4.2088
   },
   {
     "espace_id": "3804387",
@@ -7447,9 +7465,9 @@
     "article_url": "https://doi.org/10.1016/j.accinf.2018.03.005",
     "link": "https://espace.library.uq.edu.au/view/UQ:729148",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93001883,
+    "citation_percentile": 0.9310041,
     "cited_by_count": 29,
-    "fwci": 3.8534
+    "fwci": 3.9082
   },
   {
     "espace_id": "3804387",
@@ -7465,9 +7483,9 @@
     "article_url": "https://doi.org/10.1016/j.accinf.2016.03.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:729147",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99215338,
+    "citation_percentile": 0.99106748,
     "cited_by_count": 139,
-    "fwci": 18.1357
+    "fwci": 17.2492
   },
   {
     "espace_id": "77962",
@@ -7537,9 +7555,9 @@
     "article_url": "https://doi.org/10.1080/09638180.2021.1944890",
     "link": "https://espace.library.uq.edu.au/view/UQ:2883ee6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95718565,
+    "citation_percentile": 0.95739878,
     "cited_by_count": 38,
-    "fwci": 5.3597
+    "fwci": 5.3842
   },
   {
     "espace_id": "77962",
@@ -7591,9 +7609,9 @@
     "article_url": "https://doi.org/10.1016/j.ijhm.2020.102453",
     "link": "https://espace.library.uq.edu.au/view/UQ:8f6921f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.7456782,
+    "citation_percentile": 0.75095674,
     "cited_by_count": 5,
-    "fwci": 0.6277
+    "fwci": 0.6404
   },
   {
     "espace_id": "77962",
@@ -7609,9 +7627,9 @@
     "article_url": "https://doi.org/10.1177/1938965518779538",
     "link": "https://espace.library.uq.edu.au/view/UQ:8547e19",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96284802,
+    "citation_percentile": 0.95058385,
     "cited_by_count": 29,
-    "fwci": 6.448
+    "fwci": 4.8962
   },
   {
     "espace_id": "77962",
@@ -7645,9 +7663,9 @@
     "article_url": "https://doi.org/10.1007/s10551-018-4023-y",
     "link": "https://espace.library.uq.edu.au/view/UQ:a15fb9c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95509849,
+    "citation_percentile": 0.95603424,
     "cited_by_count": 19,
-    "fwci": 4.5615
+    "fwci": 4.6489
   },
   {
     "espace_id": "77962",
@@ -7663,9 +7681,9 @@
     "article_url": "https://doi.org/10.1007/s10551-016-3215-6",
     "link": "https://espace.library.uq.edu.au/view/UQ:388666",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98447066,
+    "citation_percentile": 0.98461295,
     "cited_by_count": 145,
-    "fwci": 15.0502
+    "fwci": 15.1577
   },
   {
     "espace_id": "77962",
@@ -7699,9 +7717,9 @@
     "article_url": "https://doi.org/10.1108/MEDAR-02-2017-0117",
     "link": "https://espace.library.uq.edu.au/view/UQ:687258",
     "source": "UQ eSpace",
-    "citation_percentile": 0.78479023,
+    "citation_percentile": 0.7866276,
     "cited_by_count": 13,
-    "fwci": 1.0982
+    "fwci": 1.1078
   },
   {
     "espace_id": "77962",
@@ -7717,9 +7735,9 @@
     "article_url": "https://doi.org/10.1016/j.jhtm.2017.09.004",
     "link": "https://espace.library.uq.edu.au/view/UQ:687265",
     "source": "UQ eSpace",
-    "citation_percentile": 0.76746883,
+    "citation_percentile": 0.74014941,
     "cited_by_count": 4,
-    "fwci": 0.7122
+    "fwci": 0.6198
   },
   {
     "espace_id": "77962",
@@ -7735,9 +7753,9 @@
     "article_url": "https://doi.org/10.1016/j.ijhm.2017.02.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:504221",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97020892,
-    "cited_by_count": 105,
-    "fwci": 8.2547
+    "citation_percentile": 0.9707056,
+    "cited_by_count": 106,
+    "fwci": 8.3952
   },
   {
     "espace_id": "77962",
@@ -7789,9 +7807,9 @@
     "article_url": "https://doi.org/10.1016/j.ijhm.2016.11.008",
     "link": "https://espace.library.uq.edu.au/view/UQ:413442",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96781641,
+    "citation_percentile": 0.96804966,
     "cited_by_count": 36,
-    "fwci": 7.0385
+    "fwci": 7.0639
   },
   {
     "espace_id": "77962",
@@ -7825,9 +7843,9 @@
     "article_url": "https://doi.org/10.1016/j.jhtm.2014.08.003",
     "link": "https://espace.library.uq.edu.au/view/UQ:341415",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91950232,
+    "citation_percentile": 0.90702822,
     "cited_by_count": 9,
-    "fwci": 2.2748
+    "fwci": 1.9192
   },
   {
     "espace_id": "77962",
@@ -7861,9 +7879,9 @@
     "article_url": "https://doi.org/10.1016/j.ijhm.2013.06.011",
     "link": "https://espace.library.uq.edu.au/view/UQ:306014",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89723687,
+    "citation_percentile": 0.8980115,
     "cited_by_count": 18,
-    "fwci": 2.3349
+    "fwci": 2.3553
   },
   {
     "espace_id": "77962",
@@ -7897,9 +7915,9 @@
     "article_url": "https://doi.org/10.1080/00014788.2012.670405",
     "link": "https://espace.library.uq.edu.au/view/UQ:286220",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93447561,
+    "citation_percentile": 0.93455404,
     "cited_by_count": 17,
-    "fwci": 3.4989
+    "fwci": 3.5023
   },
   {
     "espace_id": "77962",
@@ -7915,9 +7933,9 @@
     "article_url": "https://doi.org/10.1108/11766091111189882",
     "link": "https://espace.library.uq.edu.au/view/UQ:254340",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90809501,
+    "citation_percentile": 0.90236942,
     "cited_by_count": 17,
-    "fwci": 2.2472
+    "fwci": 2.123
   },
   {
     "espace_id": "77962",
@@ -7933,9 +7951,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2010.00347.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:219770",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95479873,
+    "citation_percentile": 0.94971822,
     "cited_by_count": 13,
-    "fwci": 5.365
+    "fwci": 4.8604
   },
   {
     "espace_id": "77962",
@@ -7951,9 +7969,9 @@
     "article_url": "https://doi.org/10.1177/1096348010370855",
     "link": "https://espace.library.uq.edu.au/view/UQ:219771",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95398266,
+    "citation_percentile": 0.95551737,
     "cited_by_count": 43,
-    "fwci": 5.1785
+    "fwci": 5.3406
   },
   {
     "espace_id": "87748",
@@ -7969,7 +7987,7 @@
     "article_url": "https://doi.org/10.1108/jal-02-2025-0074",
     "link": "https://espace.library.uq.edu.au/view/UQ:e5bee2d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.43606961,
+    "citation_percentile": 0.4094399,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -7987,9 +8005,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2020.101431",
     "link": "https://espace.library.uq.edu.au/view/UQ:3215d66",
     "source": "UQ eSpace",
-    "citation_percentile": 0.79713775,
+    "citation_percentile": 0.80055353,
     "cited_by_count": 8,
-    "fwci": 1.0668
+    "fwci": 1.0857
   },
   {
     "espace_id": "87748",
@@ -8005,9 +8023,9 @@
     "article_url": "https://doi.org/10.1016/j.finmar.2020.100576",
     "link": "https://espace.library.uq.edu.au/view/UQ:0e5ab16",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86984403,
+    "citation_percentile": 0.85924527,
     "cited_by_count": 13,
-    "fwci": 1.871
+    "fwci": 1.7371
   },
   {
     "espace_id": "326",
@@ -8023,7 +8041,7 @@
     "article_url": "https://doi.org/10.1016/j.jbusres.2026.115976",
     "link": "https://espace.library.uq.edu.au/view/UQ:2cbc20f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.05009132,
+    "citation_percentile": 0.04206278,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -8041,9 +8059,9 @@
     "article_url": "https://doi.org/10.1111/1911-3846.70012",
     "link": "https://espace.library.uq.edu.au/view/UQ:146d20c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89768397,
+    "citation_percentile": 0.89894492,
     "cited_by_count": 1,
-    "fwci": 2.1036
+    "fwci": 2.123
   },
   {
     "espace_id": "326",
@@ -8059,9 +8077,9 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2025.102797",
     "link": "https://espace.library.uq.edu.au/view/UQ:16aa368",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86918078,
+    "citation_percentile": 0.8619132,
     "cited_by_count": 1,
-    "fwci": 2.2876
+    "fwci": 2.123
   },
   {
     "espace_id": "326",
@@ -8077,7 +8095,7 @@
     "article_url": "https://doi.org/10.1057/s41260-025-00422-2",
     "link": "https://espace.library.uq.edu.au/view/UQ:2b3b841",
     "source": "UQ eSpace",
-    "citation_percentile": 0.29112304,
+    "citation_percentile": 0.27352392,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -8095,9 +8113,9 @@
     "article_url": "https://doi.org/10.1111/abac.12344",
     "link": "https://espace.library.uq.edu.au/view/UQ:32f0fcb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88903186,
-    "cited_by_count": 7,
-    "fwci": 2.2908
+    "citation_percentile": 0.90049825,
+    "cited_by_count": 8,
+    "fwci": 2.615
   },
   {
     "espace_id": "326",
@@ -8113,9 +8131,9 @@
     "article_url": "https://doi.org/10.1111/abac.12299",
     "link": "https://espace.library.uq.edu.au/view/UQ:413f008",
     "source": "UQ eSpace",
-    "citation_percentile": 0.83860098,
+    "citation_percentile": 0.84022093,
     "cited_by_count": 5,
-    "fwci": 1.1466
+    "fwci": 1.1407
   },
   {
     "espace_id": "326",
@@ -8131,9 +8149,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12497",
     "link": "https://espace.library.uq.edu.au/view/UQ:c2408d3",
     "source": "UQ eSpace",
-    "citation_percentile": 0.90545373,
+    "citation_percentile": 0.90726178,
     "cited_by_count": 19,
-    "fwci": 2.5593
+    "fwci": 2.6057
   },
   {
     "espace_id": "326",
@@ -8149,9 +8167,9 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2020.100201",
     "link": "https://espace.library.uq.edu.au/view/UQ:baf5816",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96978574,
+    "citation_percentile": 0.97027373,
     "cited_by_count": 38,
-    "fwci": 7.3203
+    "fwci": 7.4454
   },
   {
     "espace_id": "326",
@@ -8167,9 +8185,9 @@
     "article_url": "https://doi.org/10.1111/abac.12182",
     "link": "https://espace.library.uq.edu.au/view/UQ:d3da462",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88261247,
+    "citation_percentile": 0.88434187,
     "cited_by_count": 15,
-    "fwci": 1.8662
+    "fwci": 1.894
   },
   {
     "espace_id": "326",
@@ -8239,7 +8257,7 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2018.07.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:6b01c89",
     "source": "UQ eSpace",
-    "citation_percentile": 0.1000018,
+    "citation_percentile": 0.09891065,
     "cited_by_count": 3,
     "fwci": 0.0
   },
@@ -8257,9 +8275,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12310",
     "link": "https://espace.library.uq.edu.au/view/UQ:699140",
     "source": "UQ eSpace",
-    "citation_percentile": 0.76260078,
+    "citation_percentile": 0.76805824,
     "cited_by_count": 4,
-    "fwci": 0.5608
+    "fwci": 0.5755
   },
   {
     "espace_id": "326",
@@ -8275,9 +8293,9 @@
     "article_url": "https://doi.org/10.1007/s10551-017-3711-3",
     "link": "https://espace.library.uq.edu.au/view/UQ:689961",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97322125,
-    "cited_by_count": 184,
-    "fwci": 7.3127
+    "citation_percentile": 0.97361793,
+    "cited_by_count": 185,
+    "fwci": 7.4377
   },
   {
     "espace_id": "326",
@@ -8293,9 +8311,9 @@
     "article_url": "https://doi.org/10.1007/s10551-017-3611-6",
     "link": "https://espace.library.uq.edu.au/view/UQ:689884",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89898972,
+    "citation_percentile": 0.90019992,
     "cited_by_count": 80,
-    "fwci": 2.0413
+    "fwci": 2.0662
   },
   {
     "espace_id": "326",
@@ -8329,9 +8347,9 @@
     "article_url": "https://doi.org/10.1007/s10551-016-3207-6",
     "link": "https://espace.library.uq.edu.au/view/UQ:388776",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99283233,
-    "cited_by_count": 767,
-    "fwci": 21.7797
+    "citation_percentile": 0.99293215,
+    "cited_by_count": 768,
+    "fwci": 22.0127
   },
   {
     "espace_id": "326",
@@ -8347,9 +8365,9 @@
     "article_url": "https://doi.org/10.1016/j.aos.2015.06.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:365444",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95419103,
+    "citation_percentile": 0.95515462,
     "cited_by_count": 44,
-    "fwci": 6.002
+    "fwci": 6.1127
   },
   {
     "espace_id": "326",
@@ -8365,9 +8383,9 @@
     "article_url": "https://doi.org/10.1177/0312896214565121",
     "link": "https://espace.library.uq.edu.au/view/UQ:354744",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99824409,
+    "citation_percentile": 0.99825556,
     "cited_by_count": 104,
-    "fwci": 49.1584
+    "fwci": 49.9442
   },
   {
     "espace_id": "326",
@@ -8383,9 +8401,9 @@
     "article_url": "https://doi.org/10.1080/09638180.2014.927782",
     "link": "https://espace.library.uq.edu.au/view/UQ:341434",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9609432,
+    "citation_percentile": 0.96099709,
     "cited_by_count": 51,
-    "fwci": 5.7457
+    "fwci": 5.7576
   },
   {
     "espace_id": "326",
@@ -8401,9 +8419,9 @@
     "article_url": "https://doi.org/10.1177/0312896213481367",
     "link": "https://espace.library.uq.edu.au/view/UQ:302644",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97403868,
+    "citation_percentile": 0.97431875,
     "cited_by_count": 49,
-    "fwci": 8.562
+    "fwci": 8.672
   },
   {
     "espace_id": "326",
@@ -8419,9 +8437,9 @@
     "article_url": "https://doi.org/10.1177/0312896214539817",
     "link": "https://espace.library.uq.edu.au/view/UQ:341435",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92352548,
+    "citation_percentile": 0.9250109,
     "cited_by_count": 7,
-    "fwci": 2.5799
+    "fwci": 2.6286
   },
   {
     "espace_id": "326",
@@ -8455,9 +8473,9 @@
     "article_url": "https://doi.org/10.1016/j.jaccpubpol.2013.06.008",
     "link": "https://espace.library.uq.edu.au/view/UQ:309604",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9990139,
-    "cited_by_count": 664,
-    "fwci": 55.8935
+    "citation_percentile": 0.99902462,
+    "cited_by_count": 665,
+    "fwci": 56.4009
   },
   {
     "espace_id": "326",
@@ -8473,9 +8491,9 @@
     "article_url": "https://doi.org/10.1111/abac.12006",
     "link": "https://espace.library.uq.edu.au/view/UQ:291759",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99685151,
-    "cited_by_count": 469,
-    "fwci": 40.5276
+    "citation_percentile": 0.99685637,
+    "cited_by_count": 472,
+    "fwci": 40.5655
   },
   {
     "espace_id": "326",
@@ -8491,9 +8509,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2012.00472.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:274440",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98892265,
+    "citation_percentile": 0.98792757,
     "cited_by_count": 15,
-    "fwci": 20.3091
+    "fwci": 17.992
   },
   {
     "espace_id": "326",
@@ -8509,9 +8527,9 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2011.07.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:252035",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95733914,
+    "citation_percentile": 0.9581748,
     "cited_by_count": 55,
-    "fwci": 5.557
+    "fwci": 5.6614
   },
   {
     "espace_id": "326",
@@ -8527,9 +8545,9 @@
     "article_url": "https://doi.org/10.1016/j.jcae.2011.03.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:254731",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98090278,
+    "citation_percentile": 0.98129036,
     "cited_by_count": 58,
-    "fwci": 11.8083
+    "fwci": 12.0261
   },
   {
     "espace_id": "326",
@@ -8545,9 +8563,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-6281.2011.00330.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:252024",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9989137,
+    "citation_percentile": 0.99892653,
     "cited_by_count": 707,
-    "fwci": 50.8211
+    "fwci": 51.2532
   },
   {
     "espace_id": "326",
@@ -8563,9 +8581,9 @@
     "article_url": "https://doi.org/10.1016/j.jaccpubpol.2010.09.013",
     "link": "https://espace.library.uq.edu.au/view/UQ:219768",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99844934,
-    "cited_by_count": 1033,
-    "fwci": 42.0573
+    "citation_percentile": 0.99852907,
+    "cited_by_count": 1037,
+    "fwci": 42.7388
   },
   {
     "espace_id": "326",
@@ -8581,9 +8599,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2010.00387.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:220500",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87101454,
+    "citation_percentile": 0.87326085,
     "cited_by_count": 14,
-    "fwci": 1.3105
+    "fwci": 1.3352
   },
   {
     "espace_id": "326",
@@ -8617,9 +8635,9 @@
     "article_url": "https://doi.org/10.1016/j.mar.2009.11.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:195061",
     "source": "UQ eSpace",
-    "citation_percentile": 0.85902355,
+    "citation_percentile": 0.86031144,
     "cited_by_count": 35,
-    "fwci": 1.6687
+    "fwci": 1.684
   },
   {
     "espace_id": "326",
@@ -8635,9 +8653,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2009.00323.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:188883",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93564892,
+    "citation_percentile": 0.93182062,
     "cited_by_count": 20,
-    "fwci": 3.4227
+    "fwci": 3.2411
   },
   {
     "espace_id": "326",
@@ -8653,7 +8671,7 @@
     "article_url": "https://doi.org/10.1111/j.1835-2561.2008.0015.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:159598",
     "source": "UQ eSpace",
-    "citation_percentile": 0.27121287,
+    "citation_percentile": 0.26533307,
     "cited_by_count": 5,
     "fwci": 0.0
   },
@@ -8671,9 +8689,9 @@
     "article_url": "https://doi.org/10.1016/j.aos.2007.05.003",
     "link": "https://espace.library.uq.edu.au/view/UQ:159596",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99915665,
-    "cited_by_count": 3271,
-    "fwci": 71.1421
+    "citation_percentile": 0.99916678,
+    "cited_by_count": 3280,
+    "fwci": 71.774
   },
   {
     "espace_id": "326",
@@ -8689,9 +8707,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629x.2007.00228.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:131267",
     "source": "UQ eSpace",
-    "citation_percentile": 0.86652938,
+    "citation_percentile": 0.86288437,
     "cited_by_count": 18,
-    "fwci": 0.6563
+    "fwci": 0.6087
   },
   {
     "espace_id": "326",
@@ -8707,9 +8725,9 @@
     "article_url": "https://doi.org/10.1108/02686900610680530",
     "link": "https://espace.library.uq.edu.au/view/UQ:533763d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97468597,
+    "citation_percentile": 0.97512156,
     "cited_by_count": 361,
-    "fwci": 9.955
+    "fwci": 10.1062
   },
   {
     "espace_id": "326",
@@ -8725,9 +8743,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2006.00160.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:76746",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95919052,
+    "citation_percentile": 0.95959024,
     "cited_by_count": 99,
-    "fwci": 6.0293
+    "fwci": 6.0637
   },
   {
     "espace_id": "326",
@@ -8743,9 +8761,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629x.2006.00197.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:79014",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96647856,
+    "citation_percentile": 0.96699873,
     "cited_by_count": 85,
-    "fwci": 7.2316
+    "fwci": 7.4219
   },
   {
     "espace_id": "326",
@@ -8761,9 +8779,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629x.2004.00123.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:71101",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94904789,
+    "citation_percentile": 0.94934906,
     "cited_by_count": 29,
-    "fwci": 4.3107
+    "fwci": 4.2965
   },
   {
     "espace_id": "326",
@@ -8779,9 +8797,9 @@
     "article_url": "https://doi.org/10.2308/accr.2004.79.2.329",
     "link": "https://espace.library.uq.edu.au/view/UQ:69537",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99275585,
-    "cited_by_count": 540,
-    "fwci": 23.8509
+    "citation_percentile": 0.99273737,
+    "cited_by_count": 541,
+    "fwci": 23.7436
   },
   {
     "espace_id": "326",
@@ -8797,9 +8815,9 @@
     "article_url": "https://doi.org/10.1111/1467-629X.00081",
     "link": "https://espace.library.uq.edu.au/view/UQ:64489",
     "source": "UQ eSpace",
-    "citation_percentile": 0.84165451,
+    "citation_percentile": 0.84530938,
     "cited_by_count": 12,
-    "fwci": 0.6078
+    "fwci": 0.605
   },
   {
     "espace_id": "326",
@@ -8833,7 +8851,7 @@
     "article_url": "https://doi.org/10.1111/1468-2443.00031",
     "link": "https://espace.library.uq.edu.au/view/UQ:62070",
     "source": "UQ eSpace",
-    "citation_percentile": 0.24922646,
+    "citation_percentile": 0.25226663,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -8851,9 +8869,9 @@
     "article_url": "https://doi.org/10.1506/QFPH-W3X9-PTRF-Y2G2",
     "link": "https://espace.library.uq.edu.au/view/UQ:140214",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92043448,
+    "citation_percentile": 0.92119043,
     "cited_by_count": 81,
-    "fwci": 2.2199
+    "fwci": 2.242
   },
   {
     "espace_id": "4469982",
@@ -8869,9 +8887,9 @@
     "article_url": "https://doi.org/10.1016/j.respol.2025.105310",
     "link": "https://espace.library.uq.edu.au/view/UQ:241379b",
     "source": "UQ eSpace",
-    "citation_percentile": 0.85000351,
+    "citation_percentile": 0.84394784,
     "cited_by_count": 1,
-    "fwci": 1.2813
+    "fwci": 1.1811
   },
   {
     "espace_id": "4469982",
@@ -8887,9 +8905,9 @@
     "article_url": "https://doi.org/10.1111/acfi.13155",
     "link": "https://espace.library.uq.edu.au/view/UQ:d24af31",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96021398,
+    "citation_percentile": 0.95380792,
     "cited_by_count": 13,
-    "fwci": 5.9976
+    "fwci": 5.3022
   },
   {
     "espace_id": "4469982",
@@ -8905,9 +8923,9 @@
     "article_url": "https://doi.org/10.1111/acfi.13065",
     "link": "https://espace.library.uq.edu.au/view/UQ:ac62423",
     "source": "UQ eSpace",
-    "citation_percentile": 0.8952846,
+    "citation_percentile": 0.89548814,
     "cited_by_count": 8,
-    "fwci": 2.861
+    "fwci": 2.8546
   },
   {
     "espace_id": "4469982",
@@ -8923,9 +8941,9 @@
     "article_url": "https://doi.org/10.1016/j.jacceco.2021.101425",
     "link": "https://espace.library.uq.edu.au/view/UQ:d52fb9c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97419035,
-    "cited_by_count": 46,
-    "fwci": 7.785
+    "citation_percentile": 0.97227823,
+    "cited_by_count": 47,
+    "fwci": 7.3156
   },
   {
     "espace_id": "4469982",
@@ -8941,9 +8959,9 @@
     "article_url": "https://doi.org/10.1111/1911-3846.12753",
     "link": "https://espace.library.uq.edu.au/view/UQ:d148346",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94549331,
+    "citation_percentile": 0.94352434,
     "cited_by_count": 19,
-    "fwci": 4.5631
+    "fwci": 4.455
   },
   {
     "espace_id": "4469982",
@@ -8959,9 +8977,9 @@
     "article_url": "https://doi.org/10.1111/1911-3846.12523",
     "link": "https://espace.library.uq.edu.au/view/UQ:ebe4deb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95205936,
+    "citation_percentile": 0.95318792,
     "cited_by_count": 56,
-    "fwci": 5.3262
+    "fwci": 5.4536
   },
   {
     "espace_id": "6621",
@@ -8977,7 +8995,7 @@
     "article_url": "https://doi.org/10.1136/leader-2025-001434",
     "link": "https://espace.library.uq.edu.au/view/UQ:fae3937",
     "source": "UQ eSpace",
-    "citation_percentile": 0.73072015,
+    "citation_percentile": 0.37736057,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -8995,7 +9013,7 @@
     "article_url": "https://doi.org/10.1016/j.colegn.2025.12.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:600ca30",
     "source": "UQ eSpace",
-    "citation_percentile": 0.06239575,
+    "citation_percentile": 0.04454883,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -9013,9 +9031,9 @@
     "article_url": "https://doi.org/10.1108/aaaj-11-2022-6171",
     "link": "https://espace.library.uq.edu.au/view/UQ:604f9e4",
     "source": "UQ eSpace",
-    "citation_percentile": 0.83769484,
+    "citation_percentile": 0.83942716,
     "cited_by_count": 5,
-    "fwci": 1.1438
+    "fwci": 1.1407
   },
   {
     "espace_id": "6621",
@@ -9031,9 +9049,9 @@
     "article_url": "https://doi.org/10.24083/apjhm.v18i2.2347",
     "link": "https://espace.library.uq.edu.au/view/UQ:91871b6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91037273,
+    "citation_percentile": 0.91116908,
     "cited_by_count": 7,
-    "fwci": 2.8353
+    "fwci": 2.855
   },
   {
     "espace_id": "6621",
@@ -9139,9 +9157,9 @@
     "article_url": "https://doi.org/10.1016/j.aos.2015.06.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:365444",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95419103,
+    "citation_percentile": 0.95515462,
     "cited_by_count": 44,
-    "fwci": 6.002
+    "fwci": 6.1127
   },
   {
     "espace_id": "6621",
@@ -9175,9 +9193,9 @@
     "article_url": "https://doi.org/10.1016/j.mar.2009.11.002",
     "link": "https://espace.library.uq.edu.au/view/UQ:195061",
     "source": "UQ eSpace",
-    "citation_percentile": 0.85902355,
+    "citation_percentile": 0.86031144,
     "cited_by_count": 35,
-    "fwci": 1.6687
+    "fwci": 1.684
   },
   {
     "espace_id": "5402627",
@@ -9193,7 +9211,7 @@
     "article_url": "https://doi.org/10.1016/j.cose.2026.104900",
     "link": "https://espace.library.uq.edu.au/view/UQ:c0da9d6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.17598262,
+    "citation_percentile": 0.17291403,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -9211,9 +9229,9 @@
     "article_url": "https://doi.org/10.1007/s00187-026-00418-y",
     "link": "https://espace.library.uq.edu.au/view/UQ:c23929c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97795712,
+    "citation_percentile": 0.97330287,
     "cited_by_count": 1,
-    "fwci": 10.5653
+    "fwci": 9.5493
   },
   {
     "espace_id": "5402627",
@@ -9229,9 +9247,9 @@
     "article_url": "https://doi.org/10.1111/1911-3846.70052",
     "link": "https://espace.library.uq.edu.au/view/UQ:6ab74da",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99627849,
+    "citation_percentile": 0.99548892,
     "cited_by_count": 2,
-    "fwci": 43.4036
+    "fwci": 38.4206
   },
   {
     "espace_id": "5402627",
@@ -9247,9 +9265,9 @@
     "article_url": "https://doi.org/10.1093/cybsec/tyaf040",
     "link": "https://espace.library.uq.edu.au/view/UQ:9dfdca1",
     "source": "UQ eSpace",
-    "citation_percentile": 0.88374217,
+    "citation_percentile": 0.87787457,
     "cited_by_count": 1,
-    "fwci": 1.2868
+    "fwci": 1.1811
   },
   {
     "espace_id": "5402627",
@@ -9265,9 +9283,9 @@
     "article_url": "https://doi.org/10.1007/s00187-025-00401-z",
     "link": "https://espace.library.uq.edu.au/view/UQ:fed289d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98563848,
+    "citation_percentile": 0.98426771,
     "cited_by_count": 7,
-    "fwci": 13.456
+    "fwci": 12.61
   },
   {
     "espace_id": "5402627",
@@ -9283,9 +9301,9 @@
     "article_url": "https://doi.org/10.3127/ajis.v29.5323",
     "link": "https://espace.library.uq.edu.au/view/UQ:8375736",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9589473,
+    "citation_percentile": 0.93567689,
     "cited_by_count": 5,
-    "fwci": 4.7978
+    "fwci": 3.3054
   },
   {
     "espace_id": "5402627",
@@ -9301,9 +9319,9 @@
     "article_url": "https://doi.org/10.1016/j.cose.2025.104450",
     "link": "https://espace.library.uq.edu.au/view/UQ:e6cd405",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98266704,
+    "citation_percentile": 0.98264023,
     "cited_by_count": 7,
-    "fwci": 12.5412
+    "fwci": 12.61
   },
   {
     "espace_id": "5402627",
@@ -9319,9 +9337,9 @@
     "article_url": "https://doi.org/10.1111/ijau.12365",
     "link": "https://espace.library.uq.edu.au/view/UQ:0f9e725",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97908218,
+    "citation_percentile": 0.9786273,
     "cited_by_count": 15,
-    "fwci": 9.8116
+    "fwci": 9.7934
   },
   {
     "espace_id": "5402627",
@@ -9337,9 +9355,9 @@
     "article_url": "https://doi.org/10.1016/j.accinf.2023.100642",
     "link": "https://espace.library.uq.edu.au/view/UQ:f595eb3",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98913969,
+    "citation_percentile": 0.98922973,
     "cited_by_count": 35,
-    "fwci": 14.4465
+    "fwci": 15.2611
   },
   {
     "espace_id": "5402627",
@@ -9355,9 +9373,9 @@
     "article_url": "https://doi.org/10.1016/j.ssci.2022.106022",
     "link": "https://espace.library.uq.edu.au/view/UQ:55e9a09",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97534977,
+    "citation_percentile": 0.9756234,
     "cited_by_count": 33,
-    "fwci": 8.1251
+    "fwci": 8.2269
   },
   {
     "espace_id": "5402627",
@@ -9373,9 +9391,9 @@
     "article_url": "https://doi.org/10.1016/j.cose.2022.102840",
     "link": "https://espace.library.uq.edu.au/view/UQ:036fed1",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99504604,
-    "cited_by_count": 85,
-    "fwci": 21.7999
+    "citation_percentile": 0.9950696,
+    "cited_by_count": 89,
+    "fwci": 22.1646
   },
   {
     "espace_id": "5402627",
@@ -9409,9 +9427,9 @@
     "article_url": "https://doi.org/10.1016/j.accinf.2021.100548",
     "link": "https://espace.library.uq.edu.au/view/UQ:b8a2c11",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91673567,
+    "citation_percentile": 0.91787884,
     "cited_by_count": 9,
-    "fwci": 2.8159
+    "fwci": 2.8478
   },
   {
     "espace_id": "5402627",
@@ -9427,9 +9445,9 @@
     "article_url": "https://doi.org/10.1007/s00187-021-00330-7",
     "link": "https://espace.library.uq.edu.au/view/UQ:c1bb7ae",
     "source": "UQ eSpace",
-    "citation_percentile": 0.49517967,
+    "citation_percentile": 0.49204947,
     "cited_by_count": 3,
-    "fwci": 0.4538
+    "fwci": 0.4489
   },
   {
     "espace_id": "5402627",
@@ -9499,9 +9517,9 @@
     "article_url": "https://doi.org/10.1016/j.mar.2017.07.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:d31c8c0",
     "source": "UQ eSpace",
-    "citation_percentile": 0.69205569,
+    "citation_percentile": 0.69401148,
     "cited_by_count": 19,
-    "fwci": 0.7661
+    "fwci": 0.781
   },
   {
     "espace_id": "5402627",
@@ -9517,9 +9535,9 @@
     "article_url": "https://doi.org/10.3389/fpsyg.2016.00093",
     "link": "https://espace.library.uq.edu.au/view/UQ:a8c4892",
     "source": "UQ eSpace",
-    "citation_percentile": 0.82217502,
+    "citation_percentile": 0.823805,
     "cited_by_count": 43,
-    "fwci": 1.6488
+    "fwci": 1.6639
   },
   {
     "espace_id": "5402627",
@@ -9535,9 +9553,9 @@
     "article_url": "https://doi.org/10.1007/s10997-014-9297-6",
     "link": "https://espace.library.uq.edu.au/view/UQ:c349abe",
     "source": "UQ eSpace",
-    "citation_percentile": 0.57832168,
+    "citation_percentile": 0.58321678,
     "cited_by_count": 10,
-    "fwci": 0.3506
+    "fwci": 0.3514
   },
   {
     "espace_id": "5402627",
@@ -9607,9 +9625,9 @@
     "article_url": "https://doi.org/10.1016/j.mar.2011.10.004",
     "link": "https://espace.library.uq.edu.au/view/UQ:eebbaf5",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97096567,
+    "citation_percentile": 0.97134867,
     "cited_by_count": 99,
-    "fwci": 8.0447
+    "fwci": 8.1306
   },
   {
     "espace_id": "5402627",
@@ -9643,9 +9661,9 @@
     "article_url": "https://doi.org/10.1111/j.1468-036X.2010.00558.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:1faf839",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95451242,
+    "citation_percentile": 0.95148551,
     "cited_by_count": 20,
-    "fwci": 4.8417
+    "fwci": 4.673
   },
   {
     "espace_id": "5402627",
@@ -9661,9 +9679,9 @@
     "article_url": "https://doi.org/10.1016/j.aos.2008.11.004",
     "link": "https://espace.library.uq.edu.au/view/UQ:d6d60bb",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9934739,
+    "citation_percentile": 0.99345631,
     "cited_by_count": 216,
-    "fwci": 18.588
+    "fwci": 18.7343
   },
   {
     "espace_id": "5402627",
@@ -9697,7 +9715,7 @@
     "article_url": "https://doi.org/10.1111/ijau.70032",
     "link": "https://espace.library.uq.edu.au/view/UQ:1131b7f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.28407272,
+    "citation_percentile": 0.20725036,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -9715,7 +9733,7 @@
     "article_url": "https://doi.org/10.1057/s41267-026-00869-4",
     "link": "https://espace.library.uq.edu.au/view/UQ:54638ff",
     "source": "UQ eSpace",
-    "citation_percentile": 0.54994545,
+    "citation_percentile": 0.48615974,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -9733,9 +9751,9 @@
     "article_url": "https://doi.org/10.1111/fima.12504",
     "link": "https://espace.library.uq.edu.au/view/UQ:9eb9742",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87356851,
+    "citation_percentile": 0.87376732,
     "cited_by_count": 1,
-    "fwci": 2.3481
+    "fwci": 2.2815
   },
   {
     "espace_id": "115914",
@@ -9751,9 +9769,9 @@
     "article_url": "https://doi.org/10.1111/fima.12439",
     "link": "https://espace.library.uq.edu.au/view/UQ:86a88a6",
     "source": "UQ eSpace",
-    "citation_percentile": 0.955302,
+    "citation_percentile": 0.9551028,
     "cited_by_count": 13,
-    "fwci": 5.3088
+    "fwci": 5.2926
   },
   {
     "espace_id": "115914",
@@ -9769,9 +9787,9 @@
     "article_url": "https://doi.org/10.1016/j.jclepro.2023.136232",
     "link": "https://espace.library.uq.edu.au/view/UQ:db8b5e9",
     "source": "UQ eSpace",
-    "citation_percentile": 0.92180626,
+    "citation_percentile": 0.92133419,
     "cited_by_count": 15,
-    "fwci": 3.4628
+    "fwci": 3.4222
   },
   {
     "espace_id": "115914",
@@ -9787,9 +9805,9 @@
     "article_url": "https://doi.org/10.1108/ara-03-2022-0055",
     "link": "https://espace.library.uq.edu.au/view/UQ:84bebac",
     "source": "UQ eSpace",
-    "citation_percentile": 0.85063956,
+    "citation_percentile": 0.8415764,
     "cited_by_count": 4,
-    "fwci": 1.5246
+    "fwci": 1.4439
   },
   {
     "espace_id": "115914",
@@ -9805,9 +9823,9 @@
     "article_url": "https://doi.org/10.1080/09638180.2022.2118147",
     "link": "https://espace.library.uq.edu.au/view/UQ:5438d13",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97866788,
-    "cited_by_count": 55,
-    "fwci": 7.3995
+    "citation_percentile": 0.9789691,
+    "cited_by_count": 56,
+    "fwci": 7.5228
   },
   {
     "espace_id": "115914",
@@ -9823,9 +9841,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12798",
     "link": "https://espace.library.uq.edu.au/view/UQ:c662529",
     "source": "UQ eSpace",
-    "citation_percentile": 0.76460353,
+    "citation_percentile": 0.7491294,
     "cited_by_count": 4,
-    "fwci": 0.8971
+    "fwci": 0.8441
   },
   {
     "espace_id": "115914",
@@ -9841,9 +9859,9 @@
     "article_url": "https://doi.org/10.1016/j.jcorpfin.2022.102190",
     "link": "https://espace.library.uq.edu.au/view/UQ:e889979",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91919963,
+    "citation_percentile": 0.92032272,
     "cited_by_count": 15,
-    "fwci": 3.2938
+    "fwci": 3.3412
   },
   {
     "espace_id": "115914",
@@ -9877,9 +9895,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2021.101841",
     "link": "https://espace.library.uq.edu.au/view/UQ:838430a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95713819,
+    "citation_percentile": 0.95777584,
     "cited_by_count": 27,
-    "fwci": 5.5375
+    "fwci": 5.6274
   },
   {
     "espace_id": "115914",
@@ -9895,9 +9913,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2021.01.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:2e02b76",
     "source": "UQ eSpace",
-    "citation_percentile": 0.771403,
+    "citation_percentile": 0.77448725,
     "cited_by_count": 6,
-    "fwci": 1.039
+    "fwci": 1.0547
   },
   {
     "espace_id": "115914",
@@ -9913,9 +9931,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2021.02.003",
     "link": "https://espace.library.uq.edu.au/view/UQ:7ee1874",
     "source": "UQ eSpace",
-    "citation_percentile": 0.5748692,
+    "citation_percentile": 0.58068816,
     "cited_by_count": 1,
-    "fwci": 0.1884
+    "fwci": 0.1912
   },
   {
     "espace_id": "115914",
@@ -9931,9 +9949,9 @@
     "article_url": "https://doi.org/10.1017/beq.2021.19",
     "link": "https://espace.library.uq.edu.au/view/UQ:c206e5c",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9058866,
+    "citation_percentile": 0.90713753,
     "cited_by_count": 25,
-    "fwci": 2.6425
+    "fwci": 2.6772
   },
   {
     "espace_id": "115914",
@@ -9949,9 +9967,9 @@
     "article_url": "https://doi.org/10.1016/j.jclepro.2020.122881",
     "link": "https://espace.library.uq.edu.au/view/UQ:be8ec87",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94472034,
+    "citation_percentile": 0.94557846,
     "cited_by_count": 44,
-    "fwci": 4.5591
+    "fwci": 4.6297
   },
   {
     "espace_id": "115914",
@@ -9985,9 +10003,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2019.100879",
     "link": "https://espace.library.uq.edu.au/view/UQ:c295b0e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9421507,
+    "citation_percentile": 0.94315245,
     "cited_by_count": 24,
-    "fwci": 4.5756
+    "fwci": 4.6534
   },
   {
     "espace_id": "115914",
@@ -10003,9 +10021,9 @@
     "article_url": "https://doi.org/10.1007/s10551-020-04629-8",
     "link": "https://espace.library.uq.edu.au/view/UQ:f5cc77f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.89362165,
+    "citation_percentile": 0.8953364,
     "cited_by_count": 18,
-    "fwci": 2.0722
+    "fwci": 2.1061
   },
   {
     "espace_id": "115914",
@@ -10021,9 +10039,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12402",
     "link": "https://espace.library.uq.edu.au/view/UQ:eaad2ca",
     "source": "UQ eSpace",
-    "citation_percentile": 0.93699191,
+    "citation_percentile": 0.9317953,
     "cited_by_count": 39,
-    "fwci": 4.054
+    "fwci": 3.7755
   },
   {
     "espace_id": "115914",
@@ -10039,9 +10057,9 @@
     "article_url": "https://doi.org/10.1016/j.jbusres.2018.10.023",
     "link": "https://espace.library.uq.edu.au/view/UQ:6a590fc",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94426533,
+    "citation_percentile": 0.94539648,
     "cited_by_count": 28,
-    "fwci": 4.6535
+    "fwci": 4.7595
   },
   {
     "espace_id": "115914",
@@ -10057,9 +10075,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2018.08.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:55d07fa",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87716766,
+    "citation_percentile": 0.87891207,
     "cited_by_count": 29,
-    "fwci": 1.5882
+    "fwci": 1.6148
   },
   {
     "espace_id": "115914",
@@ -10075,9 +10093,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12343",
     "link": "https://espace.library.uq.edu.au/view/UQ:725814",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98021295,
+    "citation_percentile": 0.98057269,
     "cited_by_count": 91,
-    "fwci": 10.7424
+    "fwci": 10.9468
   },
   {
     "espace_id": "115914",
@@ -10093,7 +10111,7 @@
     "article_url": "https://doi.org/10.1016/j.pacfin.2015.03.004",
     "link": "https://espace.library.uq.edu.au/view/UQ:356583",
     "source": "UQ eSpace",
-    "citation_percentile": 0.09814956,
+    "citation_percentile": 0.09810643,
     "cited_by_count": 0,
     "fwci": 0.0
   },
@@ -10111,9 +10129,9 @@
     "article_url": "https://doi.org/10.1111/fima.12064",
     "link": "https://espace.library.uq.edu.au/view/UQ:340882",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95940201,
+    "citation_percentile": 0.95980627,
     "cited_by_count": 84,
-    "fwci": 6.5222
+    "fwci": 6.5852
   },
   {
     "espace_id": "115914",
@@ -10129,9 +10147,9 @@
     "article_url": "https://doi.org/10.1016/j.mulfin.2013.03.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:311888",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96743419,
+    "citation_percentile": 0.96791742,
     "cited_by_count": 37,
-    "fwci": 6.9915
+    "fwci": 7.0953
   },
   {
     "espace_id": "115914",
@@ -10147,9 +10165,9 @@
     "article_url": "https://doi.org/10.1016/j.ememar.2012.03.001",
     "link": "https://espace.library.uq.edu.au/view/UQ:311948",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95385762,
+    "citation_percentile": 0.9549755,
     "cited_by_count": 27,
-    "fwci": 4.9851
+    "fwci": 5.1023
   },
   {
     "espace_id": "115914",
@@ -10165,9 +10183,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12022",
     "link": "https://espace.library.uq.edu.au/view/UQ:302573",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95837519,
+    "citation_percentile": 0.95891,
     "cited_by_count": 51,
-    "fwci": 6.2299
+    "fwci": 6.3069
   },
   {
     "espace_id": "115914",
@@ -10183,9 +10201,9 @@
     "article_url": "https://doi.org/10.1111/j.1468-5957.2011.02278.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:311949",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96022695,
+    "citation_percentile": 0.96111393,
     "cited_by_count": 35,
-    "fwci": 6.4064
+    "fwci": 6.5601
   },
   {
     "espace_id": "4336037",
@@ -10201,9 +10219,9 @@
     "article_url": "https://doi.org/10.1177/03128962221124642",
     "link": "https://espace.library.uq.edu.au/view/UQ:5dd1874",
     "source": "UQ eSpace",
-    "citation_percentile": 0.58246755,
+    "citation_percentile": 0.58740698,
     "cited_by_count": 5,
-    "fwci": 0.2755
+    "fwci": 0.2784
   },
   {
     "espace_id": "4336037",
@@ -10219,9 +10237,9 @@
     "article_url": "https://doi.org/10.1111/j.1467-629X.2011.00459.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:720482",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95816109,
-    "cited_by_count": 171,
-    "fwci": 5.994
+    "citation_percentile": 0.95500404,
+    "cited_by_count": 172,
+    "fwci": 5.6614
   },
   {
     "espace_id": "4336037",
@@ -10237,9 +10255,9 @@
     "article_url": "https://doi.org/10.1111/j.1835-2561.2010.00118.x",
     "link": "https://espace.library.uq.edu.au/view/UQ:720485",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97338844,
+    "citation_percentile": 0.97123623,
     "cited_by_count": 71,
-    "fwci": 7.6214
+    "fwci": 7.1867
   },
   {
     "espace_id": "7634085",
@@ -10255,9 +10273,9 @@
     "article_url": "https://doi.org/10.1002/bse.70754",
     "link": "https://espace.library.uq.edu.au/view/UQ:2e0e4a3",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97670843,
-    "cited_by_count": 1,
-    "fwci": 14.9776
+    "citation_percentile": 0.99247779,
+    "cited_by_count": 2,
+    "fwci": 29.0299
   },
   {
     "espace_id": "7634085",
@@ -10291,27 +10309,9 @@
     "article_url": "https://doi.org/10.1016/j.intfin.2025.102204",
     "link": "https://espace.library.uq.edu.au/view/UQ:fef8254",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98006768,
+    "citation_percentile": 0.97179524,
     "cited_by_count": 4,
-    "fwci": 11.1389
-  },
-  {
-    "espace_id": "7634085",
-    "name": "Muhammad Nadeem",
-    "journal_name": "Meditari Accountancy Research",
-    "title": "Unlocking financial clarity: how tournament incentives influence the readability of financial reporting",
-    "year": "2025",
-    "author_count": 3,
-    "authors": "Luong, Hoa; Ahmed, Ammad; Nadeem, Muhammad",
-    "quality_rank": "A",
-    "sjr_quartile": "Q1",
-    "doi": "10.1108/medar-02-2024-2377",
-    "article_url": "https://doi.org/10.1108/medar-02-2024-2377",
-    "link": "https://espace.library.uq.edu.au/view/UQ:720d568",
-    "source": "UQ eSpace",
-    "citation_percentile": 0.2910449,
-    "cited_by_count": 0,
-    "fwci": 0.0
+    "fwci": 8.492
   },
   {
     "espace_id": "7634085",
@@ -10334,6 +10334,24 @@
   {
     "espace_id": "7634085",
     "name": "Muhammad Nadeem",
+    "journal_name": "Meditari Accountancy Research",
+    "title": "Unlocking financial clarity: how tournament incentives influence the readability of financial reporting",
+    "year": "2025",
+    "author_count": 3,
+    "authors": "Luong, Hoa; Ahmed, Ammad; Nadeem, Muhammad",
+    "quality_rank": "A",
+    "sjr_quartile": "Q1",
+    "doi": "10.1108/medar-02-2024-2377",
+    "article_url": "https://doi.org/10.1108/medar-02-2024-2377",
+    "link": "https://espace.library.uq.edu.au/view/UQ:720d568",
+    "source": "UQ eSpace",
+    "citation_percentile": 0.2910449,
+    "cited_by_count": 0,
+    "fwci": 0.0
+  },
+  {
+    "espace_id": "7634085",
+    "name": "Muhammad Nadeem",
     "journal_name": "China Accounting and Finance Review",
     "title": "Do female directors affect the cost of equity capital?",
     "year": "2025",
@@ -10345,9 +10363,9 @@
     "article_url": "https://doi.org/10.1108/cafr-07-2023-0073",
     "link": "https://espace.library.uq.edu.au/view/UQ:e18b76d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.20358663,
-    "cited_by_count": 0,
-    "fwci": 0.0
+    "citation_percentile": 0.86031352,
+    "cited_by_count": 1,
+    "fwci": 1.887
   },
   {
     "espace_id": "7634085",
@@ -10363,9 +10381,9 @@
     "article_url": "https://doi.org/10.1007/s10551-024-05818-5",
     "link": "https://espace.library.uq.edu.au/view/UQ:8439c3a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98790394,
-    "cited_by_count": 33,
-    "fwci": 13.6399
+    "citation_percentile": 0.98864108,
+    "cited_by_count": 34,
+    "fwci": 14.3501
   },
   {
     "espace_id": "7634085",
@@ -10381,9 +10399,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2024.101384",
     "link": "https://espace.library.uq.edu.au/view/UQ:d229ac4",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98899845,
+    "citation_percentile": 0.98901827,
     "cited_by_count": 20,
-    "fwci": 14.3069
+    "fwci": 14.5197
   },
   {
     "espace_id": "7634085",
@@ -10399,9 +10417,9 @@
     "article_url": "https://doi.org/10.1016/j.irfa.2024.103111",
     "link": "https://espace.library.uq.edu.au/view/UQ:799bc21",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98943995,
+    "citation_percentile": 0.98947082,
     "cited_by_count": 36,
-    "fwci": 14.8799
+    "fwci": 15.1943
   },
   {
     "espace_id": "7634085",
@@ -10417,9 +10435,9 @@
     "article_url": "https://doi.org/10.1111/corg.12569",
     "link": "https://espace.library.uq.edu.au/view/UQ:d0b6450",
     "source": "UQ eSpace",
-    "citation_percentile": 0.94016175,
+    "citation_percentile": 0.93829063,
     "cited_by_count": 7,
-    "fwci": 4.4921
+    "fwci": 4.3411
   },
   {
     "espace_id": "7634085",
@@ -10435,9 +10453,9 @@
     "article_url": "https://doi.org/10.1111/corg.12567",
     "link": "https://espace.library.uq.edu.au/view/UQ:c653452",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99291073,
-    "cited_by_count": 44,
-    "fwci": 18.1866
+    "citation_percentile": 0.9932619,
+    "cited_by_count": 45,
+    "fwci": 18.9928
   },
   {
     "espace_id": "7634085",
@@ -10471,9 +10489,9 @@
     "article_url": "https://doi.org/10.1111/corg.12545",
     "link": "https://espace.library.uq.edu.au/view/UQ:6013a62",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9961811,
+    "citation_percentile": 0.99608077,
     "cited_by_count": 104,
-    "fwci": 23.7349
+    "fwci": 23.7276
   },
   {
     "espace_id": "7634085",
@@ -10489,9 +10507,9 @@
     "article_url": "https://doi.org/10.1111/acfi.13070",
     "link": "https://espace.library.uq.edu.au/view/UQ:2a5033a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91655482,
-    "cited_by_count": 7,
-    "fwci": 3.2295
+    "citation_percentile": 0.91706375,
+    "cited_by_count": 8,
+    "fwci": 3.2629
   },
   {
     "espace_id": "7634085",
@@ -10507,9 +10525,9 @@
     "article_url": "https://doi.org/10.1108/jaar-08-2022-0223",
     "link": "https://espace.library.uq.edu.au/view/UQ:399c6b0",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95711501,
-    "cited_by_count": 105,
-    "fwci": 4.7846
+    "citation_percentile": 0.9558011,
+    "cited_by_count": 106,
+    "fwci": 4.9383
   },
   {
     "espace_id": "7634085",
@@ -10525,9 +10543,9 @@
     "article_url": "https://doi.org/10.1111/1467-8551.12695",
     "link": "https://espace.library.uq.edu.au/view/UQ:961f906",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99776888,
+    "citation_percentile": 0.99779509,
     "cited_by_count": 120,
-    "fwci": 23.9643
+    "fwci": 24.2239
   },
   {
     "espace_id": "7634085",
@@ -10543,9 +10561,9 @@
     "article_url": "https://doi.org/10.1002/bse.3308",
     "link": "https://espace.library.uq.edu.au/view/UQ:75f043a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97444218,
+    "citation_percentile": 0.97483301,
     "cited_by_count": 59,
-    "fwci": 8.1003
+    "fwci": 8.2109
   },
   {
     "espace_id": "7634085",
@@ -10561,9 +10579,9 @@
     "article_url": "https://doi.org/10.1016/j.jenvman.2022.115253",
     "link": "https://espace.library.uq.edu.au/view/UQ:ecc48dd",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96454217,
+    "citation_percentile": 0.96511999,
     "cited_by_count": 57,
-    "fwci": 6.3182
+    "fwci": 6.4182
   },
   {
     "espace_id": "7634085",
@@ -10579,9 +10597,9 @@
     "article_url": "https://doi.org/10.1007/s10551-021-04830-3",
     "link": "https://espace.library.uq.edu.au/view/UQ:f205180",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99637748,
+    "citation_percentile": 0.99642595,
     "cited_by_count": 136,
-    "fwci": 19.9814
+    "fwci": 20.2587
   },
   {
     "espace_id": "7634085",
@@ -10597,9 +10615,9 @@
     "article_url": "https://doi.org/10.1111/1467-8551.12613",
     "link": "https://espace.library.uq.edu.au/view/UQ:32477bc",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98963143,
-    "cited_by_count": 106,
-    "fwci": 13.9832
+    "citation_percentile": 0.98979187,
+    "cited_by_count": 107,
+    "fwci": 14.2051
   },
   {
     "espace_id": "7634085",
@@ -10615,9 +10633,9 @@
     "article_url": "https://doi.org/10.1111/acfi.12951",
     "link": "https://espace.library.uq.edu.au/view/UQ:dbdd347",
     "source": "UQ eSpace",
-    "citation_percentile": 0.87425625,
+    "citation_percentile": 0.83775124,
     "cited_by_count": 6,
-    "fwci": 1.39
+    "fwci": 1.0732
   },
   {
     "espace_id": "7634085",
@@ -10633,9 +10651,9 @@
     "article_url": "https://doi.org/10.1111/corg.12443",
     "link": "https://espace.library.uq.edu.au/view/UQ:6c8b324",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99497015,
+    "citation_percentile": 0.99501391,
     "cited_by_count": 80,
-    "fwci": 17.0481
+    "fwci": 17.263
   },
   {
     "espace_id": "7634085",
@@ -10651,9 +10669,9 @@
     "article_url": "https://doi.org/10.1111/jbfa.12591",
     "link": "https://espace.library.uq.edu.au/view/UQ:f0592bf",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99300416,
+    "citation_percentile": 0.99308461,
     "cited_by_count": 60,
-    "fwci": 14.5951
+    "fwci": 14.7571
   },
   {
     "espace_id": "7634085",
@@ -10669,9 +10687,9 @@
     "article_url": "https://doi.org/10.1002/bse.2860",
     "link": "https://espace.library.uq.edu.au/view/UQ:016e194",
     "source": "UQ eSpace",
-    "citation_percentile": 0.9173391,
+    "citation_percentile": 0.91862279,
     "cited_by_count": 39,
-    "fwci": 3.2494
+    "fwci": 3.3
   },
   {
     "espace_id": "7634085",
@@ -10687,9 +10705,9 @@
     "article_url": "https://doi.org/10.1108/MEDAR-11-2020-1086",
     "link": "https://espace.library.uq.edu.au/view/UQ:9620864",
     "source": "UQ eSpace",
-    "citation_percentile": 0.95697353,
+    "citation_percentile": 0.95757651,
     "cited_by_count": 54,
-    "fwci": 5.6557
+    "fwci": 5.7368
   },
   {
     "espace_id": "7634085",
@@ -10705,9 +10723,9 @@
     "article_url": "https://doi.org/10.1002/bse.2929",
     "link": "https://espace.library.uq.edu.au/view/UQ:7bbde37",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99706855,
-    "cited_by_count": 158,
-    "fwci": 20.7388
+    "citation_percentile": 0.99708923,
+    "cited_by_count": 159,
+    "fwci": 20.8543
   },
   {
     "espace_id": "7634085",
@@ -10723,9 +10741,9 @@
     "article_url": "https://doi.org/10.1007/s10551-020-04561-x",
     "link": "https://espace.library.uq.edu.au/view/UQ:becf531",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98074062,
+    "citation_percentile": 0.98103641,
     "cited_by_count": 104,
-    "fwci": 10.5702
+    "fwci": 10.7324
   },
   {
     "espace_id": "7634085",
@@ -10741,9 +10759,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2021.04.023",
     "link": "https://espace.library.uq.edu.au/view/UQ:4424c6e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.91492208,
+    "citation_percentile": 0.91630825,
     "cited_by_count": 24,
-    "fwci": 3.0117
+    "fwci": 3.0596
   },
   {
     "espace_id": "7634085",
@@ -10759,9 +10777,9 @@
     "article_url": "https://doi.org/10.1016/j.bar.2021.101031",
     "link": "https://espace.library.uq.edu.au/view/UQ:3d7b802",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99569136,
+    "citation_percentile": 0.99573455,
     "cited_by_count": 211,
-    "fwci": 23.4238
+    "fwci": 23.7121
   },
   {
     "espace_id": "7634085",
@@ -10795,9 +10813,9 @@
     "article_url": "https://doi.org/10.1007/s10490-019-09672-2",
     "link": "https://espace.library.uq.edu.au/view/UQ:928338f",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99707067,
+    "citation_percentile": 0.9971057,
     "cited_by_count": 153,
-    "fwci": 25.7724
+    "fwci": 26.4288
   },
   {
     "espace_id": "7634085",
@@ -10813,9 +10831,9 @@
     "article_url": "https://doi.org/10.1016/j.eneco.2021.105193",
     "link": "https://espace.library.uq.edu.au/view/UQ:62f3dc2",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99024631,
+    "citation_percentile": 0.99029255,
     "cited_by_count": 118,
-    "fwci": 17.7085
+    "fwci": 17.7913
   },
   {
     "espace_id": "7634085",
@@ -10849,9 +10867,9 @@
     "article_url": "https://doi.org/10.1002/bse.2563",
     "link": "https://espace.library.uq.edu.au/view/UQ:267ed1d",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99880627,
-    "cited_by_count": 460,
-    "fwci": 38.0047
+    "citation_percentile": 0.99882111,
+    "cited_by_count": 461,
+    "fwci": 38.5302
   },
   {
     "espace_id": "7634085",
@@ -10885,9 +10903,9 @@
     "article_url": "https://doi.org/10.1002/bse.2432",
     "link": "https://espace.library.uq.edu.au/view/UQ:8d57b4a",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99168551,
+    "citation_percentile": 0.99186242,
     "cited_by_count": 154,
-    "fwci": 15.9596
+    "fwci": 16.3607
   },
   {
     "espace_id": "7634085",
@@ -10903,9 +10921,9 @@
     "article_url": "https://doi.org/10.1111/corg.12304",
     "link": "https://espace.library.uq.edu.au/view/UQ:d40e431",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99576226,
-    "cited_by_count": 199,
-    "fwci": 22.1186
+    "citation_percentile": 0.99586829,
+    "cited_by_count": 200,
+    "fwci": 22.6533
   },
   {
     "espace_id": "7634085",
@@ -10921,9 +10939,9 @@
     "article_url": "https://doi.org/10.1016/j.iref.2019.08.007",
     "link": "https://espace.library.uq.edu.au/view/UQ:85d2cfc",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99250453,
+    "citation_percentile": 0.99260109,
     "cited_by_count": 142,
-    "fwci": 15.5746
+    "fwci": 15.86
   },
   {
     "espace_id": "7634085",
@@ -10939,9 +10957,9 @@
     "article_url": "https://doi.org/10.1108/JIC-01-2019-0007",
     "link": "https://espace.library.uq.edu.au/view/UQ:bb5e496",
     "source": "UQ eSpace",
-    "citation_percentile": 0.96436881,
-    "cited_by_count": 62,
-    "fwci": 6.7608
+    "citation_percentile": 0.9613715,
+    "cited_by_count": 63,
+    "fwci": 6.2902
   },
   {
     "espace_id": "7634085",
@@ -10957,9 +10975,9 @@
     "article_url": "https://doi.org/10.1111/auar.12227",
     "link": "https://espace.library.uq.edu.au/view/UQ:c5f3032",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98265271,
+    "citation_percentile": 0.98291463,
     "cited_by_count": 102,
-    "fwci": 11.774
+    "fwci": 11.9495
   },
   {
     "espace_id": "7634085",
@@ -10993,9 +11011,9 @@
     "article_url": "https://doi.org/10.1111/auar.12184",
     "link": "https://espace.library.uq.edu.au/view/UQ:9bbcde1",
     "source": "UQ eSpace",
-    "citation_percentile": 0.97092046,
+    "citation_percentile": 0.97126129,
     "cited_by_count": 129,
-    "fwci": 8.5734
+    "fwci": 8.6779
   },
   {
     "espace_id": "7634085",
@@ -11047,9 +11065,9 @@
     "article_url": "https://doi.org/10.1108/PAR-08-2016-0080",
     "link": "https://espace.library.uq.edu.au/view/UQ:e3bde26",
     "source": "UQ eSpace",
-    "citation_percentile": 0.98066926,
+    "citation_percentile": 0.98110884,
     "cited_by_count": 71,
-    "fwci": 10.7031
+    "fwci": 10.9335
   },
   {
     "espace_id": "7634085",
@@ -11065,9 +11083,9 @@
     "article_url": "https://doi.org/10.1016/j.jclepro.2017.02.141",
     "link": "https://espace.library.uq.edu.au/view/UQ:1c1d12e",
     "source": "UQ eSpace",
-    "citation_percentile": 0.99712656,
-    "cited_by_count": 350,
-    "fwci": 29.037
+    "citation_percentile": 0.99714529,
+    "cited_by_count": 352,
+    "fwci": 29.2184
   },
   {
     "espace_id": "7634085",
