@@ -557,7 +557,6 @@ def parse_publications(soup, person):
             "volume": _text(item, ".rg-volume"),
             "pages": _text(item, ".rg-page"),
             "publisher": _text(item, ".rg-publisher"),
-            "abdc_self_reported": None,   # joined from the ABDC list downstream
             "citation_percentile": None,  # joined from OpenAlex downstream
             "source": SOURCE_NAME,
         })
@@ -583,7 +582,11 @@ PUB_COLUMNS = [
     "researcher_name", "researcher_profile_url", "university", "field_of_research",
     "title", "journal_name", "year", "publication_type", "doi", "article_url",
     "coauthors", "author_count", "volume", "pages", "publisher",
-    "abdc_self_reported", "citation_percentile", "source",
+    # No `abdc_self_reported`: it was a placeholder for a rating a university
+    # might publish about itself, nothing ever filled it, it is not in data
+    # dictionary 3.5.4, and a merge script mapping it onto quality_rank would
+    # blank out real ratings. Ratings arrive from rankings/journals.py instead.
+    "citation_percentile", "source",
 ]
 
 UNPARSED_COLUMNS = [
@@ -680,9 +683,9 @@ def main():
     parser.add_argument("--all-types", action="store_true",
                         help="put every publication type in unsw_publications.csv. "
                              "By default that file holds journal articles only, as "
-                             "the client decided on 19 August; the other types are "
-                             "always written to unsw_publications_all_types.csv "
-                             "either way, so nothing is lost.")
+                             "the client decided on 19 August. Every publication is "
+                             "written to unsw_publications_all_types.csv either "
+                             "way, so nothing is lost.")
     parser.add_argument("--timeout", type=int, default=PAGE_TIMEOUT,
                         help=f"seconds to wait for the listing (default {PAGE_TIMEOUT})")
     args = parser.parse_args()
@@ -817,8 +820,12 @@ def main():
                                  if not is_journal_article(p))
         print(f"\nJournal articles only (client decision, 19 August): "
               f"{len(journals)} of {len(everything)} publications kept")
-        print(f"  the other {len(everything) - len(journals)} are in "
-              f"unsw_publications_all_types.csv:")
+        # Say what that file actually holds. It is every publication, not just
+        # the excluded ones — the name means "all types", and a reader who
+        # believes it holds only the leftovers will double-count if they ever
+        # concatenate it with unsw_publications.csv.
+        print(f"  unsw_publications_all_types.csv holds all {len(everything)}, "
+              f"including the {len(everything) - len(journals)} set aside here:")
         for kind, n in excluded_types.most_common(6):
             print(f"     {n:>4}  {kind}")
         if len(excluded_types) > 6:

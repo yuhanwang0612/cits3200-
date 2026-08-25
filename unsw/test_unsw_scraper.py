@@ -149,7 +149,6 @@ def test_structured_entry_maps_to_the_right_columns():
     assert p["university"] == s.UNIVERSITY
     assert p["researcher_name"] == "Test Person"
     # Filled downstream, not here — but the columns must exist.
-    assert p["abdc_self_reported"] is None
     assert p["citation_percentile"] is None
 
 
@@ -475,3 +474,25 @@ def test_the_harvest_module_is_optional():
     body = inspect.getsource(s.record_harvest)
     assert "if harvest is None" in body
     assert "return None" in body
+
+
+def test_the_all_types_file_is_a_superset_not_the_leftovers():
+    """`unsw_publications_all_types.csv` holds every publication, including the
+    journal articles that are also in unsw_publications.csv. The run summary
+    used to describe it as "the other 2,210", which would lead anyone who
+    believed it to double-count by concatenating the two files."""
+    import inspect
+    body = inspect.getsource(s.write_output)
+    assert "everything" in body
+    summary = inspect.getsource(s.main)
+    assert "holds all" in summary
+    assert "the other" not in summary
+
+
+def test_the_dead_placeholder_column_is_gone():
+    """`abdc_self_reported` was a placeholder for a rating a university might
+    publish about itself. Nothing ever filled it, in 2,000 rows across every
+    run. It is not in data dictionary 3.5.4, and the team's merge script maps
+    it onto quality_rank — which would have blanked out real ratings. Ratings
+    now arrive from rankings/journals.py instead."""
+    assert "abdc_self_reported" not in s.PUB_COLUMNS

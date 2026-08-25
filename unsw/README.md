@@ -99,8 +99,8 @@ Writes to `./output/`:
 | File | Contents |
 |---|---|
 | `unsw_staff.csv` / `.json` | One row per academic — name, job_title, academic_level (A–E), field_of_research, profile_url, university, research_portal_url, school |
-| `unsw_publications.csv` | One row per **journal article** — title, journal_name, year, publication_type, doi, article_url, coauthors, author_count, volume, pages, publisher, plus blank `abdc_self_reported` and `citation_percentile` columns to be filled downstream |
-| `unsw_publications_all_types.csv` | Every publication including the types the client excluded: conference papers, media, book chapters, preprints |
+| `unsw_publications.csv` | One row per **journal article** — title, journal_name, year, publication_type, doi, article_url, coauthors, author_count, volume, pages, publisher, plus `citation_percentile` and the journal ratings (`quality_rank`, `sjr`, `sjr_quartile`, `cites_per_doc_2y`), filled downstream by `rankings/pipeline.py` |
+| `unsw_publications_all_types.csv` | **All 4,210** publications, every type, the journal articles included. A superset of the file above, not its complement |
 | `unsw_unparsed_publications.csv` | Entries we could not parse, with the raw text — see below |
 | `unsw_no_publications.csv` | Academics whose profile lists nothing at all |
 | `harvest.csv` / `.json` | One row per source: when it last ran and the newest year it found (3.5.4, FR14) |
@@ -134,8 +134,9 @@ Three things are deliberate:
   understate someone's output; mis-parsing them would be worse.
 - **The dataset is journal articles only, and everything else is still kept.**
   The client confirmed this on 19 August. `unsw_publications.csv` holds the 2,000
-  journal articles; the other 2,210 rows go to
-  `unsw_publications_all_types.csv`. Re-scraping is expensive and a decision can
+  journal articles. `unsw_publications_all_types.csv` holds **all 4,210**, the
+  2,000 included, not just the 2,210 that were set aside, so never concatenate
+  the two. Re-scraping is expensive and a decision can
   be revisited, so what the filter changes is which file is the dataset, not what
   gets collected. `--all-types` puts everything back in the main file.
 
@@ -164,7 +165,7 @@ conference paper and a later book is kept as two records).
 python -m pytest test_unsw_scraper.py -v
 ```
 
-52 tests, all offline against fixtures defined in the test file — nothing touches
+53 tests, all offline against fixtures defined in the test file — nothing touches
 unsw.edu.au, so the suite runs in about a second and is safe in CI.
 
 They are not there for coverage. Each one pins a rule that was actually wrong at
