@@ -10,9 +10,9 @@ separately, so the flattened view and the journal table can't drift
 apart from each other — see docs/DECISIONS.md.
 
 Run this after rankings/pipeline.py (Zarin's package, zarin-branch) has
-produced both input files in output/. Writes anu_publications.csv and
-anu_staff.csv to the repo root, alongside anu_journals.csv and
-harvest.csv — that's the observed convention on main (uq_/unimelb_/
+produced both input files in output/. Writes all five root deliverables —
+anu_publications.csv, anu_staff.csv, anu_journals.csv, harvest.csv and
+harvest.json — that's the observed convention on main (uq_/unimelb_/
 uwa_publications.csv, staff.csv, journals.csv, harvest.csv all sit at
 the repo root), so these are what a PR would actually add.
 """
@@ -27,6 +27,11 @@ PUBLICATIONS_IN = OUTPUT_DIR / "anu_publications_with_openalex.csv"
 JOURNALS_IN = OUTPUT_DIR / "anu_journals.csv"
 PUBLICATIONS_OUT = ROOT / "anu_publications.csv"
 STAFF_OUT = ROOT / "anu_staff.csv"
+JOURNALS_OUT = ROOT / "anu_journals.csv"
+HARVEST_CSV_IN = OUTPUT_DIR / "harvest.csv"
+HARVEST_CSV_OUT = ROOT / "harvest.csv"
+HARVEST_JSON_IN = OUTPUT_DIR / "harvest.json"
+HARVEST_JSON_OUT = ROOT / "harvest.json"
 
 FLATTENED_COLUMNS = ["quality_rank", "sjr_quartile"]
 
@@ -67,11 +72,17 @@ def main() -> None:
         writer.writerows(pub_rows)
 
     shutil.copyfile(OUTPUT_DIR / "anu_staff.csv", STAFF_OUT)
+    shutil.copyfile(JOURNALS_IN, JOURNALS_OUT)
+    shutil.copyfile(HARVEST_CSV_IN, HARVEST_CSV_OUT)
+    shutil.copyfile(HARVEST_JSON_IN, HARVEST_JSON_OUT)
 
     rated = sum(1 for r in pub_rows if r.get("quality_rank") and r["quality_rank"] != "none")
     print(f"{PUBLICATIONS_OUT}: {len(pub_rows)} rows, {matched} joined to a journal, "
           f"{rated} carry an ABDC rating other than 'none'")
     print(f"{STAFF_OUT}: copied from {OUTPUT_DIR / 'anu_staff.csv'}")
+    print(f"{JOURNALS_OUT}: copied from {JOURNALS_IN}")
+    print(f"{HARVEST_CSV_OUT}: copied from {HARVEST_CSV_IN}")
+    print(f"{HARVEST_JSON_OUT}: copied from {HARVEST_JSON_IN}")
 
 
 if __name__ == "__main__":
