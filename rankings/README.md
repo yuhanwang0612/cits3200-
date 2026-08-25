@@ -372,9 +372,118 @@ rather than wrong.
 
 ---
 
+## `authors.py` — finding what the university website never listed
+
+```bash
+python authors.py --staff ../output/unsw_staff.csv \
+                  --publications ../output/unsw_publications_with_openalex.csv \
+                  --ror 03r8z3t63 \
+                  --mailto you@student.uwa.edu.au
+```
+
+`openalex.py` asks "here is a DOI, tell me about it". This asks "here is a
+researcher, what have they published". Only the second can find a paper the
+university's own page never listed, which is what the client asked for on
+19 August and what Yuanji asked for again by email.
+
+Writes `<staff>_with_orcid.csv` and `discovered_publications.csv`. The second
+uses the scrapers' own column names, so a row can be appended to a publications
+CSV unchanged, with `source` set to `OpenAlex` so its provenance stays visible.
+
+### ORCID gives precision, not recall
+
+Checked against the live API on 25 August, using Jason Zein at UNSW:
+
+```
+authors?filter=orcid:0000-0001-7701-3721             -> exactly 1 author
+works?filter=authorships.author.orcid:0000-...-3721  -> 47 works, all his
+```
+
+So an ORCID is unambiguous, and anyone getting several results is probably
+using `search=` rather than `filter=orcid:`. But name search is a different
+story:
+
+```
+authors?search=Jason Zein  -> 3 results
+    Jason Zein     ORCID, 45 works, UNSW Sydney     <- the researcher
+    Jason El-Zein  no ORCID, 1 work, Illinois EPA   <- a different person
+    Jason Zein     no ORCID, 1 work, UNSW Sydney    <- the SAME person again
+```
+
+OpenAlex splits one person across several author records and usually only one
+carries the ORCID. Filter on the ORCID alone and you have the right human but
+you silently lose whatever sits on the duplicates. So this module keeps both:
+the ORCID record is the anchor, the others are treated as duplicates of the
+same person rather than as strangers.
+
+**We have no ORCIDs to start from.** No university site in this project
+publishes one. So ORCID is an output of the first run, not an input to it; pass
+`--orcid-column` on a later run to use what the first one found, which is what
+the client meant by "ORCID is permanent for a certain researcher".
+
+### Every row says how it was matched
+
+| `author_match_type` | Meaning |
+|---|---|
+| `orcid` | we already knew their ORCID — the strongest |
+| `name+institution` | one candidate at our ROR, name matched exactly |
+| `name-variant+institution` | matched on surname and first initial — weaker, tagged so it can be filtered |
+| `ambiguous` | several plausible people; **nothing is included** and the candidates are listed for a human |
+| `not found` | OpenAlex has nobody by that name at this institution |
+| `lookup failed` | the request did not succeed — **not** the same as nobody being there |
+
+Attributing a stranger's paper to one of our researchers is far worse than
+missing one. A missing paper understates somebody; a wrong one is invisible,
+survives review, and corrupts every ranking built on it. So `ambiguous`
+contributes nothing at all, and `--include-ambiguous` exists only for
+investigating and should stay off for anything the client sees.
+
+`--ror` is close to mandatory. Without it, every namesake at every institution
+in the world is a candidate, so the module says so loudly and carries on.
+
+An author counts as ours if OpenAlex ties them to our ROR **at any point in
+their career**, not just in `last_known_institutions`. That field holds only the
+institution on their most recent paper, which is often a co-author's or a former
+employer's. Filtering on it alone reported 38 of UNSW's 93 researchers as "not
+found", including people with a hundred publications on their own staff page.
+
+### OpenAlex now charges against a daily budget
+
+Discovered the hard way on the first full UNSW run, which died at researcher 92:
+
+```
+Rate limit exceeded — Insufficient budget. This request costs $0.001
+but you only have $0.0007 remaining. Resets at midnight UTC.
+```
+
+One pass over 93 researchers is roughly 150 requests and that is enough to spend
+the free daily allowance. Two things follow:
+
+- **Budget exhaustion and throttling both arrive as HTTP 429**, and they need
+  opposite responses. A throttle is worth waiting out; a spent budget cannot
+  succeed until midnight, so the run stops there rather than marking everyone
+  remaining as "not found" for a reason that has nothing to do with them.
+- **A failed request is never cached.** Only a genuine empty result is. Caching
+  a failure would turn one bad afternoon into a permanent wrong answer about a
+  real person, and no amount of re-running would fix it.
+
+`lookup failed` is therefore its own `author_match_type`, distinct from `not
+found`: one says OpenAlex has nobody, the other says we never got to ask.
+Everything already fetched is cached, so re-running after the reset picks up
+where it stopped rather than starting again.
+
+**An aborted run writes nothing at all.** It used to write whatever it had,
+which meant a run that died on its very first request replaced a complete
+204-publication file with an empty one. Nothing is lost by staying quiet: the
+responses are cached, so the next run rebuilds those researchers instantly.
+Partial output that overwrites complete output is strictly worse than no
+output.
+
+---
+
 ## `journal_match.py` — the matching all three use
 
-Not run directly. All three import it, so a journal that ABDC matches is
+Not run directly. They all import it, so a journal that ABDC matches is
 matched the same way by Scimago. If they each had their own matcher, the same
 journal could end up rated by one source and unrated by the other for no reason
 other than a stray subtitle.
@@ -385,7 +494,7 @@ other than a stray subtitle.
 python -m pytest -v
 ```
 
-**149 tests, fully offline** — the ABDC workbook and Scimago export they run
+**185 tests, fully offline** — the ABDC workbook and Scimago export they run
 against are generated in temp directories, the OpenAlex call is stubbed with a
 real response shape, so no downloaded file is needed, no key, and nothing hits
 the network.
