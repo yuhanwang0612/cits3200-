@@ -5,12 +5,15 @@ Merges publication CSVs from all university scrapers into one combined CSV.
 Usage:
     python3 merge_publications.py
 
-Reads from:
+Reads from (skips gracefully if not present):
     monash_publications.csv
     adelaide_publications.csv
-    output/anu_publications.csv          (from anu-scraper branch — copy here first)
-    sean_publications.csv                (from Sean-Branch — copy here first)
-    unsw/output/unsw_publications_with_openalex.csv  (from zarin-branch — copy here first)
+    uq_publications.csv
+    unimelb_publications.csv
+    usyd_publications.csv
+    uwa_publications.csv
+    anu_publications.csv        (from anu-scraper branch — copy here first)
+    unsw_publications.csv       (from zarin-branch — copy here first)
 
 Outputs:
     combined_publications.csv
@@ -18,49 +21,67 @@ Outputs:
 
 import csv, os, re
 
-# ── Column mapping: (source_file, university_fallback, column_renames) ──
-# Each entry: (file_path, university_name, {source_col: target_col, ...})
-# Columns not listed in renames are kept as-is if they match target schema,
-# or dropped if they don't.
+# ── Column mapping ─────────────────────────────────────────────────────
+# UniMelb / USyd / UWA share the same schema
+_melb_style = {
+    "name":          "researcher",
+    "sjr_quartile":  "scimago_quartile",
+    "item_type":     "publication_type",
+}
 
 SOURCES = [
     {
         "file": "monash_publications.csv",
         "university": "Monash University",
-        "renames": {},  # already in target format
+        "renames": {},
     },
     {
         "file": "adelaide_publications.csv",
-        "university": "Adelaide University",
-        "renames": {},  # already in target format
+        "university": "University of Adelaide",
+        "renames": {},
+    },
+    {
+        "file": "uq_publications.csv",
+        "university": "University of Queensland",
+        "renames": {
+            "name":         "researcher",
+            "sjr_quartile": "scimago_quartile",
+            "link":         "profile_url",
+        },
+    },
+    {
+        "file": "unimelb_publications.csv",
+        "university": "University of Melbourne",
+        "renames": _melb_style,
+    },
+    {
+        "file": "usyd_publications.csv",
+        "university": "University of Sydney",
+        "renames": _melb_style,
+    },
+    {
+        "file": "uwa_publications.csv",
+        "university": "University of Western Australia",
+        "renames": _melb_style,
     },
     {
         "file": "anu_publications.csv",
         "university": "Australian National University",
         "renames": {
-            "researcher_name":    "researcher",
-            "researcher_profile_url": "profile_url",   # store separately, not article_url
-            "coauthors":          "authors",
-            "abdc_self_reported": "quality_rank",
-        },
-    },
-    {
-        "file": "sean_publications.csv",
-        "university": "University of Queensland",
-        "renames": {
-            "name":          "researcher",
-            "sjr_quartile":  "scimago_quartile",
-            "link":          "profile_url",
+            "researcher_name":        "researcher",
+            "researcher_profile_url": "profile_url",
+            "coauthors":              "authors",
+            "abdc_self_reported":     "quality_rank",
         },
     },
     {
         "file": "unsw_publications.csv",
         "university": "University of New South Wales",
         "renames": {
-            "researcher_name":    "researcher",
+            "researcher_name":        "researcher",
             "researcher_profile_url": "profile_url",
-            "coauthors":          "authors",
-            "abdc_self_reported": "quality_rank",
+            "coauthors":              "authors",
+            "abdc_self_reported":     "quality_rank",
         },
     },
 ]
@@ -71,7 +92,7 @@ TARGET_COLS = [
     "title", "year", "doi", "article_url", "author_count", "authors",
     "publication_type", "source", "journal_name", "issn",
     "quality_rank", "scimago_sjr", "scimago_quartile", "cites_per_doc_2y",
-    "impact_factor",
+    "impact_factor", "citation_percentile", "cited_by_count", "fwci",
 ]
 
 def normalise_doi(doi):
@@ -86,8 +107,8 @@ def normalise_title(title):
 
 # ── Read and remap each source ────────────────────────────────────────
 all_rows = []
-seen_dois = set()       # for DOI-based dedup
-seen_titles = set()     # for title+year dedup when no DOI
+seen_researcher_dois = set()   # (researcher, doi) — same paper can appear per co-author
+seen_titles = set()            # (researcher, title, year) fallback when no DOI
 
 for src in SOURCES:
     path = src["file"]
@@ -99,7 +120,7 @@ for src in SOURCES:
     university = src["university"]
     count = 0
 
-    with open(path, newline="", encoding="utf-8") as f:
+    with open(path, newline="", encoding="utf-8-sig") as f:  # utf-8-sig strips BOM
         reader = csv.DictReader(f)
         for row in reader:
             # Apply column renames
@@ -115,22 +136,26 @@ for src in SOURCES:
             # Normalise DOI
             new_row["doi"] = normalise_doi(new_row.get("doi", ""))
 
-            # Deduplication
+            # Deduplication — key on (researcher, doi) so the same paper
+            # can appear once per co-author (Zarin's fix)
             doi = new_row["doi"]
-            title_year = (
+            researcher = new_row.get("researcher", "").strip()
+            researcher_doi = (researcher, doi)
+            researcher_title_year = (
+                researcher,
                 normalise_title(new_row.get("title", "")),
                 str(new_row.get("year", "")).strip(),
             )
 
-            if doi and doi in seen_dois:
-                continue  # duplicate by DOI
-            if not doi and title_year in seen_titles:
-                continue  # duplicate by title+year
+            if doi and researcher_doi in seen_researcher_dois:
+                continue  # same researcher already has this DOI
+            if not doi and researcher_title_year in seen_titles:
+                continue  # same researcher, same title+year
 
             if doi:
-                seen_dois.add(doi)
+                seen_researcher_dois.add(researcher_doi)
             else:
-                seen_titles.add(title_year)
+                seen_titles.add(researcher_title_year)
 
             # Build output row with only target columns (fill blanks for missing)
             out = {col: new_row.get(col, "") for col in TARGET_COLS}
