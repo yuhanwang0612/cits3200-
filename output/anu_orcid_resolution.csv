@@ -1,0 +1,45 @@
+name,profile_url,openalex_author_id,orcid,match_method,candidate_count,candidate_count_capped,titles_tested,titles_matched,openalex_works_count,needs_human_check,candidate_alternatives
+Sarah Adams,https://rsa.anu.edu.au/people/sarah-adams,A5100632160,0000-0002-4737-4507,title_overlap_unique,2,FALSE,3,2,14,FALSE,A5091854574
+Bonnie Allan,https://rsa.anu.edu.au/people/bonnie-allan,,,not_found,0,FALSE,0,0,,TRUE,
+Pat Barrett,https://rsa.anu.edu.au/people/pat-barrett,,,ambiguous,4,FALSE,0,0,27,TRUE,A5010537127|A5053972979|A5055131929|A5110061722
+Yue Cai,https://rsa.anu.edu.au/people/yue-cai,,,ambiguous,2,FALSE,0,0,24,TRUE,A5101832324|A5118780922
+Lily Chen,https://rsa.anu.edu.au/people/lily-chen,,,ambiguous,2,FALSE,14,2,19,TRUE,A5101968543|A5067683323
+Sorin Daniliuc,https://rsa.anu.edu.au/people/sorin-daniliuc,A5039909432,0000-0001-9541-5652,title_overlap_unique,1,FALSE,2,2,8,FALSE,
+Neil Fargher,https://rsa.anu.edu.au/people/neil-fargher,A5007232227,0000-0003-2604-109X,title_overlap_unique,1,FALSE,20,20,91,FALSE,
+Susanna Ho,https://rsa.anu.edu.au/people/susanna-ho,,,not_found,0,FALSE,10,0,,TRUE,
+Tejshree Kala,https://rsa.anu.edu.au/people/tejshree-kala,A5050496098,0000-0003-4145-2671,title_overlap_unique,1,FALSE,2,2,3,FALSE,
+Eunice Khoo,https://rsa.anu.edu.au/people/eunice-khoo,A5075478832,0000-0001-8405-0504,title_overlap_unique,1,FALSE,10,9,11,FALSE,
+Janet Lee,https://rsa.anu.edu.au/people/janet-lee,A5100761855,0000-0001-6492-0314,title_overlap_unique,5,FALSE,16,13,75,FALSE,A5104266909|A5025073926|A5140478964|A5127803208
+Lingwei Li,https://rsa.anu.edu.au/people/lingwei-li,A5100623355,0000-0002-9855-8082,title_overlap_unique,1,FALSE,6,6,11,FALSE,
+Louise Lu,https://rsa.anu.edu.au/people/louise-lu,A5073704082,0000-0002-5383-4303,title_overlap_unique,1,FALSE,18,18,66,FALSE,
+Scarlett Luo,https://rsa.anu.edu.au/people/scarlett-luo,,,ambiguous,2,FALSE,1,1,1,TRUE,A5128796098|A5138012136
+Ian McPhee,https://rsa.anu.edu.au/people/ian-mcphee,,,not_found,0,FALSE,0,0,,TRUE,
+Juliana Ng,https://rsa.anu.edu.au/people/juliana-ng,A5038585982,0000-0002-1629-4731,title_overlap_unique,1,FALSE,11,11,49,FALSE,
+Greg Shailer,https://rsa.anu.edu.au/people/greg-shailer,A5046088722,0000-0002-4896-4197,title_overlap_unique,1,FALSE,28,19,81,FALSE,
+Madhukar Singh,https://rsa.anu.edu.au/people/madhukar-singh,A5069865170,0000-0002-8369-863X,title_overlap_unique,1,FALSE,2,2,7,FALSE,
+Rebecca Tan,https://rsa.anu.edu.au/people/rebecca-tan,A5014213665,0000-0003-1337-4338,name_institution_unique,1,FALSE,0,0,13,TRUE,
+Sonali Walpola,https://rsa.anu.edu.au/people/sonali-walpola,A5066890274,,title_overlap_unique,1,FALSE,10,3,9,FALSE,
+Alex Wang,https://rsa.anu.edu.au/people/alex-wang,,,ambiguous,3,FALSE,10,3,148,TRUE,A5100398364|A5042994711|A5112905746
+Isabel Wang,https://rsa.anu.edu.au/people/isabel-wang,A5103278655,0000-0002-7297-3384,title_overlap_unique,1,FALSE,8,7,12,FALSE,
+Kathy Wang,https://rsa.anu.edu.au/people/kathy-wang,A5029534340,,title_overlap_unique,1,FALSE,3,2,26,FALSE,
+Tracy (Kun) Wang,https://rsa.anu.edu.au/people/tracy-kun-wang,,,ambiguous,2,FALSE,0,0,423,TRUE,A5077882567|A5017281091
+Marvin Wee,https://rsa.anu.edu.au/people/marvin-wee,A5007556858,0000-0002-3097-9091,title_overlap_unique,1,FALSE,33,29,82,FALSE,
+Keturah Whitford,https://rsa.anu.edu.au/people/keturah-whitford,A5029899561,,name_institution_unique,1,FALSE,0,0,4,TRUE,
+Mark Wilson,https://rsa.anu.edu.au/people/mark-wilson,,,ambiguous,4,FALSE,0,0,62,TRUE,A5012556458|A5109390339|A5111473468|A5025675767
+Steven Wu,https://rsa.anu.edu.au/people/steven-wu,,,not_found,0,FALSE,15,0,,TRUE,
+Jean You,https://rsa.anu.edu.au/people/jean-you,A5143759567,,name_institution_unique,1,FALSE,0,0,1,TRUE,
+Wei Zeng,https://rsa.anu.edu.au/people/wei-zeng,,,ambiguous,1,FALSE,1,1,1,TRUE,A5102845148
+Lijuan Zhang,https://rsa.anu.edu.au/people/lijuan-zhang,,,ambiguous,7,FALSE,9,5,15,TRUE,A5051455908|A5100444076|A5100734721|A5130960907|A5115596023|A5134342132|A5134068148
+Xiu-Ye Zhang,https://rsa.anu.edu.au/people/xiu-ye-zhang,A5047183478,0000-0002-5354-0655,title_overlap_unique,2,FALSE,5,4,14,FALSE,A5130911217
+Richard (Ruichao) Zhu,https://rsa.anu.edu.au/people/richard-ruichao-zhu,,,not_found,0,FALSE,5,0,,TRUE,
+Mohammed Abdullah Al Mamun,https://rsfas.anu.edu.au/people/mohammed-abdullah-al-mamun,A5081186334,0000-0002-2104-7479,name_institution_unique,1,FALSE,0,0,16,TRUE,
+Antje Berndt,https://rsfas.anu.edu.au/people/antje-berndt,A5090443683,0000-0002-4436-2885,title_overlap_unique,1,FALSE,14,13,60,FALSE,
+Jenni Bettman,https://rsfas.anu.edu.au/people/jenni-bettman,A5003467895,,title_overlap_unique,1,FALSE,6,6,11,FALSE,
+Hua Deng,https://rsfas.anu.edu.au/people/hua-deng,,,ambiguous,2,FALSE,2,1,217,TRUE,A5113555025|A5013683417
+Ding Ding,https://rsfas.anu.edu.au/people/ding-ding,,,ambiguous,25,TRUE,0,0,1133,TRUE,A5100352097|A5046071840|A5067797794|A5085794086|A5049444390|A5051552423|A5039184932|A5101192931|A5072572094|A5017205952|A5100322712|A5100352100|A5018790556|A5100352096|A5101962221|A5113768178|A5009611484|A5047528508|A5086348845|A5020996610|A5011808178|A5003322022|A5101460185|A5100387187|A5055627736
+Jo Drienko,https://rsfas.anu.edu.au/people/jo-drienko,,,ambiguous,3,FALSE,9,3,6,TRUE,A5095966452|A5097124489|A5123379256
+Chao Gao,https://rsfas.anu.edu.au/people/chao-gao,,,ambiguous,9,FALSE,3,3,122,TRUE,A5100748611|A5147017739|A5100748612|A5052960352|A5100748613|A5119153591|A5147178573|A5146809629|A5147583520
+Lin Hu,https://rsfas.anu.edu.au/people/lin-hu,,,ambiguous,7,FALSE,3,2,24,TRUE,A5102941807|A5101661157|A5017812548|A5038579096|A5101661158|A5147092207|A5115059568
+Dean Katselas,https://rsfas.anu.edu.au/people/dean-katselas,A5050367998,0000-0001-7378-0624,title_overlap_unique,1,FALSE,12,10,21,FALSE,
+Nhan Le,https://rsfas.anu.edu.au/people/nhan-le,,,ambiguous,6,FALSE,4,1,25,TRUE,A5009684492|A5065854487|A5101056049|A5112520234|A5143894231|A5129906520
+Kun Li,https://rsfas.anu.edu.au/people/kun-li,,,ambiguous,10,FALSE,1,0,1944,TRUE,A5100354225|A5100377554|A5100377502|A5100377523|A5051929233|A5100415036|A5100728029|A5013213435|A5127876212|A5115059567
