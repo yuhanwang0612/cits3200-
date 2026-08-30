@@ -30,7 +30,7 @@ import re
 import time
 from datetime import datetime, timezone
 from urllib.parse import urljoin
-
+from pathlib import Path
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
@@ -40,15 +40,22 @@ from dotenv import load_dotenv
 # Configuration
 # --------------------------------------------------------------------------
 
-OUT_DIR = "."                       # where the four CSV/JSON pairs are written
-ABDC_FILE = "ABDC-JQL-2025-v1-260326.xlsx"
-ABDC_SHEET = "2025 JQL"
-ABDC_HEADER = 7                     # header row differs between JQL editions
-ABDC_RATING_COL = "2025 rating"
-SCIMAGO_FILE = "scimagojr 2025.csv"
 
-JCR_YEAR = 2025
-JCR_SLEEP = 0.3                     # Clarivate allows 5 req/sec; 2 calls per journal
+ROOT = Path(__file__).resolve().parent.parent
+
+# --------------------------------------------------------------------------
+# Configuration
+# --------------------------------------------------------------------------
+
+OUT_DIR         = ROOT / "output" / "uq"
+ABDC_FILE       = ROOT / "data" / "ABDC-JQL-2025-v1-260326.xlsx"
+ABDC_SHEET      = "2025 JQL"
+ABDC_HEADER     = 7                     # header row differs between JQL editions
+ABDC_RATING_COL = "2025 rating"
+SCIMAGO_FILE    = ROOT / "data" / "scimagojr 2025.csv"
+
+JCR_YEAR  = 2025
+JCR_SLEEP = 0.3
 
 ESPACE_BASE = "https://api.library.uq.edu.au/v1/records/search"
 JCR_BASE = "https://api.clarivate.com/apis/wos-journals/v1"
@@ -936,7 +943,7 @@ def export(records, pubs, out_dir=OUT_DIR):
 # --------------------------------------------------------------------------
 
 def main():
-    load_dotenv()
+    load_dotenv(ROOT / ".env")
     jcr_hdrs = {"X-ApiKey": os.environ["CLARIVATE_API_KEY"]}
 
     print("\n=== 1. staff directory ===")
