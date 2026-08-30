@@ -96,10 +96,28 @@ TARGET_COLS = [
 ]
 
 def normalise_doi(doi):
-    """Strip https://doi.org/ prefix if present."""
+    """Return a canonical DOI for reliable deduplication."""
     if not doi:
         return ""
-    return doi.replace("https://doi.org/", "").replace("http://doi.org/", "").strip()
+
+    doi = doi.strip()
+
+    # DOI identifiers are case-insensitive. Accept common URL and
+    # textual representations before comparing records.
+    doi = re.sub(
+        r"^https?://(?:dx\.)?doi\.org/",
+        "",
+        doi,
+        flags=re.IGNORECASE,
+    )
+    doi = re.sub(
+        r"^doi:\s*",
+        "",
+        doi,
+        flags=re.IGNORECASE,
+    )
+
+    return doi.strip().lower()
 
 def normalise_title(title):
     """Lowercase + strip punctuation for dedup comparison."""
