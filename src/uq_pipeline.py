@@ -6,12 +6,17 @@ Order of operations:
   2. eSpace author IDs               -> records[espace_id]
   3. ORCIDs (via eSpace)             -> records[orcid]
   4. eSpace publication records      -> pubs
-  5. OpenAlex retrieval (by ORCID)   -> extra pubs the repository lacks
-  6. OpenAlex enrichment (by DOI)    -> citation_percentile, cited_by_count, fwci
-  7. ABDC quality rank (by ISSN)     -> abdc, abdc_title
-  8. Clarivate JCR (by ISSN)         -> impact_factor, impact_factor_5yr
-  9. Scimago metrics (by ISSN)       -> sjr, sjr_quartile, h_index, cites_per_doc_2y
- 10. Export staff / journals / publications / harvest as CSV + JSON
+  5. ORCID retrieval (by ORCID)      -> extra works listed on the ORCID record
+  6. Crossref retrieval (by ORCID)   -> extra works Crossref links to the ORCID
+  7. OpenAlex retrieval (by ORCID)   -> extra works, with a contamination guard
+  8. OpenAlex enrichment (by DOI)    -> citation_percentile, cited_by_count, fwci
+  9. ABDC quality rank (by ISSN)     -> abdc, abdc_title
+ 10. Clarivate JCR (by ISSN)         -> impact_factor, impact_factor_5yr
+ 11. Scimago metrics (by ISSN)       -> sjr, sjr_quartile, h_index, cites_per_doc_2y
+ 12. Export staff / journals / publications / harvest as CSV + JSON
+
+Retrieval happens first and unfiltered; every record is tagged with its
+`source`. Filtering to journal articles happens once, at export.
 
 Requires a .env file containing:
   CLARIVATE_API_KEY=...
@@ -35,12 +40,12 @@ from dotenv import load_dotenv
 # Configuration
 # --------------------------------------------------------------------------
 
-OUT_DIR = "output/uq"                       # where the four CSV/JSON pairs are written
-ABDC_FILE = "data/ABDC-JQL-2025-v1-260326.xlsx"
+OUT_DIR = "."                       # where the four CSV/JSON pairs are written
+ABDC_FILE = "ABDC-JQL-2025-v1-260326.xlsx"
 ABDC_SHEET = "2025 JQL"
 ABDC_HEADER = 7                     # header row differs between JQL editions
 ABDC_RATING_COL = "2025 rating"
-SCIMAGO_FILE = "data/scimagojr 2025.csv"
+SCIMAGO_FILE = "scimagojr 2025.csv"
 
 JCR_YEAR = 2025
 JCR_SLEEP = 0.3                     # Clarivate allows 5 req/sec; 2 calls per journal
@@ -74,6 +79,7 @@ ESPACE_HEADERS = {
 }
 
 OA_HEADERS = {"User-Agent": f"UQ-CITS3200 (mailto:{CONTACT_EMAIL})"}
+CR_HEADERS = {"User-Agent": f"UQ-CITS3200 (mailto:{CONTACT_EMAIL})"}
 
 # --------------------------------------------------------------------------
 # Title / rank parsing
@@ -253,10 +259,26 @@ def fetch_publications(records):
             url = (f"{ESPACE_BASE}?export_to=&page={page}&per_page=100"
                    f"&sort=published_date&order_by=desc&mode=advanced"
                    f"&key%5Brek_author_id%5D={p['espace_id']}")
-            d = requests.get(url, headers=ESPACE_HEADERS, timeout=15).json()
-            total = d["total"]
 
-            for rec in d["data"]:
+            d = None
+            for attempt in range(3):
+                try:
+                    resp = requests.get(url, headers=ESPACE_HEADERS, timeout=30)
+                    resp.raise_for_status()
+                    d = resp.json()
+                    break
+                except (requests.RequestException, ValueError) as e:
+                    if attempt == 2:
+                        print(f"  {p['name_clean']}: page {page} failed after "
+                              f"3 attempts — {e}")
+                    else:
+                        time.sleep(5 * (attempt + 1))
+            if d is None:
+                break
+
+            total = d.get("total", 0)
+
+            for rec in d.get("data", []):
                 jn = rec.get("fez_record_search_key_journal_name")
 
                 mj = rec.get("fez_matched_journals") or []
@@ -294,13 +316,15 @@ def fetch_publications(records):
                     "source": "UQ eSpace",
                 })
 
-            fetched += len(d["data"])
-            if fetched >= total or not d["data"]:
+            fetched += len(d.get("data", []))
+            if fetched >= total or not d.get("data"):
                 break
             page += 1
             time.sleep(1)
 
         flag = "" if fetched == total else "  <-- MISMATCH"
+        if total is None:
+            total, flag = 0, "  <-- FETCH FAILED"
         print(f"{i} {p['name_clean']}: {total} total, {fetched} fetched{flag}")
         time.sleep(1)
 
@@ -309,7 +333,209 @@ def fetch_publications(records):
 
 
 # --------------------------------------------------------------------------
-# 5. Supplementary retrieval: OpenAlex by ORCID
+# 5. Supplementary retrieval: ORCID
+# --------------------------------------------------------------------------
+
+ORCID_API = "https://pub.orcid.org/v3.0"
+
+# Source vocabularies differ; normalise onto eSpace's rek_genre so the export
+# filter works across every source.
+TYPE_MAP = {
+    "journal-article": "Journal Article",
+    "journal_article": "Journal Article",
+    "posted-content":  "Preprint",
+    "preprint":        "Preprint",
+    "book-chapter":    "Book Chapter",
+    "book_chapter":    "Book Chapter",
+    "book":            "Book",
+    "dissertation":    "Thesis",
+    "dissertation-thesis": "Thesis",
+    "conference-paper": "Conference Paper",
+    "report":          "Research Report",
+    "data-set":        "Data Collection",
+    "dataset":         "Data Collection",
+}
+
+# Journal names that are repositories, not journals.
+NOT_A_JOURNAL = {"ssrn", "ssrn electronic journal", "arxiv", "preprints.org"}
+
+
+def _norm_type(t):
+    return TYPE_MAP.get((t or "").strip().lower(), (t or "").strip() or None)
+
+
+def _seen_dois(pubs):
+    """{name: {doi, ...}} of what we already hold."""
+    out = {}
+    for x in pubs:
+        if x.get("doi"):
+            out.setdefault(x["name"], set()).add(x["doi"].lower())
+    return out
+
+
+def fetch_orcid_works(records, pubs):
+    """Add works listed on each researcher's ORCID record that we lack.
+
+    ORCID is self-maintained so coverage varies, but it carries an ISSN on
+    roughly half its entries, which is enough for the ISSN enrichment to run.
+    """
+    have = _seen_dois(pubs)
+    added = 0
+
+    for p in records:
+        orcid = p.get("orcid")
+        if not orcid:
+            continue
+        name = p["name_clean"]
+        try:
+            r = requests.get(f"{ORCID_API}/{orcid}/works",
+                             headers={"Accept": "application/json"}, timeout=20)
+            r.raise_for_status()
+        except requests.RequestException as e:
+            print(f"  failed {name}: {e}")
+            continue
+
+        seen = have.setdefault(name, set())
+        n = 0
+        for g in r.json().get("group", []):
+            s = g["work-summary"][0]
+            ids = {}
+            for e in (s.get("external-ids") or {}).get("external-id", []):
+                ids.setdefault(e["external-id-type"], e["external-id-value"])
+
+            doi = (ids.get("doi") or "").lower()
+            if not doi or doi in seen:
+                continue
+            seen.add(doi)
+
+            journal = ((s.get("journal-title") or {}) or {}).get("value")
+            journal = journal.strip() if journal else None
+            if journal and journal.lower() in NOT_A_JOURNAL:
+                journal = None
+
+            yr = ((s.get("publication-date") or {}).get("year") or {}).get("value")
+            issn = ids.get("issn")
+
+            pubs.append({
+                "name": name,
+                "espace_id": p.get("espace_id"),
+                "title": ((s.get("title") or {}).get("title") or {}).get("value", ""),
+                "year": str(yr) if yr else None,
+                "type": _norm_type(s.get("type")),
+                "n_authors": None,
+                "authors": None,
+                "author_ids": [],
+                "issns": [issn] if issn else [],
+                "journal": journal,
+                "journal_id": None,
+                "journal_canonical": None,
+                "publisher": None,
+                "doi": doi,
+                "link": f"https://doi.org/{doi}",
+                "source": "ORCID",
+                "scopus_id": ids.get("eid"),
+                "wos_id": ids.get("wosuid"),
+            })
+            n += 1
+
+        added += n
+        if n:
+            print(f"  {name}: +{n}")
+        time.sleep(0.5)
+
+    print(f"added {added} records from ORCID; {len(pubs)} total")
+    return pubs
+
+
+# --------------------------------------------------------------------------
+# 6. Supplementary retrieval: Crossref
+# --------------------------------------------------------------------------
+
+CROSSREF_BASE = "https://api.crossref.org/works"
+
+
+def fetch_crossref_works(records, pubs):
+    """Add works Crossref links to each ORCID that we lack.
+
+    Crossref only attaches an ORCID when the publisher recorded it at
+    submission, so it under-reports rather than over-reporting - unlike
+    OpenAlex, whose inferred author entities merge same-name researchers.
+    """
+    have = _seen_dois(pubs)
+    added = 0
+
+    for p in records:
+        orcid = p.get("orcid")
+        if not orcid:
+            continue
+        name = p["name_clean"]
+
+        items, cursor = [], "*"
+        while True:
+            try:
+                r = requests.get(CROSSREF_BASE,
+                                 params={"filter": f"orcid:{orcid}",
+                                         "rows": 200, "cursor": cursor},
+                                 headers=CR_HEADERS, timeout=30)
+                r.raise_for_status()
+            except requests.RequestException as e:
+                print(f"  failed {name}: {e}")
+                break
+            msg = r.json()["message"]
+            items.extend(msg["items"])
+            cursor = msg.get("next-cursor")
+            if not cursor or not msg["items"]:
+                break
+            time.sleep(0.5)
+
+        seen = have.setdefault(name, set())
+        n = 0
+        for it in items:
+            doi = (it.get("DOI") or "").lower()
+            if not doi or doi in seen:
+                continue
+            seen.add(doi)
+
+            journal = (it.get("container-title") or [None])[0] if it.get("container-title") else None
+            if journal and journal.strip().lower() in NOT_A_JOURNAL:
+                journal = None
+
+            issns = [i for i in (it.get("ISSN") or []) if i]
+            yr = (it.get("issued", {}).get("date-parts") or [[None]])[0][0]
+
+            pubs.append({
+                "name": name,
+                "espace_id": p.get("espace_id"),
+                "title": (it.get("title") or [""])[0],
+                "year": str(yr) if yr else None,
+                "type": _norm_type(it.get("type")),
+                "n_authors": len(it.get("author") or []) or None,
+                "authors": "; ".join(
+                    f"{a.get('family','')}, {a.get('given','')}".strip(", ")
+                    for a in (it.get("author") or [])) or None,
+                "author_ids": [],
+                "issns": issns,
+                "journal": journal.strip() if journal else None,
+                "journal_id": None,
+                "journal_canonical": None,
+                "publisher": it.get("publisher"),
+                "doi": doi,
+                "link": f"https://doi.org/{doi}",
+                "source": "Crossref",
+            })
+            n += 1
+
+        added += n
+        if n:
+            print(f"  {name}: +{n}")
+        time.sleep(0.5)
+
+    print(f"added {added} records from Crossref; {len(pubs)} total")
+    return pubs
+
+
+# --------------------------------------------------------------------------
+# 7. Supplementary retrieval: OpenAlex by ORCID
 # --------------------------------------------------------------------------
 
 # OpenAlex type -> eSpace genre, so both sources share one vocabulary.
@@ -433,7 +659,7 @@ def fetch_openalex_by_orcid(records, pubs, tries=3):
 
 
 # --------------------------------------------------------------------------
-# 6. OpenAlex enrichment (by DOI)
+# 8. OpenAlex enrichment (by DOI)
 # --------------------------------------------------------------------------
 
 def enrich_openalex(pubs, chunk_size=25, tries=3):
@@ -488,7 +714,7 @@ def enrich_openalex(pubs, chunk_size=25, tries=3):
 
 
 # --------------------------------------------------------------------------
-# 7. ABDC (by ISSN, local file)
+# 9. ABDC (by ISSN, local file)
 # --------------------------------------------------------------------------
 
 def enrich_abdc(pubs):
@@ -520,7 +746,7 @@ def enrich_abdc(pubs):
 
 
 # --------------------------------------------------------------------------
-# 8. Clarivate JCR (by ISSN)
+# 10. Clarivate JCR (by ISSN)
 # --------------------------------------------------------------------------
 
 def enrich_jcr(pubs, hdrs):
@@ -574,7 +800,7 @@ def enrich_jcr(pubs, hdrs):
 
 
 # --------------------------------------------------------------------------
-# 9. Scimago (by ISSN, local file)
+# 11. Scimago (by ISSN, local file)
 # --------------------------------------------------------------------------
 
 def enrich_scimago(pubs):
@@ -608,7 +834,7 @@ def enrich_scimago(pubs):
 
 
 # --------------------------------------------------------------------------
-# 10. Export
+# 12. Export
 # --------------------------------------------------------------------------
 
 def export(records, pubs, out_dir=OUT_DIR):
@@ -619,6 +845,7 @@ def export(records, pubs, out_dir=OUT_DIR):
         "university": p["university"],
         "field_of_research": p["discipline"],
         "espace_id": p.get("espace_id"),
+        "orcid": p.get("orcid"),
         "profile_url": p["profile_url"],
     } for p in records]
 
@@ -646,10 +873,14 @@ def export(records, pubs, out_dir=OUT_DIR):
 
     # Journal articles only; deduplicated on (person, title, year).
     # DOI-bearing records sort first so the better-catalogued copy wins.
+    # Records that fall out here are excluded by type, not lost silently -
+    # publication_status records why.
     seen = set()
     publications = []
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x["type"] != "Journal Article":
+            continue
+        if not x.get("title"):
             continue
         k = (x["name"], x["title"].lower().strip(), x["year"])
         if k in seen:
@@ -669,6 +900,7 @@ def export(records, pubs, out_dir=OUT_DIR):
             "article_url": f"https://doi.org/{x['doi']}" if x.get("doi") else None,
             "link": x["link"],
             "source": x.get("source", "UQ eSpace"),
+            "publication_status": "published",
             "citation_percentile": x.get("citation_percentile"),
             "cited_by_count": x.get("cited_by_count"),
             "fwci": x.get("fwci"),
@@ -681,6 +913,14 @@ def export(records, pubs, out_dir=OUT_DIR):
         "latest_year": max((int(p["year"]) for p in publications if p["year"]),
                            default=None),
     }]
+
+    from collections import Counter
+    dropped = Counter((x.get("source", "UQ eSpace"), x["type"])
+                      for x in pubs if x["type"] != "Journal Article")
+    if dropped:
+        print("excluded by type filter:")
+        for (s, t), n in dropped.most_common(12):
+            print(f"  {n:4}  {s:10} {t}")
 
     os.makedirs(out_dir, exist_ok=True)
     for name, data in [("staff", staff), ("journals", journals),
@@ -711,22 +951,28 @@ def main():
     print("\n=== 4. publications ===")
     pubs = fetch_publications(records)
 
-    print("\n=== 5. openalex retrieval (by orcid) ===")
+    print("\n=== 5. orcid retrieval ===")
+    fetch_orcid_works(records, pubs)
+
+    print("\n=== 6. crossref retrieval ===")
+    fetch_crossref_works(records, pubs)
+
+    print("\n=== 7. openalex retrieval (by orcid) ===")
     fetch_openalex_by_orcid(records, pubs)
 
-    print("\n=== 6. openalex enrichment (by doi) ===")
+    print("\n=== 8. openalex enrichment (by doi) ===")
     enrich_openalex(pubs)
 
-    print("\n=== 7. abdc ===")
+    print("\n=== 9. abdc ===")
     enrich_abdc(pubs)
 
-    print("\n=== 8. clarivate jcr ===")
+    print("\n=== 10. clarivate jcr ===")
     enrich_jcr(pubs, jcr_hdrs)
 
-    print("\n=== 9. scimago ===")
+    print("\n=== 11. scimago ===")
     enrich_scimago(pubs)
 
-    print("\n=== 10. export ===")
+    print("\n=== 12. export ===")
     export(records, pubs)
 
 
