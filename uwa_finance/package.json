@@ -5,10 +5,12 @@
   "scripts": {
     "collect:staff": "node scrape_uwa_finance_staff.mjs",
     "collect:publications": "node scrape_uwa_finance_publications.mjs",
+    "collect:current-staff-publications": "node scrape_current_staff_publications.mjs",
     "build:data": "node build_minutes_dataset.mjs",
+    "enrich:openalex": "node enrich_openalex_v2.mjs",
     "build:minutes": "node build_minutes_dataset.mjs",
     "validate": "node validate_minutes_dataset.mjs",
-    "refresh": "node scrape_uwa_finance_staff.mjs && node scrape_uwa_finance_publications.mjs && node build_minutes_dataset.mjs && node validate_minutes_dataset.mjs"
+    "refresh": "node scrape_uwa_finance_staff.mjs && node scrape_uwa_finance_publications.mjs && node build_minutes_dataset.mjs && node scrape_current_staff_publications.mjs && node enrich_openalex_v2.mjs && node validate_minutes_dataset.mjs"
   },
   "dependencies": {
     "cheerio": "^1.1.2"

@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-28T18:42:24.809Z",
+  "scope": "Current official University of Melbourne Finance roster linked to Minerva by persistent author identifiers where available",
+  "staff_records": 49,
+  "staff_with_high_confidence_minerva_identity": 25,
+  "staff_with_orcid": 25,
+  "staff_requiring_identity_review": 24,
+  "departmental_seed_publications": 254,
+  "combined_unique_publications": 258,
+  "researcher_publication_links": 146,
+  "high_confidence_links": 141,
+  "name_only_links_requiring_review": 5,
+  "search_failures": [
+    {
+      "researcher_id": "unimelb-finance-006",
+      "query": "0000-0002-1618-0371",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-finance-021",
+      "query": "0000-0002-7541-967X",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-finance-022",
+      "query": "0000-0003-1592-433X",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-finance-031",
+      "query": "0000-0002-1237-9535",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-finance-044",
+      "query": "0000-0003-0132-1028",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-finance-046",
+      "query": "0000-0003-1228-0794",
+      "error": "The operation was aborted due to timeout"
+    }
+  ]
+}

@@ -1,0 +1,612 @@
+journal_id,journal_name,issn,eissn,quality_rank,abdc_for,abdc_match_method,abdc_match_status,abdc_list_version,impact_factor,five_year_impact_factor,jcr_year,jcr_journal_id,clarivate_match_method,clarivate_match_status,impact_factor_status,clarivate_retrieved_at,publication_count
+journal-424ae14da8ffdd4a,Abacus,0001-3072,1467-6281,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,10
+journal-bb4d8bc93e51aeb1,Academy of Management Proceedings,0065-0668,2151-6561,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-90f0564ecae9a02b,Academy of Taiwan Business Management Review,1813-0534,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-38ada156e477a096,Accounting & Finance,1467-629X,1467-629X,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-fa183717e2bda3bc,Accounting and Business Research,0001-4788,2159-4260,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,12
+journal-dcd2ad6a6c6a43d3,Accounting and Finance,0810-5391,1467-629X,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,83
+journal-50f918390001d1e4,Accounting Education,0963-9284,1468-4489,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,7
+journal-7022aabc6e624278,Accounting Forum,0155-9982,1467-6303,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-17eaf29560c92ee9,Accounting History,1032-3732,1749-3374,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,11
+journal-9bbae930ccef1f07,Accounting Horizons,0888-7993,1558-7975,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-c110ebb86c8e13dc,Accounting Organizations and Society,0361-3682,1873-6289,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,20
+journal-ed66ebad57637c7c,Accounting Research Journal,1030-9616,1839-5465,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,12
+journal-0b2c2622fe839e20,Accounting Review,1558-7967,,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a7494085b34495fd,"Accounting, Accountability and Performance",1445-954X,,C,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-756d2d571517f7fe,"Accounting, Accountability and Performance",1323-711X,,C,3501,exact normalized journal title,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-eeaf04366a3b6a39,"Accounting, Auditing and Accountability Journal",0951-3574,1368-0668,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-d2a7e35b1bdacf1a,ACM SIGMIS Database the DATABASE for Advances in Information Systems,0095-0033,1532-0936,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-5065f563bf981156,ACR North American Advances,0098-9258,,B,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-d4372f2b77c25a53,ACS Applied Materials & Interfaces,1944-8244,1944-8252,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-d21d6917ccb8f579,Adaptive Agents and Multi-Agents Systems,1548-8403,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-42d34b6e39be0953,Advanced Materials Technologies,2365-709X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-bda68ba35e51e9c4,Advanced studies in theoretical and applied econometrics,1570-5811,2214-7977,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-288e07816d725161,Advances in Accounting,0882-6110,2590-1699,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-1f45346910433745,Advances in accounting behavioral research,1475-1488,,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-109ed00c0b77e6fe,Advances in Accounting Behavioural Research,1474-7979,,C,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9e007d5ac67fba59,Advances in management accounting,1474-7871,,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-4f87da6a5f1b6b32,African Journal of Paediatric Surgery,0189-6725,0974-5998,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-14adeaf6ffdbe645,Agenda,1322-1833,1447-4735,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-348f2ecd54f53869,Aging Clinical and Experimental Research,1594-0667,1720-8319,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e930ce5baf90fd7b,Aging Research,2957-8701,2957-9295,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-76663b5678eec63b,Agriculture,2077-0472,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-18e8055bc7249524,Agronomy,2073-4395,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-88159c5df86a8866,AJIS. Australasian journal of information systems/AJIS. Australian journal of information systems/Australian journal of information systems,1039-7841,1326-2238,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-7c8bfbdfae1644aa,Alcohol and Alcoholism,0735-0414,1464-3502,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-29f987f21a4a7743,American Economic Review,0002-8282,1944-7981,A*,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8bc09c160996c458,American Journal of Economics and Sociology,0002-9246,1536-7150,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-bb379325104923c7,American Journal of Health Behavior,1087-3244,1945-7359,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7c0f9fa011e63496,American Journal of Public Health,0090-0036,0271-4353,A*,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0989ad0eae3210d5,Anesthesia & Analgesia,0003-2999,1526-7598,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-2bdebbac4c54b042,Annals of Finance,1614-2446,1614-2454,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-74f9c09ffc94de4b,Annals of Financial Economics,2010-4952,2010-4960,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-ca8c11ed5a7b51f0,Annals of Mathematics and Artificial Intelligence,1012-2443,1573-7470,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e412d849bf243ef1,Anthropology in Action,0967-201X,1752-2285,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-58fc5d24239d1328,ANZ Journal of Surgery,1445-1433,1445-2197,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5a1d1f248506eac3,Appetite,0195-6663,1095-8304,A,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-de8cadccfa15a091,Applied Economics,0003-6846,1466-4283,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,7
+journal-0b12536068f3cd3f,Applied Economics Letters,1350-4851,1466-4291,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,9
+journal-6235e38f6a14929e,Applied Energy,0306-2619,1872-9118,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5841e478d54938ef,Applied Finance and Accounting,2374-2410,2374-2429,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e650cd744f63737a,Applied Finance Letters,2253-5799,,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f75ad0467ec99f01,Applied Financial Economics,0960-3107,1466-4305,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-628592fa2ba2e2d5,Applied Mechanics and Materials,1660-9336,1662-7482,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e4eee8cb7116916e,Archives of Computational Methods in Engineering,1134-3060,1886-1784,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b05b6644c17d4b6f,Archives of Virology,0003-9012,0304-8608,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-50024274962ac79e,Archivio istituzionale della ricerca (Alma Mater Studiorum Università di Bologna),0018-9286,1558-2523,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8e4944f6939bbb98,arXiv (Cornell University),2331-8422,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-3c8ebd0e1fc66cd2,ASCILITE Publications,2653-665X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-1be11ace4919f929,Asia Pacific Business Review,1360-2381,1743-792X,B,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-279d2dd1576d3006,Asia-Pacific Economic History Review,2832-157X,1467-8446,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d1dff7481cda2908,Asia-Pacific Economic History Review,0004-8992,1467-8446,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-404f7860b8196dab,Asia-Pacific Journal of Accounting,1029-3574,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e1ae83aab1963e79,Asia-Pacific Journal of Financial Studies,2041-6156,2041-9945,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-fab7c092d28d4bc9,Asia-Pacific Management Accounting Journal,1675-3194,2550-1631,C,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-3d4408615e336850,Asian Review of Accounting,1321-7348,1758-8863,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,9
+journal-d1ae559bc3c15214,Asian-Pacific Economic Literature,0818-9935,1467-8411,C,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-1e59228532be9745,Assessment and Evaluation in Higher Education,0260-2938,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-01e65a7fa70e72ae,Audit and Financial Analysis,2618-9828,2618-9836,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e69c6b27a292320f,Auditing A Journal of Practice & Theory,0278-0380,1558-7991,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,12
+journal-423a0d8aeb7c7002,"Australasian Accounting, Business and Finance Journal",1834-2000,,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-88a84ead52d9a5de,Australasian Journal of Educational Technology,1449-5554,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b31bd34f607b6a88,Australasian Journal of Educational Technology,1449-3098,1449-5554,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4bbc7b8d7dd1ffa5,Australasian Journal of Information Systems,1449-8618,1326-2238,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-a37125e753cfb60d,Australasian Journal of Paramedicine,2202-7270,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-62c73cf1fc2ebac3,Australian Accounting Review,1835-2561,1835-2561,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4d22a571084b8439,Australian Accounting Review,1035-6908,1835-2561,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,18
+journal-9ad1a69c0f207510,Australian Business Law Review,0310-1053,,A,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3ab3d05a6270b5a0,Australian Economic Papers,0004-900X,1467-8454,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-1362ef3d82500f4f,Australian Economic Review,0004-9018,1467-8462,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-4b00462bd5de2e74,Australian Economic Review,1467-8462,1467-8462,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-1cf10227eeda4bc2,Australian Feminist Studies,0816-4649,1465-3303,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4c6a16a47d6ccbeb,Australian Historical Studies,1940-5049,1031-461X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-037845ed57f6df34,Australian Journal of Corporate Law,1037-4124,,A,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-02b64ba0eaffd6c6,Australian Journal of Labour Economics: a journal of labour economics and labour relations,1328-1143,,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-171e7026cecedd78,Australian Journal of Management,0312-8962,1327-2020,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,40
+journal-52999965c1fc325f,Australian Journal of Management,,,A,3502,exact normalized journal title,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-20e4ca9c912b1278,Australian Journal of Psychology,0004-9530,1742-9536,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-24dde53b51ed7078,Australian Journal of Public Administration,1467-8500,1467-8500,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-dc0ea3f5cec3eff9,Australian Journal of Public Administration,0313-6647,1467-8500,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-f0583f5e1778fb32,Australian Journal of Social Issues,1839-4655,1839-4655,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-db14575c22474859,Australian Journal of Social Issues,0157-6321,1839-4655,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-bd6065abc617d4c6,"Australian Tax Forum: a journal of taxation policy, law and reform",0812-695X,,A*,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-fb39bb0ece1ba475,Autonomous Agents and Multi-Agent Systems,1387-2532,1573-7454,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7128ab02e3f9e59a,Behavioral Research in Accounting,1050-4753,1558-8009,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-614b6c377a224319,Behavioural Brain Research,0166-4328,1872-7549,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6c6957ee51fbc639,Beijing Hangkong Hangtian Daxue xuebao,1001-5965,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c5ba365e010155cb,Beijing Law Review,2159-4627,2159-4635,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-321a9360a44a3e70,Betriebswirtschaftliche Forschung und Praxis,0340-5370,,C,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-58932d8f2803c4b7,Biological Psychiatry,0006-3223,1873-2402,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-db5786650080714b,Biometrics,0006-341X,1541-0420,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8e31fc35bc71dedd,BMC Psychology,2050-7283,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a2bedb627c86fa25,BMC Public Health,1471-2458,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ad954c08d6a8b263,Borsa Istanbul Review,2214-8450,2214-8469,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-20f03e36a6a4f8b2,Bulletin of the World Health Organization,0042-9686,1564-0604,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8922b4818a841fb1,Business & Professional Ethics Journal,0277-2027,,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-cf548a62a7e04e92,Business and Information Systems Engineering,2363-7005,1867-0202,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9a33af457b644e2b,Business History,0007-6791,1743-7938,A*,3505,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-3365709af37585dc,Business History Review,0007-6805,,A,3505,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f2c17b396395bad2,Business Process Management Journal,1463-7154,1758-4116,B,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-310c689781bfc87b,Business Strategy and the Environment,0964-4733,1099-0836,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-4707cb5081d2b3f3,Cell Cycle,1538-4101,1551-4005,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-fe482d9fb60987ce,China Communications,1673-5447,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b13ba24a165001c5,China Journal of Accounting Research,1755-3091,2214-1421,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-7770c0e313df0bd4,China Journal of Accounting Studies,2169-7213,2169-7221,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-af7aa8fc347fabfe,Chinese Management Accounting Review,1006-138X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-44fb873c1d41eba7,Chinese Sociology & Anthropology,0009-4625,1558-1004,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4019777bc991e2ac,Clinical Nuclear Medicine,0363-9762,1536-0229,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9814721d6879a584,Clinical Therapeutics,0149-2918,1879-114X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-09c6b9c101f7c89b,CNS Spectrums,1092-8529,2165-6509,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-18692a7e69af85fb,Cogent Business & Management,2331-1975,,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-4ea640fcad4b20fd,Cogent Economics & Finance,2332-2039,,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-19cf028414f8f2e6,Cognitive Science,0364-0213,1551-6709,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ab5d852e2495e67a,Colorectal Disease,1462-8910,1463-1318,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3d26d5a0f9847ea3,Commodities,2813-2432,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5fe4d147f0a77623,Communications of the ACM,0001-0782,1557-7317,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-198437040afcc2f3,Communications of the Association for Information Systems,1529-3181,,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-b930e1a644a7c764,Communications Psychology,2731-9121,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3107154f3d894fba,Company and Securities Law Journal,0729-2775,,A,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-67bbb6b1d46929bf,Competitiveness Review An International Business Journal incorporating Journal of Global Competitiveness,1059-5422,2051-3143,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b92e98d61322a2eb,Contemporary Accounting Research,0823-9150,1911-3846,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,16
+journal-20f0a8a2b6db7ec4,Controlling,0935-0381,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-53d9680d450ac522,Corporate Board role duties and composition,1810-8601,2312-2722,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-3855aa74dece9578,Corporate Governance: An International Review,0964-8410,1467-8683,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-f0cd4c548510a4d0,Corporate Governance: An International Review,1467-8683,1467-8683,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-cf69997c20f2bf4f,Corporate Ownership and Control,1727-9232,1810-0368,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,9
+journal-22eaf95c421b910c,Corporate Social Responsibility and Environmental Management,1535-3958,1535-3966,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-0e81240a6836c851,Corrosion Engineering Science and Technology The International Journal of Corrosion Processes and Corrosion Control,1478-422X,1743-2782,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-27ccc868b1ffdac4,Current Biology,0960-9822,1879-0445,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ad4ecb627411c932,Current Opinion in Behavioral Sciences,2352-1546,2352-1554,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ad553bb4ac280262,Cybernetics and Physics,2223-7038,2226-4116,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-535e3b54651410a0,Data in Brief,2352-3409,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9f8a0f878d886064,Decision Support Systems,0167-9236,1873-5797,A*,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-4fd6228f7024606f,Defence and Peace Economics,1024-2694,1476-8267,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-daf44a195333ec13,Demography,0070-3370,1533-7790,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f29af0e9187f48e9,Digital Communications and Networks,2352-8648,2468-5925,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-baaf446f45a6c5d0,Digital Finance,2524-6984,2524-6984,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-88ae4d953d24bfe8,Discrete Dynamics in Nature and Society,1026-0226,1607-887X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-86cb2e32c0a7a57d,Discrete Mathematics,0012-365X,1872-681X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-49dd60cbf6995823,Drug Information Journal,0092-8615,2164-9200,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-2fcac5bcb6341647,e-Service Journal,1528-8226,1528-8234,B,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-fa1e09da1c1eda43,Economic Change and Restructuring,1573-9414,1574-0277,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-1e0cb85486c1a486,ECONOMIC HISTORY REVIEW,0013-0117,1468-0289,A*,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-298990af3e52b015,Economic Journal of Emerging Markets,2086-3128,2502-180X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d427a701b36fb6cd,Economic Modelling,0264-9993,1873-6122,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-ffa5bb9f8a65dce1,Economic Papers,0812-0439,1759-3441,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,8
+journal-781cd32bb5b1ab9a,Economic Record,0013-0249,1475-4932,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,7
+journal-bb2c1ea23897c07b,Economic Systems,0939-3625,1878-5433,B,3899,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b3b8d339f9c2e785,Economica,0013-0427,1468-0335,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-2cf3b00bfe92d04f,Economics & Politics,1468-0343,1468-0343,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-29a25c3413d7c676,Economics & Sociology,2071-789X,2306-3459,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a9dc86fcfc66a105,Economics and Politics,0954-1985,1468-0343,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-ac5dedd361886a09,Economics Letters,0165-1765,1873-7374,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,7
+journal-a05b18d330067d7f,Economies,2227-7099,,C,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6dc288cc83ab6d4e,Ecosystem Health and Sustainability,2096-4129,2332-8878,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-39d52d43e70d34ff,Edelweiss Applied Science and Technology,2576-8484,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-da80fb7ec33bb27e,Education and Training,0040-0912,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9288cb568e4644f0,Education Research and Perspectives,0311-2543,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0a05624ef6390687,eLife,2050-084X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-bc4503a65e883abc,Emerging Markets Finance and Trade,1540-496X,1540-496X,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-cb453f0bab6c80f8,Emerging Markets Finance and Trade,1061-2009,1540-496X,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,11
+journal-8b149129113b3c65,Emerging Markets Review,1566-0141,1873-6173,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,12
+journal-5de5f6a77a5f09ec,Empirical Economics,1435-8921,1435-8921,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e3f0528cd4d457af,Empirical Economics,0377-7332,1435-8921,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-4166081d0b848fe8,Energies,1996-1073,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-636d760ab8e69501,Energy Economics,0140-9883,1873-6181,A*,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-f74954bfef0038b1,Energy Journal,0195-6574,1944-9089,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-484bd94d2befbe41,Energy Policy,0301-4215,1873-6777,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-372e080edd73d85a,Energy Reports,2352-4847,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-13b8ec636fbb404d,Energy Sources Part B Economics Planning and Policy,1556-7249,1556-7257,C,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f18f58f6361a6359,Energy Sustainability and Society,2192-0567,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-d5a248ca4ca24f25,eNeuro,2373-2822,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5580b4af836e5fd3,Engineering Fracture Mechanics,0013-7944,1873-7315,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7c5563fcfb4fe249,Entropy,1099-4300,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f8099cea81908669,Environment and Urbanization Asia,0975-4253,0976-3546,C,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-45059e41df39cc66,Environment Development and Sustainability,1387-585X,1573-2975,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-1e310ce31a135873,Environment Science and Policy for Sustainable Development,0013-9157,1939-9154,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-dc4512ba1d9961a0,Environmental Science & Technology,0013-936X,1520-5851,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7b9762eb8e75fe61,Environmental Science and Pollution Research,0944-1344,1614-7499,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-eb2b80e1e87e8a5c,European Accounting Review,0963-8180,1468-4497,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,11
+journal-d623f7bede1e5ad5,European Economic Review,0014-2921,1873-572X,A*,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ef683dcd031031cb,European Finance Review,1382-6662,1573-692X,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-55a44fc656987c89,European Financial Management,1354-7798,1468-036X,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-f9067872d9e05bf7,European Journal of Finance,1351-847X,1466-4364,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-947fc0789159ba96,European Journal of Personality,0890-2070,1099-0984,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-152397872c74e85a,European Journal of Political Economy,0176-2680,1873-5703,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-613e7158795f393f,European Management Review,1740-4754,1740-4762,B,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-93cd472f92afc8d4,European Review of Economic History,1361-4916,1474-0044,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-340910cd8339f72e,Evaluation Journal of Australasia,1035-719X,2515-9372,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-8841da7355185986,Experimental Economics,1386-4157,1573-6938,A*,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d6b933d4b8ab2258,Family Business Review,0894-4865,1741-6248,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8dab95a4c5477448,FEBS Open Bio,2211-5463,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6a756219bf2304af,Feminist Economics,1354-5701,1466-4372,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-268abba949727fbb,Finance Research Letters,1544-6123,1544-6131,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,33
+journal-6de28d1187620b1b,Financial Accountability and Management,0267-4424,1468-0408,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-4c610b2b062eb7dd,Financial Analysts Journal,0015-198X,1938-3312,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-c4007f0ff8b847e2,Financial History Review,0968-5650,1474-0052,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-d421290f746fec6f,Financial Innovation,2199-4730,,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-b4b7e052c1e4c33b,Financial Management,0046-3892,1755-053X,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-52dd65f4f2cd8fa3,Financial Markets and Portfolio Management,1555-4961,1555-497X,B,3502,exact normalized journal title,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-5d244683cfe8aff3,Financial Services Review,1057-0810,1873-5673,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e25ea69021eeb8ef,First Break,0263-5046,1365-2397,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7115e939a4a6dc24,FIU hospitality review,0739-7011,,C,3504,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-82808e62d1830b21,Fluctuation and Noise Letters,0219-4775,1793-6780,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4a9df3e7d0923a7f,Food and Environmental Virology,1867-0334,1867-0342,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5ea83e6a360e12cd,Foundations and Trends® in Finance,1567-2395,1567-2409,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6c6ec7ffc4d6ae6c,French Review,0016-111X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-08d21231406bf954,Frontiers in artificial intelligence and applications,0922-6389,1879-8314,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-32e9f2a1c4305da5,Frontiers in Behavioral Neuroscience,1662-5153,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-b64faad381416f86,Frontiers in Human Neuroscience,1662-5161,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-d782aee79247e901,Frontiers in Psychology,1664-1078,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-874d6cd3f0783311,Frontiers of Engineering Management,2095-7513,2096-0255,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c661803121ebee74,Frontiers of entrepreneurship research,0740-7416,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-44d8c0561d2ded25,"FRRaG (Financial Reporting, Regulation and Governance)",1449-2318,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a0b8c5a59442ad40,Gastroenterology Research and Practice,1687-6121,1687-630X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-23ab1341a0aba6a6,Global Conference on Business and Social Sciences Proceeding,9789-6713,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3a4b057a97de638f,Global Finance Journal,1044-0283,1873-5665,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,10
+journal-c0a7f652ef707952,Global marketing conference proceeding,1976-8699,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a1bf82bf9b49edda,GPS Solutions,1080-5370,1521-1886,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-03cfad27682490f4,Guanli kexue xuebao,1007-9807,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f1eba2659ccb6605,Handbooks of Management Accounting Research,1751-3243,1878-0121,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d346f47bd8ea2c4d,Hangkong Xuebao/Acta Aeronautica et Astronautica Sinica,1000-9361,2588-9230,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-395ebe141cece5be,Headache The Journal of Head and Face Pain,0017-8748,1526-4610,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8d43909e0c68b958,Health Affairs,0278-2715,1544-5208,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-de795c7b937e79ae,Health Promotion Practice,1524-8399,1552-6372,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-14e3c7ca44eb66b7,Health Services Management Research,0951-4848,1758-1044,C,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f396727f7c85a99b,Health Services Research,0017-9124,1475-6773,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,11
+journal-36078f7a220fd4e7,Heliyon,2405-8440,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,13
+journal-32c7765eb185a29b,Higher Education Research and Development,0729-4360,1469-8366,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-dbb4155083e1643f,Higher School of Economics Economic Journal,1813-8691,1813-8705,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-be9735b5e5f39657,History Australia,1449-0854,1833-4881,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-dd39b2b376ec8873,History of Economics Review,1037-0196,1838-6318,B,3803,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-aee203b22dbeb8bc,Ho Chi Minh City Open University Journal of Science- Economics and Business Administration,2734-9314,2734-9586,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-cd3c6fbfe2e891df,Human Brain Mapping,1065-9471,1097-0193,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-b3ac26cc5ba7425e,Hyperfine Interactions,0304-3843,0304-3834,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-45fa1fa1d254c39b,IEEE Access,2169-3536,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-013b23906e11e3f6,IEEE Communications Magazine,0163-6804,1558-1896,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-d6967da5f44d3cde,IEEE Internet of Things Journal,2327-4662,2372-2541,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-94ab73fb4ea38c6d,IEEE Journal on Selected Areas in Communications,0733-8716,1558-0008,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d90f1e3efc709fbf,IEEE Sensors Journal,1530-437X,1558-1748,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-db224d6d3c38e2a1,IEEE Transactions on Vehicular Technology,0018-9545,1939-9359,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f77b6359ee0f2bd5,IEEE Wireless Communications,1536-1284,1558-0687,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f6fa42388cb8f8ab,Indian Journal of Forensic Medicine & Toxicology,0973-9122,0973-9130,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-383368a8e48706df,Industrial Marketing Management,0019-8501,1873-2062,A*,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-7920466396807d78,Information and Organization,1471-7727,1873-7919,A*,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0b0ef2d4d7998039,Information Society,0197-2243,,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-351f839a00b8c3d6,Information Systems Frontiers,1387-3326,1572-9419,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-cbdb24f7670f2efd,Information Technology & People,0959-3845,1758-5813,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3d596ee19a694f65,Inquiry Critical Thinking Across the Disciplines,1093-1082,2153-9871,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-fac31623b8c5e08f,INQUIRY The Journal of Health Care Organization Provision and Financing,0046-9580,1945-7243,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-75cc0e8702a23fbc,Insurance Mathematics and Economics,0167-6687,1873-5959,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-077e60262dbf3153,Intelligence,0160-2896,1873-7935,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ce5e1427a59030ca,Internal Medicine News,1097-8690,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-bace4a8400999c9f,International Business & Economics Research Journal,1535-0754,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-aebe46aaf9c995a4,International Business Review,0969-5931,1873-6149,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-bc489f5817837348,International Economics,2110-7017,2542-6869,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5a58ff729a92572e,International handbooks in business ethics,2213-106X,2213-1078,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-cf36f051ee1a0940,International Journal Business and Entrepreneurship,3090-7837,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b2d4e9758b09488f,International Journal For Multidisciplinary Research,2582-2160,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-31256291e3e8ec9b,International Journal of Accounting Information Systems,1467-0895,1873-4723,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,8
+journal-d83bce35fb705946,"International Journal of Accounting, Auditing and Performance Evaluation",1740-8008,1740-8016,C,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-c108b24c292ebce8,International Journal of Advanced Research in Science Communication and Technology,2581-9429,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-74bee06b12125890,INTERNATIONAL JOURNAL OF AGING & HUMAN DEVELOPMENT,0091-4150,1541-3535,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-344ef288c3e1abc2,International Journal of Auditing,1090-6738,1099-1123,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-4305a480307509c3,International Journal of Auditing,1099-1123,1099-1123,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-8a8b5a9833c799e4,International Journal of Bank Marketing,0265-2323,1758-5937,A,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f4d560ffc6087a0b,"International Journal of Banking, Accounting and Finance",1755-3830,,C,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7c95e0005349efaf,International Journal of Biological Macromolecules,0141-8130,1879-0003,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-496c4af25aa9553b,International Journal of Colorectal Disease,0179-1958,1432-1262,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3a084e7f9d7c01c0,International Journal of Computer Applications,0975-8887,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-49466009dfa31d08,International Journal of Economics and Finance,1916-971X,1916-9728,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-76db16e152b51e2d,International Journal of Emerging Markets,1746-8809,1746-8817,B,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-f7cd0e73387f2df6,International Journal of Environmental Research and Public Health,1660-4601,1661-7827,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-75b3d103b84920c1,International Journal of Finance and Economics,1076-9307,1099-1158,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-8e21b520d6844acd,International Journal of Forecasting,0169-2070,1872-8200,A,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-e86eed6efedf3bc9,International Journal of Human-Computer Interaction,1044-7318,1532-7590,C,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-2b0737e9bf783718,International Journal of Infectious Diseases,1201-9712,1878-3511,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c78631a20e2ba46f,International Journal of Information Management,0268-4012,1873-4707,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3e675605cd80967d,"International Journal of Management, IT, and Engineering",2249-0558,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-20f259658589ad2e,International Journal of Managerial Finance,1743-9132,1758-6569,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,13
+journal-9caf23f27c3c760e,International Journal of Sport Finance,1558-6235,,C,3504,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-16f09610063af6d9,International Journal of Travel Medicine and Global Health,2322-1100,2476-5759,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c63769e366001581,International Research Journal of Finance and Economics,1450-2887,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b23b5bb30b6e84a4,International Review of Applied Economics,0269-2171,1465-3486,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-bc411b132f5f452d,International review of economics & finance,1059-0560,1873-8036,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,9
+journal-a49a40f9f2f76247,International Review of Finance,1369-412X,1468-2443,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,20
+journal-08b6fb56381cc452,International Review of Financial Analysis,1057-5219,1873-8079,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,26
+journal-bdd926123522e5c4,Investment Analysts Journal,1029-3523,2077-0227,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3584787b7580edd6,Investment Management and Financial Innovations,1810-4967,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f978011af5b5a795,IOSR Journal of Pharmacy and Biological Sciences,2278-3008,2319-7676,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7aeb5caab94a971b,Issues in Accounting Education,0739-3172,1558-7983,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-e56c4af5204b4e6a,Japan and the World Economy,0922-1425,1879-2006,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-28858f09d1bbfbd3,JASSA: JOURNAL OF THE AUSTRALIAN SOCIETY OF SECURITY ANALYSTS,0313-5934,,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-7d8898e5d4c69dd3,Journal of accountancy online/Journal of accountancy,0021-8448,,C,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4c2baa6d2f8c69bd,Journal of Accounting and Economics,0165-4101,1879-1980,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-9913e5f031726856,Journal of Accounting and Organizational Change,1832-5912,1839-5473,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-5bb132869dfd9ca7,Journal of Accounting and Public Policy,0278-4254,1873-2070,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,18
+journal-d6d2d67438980f67,Journal of Accounting Education,0748-5751,1873-1996,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-7739ea268059f0c8,Journal of Accounting Literature,0737-4607,2452-1469,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,9
+journal-342449812d0e996f,Journal of Accounting Research,1475-679X,,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e6023b77b8c2a737,Journal of Accounting Research,0021-8456,1475-679X,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,12
+journal-a0f5fa217325b5e0,"Journal of Accounting, Auditing and Finance",0148-558X,2160-4061,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,7
+journal-9f721391c92ca7f3,Journal of Agricultural and Applied Economics,1074-0708,1074-0708,C,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c3417ad114436cfd,Journal of Alternative Investments,1520-3255,,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-30ab21e34013fcb4,Journal of Applied Accounting Research,0967-5426,1758-8855,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-05dbd7f853555db1,Journal of Applied Business Research (JABR),0892-7626,2157-8834,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-87b3f41b529db1ee,Journal of applied corporate finance,1078-1196,1745-6622,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-0a7960d8adc81841,Journal of Applied Econometrics,0883-7252,1099-1255,A*,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3268656388c6fc6b,Journal of Applied Management Accounting Research,1443-9905,,C,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f86746e7f8460d66,Journal of Asia Business Studies,1558-7894,1559-2243,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-8aa2932bae76c5e9,Journal of Asia-Pacific Business,1059-9231,1528-6940,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-b921f15e548c4c6e,Journal of Asian Business and Economic Studies,2615-9112,,B,3801,exact normalized journal title,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-1e23db12ab5ff424,Journal of Asian Economics,1049-0078,1873-7927,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-70d0385ac12e5d06,Journal of Asian Finance Economics and Business,2288-4637,2288-4645,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d702f8f86bcec755,Journal of Asset Management,1470-8272,1479-179X,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b59a21970d362887,Journal of Banking & Finance,1872-6372,,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-56595d5c4f7c9d58,Journal of Banking & Finance,0378-4266,1872-6372,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,30
+journal-b195a0253e850a59,Journal of Behavioral and Experimental Finance,2214-6350,2214-6369,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-b0308fd22cafed52,Journal of Behavioral and Experimental Finance,2214-6369,2214-6369,A,3502,exact normalized journal title,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-59555370880db610,Journal of Behavioral Finance,1520-8834,1532-7760,A,3502,exact normalized journal title,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-07650ea4fc153d33,Journal of Behavioral Finance,1542-7560,1532-7760,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3c000949d288a97c,Journal of Behavioral Medicine,0160-7715,1573-3521,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-24ef1980ca3a36d9,Journal of business & economic statistics,1537-2707,1537-2707,A*,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-57e2ef1966b41e69,Journal of Business & Industrial Marketing,0885-8624,2052-1189,A,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a796ad1ffc0b02bf,Journal of Business and Policy Research,1449-387X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ca564837366ee926,Journal of Business Ethics,0167-4544,1573-0697,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,9
+journal-05c764ff150fea87,Journal of Business Finance & Accounting,0306-686X,1468-5957,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-b7ba9015cf9f64cd,Journal of Business Research,0148-2963,1873-7978,A,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-880e48091c9f27c8,Journal of Business-to-Business Marketing,1051-712X,1547-0628,B,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-b20f453ffc06ddf1,Journal of Cleaner Production,0959-6526,1879-1786,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-4d4c47559e0dd499,Journal of Clinical Epidemiology,0895-4356,1878-5921,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3732538fb2cb4ddb,Journal of Clinical Investigation,0021-9738,1558-8238,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6fb866b41be62259,Journal of Commodity Markets,2405-8513,2405-8513,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-44b2741cfb1c6c03,Journal of Commodity Markets,2405-8505,2405-8513,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5dae3d32b3580632,Journal of Community Health,0094-5145,1573-3610,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c9a5c1fe6778bfa3,Journal of Computer Information Systems,0022-0310,2380-2057,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e7a7b3995ebccd07,Journal of Computer Information Systems,0887-4417,2380-2057,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-47ba89b6b73d5381,Journal of Computer Research and Development,1000-1239,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-68f380e11cc62e96,Journal of Consumer Affairs,0022-0078,1745-6606,A,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-34d0ed8d4f91a7ea,Journal of Consumer Affairs,1745-6606,1745-6606,A,3506,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ec6268d983296ca8,Journal of Contemporary Accounting and Economics,1815-5669,2352-3298,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-a152317a5f791834,Journal of Corporate Citizenship,1470-5001,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8d5a38ac62fad550,Journal of Corporate Finance,0929-1199,1872-6313,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,13
+journal-ea1a575395331fca,Journal of Cultural Economics,0885-2545,1573-6997,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-1eca1a9839380d7e,Journal of Econometrics,0304-4076,1872-6895,A*,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-07946ab76de260eb,Journal of Economic and Social Measurement,0747-9662,1875-8932,C,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-48caa2477800976c,Journal of Economic Behavior and Organization,0167-2681,1879-1751,A*,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-c790ed5da95d3178,Journal of Economic Dynamics and Control,0165-1889,1879-1743,A*,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-587cab8f6f002caf,Journal of Economic Policy Reform,1748-7870,1748-7889,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a5111c3f3d17849a,Journal of Economic Psychology,0167-4870,1872-7719,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b10f1a8a56ef7db9,Journal of Economic Surveys,1467-6419,1467-6419,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-3d0620fe4094570d,Journal of Economic Surveys,0950-0804,1467-6419,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8c74278beb72386f,Journal of Economics and Business,0148-6195,1879-1735,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-9955844c80184da7,Journal of Emerging Technologies in Accounting,1554-1908,1558-7940,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-ffa7c44ee35f7e6b,Journal of Empirical Finance,0927-5398,1879-1727,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,10
+journal-3d96774dc49e716d,Journal of Environmental Management,0301-4797,1095-8630,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-95e4846ef375c0cf,Journal of Experimental Psychology Learning Memory and Cognition,0278-7393,1939-1285,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-246b408f2eb99640,Journal of Family and Economic Issues,1058-0476,1573-3475,B,3899,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-15511f76edd5803d,Journal of Financial and Quantitative Analysis,0022-1090,1756-6916,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,10
+journal-17a5b48c197f59d7,Journal of Financial Crime,1359-0790,,B,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-b2d24564df33169b,Journal of Financial Econometrics,1479-8409,1479-8417,A*,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-157f63ef3032f629,Journal of Financial Economics,0304-405X,1879-2774,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,12
+journal-617e824113ed316b,Journal of Financial Intermediation,1042-9573,1096-0473,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-eabfec8f426a1ca7,Journal of Financial Literacy and Wellbeing,2753-3212,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f4472dbf14c32a72,Journal of financial markets,1386-4181,1878-576X,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,10
+journal-054a4d9f368d05b7,Journal of Financial Research,0270-2592,1475-6803,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,10
+journal-21a72b72d408d39f,Journal of Financial Services Research,0920-8550,1573-0735,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-8baaaa0c0acded47,Journal of Financial Stability,1572-3089,1878-0962,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-546eb8093df47568,Journal of Fixed Income,1059-8596,,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-73814f9573b1857d,Journal of Forecasting,0277-6693,1099-131X,A,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-1ccafa61344c8543,Journal of Futures Markets,0270-7314,1096-9934,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,23
+journal-51ea29b86cbc6c59,Journal of Gambling Studies,1050-5350,1573-3602,A,3504,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-03656f1af73044b1,Journal of Health Care for the Poor and Underserved,1049-2089,1548-6869,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3ed9d071fef6439d,Journal of Health Politics Policy and Law,0361-6878,1527-1927,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-2a85f79a2764c171,Journal of Higher Education Policy and Management,1360-080X,,B,3505,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9b63e05291935414,Journal of Information Systems,0888-7985,1558-7959,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-e0cc73dcea236714,Journal of Information Technology,0268-3962,1466-4437,A*,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-cc9490a7a75a3871,Journal of Inherited Metabolic Disease,0141-8955,2192-8312,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-edc5972255bd8e49,Journal of Intellectual Capital,1469-1930,1758-7468,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,6
+journal-c89e7df6b9764739,"Journal of International Accounting, Auditing and Taxation",1061-9518,1879-1603,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-6b639ea4a873be93,Journal of International Business Education,1649-4946,,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-30fb400e16f3b78c,Journal of International Business Studies,0047-2506,1478-6990,A*,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-022b6a58f0f5787e,Journal of International Crisis and Risk Communication Research,2576-0017,2576-0025,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f92d6fb27e2bca9e,Journal of International Economics,0022-1996,1873-0353,A*,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-287f69fd7d893247,Journal of International Finance and Economics,1555-6336,,C,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-48dc0946c4b11e56,Journal of International Financial Management and Accounting,0954-1314,1467-646X,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-22b51d74cf3e7963,"Journal of International Financial Markets, Institutions and Money",1042-4431,1873-0612,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,17
+journal-3e71f335f0d0d601,Journal of International Money and Finance,0261-5606,1873-0639,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-f0d643a9e29fe715,JOURNAL OF INTERNATIONAL STUDIES,2071-8330,2306-3483,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-468a11a013825682,Journal of Investing,1068-0896,2168-8613,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3a22c273a9ff20c0,Journal of Knowledge Management,1367-3270,1758-7484,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3b5323a68b4552dc,Journal of Labor Research,0195-3613,1936-4768,B,3505,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-306db3e1604d0bfe,Journal of Law and Education,0275-6072,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c0bbedd9eafe67cf,Journal of Law Finance and Accounting,2380-5005,2380-5013,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a26f3d40076a3111,Journal of Magnetism and Magnetic Materials,0304-8853,1873-4766,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c933a9e6398c2016,Journal of Management,0149-2063,1557-1211,A*,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-04291b5b8bc660c7,Journal of Management Accounting Research,1049-2127,1558-8033,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,19
+journal-d026fa4649f4ae04,Journal of Management Control,2191-4761,2191-477X,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-ecdd62383e4cfa1d,Journal of Management Information Systems,0742-1222,1557-928X,A*,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ce3a7b27a0fe5aea,Journal of Mathematical Psychology,0022-2496,1096-0880,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-16a2cac615ee5538,Journal of Mathematical Sociology,0022-250X,1545-5874,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-1379dfff263acd67,Journal of Multinational Financial Management,1042-444X,1873-1309,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7153082b0947e111,Journal of Neuroscience,0270-6474,1529-2401,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e986fbfb7d15a088,Journal of Official Statistics,0282-423X,2001-7367,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8f3dacc5080e5bd0,Journal of Orthopedics Traumatology and Rehabilitation,0975-7341,2347-3746,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-258e8ba91b099c82,Journal of patient-centered research and reviews,2330-068X,2330-0698,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a23228e908e5d84f,Journal of Pensions Economics and Finance,1474-7472,1475-3022,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-283c8739bacba74d,Journal of Portfolio Management,0095-4918,2168-8656,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-784cac594b7c01be,Journal of Public Health,0943-1853,1613-2238,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4f5146cbf692fde6,"Journal of Real Estate Research, The",0896-5803,2691-1175,B,3504,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-69053da04f00987d,Journal of Remote Sensing,2694-1589,2694-1589,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e61e6a333e10401c,Journal of Research in Personality,0092-6566,1095-7251,B,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-f7a161dcdf831a2a,Journal of Reviews on Global Economics,1929-7092,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-6aeba7981e6a92e4,Journal of risk and financial management,1911-8074,1911-8074,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-46ecd95fcbf86876,Journal of risk and financial management,1911-8066,1911-8074,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,12
+journal-9d0f4feb1d1e95dc,Journal of Risk and Insurance,0022-4367,1539-6975,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-2880c0043b791313,Journal of Rural Studies,0743-0167,1873-1392,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a33ab856c5c3adaa,Journal of strategy and management,1755-425X,1755-4268,B,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c46843fd10a0b1d8,Journal of Sustainable Finance and Investment,2043-0795,,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a20124395cf52511,Journal of Systems and Software,0164-1212,1873-1228,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9d808b7ad744724e,Journal of Teaching and Learning,1492-1154,1911-8279,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c09e7e91bc384573,Journal of the American College of Surgeons,1072-7515,1879-1190,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-34e2e4f83b5c69ba,Journal of the American Geriatrics Society,0002-8614,1532-5415,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-bf2c8331e0053a52,Journal of the American Statistical Association,0162-1459,1537-274X,A*,4905,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-42b22e4941d99eef,Journal of the American Taxation Association,0198-9073,1558-8017,A,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7632449a7a996a1f,Journal of the Asia Pacific Economy,1354-7860,1469-9648,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-311700b5f60fcdd4,Journal of the Association for Information Systems,1536-9323,,A*,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,11
+journal-01281b49abde838d,Journal of the Knowledge Economy,1868-7865,1868-7873,C,3899,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-15a4e0f57a2f53b5,Journal of Thermal Analysis and Calorimetry,1388-6150,1572-8943,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6a9d65e5b50c417a,Journal of Time Series Analysis,0143-9782,1467-9892,A,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5d62c8ac71bbfec1,Journal of Travel Medicine,1195-1982,1708-8305,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-bae93e4c0b1d6a2b,Journal of Urban Management,2226-5856,2589-0360,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-39106f9613d35759,JOURNAL STUDIA UNIVERSITATIS BABES-BOLYAI NEGOTIA,1224-8738,2065-9636,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9ccbe32a57896858,Knowledge and Process Management,1092-4604,1099-1441,B,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-86e5e665934de9da,Knowledge Management Research & Practice,1477-8238,1477-8246,A,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0dc963a0dd8d799e,Kybernetes,0368-492X,1758-7883,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-88d52c6677090295,Labour History,0023-6942,1839-3039,A,3505,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-be68a882d425195e,Lecture notes in business information processing,1865-1348,1865-1356,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-beb71651fc646aff,Lecture notes in computer science,0302-9743,1611-3349,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-9e0050f6430b8ac6,Lecture notes in economics and mathematical systems,0075-8442,2196-9957,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,13
+journal-efe0a8e3266693da,Lecture notes in networks and systems,2367-3370,2367-3389,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-abfbfedae80beaeb,"Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",1867-8211,1867-822X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-acdcc4c1d871adf5,Leisure Sciences,0149-0400,1521-0588,A,3504,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a6de698c98835d24,Local Economy The Journal of the Local Economy Policy Unit,0269-0942,1470-9325,C,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-b48532e3dd28452f,Macroeconomic Dynamics,1365-1005,,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-2e841a55e648a65c,Malaria Journal,1475-2875,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0e7e13495588e88d,Management Accounting Frontiers,2209-038X,2209-0398,C,3501,exact normalized journal title,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-2fb929f89df4dd1e,Management Accounting Research,1044-5005,1096-1224,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,10
+journal-4f1a9b7b16ea495e,Management Science,0025-1909,1526-5501,A*,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,9
+journal-30a471093c694379,Managerial and Decision Economics,0143-6570,1099-1468,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d2e4e1bc9a8e1add,Managerial Finance,0307-4358,1758-7743,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-dc85299fc8636e75,Market Microstructure and Liquidity,2382-6266,2424-8037,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-67a8bc29e930c8cb,Mathematics and Computers in Simulation,0378-4754,1872-7166,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-5b4fc9e9981717bd,Medical Care,0025-7079,1537-1948,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-670571ab0cdbb1c7,Medical Care Research and Review,1077-5587,1552-6801,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4e20f496af7e35d6,Medical Entomology and Zoology,0424-7086,2185-5609,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-35e8ec7f43b3068c,Meditari Accountancy Research,1022-2529,2049-372X,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-34fb05b53f1d9da8,Meditari Accountancy Research,2049-372X,2049-372X,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-50fb288b4296b00b,Memory and Cognition,0090-502X,1532-5946,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9c07b47210ee0f2a,Mental Health & Prevention,2212-6570,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-13e42295bd1265ab,Microfluidics and Nanofluidics,1613-4982,1613-4990,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9408d1ecda1d51d5,Micromachines,2072-666X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-20ab7c49ed24c3ab,MIS Quarterly,0276-7783,2162-9730,A*,4609,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8a11363a0f60a86c,Modern Asian Studies,0026-749X,1469-8099,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-204e17aa390a07ca,Molecular Plant-Microbe Interactions,0894-0282,1943-7706,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-bc359952ceeac432,MONTENEGRIN JOURNAL OF ECONOMICS,1800-5845,1800-6698,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-49e5f54fd9f4ac03,Motu working paper,1176-2667,1177-9047,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8bdc3d17deb0bac4,Nanoscale,2040-3364,2040-3372,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-2fe4c2c93b87e301,National Accountant,1039-608X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,7
+journal-d2096ec4b6acec39,Nature,0028-0836,1476-4687,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-64524116d9bfc97b,Neurobiology of Aging,0197-4580,1558-1497,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3bbc8c52691bfe16,NeuroImage: Clinical,2213-1582,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9ced04f75f8b847a,Neuropsychologia,0028-3932,1873-3514,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-412054bebf90c67f,Neuropsychology Review,1040-7308,1573-6660,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-780e2a0fca4e23e4,Neuroscience & Biobehavioral Reviews,0149-7634,1873-7528,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-4c639511e75dc5de,New Zealand Journal of Taxation Law and Policy,1322-4417,,A,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5b0bddf8359c0d76,NOISE-CON proceedings,0736-2935,2993-2548,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6d377f6c94af70ef,npj Mental Health Research,2731-4251,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-97d5dcb4cb9e092c,OASIS,1657-7558,2346-2132,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-9848d67665f4e2c7,Obesity Research & Clinical Practice,1871-403X,1878-0318,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4819df692442154f,Optics Express,1094-4087,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7b9d31667073e8e3,Oral Oncology,1368-8375,1879-0593,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-081858b6dfe89c27,Orphanet Journal of Rare Diseases,1750-1172,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0823eb3ca9aacdd9,Pacific Accounting Review,0114-0582,2041-5494,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,11
+journal-fc143b8a3b610346,Pacific Basin Finance Journal,0927-538X,1879-0585,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,49
+journal-f9e72c2e7ea36e2a,Personality and Individual Differences,0191-8869,1873-3549,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-04e1440edce22e4c,Philosophical Transactions of the Royal Society of London. Biological Sciences,0962-8436,1471-2970,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7d6254b59979dc4c,Plant Biotechnology Journal,1467-7644,1467-7652,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-be065f31173e5662,PLoS Biology,1544-9173,1545-7885,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-076e63073f73e164,PLoS Computational Biology,1553-734X,1553-7358,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-dca669721be265a7,PLoS ONE,1932-6203,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,30
+journal-8649e563163334d9,Policy Design and Practice,2574-1292,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-dfc9a5308db9648f,Policy Studies,0144-2872,1470-1006,B,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-206e0fd0dde7f2c0,PROCEEDINGS,1859-3453,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-328c17709b3ae707,"Proceedings of SPIE, the International Society for Optical Engineering/Proceedings of SPIE",0277-786X,1996-756X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-75816dd2b7c3990f,Proceedings of the ... Annual Hawaii International Conference on System Sciences/Proceedings of the Annual Hawaii International Conference on System Sciences,1530-1605,2572-6862,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-3b8e959ab9de095d,Proceedings of the International Conference on Automated Planning and Scheduling,2334-0835,2334-0843,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-548e0eb865ded83c,Proceedings of the Royal Society of London. Biological Sciences,0962-8452,1471-2954,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ec44eb88da286ceb,Production and Operations Management,1059-1478,1937-5956,A*,3509,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0b97f4d105e9ea9f,Psychopharmacology,0033-3158,1432-2072,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4b40a49cee73e0fc,Psychophysiology,0048-5772,1540-5958,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-7824af6c814e6abc,Public Administration Review,0033-3352,1540-6210,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f9bc224e79e05cd6,Public finance,0033-3476,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-aabcdeef7112f28c,Public Health Genomics,1422-2795,1422-2833,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d508c72b4044dd3d,Public Money and Management,0954-0962,1467-9302,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-3a3c6c94378a069b,Public Opinion Quarterly,0033-362X,1537-5331,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-2b0bbb0bc7586c37,QJM,0033-5622,1460-2393,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0b51272fa3edb791,Qualitative Research in Accounting & Management,1176-6093,1758-7654,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-d3d23cf557f67bab,Quantitative Finance,1469-7688,1469-7696,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-059bcf97c939b405,Quarterly Review of Economics and Finance,1062-9769,1878-4259,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-03d22e313a48cb62,Remote Sensing,2072-4292,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-061f602190ce6ac3,Renewable Energy,0960-1481,1879-0682,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-58ca4559d5225696,RePEc: Research Papers in Economics,1096-1879,,B,3502,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-81f316f05139c552,Research in International Business and Finance,0275-5319,1878-3384,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,7
+journal-847442f58ca02a2c,Research insights,2653-7281,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-833c36f89bdfb476,Resources and Technology,2307-0048,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-07c86980af4a5820,Resources Policy,0301-4207,1873-7641,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-161f5d5b6e71bd8a,Results in Engineering,2590-1230,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-509f1971e39f3c56,Review of Accounting and Finance,1475-7702,,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8be9ea9c448ff36b,Review of Accounting Studies,1380-6653,1573-7136,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,7
+journal-a93c6d3221e66aab,Review of Behavioral Finance,1940-5979,1940-5987,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-285850cfcdf5262e,Review of Business and Economic Literature,2034-7677,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-49707975609349da,Review of Derivatives Research,1380-6645,1573-7144,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-8d4f0b9f9b48d3eb,Review of Economics of the Household,1569-5239,1573-7152,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f8588afc8aca24bc,Review of Finance,1572-3097,1875-824X,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-10fd41c800708bea,Review of Financial Economics,1058-3300,1873-5924,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-bdc39c1cac22206a,Review of Financial Studies,0893-9454,1465-7368,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-f667d0f9a19b435a,"Review of Income and Wealth, The",0034-6586,1475-4991,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-d691ee894de64d3c,Review of Pacific Basin Financial Markets and Policies,0219-0915,1793-6705,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-3095e74e4a33ab49,Review of Quantitative Finance and Accounting,0924-865X,1573-7179,B,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-4cabc2abbe899748,Revista Contabilidade & Finanças,1519-7077,1808-057X,C,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-a28c343b85b3414a,Risks,2227-9091,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,8
+journal-f6f299b8c994648c,SAGE Open,2158-2440,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,4
+journal-8d3de40c28aeab64,Schizophrenia Bulletin,0586-7614,1745-1701,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-4d4a9295566e5b96,Science,0036-8075,0193-4511,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-c32d21ee20af6788,Science Advances,2375-2548,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-99243fd2ffd506fd,Science of Remote Sensing,2666-0172,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-fe07a4d02a75fb1f,Scientific Data,2052-4463,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-93cc468743c805ee,Scientific Reports,2045-2322,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-490032eac1265360,Scottish Geographical Magazine,0036-9225,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0cada25adc9bdfde,Scottish Journal of Political Economy,0036-9292,1467-9485,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-bbb6696b9015c54a,Service science: research and innovations in the service economy,1865-4924,1865-4932,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-e8c14c7e2f4572ca,Small Business Economics,0921-898X,1573-0913,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-abe55d2ccff7f082,Social Indicators Research,0303-8300,1573-0921,A,3599,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-bd636c0f1392396e,Social Networks,0378-8733,1879-2111,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-16d28dbfab725640,Social Responsibility Journal,1747-1117,1758-857X,B,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-756234a24b9e3944,South African Journal of Accounting Research,1010-8270,2376-3981,C,3501,exact normalized journal title,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-d9f5017bbe99f729,South East Asia Research,0967-828X,2043-6874,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3a41e6394e656b06,Southern Economic Journal,0038-4038,2325-8012,A,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-a4486645fae8bd34,Springer proceedings in business and economics,2198-7246,2198-7254,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-caadfb8b91ebbff8,SSRN Electronic Journal,1556-5068,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,660
+journal-d950efa6b576899e,Statistics in Medicine,0277-6715,1097-0258,A,4905,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-71fcf44ac37fe53e,Strategic finance,1524-833X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c7d5a1bdd2e01ec0,Structural Change and Economic Dynamics,0954-349X,1873-6017,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6bb588b5468ea555,Studies in Economics and Finance,1086-7376,1755-6791,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-adbf3297bec5b73b,"Studies in neuroscience, psychology and behavioral economics",2196-6605,2196-6613,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6e65de32dd12250d,Studies in Nonlinear Dynamics and Econometrics,1081-1826,1558-3708,A,3802,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-f669f245a4f570d1,Surgical Laparoscopy Endoscopy & Percutaneous Techniques,1530-4515,1534-4908,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c1db783545230941,Sustainability (Switzerland),2071-1050,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,10
+journal-5f56dbf5595927e8,"Sustainability Accounting, Management and Policy Journal",2040-8021,2040-803X,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-619f3ee0e555634e,Tạp chí Y Dược Huế,3030-4318,3030-4326,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6a38f363ea5161bd,Taxation in Australia,0494-8343,,C,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3e2570a91f6478ef,Techniques in Coloproctology,1123-6337,1128-045X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-01f6704347bc6d99,Technological Forecasting and Social Change,0040-1625,1873-5509,A,3503,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b8b7e6d359286b39,Technovation,0166-4972,1879-2383,A,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-cbfac0588f5a094d,Telecommunications Journal of Australia,0040-2486,1835-4270,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-1bbd5253921716f9,The Accountant,1680-7537,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,3
+journal-e4300115cff800d2,The Accounting Review,0001-4826,1558-7967,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,30
+journal-a517b1a899d32e6e,The African finance journal,1605-9786,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-75379832fdf14b01,The British Accounting Review,0890-8389,1095-8347,A*,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,21
+journal-74f728ae15089375,The Conversation,2201-5639,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-fb13c97d0dd55ba1,The Elementary School Teacher,1545-5858,1937-4364,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-911213cb7bcdfb3f,The Financial Review (Statesboro),0732-8516,1540-6288,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-ca198cea29dde0c3,The Indian Veterinary Journal,0019-6479,0974-9365,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-dd8ea802886092f3,The International Journal of Accounting,0020-7063,1094-4060,A,3501,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-b45f7699283e9eb6,The International Journal of Advanced Manufacturing Technology,0268-3768,1433-3015,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-ddf56c7c2d2ee597,The International Journal of Health Planning and Management,0749-6753,1099-1751,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-e3cbfd01304dd470,The International Journal of Human Resource Management,0958-5192,1466-4399,A,3505,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0292be6e42692fcf,The Journal of Derivatives,1074-1240,2168-8524,A,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-c6f6b434fd5e1cf5,The Journal of Finance,0022-1082,1540-6261,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-1c157af8e04b6b07,The Journal of Pediatrics,0022-3476,1085-8695,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-786e48e69613f668,The Journal of Trading,1559-3967,2168-8427,C,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-af49f618c2ece1ab,The Lancet Global Health,2214-109X,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-bb34b7d0b7925438,The Lancet Psychiatry,2215-0366,2215-0374,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-abdf0e74f5fc11b9,The North American Journal of Economics and Finance,1062-9408,1879-0860,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-fb7f45709d4194f3,The Review of Asset Pricing Studies,2045-9920,2045-9939,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8b4f19a38d0fbe16,The Review of Corporate Finance Studies,2046-9128,2046-9136,A*,3502,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-2918b240fa2cc3aa,The Science of The Total Environment,0048-9697,1879-1026,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-235834eba5aefc7c,The Singapore Economic Review,0217-5908,1793-6837,B,3801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5bcc56eaddb0509d,The Sydney Law Review,0082-0512,,A*,4801,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-b786f0acd3cf6c31,Third Sector Review,1323-9163,,C,3507,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,5
+journal-2e3257e50f55fa47,TOEFL iBT research reports,1930-9317,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-0302200752a23c17,Traffic Technology International,1356-9252,2397-5970,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-47f4a3cf23e00899,Trends in Cognitive Sciences,1364-6613,1879-307X,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-91e1415d0507962d,Tropical Diseases Travel Medicine and Vaccines,2055-0936,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-693f63732fa20f55,Uniform Law Review,1124-3694,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-8e1032de9feb7130,Voprosy Ekonomiki,0042-8736,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-3cdc13807a522ded,Western Journal of Nursing Research,0193-9459,1552-8456,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5d6326ab80079226,WORK AGING AND RETIREMENT,2054-4642,2054-4650,B,3505,ISSN/eISSN,matched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-0db2f32c89829057,Working paper,2573-7945,2573-7953,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,2
+journal-a7ddbfa9d9c12c86,Youth studies Australia,1038-2569,1839-4914,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-5a1e109b94cdf80c,Zhongguo Qingnian Zhengzhi Xueyuan xuebao,1002-8919,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1
+journal-6e38c9a6b686ea00,Zhonghua zhongliu fangzhi zazhi,1673-5269,,,,unmatched,unmatched,2025-v2-270526,,,,,not_collected,not_collected,not_collected_from_clarivate,,1

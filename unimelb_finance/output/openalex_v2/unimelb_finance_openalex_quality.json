@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-29T03:05:51.808Z",
+  "researchers_total": 49,
+  "researchers_with_orcid": 25,
+  "openalex_authors_high_confidence": 19,
+  "openalex_authors_requiring_review": 30,
+  "official_researcher_publication_links": 146,
+  "official_links_matched_by_doi": 104,
+  "official_links_matched_by_title_year": 6,
+  "official_links_without_unique_openalex_match": 36,
+  "openalex_orcid_only_work_links": 780,
+  "retracted_openalex_works": 1,
+  "requests_made": 47,
+  "cache_hits": 0
+}

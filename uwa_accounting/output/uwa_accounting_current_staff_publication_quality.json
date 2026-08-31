@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-08-28T18:02:40.947Z",
+  "scope": "Accounting publications listed on the official personal Pure profiles of the current official Accounting roster",
+  "staff_records": 20,
+  "reported_profile_publication_sum": 643,
+  "discovered_profile_publication_sum": 658,
+  "unique_publication_urls": 611,
+  "extracted_unique_publications": 611,
+  "researcher_publication_links": 658,
+  "profile_feeds_not_reconciled": [],
+  "profile_feeds_without_reported_count": [
+    {
+      "researcher_id": "uwa-accounting-003",
+      "researcher_name": "Collette Chesters",
+      "discovered_count": 1,
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/collette-chesters/"
+    },
+    {
+      "researcher_id": "uwa-accounting-005",
+      "researcher_name": "Dhammi Azariadis",
+      "discovered_count": 2,
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/dr-dhammi-azariadis/"
+    },
+    {
+      "researcher_id": "uwa-accounting-006",
+      "researcher_name": "Fangbin Lin",
+      "discovered_count": 2,
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/fangbin-lin/"
+    },
+    {
+      "researcher_id": "uwa-accounting-009",
+      "researcher_name": "Leo Langa",
+      "discovered_count": 2,
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/leo-langa/"
+    },
+    {
+      "researcher_id": "uwa-accounting-015",
+      "researcher_name": "Ricky Chung",
+      "discovered_count": 4,
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/ricky-chung/"
+    },
+    {
+      "researcher_id": "uwa-accounting-018",
+      "researcher_name": "Thanesvary Subraamanniam",
+      "discovered_count": 4,
+      "profile_url": "https://research-repository.uwa.edu.au/en/persons/thanesvary-subraamanniam/"
+    }
+  ],
+  "discovery_failures": [],
+  "detail_failures": [],
+  "detail_cache_hits": 611
+}

@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-08-28T19:23:38.826Z",
+  "scope": "Current official University of Melbourne Accounting roster linked to Minerva by persistent author identifiers where available",
+  "staff_records": 50,
+  "staff_with_high_confidence_minerva_identity": 24,
+  "staff_with_orcid": 23,
+  "staff_requiring_identity_review": 26,
+  "departmental_seed_publications": 168,
+  "combined_unique_publications": 169,
+  "researcher_publication_links": 124,
+  "high_confidence_links": 120,
+  "name_only_links_requiring_review": 4,
+  "search_failures": [
+    {
+      "researcher_id": "unimelb-accounting-003",
+      "query": "0000-0003-3405-0738",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-accounting-004",
+      "query": "0000-0002-5391-256X",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-accounting-008",
+      "query": "Burrows, Geoffrey",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-accounting-014",
+      "query": "0000-0002-9572-812X",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "researcher_id": "unimelb-accounting-038",
+      "query": "0000-0001-5817-1169",
+      "error": "The operation was aborted due to timeout"
+    }
+  ],
+  "researcher_search_cache_hits": 19
+}

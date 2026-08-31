@@ -4,7 +4,7 @@
   "collection_handle": "11343/408",
   "collection_url": "https://minerva-access.unimelb.edu.au/collections/c9dc98ca-3fac-599b-8dee-557a4fb3f5b9",
   "api_url": "https://minerva-access.unimelb.edu.au/server/api/core/collections/c9dc98ca-3fac-599b-8dee-557a4fb3f5b9",
-  "harvested_at": "2026-08-09T15:09:32.158Z",
+  "harvested_at": "2026-08-28T17:52:38.087Z",
   "reported_record_count": 254,
   "extracted_record_count": 254,
   "records": [
@@ -121,8 +121,8 @@
         "Jiwa, Matthew; 147301; 0000-0002-4785-6389",
         "Andrabi, Syed; 163847; 0000-0003-3929-5195"
       ],
-      "issued_date": "2025-01-01",
-      "publication_year": "2025",
+      "issued_date": "2026-01-01",
+      "publication_year": "2026",
       "article_url": "https://doi.org/10.1080/02699931.2025.2597887",
       "available_date": "2026-06-22T04:58:19Z",
       "item_type": "Journal Article",
@@ -130,9 +130,9 @@
       "issn": "0269-9931",
       "eissn": "1464-0600",
       "journal": "Cognition and Emotion",
-      "volume": "ahead-of-print",
-      "issue": "ahead-of-print",
-      "pages": "1-14",
+      "volume": "40",
+      "issue": "6",
+      "pages": "1429-1442",
       "publisher": "Informa UK Limited",
       "departments": [
         "Finance",
@@ -143,11 +143,11 @@
         "Medicine, Dentistry & Health Sciences"
       ],
       "abstract": "Humans have a strong desire for information. Recent theories claimed, however, that this is different for \"bad news\". This exploratory study tested whether participants actively seek information about the intensity of biologically relevant, unavoidable heat pain stimuli. Participants played a series of coin-flip lotteries. Each side of a virtual coin was associated with one of two pain intensities. The range of pain intensities included no pain, low pain, medium pain, and high pain. In each trial, participants could bid small amounts of money to learn the outcome before delivery, serving as a measure of the subjective value of the information. Two thirds of the sample regularly made bids. Bid amounts increased with higher average pain expectations and higher range between possible intensities. Some participants who were willing to pay for information experienced decreased pain sensation when knowing the intensity in advance. Bid amounts were further correlated with the use of suppression as an emotion regulation strategy. These results challenge the idea that \"bad news\" are preferably ignored. For unavoidable pain, a higher salience and greater uncertainty about the event were associated with more information-seeking. One possibility is that this knowledge decreased subjective pain experience by reducing its emotional impact.",
-      "citation_text": "Bode, S., Varsamis, A., Xu, Z. A., Jiwa, M., Andrabi, H., Egorova-Brumley, N. & Morawetz, C. (2025). When we want to know the bad news: exploring information-seeking for unavoidable pain stimuli. Cognition and Emotion, ahead-of-print (ahead-of-print), pp.1-14. https://doi.org/10.1080/02699931.2025.2597887.",
+      "citation_text": "Bode, S., Varsamis, A., Xu, Z. A., Jiwa, M., Andrabi, H., Egorova-Brumley, N. & Morawetz, C. (2026). When we want to know the bad news: exploring information-seeking for unavoidable pain stimuli. Cognition and Emotion, 40 (6), pp.1429-1442. https://doi.org/10.1080/02699931.2025.2597887.",
       "license": "CC BY",
       "open_access_status": "Published Version",
       "open_access_url": "https://doi.org/10.1080/02699931.2025.2597887",
-      "last_modified": "2026-07-04T17:02:52.348+00:00"
+      "last_modified": "2026-08-27T11:11:30.463+00:00"
     },
     {
       "item_uuid": "dcf57376-c44a-47a4-aa8b-dd5d39f90bb0",
@@ -460,7 +460,7 @@
       "license": "CC-BY",
       "open_access_status": "Published Version",
       "open_access_url": "https://doi.org/10.1017/s0022109024000206",
-      "last_modified": "2026-07-17T16:20:10.054+00:00"
+      "last_modified": "2026-08-27T05:30:26.757+00:00"
     },
     {
       "item_uuid": "56a90d97-c423-4bf5-8b87-84040f55eeb7",
@@ -1747,7 +1747,7 @@
       "license": "cc-by",
       "open_access_status": "published version",
       "open_access_url": "",
-      "last_modified": "2026-07-13T20:02:01.298+00:00"
+      "last_modified": "2026-08-27T05:07:35.996+00:00"
     },
     {
       "item_uuid": "434b1283-cf04-44a9-86af-6ab14b0e64c1",

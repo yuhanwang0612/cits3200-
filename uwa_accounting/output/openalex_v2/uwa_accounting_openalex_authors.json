@@ -1,0 +1,450 @@
+[
+  {
+    "researcher_id": "uwa-accounting-001",
+    "researcher_name": "Alex Yang",
+    "orcid": "0000-0003-1973-260X",
+    "openalex_author_id": "A5086953811",
+    "openalex_author_ids": [
+      "A5086953811"
+    ],
+    "openalex_display_name": "Xing Yang",
+    "openalex_works_count": 19,
+    "openalex_cited_by_count": 90,
+    "openalex_institutions": [
+      "The University of Western Australia",
+      "Department of Finance",
+      "University of Auckland",
+      "The University of Melbourne",
+      "Victoria University",
+      "Xi'an Jiaotong University"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": false,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "Accepted by exact official ORCID plus university affiliation; display-name alias differs",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-002",
+    "researcher_name": "Alex Zhang",
+    "orcid": "0000-0003-2089-0365",
+    "openalex_author_id": "A5053774592",
+    "openalex_author_ids": [
+      "A5053774592",
+      "A5135305135"
+    ],
+    "openalex_display_name": "Junru Zhang",
+    "openalex_works_count": 12,
+    "openalex_cited_by_count": 98,
+    "openalex_institutions": [
+      "Edith Cowan University",
+      "The University of Western Australia",
+      "Monash University"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": false,
+    "university_affiliation_observed": true,
+    "candidate_count": 2,
+    "requires_review": false,
+    "review_reason": "Accepted by exact official ORCID plus university affiliation; display-name alias differs",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-003",
+    "researcher_name": "Collette Chesters",
+    "orcid": "0009-0006-4135-7219",
+    "openalex_author_id": "",
+    "openalex_author_ids": [],
+    "openalex_display_name": "",
+    "openalex_works_count": null,
+    "openalex_cited_by_count": null,
+    "openalex_institutions": [],
+    "match_method": "exact_orcid",
+    "match_confidence": "none",
+    "name_agreement": false,
+    "university_affiliation_observed": false,
+    "candidate_count": 0,
+    "requires_review": true,
+    "review_reason": "ORCID returned no OpenAlex author",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-004",
+    "researcher_name": "David Gilchrist",
+    "orcid": "0000-0003-0937-8934",
+    "openalex_author_id": "A5002907180",
+    "openalex_author_ids": [
+      "A5002907180"
+    ],
+    "openalex_display_name": "David Gilchrist",
+    "openalex_works_count": 228,
+    "openalex_cited_by_count": 853,
+    "openalex_institutions": [
+      "The University of Western Australia",
+      "Australian National University",
+      "Public Policy Institute of California",
+      "Curtin University",
+      "Department of Finance",
+      "The University of Notre Dame Australia"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-005",
+    "researcher_name": "Dhammi Azariadis",
+    "orcid": "0009-0003-8724-2749",
+    "openalex_author_id": "",
+    "openalex_author_ids": [],
+    "openalex_display_name": "",
+    "openalex_works_count": null,
+    "openalex_cited_by_count": null,
+    "openalex_institutions": [],
+    "match_method": "exact_orcid",
+    "match_confidence": "none",
+    "name_agreement": false,
+    "university_affiliation_observed": false,
+    "candidate_count": 0,
+    "requires_review": true,
+    "review_reason": "ORCID returned no OpenAlex author",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-006",
+    "researcher_name": "Fangbin Lin",
+    "orcid": "",
+    "openalex_author_id": "",
+    "openalex_display_name": "",
+    "openalex_institutions": [],
+    "match_method": "no_orcid",
+    "match_confidence": "none",
+    "name_agreement": false,
+    "university_affiliation_observed": false,
+    "candidate_count": 0,
+    "requires_review": true,
+    "review_reason": "No ORCID; automatic name-only OpenAlex matching is disabled",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-007",
+    "researcher_name": "George Shan",
+    "orcid": "0000-0002-5157-312X",
+    "openalex_author_id": "A5088599693",
+    "openalex_author_ids": [
+      "A5088599693"
+    ],
+    "openalex_display_name": "Yuan George Shan",
+    "openalex_works_count": 91,
+    "openalex_cited_by_count": 2022,
+    "openalex_institutions": [
+      "The University of Western Australia",
+      "Albany State University",
+      "Tongji University",
+      "Conference Board",
+      "University of South Australia",
+      "Ghent University Hospital",
+      "China Youth University for Political Sciences",
+      "Ghent University",
+      "University at Albany, State University of New York",
+      "Department of Finance",
+      "Research Network (United States)",
+      "The University of Adelaide",
+      "RMIT University"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-008",
+    "researcher_name": "Glen Hutchings",
+    "orcid": "0000-0003-0500-656X",
+    "openalex_author_id": "A5003445719",
+    "openalex_author_ids": [
+      "A5003445719"
+    ],
+    "openalex_display_name": "Glen Hutchings",
+    "openalex_works_count": 15,
+    "openalex_cited_by_count": 23,
+    "openalex_institutions": [
+      "The University of Western Australia",
+      "Department of Finance"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-009",
+    "researcher_name": "Leo Langa",
+    "orcid": "",
+    "openalex_author_id": "",
+    "openalex_display_name": "",
+    "openalex_institutions": [],
+    "match_method": "no_orcid",
+    "match_confidence": "none",
+    "name_agreement": false,
+    "university_affiliation_observed": false,
+    "candidate_count": 0,
+    "requires_review": true,
+    "review_reason": "No ORCID; automatic name-only OpenAlex matching is disabled",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-010",
+    "researcher_name": "Lyndie Bayne",
+    "orcid": "0000-0002-2991-0265",
+    "openalex_author_id": "A5079844536",
+    "openalex_author_ids": [
+      "A5079844536"
+    ],
+    "openalex_display_name": "Lyndie Bayne",
+    "openalex_works_count": 27,
+    "openalex_cited_by_count": 236,
+    "openalex_institutions": [
+      "The University of Western Australia",
+      "University of Cape Town"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-011",
+    "researcher_name": "Mark Holub",
+    "orcid": "",
+    "openalex_author_id": "",
+    "openalex_display_name": "",
+    "openalex_institutions": [],
+    "match_method": "no_orcid",
+    "match_confidence": "none",
+    "name_agreement": false,
+    "university_affiliation_observed": false,
+    "candidate_count": 0,
+    "requires_review": true,
+    "review_reason": "No ORCID; automatic name-only OpenAlex matching is disabled",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-012",
+    "researcher_name": "Nikki Schonfeldt",
+    "orcid": "0000-0002-9726-6475",
+    "openalex_author_id": "A5060856621",
+    "openalex_author_ids": [
+      "A5060856621"
+    ],
+    "openalex_display_name": "Nikki Schönfeldt",
+    "openalex_works_count": 7,
+    "openalex_cited_by_count": 93,
+    "openalex_institutions": [
+      "The University of Western Australia"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-013",
+    "researcher_name": "Phil Hancock",
+    "orcid": "",
+    "openalex_author_id": "",
+    "openalex_display_name": "",
+    "openalex_institutions": [],
+    "match_method": "no_orcid",
+    "match_confidence": "none",
+    "name_agreement": false,
+    "university_affiliation_observed": false,
+    "candidate_count": 0,
+    "requires_review": true,
+    "review_reason": "No ORCID; automatic name-only OpenAlex matching is disabled",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-014",
+    "researcher_name": "Prerana Agrawal",
+    "orcid": "0000-0001-9410-4844",
+    "openalex_author_id": "A5080907698",
+    "openalex_author_ids": [
+      "A5080907698"
+    ],
+    "openalex_display_name": "Prerana Agrawal",
+    "openalex_works_count": 20,
+    "openalex_cited_by_count": 110,
+    "openalex_institutions": [
+      "The University of Western Australia",
+      "Government Medical College"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-015",
+    "researcher_name": "Ricky Chung",
+    "orcid": "0000-0003-1875-7346",
+    "openalex_author_id": "",
+    "openalex_author_ids": [],
+    "openalex_display_name": "",
+    "openalex_works_count": null,
+    "openalex_cited_by_count": null,
+    "openalex_institutions": [],
+    "match_method": "exact_orcid",
+    "match_confidence": "none",
+    "name_agreement": false,
+    "university_affiliation_observed": false,
+    "candidate_count": 0,
+    "requires_review": true,
+    "review_reason": "ORCID returned no OpenAlex author",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-016",
+    "researcher_name": "Simeng Liu",
+    "orcid": "0000-0002-6062-8743",
+    "openalex_author_id": "",
+    "openalex_author_ids": [],
+    "openalex_display_name": "",
+    "openalex_works_count": null,
+    "openalex_cited_by_count": null,
+    "openalex_institutions": [],
+    "match_method": "exact_orcid",
+    "match_confidence": "none",
+    "name_agreement": false,
+    "university_affiliation_observed": false,
+    "candidate_count": 0,
+    "requires_review": true,
+    "review_reason": "ORCID returned no OpenAlex author",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-017",
+    "researcher_name": "Stijn Masschelein",
+    "orcid": "0000-0002-1291-6222",
+    "openalex_author_id": "A5030089382",
+    "openalex_author_ids": [
+      "A5030089382"
+    ],
+    "openalex_display_name": "Stijn Masschelein",
+    "openalex_works_count": 32,
+    "openalex_cited_by_count": 278,
+    "openalex_institutions": [
+      "The University of Western Australia"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-018",
+    "researcher_name": "Thanesvary Subraamanniam",
+    "orcid": "0000-0002-3040-9152",
+    "openalex_author_id": "A5041105984",
+    "openalex_author_ids": [
+      "A5041105984"
+    ],
+    "openalex_display_name": "Thanesvary Subraamanniam",
+    "openalex_works_count": 3,
+    "openalex_cited_by_count": 94,
+    "openalex_institutions": [
+      "The University of Western Australia",
+      "Murdoch University"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-019",
+    "researcher_name": "Vincent Chong",
+    "orcid": "0000-0003-4207-2718",
+    "openalex_author_id": "A5055171810",
+    "openalex_author_ids": [
+      "A5055171810"
+    ],
+    "openalex_display_name": "Vincent K. Chong",
+    "openalex_works_count": 75,
+    "openalex_cited_by_count": 2204,
+    "openalex_institutions": [
+      "The University of Western Australia",
+      "Edith Cowan University",
+      "University of Malaya",
+      "Department of Finance"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  },
+  {
+    "researcher_id": "uwa-accounting-020",
+    "researcher_name": "Warrick Van Zyl",
+    "orcid": "0000-0001-8029-6611",
+    "openalex_author_id": "A5059540919",
+    "openalex_author_ids": [
+      "A5059540919"
+    ],
+    "openalex_display_name": "Warrick van Zyl",
+    "openalex_works_count": 12,
+    "openalex_cited_by_count": 49,
+    "openalex_institutions": [
+      "The University of Western Australia"
+    ],
+    "match_method": "exact_orcid",
+    "match_confidence": "high",
+    "name_agreement": true,
+    "university_affiliation_observed": true,
+    "candidate_count": 1,
+    "requires_review": false,
+    "review_reason": "",
+    "retrieved_at": "2026-08-29T03:05:00.187Z"
+  }
+]

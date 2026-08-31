@@ -1,0 +1,14 @@
+{
+  "name": "cits3200-client-data-pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:client-csv": "node build_client_csv.mjs",
+    "enrich:clarivate": "node enrich_clarivate.mjs",
+    "enrich:clarivate:dry-run": "node enrich_clarivate.mjs --dry-run",
+    "validate:client-csv": "node validate_client_csv.mjs"
+  },
+  "dependencies": {
+    "cheerio": "1.2.0"
+  }
+}
