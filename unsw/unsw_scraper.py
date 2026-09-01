@@ -42,6 +42,8 @@ Testing:  python unsw_scraper.py --limit 20 --delay 1
 
 import argparse
 import csv
+import difflib
+import html
 import json
 import os
 import re
@@ -440,12 +442,107 @@ def is_journal_article(publication):
     return bool(kind and JOURNAL_TYPE.search(kind))
 
 
+def _journal_key(journal):
+    """The comparison key for a journal name.
+
+    Deliberately the same normaliser rankings/journal_match.py uses for rating
+    matches. If dedup and matching disagreed about what counts as the same
+    journal, one of them would be wrong and neither would say so. The fallback
+    is only for running this file on its own.
+    """
+    if not journal:
+        return ""
+    module = _journal_match_module()
+    if module is not None:
+        return module.normalise(journal)
+    text = journal.lower().replace("&", " and ")
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+    return re.sub(r"^(the|a|an)\s+", "", text).strip()
+
+
+def _journal_match_module():
+    try:
+        import journal_match
+        return journal_match
+    except ImportError:
+        pass
+    here = os.path.dirname(os.path.abspath(__file__))
+    for candidate in (os.path.join(here, "rankings"),
+                      os.path.join(here, "..", "rankings")):
+        if os.path.exists(os.path.join(candidate, "journal_match.py")):
+            sys.path.insert(0, os.path.abspath(candidate))
+            try:
+                import journal_match
+                return journal_match
+            except ImportError:
+                return None
+    return None
+
+
+# UNSW emits an escaped entity as a literal `<html_ent glyph="@amp;"
+# ascii="&amp;"/>` tag inside the text. The ascii attribute holds what the
+# character should have been, so use it rather than dropping the tag.
+HTML_ENT_TAG = re.compile(
+    r'<html_ent\b[^>]*?ascii="(?P<ascii>[^"]*)"[^>]*/?>|<html_ent\b[^>]*/?>',
+    re.IGNORECASE)
+SPACES_RUN = re.compile(r"\s{2,}")
+
+# "Journal of Financial Economics, forthcoming" is a status stapled onto a
+# journal name. Left there it breaks the ABDC join, and that particular row is
+# an A* paper sitting unrated.
+FORTHCOMING_SUFFIX = re.compile(
+    r"\s*[,:]\s*(forthcoming|in press|accepted|advance online|"
+    r"online first|early view)\.?\s*$", re.IGNORECASE)
+
+
+def split_forthcoming(journal):
+    """Return (journal name, True) when the name carried a status suffix."""
+    if not journal:
+        return journal, False
+    trimmed = FORTHCOMING_SUFFIX.sub("", journal).strip()
+    return (trimmed or journal), trimmed != journal.strip()
+
+
+def publication_status(journal_said_forthcoming, journal, volume, pages, doi):
+    """Published, forthcoming, or a working paper.
+
+    Derived from fields every university already collects, so the six of us
+    produce the same answer instead of each judging it. The client drew the
+    distinction on 26 August: a preprint has not been peer reviewed, an
+    accepted or forthcoming paper has.
+    """
+    name = (journal or "").lower()
+    if "ssrn" in name or "arxiv" in name or "working paper" in name:
+        return "working_paper"
+    if journal_said_forthcoming:
+        return "forthcoming"
+    if journal and doi and not (volume and pages):
+        # It has a journal and a registered DOI but no issue placement yet.
+        return "forthcoming"
+    if volume and pages:
+        return "published"
+    return ""
+
+
 def _text(node, selector):
+    """Read one field out of the markup, decoded.
+
+    UNSW's own pages sometimes carry an entity that BeautifulSoup does not
+    resolve, because it arrives already escaped inside the text node rather
+    than as markup. That is how "Journal of Business Finance & Accounting"
+    reached the data as `Journal of Business Finance <html_ent glyph="@amp;"
+    ascii="&amp;"/> Accounting`, and a journal name in that state matches
+    nothing in ABDC. Decoding once here means no caller has to remember to.
+    """
     found = node.select_one(selector)
     if not found:
         return None
     value = found.get_text(" ", strip=True)
-    return value or None
+    if not value:
+        return None
+    value = HTML_ENT_TAG.sub(lambda m: m.group("ascii") or "", value)
+    value = html.unescape(value)
+    return SPACES_RUN.sub(" ", value).strip() or None
 
 
 def _clean_title(title):
@@ -464,6 +561,61 @@ def _author_list(raw):
 
 def _split_authors(raw):
     return "; ".join(_author_list(raw)) or None
+
+
+# How alike two titles must be, once normalised, for two entries sharing a DOI
+# to count as one publication. Measured on the real cases: the genuine repeats
+# score 0.994 and 0.995 ("investor" against "investors", "audit fee" against
+# "audit fees"), while two different Economic Record book reviews that share
+# one DOI score 0.458. Anywhere in between would do; 0.90 is not a fine
+# judgement call.
+TITLE_SIMILARITY = 0.90
+
+
+def _merge_doi_duplicates(pubs):
+    """Collapse entries that share a DOI and say almost the same thing.
+
+    The main key cannot catch these, because the two listings disagree about
+    the journal: one says "JOURNAL OF INTERNATIONAL MONEY AND FINANCE" and the
+    other "Journal of International Money and Finance: theoretical...". A DOI
+    identifies one article, so two entries under one researcher carrying the
+    same DOI are the same article unless the titles say otherwise.
+
+    They sometimes do say otherwise: Economic Record issues a single DOI for a
+    batch of book reviews, and those are genuinely separate outputs. Hence the
+    similarity check rather than trusting the DOI alone.
+    """
+    seen_by_doi, kept = {}, []
+    for pub in pubs:
+        doi = (pub.get("doi") or "").strip().lower()
+        if not doi:
+            kept.append(pub)
+            continue
+
+        title_key = _journal_key(pub.get("title") or "")
+        twin = None
+        for candidate in seen_by_doi.get(doi, []):
+            ratio = difflib.SequenceMatcher(
+                None, title_key, candidate["_title_key"]).ratio()
+            if ratio >= TITLE_SIMILARITY:
+                twin = candidate
+                break
+
+        if twin is None:
+            pub["_title_key"] = title_key
+            seen_by_doi.setdefault(doi, []).append(pub)
+            kept.append(pub)
+        else:
+            # Keep the first, but take anything it was missing. The two
+            # listings are rarely equally complete: one carries the volume,
+            # the other the page range.
+            for field, value in pub.items():
+                if value and not twin.get(field):
+                    twin[field] = value
+
+    for pub in kept:
+        pub.pop("_title_key", None)
+    return kept
 
 
 def parse_publications(soup, person):
@@ -522,8 +674,40 @@ def parse_publications(soup, person):
         # legitimately appears as a 2015 conference paper and a 2019 book, and
         # those are two different outputs. Title + year + type + journal keeps
         # those apart while collapsing the true duplicates.
-        identity = (title.lower(), year, category,
-                    (journal or "").lower() if (journal := _text(item, ".rg-source-title")) else "")
+        journal = _text(item, ".rg-source-title")
+        journal, said_forthcoming = split_forthcoming(journal)
+        # The journal goes into the identity through the same normaliser the
+        # rating match uses, so "JOURNAL OF INTERNATIONAL MONEY AND FINANCE"
+        # and "Journal of International Money and Finance" are recognised as
+        # one journal rather than two. Without this the same paper listed
+        # twice under two spellings survives as two rows.
+        # What counts as "the same output".
+        #
+        # Normalised title, type, and journal. Every part of that is there
+        # because of a case in the real data, and so is every part that is
+        # absent:
+        #
+        # - The title is NORMALISED, not raw. UNSW lists the same article twice
+        #   with different capitalisation and punctuation ("Stress tests and
+        #   small business lending" / "Stress Tests and Small Business
+        #   Lending"). The raw title kept both.
+        #
+        # - The DOI is NOT in the key. The same paper appears once with its
+        #   JSTOR DOI and once with its Wiley one, and two SSRN versions of one
+        #   working paper appear under two SSRN ids. Keying on the DOI counts
+        #   those twice and inflates the productivity measure.
+        #
+        # - The YEAR is NOT in the key. The two listings of one paper often
+        #   disagree about it: the same JFE article is dated 2019 on one entry
+        #   and 2017 on the other.
+        #
+        # - The JOURNAL is in the key, so a reprint that ran in both the Goods
+        #   and Services Tax Journal and the Weekly Tax Bulletin stays as two
+        #   rows. The client counts those as two outputs.
+        #
+        # - The TYPE is in the key, so the same title as a 2015 conference
+        #   paper and a 2019 book chapter stays as two rows.
+        identity = (_journal_key(title), category, _journal_key(journal))
         if identity in seen:
             # Keep whichever copy carries a DOI — it is the more useful record.
             if doi:
@@ -558,8 +742,13 @@ def parse_publications(soup, person):
             "pages": _text(item, ".rg-page"),
             "publisher": _text(item, ".rg-publisher"),
             "citation_percentile": None,  # joined from OpenAlex downstream
+            "publication_status": publication_status(
+                said_forthcoming, journal,
+                _text(item, ".rg-volume"), _text(item, ".rg-page"), doi),
             "source": SOURCE_NAME,
         })
+
+    pubs = _merge_doi_duplicates(pubs)
 
     # The dedup key is internal bookkeeping — drop it so callers only ever see
     # the documented columns.
@@ -587,6 +776,12 @@ PUB_COLUMNS = [
     # dictionary 3.5.4, and a merge script mapping it onto quality_rank would
     # blank out real ratings. Ratings arrive from rankings/journals.py instead.
     "citation_percentile", "source",
+    # Derived at parse time from fields the page already gives us.
+    "publication_status",
+    # Filled by rankings/openalex.py. Declared here so the column exists even
+    # on a scrape-only run: a merge that sometimes sees the column and
+    # sometimes does not is worse than one that sees it empty.
+    "issn",
 ]
 
 UNPARSED_COLUMNS = [

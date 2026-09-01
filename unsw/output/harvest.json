@@ -2,31 +2,31 @@
   {
     "university": "UNSW Sydney",
     "source": "ABDC JQL 2025",
-    "last_run": "2026-08-25T09:48:39.796535+00:00",
+    "last_run": "2026-09-01T11:11:44.702446+00:00",
     "latest_year": "2025"
   },
   {
     "university": "UNSW Sydney",
     "source": "OpenAlex",
-    "last_run": "2026-08-25T09:48:38.649767+00:00",
+    "last_run": "2026-09-01T11:11:42.794490+00:00",
     "latest_year": "2026"
   },
   {
     "university": "UNSW Sydney",
     "source": "OpenAlex authors",
-    "last_run": "2026-08-25T12:28:56.149135+00:00",
-    "latest_year": ""
+    "last_run": "2026-09-01T10:02:58.169445+00:00",
+    "latest_year": "2026"
   },
   {
     "university": "UNSW Sydney",
     "source": "Scimago",
-    "last_run": "2026-08-25T09:48:39.797696+00:00",
+    "last_run": "2026-09-01T11:11:44.705762+00:00",
     "latest_year": "2025"
   },
   {
     "university": "UNSW Sydney",
     "source": "UNSW staff profile",
-    "last_run": "2026-08-25T09:48:31.086836+00:00",
+    "last_run": "2026-09-01T11:11:42.047448+00:00",
     "latest_year": "2026"
   }
 ]
