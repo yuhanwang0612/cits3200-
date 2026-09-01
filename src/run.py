@@ -35,8 +35,8 @@ def main():
                     help="skip JIF (slowest step, needs an API key)")
     ap.add_argument("--ror", default=None,
                     help="restrict OpenAlex retrieval to this institution ROR")
-    ap.add_argument("--drop-empty-staff", action="store_true",
-                    help="omit staff with no publications")
+    ap.add_argument("--keep-empty-staff", action="store_true",
+                    help="keep staff who have no publications (dropped by default)")
     args = ap.parse_args()
 
     if args.refresh:
@@ -81,7 +81,7 @@ def main():
     step(10, "export")
     out = OUTPUT_DIR / args.uni
     export(records, pubs, out_dir=out,
-           drop_staff_without_pubs=args.drop_empty_staff)
+           drop_staff_without_pubs=not args.keep_empty_staff)
 
     print(f"\ndone in {time.time() - started:.0f}s")
 

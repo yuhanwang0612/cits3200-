@@ -71,6 +71,9 @@ TYPE_MAP = {
 NOT_A_JOURNAL = {
     "ssrn", "ssrn electronic journal", "arxiv", "arxiv.org",
     "preprints.org", "research square", "biorxiv", "repec",
+    # Repository names that land in a journal field on dataset records.
+    "uq espace", "espace", "figshare", "zenodo", "dryad",
+    "national bureau of economic research", "nber",
 }
 
 
