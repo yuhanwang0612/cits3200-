@@ -64,11 +64,19 @@ API = "https://api.openalex.org/works"
 BATCH = 50               # OpenAlex allows up to 50 values in one filter
 SELECT = ("id,doi,cited_by_count,fwci,citation_normalized_percentile,"
           "primary_location,publication_year,type")
+# primary_location carries source.host_organization_name, which is where the
+# publisher comes from, so no extra field is needed in SELECT.
 PAUSE = 0.2              # between batches; OpenAlex allows ~10 requests/second
 MAX_RETRIES = 4
 
+# ISSNs belonging to a preprint server or repository rather than to a journal.
+AGGREGATOR_ISSNS = {
+    "1556-5068": "ssrn",
+    "2331-8422": "arxiv",
+}
+
 ADDED_COLUMNS = ["citation_percentile", "citation_top_10_percent",
-                 "cited_by_count", "fwci", "issn", "openalex_id"]
+                 "cited_by_count", "fwci", "issn", "publisher", "openalex_id"]
 
 
 def normalise_doi(value):
@@ -124,12 +132,27 @@ def extract(work):
     source = ((work.get("primary_location") or {}).get("source")) or {}
     issns = source.get("issn") or []
     issn = source.get("issn_l") or (issns[0] if issns else None)
+    # Reject a repository's own ISSN. When OpenAlex resolves a DOI to the SSRN
+    # or arXiv copy of a paper, it hands back that repository's ISSN, and the
+    # row then names the right journal while carrying a different journal's
+    # identifier. 50 UNSW rows had SSRN's ISSN against Australian Tax Forum.
+    # An ISSN that is not the journal's is worse than no ISSN, because
+    # everything downstream joins on it.
+    if issn and jm.normalise_issn(issn) in AGGREGATOR_ISSNS:
+        name = (source.get("display_name") or "").lower()
+        if AGGREGATOR_ISSNS[jm.normalise_issn(issn)] not in name:
+            issn = None
+    # The UNSW profile pages carry no publisher, so the column sat empty on
+    # every row. OpenAlex knows it for any work we already matched, which is
+    # free: the field comes back in the same response.
+    publisher = source.get("host_organization_name") or None
     return {
         "citation_percentile": percentile.get("value"),
         "citation_top_10_percent": percentile.get("is_in_top_10_percent"),
         "cited_by_count": work.get("cited_by_count"),
         "fwci": work.get("fwci"),
         "issn": jm.normalise_issn(issn),
+        "publisher": publisher,
         "openalex_id": (work.get("id") or "").rsplit("/", 1)[-1] or None,
     }
 

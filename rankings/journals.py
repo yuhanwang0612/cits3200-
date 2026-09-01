@@ -67,8 +67,10 @@ COLUMNS = [
     "h_index",
     "cites_per_doc_2y",
     "scimago_categories",
-    "impact_factor",         # Clarivate JIF — not available yet
-    "impact_factor_5yr",     # Clarivate JIF 5-year — not available yet
+    "impact_factor",         # Clarivate JIF, from clarivate.py
+    "impact_factor_5yr",     # Clarivate 5-year JIF (their field is jif5Years)
+    "jcr_year",              # which JCR edition those two came from
+    "clarivate_match_type",  # how the journal was found: issn, not-found, ...
     "publication_count",     # how many of our publications are in this journal
     "abdc_match_type",
     "scimago_match_type",
@@ -76,11 +78,16 @@ COLUMNS = [
 ]
 
 
+# `h_index` is here because the client asked for it on 19 August and Sean's UQ
+# export carries it: without it, UQ rows would have the column and UNSW rows
+# would not, and the merge would look like missing data rather than a
+# difference in what each script chose to write.
 # Fields carried from the journal table back onto each publication row.
 # The names are Sean's UQ names, not new ones — `sjr`, `sjr_quartile` and
 # `cites_per_doc_2y` already match his export, so UQ and UNSW rows line up in a
 # merge without either of us renaming anything.
 CARRIED = ["quality_rank", "sjr", "sjr_quartile", "cites_per_doc_2y",
+           "h_index",
            "impact_factor", "impact_factor_5yr"]
 
 # Never written to a publication row: they describe how the *journal* matched,
@@ -196,6 +203,46 @@ def resolve_conflict(record, abdc_rec, abdc_how, sci_rec, sci_how):
     return sci_rec, (f"ABDC says {'; '.join(sorted(abdc_issns))}, Scimago says "
                      f"{'; '.join(sorted(sci_issns))}. Same title, different journals — "
                      f"needs a human to pick.")
+
+
+# Columns this rebuild cannot produce, because they come from a separate paid
+# API run rather than from the reference lists. Rebuilding the table would
+# blank them, so they are carried across from the previous journals.csv.
+#
+# This is not a nicety. Rebuilding after a re-scrape silently erased twenty
+# minutes of Clarivate lookups, and the only sign was two columns quietly
+# becoming empty in a run that reported success.
+CLARIVATE_COLUMNS = ["impact_factor", "impact_factor_5yr", "jcr_year",
+                     "clarivate_match_type"]
+
+
+def previous_journals(path):
+    """Read the journals.csv about to be overwritten, keyed by journal name."""
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, newline="", encoding="utf-8-sig") as f:
+            return {(r.get("journal_name") or "").strip(): r
+                    for r in csv.DictReader(f)}
+    except (OSError, csv.Error):
+        return {}
+
+
+def carry_over(out, previous):
+    """Put the previous run's Clarivate figures back on the rebuilt rows."""
+    restored = 0
+    for record in out:
+        old = previous.get(record["journal_name"])
+        if not old:
+            continue
+        for column in CLARIVATE_COLUMNS:
+            if column in record and not (record.get(column) or ""):
+                value = (old.get(column) or "").strip()
+                if value:
+                    record[column] = value
+                    if column == "impact_factor":
+                        restored += 1
+    return restored
 
 
 def build(publications_path, abdc_path=None, scimago_path=None,
@@ -347,6 +394,12 @@ def build(publications_path, abdc_path=None, scimago_path=None,
 
     base = os.path.dirname(os.path.abspath(publications_path))
     path = os.path.join(base, "journals.csv")
+
+    restored = carry_over(out, previous_journals(path))
+    if restored:
+        print(f"\n  carried {restored} impact factors over from the previous "
+              "journals.csv\n  (rerun clarivate.py to pick up new journals)")
+
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore")
         writer.writeheader()
