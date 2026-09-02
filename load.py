@@ -87,29 +87,47 @@ def collect_journals(data_dir: Path):
     ABDC quality_rank plus Scimago metrics (sjr, sjr_quartile, h_index,
     cites_per_doc_2y) that the root journals.csv lacks.
     Maps abdc_list_year -> abdc_edition; drops unwanted columns.
+
+    If jcr.csv exists (written by fetch_jcr.py), impact_factor and
+    jcr_year are joined in by ISSN, overriding any value from anu_journals.csv.
     """
     path = data_dir / "anu_journals.csv"
     if not path.exists():
         print(f"⚠️  {path} not found — no journal data loaded")
         return []
 
+    # Load JCR data keyed by ISSN if available
+    jcr_by_issn = {}
+    jcr_path = data_dir / "jcr.csv"
+    if jcr_path.exists():
+        for row in read_csv(jcr_path):
+            issn = (row.get("issn") or "").strip()
+            if issn:
+                jcr_by_issn[issn] = {
+                    "impact_factor": row.get("impact_factor"),
+                    "jcr_year":      row.get("jcr_year"),
+                }
+        print(f"JCR data: {len(jcr_by_issn)} ISSNs loaded from {jcr_path.name}")
+
     journals = []
     for row in read_csv(path):
         jname = (row.get("journal_name") or "").strip()
         if not jname:
             continue
+        issn = (row.get("issn") or "").strip()
+        jcr  = jcr_by_issn.get(issn, {})
         journals.append({
             "journal_name":     jname,
-            "issn":             row.get("issn"),
+            "issn":             issn or None,
             "quality_rank":     row.get("quality_rank"),
-            "abdc_edition":     row.get("abdc_list_year"),   # rename
-            "impact_factor":    row.get("impact_factor"),    # blank until JCR wired up
-            "jcr_year":         row.get("jcr_year"),         # blank for now
+            "abdc_edition":     row.get("abdc_list_year"),
+            "impact_factor":    jcr.get("impact_factor") or row.get("impact_factor"),
+            "jcr_year":         jcr.get("jcr_year")      or row.get("jcr_year"),
             "sjr":              row.get("sjr"),
             "sjr_quartile":     row.get("sjr_quartile"),
             "h_index":          row.get("h_index"),
             "cites_per_doc_2y": row.get("cites_per_doc_2y"),
-            "scimago_year":     row.get("scimago_year"),     # blank for now
+            "scimago_year":     row.get("scimago_year"),
         })
     return journals
 
