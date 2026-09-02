@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
@@ -12,6 +12,7 @@ class Researcher(Base):
     field_of_research = Column(String)     # Accounting | Finance
     profile_url       = Column(String)
     university        = Column(String, nullable=False)
+    orcid             = Column(String)               # nullable
     publications = relationship("Publication", back_populates="researcher")
 
 class Journal(Base):
@@ -19,9 +20,15 @@ class Journal(Base):
     journal_id        = Column(Integer, primary_key=True)
     journal_name      = Column(String, nullable=False, unique=True)
     issn              = Column(String)
-    quality_rank      = Column(String)     # A*, A, B, C
-    impact_factor     = Column(Float)
-    impact_factor_5yr = Column(Float)
+    quality_rank      = Column(String)     # A*, A, B, C; nullable where unmatched
+    abdc_edition      = Column(String)     # which JQL edition supplied quality_rank
+    impact_factor     = Column(Float)      # nullable; excluded from averages when absent
+    jcr_year          = Column(Integer)    # which JCR year supplied the impact factor
+    sjr               = Column(Float)      # Scimago Journal Rank; nullable
+    sjr_quartile      = Column(String)     # Q1–Q4; nullable
+    h_index           = Column(Integer)    # journal h-index; nullable
+    cites_per_doc_2y  = Column(Float)      # Scimago JIF analogue; nullable
+    scimago_year      = Column(String)     # which Scimago edition supplied the above
     publications = relationship("Publication", back_populates="journal")
 
 class Publication(Base):

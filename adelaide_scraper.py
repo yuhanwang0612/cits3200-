@@ -174,7 +174,7 @@ while page <= MAX_PAGES:
 print(f"\nPhase 1 done. {len(candidate_usernames)} Business & Law candidates found.")
 
 # ── Phase 2: fetch each profile, keep only Accounting & Finance ───────
-print(f"\nPhase 2: Fetching profiles to filter for Accounting & Finance ...")
+print("\nPhase 2: Fetching profiles to filter for Accounting & Finance ...")
 
 records = []
 
@@ -316,14 +316,14 @@ def get_scimago(journal_name):
 # ── Phase 3: fetch publications via OpenAlex ──────────────────────────
 print("\nFetching publications via OpenAlex...")
 
-OA_HEADERS = {"User-Agent": "monash-research-scraper/1.0 (mailto:wyuhan577@gmail.com)"}
+OA_HEADERS = {"User-Agent": "adelaide-research-scraper/1.0 (mailto:wyuhan577@gmail.com)"}
 
 def oa_get(url, params):
     for attempt in range(3):
         try:
             resp = requests.get(url, params=params, headers=OA_HEADERS, timeout=20)
             if resp.status_code == 429:
-                print(f"    ⏳ OpenAlex rate limit — waiting 30s...")
+                print("    ⏳ OpenAlex rate limit — waiting 30s...")
                 time.sleep(30)
                 continue
             return resp
@@ -339,7 +339,7 @@ def parse_oa_works(works):
         if not title or len(title) < 5:
             continue
         year = w.get("publication_year")
-        doi  = (w.get("doi") or "").replace("https://doi.org/", "").strip()
+        doi  = (w.get("doi") or "").replace("https://doi.org/", "").strip().rstrip(".,;:").lower()
         pub_type = w.get("type") or None
         loc  = w.get("primary_location") or {}
         src  = loc.get("source") or {}
@@ -394,7 +394,7 @@ def fetch_pubs_openalex(name, orcid=None):
         results = resp.json().get("results", [])
         ADELAIDE_NAMES = {"university of adelaide", "adelaide university",
                           "university of south australia", "unisa"}
-        monash_match = next(
+        adelaide_match = next(
             (r for r in results
              if any(
                  any(alias in (i.get("display_name") or "").lower() for alias in ADELAIDE_NAMES)
@@ -402,10 +402,10 @@ def fetch_pubs_openalex(name, orcid=None):
              )),
             None
         )
-        if not monash_match:
+        if not adelaide_match:
             return [], None
-        author_id = monash_match["id"]
-        h_index = (monash_match.get("summary_stats") or {}).get("h_index")
+        author_id = adelaide_match["id"]
+        h_index = (adelaide_match.get("summary_stats") or {}).get("h_index")
         time.sleep(1)
 
     cursor = "*"
@@ -512,6 +512,6 @@ with open(pubs_file, "w", newline="", encoding="utf-8") as f:
     w.writeheader()
     w.writerows(all_pubs)
 
-print(f"\n✅ Done!")
+print("\n✅ Done!")
 print(f"   {staff_file}: {len(records)} researchers")
 print(f"   {pubs_file}: {len(all_pubs)} publications")

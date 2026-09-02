@@ -67,6 +67,41 @@ def level_code(level_text):
 def name_to_slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 
+# Position/role phrases used on monash.edu staff directory cards
+POSITION_RE = re.compile(
+    r"(Emeritus Professor|Adjunct Professor|Associate Professor|Assistant Professor"
+    r"|Distinguished Professor|Professor|Associate Lecturer|Senior Lecturer|Lecturer"
+    r"|Senior Research Fellow|Principal Research Fellow|Research Fellow|Teaching Associate"
+    r"|Adjunct Research Fellow|Head of [A-Za-z& ]+?(?=\s{2,}|$)|Deputy Head of [A-Za-z& ]+?(?=\s{2,}|$))",
+    re.IGNORECASE,
+)
+
+def title_near_link(a_tag, name):
+    """
+    Best-effort: pull a position/role string out of the markup surrounding a
+    profile link. The staff-directory cards render the title as a sibling of the
+    name link, so walk up a few ancestors and scan their text.
+    """
+    PROFILE_KEYS = ("/profile/", "/people/", "/persons/", "/staff/", "/our-people/")
+    node = a_tag
+    for _ in range(3):
+        parent = node.parent
+        if parent is None:
+            break
+        # Don't ascend into a container that also holds other people's profile
+        # links — otherwise we'd lift a title off an adjacent card.
+        if any(x is not a_tag and any(k in x.get("href", "") for k in PROFILE_KEYS)
+               for x in parent.find_all("a", href=True)):
+            break
+        node = parent
+        txt = node.get_text(" ", strip=True)
+        # Drop the person's own name so "Professor <Name>" doesn't confuse the match
+        txt = re.sub(re.escape(name), " ", txt, flags=re.I)
+        m = POSITION_RE.search(txt)
+        if m:
+            return m.group(0).strip()
+    return None
+
 
 # ── Phase 1: scrape directory pages with Selenium ────────────────────
 print("Starting Chrome... (a browser window will open)")
@@ -128,7 +163,7 @@ for url, discipline in TARGETS:
         if href.startswith("http") and not any(href.startswith(d) for d in ALLOWED):
             continue
         if any(k in href for k in ["/profile/", "/people/", "/persons/", "/staff/", "/our-people/"]) and text:
-            profile_links.append((text, href))
+            profile_links.append((text, href, a))
 
     # Words that indicate a navigation link rather than a real person
     NAV_WORDS = {"staff directory", "visiting scholars", "graduate research", "reset",
@@ -174,7 +209,7 @@ for url, discipline in TARGETS:
             })
     elif profile_links:
         print(f"  Using {len(profile_links)} profile links as fallback")
-        for text, href in profile_links:
+        for text, href, a in profile_links:
             if not is_real_person(text):
                 continue
             profile_url = urljoin(url, href)
@@ -182,11 +217,13 @@ for url, discipline in TARGETS:
                 continue
             seen_profile_urls.add(profile_url)
             m = PREFIX.match(text)
+            name_clean = PREFIX.sub("", text).strip()
+            title = title_near_link(a, name_clean)
             records.append({
                 "university": UNIVERSITY, "discipline": discipline,
-                "name_clean": PREFIX.sub("", text).strip(),
-                "title_raw": None,
-                "level": level_from_title(None, m.group(1) if m else None),
+                "name_clean": name_clean,
+                "title_raw": title,
+                "level": level_from_title(title, m.group(1) if m else None),
                 "profile_url": profile_url,
             })
     else:
@@ -368,7 +405,7 @@ if _os.path.exists(SCIMAGO_FILE):
     n = _load_scimago_csv(SCIMAGO_FILE)
     print(f"Loaded {n} Scimago journal entries from {SCIMAGO_FILE}")
 else:
-    print(f"Downloading Scimago journal rankings (this may take a moment)...")
+    print("Downloading Scimago journal rankings (this may take a moment)...")
     try:
         r = requests.get(SCIMAGO_URL,
                          headers={"User-Agent": "Mozilla/5.0"},
@@ -401,7 +438,7 @@ def oa_get(url, params):
         try:
             resp = requests.get(url, params=params, headers=OA_HEADERS, timeout=20)
             if resp.status_code == 429:
-                print(f"    ⏳ OpenAlex rate limit — waiting 30s...")
+                print("    ⏳ OpenAlex rate limit — waiting 30s...")
                 time.sleep(30)
                 continue
             return resp
@@ -418,7 +455,7 @@ def parse_oa_works(works):
         if not title or len(title) < 5:
             continue
         year = w.get("publication_year")
-        doi  = (w.get("doi") or "").replace("https://doi.org/", "").strip()
+        doi  = (w.get("doi") or "").replace("https://doi.org/", "").strip().rstrip(".,;:").lower()
         pub_type = w.get("type") or None
         loc    = w.get("primary_location") or {}
         src    = loc.get("source") or {}
@@ -577,6 +614,6 @@ with open(pubs_file, "w", newline="", encoding="utf-8") as f:
     w.writeheader()
     w.writerows(all_pubs)
 
-print(f"\n✅ Done!")
+print("\n✅ Done!")
 print(f"   {staff_file}: {len(records)} researchers")
 print(f"   {pubs_file}: {len(all_pubs)} publications")

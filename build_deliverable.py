@@ -39,7 +39,11 @@ FLATTENED_COLUMNS = ["quality_rank", "sjr_quartile"]
 def main() -> None:
     with JOURNALS_IN.open(encoding="utf-8") as f:
         journal_rows = list(csv.DictReader(f))
-    by_name = {j["journal_name"]: j for j in journal_rows}
+    # Primary key: ISSN; fallback: journal_name (ISSN is more reliable
+    # across sources — a journal may be indexed under slightly different
+    # name spellings but its ISSN is stable).
+    by_issn = {j["issn"]: j for j in journal_rows if j.get("issn")}
+    by_name = {j["journal_name"]: j for j in journal_rows if j.get("journal_name")}
 
     with PUBLICATIONS_IN.open(encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -58,9 +62,16 @@ def main() -> None:
     # checked-but-unrated journal per the client's 12 Aug instruction;
     # sjr_quartile is genuinely blank when Scimago has no quartile for it)
     # — copied straight through, nothing re-derived here.
-    matched = 0
+    matched = matched_issn = matched_name = 0
     for row in pub_rows:
-        journal = by_name.get(row.get("journal_name") or "")
+        issn = (row.get("issn") or "").strip()
+        journal = by_issn.get(issn) if issn else None
+        if journal:
+            matched_issn += 1
+        else:
+            journal = by_name.get(row.get("journal_name") or "")
+            if journal:
+                matched_name += 1
         for col in FLATTENED_COLUMNS:
             row[col] = journal.get(col, "") if journal else ""
         if journal:
@@ -77,7 +88,8 @@ def main() -> None:
     shutil.copyfile(HARVEST_JSON_IN, HARVEST_JSON_OUT)
 
     rated = sum(1 for r in pub_rows if r.get("quality_rank") and r["quality_rank"] != "none")
-    print(f"{PUBLICATIONS_OUT}: {len(pub_rows)} rows, {matched} joined to a journal, "
+    print(f"{PUBLICATIONS_OUT}: {len(pub_rows)} rows, {matched} joined to a journal "
+          f"({matched_issn} by ISSN, {matched_name} by name), "
           f"{rated} carry an ABDC rating other than 'none'")
     print(f"{STAFF_OUT}: copied from {OUTPUT_DIR / 'anu_staff.csv'}")
     print(f"{JOURNALS_OUT}: copied from {JOURNALS_IN}")

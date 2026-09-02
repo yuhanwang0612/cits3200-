@@ -37,7 +37,7 @@ SOURCES = [
     },
     {
         "file": "adelaide_publications.csv",
-        "university": "University of Adelaide",
+        "university": "Adelaide University",
         "renames": {},
     },
     {
@@ -71,17 +71,22 @@ SOURCES = [
             "researcher_name":        "researcher",
             "researcher_profile_url": "profile_url",
             "coauthors":              "authors",
-            "abdc_self_reported":     "quality_rank",
+            "sjr_quartile":           "scimago_quartile",
+            # NB: do NOT map abdc_self_reported -> quality_rank. anu_publications.csv
+            # already carries an authoritative quality_rank flattened from the
+            # journal table (see build_deliverable.py); abdc_self_reported is the
+            # mostly-"none" self-declared column and would clobber it.
         },
     },
     {
         "file": "unsw_publications.csv",
-        "university": "University of New South Wales",
+        "university": "UNSW Sydney",
         "renames": {
             "researcher_name":        "researcher",
             "researcher_profile_url": "profile_url",
             "coauthors":              "authors",
-            "abdc_self_reported":     "quality_rank",
+            "sjr":                    "scimago_sjr",
+            "sjr_quartile":           "scimago_quartile",
         },
     },
 ]
@@ -117,7 +122,9 @@ def normalise_doi(doi):
         flags=re.IGNORECASE,
     )
 
-    return doi.strip().lower()
+    # Trailing sentence punctuation sometimes rides along when a DOI is lifted
+    # from prose; strip it so the same DOI dedupes across sources that don't.
+    return doi.strip().rstrip(".,;:").strip().lower()
 
 def normalise_title(title):
     """Lowercase + strip punctuation for dedup comparison."""
