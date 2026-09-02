@@ -31,3 +31,5 @@ output/MAIN_INTEGRATION_FINDINGS.md
 CLAUDE.md
 .claude/
 scratch/
+output/clarivate_cache.json
+output/clarivate_jif.csv
