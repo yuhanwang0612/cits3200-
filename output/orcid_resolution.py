@@ -160,8 +160,10 @@ def save_cache(cache):
 
 
 def main():
-    staff = list(csv.DictReader(open(STAFF_PATH, encoding="utf-8")))
-    pubs = list(csv.DictReader(open(PUBLICATIONS_PATH, encoding="utf-8")))
+    with open(STAFF_PATH, encoding="utf-8") as _sf:
+        staff = list(csv.DictReader(_sf))
+    with open(PUBLICATIONS_PATH, encoding="utf-8") as _pf:
+        pubs = list(csv.DictReader(_pf))
 
     scraped_titles = {}
     for row in pubs:
@@ -195,6 +197,34 @@ def main():
                 "needs_human_check": "TRUE", "candidate_alternatives": "",
             })
             continue
+
+        # ── ORCID exact match ────────────────────────────────────────
+        # If the staff record carries an ORCID, look for a candidate
+        # whose ORCID matches.  Strongest possible signal — no title
+        # evidence needed.
+        staff_orcid = (person.get("orcid") or "").rsplit("/", 1)[-1].strip()
+        if staff_orcid:
+            for c in candidates:
+                if c["orcid"] and c["orcid"].strip() == staff_orcid:
+                    results.append({
+                        "name": name, "profile_url": person["profile_url"],
+                        "openalex_author_id": c["id"], "orcid": c["orcid"],
+                        "match_method": "orcid_exact",
+                        "candidate_count": len(candidates),
+                        "candidate_count_capped": "TRUE" if len(candidates) == CANDIDATE_PAGE_LIMIT else "FALSE",
+                        "titles_tested": len(titles), "titles_matched": 0,
+                        "openalex_works_count": c["works_count"],
+                        "needs_human_check": "FALSE",
+                        "candidate_alternatives": "|".join(
+                            x["id"] for x in candidates if x["id"] != c["id"]
+                        ),
+                    })
+                    break
+            else:
+                staff_orcid = ""  # not among OpenAlex candidates; fall through
+
+        if staff_orcid:
+            continue  # already appended an orcid_exact result above
 
         # Score every candidate by scraped-title overlap.
         scored = []

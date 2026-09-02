@@ -54,7 +54,10 @@ def crossref_lookup(title, year):
             if parts and parts[0] and parts[0][0]:
                 cand_year = parts[0][0]
                 break
-        year_ok = (year is None or cand_year is None or abs(int(cand_year) - int(year)) <= 1)
+        try:
+            year_ok = (year is None or cand_year is None or abs(int(cand_year) - int(year)) <= 1)
+        except (ValueError, TypeError):
+            year_ok = True
         if sim >= 0.6 and year_ok and (best is None or sim > best[1]):
             best = (item.get("DOI"), sim, cand_title, cand_year)
     return best, None
@@ -62,7 +65,8 @@ def crossref_lookup(title, year):
 
 def main():
     random.seed(23724721)
-    rows = list(csv.DictReader(open("anu_doi_manual_lookup.csv", encoding="utf-8")))
+    with open("anu_doi_manual_lookup.csv", encoding="utf-8") as _fh:
+        rows = list(csv.DictReader(_fh))
     sample = random.sample(rows, 25)
 
     results = []
