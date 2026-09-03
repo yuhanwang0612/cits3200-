@@ -1,0 +1,376 @@
+/* ============================================================
+   G8 Research Output Database — shared stylesheet
+   CITS3200 Team 20. Site design: Jamie Taylor.
+
+   This file is the single source of visual truth for the site.
+   Do not write page-specific colours, spacing or fonts anywhere
+   else — add a token or a component class here instead, so all
+   pages stay consistent as different people build them.
+   ============================================================ */
+
+/* ---------- 1. Design tokens ------------------------------- */
+:root {
+  --navy:        #12284d;
+  --navy-dark:   #0d1e3a;
+  --blue:        #2563eb;
+  --blue-dark:   #1d4ed8;
+  --blue-light:  #dbeafe;
+
+  --ink:         #16202e;
+  --ink-muted:   #5a6779;
+  --ink-faint:   #626d7d;
+
+  --bg:          #f4f6f9;
+  --surface:     #ffffff;
+  --border:      #e1e6ed;
+  --border-firm: #c9d2de;
+
+  --ok:          #15803d;
+  --warn:        #b45309;
+  --warn-bg:     #fef3c7;
+
+  /* ABDC rating colours — used consistently everywhere a rating appears */
+  --abdc-astar:  #7c3aed;
+  --abdc-a:      #2563eb;
+  --abdc-b:      #0891b2;
+  --abdc-c:      #64748b;
+
+  --radius:      8px;
+  --radius-lg:   12px;
+  --shadow:      0 1px 2px rgba(16,32,56,.06), 0 2px 8px rgba(16,32,56,.05);
+  --shadow-lift: 0 4px 14px rgba(16,32,56,.12);
+
+  --maxw:        1440px;   /* content column */
+  --gutter:      28px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ---------- 2. Reset / base -------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* This is a light-only design. Declaring it stops browsers running in dark
+   mode from painting native controls (select, checkbox, scrollbars) dark —
+   which would put dark-grey text on our white filter panel. */
+:root { color-scheme: light; }
+
+/* Sticky footer: the page is a full-height flex column, main takes up the
+   slack, so the footer sits at the bottom of the viewport on short pages and
+   below the content on long ones. Without this it floats mid-screen on tall
+   monitors. Every page must use the header / main / footer structure. */
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+
+  min-height: 100vh;
+  min-height: 100dvh;   /* accounts for mobile browser chrome; ignored where unsupported */
+  display: flex;
+  flex-direction: column;
+}
+body > main { flex: 1 0 auto; }
+body > .site-footer { margin-top: auto; }
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 .5rem; font-weight: 650; letter-spacing: -.01em; }
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.05rem; }
+p  { margin: 0 0 .85rem; }
+a  { color: var(--blue-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Content column: centred, capped. Used by <main> only. */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* Header and footer are full-bleed — their contents sit against the screen
+   edges instead of being boxed into the content column, which left the brand
+   and nav stranded mid-screen on wide monitors. */
+.wrap-wide { width: 100%; margin: 0; padding: 0 var(--gutter); }
+.muted { color: var(--ink-muted); }
+.faint { color: var(--ink-faint); }
+.small { font-size: .85rem; }
+.nowrap { white-space: nowrap; }
+.num { font-variant-numeric: tabular-nums; text-align: right; }
+
+/* ---------- 3. Header / nav -------------------------------- */
+.site-header {
+  background: var(--navy);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.site-header .wrap-wide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 62px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.brand {
+  font-size: 1.15rem;
+  font-weight: 680;
+  color: #fff;
+  letter-spacing: -.015em;
+}
+.brand:hover { text-decoration: none; opacity: .9; }
+
+.nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.nav a {
+  color: #fff;
+  background: rgba(255,255,255,.10);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 500;
+  transition: background .12s ease;
+}
+.nav a:hover { background: rgba(255,255,255,.20); text-decoration: none; }
+.nav a[aria-current="page"] { background: var(--blue); }
+
+/* ---------- 4. Page furniture ------------------------------ */
+main { padding: 30px 0 60px; }
+
+.page-head { text-align: center; margin-bottom: 26px; }
+.page-head h1 { margin-bottom: .35rem; }
+.page-head p  { color: var(--ink-muted); max-width: 640px; margin-inline: auto; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+.card-pad { padding: 20px 22px; }
+
+/* Sample-data banner. Delete this element once real data is wired in. */
+.banner-sample {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: var(--warn-bg);
+  border: 1px solid #fcd34d;
+  color: #78350f;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: .875rem;
+  margin-bottom: 22px;
+}
+.banner-sample strong { font-weight: 650; }
+
+/* ---------- 5. University cards (home) --------------------- */
+/* Eight universities. Fixed column counts (4 / 2 / 1) rather than auto-fill,
+   so the grid is always evenly filled — auto-fill gives an ugly 3+3+2. */
+.uni-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1040px) { .uni-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .uni-grid { grid-template-columns: 1fr; } }
+.uni-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.uni-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); text-decoration: none; }
+.uni-card .code {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: #fff;
+  background: var(--navy);
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+.uni-card .name { font-weight: 640; color: var(--ink); font-size: 1.02rem; }
+.uni-card .name { margin-bottom: auto; }
+/* Stats stack as label-left / number-right rows. At four cards across there
+   isn't room for three side-by-side columns without the labels wrapping. */
+.uni-card .stats {
+  margin-top: 14px; padding-top: 10px;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 3px;
+}
+.uni-card .stat {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+}
+.uni-card .stat .k {
+  font-size: .78rem; color: var(--ink-muted); white-space: nowrap;
+}
+.uni-card .stat .v {
+  font-size: .98rem; font-weight: 660; line-height: 1.35;
+  font-variant-numeric: tabular-nums; color: var(--ink);
+}
+
+/* ---------- 6. Filter panel -------------------------------- */
+.filters { margin-bottom: 18px; }
+.filter-row {
+  display: flex; flex-wrap: wrap; gap: 16px 20px; align-items: flex-end;
+}
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label {
+  font-size: .78rem; font-weight: 600; color: var(--ink-muted);
+  text-transform: uppercase; letter-spacing: .04em;
+}
+select, input[type="text"], input[type="search"] {
+  font: inherit;
+  font-size: .9rem;
+  padding: 7px 10px;
+  border: 1px solid var(--border-firm);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  min-width: 150px;
+}
+input[type="search"] { min-width: 210px; }
+
+.btn {
+  font: inherit; font-size: .9rem; font-weight: 550;
+  padding: 8px 18px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--blue);
+  color: #fff;
+  cursor: pointer;
+  transition: background .12s ease;
+}
+.btn:hover { background: var(--blue-dark); }
+.btn-ghost { background: #fff; color: var(--ink); border-color: var(--border-firm); }
+.btn-ghost:hover { background: #f1f4f8; }
+
+.toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; flex-wrap: wrap; margin: 0 0 12px;
+}
+.toolbar .left, .toolbar .right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.check { display: inline-flex; align-items: center; gap: 7px; font-size: .9rem; cursor: pointer; }
+.check input { width: 16px; height: 16px; accent-color: var(--blue); cursor: pointer; }
+
+/* ---------- 7. Tables -------------------------------------- */
+.table-scroll { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); background: var(--surface); }
+
+table.data { width: 100%; border-collapse: collapse; font-size: .9rem; }
+
+/* Publications table: fixed layout so the colgroup widths are honoured.
+   min-width keeps the columns usable on a phone — .table-scroll scrolls it. */
+table.table-pubs { table-layout: fixed; min-width: 880px; }
+table.table-pubs tbody td { overflow-wrap: anywhere; }
+table.data thead th {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .02em;
+  text-align: left;
+  padding: 11px 14px;
+  white-space: nowrap;
+}
+table.data thead th.sortable { cursor: pointer; user-select: none; }
+table.data thead th.sortable:hover { background: var(--navy-dark); }
+table.data thead th.sortable:focus-visible {
+  outline: 2px solid #fff; outline-offset: -3px; background: var(--navy-dark);
+}
+table.data thead th .arrow { opacity: .45; margin-left: 5px; font-size: .75em; }
+table.data thead th[aria-sort] .arrow { opacity: 1; }
+
+table.data tbody td { padding: 10px 14px; border-top: 1px solid var(--border); vertical-align: top; }
+table.data tbody tr:nth-child(even) { background: #fafbfd; }
+table.data tbody tr:hover { background: var(--blue-light); }
+table.data td.rank { font-weight: 640; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+
+.empty { padding: 44px 20px; text-align: center; color: var(--ink-muted); }
+
+/* ABDC rating pill */
+.abdc {
+  display: inline-block; min-width: 30px; text-align: center;
+  font-size: .78rem; font-weight: 650;
+  padding: 2px 8px; border-radius: 4px;
+  color: #fff; background: var(--abdc-c);
+}
+.abdc[data-r="A*"] { background: var(--abdc-astar); }
+.abdc[data-r="A"]  { background: var(--abdc-a); }
+.abdc[data-r="B"]  { background: var(--abdc-b); }
+.abdc[data-r="C"]  { background: var(--abdc-c); }
+.abdc[data-r="none"], .abdc[data-r=""] { background: #e2e8f0; color: var(--ink-muted); }
+
+/* A value we do not have yet. Renders as a dash, never as blank or "undefined". */
+.na { color: var(--ink-faint); }
+
+/* ---------- 8. Pagination ---------------------------------- */
+.pager { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+.pager .pages { display: flex; gap: 6px; }
+.pager button {
+  font: inherit; font-size: .87rem;
+  min-width: 34px; padding: 5px 10px;
+  border: 1px solid var(--border-firm); background: #fff; color: var(--ink);
+  border-radius: 6px; cursor: pointer;
+}
+.pager button:hover:not(:disabled) { background: #f1f4f8; }
+.pager button[aria-current="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+.pager button:disabled { opacity: .45; cursor: default; }
+
+/* ---------- 9. Researcher detail --------------------------- */
+.researcher-head { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 4px; }
+.researcher-head h1 { margin-bottom: .15rem; }
+.researcher-meta { color: var(--ink-muted); font-size: .95rem; }
+.researcher-meta .sep { margin: 0 7px; color: var(--border-firm); }
+
+.tally { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 4px; }
+.tally .t {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 9px 16px; background: #fff; min-width: 78px;
+}
+.tally .t .v { font-size: 1.35rem; font-weight: 660; font-variant-numeric: tabular-nums; line-height: 1.15; }
+.tally .t .k { font-size: .73rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .04em; }
+.tally .t[data-r="A*"] { border-color: var(--abdc-astar); }
+.tally .t[data-r="A"]  { border-color: var(--abdc-a); }
+.tally .t[data-r="B"]  { border-color: var(--abdc-b); }
+.tally .t[data-r="C"]  { border-color: var(--abdc-c); }
+
+.back-link { display: inline-block; margin-bottom: 14px; font-size: .9rem; }
+
+/* ---------- 10. Footer ------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 20px 0;
+  font-size: .84rem;
+  color: var(--ink-muted);
+}
+.site-footer .wrap-wide { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+
+/* ---------- 11. Responsive --------------------------------- */
+@media (max-width: 700px) {
+  h1 { font-size: 1.5rem; }
+  .site-header .wrap-wide { min-height: 0; }
+  .filter-row { gap: 12px; }
+  select, input[type="text"], input[type="search"] { min-width: 0; width: 100%; }
+  .field { flex: 1 1 140px; }
+  table.data { font-size: .85rem; }
+}
+
+@media print {
+  .site-header, .site-footer, .filters, .toolbar, .pager, .banner-sample { display: none !important; }
+  body { background: #fff; }
+  .table-scroll { border: none; }
+}
