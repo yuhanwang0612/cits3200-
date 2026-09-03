@@ -190,7 +190,7 @@ code.field {
           <ul>
             <li><strong>ABDC Journal Quality List 2025</strong> — sourced from <code class="field">anu_journals.csv</code>. Provides <code class="field">quality_rank</code> (A*, A, B, C) and <code class="field">abdc_edition</code>.</li>
             <li><strong>Scimago Journal Rankings</strong> — sourced from <code class="field">scimago.csv</code>. Provides <code class="field">sjr</code>, <code class="field">sjr_quartile</code>, and <code class="field">cites_per_doc_2y</code>.</li>
-            <li><strong>Clarivate Journal Impact Factor (JCR)</strong> — sourced from <code class="field">jcr.csv</code> (fetched via the Web of Science Journals API). Provides <code class="field">impact_factor</code> and <code class="field">jcr_year</code>. Only available for journals with a current JCR subscription.</li>
+            <li><strong>Clarivate Journal Impact Factor (JCR)</strong> — the schema reserves <code class="field">impact_factor</code> and <code class="field">jcr_year</code> columns for JCR data, but these are currently <code class="field">null</code> for all journals. Populating them requires an institutional API arrangement with Clarivate that is not yet in place. Scimago's <code class="field">cites_per_doc_2y</code> serves as the equivalent metric in the current release.</li>
           </ul>
         </section>
 
@@ -297,7 +297,7 @@ code.field {
           </ul>
 
           <h3>Clarivate Journal Impact Factor (JCR)</h3>
-          <p><code class="field">impact_factor</code> is the Clarivate 2-year Journal Impact Factor from the Web of Science Journal Citation Reports. It is available only for journals indexed in Web of Science; <code class="field">null</code> means the journal was not found or is not covered by the subscription.</p>
+          <p>The <code class="field">impact_factor</code> and <code class="field">jcr_year</code> columns are reserved for the Clarivate 2-year Journal Impact Factor from Web of Science Journal Citation Reports. In the current release these columns are <code class="field">null</code> for all journals — populating them requires an institutional API arrangement with Clarivate. Scimago's <code class="field">cites_per_doc_2y</code> is the equivalent metric available now.</p>
 
           <h3>OpenAlex Citation Percentile</h3>
           <p><code class="field">citation_percentile</code> is OpenAlex's field- and year-normalised citation percentile (0–100) for the individual publication, not the journal. A value of 95 means the paper is cited more than 95% of papers in the same field published in the same year.</p>
