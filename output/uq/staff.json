@@ -5,7 +5,7 @@
     "academic_level": "A",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": null,
+    "source_id": null,
     "orcid": null,
     "profile_url": "https://business.uq.edu.au/profile/9542/jon-aster"
   },
@@ -15,7 +15,7 @@
     "academic_level": null,
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": null,
+    "source_id": null,
     "orcid": null,
     "profile_url": "https://business.uq.edu.au/profile/17730/chris-bell"
   },
@@ -25,7 +25,7 @@
     "academic_level": "E",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "6079108",
+    "source_id": "6079108",
     "orcid": "0000-0002-6368-3828",
     "profile_url": "https://business.uq.edu.au/profile/6239/shaun-bond"
   },
@@ -35,7 +35,7 @@
     "academic_level": "A",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "97219",
+    "source_id": "97219",
     "orcid": null,
     "profile_url": "https://business.uq.edu.au/profile/18606/alexander-cameron"
   },
@@ -45,7 +45,7 @@
     "academic_level": null,
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "7627091",
+    "source_id": "7627091",
     "orcid": "0000-0002-7860-8601",
     "profile_url": "https://business.uq.edu.au/profile/12939/yong-ming-chen"
   },
@@ -55,7 +55,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "2254822",
+    "source_id": "2254822",
     "orcid": "0000-0002-3662-7951",
     "profile_url": "https://business.uq.edu.au/profile/1865/hasibul-chowdhury"
   },
@@ -65,7 +65,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "7275857",
+    "source_id": "7275857",
     "orcid": "0000-0003-2405-1518",
     "profile_url": "https://business.uq.edu.au/profile/8977/nicolas-eugster"
   },
@@ -75,7 +75,7 @@
     "academic_level": "E",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": null,
+    "source_id": null,
     "orcid": null,
     "profile_url": "https://business.uq.edu.au/profile/830/stephen-gray"
   },
@@ -85,7 +85,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "87704",
+    "source_id": "87704",
     "orcid": "0000-0002-7732-544X",
     "profile_url": "https://business.uq.edu.au/profile/404/khoa-hoang"
   },
@@ -95,7 +95,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "7639113",
+    "source_id": "7639113",
     "orcid": "0009-0008-2228-256X",
     "profile_url": "https://business.uq.edu.au/profile/17174/weiting-hu"
   },
@@ -105,7 +105,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "87707",
+    "source_id": "87707",
     "orcid": "0000-0002-5954-6097",
     "profile_url": "https://business.uq.edu.au/profile/407/ronghong-huang"
   },
@@ -115,7 +115,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "6004495",
+    "source_id": "6004495",
     "orcid": "0000-0001-7444-8076",
     "profile_url": "https://business.uq.edu.au/profile/6020/shirina-lin"
   },
@@ -125,7 +125,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "5497249",
+    "source_id": "5497249",
     "orcid": "0000-0003-3435-7545",
     "profile_url": "https://business.uq.edu.au/profile/2530/leo-luong"
   },
@@ -135,7 +135,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "6336",
+    "source_id": "6336",
     "orcid": "0000-0003-3085-9601",
     "profile_url": "https://business.uq.edu.au/profile/572/jacquelyn-humphrey"
   },
@@ -145,7 +145,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "78774",
+    "source_id": "78774",
     "orcid": "0000-0001-9357-8642",
     "profile_url": "https://business.uq.edu.au/profile/896/lin-mi"
   },
@@ -155,7 +155,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "4329687",
+    "source_id": "4329687",
     "orcid": "0000-0002-9156-8018",
     "profile_url": "https://business.uq.edu.au/profile/1079/suman-neupane-joshi"
   },
@@ -165,7 +165,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "5508774",
+    "source_id": "5508774",
     "orcid": "0000-0002-2344-3248",
     "profile_url": "https://business.uq.edu.au/profile/2569/lily-nguyen"
   },
@@ -175,7 +175,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "1055",
+    "source_id": "1055",
     "orcid": "0000-0002-8282-3355",
     "profile_url": "https://business.uq.edu.au/profile/89/vanitha-ragunathan"
   },
@@ -185,7 +185,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "2284981",
+    "source_id": "2284981",
     "orcid": "0000-0001-5814-7396",
     "profile_url": "https://business.uq.edu.au/profile/1868/dewan-rahman"
   },
@@ -195,7 +195,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "93285",
+    "source_id": "93285",
     "orcid": "0000-0002-6508-5418",
     "profile_url": "https://business.uq.edu.au/profile/542/saphira-rekker"
   },
@@ -205,7 +205,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "4818628",
+    "source_id": "4818628",
     "orcid": "0000-0001-9646-486X",
     "profile_url": "https://business.uq.edu.au/profile/1085/eric-tan"
   },
@@ -215,7 +215,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "8472",
+    "source_id": "8472",
     "orcid": "0000-0001-6923-1200",
     "profile_url": "https://business.uq.edu.au/profile/248/kelvin-tan"
   },
@@ -225,7 +225,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "92037",
+    "source_id": "92037",
     "orcid": "0000-0001-6084-5863",
     "profile_url": "https://business.uq.edu.au/profile/482/elizabeth-zhu"
   },
@@ -235,7 +235,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Finance",
-    "espace_id": "4503669",
+    "source_id": "4503669",
     "orcid": "0000-0002-5602-2319",
     "profile_url": "https://business.uq.edu.au/profile/1448/min-zhu"
   },
@@ -245,7 +245,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "4930238",
+    "source_id": "4930238",
     "orcid": "0000-0002-9457-2880",
     "profile_url": "https://business.uq.edu.au/profile/1433/ankit-jain"
   },
@@ -255,7 +255,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "4850515",
+    "source_id": "4850515",
     "orcid": "0000-0001-9481-2082",
     "profile_url": "https://business.uq.edu.au/profile/1424/byungki-kim"
   },
@@ -265,7 +265,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "7635606",
+    "source_id": "7635606",
     "orcid": "0009-0006-5491-1944",
     "profile_url": "https://business.uq.edu.au/profile/19153/kirsty-dunbar"
   },
@@ -275,7 +275,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "7646522",
+    "source_id": "7646522",
     "orcid": "0000-0003-2554-527X",
     "profile_url": "https://business.uq.edu.au/profile/18873/bobae-choi"
   },
@@ -285,7 +285,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": null,
+    "source_id": null,
     "orcid": null,
     "profile_url": "https://business.uq.edu.au/profile/791/debbie-jeffery"
   },
@@ -295,7 +295,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "7642804",
+    "source_id": "7642804",
     "orcid": "0000-0003-0574-575X",
     "profile_url": "https://business.uq.edu.au/profile/18291/mia-han"
   },
@@ -305,7 +305,7 @@
     "academic_level": "E",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "1736",
+    "source_id": "1736",
     "orcid": "0000-0002-3251-3463",
     "profile_url": "https://business.uq.edu.au/profile/170/kathleen-herbohn"
   },
@@ -315,7 +315,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "1009",
+    "source_id": "1009",
     "orcid": "0000-0003-1671-0691",
     "profile_url": "https://business.uq.edu.au/profile/68/grace-hsu"
   },
@@ -325,7 +325,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "4940317",
+    "source_id": "4940317",
     "orcid": "0000-0002-1897-6330",
     "profile_url": "https://business.uq.edu.au/profile/1418/mark-wallis"
   },
@@ -335,7 +335,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "3804387",
+    "source_id": "3804387",
     "orcid": "0000-0002-3246-3582",
     "profile_url": "https://business.uq.edu.au/profile/1040/matthew-peters"
   },
@@ -345,7 +345,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "77962",
+    "source_id": "77962",
     "orcid": "0000-0002-5428-2635",
     "profile_url": "https://business.uq.edu.au/profile/887/michael-turner"
   },
@@ -355,7 +355,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "87748",
+    "source_id": "87748",
     "orcid": "0000-0001-7106-8086",
     "profile_url": "https://business.uq.edu.au/profile/410/natalie-peng"
   },
@@ -365,7 +365,7 @@
     "academic_level": "E",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "326",
+    "source_id": "326",
     "orcid": "0000-0003-0792-3003",
     "profile_url": "https://business.uq.edu.au/profile/812/peter-clarkson"
   },
@@ -375,7 +375,7 @@
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "4469982",
+    "source_id": "4469982",
     "orcid": "0000-0002-1811-0983",
     "profile_url": "https://business.uq.edu.au/profile/1445/peter-do"
   },
@@ -385,7 +385,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "6621",
+    "source_id": "6621",
     "orcid": "0000-0003-0627-4371",
     "profile_url": "https://business.uq.edu.au/profile/230/robyn-king"
   },
@@ -395,7 +395,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "5402627",
+    "source_id": "5402627",
     "orcid": "0000-0002-7228-7560",
     "profile_url": "https://business.uq.edu.au/profile/2386/sergeja-slapnicar"
   },
@@ -405,7 +405,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "115914",
+    "source_id": "115914",
     "orcid": "0000-0002-6177-9682",
     "profile_url": "https://business.uq.edu.au/profile/2201/xin-yu"
   },
@@ -415,7 +415,7 @@
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "4336037",
+    "source_id": "4336037",
     "orcid": "0000-0003-1890-9733",
     "profile_url": "https://business.uq.edu.au/profile/1487/yang-xu"
   },
@@ -425,7 +425,7 @@
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
-    "espace_id": "7634085",
+    "source_id": "7634085",
     "orcid": "0000-0002-8877-4400",
     "profile_url": "https://business.uq.edu.au/profile/15364/muhammad-nadeem"
   }

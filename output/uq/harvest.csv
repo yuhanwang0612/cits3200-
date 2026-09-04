@@ -1,2 +1,5 @@
-university,source,last_run,latest_year
-University of Queensland,UQ eSpace,2026-08-30T13:40:29.572667+00:00,2026
+university,source,last_run,latest_year,record_count
+University of Queensland,Crossref,2026-09-01T07:59:28.452201+00:00,,42
+University of Queensland,ORCID,2026-09-01T07:59:28.452201+00:00,1995.0,138
+University of Queensland,OpenAlex,2026-09-01T07:59:28.452201+00:00,2017.0,98
+University of Queensland,UQ eSpace,2026-09-01T07:59:28.452201+00:00,2026.0,889
