@@ -10,6 +10,69 @@ Run with:  python3 adelaide_scraper.py
 import re, time, requests, csv, os
 from bs4 import BeautifulSoup
 
+# ── Accounting/Finance filter ─────────────────────────────────────────
+# Word-boundary regex — avoids "refinancing", "accountingfor", etc.
+_ACCTFIN_RE = re.compile(r'\b(accounting|finance|financial)\b', re.I)
+
+# Adelaide's actual school name variations
+_SCHOOL_NAMES = [
+    "school of accounting",
+    "school of finance",
+    "accounting and finance",
+    "finance and accounting",
+    "department of accounting",
+    "department of finance",
+]
+
+def is_accounting_finance(soup):
+    """
+    Return True only if this researcher clearly belongs to an
+    accounting/finance unit — not just mentions the word anywhere.
+
+    Checks (in priority order):
+      1. Structured affiliation/school/department elements
+      2. Adelaide's specific school name patterns in page text
+      3. Research interests / expertise sections
+    """
+    # 1. Structured elements tagged as affiliation / school / department
+    for tag in soup.find_all(
+        ["div", "span", "p", "li", "h2", "h3", "a"],
+        class_=re.compile(r"affili|school|department|faculty|unit|position|role|org", re.I)
+    ):
+        if _ACCTFIN_RE.search(tag.get_text(" ", strip=True)):
+            return True
+    for tag in soup.find_all(
+        ["div", "span", "section"],
+        id=re.compile(r"affili|school|department|faculty|unit|position", re.I)
+    ):
+        if _ACCTFIN_RE.search(tag.get_text(" ", strip=True)):
+            return True
+
+    # 2. Specific school name patterns — "School of Accounting and Finance" etc.
+    page_text = soup.get_text(" ", strip=True)
+    lower = page_text.lower()
+    if any(name in lower for name in _SCHOOL_NAMES):
+        return True
+    # "School of X" within 80 chars of accounting/finance keyword
+    if re.search(r'\bschool\b.{0,80}\b(accounting|finance)\b', page_text, re.I | re.S):
+        return True
+
+    # 3. Research interests / expertise sections
+    for tag in soup.find_all(
+        True,
+        id=re.compile(r'interest|expertise|topic|research-area', re.I)
+    ):
+        if _ACCTFIN_RE.search(tag.get_text(" ", strip=True)):
+            return True
+    for tag in soup.find_all(
+        True,
+        class_=re.compile(r'interest|expertise|topic|research.?area', re.I)
+    ):
+        if _ACCTFIN_RE.search(tag.get_text(" ", strip=True)):
+            return True
+
+    return False
+
 HEADERS    = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
 UNIVERSITY = "Adelaide University"
 DISCIPLINE = "Accounting & Finance"
@@ -111,7 +174,7 @@ while page <= MAX_PAGES:
 print(f"\nPhase 1 done. {len(candidate_usernames)} Business & Law candidates found.")
 
 # ── Phase 2: fetch each profile, keep only Accounting & Finance ───────
-print(f"\nPhase 2: Fetching profiles to filter for Accounting & Finance ...")
+print("\nPhase 2: Fetching profiles to filter for Accounting & Finance ...")
 
 records = []
 
@@ -126,8 +189,8 @@ for username in candidate_usernames:
         soup = BeautifulSoup(resp.text, "html.parser")
         page_text = soup.get_text(" ", strip=True)
 
-        # Filter: must mention accounting or finance in school/bio
-        if "accounting" not in page_text.lower() and "finance" not in page_text.lower():
+        # Filter: must belong to an accounting/finance unit (tight check)
+        if not is_accounting_finance(soup):
             continue
 
         # Name: h1 or title
@@ -253,14 +316,14 @@ def get_scimago(journal_name):
 # ── Phase 3: fetch publications via OpenAlex ──────────────────────────
 print("\nFetching publications via OpenAlex...")
 
-OA_HEADERS = {"User-Agent": "monash-research-scraper/1.0 (mailto:wyuhan577@gmail.com)"}
+OA_HEADERS = {"User-Agent": "adelaide-research-scraper/1.0 (mailto:wyuhan577@gmail.com)"}
 
 def oa_get(url, params):
     for attempt in range(3):
         try:
             resp = requests.get(url, params=params, headers=OA_HEADERS, timeout=20)
             if resp.status_code == 429:
-                print(f"    ⏳ OpenAlex rate limit — waiting 30s...")
+                print("    ⏳ OpenAlex rate limit — waiting 30s...")
                 time.sleep(30)
                 continue
             return resp
@@ -276,7 +339,7 @@ def parse_oa_works(works):
         if not title or len(title) < 5:
             continue
         year = w.get("publication_year")
-        doi  = (w.get("doi") or "").replace("https://doi.org/", "").strip()
+        doi  = (w.get("doi") or "").replace("https://doi.org/", "").strip().rstrip(".,;:").lower()
         pub_type = w.get("type") or None
         loc  = w.get("primary_location") or {}
         src  = loc.get("source") or {}
@@ -331,7 +394,7 @@ def fetch_pubs_openalex(name, orcid=None):
         results = resp.json().get("results", [])
         ADELAIDE_NAMES = {"university of adelaide", "adelaide university",
                           "university of south australia", "unisa"}
-        monash_match = next(
+        adelaide_match = next(
             (r for r in results
              if any(
                  any(alias in (i.get("display_name") or "").lower() for alias in ADELAIDE_NAMES)
@@ -339,10 +402,10 @@ def fetch_pubs_openalex(name, orcid=None):
              )),
             None
         )
-        if not monash_match:
+        if not adelaide_match:
             return [], None
-        author_id = monash_match["id"]
-        h_index = (monash_match.get("summary_stats") or {}).get("h_index")
+        author_id = adelaide_match["id"]
+        h_index = (adelaide_match.get("summary_stats") or {}).get("h_index")
         time.sleep(1)
 
     cursor = "*"
@@ -366,6 +429,27 @@ def fetch_pubs_openalex(name, orcid=None):
         time.sleep(0.5)
     return pubs, h_index
 
+# ── Field-of-research sanity check ───────────────────────────────────
+# Tighter regex — avoids broad terms like "manag" (matches construction mgmt)
+# and "econom" alone (matches construction economics journals)
+_BIZ_RE = re.compile(
+    r'\b(accounting|auditing|taxation|financ|banking|investment|portfolio|'
+    r'equity|corporate govern|disclosure|dividend|actuari|insurance|'
+    r'real estate|wealth management|stock market|capital market)\b',
+    re.I
+)
+
+def is_acctfin_pubs(pubs):
+    """Return True if pub list looks like Accounting & Finance research.
+    Requires at least 3 pubs in A&F-specific journals — a single incidental
+    match (e.g. one paper in 'Journal of Corporate Real Estate' by an engineer)
+    should not keep 700+ engineering pubs in the dataset."""
+    if not pubs:
+        return True  # no pubs — don't discard, just no data
+    journal_names = [p.get("journal_name") or "" for p in pubs]
+    matches = sum(1 for j in journal_names if _BIZ_RE.search(j))
+    return matches >= 3
+
 all_pubs = []
 for r in records:
     name  = r["name_clean"]
@@ -374,9 +458,16 @@ for r in records:
     orcid = r.get("orcid")
     pubs, h_index = fetch_pubs_openalex(name, orcid=orcid)
 
-    # Sanity filter
+    # Sanity filter — wrong person (name-only, huge count)
     if not orcid and len(pubs) > 200:
         pubs = []  # name-only match returning huge number → likely wrong person
+
+    # Field-of-research filter — only applies to very large pub counts (200+)
+    # to avoid false positives on legitimate A&F researchers with modest output
+    if len(pubs) > 200 and not is_acctfin_pubs(pubs):
+        print(f"    ⚠️  Dropping {name}: {len(pubs)} pubs but none in A&F journals — likely wrong field match")
+        pubs = []
+        h_index = None
 
     r["h_index"] = h_index
     r["level_code"] = level_code(r.get("level"))
@@ -421,6 +512,6 @@ with open(pubs_file, "w", newline="", encoding="utf-8") as f:
     w.writeheader()
     w.writerows(all_pubs)
 
-print(f"\n✅ Done!")
+print("\n✅ Done!")
 print(f"   {staff_file}: {len(records)} researchers")
 print(f"   {pubs_file}: {len(all_pubs)} publications")

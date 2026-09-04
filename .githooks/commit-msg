@@ -1,0 +1,9 @@
+#!/bin/sh
+# This project credits contribution through commits and the timesheet,
+# not co-author trailers, so strip them before the commit is made.
+msg_file="$1"
+
+if grep -qi '^Co-authored-by:' "$msg_file"; then
+    grep -vi '^Co-authored-by:' "$msg_file" > "$msg_file.tmp" && mv "$msg_file.tmp" "$msg_file"
+    echo "commit-msg hook: stripped a co-author trailer." >&2
+fi
