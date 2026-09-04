@@ -1,0 +1,30 @@
+[
+  {
+    "university": "University of Queensland",
+    "source": "Crossref",
+    "last_run": "2026-09-01T07:59:28.452201+00:00",
+    "latest_year": null,
+    "record_count": 42
+  },
+  {
+    "university": "University of Queensland",
+    "source": "ORCID",
+    "last_run": "2026-09-01T07:59:28.452201+00:00",
+    "latest_year": 1995,
+    "record_count": 138
+  },
+  {
+    "university": "University of Queensland",
+    "source": "OpenAlex",
+    "last_run": "2026-09-01T07:59:28.452201+00:00",
+    "latest_year": 2017,
+    "record_count": 98
+  },
+  {
+    "university": "University of Queensland",
+    "source": "UQ eSpace",
+    "last_run": "2026-09-01T07:59:28.452201+00:00",
+    "latest_year": 2026,
+    "record_count": 889
+  }
+]

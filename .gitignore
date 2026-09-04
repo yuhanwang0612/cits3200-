@@ -33,3 +33,5 @@ CLAUDE.md
 scratch/
 output/clarivate_cache.json
 output/clarivate_jif.csv
+
+cache/
