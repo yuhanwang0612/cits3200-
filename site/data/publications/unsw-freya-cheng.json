@@ -1,0 +1,142 @@
+{
+ "researcher": {
+  "id": "unsw-freya-cheng",
+  "name": "Freya Cheng",
+  "university": "The University of New South Wales",
+  "university_code": "UNSW",
+  "field_of_research": "Accounting",
+  "academic_level": "Associate Lecturer",
+  "level_code": "A",
+  "publication_count": 9,
+  "abdc_ranked_count": 8,
+  "count_a_star": 3,
+  "count_a": 5,
+  "count_b": 0,
+  "count_c": 0,
+  "count_unranked": 1
+ },
+ "publications": [
+  {
+   "title": "Corporate bank lending and firm value",
+   "journal_name": "European Accounting Review",
+   "issn": "0963-8180",
+   "year": 2022,
+   "quality_rank": "A",
+   "impact_factor": 3.1,
+   "scimago_quartile": null,
+   "cited_by_count": null,
+   "doi": null,
+   "article_url": null,
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Empirical tax avoidance and investor attention",
+   "journal_name": "Review of Corporate Finance Studies",
+   "issn": "2046-9128",
+   "year": 2022,
+   "quality_rank": "A",
+   "impact_factor": null,
+   "scimago_quartile": "Q3",
+   "cited_by_count": null,
+   "doi": null,
+   "article_url": null,
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Sustainable disclosure quality in family firms",
+   "journal_name": "Review of Corporate Finance Studies",
+   "issn": "2046-9128",
+   "year": 2022,
+   "quality_rank": "A",
+   "impact_factor": null,
+   "scimago_quartile": "Q2",
+   "cited_by_count": 32,
+   "doi": "10.1076/review.2022.7233",
+   "article_url": "https://doi.org/10.1076/review.2022.7233",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Comparative capital structure and firm value",
+   "journal_name": "Review of Financial Studies",
+   "issn": "0893-9454",
+   "year": 2020,
+   "quality_rank": "A*",
+   "impact_factor": 6.8,
+   "scimago_quartile": "Q2",
+   "cited_by_count": null,
+   "doi": null,
+   "article_url": null,
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Corporate analyst forecasts evidence from Australia",
+   "journal_name": "Accounting and Finance",
+   "issn": "0810-5391",
+   "year": 2020,
+   "quality_rank": "A",
+   "impact_factor": 2.7,
+   "scimago_quartile": null,
+   "cited_by_count": 320,
+   "doi": "10.1083/accoun.2020.6305",
+   "article_url": "https://doi.org/10.1083/accoun.2020.6305",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Sustainable tax avoidance evidence from Australia",
+   "journal_name": "International Review of Economics and Finance",
+   "issn": "1059-0560",
+   "year": 2019,
+   "quality_rank": null,
+   "impact_factor": null,
+   "scimago_quartile": "Q3",
+   "cited_by_count": 111,
+   "doi": "10.1081/intern.2019.8884",
+   "article_url": "https://doi.org/10.1081/intern.2019.8884",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Behavioural bank lending under regulatory change",
+   "journal_name": "Accounting Horizons",
+   "issn": "0888-7993",
+   "year": 2018,
+   "quality_rank": "A",
+   "impact_factor": null,
+   "scimago_quartile": null,
+   "cited_by_count": 284,
+   "doi": "10.1023/accoun.2018.9530",
+   "article_url": "https://doi.org/10.1023/accoun.2018.9530",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Empirical bank lending in the banking sector",
+   "journal_name": "Journal of Finance",
+   "issn": "0022-1082",
+   "year": 2018,
+   "quality_rank": "A*",
+   "impact_factor": 7.6,
+   "scimago_quartile": null,
+   "cited_by_count": 105,
+   "doi": "10.1076/journa.2018.7767",
+   "article_url": "https://doi.org/10.1076/journa.2018.7767",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Institutional liquidity provision evidence from Australia",
+   "journal_name": "Journal of Accounting Research",
+   "issn": "0021-8456",
+   "year": 2018,
+   "quality_rank": "A*",
+   "impact_factor": 6.1,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 301,
+   "doi": "10.1051/journa.2018.8851",
+   "article_url": "https://doi.org/10.1051/journa.2018.8851",
+   "publication_type": "journal_article"
+  }
+ ],
+ "meta": {
+  "generated": "2026-09-03",
+  "is_sample_data": true,
+  "note": "SAMPLE DATA generated for the site design shell. Replace with real exports."
+ }
+}

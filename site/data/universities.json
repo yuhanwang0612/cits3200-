@@ -1,0 +1,65 @@
+{
+ "meta": {
+  "generated": "2026-09-03",
+  "is_sample_data": true,
+  "note": "SAMPLE DATA generated for the site design shell. Replace with real exports."
+ },
+ "universities": [
+  {
+   "code": "ANU",
+   "name": "The Australian National University",
+   "researcher_count": 11,
+   "publication_count": 204,
+   "abdc_ranked_count": 191
+  },
+  {
+   "code": "UNSW",
+   "name": "The University of New South Wales",
+   "researcher_count": 9,
+   "publication_count": 219,
+   "abdc_ranked_count": 201
+  },
+  {
+   "code": "UQ",
+   "name": "The University of Queensland",
+   "researcher_count": 10,
+   "publication_count": 143,
+   "abdc_ranked_count": 135
+  },
+  {
+   "code": "USYD",
+   "name": "The University of Sydney",
+   "researcher_count": 16,
+   "publication_count": 337,
+   "abdc_ranked_count": 305
+  },
+  {
+   "code": "UWA",
+   "name": "The University of Western Australia",
+   "researcher_count": 13,
+   "publication_count": 217,
+   "abdc_ranked_count": 188
+  },
+  {
+   "code": "MON",
+   "name": "Monash University",
+   "researcher_count": 11,
+   "publication_count": 225,
+   "abdc_ranked_count": 202
+  },
+  {
+   "code": "ADL",
+   "name": "The University of Adelaide",
+   "researcher_count": 16,
+   "publication_count": 389,
+   "abdc_ranked_count": 344
+  },
+  {
+   "code": "UOM",
+   "name": "The University of Melbourne",
+   "researcher_count": 13,
+   "publication_count": 193,
+   "abdc_ranked_count": 176
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "researcher": {
+  "id": "usyd-zara-delacroix",
+  "name": "Zara Delacroix",
+  "university": "The University of Sydney",
+  "university_code": "USYD",
+  "field_of_research": "Finance",
+  "academic_level": "Lecturer",
+  "level_code": "B",
+  "publication_count": 6,
+  "abdc_ranked_count": 4,
+  "count_a_star": 0,
+  "count_a": 1,
+  "count_b": 3,
+  "count_c": 0,
+  "count_unranked": 2
+ },
+ "publications": [
+  {
+   "title": "Algorithmic tax avoidance and the cost of equity",
+   "journal_name": "Journal of Business Finance and Accounting",
+   "issn": "0306-686X",
+   "year": 2026,
+   "quality_rank": "B",
+   "impact_factor": 2.6,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 104,
+   "doi": "10.1041/journa.2026.4148",
+   "article_url": "https://doi.org/10.1041/journa.2026.4148",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Institutional disclosure quality and firm value",
+   "journal_name": "Pacific-Basin Finance Journal",
+   "issn": "0927-538X",
+   "year": 2026,
+   "quality_rank": "B",
+   "impact_factor": 4.0,
+   "scimago_quartile": "Q2",
+   "cited_by_count": 254,
+   "doi": "10.1014/pacifi.2026.3994",
+   "article_url": "https://doi.org/10.1014/pacifi.2026.3994",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Institutional IPO underpricing in emerging markets",
+   "journal_name": "Accounting Horizons",
+   "issn": "0888-7993",
+   "year": 2025,
+   "quality_rank": "A",
+   "impact_factor": null,
+   "scimago_quartile": "Q3",
+   "cited_by_count": 22,
+   "doi": "10.1031/accoun.2025.5199",
+   "article_url": "https://doi.org/10.1031/accoun.2025.5199",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Comparative dividend policy after IFRS adoption",
+   "journal_name": "Pacific-Basin Finance Journal",
+   "issn": "0927-538X",
+   "year": 2023,
+   "quality_rank": "B",
+   "impact_factor": 4.0,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 52,
+   "doi": "10.1106/pacifi.2023.7035",
+   "article_url": "https://doi.org/10.1106/pacifi.2023.7035",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Empirical short selling during monetary tightening",
+   "journal_name": "Emerging Markets Review",
+   "issn": "1566-0141",
+   "year": 2023,
+   "quality_rank": null,
+   "impact_factor": null,
+   "scimago_quartile": "Q2",
+   "cited_by_count": 316,
+   "doi": "10.1069/emergi.2023.9102",
+   "article_url": "https://doi.org/10.1069/emergi.2023.9102",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Post-crisis executive compensation after IFRS adoption",
+   "journal_name": "Emerging Markets Review",
+   "issn": "1566-0141",
+   "year": 2016,
+   "quality_rank": null,
+   "impact_factor": null,
+   "scimago_quartile": null,
+   "cited_by_count": null,
+   "doi": null,
+   "article_url": null,
+   "publication_type": "journal_article"
+  }
+ ],
+ "meta": {
+  "generated": "2026-09-03",
+  "is_sample_data": true,
+  "note": "SAMPLE DATA generated for the site design shell. Replace with real exports."
+ }
+}
