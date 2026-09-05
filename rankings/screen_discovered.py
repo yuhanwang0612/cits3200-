@@ -14,7 +14,7 @@ academic, it is two people sharing a name.
 ABDC's list is used as the discipline test because that is exactly what it is:
 a list of business, economics and law journals. A physics journal is not on it.
 
-    python screen_discovered.py output/discovered_publications.csv ABDC-JQL-2025.xlsx
+    python screen_discovered.py output/discovered_publications_raw.csv ABDC-JQL-2025.xlsx
 
 Nothing is deleted. Rows split into two files, and the reason is recorded on
 every excluded row, so a human can overrule any of it.
@@ -44,6 +44,7 @@ COLLISION_RATIO = 0.20
 # merged with someone else's.
 IMPLAUSIBLE_BEFORE = 1970
 
+# The screened file takes the plain name; authors.py writes the _raw one.
 KEPT = "discovered_publications.csv"
 REVIEW = "discovered_publications_review.csv"
 AUTHORS = "discovered_authors_review.csv"
@@ -64,6 +65,12 @@ def screen(discovered_path, abdc_path, out_dir=None):
     out_dir = out_dir or os.path.dirname(os.path.abspath(discovered_path))
     index, sheet, _ = abdc.load_abdc(abdc_path)
     aliases = jm.build_aliases(index)
+
+    if os.path.basename(os.path.abspath(discovered_path)) == KEPT:
+        raise SystemExit(
+            f"That is the screened output, not the input.\n"
+            f"Run this on discovered_publications_raw.csv, which authors.py writes.\n"
+            f"Screening an already-screened file would report everything as clean.")
 
     with open(discovered_path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)

@@ -767,6 +767,10 @@ STAFF_COLUMNS = [
 ]
 
 
+# The scraper writes `unsw_publications_raw.csv`, not `unsw_publications.csv`.
+# The finished, enriched file is what the team merges and it takes the plain
+# name, because a file called `unsw_publications.csv` that turns out to have no
+# ratings on it is exactly the mistake that cost a round trip on 2 September.
 PUB_COLUMNS = [
     "researcher_name", "researcher_profile_url", "university", "field_of_research",
     "title", "journal_name", "year", "publication_type", "doi", "article_url",
@@ -840,7 +844,7 @@ def write_output(records, pubs, unparsed, no_pubs, everything=None):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     written = [
         _write_csv("unsw_staff.csv", STAFF_COLUMNS, records),
-        _write_csv("unsw_publications.csv", PUB_COLUMNS, pubs),
+        _write_csv("unsw_publications_raw.csv", PUB_COLUMNS, pubs),
     ]
     # The types the client excluded are still collected and still written. A
     # decision can be revisited; a re-scrape costs an hour.

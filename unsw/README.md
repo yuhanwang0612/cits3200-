@@ -100,7 +100,7 @@ Writes to `./output/`:
 |---|---|
 | `unsw_staff.csv` / `.json` | One row per academic — name, job_title, academic_level (A–E), field_of_research, profile_url, university, research_portal_url, school |
 | `unsw_publications.csv` | One row per **journal article** — title, journal_name, year, publication_type, doi, article_url, coauthors, author_count, volume, pages, publisher, plus `citation_percentile` and the journal ratings (`quality_rank`, `sjr`, `sjr_quartile`, `cites_per_doc_2y`), filled downstream by `rankings/pipeline.py` |
-| `unsw_publications_all_types.csv` | **All 4,210** publications, every type, the journal articles included. A superset of the file above, not its complement |
+| `unsw_publications_all_types.csv` | **All 4,134** publications, every type, the journal articles included. A superset of the file above, not its complement |
 | `unsw_unparsed_publications.csv` | Entries we could not parse, with the raw text — see below |
 | `unsw_no_publications.csv` | Academics whose profile lists nothing at all |
 | `harvest.csv` / `.json` | One row per source: when it last ran and the newest year it found (3.5.4, FR14) |
@@ -133,9 +133,9 @@ Three things are deliberate:
   citation rather than being parsed heuristically. Dropping them silently would
   understate someone's output; mis-parsing them would be worse.
 - **The dataset is journal articles only, and everything else is still kept.**
-  The client confirmed this on 19 August. `unsw_publications.csv` holds the 2,000
-  journal articles. `unsw_publications_all_types.csv` holds **all 4,210**, the
-  2,000 included, not just the 2,210 that were set aside, so never concatenate
+  The client confirmed this on 19 August. `unsw_publications.csv` holds the 1,973
+  enriched journal articles and is the file to merge. `unsw_publications_all_types.csv` holds **all 4,134**, the
+  1,973 included, not just the 2,161 that were set aside, so never concatenate
   the two. Re-scraping is expensive and a decision can
   be revisited, so what the filter changes is which file is the dataset, not what
   gets collected. `--all-types` puts everything back in the main file.
@@ -215,3 +215,80 @@ some point, or that is subtle enough to be "simplified" back into a bug later:
 Checks `robots.txt` once per host before crawling it, reports the declared
 `Crawl-delay`, sends a normal browser User-Agent, sleeps between requests, and
 caches pages so nothing is fetched twice.
+
+## Deduplication: what counts as one output
+
+The key is **normalised title + publication type + journal**, then a second
+pass merges entries that share a DOI and near-identical titles. Every part is
+there because of a case in the real data, and so is every part that is absent:
+
+- The title is **normalised**, not raw. UNSW lists the same article twice with
+  different capitalisation: "Stress tests and small business lending" and
+  "Stress Tests and Small Business Lending".
+- The **DOI is not in the key**. The same paper appears once with its JSTOR DOI
+  and once with its Wiley one. Keying on the DOI counts those twice.
+- The **year is not in the key**. The two listings often disagree about it: the
+  same JFE article is dated 2019 on one entry and 2017 on the other.
+- The **journal is** in the key, so a reprint that ran in both the Goods and
+  Services Tax Journal and the Weekly Tax Bulletin stays as two rows. The
+  client counts those as two outputs.
+- The **type is** in the key, so the same title as a 2015 conference paper and
+  a 2019 book chapter stays as two rows.
+
+The second pass exists because two listings of one paper sometimes disagree
+about the journal too ("JOURNAL OF INTERNATIONAL MONEY AND FINANCE" against the
+same name with a subtitle). A DOI identifies one article, so two entries under
+one researcher sharing a DOI are the same article **unless the titles say
+otherwise** — Economic Record issues one DOI for a batch of book reviews, and
+those are genuinely separate outputs. Threshold 0.90: real repeats measure 0.99,
+the book reviews 0.46.
+
+This removed 27 rows, taking 2,000 to 1,973. None of it is data loss.
+
+## `publication_status`
+
+Derived at parse time from fields every university already collects, so all six
+of us produce the same answer instead of each judging it. The client drew the
+distinction on 26 August: a preprint has not been peer reviewed, an accepted or
+forthcoming paper has.
+
+| Value | Rule |
+|---|---|
+| `working_paper` | the source is a repository (SSRN, arXiv) |
+| `forthcoming` | there is a journal and a DOI but no volume or no pages, or the journal name carried a "forthcoming" suffix |
+| `published` | it has a volume and pages |
+
+On UNSW: 1,587 published, 173 forthcoming, 11 working papers.
+
+A journal name like "Journal of Financial Economics, forthcoming" has the
+suffix stripped before matching and the status recorded instead. Left in place
+it breaks the ABDC join, and that particular row is an A\* paper.
+
+## Why 45% of journal articles have no DOI
+
+881 of 1,973. This is not the parser missing them: zero rows have a DOI sitting
+in the link field, 617 have no link at all, and the 264 that do point at
+Informit, AustLII, the Tax Institute and Westlaw — Australian tax and law
+databases that do not issue DOIs.
+
+The journals concerned say it plainly: Weekly Tax Bulletin, Australian Tax
+Forum, Australian Tax Review, eJournal of Tax Research. Median year 2008,
+against 2017 for the rows that do have a DOI.
+
+**This matters downstream.** Citation percentile and FWCI come from OpenAlex
+via the DOI, so researchers publishing in Australian tax and law journals get
+neither. That is a systematic gap against a discipline, not random missing
+data, and it should be stated wherever those metrics are presented.
+
+## Which file to merge
+
+| File | What it is |
+|---|---|
+| `unsw_publications.csv` | **The deliverable.** 1,973 journal articles, fully enriched: ABDC, Scimago, Clarivate, OpenAlex. 30 columns. `publication_type` is "Journal articles" on every row |
+| `unsw_publications_raw.csv` | The scrape before enrichment. Same rows, 21 columns, no ratings. Kept so the effect of the enrichment chain can be inspected |
+| `unsw_publications_with_openalex.csv` | Intermediate, written mid-pipeline. Same content as the deliverable; the name is historical |
+| `unsw_publications_all_types.csv` | All 4,134 outputs including the 2,161 non-journal ones. **Never merge this.** It exists so nothing is silently discarded and so the client can see what was excluded |
+
+The scraper deliberately writes `_raw`, and `pipeline.py` writes the plain name
+at the end. Before that, `unsw_publications.csv` was the *unenriched* file, so
+anyone reaching for the obvious filename got one with no ratings on it.

@@ -141,7 +141,7 @@ name:
 
 | | |
 |---|---|
-| rated by ABDC | **1,544 (78%)** |
+| rated by ABDC | **1,519 (77%)** |
 | A\* | 632 |
 | A | 632 |
 | B | 221 |
@@ -149,7 +149,7 @@ name:
 
 Read those two ways round, because they answer different questions. Per
 *publication row* it is 78%, which is the number that matters for ranking
-researchers. Per *distinct journal* it is 350 of 571 (61%), which is lower and
+researchers. Per *distinct journal* it is 346 of 566 (61%), which is lower and
 looks worse but is not: the unrated ones are mostly outlets that appear once or
 twice, so they weigh almost nothing on the researcher side. A handful of A\*
 journals carry hundreds of rows each.
@@ -226,14 +226,14 @@ Most university sites don't publish ISSNs — UNSW's certainly doesn't — which
 why the scrapers can't capture one. But ABDC and Scimago both carry them, so
 every journal we match gets an ISSN for free, with no extra requests to anyone.
 
-On UNSW: **437 of 571 journals now carry an ISSN (77%)**, covering **84% of
+On UNSW: **433 of 566 journals now carry an ISSN (77%)**, covering **84% of
 publication rows**. That's the join key for Clarivate JIF later.
 
 Two things moved that number. Running `openalex.py` first supplies an ISSN
 straight from the publisher for anything with a DOI, and those are used as the
 match key rather than the title. And restricting the dataset to journal articles
 removed 497 "journals" that were really newspapers and book publishers, which
-were never going to match anything. Of the 571 that remain, only **156 match
+were never going to match anything. Of the 566 that remain, only **155 match
 neither source**.
 
 ### Cross-checking the two sources catches bad matches
@@ -294,7 +294,7 @@ approximate match that ends up putting someone else's citation count against a
 researcher's name. Publications without a DOI go to the notfound file so the
 gap stays visible.
 
-That gap is real: 893 of UNSW's 2,000 journal articles have no DOI, mostly
+That gap is real: 881 of UNSW's 1,973 journal articles have no DOI, mostly
 pre-2000 papers and Australian tax journals that do not mint them.
 
 ### --mailto
@@ -311,13 +311,13 @@ Responses are cached next to the input, so a second run costs nothing.
 
 `pipeline.py` finishes by writing `quality_rank`, `sjr`, `sjr_quartile` and
 `cites_per_doc_2y` back onto every publication row, in place, adding no new
-file. On UNSW that is **1,544 rows with an ABDC grade**, 441 in a journal ABDC
+file. On UNSW that is **1,519 rows with an ABDC grade**, 439 in a journal ABDC
 does not rate (`none`), and 15 with no journal at all.
 
 Those three are reported separately on purpose. `none` is the client's wording
 for an outlet ABDC has not assessed, which is a finding about the outlet rather
 than a grade; counting it as one made the first run claim 1,985 of 2,000 rows
-were rated when the real figure was 1,544.
+were rated when the real figure was 1,544 at the time.
 
 That is a concession to how everyone else exports. UQ, Monash and Adelaide all
 carry `quality_rank` on the publication row; keeping it only in `journals.csv`
@@ -481,6 +481,130 @@ output.
 
 ---
 
+## `clarivate.py` — Journal Impact Factor
+
+```bash
+setx CLARIVATE_API_KEY "..."        # Windows, then open a new terminal
+python clarivate.py ../output/journals.csv \
+                    --publications ../output/unsw_publications.csv
+```
+
+Fills `impact_factor` and `impact_factor_5yr`, the two columns nothing else can
+supply. The key is read from the environment and nowhere else: never an
+argument, because arguments end up in shell history, and never a file, because
+files get committed.
+
+### Three calls per journal, not one
+
+The obvious design is one search. It does not work, and it fails silently:
+
+```
+GET /journals?q=0022-1082                 -> {"id": "J_FINANC", "matches": [...]}
+GET /journals/J_FINANC                    -> bibliographic detail, no metrics
+GET /journals/J_FINANC/reports/year/2025  -> the figures
+```
+
+The search endpoint returns **no metrics at all**, and no `issn` field either —
+the ISSN comes back inside `matches[].value[]` wrapped in `<em>` highlight
+tags. A first version looked for a key named `issn`, found none, rejected every
+record as "a different journal", and reported **0 matched of 437 with 0
+failures**. It ran for five minutes and wrote nothing but blanks.
+
+Two more traps in the response:
+
+- The five-year field is `jif5Years`, **plural**. `jif5Year` matches nothing.
+- `jif` arrives as a string (`"12.2"`), `jif5Years` as a number.
+- `journalCitationReports` lists every year back to 1997 and **not always
+  newest first**, so take the maximum. Reading the first entry put a 1997
+  impact factor on fourteen journals, presented as current.
+
+### Matching is on ISSN only
+
+Never on the journal title. A title match would silently attach the wrong
+journal's impact factor, and that is the one error here that nothing
+downstream could detect.
+
+| `clarivate_match_type` | Meaning |
+|---|---|
+| `issn` | matched on the ISSN we asked for |
+| `not-found` | Clarivate has no journal with that ISSN |
+| `lookup-failed` | the request did not succeed — **not** the same as not being in JCR |
+
+### Use `--limit 5` and `--probe` first
+
+`--limit 5` does five lookups and stops, so a wrong assumption costs ten
+seconds instead of ten minutes. `--probe <ISSN>` prints all three responses
+and says which numbers it extracted from them.
+
+On UNSW: **346 of 566 journals**, **1,366 of 1,973 publication rows (69%)**.
+Spot-checked against known values — Journal of Finance 12.2, Journal of
+Accounting Research 10.4, JFE 8.8, Abacus 1.7.
+
+## `validate_data.py` — check the data, not the code
+
+```bash
+python validate_data.py ../output/unsw_publications_with_openalex.csv \
+    --staff ../output/unsw_staff.csv --journals ../output/journals.csv
+```
+
+Exit code 0 means every check passed, 1 means at least one failure, so it can
+gate a push. 27 rules plus 7 coverage floors.
+
+The tests in this folder prove each module does what it was written to do. They
+cannot tell you the university changed its markup, that a rebuild blanked two
+columns, or that a step was skipped. Those are properties of the *output*.
+
+Three severities: **FAIL** the data is wrong and a merge should not run on it,
+**WARN** probably fine but worth a look, **INFO** coverage, reported so a drop
+between runs is visible.
+
+The coverage floors are the important part. A broken scraper does not crash. It
+runs, writes a file, and the file is thinner. On UNSW this caught the pipeline
+step being skipped, which left `quality_rank` empty on every row across three
+runs that all reported success.
+
+What it found on real data: 27 duplicate rows, an unresolved HTML entity in a
+journal name, 50 rows carrying SSRN's ISSN instead of the journal's, and a
+`journals.csv` whose `publication_count` no longer added up.
+
+### It agrees with the scraper about what a duplicate is
+
+Two entries under one DOI are the same article if their normalised titles are
+at least 90% alike. Below that, the publisher has issued one DOI for several
+items, which Economic Record does for book reviews. Measured: real repeats
+score 0.99, two different reviews sharing a DOI score 0.46. If the validator
+and the scraper disagreed on this, one would be wrong and neither would say so.
+
+## `screen_discovered.py` — filtering OpenAlex author discovery
+
+```bash
+python screen_discovered.py ../output/discovered_publications.csv \
+                            "../ABDC-JQL-2025-v2-270526.xlsx"
+```
+
+`authors.py` finds publications a university website never listed. Some belong
+to a different person with the same name, because OpenAlex merges distinct
+researchers into one author record and a ROR filter does not always separate
+them. This is the duplication weakness the client raised on 26 August.
+
+The test is discipline. Every researcher here is in Accounting or Finance, so
+ABDC's list — which *is* a list of business, economics and law journals — is a
+usable proxy. A physics journal is not on it.
+
+A researcher with 5+ discovered papers of which under 20% are in a business
+journal is treated as a name collision and none of their rows are kept.
+Individually implausible rows (before 1970) are dropped per row, not per
+researcher: one researcher had 76% of his work in business journals and a
+single paper from 1957, so the right answer was to drop that row and keep the
+other 78.
+
+On UNSW: 731 discovered, **260 kept, 471 flagged**, and eight researchers
+excluded. The clearest was a "Suk Lee" with 186 papers, 2 of them business, the
+rest in the Journal of the Korean Physical Society going back to 1958.
+
+Nothing is deleted. Three files: the kept rows, the flagged rows each carrying
+a `review_reason`, and a per-researcher summary for a human to overrule.
+
 ## `journal_match.py` — the matching all three use
 
 Not run directly. They all import it, so a journal that ABDC matches is
@@ -494,7 +618,7 @@ other than a stray subtitle.
 python -m pytest -v
 ```
 
-**185 tests, fully offline** — the ABDC workbook and Scimago export they run
+**223 tests, fully offline** — the ABDC workbook and Scimago export they run
 against are generated in temp directories, the OpenAlex call is stubbed with a
 real response shape, so no downloaded file is needed, no key, and nothing hits
 the network.

@@ -557,7 +557,10 @@ def discover(staff_path, publications_path=None, ror=None, mailto=None,
 
     staff_out = os.path.join(base, os.path.splitext(os.path.basename(staff_path))[0]
                              + "_with_orcid.csv")
-    discovered_out = os.path.join(base, "discovered_publications.csv")
+    # _raw, because screen_discovered.py writes the checked version under the
+    # plain name. Before this, re-running discovery silently replaced a
+    # screened 260-row file with the unscreened 731-row one.
+    discovered_out = os.path.join(base, "discovered_publications_raw.csv")
 
     # An aborted run writes nothing at all.
     #
