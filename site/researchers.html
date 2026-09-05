@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Researcher Rankings — G8 Research Output Database</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap-wide">
+    <a class="brand" href="index.html">G8 Research Output Database</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="researchers.html">Researchers</a>
+      <a href="universities.html">Universities</a>
+      <a href="documentation.html">Documentation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="banner-sample">
+      <span>&#9888;</span>
+      <div><strong>Sample data.</strong> Every name, publication and rating on this site is
+      invented for design purposes.</div>
+    </div>
+
+    <div class="page-head">
+      <h1>Researcher Rankings</h1>
+      <p>Filter and sort Accounting and Finance researchers by publication output.</p>
+    </div>
+
+    <!-- ---- filters ---- -->
+    <section class="card card-pad filters">
+      <div class="filter-row">
+        <div class="field">
+          <label for="f-uni">University</label>
+          <select id="f-uni"><option value="">All</option></select>
+        </div>
+        <div class="field">
+          <label for="f-for">Field of Research</label>
+          <select id="f-for"><option value="">All</option></select>
+        </div>
+        <div class="field">
+          <label for="f-level">Level</label>
+          <select id="f-level"><option value="">All</option></select>
+        </div>
+        <div class="field" style="flex:1 1 220px">
+          <label for="f-name">Name</label>
+          <input type="search" id="f-name" placeholder="Type a name&hellip;" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="f-rank">Rank by</label>
+          <select id="f-rank">
+            <option value="abdc_ranked_count">Articles with an ABDC ranking</option>
+            <option value="count_a_star">A* articles</option>
+            <option value="count_a">A articles</option>
+            <option value="publication_count">Total publications</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-size">Rows per page</label>
+          <select id="f-size">
+            <option>25</option><option selected>50</option><option>100</option>
+          </select>
+        </div>
+        <button type="button" class="btn-ghost btn" id="f-reset">Reset</button>
+      </div>
+    </section>
+
+    <!-- ---- toolbar ---- -->
+    <div class="toolbar">
+      <div class="left">
+        <span class="small muted" id="result-count"></span>
+      </div>
+      <div class="right">
+        <span class="small faint">Shift+click a column header to add a secondary sort.</span>
+        <button type="button" class="btn" id="btn-export">Download CSV</button>
+      </div>
+    </div>
+
+    <!-- ---- table ---- -->
+    <div class="table-scroll">
+      <table class="data" id="tbl">
+        <thead>
+          <tr>
+            <th style="width:64px">Rank</th>
+            <th class="sortable" data-key="name"                data-type="text">Name <span class="arrow">&#8597;</span></th>
+            <th class="sortable" data-key="field_of_research"   data-type="text">FoR <span class="arrow">&#8597;</span></th>
+            <th class="sortable" data-key="level_code"          data-type="text">Level <span class="arrow">&#8597;</span></th>
+            <th class="sortable" data-key="university_code"     data-type="text">University <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="count_a_star"      data-type="num">A* <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="count_a"           data-type="num">A <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="count_b"           data-type="num">B <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="count_c"           data-type="num">C <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="abdc_ranked_count" data-type="num">ABDC ranked <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="publication_count" data-type="num">Total <span class="arrow">&#8597;</span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr><td colspan="11"><div class="empty">Loading researchers&hellip;</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pager" id="pager"></div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap-wide">
+    <div>CITS3200 Team 20 &middot; Client: Yuanji Wen, UWA Business School</div>
+    <div>Journal rankings: ABDC 2025, Scimago, Clarivate JCR</div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+<script>
+(async function () {
+  const tbody = document.getElementById('tbody');
+  const path  = 'data/researchers.json';
+  const data  = await loadJSON(path);
+  if (!data) return showLoadError(tbody, path);
+
+  const ALL = data.researchers || [];
+  let view = ALL.slice();
+  let page = 1;
+  let sortSpecs = [{ key: 'abdc_ranked_count', dir: 'desc', type: 'num' }];
+
+  const el = id => document.getElementById(id);
+  const fUni = el('f-uni'), fFor = el('f-for'), fLevel = el('f-level'),
+        fName = el('f-name'), fRank = el('f-rank'), fSize = el('f-size');
+
+  fillSelect(fUni,   distinct(ALL, 'university'));
+  fillSelect(fFor,   distinct(ALL, 'field_of_research'));
+  fillSelect(fLevel, distinct(ALL, 'level_code'));
+
+  // deep-link from the home page: researchers.html?university=...
+  const preUni = param('university');
+  if (preUni) fUni.value = preUni;
+
+  function apply() {
+    const nameQ = fName.value.trim().toLowerCase();
+    view = ALL.filter(r =>
+      (!fUni.value   || r.university === fUni.value) &&
+      (!fFor.value   || r.field_of_research === fFor.value) &&
+      (!fLevel.value || r.level_code === fLevel.value) &&
+      (!nameQ        || r.name.toLowerCase().includes(nameQ))
+    );
+    view.sort(multiCompare(sortSpecs));
+    page = 1;
+    render();
+  }
+
+  function render() {
+    const size  = Number(fSize.value);
+    const total = view.length;
+    el('result-count').textContent = total + (total === 1 ? ' researcher' : ' researchers');
+
+    if (!total) {
+      tbody.innerHTML = '<tr><td colspan="11"><div class="empty">No researchers match these filters.</div></td></tr>';
+      el('pager').innerHTML = '';
+      return;
+    }
+
+    const start = (page - 1) * size;
+    tbody.innerHTML = view.slice(start, start + size).map((r, i) =>
+      '<tr>' +
+        '<td class="rank">' + (start + i + 1) + '</td>' +
+        '<td><a href="researcher.html?id=' + encodeURIComponent(r.id) + '">' + esc(r.name) + '</a></td>' +
+        '<td>' + val(r.field_of_research) + '</td>' +
+        '<td class="nowrap">' + val(r.level_code) + '</td>' +
+        '<td>' + val(r.university_code) + '</td>' +
+        '<td class="num">' + num(r.count_a_star) + '</td>' +
+        '<td class="num">' + num(r.count_a) + '</td>' +
+        '<td class="num">' + num(r.count_b) + '</td>' +
+        '<td class="num">' + num(r.count_c) + '</td>' +
+        '<td class="num">' + num(r.abdc_ranked_count) + '</td>' +
+        '<td class="num">' + num(r.publication_count) + '</td>' +
+      '</tr>'
+    ).join('');
+
+    renderPager(el('pager'), total, page, size, p => { page = p; render(); window.scrollTo({top:0,behavior:'smooth'}); });
+  }
+
+  const sorter = attachSorting(document.getElementById('tbl'), specs => {
+    sortSpecs = specs;
+    view.sort(multiCompare(sortSpecs));
+    page = 1;
+    render();
+  });
+  sorter.set(sortSpecs);
+
+  [fUni, fFor, fLevel, fSize].forEach(e => e.addEventListener('change', apply));
+  fName.addEventListener('input', apply);
+  fRank.addEventListener('change', () => {
+    sortSpecs = [{ key: fRank.value, dir: 'desc', type: 'num' }];
+    sorter.set(sortSpecs);
+    apply();
+  });
+  el('f-reset').addEventListener('click', () => {
+    fUni.value = fFor.value = fLevel.value = ''; fName.value = '';
+    fRank.value = 'abdc_ranked_count'; fSize.value = '50';
+    sortSpecs = [{ key: 'abdc_ranked_count', dir: 'desc', type: 'num' }];
+    sorter.set(sortSpecs);
+    apply();
+  });
+
+  el('btn-export').addEventListener('click', () => exportCSV(view, [
+    { key: 'name',              label: 'Researcher' },
+    { key: 'university',        label: 'University' },
+    { key: 'field_of_research', label: 'Field of Research' },
+    { key: 'academic_level',    label: 'Academic Level' },
+    { key: 'count_a_star',      label: 'A*' },
+    { key: 'count_a',           label: 'A' },
+    { key: 'count_b',           label: 'B' },
+    { key: 'count_c',           label: 'C' },
+    { key: 'count_unranked',    label: 'Unranked' },
+    { key: 'abdc_ranked_count', label: 'ABDC ranked total' },
+    { key: 'publication_count', label: 'Total publications' },
+  ], 'g8-researchers.csv'));
+
+  apply();
+})();
+</script>
+</body>
+</html>

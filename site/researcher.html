@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Researcher — G8 Research Output Database</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap-wide">
+    <a class="brand" href="index.html">G8 Research Output Database</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="researchers.html">Researchers</a>
+      <a href="universities.html">Universities</a>
+      <a href="documentation.html">Documentation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <a class="back-link" href="researchers.html">&larr; Back to researcher rankings</a>
+
+    <div class="banner-sample">
+      <span>&#9888;</span>
+      <div><strong>Sample data.</strong> This researcher and their publications are invented.</div>
+    </div>
+
+    <section class="card card-pad" id="head-card">
+      <div class="empty">Loading&hellip;</div>
+    </section>
+
+    <div id="pub-section">
+    <div class="toolbar" style="margin-top:22px">
+      <div class="left">
+        <input type="search" id="q" placeholder="Search publications&hellip;" autocomplete="off">
+        <label class="check"><input type="checkbox" id="only-abdc"> Only show ABDC ranked</label>
+      </div>
+      <div class="right">
+        <span class="small muted" id="pub-count"></span>
+        <button type="button" class="btn" id="btn-export">Download CSV</button>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="data table-pubs" id="tbl">
+        <!-- Explicit column widths. Without these the browser gives the title
+             column most of the table and wraps journal names over 3-4 lines.
+             Adjust here if columns are added. Must total 100%. -->
+        <colgroup>
+          <col style="width:38%"><col style="width:20%"><col style="width:7%">
+          <col style="width:8%"><col style="width:9%"><col style="width:8%">
+          <col style="width:10%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="sortable" data-key="title"            data-type="text">Publication title <span class="arrow">&#8597;</span></th>
+            <th class="sortable" data-key="journal_name"     data-type="text">Journal <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="year"         data-type="num">Year <span class="arrow">&#8597;</span></th>
+            <th class="sortable" data-key="quality_rank"     data-type="abdc">ABDC <span class="arrow">&#8597;</span></th>
+            <th class="sortable" data-key="scimago_quartile" data-type="text">Scimago <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="impact_factor" data-type="num">JIF <span class="arrow">&#8597;</span></th>
+            <th class="sortable num" data-key="cited_by_count" data-type="num">Cited by <span class="arrow">&#8597;</span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr><td colspan="7"><div class="empty">Loading publications&hellip;</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pager" id="pager"></div>
+    </div><!-- /#pub-section -->
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap-wide">
+    <div>CITS3200 Team 20 &middot; Client: Yuanji Wen, UWA Business School</div>
+    <div>Journal rankings: ABDC 2025, Scimago, Clarivate JCR</div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+<script>
+(async function () {
+  const tbody = document.getElementById('tbody');
+  const head  = document.getElementById('head-card');
+
+  const id = param('id');
+  if (!id) {
+    head.innerHTML = '<div class="empty">No researcher specified. ' +
+      '<a href="researchers.html">Choose one from the rankings.</a></div>';
+    document.getElementById('pub-section').hidden = true;
+    return;
+  }
+
+  const path = 'data/publications/' + encodeURIComponent(id) + '.json';
+  const data = await loadJSON(path);
+  if (!data) {
+    head.innerHTML = '<div class="empty">No record found for <code>' + esc(id) +
+      '</code>. <a href="researchers.html">Back to the rankings.</a></div>';
+    document.getElementById('pub-section').hidden = true;
+    return;
+  }
+
+  const r    = data.researcher || {};
+  const ALL  = data.publications || [];
+  document.title = (r.name || 'Researcher') + ' — G8 Research Output Database';
+
+  head.innerHTML =
+    '<div class="researcher-head">' +
+      '<div>' +
+        '<h1>' + esc(r.name) + '</h1>' +
+        '<div class="researcher-meta">' + val(r.university) +
+          '<span class="sep">|</span>' + val(r.field_of_research) +
+          '<span class="sep">|</span>' + val(r.academic_level) + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="tally">' +
+      ['A*','A','B','C'].map(k => {
+        const key = { 'A*':'count_a_star','A':'count_a','B':'count_b','C':'count_c' }[k];
+        return '<div class="t" data-r="' + k + '"><div class="v">' + num(r[key]) + '</div>' +
+               '<div class="k">' + k + '</div></div>';
+      }).join('') +
+      '<div class="t"><div class="v">' + num(r.count_unranked) + '</div><div class="k">Unranked</div></div>' +
+      '<div class="t"><div class="v">' + num(r.publication_count) + '</div><div class="k">Total</div></div>' +
+    '</div>';
+
+  let view = ALL.slice();
+  let page = 1;
+  const SIZE = 50;
+  let sortSpecs = [{ key: 'year', dir: 'desc', type: 'num' }];
+  view.sort(multiCompare(sortSpecs));
+
+  const el = id2 => document.getElementById(id2);
+
+  function apply() {
+    const q = el('q').value.trim().toLowerCase();
+    const onlyAbdc = el('only-abdc').checked;
+    view = ALL.filter(p =>
+      (!q || (p.title || '').toLowerCase().includes(q) || (p.journal_name || '').toLowerCase().includes(q)) &&
+      (!onlyAbdc || (p.quality_rank && p.quality_rank !== 'none'))
+    );
+    view.sort(multiCompare(sortSpecs));
+    page = 1;
+    render();
+  }
+
+  function render() {
+    const total = view.length;
+    el('pub-count').textContent = total + (total === 1 ? ' publication' : ' publications');
+
+    if (!total) {
+      tbody.innerHTML = '<tr><td colspan="7"><div class="empty">No publications match.</div></td></tr>';
+      el('pager').innerHTML = '';
+      return;
+    }
+
+    const start = (page - 1) * SIZE;
+    tbody.innerHTML = view.slice(start, start + SIZE).map(p => {
+      const href = safeUrl(p.article_url);
+      const title = href
+        ? '<a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">' + esc(p.title) + '</a>'
+        : esc(p.title);
+      return '<tr>' +
+        '<td>' + title + '</td>' +
+        '<td>' + val(p.journal_name) + '</td>' +
+        '<td class="num">' + val(p.year) + '</td>' +
+        '<td>' + abdcPill(p.quality_rank) + '</td>' +
+        '<td>' + val(p.scimago_quartile) + '</td>' +
+        '<td class="num">' + num(p.impact_factor, 1) + '</td>' +
+        '<td class="num">' + num(p.cited_by_count) + '</td>' +
+      '</tr>';
+    }).join('');
+
+    renderPager(el('pager'), total, page, SIZE, pg => { page = pg; render(); });
+  }
+
+  const sorter = attachSorting(document.getElementById('tbl'), specs => {
+    sortSpecs = specs;
+    view.sort(multiCompare(sortSpecs));
+    page = 1;
+    render();
+  });
+  sorter.set(sortSpecs);
+
+  el('q').addEventListener('input', apply);
+  el('only-abdc').addEventListener('change', apply);
+
+  el('btn-export').addEventListener('click', () => exportCSV(view, [
+    { key: 'title',            label: 'Title' },
+    { key: 'journal_name',     label: 'Journal' },
+    { key: 'issn',             label: 'ISSN' },
+    { key: 'year',             label: 'Year' },
+    { key: 'quality_rank',     label: 'ABDC' },
+    { key: 'scimago_quartile', label: 'Scimago quartile' },
+    { key: 'impact_factor',    label: 'Impact factor' },
+    { key: 'cited_by_count',   label: 'Cited by' },
+    { key: 'doi',              label: 'DOI' },
+    { key: 'article_url',      label: 'URL' },
+  ], (r.name || 'researcher').replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '-publications.csv'));
+
+  render();
+})();
+</script>
+</body>
+</html>

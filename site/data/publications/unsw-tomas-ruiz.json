@@ -1,0 +1,142 @@
+{
+ "researcher": {
+  "id": "unsw-tomas-ruiz",
+  "name": "Tomas Ruiz",
+  "university": "The University of New South Wales",
+  "university_code": "UNSW",
+  "field_of_research": "Accounting",
+  "academic_level": "Associate Lecturer",
+  "level_code": "A",
+  "publication_count": 9,
+  "abdc_ranked_count": 9,
+  "count_a_star": 1,
+  "count_a": 4,
+  "count_b": 4,
+  "count_c": 0,
+  "count_unranked": 0
+ },
+ "publications": [
+  {
+   "title": "Behavioural bank lending after IFRS adoption",
+   "journal_name": "Journal of Business Finance and Accounting",
+   "issn": "0306-686X",
+   "year": 2025,
+   "quality_rank": "B",
+   "impact_factor": 2.6,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 8,
+   "doi": "10.1086/journa.2025.3022",
+   "article_url": "https://doi.org/10.1086/journa.2025.3022",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Cross-border tax avoidance in the banking sector",
+   "journal_name": "Journal of Business Finance and Accounting",
+   "issn": "0306-686X",
+   "year": 2025,
+   "quality_rank": "B",
+   "impact_factor": 2.6,
+   "scimago_quartile": "Q2",
+   "cited_by_count": null,
+   "doi": null,
+   "article_url": null,
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Comparative market microstructure after IFRS adoption",
+   "journal_name": "Australian Journal of Management",
+   "issn": "0312-8962",
+   "year": 2023,
+   "quality_rank": "B",
+   "impact_factor": 2.1,
+   "scimago_quartile": null,
+   "cited_by_count": 101,
+   "doi": "10.1109/austra.2023.7575",
+   "article_url": "https://doi.org/10.1109/austra.2023.7575",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Dynamic dividend policy evidence from Australia",
+   "journal_name": "Financial Markets, Institutions and Instruments",
+   "issn": "0963-8008",
+   "year": 2023,
+   "quality_rank": "B",
+   "impact_factor": null,
+   "scimago_quartile": "Q3",
+   "cited_by_count": 57,
+   "doi": "10.1013/financ.2023.1011",
+   "article_url": "https://doi.org/10.1013/financ.2023.1011",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Comparative audit fees and firm value",
+   "journal_name": "Accounting Horizons",
+   "issn": "0888-7993",
+   "year": 2021,
+   "quality_rank": "A",
+   "impact_factor": null,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 201,
+   "doi": "10.1002/accoun.2021.9251",
+   "article_url": "https://doi.org/10.1002/accoun.2021.9251",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Empirical earnings management and the cost of equity",
+   "journal_name": "Journal of Banking and Finance",
+   "issn": "0378-4266",
+   "year": 2019,
+   "quality_rank": "A",
+   "impact_factor": 3.6,
+   "scimago_quartile": "Q3",
+   "cited_by_count": 332,
+   "doi": "10.1089/journa.2019.4190",
+   "article_url": "https://doi.org/10.1089/journa.2019.4190",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Cross-border IPO underpricing during monetary tightening",
+   "journal_name": "The Accounting Review",
+   "issn": "0001-4826",
+   "year": 2018,
+   "quality_rank": "A*",
+   "impact_factor": 5.4,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 4,
+   "doi": "10.1098/the-ac.2018.7899",
+   "article_url": "https://doi.org/10.1098/the-ac.2018.7899",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Behavioural earnings management in the banking sector",
+   "journal_name": "European Accounting Review",
+   "issn": "0963-8180",
+   "year": 2016,
+   "quality_rank": "A",
+   "impact_factor": 3.1,
+   "scimago_quartile": "Q2",
+   "cited_by_count": 187,
+   "doi": "10.1077/europe.2016.9541",
+   "article_url": "https://doi.org/10.1077/europe.2016.9541",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Cross-border market microstructure after IFRS adoption",
+   "journal_name": "Auditing: A Journal of Practice and Theory",
+   "issn": "0278-0380",
+   "year": 2016,
+   "quality_rank": "A",
+   "impact_factor": 2.4,
+   "scimago_quartile": "Q3",
+   "cited_by_count": 136,
+   "doi": "10.1108/auditi.2016.9343",
+   "article_url": "https://doi.org/10.1108/auditi.2016.9343",
+   "publication_type": "journal_article"
+  }
+ ],
+ "meta": {
+  "generated": "2026-09-03",
+  "is_sample_data": true,
+  "note": "SAMPLE DATA generated for the site design shell. Replace with real exports."
+ }
+}

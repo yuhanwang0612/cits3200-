@@ -1,0 +1,64 @@
+{
+ "researcher": {
+  "id": "uwa-jonas-adeyemi",
+  "name": "Jonas Adeyemi",
+  "university": "The University of Western Australia",
+  "university_code": "UWA",
+  "field_of_research": "Finance",
+  "academic_level": "Senior Lecturer",
+  "level_code": "C",
+  "publication_count": 3,
+  "abdc_ranked_count": 3,
+  "count_a_star": 1,
+  "count_a": 2,
+  "count_b": 0,
+  "count_c": 0,
+  "count_unranked": 0
+ },
+ "publications": [
+  {
+   "title": "Comparative earnings management and firm value",
+   "journal_name": "Journal of Banking and Finance",
+   "issn": "0378-4266",
+   "year": 2026,
+   "quality_rank": "A",
+   "impact_factor": 3.6,
+   "scimago_quartile": "Q1",
+   "cited_by_count": null,
+   "doi": null,
+   "article_url": null,
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Corporate tax avoidance in emerging markets",
+   "journal_name": "Contemporary Accounting Research",
+   "issn": "0823-9150",
+   "year": 2024,
+   "quality_rank": "A*",
+   "impact_factor": 3.2,
+   "scimago_quartile": null,
+   "cited_by_count": 323,
+   "doi": "10.1036/contem.2024.1194",
+   "article_url": "https://doi.org/10.1036/contem.2024.1194",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Cross-border credit risk and investor attention",
+   "journal_name": "Auditing: A Journal of Practice and Theory",
+   "issn": "0278-0380",
+   "year": 2020,
+   "quality_rank": "A",
+   "impact_factor": 2.4,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 113,
+   "doi": "10.1021/auditi.2020.9743",
+   "article_url": "https://doi.org/10.1021/auditi.2020.9743",
+   "publication_type": "journal_article"
+  }
+ ],
+ "meta": {
+  "generated": "2026-09-03",
+  "is_sample_data": true,
+  "note": "SAMPLE DATA generated for the site design shell. Replace with real exports."
+ }
+}

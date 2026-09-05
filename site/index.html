@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G8 Research Output Database</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ==== SHARED HEADER — copy this block verbatim onto every page ==== -->
+<header class="site-header">
+  <div class="wrap-wide">
+    <a class="brand" href="index.html">G8 Research Output Database</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="researchers.html">Researchers</a>
+      <a href="universities.html">Universities</a>
+      <a href="documentation.html">Documentation</a>
+    </nav>
+  </div>
+</header>
+<!-- ==== /SHARED HEADER ==== -->
+
+<main>
+  <div class="wrap">
+
+    <!-- Delete this banner when real data is wired in. -->
+    <div class="banner-sample">
+      <span>&#9888;</span>
+      <div><strong>Sample data.</strong> Every name, publication and rating on this site is
+      invented for design purposes. Nothing here is real research output.</div>
+    </div>
+
+    <div class="page-head">
+      <h1>Welcome to the G8 Research Output Database</h1>
+      <p>Publication output for Accounting and Finance researchers across Australia's Group of
+      Eight universities, classified by journal ranking. Browse by university below, or go
+      straight to the <a href="researchers.html">researcher rankings</a>.</p>
+    </div>
+
+    <div id="uni-grid" class="uni-grid">
+      <div class="empty">Loading universities&hellip;</div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ==== SHARED FOOTER — copy this block verbatim onto every page ==== -->
+<footer class="site-footer">
+  <div class="wrap-wide">
+    <div>CITS3200 Team 20 &middot; Client: Yuanji Wen, UWA Business School</div>
+    <div>Journal rankings: ABDC 2025, Scimago, Clarivate JCR</div>
+  </div>
+</footer>
+<!-- ==== /SHARED FOOTER ==== -->
+
+<script src="assets/app.js"></script>
+<script>
+(async function () {
+  const grid = document.getElementById('uni-grid');
+  const path = 'data/universities.json';
+  const data = await loadJSON(path);
+  if (!data) return showLoadError(grid, path);
+
+  const unis = data.universities || [];
+  if (!unis.length) { grid.innerHTML = '<div class="empty">No universities in the dataset.</div>'; return; }
+
+  grid.innerHTML = unis.map(u =>
+    '<a class="uni-card" href="researchers.html?university=' + encodeURIComponent(u.name) + '">' +
+      '<span class="code">' + esc(u.code) + '</span>' +
+      '<span class="name">' + esc(u.name) + '</span>' +
+      '<span class="stats">' +
+        '<span class="stat"><span class="k">Researchers</span>' +
+          '<span class="v">' + num(u.researcher_count) + '</span></span>' +
+        '<span class="stat"><span class="k">Publications</span>' +
+          '<span class="v">' + num(u.publication_count) + '</span></span>' +
+        '<span class="stat"><span class="k">ABDC ranked</span>' +
+          '<span class="v">' + num(u.abdc_ranked_count) + '</span></span>' +
+      '</span>' +
+    '</a>'
+  ).join('');
+})();
+</script>
+</body>
+</html>
