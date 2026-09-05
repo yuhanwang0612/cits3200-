@@ -5,6 +5,133 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Documentation — G8 Research Output Database</title>
 <link rel="stylesheet" href="assets/style.css">
+<style>
+/* ── Page-specific: two-column layout (sidebar TOC + content) ── */
+.doc-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .doc-layout { grid-template-columns: 1fr; }
+  .doc-toc { display: none; }
+}
+
+.doc-toc {
+  position: sticky;
+  top: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.doc-toc h4 {
+  font-size: .78rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--ink-muted);
+  margin: 0 0 12px;
+}
+.doc-toc ol {
+  margin: 0; padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.doc-toc a {
+  display: block;
+  font-size: .87rem;
+  padding: 5px 8px;
+  border-radius: 6px;
+  color: var(--ink-muted);
+  transition: background .1s, color .1s;
+}
+.doc-toc a:hover { background: var(--bg); color: var(--ink); text-decoration: none; }
+.doc-toc a.active { background: var(--blue-light); color: var(--blue-dark); font-weight: 500; }
+
+.doc-sections { display: flex; flex-direction: column; gap: 24px; }
+
+.doc-section { scroll-margin-top: 24px; }
+.doc-section h2 {
+  font-size: 1.15rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  color: var(--navy);
+}
+.doc-section h3 { font-size: .97rem; margin: 16px 0 6px; color: var(--ink); }
+
+/* field-name chips */
+code.field {
+  font-family: var(--mono);
+  font-size: .82rem;
+  background: #eff3f8;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: #1e3a5f;
+  white-space: nowrap;
+}
+
+/* schema table */
+.schema-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.schema-table th {
+  background: var(--navy);
+  color: #fff;
+  text-align: left;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .02em;
+}
+.schema-table td { padding: 7px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.schema-table tr:last-child td { border-bottom: none; }
+.schema-table tr:hover td { background: #f8fafc; }
+.schema-table .type { font-family: var(--mono); font-size: .8rem; color: var(--ink-muted); }
+.table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+
+/* metric badge row */
+.metric-badges { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 14px; }
+.mbadge {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  background: var(--bg);
+  font-size: .87rem;
+  line-height: 1.4;
+}
+.mbadge strong { display: block; font-size: .82rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--ink-muted); margin-bottom: 2px; }
+
+/* limitation callout */
+.callout {
+  background: var(--warn-bg);
+  border-left: 4px solid #d97706;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 16px;
+  font-size: .9rem;
+  margin: 8px 0;
+}
+
+/* university list */
+.uni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.uni-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  background: var(--surface);
+  font-size: .88rem;
+}
+.uni-card strong { display: block; color: var(--navy); font-size: .9rem; }
+.uni-card span { color: var(--ink-muted); font-size: .82rem; }
+</style>
 </head>
 <body>
 
@@ -15,30 +142,221 @@
       <a href="index.html">Home</a>
       <a href="researchers.html">Researchers</a>
       <a href="universities.html">Universities</a>
-      <a href="documentation.html">Documentation</a>
+      <a href="documentation.html" aria-current="page">Documentation</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <div class="page-head">
+
+    <div class="page-head" style="margin-bottom:28px;">
       <h1>Documentation</h1>
-      <p>How the data is collected, what the rankings mean, and known limitations.</p>
+      <p class="muted">How the data is collected, what the rankings mean, and known limitations.</p>
     </div>
 
-    <div class="card card-pad">
-      <h3>Stub page &mdash; owner: Yuhan Wang</h3>
-      <p class="muted">Static content page &mdash; no data loading needed. Copy this file and write
-      inside the <code>.card</code>. Worth covering: which universities are included and where each
-      one's data comes from, what ABDC / Scimago / JIF actually measure, how a publication is
-      matched to a researcher, and the known gaps.</p>
-      <p class="muted">Two limitations that should be stated here rather than discovered by the
-      client: publication counts are researcher&ndash;publication pairs, so a co-authored paper
-      counts once for each author; and repository-only scraping does not capture a researcher's
-      full output.</p>
-    </div>
-  </div>
+    <div class="doc-layout">
+
+      <!-- Sidebar TOC -->
+      <aside class="doc-toc" aria-label="On this page">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#sources">Data Sources</a></li>
+          <li><a href="#pipeline">Pipeline</a></li>
+          <li><a href="#schema">Database Schema</a></li>
+          <li><a href="#rankings">Ranking Metrics</a></li>
+          <li><a href="#limitations">Limitations</a></li>
+          <li><a href="#example">Worked Example</a></li>
+          <li><a href="#universities">Universities</a></li>
+        </ol>
+      </aside>
+
+      <!-- Content -->
+      <div class="doc-sections">
+
+        <!-- 1. Data Sources -->
+        <section class="doc-section card card-pad" id="sources">
+          <h2>1. Data Sources &amp; Joins</h2>
+          <p>Each record in the database is the result of joining three independent sources:</p>
+
+          <h3>Researcher profiles</h3>
+          <p>Staff lists are scraped directly from each university's research portal. For universities with structured staff exports (Monash, Adelaide, UQ, ANU), a <code class="field">*_staff.csv</code> is produced containing name, job title, academic level, field of research, profile URL, and ORCID where available. For universities without a structured export (UniMelb, USyd, UWA, UNSW), researcher records are synthesised from the author fields in their publication data.</p>
+
+          <h3>Publications</h3>
+          <p>Publication metadata — title, DOI, year, venue, citation counts — is fetched from the <strong>OpenAlex API</strong> using each researcher's name and ORCID as identifiers. A publication is linked to a researcher when at least one author's ORCID or display name matches. Co-authored papers are counted once per matching author, so a paper with two staff co-authors appears twice in the database.</p>
+
+          <h3>Journal rankings</h3>
+          <p>Journal quality data comes from three sources, joined to publications by ISSN (preferred) then journal name:</p>
+          <ul>
+            <li><strong>ABDC Journal Quality List 2025</strong> — sourced from <code class="field">anu_journals.csv</code>. Provides <code class="field">quality_rank</code> (A*, A, B, C) and <code class="field">abdc_edition</code>.</li>
+            <li><strong>Scimago Journal Rankings</strong> — sourced from <code class="field">scimago.csv</code>. Provides <code class="field">sjr</code>, <code class="field">sjr_quartile</code>, and <code class="field">cites_per_doc_2y</code>.</li>
+            <li><strong>Clarivate Journal Impact Factor (JCR)</strong> — the schema reserves <code class="field">impact_factor</code> and <code class="field">jcr_year</code> columns for JCR data, but these are currently <code class="field">null</code> for all journals. Populating them requires an institutional API arrangement with Clarivate that is not yet in place. Scimago's <code class="field">cites_per_doc_2y</code> serves as the equivalent metric in the current release.</li>
+          </ul>
+        </section>
+
+        <!-- 2. Pipeline -->
+        <section class="doc-section card card-pad" id="pipeline">
+          <h2>2. Standardisation Pipeline</h2>
+
+          <h3>Step 1 — Scrape</h3>
+          <p>Each university has a dedicated scraper (<code class="field">*_scraper.py</code>) that writes <code class="field">*_staff.csv</code> and <code class="field">*_publications.csv</code> to the project root.</p>
+
+          <h3>Step 2 — Merge</h3>
+          <p><code class="field">merge_publications.py</code> concatenates all eight <code class="field">*_publications.csv</code> files into <code class="field">combined_publications.csv</code>, normalising university names and column headers to a shared schema.</p>
+
+          <h3>Step 3 — Load</h3>
+          <p><code class="field">load.py</code> reads <code class="field">combined_publications.csv</code>, <code class="field">anu_journals.csv</code>, and <code class="field">jcr.csv</code> (if present), performs the ISSN-first journal join, and writes everything into the SQLite database (<code class="field">research.db</code>) via SQLAlchemy.</p>
+
+          <h3>ISSN-first matching</h3>
+          <p>Journal records are matched by ISSN whenever an ISSN is present in both the publication and the journal list. If no ISSN match is found, the pipeline falls back to a normalised journal-name comparison. This two-step approach handles journals that appear under slightly different names across sources.</p>
+
+          <h3>OpenAlex percentile</h3>
+          <p>Where available, OpenAlex returns a <code class="field">cited_by_percentile_year.min</code> value indicating a publication's citation standing within its year and field. This is stored as <code class="field">citation_percentile</code> in the database.</p>
+        </section>
+
+        <!-- 3. Schema -->
+        <section class="doc-section card card-pad" id="schema">
+          <h2>3. Database Schema</h2>
+          <p>The database (<code class="field">research.db</code>) is a SQLite file managed by SQLAlchemy. It contains four tables:</p>
+
+          <h3>Researcher</h3>
+          <div class="table-scroll">
+            <table class="schema-table">
+              <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td><code class="field">id</code></td><td class="type">INTEGER PK</td><td>Auto-increment</td></tr>
+                <tr><td><code class="field">name</code></td><td class="type">TEXT</td><td>Full name as scraped</td></tr>
+                <tr><td><code class="field">university</code></td><td class="type">TEXT</td><td>Canonical university name (see §7)</td></tr>
+                <tr><td><code class="field">job_title</code></td><td class="type">TEXT</td><td>May be null for synthesised rows</td></tr>
+                <tr><td><code class="field">academic_level</code></td><td class="type">TEXT</td><td>A–E scale where available</td></tr>
+                <tr><td><code class="field">field_of_research</code></td><td class="type">TEXT</td><td>FoR code / label</td></tr>
+                <tr><td><code class="field">profile_url</code></td><td class="type">TEXT</td><td>Link to researcher's university page</td></tr>
+                <tr><td><code class="field">orcid</code></td><td class="type">TEXT</td><td>ORCID iD where available</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Journal</h3>
+          <div class="table-scroll" style="margin-top:12px;">
+            <table class="schema-table">
+              <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td><code class="field">id</code></td><td class="type">INTEGER PK</td><td></td></tr>
+                <tr><td><code class="field">issn</code></td><td class="type">TEXT</td><td>Primary join key</td></tr>
+                <tr><td><code class="field">journal_name</code></td><td class="type">TEXT</td><td>Fallback join key</td></tr>
+                <tr><td><code class="field">quality_rank</code></td><td class="type">TEXT</td><td>ABDC: A*, A, B, C, "none", or null — see §4</td></tr>
+                <tr><td><code class="field">abdc_edition</code></td><td class="type">TEXT</td><td>E.g. "2025"</td></tr>
+                <tr><td><code class="field">sjr</code></td><td class="type">REAL</td><td>Scimago Journal Rank score</td></tr>
+                <tr><td><code class="field">sjr_quartile</code></td><td class="type">TEXT</td><td>Q1–Q4 per Scimago</td></tr>
+                <tr><td><code class="field">cites_per_doc_2y</code></td><td class="type">REAL</td><td>Scimago 2-year citation rate</td></tr>
+                <tr><td><code class="field">impact_factor</code></td><td class="type">REAL</td><td>Clarivate JCR — null if not subscribed</td></tr>
+                <tr><td><code class="field">jcr_year</code></td><td class="type">INTEGER</td><td>Year the JCR value applies to</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Publication</h3>
+          <div class="table-scroll" style="margin-top:12px;">
+            <table class="schema-table">
+              <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td><code class="field">id</code></td><td class="type">INTEGER PK</td><td></td></tr>
+                <tr><td><code class="field">researcher_id</code></td><td class="type">INTEGER FK</td><td>→ Researcher.id</td></tr>
+                <tr><td><code class="field">journal_id</code></td><td class="type">INTEGER FK</td><td>→ Journal.id (nullable)</td></tr>
+                <tr><td><code class="field">title</code></td><td class="type">TEXT</td><td></td></tr>
+                <tr><td><code class="field">doi</code></td><td class="type">TEXT</td><td></td></tr>
+                <tr><td><code class="field">year</code></td><td class="type">INTEGER</td><td></td></tr>
+                <tr><td><code class="field">cited_by_count</code></td><td class="type">INTEGER</td><td>From OpenAlex</td></tr>
+                <tr><td><code class="field">citation_percentile</code></td><td class="type">REAL</td><td>OpenAlex field-year percentile</td></tr>
+                <tr><td><code class="field">openalex_id</code></td><td class="type">TEXT</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 4. Rankings -->
+        <section class="doc-section card card-pad" id="rankings">
+          <h2>4. Ranking Metrics</h2>
+
+          <h3>ABDC Journal Quality List</h3>
+          <p>The Australian Business Deans Council (ABDC) Journal Quality List rates journals in business and economics. The 2025 edition is used. The <code class="field">quality_rank</code> field takes one of five values:</p>
+          <div class="metric-badges">
+            <div class="mbadge"><strong>A*</strong>Top 7% of journals in the field. Highest quality.</div>
+            <div class="mbadge"><strong>A</strong>High quality, well regarded by the field.</div>
+            <div class="mbadge"><strong>B</strong>Recognised quality journals in the field.</div>
+            <div class="mbadge"><strong>C</strong>Recognised journals, lower tier.</div>
+            <div class="mbadge"><strong>"none"</strong>Journal was checked against the ABDC list but received no rating. Distinct from null (not yet checked).</div>
+          </div>
+
+          <h3>Scimago Journal Rankings (SJR)</h3>
+          <p>Scimago provides three metrics sourced from Elsevier Scopus data:</p>
+          <ul>
+            <li><code class="field">sjr</code> — weighted citation score; accounts for the prestige of the citing journals.</li>
+            <li><code class="field">sjr_quartile</code> — Q1 (top 25%) to Q4 (bottom 25%) within the journal's subject category.</li>
+            <li><code class="field">cites_per_doc_2y</code> — average citations per document over the preceding two years (analogous to a 2-year impact factor).</li>
+          </ul>
+
+          <h3>Clarivate Journal Impact Factor (JCR)</h3>
+          <p>The <code class="field">impact_factor</code> and <code class="field">jcr_year</code> columns are reserved for the Clarivate 2-year Journal Impact Factor from Web of Science Journal Citation Reports. In the current release these columns are <code class="field">null</code> for all journals — populating them requires an institutional API arrangement with Clarivate. Scimago's <code class="field">cites_per_doc_2y</code> is the equivalent metric available now.</p>
+
+          <h3>OpenAlex Citation Percentile</h3>
+          <p><code class="field">citation_percentile</code> is OpenAlex's field- and year-normalised citation percentile (0–100) for the individual publication, not the journal. A value of 95 means the paper is cited more than 95% of papers in the same field published in the same year.</p>
+        </section>
+
+        <!-- 5. Limitations -->
+        <section class="doc-section card card-pad" id="limitations">
+          <h2>5. Known Limitations</h2>
+
+          <div class="callout">
+            <strong>Co-authorship counting.</strong> Publication counts are researcher–publication pairs. A paper co-authored by two staff members at the same university appears twice in the database — once for each author. Totals shown on the site reflect this.
+          </div>
+          <div class="callout" style="margin-top:10px;">
+            <strong>Repository-only coverage.</strong> Publications are identified from each university's research repository. Papers not deposited in the repository — including some older works or works under embargo — will not appear even if the researcher is otherwise present.
+          </div>
+          <div class="callout" style="margin-top:10px;">
+            <strong>Name-based matching.</strong> Researchers without an ORCID iD are matched by display name. Common names, name variants, and transliterations may produce false matches or missed matches.
+          </div>
+          <div class="callout" style="margin-top:10px;">
+            <strong>Journal coverage gaps.</strong> Not every journal has an ABDC rating, a Scimago entry, or a JCR Impact Factor. Null values in those columns indicate the journal was not found in the respective list, not that the journal is unranked.
+          </div>
+          <div class="callout" style="margin-top:10px;">
+            <strong>UniMelb, USyd, UWA, UNSW researcher metadata.</strong> These four universities do not expose a structured staff export. Researcher rows are synthesised from the author fields of publication records, so job title and profile URL are not available for most of their staff.
+          </div>
+        </section>
+
+        <!-- 6. Worked Example -->
+        <section class="doc-section card card-pad" id="example">
+          <h2>6. Worked Example</h2>
+          <p>A researcher at Monash University publishes a paper in the <em>Journal of Finance</em> (ISSN 0022-1082). Here is how the record is assembled:</p>
+          <ol>
+            <li><strong>Scraper</strong> finds the researcher on the Monash research portal and writes a row to <code class="field">monash_staff.csv</code> and a publication row to <code class="field">monash_publications.csv</code> with ISSN <code class="field">0022-1082</code>.</li>
+            <li><strong>merge_publications.py</strong> copies the row into <code class="field">combined_publications.csv</code> with <code class="field">university = "Monash University"</code>.</li>
+            <li><strong>load.py</strong> looks up <code class="field">0022-1082</code> in <code class="field">anu_journals.csv</code> and finds <code class="field">quality_rank = "A*"</code>. It then looks up the same ISSN in <code class="field">scimago.csv</code> and attaches <code class="field">sjr</code>, <code class="field">sjr_quartile</code>, and <code class="field">cites_per_doc_2y</code>. Finally it checks <code class="field">jcr.csv</code> and attaches <code class="field">impact_factor</code> if present.</li>
+            <li><strong>OpenAlex</strong> returns citation metadata and a field-year percentile, which is stored as <code class="field">citation_percentile</code> on the Publication record.</li>
+            <li>The front end displays the researcher's publication with an <span class="abdc" data-r="A*">A*</span> badge and the numerical metrics in the table columns.</li>
+          </ol>
+        </section>
+
+        <!-- 7. Universities -->
+        <section class="doc-section card card-pad" id="universities">
+          <h2>7. Universities Covered</h2>
+          <p>The database covers Accounting &amp; Finance researchers at eight Group of Eight Australian universities. The canonical name stored in the database is shown below.</p>
+          <div class="uni-grid">
+            <div class="uni-card"><strong>Monash University</strong><span>monash_publications.csv</span></div>
+            <div class="uni-card"><strong>Adelaide University</strong><span>adelaide_publications.csv</span></div>
+            <div class="uni-card"><strong>The University of Queensland</strong><span>uq_publications.csv</span></div>
+            <div class="uni-card"><strong>The University of Melbourne</strong><span>unimelb_publications.csv</span></div>
+            <div class="uni-card"><strong>The University of Sydney</strong><span>usyd_publications.csv</span></div>
+            <div class="uni-card"><strong>The University of Western Australia</strong><span>uwa_publications.csv</span></div>
+            <div class="uni-card"><strong>Australian National University</strong><span>anu_publications.csv</span></div>
+            <div class="uni-card"><strong>UNSW Sydney</strong><span>unsw_publications.csv</span></div>
+          </div>
+          <p class="muted small" style="margin-top:14px;">Scraping is limited to researchers listed under Accounting &amp; Finance on each university's business school research portal.</p>
+        </section>
+
+      </div><!-- /doc-sections -->
+    </div><!-- /doc-layout -->
+  </div><!-- /wrap -->
 </main>
 
 <footer class="site-footer">
@@ -47,6 +365,24 @@
     <div>Journal rankings: ABDC 2025, Scimago, Clarivate JCR</div>
   </div>
 </footer>
+
 <script src="assets/app.js"></script>
+<script>
+/* Active TOC highlighting */
+(function () {
+  const links = document.querySelectorAll('.doc-toc a');
+  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href')));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.doc-toc a[href="#' + e.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => s && obs.observe(s));
+})();
+</script>
 </body>
 </html>
