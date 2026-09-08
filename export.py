@@ -133,14 +133,26 @@ def build_harvest(records, pubs, publications, sources=None):
 
 
 def write(tables, out_dir=None, verbose=True):
+    """Write the four tables into `final output/<uni>/`, named `<uni>_<table>`.
+
+    The university prefix is redundant inside a folder already named after it,
+    but the agreed structure asks for it and it means a file still says which
+    university it belongs to once someone has copied it somewhere else, which
+    is how these files actually travel.
+
+    The prefix is the folder's own name, so nothing has to be passed down and
+    it cannot disagree with the folder it is written into.
+    """
     out_dir = out_dir or OUTPUT_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
+    prefix = f"{out_dir.name}_" if out_dir != OUTPUT_DIR else ""
     for name, data in tables.items():
-        with open(out_dir / f"{name}.json", "w", encoding="utf-8") as f:
+        stem = f"{prefix}{name}"
+        with open(out_dir / f"{stem}.json", "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
-        pd.DataFrame(data).to_csv(out_dir / f"{name}.csv", index=False)
+        pd.DataFrame(data).to_csv(out_dir / f"{stem}.csv", index=False)
         if verbose:
-            print(f"  {name:14} {len(data):5}  ->  {out_dir / (name + '.csv')}")
+            print(f"  {name:14} {len(data):5}  ->  {out_dir / (stem + '.csv')}")
 
 
 def export(records, pubs, out_dir=None, drop_staff_without_pubs=True,

@@ -355,7 +355,10 @@ def headers_of(records, pubs, tmp_path):
     export(records, pubs, out_dir=tmp_path, verbose=False)
     out = {}
     for table in ("staff", "publications", "journals", "harvest"):
-        with (tmp_path / f"{table}.csv").open(newline="", encoding="utf-8") as f:
+        # `final output/<uni>/<uni>_<table>.csv` - the prefix is the folder's
+        # own name, so it cannot disagree with the folder it sits in.
+        name = f"{tmp_path.name}_{table}.csv"
+        with (tmp_path / name).open(newline="", encoding="utf-8") as f:
             out[table] = next(csv.reader(f))
     return out
 
@@ -385,3 +388,27 @@ def test_the_columns_the_merge_joins_on_are_present(tmp_path):
     for required in ("name", "orcid", "doi", "title", "year", "journal_name",
                      "quality_rank", "source"):
         assert required in columns
+
+
+def test_the_output_files_are_named_for_their_university(tmp_path):
+    """The agreed structure is `final output/unsw/unsw_publications.csv`. The
+    prefix is redundant inside a folder already named unsw, but it means a file
+    still says which university it belongs to once someone has copied it out,
+    which is how these files actually travel between people."""
+    out = tmp_path / "unsw"
+    headers_of(*unsw_shaped(), out)
+    written = sorted(f.name for f in out.iterdir())
+    assert written == [
+        "unsw_harvest.csv", "unsw_harvest.json",
+        "unsw_journals.csv", "unsw_journals.json",
+        "unsw_publications.csv", "unsw_publications.json",
+        "unsw_staff.csv", "unsw_staff.json",
+    ]
+
+
+def test_the_prefix_follows_the_folder_not_the_adapter(tmp_path):
+    """A UQ export into a uq/ folder gets uq_ names, from the same code."""
+    out = tmp_path / "uq"
+    headers_of(*uq_shaped(), out)
+    assert (out / "uq_publications.csv").exists()
+    assert not (out / "publications.csv").exists()

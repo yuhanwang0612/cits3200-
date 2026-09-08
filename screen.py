@@ -56,9 +56,9 @@ institution's own record of its own staff; if they are wrong that is a
 different problem with a different fix, and silently deleting them would hide
 it. Only rows added by a retrieval step are in scope.
 
-It also writes everything it removes to `screened_out.csv` beside the other
-outputs, with the reason. Nothing disappears without a trace, because the
-judgement here is a heuristic and a human has to be able to overrule it.
+It also writes everything it removes to `<uni>_screened_out.csv` beside the
+other outputs, with the reason. Nothing disappears without a trace, because
+the judgement here is a heuristic and a human has to be able to overrule it.
 """
 
 import csv
@@ -158,7 +158,7 @@ def screen(records, pubs, out_dir=None, verbose=True):
             person["openalex_author_ids"] = []
 
     if out_dir is not None:
-        path = out_dir / "screened_out.csv"
+        path = out_dir / f"{out_dir.name}_screened_out.csv"
         out_dir.mkdir(parents=True, exist_ok=True)
         columns = ["name", "title", "year", "journal", "doi", "source",
                    "screened_reason"]
@@ -190,6 +190,6 @@ def screen(records, pubs, out_dir=None, verbose=True):
             for journal, n in worst:
                 print(f"      {n:>3}  {journal[:64]}")
         if out_dir is not None:
-            print(f"  written to {out_dir / 'screened_out.csv'} — nothing is "
-                  f"lost, and the call is reversible")
+            print(f"  written to {path.name}, nothing is lost and the call "
+                  f"is reversible")
     return kept

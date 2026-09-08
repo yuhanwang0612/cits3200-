@@ -157,7 +157,8 @@ def test_everything_removed_is_written_out_with_a_reason(tmp_path):
     """The judgement is a heuristic, so a human has to be able to overrule it."""
     sc.screen([person("Suk Lee")], contaminated(), out_dir=tmp_path,
               verbose=False)
-    with (tmp_path / "screened_out.csv").open(newline="", encoding="utf-8") as f:
+    with (tmp_path / f"{tmp_path.name}_screened_out.csv").open(
+            newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     assert len(rows) == 57
     assert all(r["name"] == "Suk Lee" for r in rows)
@@ -168,7 +169,7 @@ def test_everything_removed_is_written_out_with_a_reason(tmp_path):
 def test_no_file_is_written_when_nothing_is_removed(tmp_path):
     sc.screen([person("Fariborz Moshirian")], legitimate(), out_dir=tmp_path,
               verbose=False)
-    assert not (tmp_path / "screened_out.csv").exists()
+    assert not (tmp_path / f"{tmp_path.name}_screened_out.csv").exists()
 
 
 # ------------------------------------------------------------ the threshold

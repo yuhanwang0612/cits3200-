@@ -17,7 +17,10 @@ load_dotenv(ROOT / ".env")
 # --- paths ----------------------------------------------------------------
 
 DATA_DIR = ROOT / "data"
-OUTPUT_DIR = ROOT / "output"
+# "final output" with a space, because that is the folder name in the
+# structure the group agreed. Nothing else in the pipeline reads this
+# path; the older standalone scripts each carry their own "output".
+OUTPUT_DIR = ROOT / "final output"
 CACHE_DIR = ROOT / "cache" / "http"
 
 # Header row and rating column both differ between JQL editions:
