@@ -1,0 +1,42 @@
+{
+  "published_at": "2026-09-08T10:59:47.856844+00:00",
+  "source_run_id": "20260908T105933Z-01e58342",
+  "staff_records": 129,
+  "researcher_publication_links": 1475,
+  "unique_publications": 1316,
+  "review_counts": {
+    "pending": 65,
+    "changed": 0,
+    "approved": 0,
+    "rejected": 0,
+    "deferred": 0,
+    "total": 65
+  },
+  "team_export_rows": {
+    "UWA": 1203,
+    "UNIMELB": 264
+  },
+  "team_export_duplicate_rows_merged": 8,
+  "team_export_duplicate_groups": 7,
+  "team_export_completeness": {
+    "name": 1467,
+    "job_title": 1376,
+    "academic_level": 1462,
+    "field_of_research": 1467,
+    "profile_url": 1467,
+    "university": 1467,
+    "orcid": 1466,
+    "title": 1467,
+    "doi": 956,
+    "author_count": 1467,
+    "year": 1467,
+    "article_url": 1467,
+    "source": 1467,
+    "citation_percentile": 0,
+    "journal_name": 1051,
+    "issn": 1015,
+    "quality_rank": 0,
+    "impact_factor": 0
+  },
+  "validation_problems": []
+}

@@ -35,3 +35,15 @@ output/clarivate_cache.json
 output/clarivate_jif.csv
 
 cache/
+
+# Independent UWA/UniMelb pipeline runtime. The committed data/README.md is
+# the contract; caches, raw runs, review decisions and published revisions are
+# local/regenerable artefacts.
+/data/cache/
+/data/runs/
+/data/failed/
+/data/published/
+/data/current.json
+/data/latest_run.json
+/data/review.sqlite3*
+/data/refresh.lock

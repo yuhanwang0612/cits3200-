@@ -1,0 +1,22 @@
+# UWA and UniMelb strict snapshot
+
+These CSVs were published by the independent Python collection pipeline from
+the successful source run `20260908T105933Z-01e58342`.
+
+- `uwa/uwa_team_fields.csv`: 1,203 approved UWA researcher-publication rows.
+- `unimelb/unimelb_team_fields.csv`: 264 approved UniMelb
+  researcher-publication rows.
+- `uwa_unimelb_quality.json`: counts, review status and field-completeness audit
+  for the published revision.
+
+Both CSVs use the agreed 18 fields:
+
+`name, job_title, academic_level, field_of_research, profile_url, university,
+orcid, title, doi, author_count, year, article_url, source,
+citation_percentile, journal_name, issn, quality_rank, impact_factor`.
+
+This is a strict official-source snapshot, not a claim that every real-world
+publication has been found. Unverified UniMelb identities and staff categories
+requiring a scope decision are withheld. Missing values are left empty rather
+than inferred. The OpenAlex/ABDC/Clarivate metric columns are present for schema
+compatibility but have not yet been enriched in the independent Python path.

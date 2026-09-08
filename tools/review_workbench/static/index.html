@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Data Review Workbench</title>
+  <meta name="description" content="Local review queue for the CITS3200 research data pipeline">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">LOCAL TOOL · TEAM 20</p>
+      <h1>Research Data Review Workbench</h1>
+      <p class="subtitle">High-confidence records publish automatically; uncertain records require evidence.</p>
+    </div>
+    <button id="refreshButton" class="primary">Refresh official sources</button>
+  </header>
+
+  <main>
+    <section class="status-grid" aria-label="Pipeline status">
+      <article><span>Pipeline</span><strong id="pipelineStatus">Loading…</strong><small id="pipelineMessage"></small></article>
+      <article><span>Pending</span><strong id="pendingCount">—</strong><small>Needs a decision</small></article>
+      <article><span>Approved</span><strong id="approvedCount">—</strong><small>Saved review decisions</small></article>
+      <article><span>Published</span><strong id="publishedAt">—</strong><small id="publicationId">No dataset yet</small></article>
+    </section>
+
+    <section class="queue-guide" aria-label="Review queue explanation">
+      <strong>Not every pending item is the same.</strong>
+      <span id="queueBreakdown">Loading queue breakdown…</span>
+      Staff reviews decide whether a person belongs in scope. Identity reviews recover an exact Minerva author ID; they do not ask you to guess publications.
+    </section>
+
+    <section class="workspace">
+      <aside class="queue-panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">REVIEW QUEUE</p><h2>Uncertain records</h2></div>
+          <button id="reloadButton" class="quiet">Reload</button>
+        </div>
+        <div class="filters">
+          <select id="statusFilter" aria-label="Filter by status">
+            <option value="all">All statuses</option>
+            <option value="pending" selected>Pending</option>
+            <option value="changed">Changed</option>
+            <option value="deferred">Deferred</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+          </select>
+          <select id="typeFilter" aria-label="Filter by record type">
+            <option value="all">All record types</option>
+            <option value="staff">Staff</option>
+            <option value="publication">Publication</option>
+            <option value="identity">Minerva identity</option>
+          </select>
+          <input id="searchInput" type="search" placeholder="Search name, university…" aria-label="Search reviews">
+        </div>
+        <div id="queue" class="queue" role="list"></div>
+      </aside>
+
+      <section class="detail-panel" aria-live="polite">
+        <div id="emptyState" class="empty-state">
+          <div class="empty-mark">✓?</div>
+          <h2>Select a record to inspect</h2>
+          <p>Select a staff inclusion or Minerva identity item to see its evidence checklist and exact effect.</p>
+        </div>
+        <div id="detail" hidden>
+          <div class="detail-heading">
+            <div><p id="detailMeta" class="eyebrow"></p><h2 id="detailTitle"></h2></div>
+            <span id="detailStatus" class="badge"></span>
+          </div>
+          <div class="reason-card"><span>Why this needs review</span><p id="detailReason"></p></div>
+          <div class="guide-card">
+            <span id="guideTitle">How to check this</span>
+            <ol id="guideSteps"></ol>
+            <a id="sourceLink" target="_blank" rel="noreferrer">Open official source ↗</a>
+          </div>
+          <div id="payloadBlock">
+            <label for="payloadEditor">Proposed record</label>
+            <textarea id="payloadEditor" spellcheck="false"></textarea>
+          </div>
+          <div id="identityFields" class="identity-fields" hidden>
+            <label for="repositoryAuthorName">Exact name used by Minerva</label>
+            <input id="repositoryAuthorName" placeholder="Example, Jane">
+            <label for="internalId">Minerva internal author ID</label>
+            <input id="internalId" placeholder="Enter this or an ORCID">
+            <label for="orcid">ORCID</label>
+            <input id="orcid" placeholder="0000-0000-0000-0000">
+            <label for="evidenceUrl">Evidence URL</label>
+            <input id="evidenceUrl" type="url" placeholder="Official profile or Minerva record URL">
+            <small>Required: exact Minerva name, at least one ID, and an official evidence link. Never infer an ID from the name alone.</small>
+          </div>
+          <label for="noteInput">Reviewer note</label>
+          <textarea id="noteInput" class="note" placeholder="Optional: explain why you made this decision"></textarea>
+          <p id="actionMessage" class="action-message"></p>
+          <div class="actions">
+            <button id="rejectButton" data-decision="rejected" class="danger">Reject</button>
+            <button id="deferButton" data-decision="deferred" class="quiet">Defer</button>
+            <button id="approveButton" data-decision="approved" class="primary">Approve record</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
