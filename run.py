@@ -1,8 +1,8 @@
 """Run the pipeline for one university.
 
-    python src/run.py --uni uq
-    python src/run.py --uni uq --skip-clarivate --no-supplementary
-    python src/run.py --uni uq --refresh
+    python run.py --uni uq
+    python run.py --uni uq --skip-clarivate --no-supplementary
+    python run.py --uni uq --refresh
 """
 
 import argparse
@@ -16,10 +16,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from core import http                                   # noqa: E402
 from core.config import OUTPUT_DIR                      # noqa: E402
 from core.schema import validate                        # noqa: E402
-from enrich import abdc, clarivate, openalex as oa_enrich, scimago   # noqa: E402
+from enrichment import abdc, clarivate, openalex as oa_enrich, scimago  # noqa: E402
 from export import export                               # noqa: E402
 from screen import screen                               # noqa: E402
-from retrieve import crossref, openalex as oa_get, orcid  # noqa: E402
+from info import crossref, openalex as oa_get, orcid      # noqa: E402
 
 
 def step(n, label):
@@ -28,7 +28,8 @@ def step(n, label):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--uni", default="uq", help="adapter module name")
+    ap.add_argument("--uni", default="uq",
+                    help="module name in base_scrapers/")
     ap.add_argument("--refresh", action="store_true", help="ignore the HTTP cache")
     ap.add_argument("--no-supplementary", action="store_true",
                     help="skip ORCID/Crossref/OpenAlex retrieval")
@@ -47,7 +48,7 @@ def main():
         n, mb = http.cache_stats()
         print(f"cache: {n} responses, {mb} MB")
 
-    adapter = importlib.import_module(f"adapters.{args.uni}")
+    adapter = importlib.import_module(f"base_scrapers.{args.uni}")
     started = time.time()
 
     step(1, f"{args.uni} adapter — staff, ids, publications")

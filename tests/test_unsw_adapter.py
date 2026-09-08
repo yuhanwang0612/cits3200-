@@ -14,10 +14,10 @@ from pathlib import Path
 import pytest
 from bs4 import BeautifulSoup
 
-SRC = Path(__file__).resolve().parents[1] / "src"
-sys.path.insert(0, str(SRC))
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 
-from adapters import unsw                                    # noqa: E402
+from base_scrapers import unsw                                    # noqa: E402
 from core.schema import TYPES, validate                      # noqa: E402
 from export import build_publications                        # noqa: E402
 
@@ -290,7 +290,7 @@ def test_an_entry_with_no_structured_title_is_set_aside_not_parsed():
 
 
 def test_issns_are_empty_because_unsw_publishes_none():
-    """They have to arrive from enrich/openalex.py, which is why that module
+    """They have to arrive from enrichment/openalex.py, which is why that module
     dropping the ISSN is not a small matter for this university."""
     pubs, _ = parse(item())
     assert pubs[0]["issns"] == []
@@ -320,7 +320,7 @@ def test_a_parsed_row_satisfies_the_schema_and_survives_the_export():
 # --------------------------------------------------- columns across universities
 
 def uq_shaped():
-    """One record and one publication in the shape adapters/uq.py produces."""
+    """One record and one publication in the shape base_scrapers/uq.py produces."""
     from core.schema import blank_pub
     record = {"university": "University of Queensland", "discipline": "Finance",
               "name": "Professor Jane Doe", "name_clean": "Jane Doe",

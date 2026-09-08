@@ -11,12 +11,12 @@ from pathlib import Path
 
 import pytest
 
-SRC = Path(__file__).resolve().parents[1] / "src"
-sys.path.insert(0, str(SRC))
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 
 from core.schema import blank_pub                     # noqa: E402
-from enrich import openalex as oa_enrich              # noqa: E402
-from retrieve import openalex as oa_get               # noqa: E402
+from enrichment import openalex as oa_enrich              # noqa: E402
+from info import openalex as oa_get               # noqa: E402
 
 
 def work(doi="10.1111/jofi.12345", issn_l="0022-1082", issns=("0022-1082",),

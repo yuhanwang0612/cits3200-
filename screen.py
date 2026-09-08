@@ -18,7 +18,7 @@ noticed, because every step did exactly what it was told.
 WHY NOT A VOLUME GUARD
 ----------------------
 The obvious defence is "reject anyone whose retrieved count dwarfs their listed
-count", which is what retrieve/openalex.py does. Measured on the real data it
+count", which is what info/openalex.py does. Measured on the real data it
 does not separate the cases:
 
     Fariborz Moshirian    13 listed, 79 retrieved    legitimate
