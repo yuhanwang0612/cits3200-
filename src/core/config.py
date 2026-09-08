@@ -48,6 +48,30 @@ OA_HEADERS = dict(_POLITE)
 CR_HEADERS = dict(_POLITE)
 ORCID_HEADERS = {"Accept": "application/json"}
 
+# OpenAlex meters usage against a daily budget, and the budget is ten times
+# larger with a key than without: $1/day keyed, $0.10/day unkeyed. The key
+# itself is free from https://openalex.org/pricing — there is no paid tier
+# involved in getting one.
+#
+# .env.example has declared OPENALEX_API_KEY since the repo was created and
+# nothing read it, so every run so far has been on the $0.10 budget. That is
+# only about four hundred filter calls, which is fine for a DOI-keyed run and
+# is not fine for anything that searches: a search costs $0.001 against a
+# filter's $0.0001, so ninety-three author searches spend 93% of it.
+#
+# Sent as a header rather than a URL parameter so it cannot end up in a log,
+# and so it stays out of core.http's cache key — the cache is keyed on url and
+# params, so a key added or rotated later does not invalidate every cached
+# response.
+OPENALEX_API_KEY = os.environ.get("OPENALEX_API_KEY", "").strip()
+if OPENALEX_API_KEY and OPENALEX_API_KEY != "replace_me":
+    OA_HEADERS["Authorization"] = f"Bearer {OPENALEX_API_KEY}"
+
+
+def openalex_budget():
+    """The daily budget this run is actually working against, in dollars."""
+    return 1.00 if "Authorization" in OA_HEADERS else 0.10
+
 
 def jcr_headers():
     """Clarivate key, read at call time so importing this module never fails."""

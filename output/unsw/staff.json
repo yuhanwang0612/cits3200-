@@ -1,0 +1,852 @@
+[
+  {
+    "name": "Nicole Ang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/nicole-ang"
+  },
+  {
+    "name": "Maria Balatbat",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-5180-0057",
+    "profile_url": "https://www.unsw.edu.au/staff/maria-balatbat"
+  },
+  {
+    "name": "Francisco Barillas Bedoya",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/francisco-barillas-bedoya"
+  },
+  {
+    "name": "Dale Boccabella",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/dale-boccabella"
+  },
+  {
+    "name": "Rodney Brown",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/rodney-brown"
+  },
+  {
+    "name": "Elizabeth Carson",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-1601-4290",
+    "profile_url": "https://www.unsw.edu.au/staff/elizabeth-carson"
+  },
+  {
+    "name": "Linda Chang",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-2844-6149",
+    "profile_url": "https://www.unsw.edu.au/staff/linda-chang"
+  },
+  {
+    "name": "Wei Chen",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/wei-chen"
+  },
+  {
+    "name": "Zongxi Chen",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/zongxi-chen"
+  },
+  {
+    "name": "Mandy Cheng",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-2487-2543",
+    "profile_url": "https://www.unsw.edu.au/staff/mandy-cheng"
+  },
+  {
+    "name": "Demi Chung",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-9678-7412",
+    "profile_url": "https://www.unsw.edu.au/staff/demi-chung"
+  },
+  {
+    "name": "Oleg Chuprinin",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-4805-2451",
+    "profile_url": "https://www.unsw.edu.au/staff/oleg-chuprinin"
+  },
+  {
+    "name": "Victoria Clout",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-3442-7315",
+    "profile_url": "https://www.unsw.edu.au/staff/victoria-clout"
+  },
+  {
+    "name": "Conor Clune",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-8894-3438",
+    "profile_url": "https://www.unsw.edu.au/staff/conor-clune"
+  },
+  {
+    "name": "David Colwell",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-5180-5816",
+    "profile_url": "https://www.unsw.edu.au/staff/david-colwell"
+  },
+  {
+    "name": "Jeff Coulton",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/jeff-coulton"
+  },
+  {
+    "name": "Lili Dai",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-7512-5535",
+    "profile_url": "https://www.unsw.edu.au/staff/lili-dai"
+  },
+  {
+    "name": "Sander De Groote",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-2501-6733",
+    "profile_url": "https://www.unsw.edu.au/staff/sander-de-groote"
+  },
+  {
+    "name": "Wesley Deng",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/wesley-deng"
+  },
+  {
+    "name": "Alexander Dickerson",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0009-0001-6974-592X",
+    "profile_url": "https://www.unsw.edu.au/staff/alexander-dickerson"
+  },
+  {
+    "name": "David Feldman",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/david-feldman"
+  },
+  {
+    "name": "Tanya Fiedler",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-7002-6391",
+    "profile_url": "https://www.unsw.edu.au/staff/tanya-fiedler"
+  },
+  {
+    "name": "Kingsley Fong",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-4089-1955",
+    "profile_url": "https://www.unsw.edu.au/staff/kingsley-fong"
+  },
+  {
+    "name": "Mathieu Fournier",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-2373-5950",
+    "profile_url": "https://www.unsw.edu.au/staff/mathieu-fournier"
+  },
+  {
+    "name": "Luis Filipe Goncalves-Pinto",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/luis-filipe-goncalves-pinto"
+  },
+  {
+    "name": "Noel Harding",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-4647-4335",
+    "profile_url": "https://www.unsw.edu.au/staff/noel-harding"
+  },
+  {
+    "name": "Hien Hoang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-4939-180X",
+    "profile_url": "https://www.unsw.edu.au/staff/hien-hoang"
+  },
+  {
+    "name": "Sarowar Hossain",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/sarowar-hossain"
+  },
+  {
+    "name": "Mark Humphery-Jenner",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-0541-1541",
+    "profile_url": "https://www.unsw.edu.au/staff/mark-humphery-jenner"
+  },
+  {
+    "name": "Kerry Humphreys",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-4861-8312",
+    "profile_url": "https://www.unsw.edu.au/staff/kerry-humphreys"
+  },
+  {
+    "name": "Andrew Jackson",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-2074-2787",
+    "profile_url": "https://www.unsw.edu.au/staff/andrew-jackson"
+  },
+  {
+    "name": "Yeejin Jang",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-1143-7534",
+    "profile_url": "https://www.unsw.edu.au/staff/yeejin-jang"
+  },
+  {
+    "name": "Alexandre Jeanneret",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-4628-1955",
+    "profile_url": "https://www.unsw.edu.au/staff/alexandre-jeanneret"
+  },
+  {
+    "name": "Helen Kang",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-6258-1264",
+    "profile_url": "https://www.unsw.edu.au/staff/helen-kang"
+  },
+  {
+    "name": "Ann Kayis-Kumar",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/ann-kayis-kumar"
+  },
+  {
+    "name": "Amy Kwan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-7480-1279",
+    "profile_url": "https://www.unsw.edu.au/staff/amy-kwan"
+  },
+  {
+    "name": "Evelyn Lai",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0009-0005-0399-341X",
+    "profile_url": "https://www.unsw.edu.au/staff/evelyn-lai"
+  },
+  {
+    "name": "Suk Lee",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/suk-lee"
+  },
+  {
+    "name": "Rachael Lewis",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-4958-0811",
+    "profile_url": "https://www.unsw.edu.au/staff/rachael-lewis"
+  },
+  {
+    "name": "Leonard Leye Li",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/leonard-leye-li"
+  },
+  {
+    "name": "Youngdeok Lim",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-3715-2927",
+    "profile_url": "https://www.unsw.edu.au/staff/youngdeok-lim"
+  },
+  {
+    "name": "Yiping Lin",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-9130-0927",
+    "profile_url": "https://www.unsw.edu.au/staff/yiping-lin"
+  },
+  {
+    "name": "Benjamin Loos",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-4687-6708",
+    "profile_url": "https://www.unsw.edu.au/staff/benjamin-loos"
+  },
+  {
+    "name": "Gordon Mackenzie",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/gordon-mackenzie"
+  },
+  {
+    "name": "Fiona Martin",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/fiona-martin"
+  },
+  {
+    "name": "Ronald Masulis",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0001-5205-341X",
+    "profile_url": "https://www.unsw.edu.au/staff/ronald-masulis"
+  },
+  {
+    "name": "Edouard Mattille",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/edouard-mattille"
+  },
+  {
+    "name": "Malcolm Miller",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/malcolm-miller"
+  },
+  {
+    "name": "Gary Monroe",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-2608-0531",
+    "profile_url": "https://www.unsw.edu.au/staff/gary-monroe"
+  },
+  {
+    "name": "Kate Morgan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/kate-morgan"
+  },
+  {
+    "name": "Richard Morris",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/richard-morris1"
+  },
+  {
+    "name": "Fariborz Moshirian",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-1664-5888",
+    "profile_url": "https://www.unsw.edu.au/staff/fariborz-moshirian"
+  },
+  {
+    "name": "Peter O'Neill",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-3316-391X",
+    "profile_url": "https://www.unsw.edu.au/staff/peter-o-neill"
+  },
+  {
+    "name": "Natalie Oh",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0009-0000-6261-1366",
+    "profile_url": "https://www.unsw.edu.au/staff/natalie-oh"
+  },
+  {
+    "name": "Jerry Parwada",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-5582-7545",
+    "profile_url": "https://www.unsw.edu.au/staff/jerry-parwada"
+  },
+  {
+    "name": "Elise Payzan",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/elise-payzan"
+  },
+  {
+    "name": "Zihang Peng",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-7091-8341",
+    "profile_url": "https://www.unsw.edu.au/staff/zihang-peng"
+  },
+  {
+    "name": "Gordon Phillips",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-0782-2504",
+    "profile_url": "https://www.unsw.edu.au/staff/gordon-phillips"
+  },
+  {
+    "name": "Yee Shih Phua",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-9818-3006",
+    "profile_url": "https://www.unsw.edu.au/staff/yee-shih-phua"
+  },
+  {
+    "name": "Jonathan Reeves",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/jonathan-reeves"
+  },
+  {
+    "name": "Greg Richins",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-2955-7246",
+    "profile_url": "https://www.unsw.edu.au/staff/greg-richins"
+  },
+  {
+    "name": "Kristle Romero Cortes",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-4069-1224",
+    "profile_url": "https://www.unsw.edu.au/staff/kristle-romero-cortes"
+  },
+  {
+    "name": "Breno Schmidt",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/breno-schmidt"
+  },
+  {
+    "name": "Rik Sen",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-0579-8915",
+    "profile_url": "https://www.unsw.edu.au/staff/rik-sen"
+  },
+  {
+    "name": "Jianfeng Shen",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-0502-3212",
+    "profile_url": "https://www.unsw.edu.au/staff/jianfeng-shen"
+  },
+  {
+    "name": "Janghoon Shon",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/janghoon-shon"
+  },
+  {
+    "name": "Roger Simnett",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-9881-8553",
+    "profile_url": "https://www.unsw.edu.au/staff/roger-simnett"
+  },
+  {
+    "name": "Elvira Sojli",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-1567-8901",
+    "profile_url": "https://www.unsw.edu.au/staff/elvira-sojli"
+  },
+  {
+    "name": "Peter Swan",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0001-8406-2564",
+    "profile_url": "https://www.unsw.edu.au/staff/peter-swan"
+  },
+  {
+    "name": "Stuart Taylor",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/stuart-taylor"
+  },
+  {
+    "name": "Andrew Terry",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-0619-7233",
+    "profile_url": "https://www.unsw.edu.au/staff/andrew-terry"
+  },
+  {
+    "name": "Wing Wah Tham",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-1169-0073",
+    "profile_url": "https://www.unsw.edu.au/staff/wing-wah-tham"
+  },
+  {
+    "name": "Binh Tran-Nam",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-5516-7762",
+    "profile_url": "https://www.unsw.edu.au/staff/binh-tran-nam"
+  },
+  {
+    "name": "Ken Trotman",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-1211-2379",
+    "profile_url": "https://www.unsw.edu.au/staff/ken-trotman"
+  },
+  {
+    "name": "Robert Tumarkin",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-3164-1049",
+    "profile_url": "https://www.unsw.edu.au/staff/robert-tumarkin"
+  },
+  {
+    "name": "Kristina Vojvoda",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-5882-9223",
+    "profile_url": "https://www.unsw.edu.au/staff/kristina-vojvoda"
+  },
+  {
+    "name": "Michael Walpole",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/michael-walpole"
+  },
+  {
+    "name": "Neil Warren",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/neil-warren"
+  },
+  {
+    "name": "Yan Xu",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/yan-xu"
+  },
+  {
+    "name": "Yuchen Xu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/yuchen-xu"
+  },
+  {
+    "name": "Zhaoxia Xu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/zhaoxia-xu"
+  },
+  {
+    "name": "Li Yang",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/li-yang"
+  },
+  {
+    "name": "Henry Yip",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/henry-yip"
+  },
+  {
+    "name": "Jason Zein",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0001-7701-3721",
+    "profile_url": "https://www.unsw.edu.au/staff/jason-zein"
+  },
+  {
+    "name": "Sherry Zhang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/sherry-zhang"
+  }
+]

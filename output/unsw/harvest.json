@@ -1,0 +1,30 @@
+[
+  {
+    "university": "UNSW Sydney",
+    "source": "Crossref",
+    "last_run": "2026-09-08T02:36:56.300824+00:00",
+    "latest_year": 2026,
+    "record_count": 176
+  },
+  {
+    "university": "UNSW Sydney",
+    "source": "ORCID",
+    "last_run": "2026-09-08T02:36:56.300824+00:00",
+    "latest_year": 2025,
+    "record_count": 241
+  },
+  {
+    "university": "UNSW Sydney",
+    "source": "OpenAlex",
+    "last_run": "2026-09-08T02:36:56.300824+00:00",
+    "latest_year": 2026,
+    "record_count": 437
+  },
+  {
+    "university": "UNSW Sydney",
+    "source": "UNSW staff profile",
+    "last_run": "2026-09-08T02:36:56.300824+00:00",
+    "latest_year": 2026,
+    "record_count": 4134
+  }
+]

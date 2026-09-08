@@ -16,3 +16,10 @@ SQLAlchemy>=2.0,<3
 Flask>=3.0,<4
  
 python-dotenv>=1.0,<2
+
+# --- browser, for the two directories that render their staff list in JS ---
+# Only adapters/unsw.py needs these, and only when its roster cache is cold.
+# The imports are inside the function so a run against a warm cache does not
+# need them installed at all.
+selenium>=4.20,<5
+webdriver-manager>=4.0,<5

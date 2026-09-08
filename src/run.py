@@ -18,6 +18,7 @@ from core.config import OUTPUT_DIR                      # noqa: E402
 from core.schema import validate                        # noqa: E402
 from enrich import abdc, clarivate, openalex as oa_enrich, scimago   # noqa: E402
 from export import export                               # noqa: E402
+from screen import screen                               # noqa: E402
 from retrieve import crossref, openalex as oa_get, orcid  # noqa: E402
 
 
@@ -68,18 +69,24 @@ def main():
     step(6, "abdc (issn)")
     abdc.enrich(pubs)
 
+    # Before Clarivate, not after: a researcher's namesake contributes their
+    # journals' ISSNs to the Clarivate query set, and that is the slowest step
+    # in the run. Screening first makes it shorter as well as more correct.
+    out = OUTPUT_DIR / args.uni
+    step(7, "discipline screen")
+    pubs = screen(records, pubs, out_dir=out)
+
     if not args.skip_clarivate:
-        step(7, "clarivate jcr (issn)")
+        step(8, "clarivate jcr (issn)")
         clarivate.enrich(pubs)
 
-    step(8, "scimago (issn)")
+    step(9, "scimago (issn)")
     scimago.enrich(pubs)
 
-    step(9, "contract check")
+    step(10, "contract check")
     validate(records, pubs)
 
-    step(10, "export")
-    out = OUTPUT_DIR / args.uni
+    step(11, "export")
     export(records, pubs, out_dir=out,
            drop_staff_without_pubs=not args.keep_empty_staff)
 
