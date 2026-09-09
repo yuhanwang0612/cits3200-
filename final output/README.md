@@ -3,7 +3,11 @@
 These CSVs were published by the independent Python collection pipeline from
 the successful source run `20260908T105933Z-01e58342`.
 
-- `uwa/uwa_team_fields.csv`: 1,203 approved UWA researcher-publication rows.
+- `uwa/uwa_staff.csv`: all 45 people on the targeted official UWA department
+  rosters, including people with no matched publication.
+- `unimelb/unimelb_staff.csv`: all 99 people on the targeted official UniMelb
+  department rosters, including unresolved Minerva identities.
+- `uwa/uwa_team_fields.csv`: 1,390 verified UWA researcher-publication rows.
 - `unimelb/unimelb_team_fields.csv`: 264 approved UniMelb
   researcher-publication rows.
 - `uwa_unimelb_quality.json`: counts, review status and field-completeness audit
@@ -16,7 +20,8 @@ orcid, title, doi, author_count, year, article_url, source,
 citation_percentile, journal_name, issn, quality_rank, impact_factor`.
 
 This is a strict official-source snapshot, not a claim that every real-world
-publication has been found. Unverified UniMelb identities and staff categories
-requiring a scope decision are withheld. Missing values are left empty rather
-than inferred. The OpenAlex/ABDC/Clarivate metric columns are present for schema
+publication has been found. No person on an official target roster is excluded.
+Unverified UniMelb publication relationships are withheld, while those people
+remain visible in the staff CSV. Missing values are left empty rather than
+inferred. The OpenAlex/ABDC/Clarivate metric columns are present for schema
 compatibility but have not yet been enriched in the independent Python path.

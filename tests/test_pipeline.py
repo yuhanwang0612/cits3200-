@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 
 from pipeline.reviews import ReviewStore
-from pipeline.runner import publish_latest, read_json, run_refresh
+from pipeline.runner import read_json, run_refresh
 from pipeline.runner import TEAM_FIELDS, deduplicate_team_rows, team_rows
 from pipeline.schema import validate
 
@@ -78,36 +78,20 @@ class PipelineTests(unittest.TestCase):
         self.assertFalse(result["run"]["previous_dataset_read"])
         current = read_json(self.data / "current.json")
         published = self.data / current["directory"]
-        self.assertEqual(len(read_json(published / "staff.json")), 2)
-        self.assertEqual(len(read_json(published / "publications.json")), 2)
+        self.assertEqual(len(read_json(published / "staff.json")), 3)
+        self.assertEqual(len(read_json(published / "publications.json")), 3)
+        self.assertEqual(len(read_json(published / "uwa_staff.json")), 2)
+        self.assertEqual(len(read_json(published / "unimelb_staff.json")), 1)
+        self.assertTrue((self.data / current["uwa_staff_csv"]).exists())
+        self.assertTrue((self.data / current["unimelb_staff_csv"]).exists())
         for key in ("uwa_team_csv", "unimelb_team_csv", "combined_team_csv"):
             self.assertTrue((self.data / current[key]).exists())
         with (self.data / current["combined_team_csv"]).open(newline="", encoding="utf-8") as handle:
             reader = csv.DictReader(handle)
             self.assertEqual(tuple(reader.fieldnames or ()), TEAM_FIELDS)
             exported = list(reader)
-        self.assertEqual(len(exported), 2)
+        self.assertEqual(len(exported), 3)
         self.assertEqual({row["source"] for row in exported}, {"pure", "minerva"})
-
-        store = ReviewStore(self.data / "review.sqlite3")
-        try:
-            bob = next(row for row in store.list(entity_type="staff") if row["label"] == "Bob")
-            store.decide(bob["review_key"], "approved", note="Confirmed research appointment")
-        finally:
-            store.close()
-        publish_latest(self.data)
-        current = read_json(self.data / "current.json")
-        published = self.data / current["directory"]
-        self.assertEqual(len(read_json(published / "staff.json")), 3)
-        self.assertEqual(len(read_json(published / "publications.json")), 3)
-
-        reopened = ReviewStore(self.data / "review.sqlite3")
-        try:
-            bob = next(row for row in reopened.list(entity_type="staff") if row["label"] == "Bob")
-            self.assertEqual(bob["status"], "approved")
-            self.assertEqual(bob["note"], "Confirmed research appointment")
-        finally:
-            reopened.close()
 
     def test_forthcoming_publication_may_have_no_year(self):
         person = staff("Alice", "UWA", "Accounting", "https://example/Alice")
@@ -128,25 +112,18 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(len(duplicates), 1)
         self.assertEqual(duplicates[0]["candidate_count"], 2)
 
-    def test_changed_candidate_requires_a_new_decision(self):
+    def test_official_roster_person_is_never_gated_by_appointment_category(self):
         run_refresh(self.data, collectors=collectors(), refresh=True)
         store = ReviewStore(self.data / "review.sqlite3")
         try:
-            bob = next(row for row in store.list(entity_type="staff") if row["label"] == "Bob")
-            store.decide(bob["review_key"], "approved")
+            self.assertEqual(store.list(entity_type="staff"), [])
         finally:
             store.close()
-        publish_latest(self.data)
-
         run_refresh(self.data, collectors=collectors(changed=True), refresh=True)
-        store = ReviewStore(self.data / "review.sqlite3")
-        try:
-            bob = next(row for row in store.list(entity_type="staff") if row["label"] == "Bob")
-            self.assertEqual(bob["status"], "changed")
-        finally:
-            store.close()
         current = read_json(self.data / "current.json")
-        self.assertEqual(len(read_json(self.data / current["staff_json"])), 2)
+        people = read_json(self.data / current["staff_json"])
+        self.assertEqual(len(people), 3)
+        self.assertIn("Bob", {row["name_clean"] for row in people})
 
     def test_failed_refresh_does_not_replace_current(self):
         run_refresh(self.data, collectors=collectors(), refresh=True)

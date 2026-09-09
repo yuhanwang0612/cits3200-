@@ -53,6 +53,8 @@ class ParsingTests(unittest.TestCase):
         self.assertEqual(row["level_code"], "E")
         self.assertEqual(row["orcid"], "0000-0002-1825-0097")
         self.assertEqual(row["reported_publication_count"], 12)
+        self.assertTrue(row["official_roster_included"])
+        self.assertFalse(row["inclusion_review_required"])
 
     def test_uwa_publication_profile(self):
         html = """
@@ -118,6 +120,7 @@ class ParsingTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["name_clean"], "Jane Example")
         self.assertEqual(rows[0]["level_code"], "E")
+        self.assertTrue(rows[0]["official_roster_included"])
 
     def test_unimelb_identity_search_uses_exact_author_filter(self):
         url = unimelb._identity_search_url({"repository_author_name": "Biddle, Gary"}, 0)

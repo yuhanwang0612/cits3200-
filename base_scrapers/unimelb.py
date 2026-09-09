@@ -365,6 +365,10 @@ def _staff_from_live_html(html: str, discipline: str) -> list[dict[str, Any]]:
             "source_id": None,
             "orcid": orcid,
             "roster_source": "live official FBE staff directory",
+            "official_roster_included": True,
+            "scope_note": None,
+            "inclusion_review_required": False,
+            "inclusion_review_reason": None,
         })
     if not records:
         raise RuntimeError(f"no {discipline} staff rows found; directory markup may have changed")

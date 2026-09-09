@@ -302,6 +302,8 @@ def _parse_staff_profile(html: str, profile_url: str, discipline: str, person_ty
         orcid = re.sub(r"^https?://(?:www\.)?orcid\.org/", "", orcid_link.get("href", ""), flags=re.I) or None
     count_match = re.search(r"View all\s+(\d+)\s+research outputs", clean(soup.get_text(" ", strip=True)), re.I)
     source_id = profile_url.rstrip("/").split("/")[-1]
+    # The official department roster defines inclusion. Appointment details
+    # remain useful quality notes, but must never remove a listed person.
     review_reasons = []
     if not title_clean:
         review_reasons.append("academic level requires confirmation")
@@ -323,8 +325,10 @@ def _parse_staff_profile(html: str, profile_url: str, discipline: str, person_ty
         "orcid": orcid,
         "reported_publication_count": int(count_match.group(1)) if count_match else None,
         "person_type": person_type or None,
-        "inclusion_review_required": bool(review_reasons),
-        "inclusion_review_reason": "; ".join(review_reasons) or None,
+        "official_roster_included": True,
+        "scope_note": "; ".join(review_reasons) or None,
+        "inclusion_review_required": False,
+        "inclusion_review_reason": None,
     }
 
 

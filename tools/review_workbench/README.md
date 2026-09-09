@@ -16,9 +16,10 @@ pipeline in the background. Review decisions are stored in
 
 ## What the queue means
 
-- **Staff inclusion**: check the linked official profile and decide whether
-  the appointment fits the client-agreed scope. Approval immediately includes
-  the person and already-validated publications; rejection excludes them.
+Every person listed on the targeted official department pages is retained in
+the staff dataset. Appointment labels can be inspected as quality notes but do
+not gate inclusion.
+
 - **Minerva identity**: the staff member is already retained, but their
   publications are withheld because no unique repository identity was found.
   Verify the exact Minerva author name and either the internal author ID or

@@ -16,9 +16,10 @@ python -m pip install -r requirements.txt
 
 The UWA and University of Melbourne collectors can bootstrap from an empty
 `data/` directory. They collect Accounting and Finance staff and publications
-from official public sources, validate the records, withhold uncertain
-identities from the formal publication dataset, and publish a revision
-atomically:
+from official public sources, validate the records, and publish a revision
+atomically. Every person on the targeted official department pages remains in
+the staff dataset. Missing rank, appointment category, unresolved identity or
+zero matched publications never removes that person:
 
 ```bash
 python -m pipeline.runner refresh
@@ -30,7 +31,7 @@ the team's agreed 18-column order. Unsupported values remain empty rather than
 being guessed. Runtime caches, raw runs and review decisions are git-ignored;
 see `data/README.md` for the data contract.
 
-For local review of uncertain staff scope and UniMelb author identities:
+For local review of uncertain publication and UniMelb author identities:
 
 ```bash
 python tools/review_workbench/server.py

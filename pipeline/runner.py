@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from .reviews import ReviewStore, publication_review_key, stable_key, staff_review_key
+from .reviews import ReviewStore, publication_review_key, stable_key
 from .schema import validate
 
 
@@ -159,20 +159,8 @@ def review_candidates(
     staff: list[dict[str, Any]], publications: list[dict[str, Any]], source_quality: dict[str, Any]
 ) -> list[dict[str, Any]]:
     candidates: list[dict[str, Any]] = []
-    for record in staff:
-        if not record.get("inclusion_review_required"):
-            continue
-        candidates.append({
-            "review_key": staff_review_key(record),
-            "entity_type": "staff",
-            "university": record["university"],
-            "discipline": record["discipline"],
-            "label": record["name_clean"],
-            "reason": record.get("inclusion_review_reason") or "staff inclusion requires review",
-            "confidence": "uncertain",
-            "effect": "controls_inclusion",
-            "candidate": record,
-        })
+    # Official department rosters define staff inclusion. Appointment labels
+    # may be retained as notes, but are never approval gates.
     for record in publications:
         confidence = record.get("researcher_match_confidence") or "unknown"
         if not record.get("requires_review") and confidence == "high":
@@ -215,14 +203,7 @@ def review_candidates(
 def _approved_records(
     staff: list[dict[str, Any]], publications: list[dict[str, Any]], store: ReviewStore
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    approved_staff = []
-    for record in staff:
-        if record.get("inclusion_review_required"):
-            approved = store.approved_payload(staff_review_key(record))
-            if approved is None:
-                continue
-            record = approved
-        approved_staff.append(record)
+    approved_staff = list(staff)
 
     allowed = {
         (record["university"], record["discipline"], record["name_clean"])
@@ -370,6 +351,10 @@ def publish_run(data_root: Path, source_run_id: str) -> dict[str, Any]:
         staging.mkdir(parents=True, exist_ok=False)
         write_records(staging, "staff", approved_staff)
         write_records(staging, "publications", approved_publications)
+        uwa_staff = [row for row in approved_staff if row["university"] == "UWA"]
+        unimelb_staff = [row for row in approved_staff if row["university"] == "UNIMELB"]
+        write_records(staging, "uwa_staff", uwa_staff)
+        write_records(staging, "unimelb_staff", unimelb_staff)
         raw_exported = team_rows(approved_staff, approved_publications)
         exported, duplicate_groups = deduplicate_team_rows(raw_exported)
         uwa_export = [row for row in exported if row["university"] == "UWA"]
@@ -382,6 +367,12 @@ def publish_run(data_root: Path, source_run_id: str) -> dict[str, Any]:
             "published_at": timestamp(),
             "source_run_id": source_run_id,
             "staff_records": len(approved_staff),
+            "official_roster_staff_records": len(approved_staff),
+            "staff_records_excluded": 0,
+            "staff_by_university": {
+                "UWA": len(uwa_staff),
+                "UNIMELB": len(unimelb_staff),
+            },
             "researcher_publication_links": len(approved_publications),
             "unique_publications": len({row["publication_id"] for row in approved_publications}),
             "review_counts": store.counts(),
@@ -406,6 +397,8 @@ def publish_run(data_root: Path, source_run_id: str) -> dict[str, Any]:
             "staff_csv": str((final / "staff.csv").relative_to(data_root)),
             "publications_csv": str((final / "publications.csv").relative_to(data_root)),
             "quality_json": str((final / "quality.json").relative_to(data_root)),
+            "uwa_staff_csv": str((final / "uwa_staff.csv").relative_to(data_root)),
+            "unimelb_staff_csv": str((final / "unimelb_staff.csv").relative_to(data_root)),
             "uwa_team_csv": str((final / "uwa_team_fields.csv").relative_to(data_root)),
             "unimelb_team_csv": str((final / "unimelb_team_fields.csv").relative_to(data_root)),
             "combined_team_csv": str((final / "uwa_unimelb_team_fields.csv").relative_to(data_root)),
