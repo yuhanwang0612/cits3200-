@@ -9,7 +9,7 @@ is not documented anywhere and was found by copying the browser's headers.
 And UQ publishes each person's eSpace author id on their profile page, so
 publication retrieval is keyed on an identifier rather than a name.
 """
-
+import re   
 import time
 from urllib.parse import urljoin
 
@@ -155,6 +155,21 @@ def add_orcids(records, verbose=True):
 
 # --- 4. publications ------------------------------------------------------
 
+# eSpace types these as "Journal Article", so the only signal is the title.
+# Anchored to the START so it drops "Erratum to…", "Corrigendum to…",
+# "Editorial:…", "Rejoinder to…", "A comment on…" — but NOT real papers like
+# "…evidence from the SEC's comment letters" or "…from an editorial perspective".
+EXCLUDE_TITLE = re.compile(
+    r"^\s*['\"“”‘’]*\s*"
+    r"(erratum|corrigendum|editorial|rejoinder|(a\s+)?comments?\s+on)\b",
+    re.IGNORECASE,
+)
+
+
+def _excluded(title):
+    return bool(title and EXCLUDE_TITLE.match(title))
+
+
 def _parse(rec, person):
     jn = rec.get("fez_record_search_key_journal_name")
 
@@ -210,7 +225,11 @@ def fetch_publications(records, verbose=True):
 
             total = d.get("total", 0)
             for rec in d.get("data", []):
-                pubs.append(_parse(rec, p))
+                pub = _parse(rec, p)
+                if _excluded(pub["title"]):
+                    continue
+                pubs.append(pub)
+                
             fetched += len(d.get("data", []))
 
             if fetched >= total or not d.get("data"):
