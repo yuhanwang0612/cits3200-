@@ -10,6 +10,7 @@ import importlib
 import inspect
 import sys
 import time
+from core.clean import clean_pubs                        # noqa: E402
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -70,6 +71,9 @@ def main():
 
         step(4, "openalex retrieval")
         oa_get.retrieve(records, pubs, ror=args.ror or getattr(adapter, "ROR", None))
+
+    step("4b", "clean + filter")
+    pubs = clean_pubs(pubs, verbose=True)
 
     step(5, "openalex enrichment (doi)")
     oa_enrich.enrich(pubs)
