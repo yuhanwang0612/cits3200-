@@ -155,7 +155,7 @@ def write(tables, out_dir=None, verbose=True):
             print(f"  {name:14} {len(data):5}  ->  {out_dir / (stem + '.csv')}")
 
 
-def export(records, pubs, out_dir=None, drop_staff_without_pubs=True,
+def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
            verbose=True):
     publications = build_publications(pubs, records, verbose=verbose)
     staff = build_staff(records)

@@ -7,6 +7,7 @@
 
 import argparse
 import importlib
+import inspect
 import sys
 import time
 from pathlib import Path
@@ -37,8 +38,8 @@ def main():
                     help="skip JIF (slowest step, needs an API key)")
     ap.add_argument("--ror", default=None,
                     help="restrict OpenAlex retrieval to this institution ROR")
-    ap.add_argument("--keep-empty-staff", action="store_true",
-                    help="keep staff who have no publications (dropped by default)")
+    ap.add_argument("--drop-empty-staff", action="store_true",
+                    help="exclude staff who have no publications (all official staff are kept by default)")
     args = ap.parse_args()
 
     if args.refresh:
@@ -52,7 +53,13 @@ def main():
     started = time.time()
 
     step(1, f"{args.uni} adapter — staff, ids, publications")
-    records, pubs = adapter.collect()
+    # Adapters may maintain source-specific caches in addition to the shared
+    # HTTP cache. Pass the refresh request when their interface supports it,
+    # while remaining compatible with the existing UQ/UNSW adapters.
+    collect_kwargs = {}
+    if "refresh" in inspect.signature(adapter.collect).parameters:
+        collect_kwargs["refresh"] = args.refresh
+    records, pubs = adapter.collect(**collect_kwargs)
 
     if not args.no_supplementary:
         step(2, "orcid retrieval")
@@ -92,7 +99,7 @@ def main():
 
     step(12, "export")
     export(records, pubs, out_dir=out,
-           drop_staff_without_pubs=not args.keep_empty_staff)
+           drop_staff_without_pubs=args.drop_empty_staff)
 
     print(f"\ndone in {time.time() - started:.0f}s")
 
