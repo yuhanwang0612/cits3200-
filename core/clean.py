@@ -16,6 +16,24 @@ from datetime import date
 
 from core.schema import clean_journal, norm_type
 
+# core/clean.py
+import csv
+from pathlib import Path
+
+_OVERRIDES = {}   # doi -> {field: correct_value}
+_ov_path = Path(__file__).resolve().parents[1] / "data" / "overrides.csv"
+if _ov_path.exists():
+    with open(_ov_path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):          # columns: doi,field,value
+            _OVERRIDES.setdefault(row["doi"].lower(), {})[row["field"]] = row["value"]
+
+def _apply_overrides(pub):
+    doi = (pub.get("doi") or "").lower()
+    for field, value in _OVERRIDES.get(doi, {}).items():
+        pub[field] = value
+    return pub
+
+
 # A DOI is "10." + registrant + "/" + suffix. The "s1474667017471096" that
 # came off an ORCID external-id is not one.
 _DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$")
@@ -95,6 +113,9 @@ def is_excluded(pub):
 
 
 def clean_pub(pub, log=None):
+
+    raw_doi = (pub.get("doi") or "").strip().lower()
+
     """Normalise one publication dict in place and return it. If `log` is a
     list, append a short note for each field actually changed."""
     def note(msg):
@@ -133,6 +154,11 @@ def clean_pub(pub, log=None):
     if pub["doi"] is None and pub.get("link") and "doi.org" in pub["link"]:
         note(f"    link    {who}: dropped dead doi.org link {pub['link']!r}")
         pub["link"] = None
+
+    for field, value in _OVERRIDES.get(raw_doi, {}).items():
+        pub[field] = value
+    if pub.get("doi") and not pub.get("link"):
+        pub["link"] = f"https://doi.org/{pub['doi']}"
 
     return pub
 
