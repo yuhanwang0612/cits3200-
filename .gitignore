@@ -35,3 +35,5 @@ output/clarivate_cache.json
 output/clarivate_jif.csv
 
 cache/
+# HTTP and profile cache, rebuildable and large
+cache/
