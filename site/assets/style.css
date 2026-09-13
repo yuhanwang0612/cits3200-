@@ -154,6 +154,46 @@ main { padding: 30px 0 60px; }
 }
 .card-pad { padding: 20px 22px; }
 
+/* Dataset totals used on the university comparison page. */
+.summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 17px 12px;
+  border-left: 1px solid var(--border);
+}
+.summary-item:first-child { border-left: 0; }
+.summary-value {
+  color: var(--navy);
+  font-size: 1.45rem;
+  font-weight: 680;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+.summary-label {
+  color: var(--ink-muted);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+@media (max-width: 650px) {
+  .summary-strip { grid-template-columns: repeat(2, 1fr); }
+  .summary-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--border); }
+  .summary-item:nth-child(4) { border-top: 1px solid var(--border); }
+}
+
 /* Sample-data banner. Delete this element once real data is wired in. */
 .banner-sample {
   display: flex; gap: 10px; align-items: flex-start;
@@ -242,6 +282,9 @@ select, input[type="text"], input[type="search"] {
   min-width: 150px;
 }
 input[type="search"] { min-width: 210px; }
+.rank-field select { min-width: 245px; }
+.university-search-field { flex: 1 1 230px; }
+.university-search-field input { width: 100%; }
 
 .btn {
   font: inherit; font-size: .9rem; font-weight: 550;
@@ -297,6 +340,121 @@ table.data tbody td { padding: 10px 14px; border-top: 1px solid var(--border); v
 table.data tbody tr:nth-child(even) { background: #fafbfd; }
 table.data tbody tr:hover { background: var(--blue-light); }
 table.data td.rank { font-weight: 640; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+
+.university-table {
+  min-width: 1120px;
+  font-size: 1rem;
+  table-layout: fixed;
+}
+.university-table thead th {
+  padding: 14px 16px;
+  font-size: .88rem;
+  text-align: center;
+}
+.university-table tbody td {
+  padding: 15px 16px;
+  text-align: center;
+  vertical-align: middle;
+}
+.university-table thead th:nth-child(1) { width: 72px; }
+.university-table thead th:nth-child(2) { width: 110px; }
+.university-table thead th:nth-child(3),
+.university-table thead th:nth-child(4) { width: 185px; }
+.university-table thead th:nth-child(5) { width: 130px; }
+.university-table thead th:nth-child(6) { width: 135px; }
+.university-table thead th:nth-child(7) { width: 105px; }
+.university-table thead th:nth-child(8) { width: 135px; }
+.university-table thead th:nth-child(9) { width: 155px; }
+.university-link {
+  display: inline-block;
+  min-width: 62px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  font-family: var(--mono);
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-align: center;
+  white-space: nowrap;
+}
+table.data td.metric-primary { font-weight: 680; color: var(--navy); }
+.data-note {
+  margin-top: 14px;
+  color: var(--ink-faint);
+  font-size: .8rem;
+  text-align: right;
+}
+
+/* ---------- University rankings --------------------------- */
+.university-rankings-page { padding-top: 42px; }
+.university-rankings-wrap { max-width: 1380px; }
+.university-rankings-head { margin-bottom: 28px; }
+.university-rankings-head h1 {
+  font-size: 3rem;
+  font-weight: 650;
+  letter-spacing: -.035em;
+}
+.ranking-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 26px 32px;
+  margin-bottom: 38px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, .16);
+}
+.ranking-control label {
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.ranking-control select {
+  width: min(540px, 58vw);
+  padding: 10px 14px;
+  font-size: 1rem;
+}
+.ranking-update { padding: 11px 28px; font-size: 1rem; }
+.university-ranking-shell {
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, .13);
+}
+table.university-ranking-table {
+  min-width: 1060px;
+  table-layout: fixed;
+  font-size: 1rem;
+}
+table.university-ranking-table thead th {
+  padding: 15px 12px;
+  background: #247ed4;
+  font-size: .94rem;
+  line-height: 1.35;
+  text-align: center;
+  white-space: normal;
+  vertical-align: middle;
+}
+table.university-ranking-table thead th:first-child { width: 74px; }
+table.university-ranking-table thead th:nth-child(2) { width: 130px; }
+table.university-ranking-table tbody td {
+  padding: 15px 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+table.university-ranking-table tbody td:nth-child(2) a {
+  color: var(--ink);
+  font-weight: 650;
+}
+.rank-arrow { font-size: .8em; }
+@media (max-width: 700px) {
+  .university-rankings-head h1 { font-size: 2.15rem; }
+  .ranking-control { align-items: stretch; flex-direction: column; gap: 10px; }
+  .ranking-control select { width: 100%; }
+}
 
 .empty { padding: 44px 20px; text-align: center; color: var(--ink-muted); }
 
