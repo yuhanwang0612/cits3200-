@@ -116,6 +116,9 @@ def extract(work):
     cnp = work.get("citation_normalized_percentile") or {}
     oa = work.get("open_access") or {}
     source = ((work.get("primary_location") or {}).get("source")) or {}
+    names = [a.get("author", {}).get("display_name")
+             for a in (work.get("authorships") or [])]
+    names = [n for n in names if n]
     return {
         "citation_percentile": cnp.get("value"),
         "citation_top_10_percent": cnp.get("is_in_top_10_percent"),
@@ -133,6 +136,8 @@ def extract(work):
         # Carried so the aggregator check can be made against our row's
         # journal name rather than against OpenAlex's own source name.
         "_source_name": source.get("display_name") or None,
+        "authors": "; ".join(names) or None, 
+        "n_authors": len(names) or None,          
     }
 
 
@@ -184,6 +189,11 @@ def enrich(pubs, verbose=True):
 
         if hit.get("publisher") and not x.get("publisher"):
             x["publisher"] = hit["publisher"]
+
+        if hit.get("authors") and not x.get("authors"):        
+            x["authors"] = hit["authors"]
+        if hit.get("n_authors") and not x.get("n_authors"):    
+            x["n_authors"] = hit["n_authors"]
 
     if verbose:
         arts = [x for x in pubs if x.get("type") == "Journal Article"]
