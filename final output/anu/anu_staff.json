@@ -1,0 +1,462 @@
+[
+  {
+    "name": "Sarah Adams",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-4737-4507",
+    "profile_url": "https://rsa.anu.edu.au/people/sarah-adams"
+  },
+  {
+    "name": "Bonnie Allan",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/bonnie-allan"
+  },
+  {
+    "name": "Pat Barrett",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/pat-barrett"
+  },
+  {
+    "name": "Yue Cai",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/yue-cai"
+  },
+  {
+    "name": "Lily Chen",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/lily-chen"
+  },
+  {
+    "name": "Sorin Daniliuc",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-9541-5652",
+    "profile_url": "https://rsa.anu.edu.au/people/sorin-daniliuc"
+  },
+  {
+    "name": "Neil Fargher",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-2604-109X",
+    "profile_url": "https://rsa.anu.edu.au/people/neil-fargher"
+  },
+  {
+    "name": "Susanna Ho",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/susanna-ho"
+  },
+  {
+    "name": "Tejshree Kala",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-4145-2671",
+    "profile_url": "https://rsa.anu.edu.au/people/tejshree-kala"
+  },
+  {
+    "name": "Eunice Khoo",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-8405-0504",
+    "profile_url": "https://rsa.anu.edu.au/people/eunice-khoo"
+  },
+  {
+    "name": "Janet Lee",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-6492-0314",
+    "profile_url": "https://rsa.anu.edu.au/people/janet-lee"
+  },
+  {
+    "name": "Lingwei Li",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-9855-8082",
+    "profile_url": "https://rsa.anu.edu.au/people/lingwei-li"
+  },
+  {
+    "name": "Louise Lu",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-5383-4303",
+    "profile_url": "https://rsa.anu.edu.au/people/louise-lu"
+  },
+  {
+    "name": "Scarlett Luo",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/scarlett-luo"
+  },
+  {
+    "name": "Ian McPhee",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/ian-mcphee"
+  },
+  {
+    "name": "Juliana Ng",
+    "job_title": null,
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-1629-4731",
+    "profile_url": "https://rsa.anu.edu.au/people/juliana-ng"
+  },
+  {
+    "name": "Greg Shailer",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-4896-4197",
+    "profile_url": "https://rsa.anu.edu.au/people/greg-shailer"
+  },
+  {
+    "name": "Madhukar Singh",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-8369-863X",
+    "profile_url": "https://rsa.anu.edu.au/people/madhukar-singh"
+  },
+  {
+    "name": "Rebecca Tan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-1337-4338",
+    "profile_url": "https://rsa.anu.edu.au/people/rebecca-tan"
+  },
+  {
+    "name": "Sonali Walpola",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/sonali-walpola"
+  },
+  {
+    "name": "Alex Wang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/alex-wang"
+  },
+  {
+    "name": "Isabel Wang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-7297-3384",
+    "profile_url": "https://rsa.anu.edu.au/people/isabel-wang"
+  },
+  {
+    "name": "Kathy Wang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/kathy-wang"
+  },
+  {
+    "name": "Tracy (Kun) Wang",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/tracy-kun-wang"
+  },
+  {
+    "name": "Marvin Wee",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-3097-9091",
+    "profile_url": "https://rsa.anu.edu.au/people/marvin-wee"
+  },
+  {
+    "name": "Keturah Whitford",
+    "job_title": null,
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/keturah-whitford"
+  },
+  {
+    "name": "Mark Wilson",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/mark-wilson"
+  },
+  {
+    "name": "Steven Wu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/steven-wu"
+  },
+  {
+    "name": "Jean You",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/jean-you"
+  },
+  {
+    "name": "Wei Zeng",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/wei-zeng"
+  },
+  {
+    "name": "Lijuan Zhang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/lijuan-zhang"
+  },
+  {
+    "name": "Xiu-Ye Zhang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-5354-0655",
+    "profile_url": "https://rsa.anu.edu.au/people/xiu-ye-zhang"
+  },
+  {
+    "name": "Richard (Ruichao) Zhu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsa.anu.edu.au/people/richard-ruichao-zhu"
+  },
+  {
+    "name": "Mohammed Abdullah Al Mamun",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-2104-7479",
+    "profile_url": "https://rsfas.anu.edu.au/people/mohammed-abdullah-al-mamun"
+  },
+  {
+    "name": "Antje Berndt",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-4436-2885",
+    "profile_url": "https://rsfas.anu.edu.au/people/antje-berndt"
+  },
+  {
+    "name": "Jenni Bettman",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/jenni-bettman"
+  },
+  {
+    "name": "Hua Deng",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/hua-deng"
+  },
+  {
+    "name": "Ding Ding",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/ding-ding"
+  },
+  {
+    "name": "Jo Drienko",
+    "job_title": null,
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/jo-drienko"
+  },
+  {
+    "name": "Chao Gao",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/chao-gao"
+  },
+  {
+    "name": "Lin Hu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/lin-hu"
+  },
+  {
+    "name": "Dean Katselas",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0001-7378-0624",
+    "profile_url": "https://rsfas.anu.edu.au/people/dean-katselas"
+  },
+  {
+    "name": "Nhan Le",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/nhan-le"
+  },
+  {
+    "name": "Kun Li",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/kun-li"
+  },
+  {
+    "name": "Wai-Man (Raymond) Liu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/wai-man-raymond-liu"
+  },
+  {
+    "name": "Xin (Kelly) Liu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Australian National University",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/xin-kelly-liu"
+  }
+]

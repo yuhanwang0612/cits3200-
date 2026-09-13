@@ -18,12 +18,15 @@ export pipeline:
 ```bash
 python run.py --uni unimelb --ror 01ej9dk98
 python run.py --uni uwa --ror 03qn8fb07
+python run.py --uni anu --ror 019wvm592
 ```
 
 The UniMelb adapter uses the official Faculty of Business and Economics staff
 lists and Minerva Access. The UWA adapter uses the official Pure organisation,
-person and publication pages. Both return the shared `core.schema` contract;
-Crossref, OpenAlex, ABDC, Clarivate and Scimago remain shared pipeline steps.
+person and publication pages. The ANU adapter uses the public RSA and RSFAS
+staff directories and profile pages, not the Pure-based research portal.
+All return the shared `core.schema` contract; Crossref, OpenAlex, ABDC,
+Clarivate and Scimago remain shared pipeline steps.
 
 Official staff without a verified publication are retained by default, as the
 staff directory defines who is in scope. Use `--drop-empty-staff` only when an
