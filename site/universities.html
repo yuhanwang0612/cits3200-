@@ -3,49 +3,212 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Universities — G8 Research Output Database</title>
-<link rel="stylesheet" href="assets/style.css">
+<title>University Rankings — G8 Research Output Database</title>
+<link rel="stylesheet" href="assets/style.css?v=20260913-2">
 </head>
 <body>
+<header class="site-header"><div class="wrap-wide">
+  <a class="brand" href="index.html">G8 Research Output Database</a>
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="index.html">Home</a><a href="researchers.html">Researchers</a>
+    <a href="universities.html" aria-current="page">Universities</a>
+    <a href="documentation.html">Documentation</a>
+  </nav>
+</div></header>
 
-<header class="site-header">
-  <div class="wrap-wide">
-    <a class="brand" href="index.html">G8 Research Output Database</a>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="researchers.html">Researchers</a>
-      <a href="universities.html">Universities</a>
-      <a href="documentation.html">Documentation</a>
-    </nav>
+<main><div class="wrap">
+  <div class="banner-sample" id="sample-banner" hidden>
+    <span aria-hidden="true">&#9888;</span>
+    <div><strong>Sample data.</strong> Every name, publication and rating on this page is invented for design purposes.</div>
   </div>
-</header>
 
-<main>
-  <div class="wrap">
-    <div class="page-head">
-      <h1>Universities</h1>
-      <p>Per-university summary of Accounting and Finance research output.</p>
+  <div class="page-head">
+    <h1>University Rankings</h1>
+    <p>Compare Accounting and Finance research output across Australia's Group of Eight universities.</p>
+  </div>
+
+  <section class="summary-strip" aria-label="Dataset summary">
+    <div class="summary-item"><span class="summary-value" id="sum-universities">—</span><span class="summary-label">Universities</span></div>
+    <div class="summary-item"><span class="summary-value" id="sum-researchers">—</span><span class="summary-label">Researchers</span></div>
+    <div class="summary-item"><span class="summary-value" id="sum-publications">—</span><span class="summary-label">Publications</span></div>
+    <div class="summary-item"><span class="summary-value" id="sum-ranked">—</span><span class="summary-label">ABDC ranked</span></div>
+  </section>
+
+  <section class="card card-pad filters" aria-label="Ranking controls"><div class="filter-row">
+    <div class="field rank-field">
+      <label for="rank-by">Rank universities by</label>
+      <select id="rank-by">
+        <option value="researcher_count">Total researchers</option>
+        <option value="publication_count">Total publications</option>
+        <option value="top_tier_count">A* and A publications</option>
+        <option value="abdc_ranked_count">ABDC-ranked publications</option>
+        <option value="publications_per_researcher">Publications per researcher</option>
+      </select>
     </div>
+    <div class="field university-search-field">
+      <label for="university-search">Find a university</label>
+      <input type="search" id="university-search" placeholder="Name or code…" autocomplete="off">
+    </div>
+    <button type="button" class="btn btn-ghost" id="reset">Reset</button>
+  </div></section>
 
-    <div class="card card-pad">
-      <h3>Stub page &mdash; owner: Alex Zhao</h3>
-      <p class="muted">The header, footer, cards, filter panel, table and pager styles are all
-      ready in <code>assets/style.css</code>. The quickest start is to copy
-      <code>researchers.html</code> and change the query and the columns.</p>
-      <p class="muted">Data for this page is <code>data/universities.json</code>; the shape is
-      documented in <code>DATA-CONTRACT.md</code>. A per-university drill-down can filter
-      <code>data/researchers.json</code> on <code>university_code</code> without needing any new
-      export.</p>
+  <div class="toolbar">
+    <div class="left"><span class="small muted" id="result-count" aria-live="polite">Loading universities…</span></div>
+    <div class="right">
+      <span class="small faint">Select a university name to view its researchers.</span>
+      <button type="button" class="btn" id="download" disabled>Download CSV</button>
     </div>
   </div>
-</main>
 
-<footer class="site-footer">
-  <div class="wrap-wide">
-    <div>CITS3200 Team 20 &middot; Client: Yuanji Wen, UWA Business School</div>
-    <div>Journal rankings: ABDC 2025, Scimago, Clarivate JCR</div>
+  <div class="table-scroll" id="table-shell">
+    <table class="data university-table" id="university-table">
+      <thead><tr>
+        <th style="width:64px">Rank</th>
+        <th class="sortable" data-key="name" data-type="text">University <span class="arrow">&#8597;</span></th>
+        <th class="sortable num" data-key="accounting_researcher_count" data-type="num">Accounting researchers <span class="arrow">&#8597;</span></th>
+        <th class="sortable num" data-key="finance_researcher_count" data-type="num">Finance researchers <span class="arrow">&#8597;</span></th>
+        <th class="sortable num" data-key="researcher_count" data-type="num">Researchers <span class="arrow">&#8597;</span></th>
+        <th class="sortable num" data-key="publication_count" data-type="num">Publications <span class="arrow">&#8597;</span></th>
+        <th class="sortable num" data-key="top_tier_count" data-type="num">A* + A <span class="arrow">&#8597;</span></th>
+        <th class="sortable num" data-key="abdc_ranked_count" data-type="num">ABDC ranked <span class="arrow">&#8597;</span></th>
+        <th class="sortable num" data-key="publications_per_researcher" data-type="num">Pubs / researcher <span class="arrow">&#8597;</span></th>
+      </tr></thead>
+      <tbody id="university-body"><tr><td colspan="9"><div class="empty">Loading universities&hellip;</div></td></tr></tbody>
+    </table>
   </div>
-</footer>
+  <div class="data-note" id="data-note" hidden></div>
+</div></main>
+
+<footer class="site-footer"><div class="wrap-wide">
+  <div>CITS3200 Team 20 &middot; Client: Yuanji Wen, UWA Business School</div>
+  <div>Journal rankings: ABDC 2025, Scimago, Clarivate JCR</div>
+</div></footer>
+
 <script src="assets/app.js"></script>
+<script>
+(async function () {
+  const tbody = document.getElementById('university-body');
+  const tableShell = document.getElementById('table-shell');
+  const rankBy = document.getElementById('rank-by');
+  const search = document.getElementById('university-search');
+  const resultCount = document.getElementById('result-count');
+  const download = document.getElementById('download');
+  const results = await Promise.all([loadJSON('data/universities.json'), loadJSON('data/researchers.json')]);
+  const universityData = results[0], researcherData = results[1];
+
+  if (!universityData || !researcherData) {
+    tableShell.hidden = true;
+    showLoadError(resultCount, !universityData ? 'data/universities.json' : 'data/researchers.json');
+    return;
+  }
+
+  const researchers = researcherData.researchers || [];
+  const byCode = new Map();
+  (universityData.universities || []).forEach(u => byCode.set(u.code, {
+    code: u.code, name: u.name,
+    researcher_count: Number(u.researcher_count) || 0,
+    publication_count: Number(u.publication_count) || 0,
+    abdc_ranked_count: Number(u.abdc_ranked_count) || 0,
+    accounting_researcher_count: 0, finance_researcher_count: 0,
+    count_a_star: 0, count_a: 0
+  }));
+
+  const derived = new Map();
+  researchers.forEach(r => {
+    const code = r.university_code;
+    if (!code) return;
+    if (!derived.has(code)) derived.set(code, { researchers: 0, publications: 0, ranked: 0, accounting: 0, finance: 0, aStar: 0, a: 0 });
+    const d = derived.get(code);
+    d.researchers += 1;
+    d.publications += Number(r.publication_count) || 0;
+    d.ranked += Number(r.abdc_ranked_count) || 0;
+    d.aStar += Number(r.count_a_star) || 0;
+    d.a += Number(r.count_a) || 0;
+    const field = String(r.field_of_research || '').toLowerCase();
+    if (field === 'accounting') d.accounting += 1;
+    if (field === 'finance') d.finance += 1;
+  });
+
+  derived.forEach((d, code) => {
+    if (!byCode.has(code)) {
+      const example = researchers.find(r => r.university_code === code);
+      byCode.set(code, { code: code, name: example ? example.university : code });
+    }
+    const row = byCode.get(code);
+    row.accounting_researcher_count = d.accounting;
+    row.finance_researcher_count = d.finance;
+    row.count_a_star = d.aStar;
+    row.count_a = d.a;
+    if (row.researcher_count === undefined) row.researcher_count = d.researchers;
+    if (row.publication_count === undefined) row.publication_count = d.publications;
+    if (row.abdc_ranked_count === undefined) row.abdc_ranked_count = d.ranked;
+  });
+
+  const all = Array.from(byCode.values()).map(row => {
+    ['researcher_count','publication_count','abdc_ranked_count','accounting_researcher_count','finance_researcher_count'].forEach(k => row[k] = Number(row[k]) || 0);
+    row.top_tier_count = (Number(row.count_a_star) || 0) + (Number(row.count_a) || 0);
+    row.publications_per_researcher = row.researcher_count ? row.publication_count / row.researcher_count : null;
+    return row;
+  });
+
+  let view = all.slice();
+  let sortSpecs = [{ key: 'researcher_count', dir: 'desc', type: 'num' }];
+  const sorter = attachSorting(document.getElementById('university-table'), specs => { sortSpecs = specs; render(); });
+  sorter.set(sortSpecs);
+
+  function render() {
+    const q = search.value.trim().toLowerCase();
+    view = all.filter(u => !q || u.name.toLowerCase().includes(q) || u.code.toLowerCase().includes(q));
+    view.sort(multiCompare(sortSpecs));
+    resultCount.textContent = view.length + (view.length === 1 ? ' university' : ' universities');
+    if (!view.length) {
+      tbody.innerHTML = '<tr><td colspan="9"><div class="empty">No universities match your search.</div></td></tr>';
+      return;
+    }
+    tbody.innerHTML = view.map((u, index) => '<tr>' +
+      '<td class="rank">' + (index + 1) + '</td>' +
+      '<td><a class="university-link" title="' + esc(u.name) + ' — view researchers" href="researchers.html?university=' + encodeURIComponent(u.name) + '">' + esc(u.code) + '</a></td>' +
+      '<td class="num">' + num(u.accounting_researcher_count) + '</td>' +
+      '<td class="num">' + num(u.finance_researcher_count) + '</td>' +
+      '<td class="num metric-primary">' + num(u.researcher_count) + '</td>' +
+      '<td class="num">' + num(u.publication_count) + '</td>' +
+      '<td class="num">' + num(u.top_tier_count) + '</td>' +
+      '<td class="num">' + num(u.abdc_ranked_count) + '</td>' +
+      '<td class="num">' + num(u.publications_per_researcher, 1) + '</td></tr>').join('');
+  }
+
+  function setRanking(key) {
+    sortSpecs = [{ key: key, dir: 'desc', type: 'num' }];
+    sorter.set(sortSpecs); render();
+  }
+  rankBy.addEventListener('change', () => setRanking(rankBy.value));
+  search.addEventListener('input', render);
+  document.getElementById('reset').addEventListener('click', () => {
+    search.value = ''; rankBy.value = 'researcher_count'; setRanking('researcher_count'); search.focus();
+  });
+  download.addEventListener('click', () => exportCSV(view, [
+    {key:'code',label:'University code'}, {key:'name',label:'University'},
+    {key:'accounting_researcher_count',label:'Accounting researchers'},
+    {key:'finance_researcher_count',label:'Finance researchers'},
+    {key:'researcher_count',label:'Total researchers'}, {key:'publication_count',label:'Total publications'},
+    {key:'top_tier_count',label:'A* and A publications'}, {key:'abdc_ranked_count',label:'ABDC-ranked publications'},
+    {key:'publications_per_researcher',label:'Publications per researcher'}
+  ], 'g8-university-rankings.csv'));
+
+  const totals = all.reduce((s,u) => ({researchers:s.researchers+u.researcher_count,publications:s.publications+u.publication_count,ranked:s.ranked+u.abdc_ranked_count}), {researchers:0,publications:0,ranked:0});
+  document.getElementById('sum-universities').textContent = all.length.toLocaleString();
+  document.getElementById('sum-researchers').textContent = totals.researchers.toLocaleString();
+  document.getElementById('sum-publications').textContent = totals.publications.toLocaleString();
+  document.getElementById('sum-ranked').textContent = totals.ranked.toLocaleString();
+  const meta = universityData.meta || {};
+  document.getElementById('sample-banner').hidden = !meta.is_sample_data;
+  if (meta.generated) {
+    const note = document.getElementById('data-note'); note.hidden = false;
+    note.textContent = 'Data generated ' + meta.generated + '. Counts reflect records currently available in the database.';
+  }
+  download.disabled = false;
+  render();
+})();
+</script>
 </body>
 </html>
