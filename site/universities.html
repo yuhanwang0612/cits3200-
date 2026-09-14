@@ -3,39 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Universities — G8 Research Output Database</title>
-<link rel="stylesheet" href="assets/style.css">
+<title>University Rankings — G8 Research Output Database</title>
+<link rel="stylesheet" href="assets/style.css?v=20260913-3">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap-wide">
     <a class="brand" href="index.html">G8 Research Output Database</a>
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="researchers.html">Researchers</a>
-      <a href="universities.html">Universities</a>
+      <a href="universities.html" aria-current="page">Universities</a>
       <a href="documentation.html">Documentation</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <div class="page-head">
-      <h1>Universities</h1>
-      <p>Per-university summary of Accounting and Finance research output.</p>
+<main class="university-rankings-page">
+  <div class="wrap university-rankings-wrap">
+    <div class="banner-sample" id="sample-banner" hidden>
+      <span aria-hidden="true">&#9888;</span>
+      <div><strong>Sample data.</strong> The current site dataset is for design and integration testing.</div>
     </div>
 
-    <div class="card card-pad">
-      <h3>Stub page &mdash; owner: Alex Zhao</h3>
-      <p class="muted">The header, footer, cards, filter panel, table and pager styles are all
-      ready in <code>assets/style.css</code>. The quickest start is to copy
-      <code>researchers.html</code> and change the query and the columns.</p>
-      <p class="muted">Data for this page is <code>data/universities.json</code>; the shape is
-      documented in <code>DATA-CONTRACT.md</code>. A per-university drill-down can filter
-      <code>data/researchers.json</code> on <code>university_code</code> without needing any new
-      export.</p>
+    <div class="page-head university-rankings-head">
+      <h1>University Rankings</h1>
+    </div>
+
+    <section class="ranking-control" aria-label="University ranking controls">
+      <label for="rank-by">Rank by:</label>
+      <select id="rank-by">
+        <option value="total_researchers">Total number of researchers</option>
+        <option value="total_articles">Total number of articles produced</option>
+        <option value="abdc_a_star_a">Total number of articles with A* or A rank journal</option>
+        <option value="avg_jif">Average JIF of all articles</option>
+        <option value="avg_jif_5">Average 5-year JIF of all articles</option>
+        <option value="avg_articles">Average number of articles per researcher</option>
+      </select>
+      <button type="button" class="btn ranking-update" id="update">Update</button>
+    </section>
+
+    <div class="table-scroll university-ranking-shell" id="table-shell">
+      <table class="data university-ranking-table">
+        <thead id="ranking-head"></thead>
+        <tbody id="ranking-body">
+          <tr><td><div class="empty">Loading universities&hellip;</div></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </main>
@@ -46,6 +61,162 @@
     <div>Journal rankings: ABDC 2025, Scimago, Clarivate JCR</div>
   </div>
 </footer>
+
 <script src="assets/app.js"></script>
+<script>
+(async function () {
+  const head = document.getElementById('ranking-head');
+  const body = document.getElementById('ranking-body');
+  const shell = document.getElementById('table-shell');
+  const rankBy = document.getElementById('rank-by');
+  const results = await Promise.all([
+    loadJSON('data/universities.json'),
+    loadJSON('data/researchers.json')
+  ]);
+  const universityData = results[0];
+  const researcherData = results[1];
+
+  if (!universityData || !researcherData) {
+    shell.innerHTML = '';
+    showLoadError(shell, !universityData ? 'data/universities.json' : 'data/researchers.json');
+    return;
+  }
+
+  const displayCodes = { ADL: 'UA', UOM: 'UM', MON: 'MONASH' };
+  const rows = new Map();
+  (universityData.universities || []).forEach(u => rows.set(u.code, {
+    code: u.code,
+    display_code: displayCodes[u.code] || u.code,
+    name: u.name,
+    researcher_count: Number(u.researcher_count) || 0,
+    article_count: Number(u.publication_count) || 0,
+    top_count: firstNumber(u, ['top_tier_count', 'abdc_a_star_a_count']),
+    avg_jif: firstNumber(u, ['avg_jif', 'average_jif']),
+    avg_jif_5: firstNumber(u, ['avg_jif_5', 'average_5_year_jif']),
+    accounting: blankField(),
+    finance: blankField()
+  }));
+
+  function blankField() {
+    return { researchers: 0, articles: 0, top: 0, jifSum: 0, jifN: 0, jif5Sum: 0, jif5N: 0 };
+  }
+  function firstNumber(object, keys) {
+    for (const key of keys) {
+      if (object[key] !== null && object[key] !== undefined && object[key] !== '') {
+        const value = Number(object[key]);
+        if (!Number.isNaN(value)) return value;
+      }
+    }
+    return null;
+  }
+
+  (researcherData.researchers || []).forEach(r => {
+    const code = r.university_code;
+    if (!code) return;
+    if (!rows.has(code)) rows.set(code, {
+      code: code, display_code: displayCodes[code] || code,
+      name: r.university || code, researcher_count: 0, article_count: 0,
+      top_count: null, avg_jif: null, avg_jif_5: null,
+      accounting: blankField(), finance: blankField()
+    });
+    const row = rows.get(code);
+    const key = String(r.field_of_research || '').toLowerCase();
+    if (key !== 'accounting' && key !== 'finance') return;
+    const field = row[key];
+    field.researchers += 1;
+    field.articles += Number(r.publication_count) || 0;
+    field.top += (Number(r.count_a_star) || 0) + (Number(r.count_a) || 0);
+    const jif = firstNumber(r, ['avg_jif', 'average_jif']);
+    const jif5 = firstNumber(r, ['avg_jif_5', 'average_5_year_jif']);
+    if (jif !== null) { field.jifSum += jif; field.jifN += 1; }
+    if (jif5 !== null) { field.jif5Sum += jif5; field.jif5N += 1; }
+  });
+
+  const all = Array.from(rows.values()).map(row => {
+    const derivedResearchers = row.accounting.researchers + row.finance.researchers;
+    const derivedArticles = row.accounting.articles + row.finance.articles;
+    const derivedTop = row.accounting.top + row.finance.top;
+    if (!row.researcher_count) row.researcher_count = derivedResearchers;
+    if (!row.article_count) row.article_count = derivedArticles;
+    if (row.top_count === null) row.top_count = derivedTop;
+    row.avg_articles = row.researcher_count ? row.article_count / row.researcher_count : null;
+    row.accounting.avg_articles = row.accounting.researchers ? row.accounting.articles / row.accounting.researchers : null;
+    row.finance.avg_articles = row.finance.researchers ? row.finance.articles / row.finance.researchers : null;
+    row.accounting.avg_jif = row.accounting.jifN ? row.accounting.jifSum / row.accounting.jifN : null;
+    row.finance.avg_jif = row.finance.jifN ? row.finance.jifSum / row.finance.jifN : null;
+    row.accounting.avg_jif_5 = row.accounting.jif5N ? row.accounting.jif5Sum / row.accounting.jif5N : null;
+    row.finance.avg_jif_5 = row.finance.jif5N ? row.finance.jif5Sum / row.finance.jif5N : null;
+    return row;
+  });
+
+  const modes = {
+    total_researchers: {
+      labels: ['Total Researchers (Accounting)', 'Total Researchers (Finance)', 'Total Researchers'],
+      values: r => [r.accounting.researchers, r.finance.researchers, r.researcher_count],
+      score: r => r.researcher_count,
+      decimals: 0
+    },
+    total_articles: {
+      labels: ['Total Researchers (Accounting)', 'Total Researchers (Finance)', 'No. of Articles (Accounting)', 'No. of Articles (Finance)', 'Total Articles'],
+      values: r => [r.accounting.researchers, r.finance.researchers, r.accounting.articles, r.finance.articles, r.article_count],
+      score: r => r.article_count,
+      decimals: 0
+    },
+    abdc_a_star_a: {
+      labels: ['Total Researchers (Accounting)', 'Total Researchers (Finance)', 'No. of A*/A Articles (Accounting)', 'No. of A*/A Articles (Finance)', 'A*/A Articles'],
+      values: r => [r.accounting.researchers, r.finance.researchers, r.accounting.top, r.finance.top, r.top_count],
+      score: r => r.top_count,
+      decimals: 0
+    },
+    avg_jif: {
+      labels: ['Total Researchers (Accounting)', 'Total Researchers (Finance)', 'Avg. JIF (Accounting)', 'Avg. JIF (Finance)', 'Avg. JIF'],
+      values: r => [r.accounting.researchers, r.finance.researchers, r.accounting.avg_jif, r.finance.avg_jif, r.avg_jif],
+      score: r => r.avg_jif,
+      decimals: 2
+    },
+    avg_jif_5: {
+      labels: ['Total Researchers (Accounting)', 'Total Researchers (Finance)', 'Avg. 5-Year JIF (Accounting)', 'Avg. 5-Year JIF (Finance)', 'Avg. 5-Year JIF'],
+      values: r => [r.accounting.researchers, r.finance.researchers, r.accounting.avg_jif_5, r.finance.avg_jif_5, r.avg_jif_5],
+      score: r => r.avg_jif_5,
+      decimals: 2
+    },
+    avg_articles: {
+      labels: ['Total Researchers (Accounting)', 'Total Researchers (Finance)', 'Avg. Articles/Researcher (Accounting)', 'Avg. Articles/Researcher (Finance)', 'Avg. Articles/Researcher'],
+      values: r => [r.accounting.researchers, r.finance.researchers, r.accounting.avg_articles, r.finance.avg_articles, r.avg_articles],
+      score: r => r.avg_articles,
+      decimals: 2
+    }
+  };
+
+  function compareScores(a, b, mode) {
+    const x = mode.score(a), y = mode.score(b);
+    const xm = x === null || x === undefined;
+    const ym = y === null || y === undefined;
+    if (xm && ym) return a.display_code.localeCompare(b.display_code);
+    if (xm) return 1;
+    if (ym) return -1;
+    return y - x || a.display_code.localeCompare(b.display_code);
+  }
+
+  function metric(value, decimals) {
+    if (value === null || value === undefined || Number.isNaN(Number(value))) return na();
+    return decimals ? Number(value).toFixed(decimals) : String(Math.round(Number(value)));
+  }
+
+  function render() {
+    const mode = modes[rankBy.value];
+    const ranked = all.slice().sort((a, b) => compareScores(a, b, mode));
+    head.innerHTML = '<tr><th>Rank<br><span class="rank-arrow">&#9660;</span></th><th>University</th>' +
+      mode.labels.map(label => '<th>' + esc(label) + '</th>').join('') + '</tr>';
+    body.innerHTML = ranked.map((row, index) => '<tr><td class="rank">' + (index + 1) + '</td>' +
+      '<td><a title="' + esc(row.name) + ' — view researchers" href="researchers.html?university=' + encodeURIComponent(row.name) + '">' + esc(row.display_code) + '</a></td>' +
+      mode.values(row).map(value => '<td>' + metric(value, mode.decimals) + '</td>').join('') + '</tr>').join('');
+  }
+
+  document.getElementById('update').addEventListener('click', render);
+  document.getElementById('sample-banner').hidden = !(universityData.meta || {}).is_sample_data;
+  render();
+})();
+</script>
 </body>
 </html>
