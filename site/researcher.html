@@ -25,13 +25,34 @@
 
     <a class="back-link" href="researchers.html">&larr; Back to researcher rankings</a>
 
-    <div class="banner-sample">
+    <!-- Hidden until the loaded file says meta.is_sample_data is true. It used
+         to be hard-coded visible, which meant that once real data was wired in
+         the banner sat on top of it and told the client their own researchers
+         were invented. Same pattern as universities.html. -->
+    <div class="banner-sample" id="sample-banner" hidden>
       <span>&#9888;</span>
       <div><strong>Sample data.</strong> This researcher and their publications are invented.</div>
     </div>
 
     <section class="card card-pad" id="head-card">
       <div class="empty">Loading&hellip;</div>
+    </section>
+
+    <!-- Shown instead of the toolbar and table when this researcher has no
+         publications at all. Nine of UNSW's 95 staff are in this state, four of
+         them Professors, so it is a real page a client will open and not an
+         edge case. Offering a search box and a download button over nothing
+         made it read as a fault in the site. -->
+    <section class="card card-pad" id="none-card" hidden>
+      <div class="empty">
+        <strong>No publications recorded for this researcher.</strong>
+        <div class="small" style="margin-top:8px">
+          Their university profile page lists none, and no further work was
+          recovered from ORCID, Crossref or OpenAlex. That usually means an
+          adjunct or practice appointment, or a profile that has not been filled
+          in, rather than a researcher who has not published.
+        </div>
+      </div>
     </section>
 
     <div id="pub-section">
@@ -109,9 +130,30 @@
     return;
   }
 
+  // Only claim the data is invented if the file says so.
+  if (data.meta && data.meta.is_sample_data) {
+    document.getElementById('sample-banner').hidden = false;
+  }
+
   const r    = data.researcher || {};
   const ALL  = data.publications || [];
   document.title = (r.name || 'Researcher') + ' — G8 Research Output Database';
+
+  /* The two identifiers that answer "is this the right person". Both are
+     already in the staff export; they are rendered only when the exporter
+     sends them, so the page is unchanged for a file that omits them. The ORCID
+     is the more useful of the two: names collide across the eight universities
+     and an ORCID does not. */
+  const links = [];
+  const profile = safeUrl(r.profile_url);
+  if (r.orcid) {
+    links.push('<a href="https://orcid.org/' + encodeURIComponent(r.orcid) + '"' +
+               ' target="_blank" rel="noopener noreferrer">ORCID ' + esc(r.orcid) + '</a>');
+  }
+  if (profile) {
+    links.push('<a href="' + esc(profile) + '" target="_blank" rel="noopener noreferrer">' +
+               'University profile</a>');
+  }
 
   head.innerHTML =
     '<div class="researcher-head">' +
@@ -120,6 +162,10 @@
         '<div class="researcher-meta">' + val(r.university) +
           '<span class="sep">|</span>' + val(r.field_of_research) +
           '<span class="sep">|</span>' + val(r.academic_level) + '</div>' +
+        (links.length
+          ? '<div class="researcher-meta researcher-links">' +
+              links.join('<span class="sep">|</span>') + '</div>'
+          : '') +
       '</div>' +
     '</div>' +
     '<div class="tally">' +
@@ -130,7 +176,25 @@
       }).join('') +
       '<div class="t"><div class="v">' + num(r.count_unranked) + '</div><div class="k">Unranked</div></div>' +
       '<div class="t"><div class="v">' + num(r.publication_count) + '</div><div class="k">Total</div></div>' +
-    '</div>';
+    '</div>' +
+    /* Without this the unranked count reads as a gap in our data. It is mostly
+       not: ABDC rates business, economics and finance journals and nothing
+       else, so a law review, a medical journal or a conference paper cannot be
+       rated by it however good it is. One researcher here has 103 of 142 in
+       that position. */
+    (ALL.length
+      ? '<p class="small muted" style="margin:14px 0 0">Unranked means the outlet is not in the ' +
+        'ABDC 2025 list, which covers business, economics and finance journals only. ' +
+        'Law, medical and conference outlets fall outside it and are not rated here.</p>'
+      : '');
+
+  // No publications at all is a different situation from a filter matching
+  // nothing, and needs a different page: no search box, no download button.
+  if (!ALL.length) {
+    document.getElementById('pub-section').hidden = true;
+    document.getElementById('none-card').hidden = false;
+    return;
+  }
 
   let view = ALL.slice();
   let page = 1;

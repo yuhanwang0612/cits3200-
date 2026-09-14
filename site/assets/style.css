@@ -206,6 +206,12 @@ main { padding: 30px 0 60px; }
   margin-bottom: 22px;
 }
 .banner-sample strong { font-weight: 650; }
+/* `display: flex` above is a class selector, so it beats the browser's own
+   [hidden] { display: none } on specificity and the hidden attribute silently
+   does nothing. Both researcher.html and universities.html hide this banner
+   that way, so without this line neither can ever turn it off and the site
+   tells the client real data is invented. */
+.banner-sample[hidden] { display: none; }
 
 /* ---------- 5. University cards (home) --------------------- */
 /* Eight universities. Fixed column counts (4 / 2 / 1) rather than auto-fill,
@@ -492,6 +498,13 @@ table.university-ranking-table tbody td:nth-child(2) a {
 .researcher-head h1 { margin-bottom: .15rem; }
 .researcher-meta { color: var(--ink-muted); font-size: .95rem; }
 .researcher-meta .sep { margin: 0 7px; color: var(--border-firm); }
+
+/* ORCID and university profile links under the name. Sits a little tighter
+   than the line above it so the two read as one block of identity. */
+.researcher-links { margin-top: 4px; font-size: .88rem; }
+.researcher-links a { color: var(--blue); text-decoration: none; }
+.researcher-links a:hover,
+.researcher-links a:focus-visible { text-decoration: underline; }
 
 .tally { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 4px; }
 .tally .t {
