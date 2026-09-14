@@ -1,0 +1,442 @@
+[
+  {
+    "name": "Alex Yang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "alex-yang-2",
+    "orcid": "0000-0003-1973-260X",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/alex-yang-2/"
+  },
+  {
+    "name": "Alex Zhang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "alex-zhang",
+    "orcid": "0000-0003-2089-0365",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/alex-zhang/"
+  },
+  {
+    "name": "Collette Chesters",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "collette-chesters",
+    "orcid": "0009-0006-4135-7219",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/collette-chesters/"
+  },
+  {
+    "name": "David Gilchrist",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "david-gilchrist",
+    "orcid": "0000-0003-0937-8934",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
+  },
+  {
+    "name": "Dhammi Azariadis",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "dr-dhammi-azariadis",
+    "orcid": "0009-0003-8724-2749",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/dr-dhammi-azariadis/"
+  },
+  {
+    "name": "Fangbin Lin",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "fangbin-lin",
+    "orcid": "0000-0002-3859-0160",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/fangbin-lin/"
+  },
+  {
+    "name": "George Shan",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "george-shan",
+    "orcid": "0000-0002-5157-312X",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/george-shan/"
+  },
+  {
+    "name": "Glen Hutchings",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "glen-hutchings",
+    "orcid": "0000-0003-0500-656X",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/glen-hutchings/"
+  },
+  {
+    "name": "Leo Langa",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "leo-langa",
+    "orcid": null,
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/leo-langa/"
+  },
+  {
+    "name": "Lyndie Bayne",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "lyndie-bayne",
+    "orcid": "0000-0002-2991-0265",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/lyndie-bayne/"
+  },
+  {
+    "name": "Mark Holub",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "mark-holub",
+    "orcid": "0009-0004-8670-0370",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/mark-holub/"
+  },
+  {
+    "name": "Nikki Schonfeldt",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "nikki-schonfeldt",
+    "orcid": "0000-0002-9726-6475",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/nikki-schonfeldt/"
+  },
+  {
+    "name": "Phil Hancock",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "phil-hancock",
+    "orcid": "0000-0002-6281-9869",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/phil-hancock/"
+  },
+  {
+    "name": "Prerana Agrawal",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "prerana-agrawal",
+    "orcid": "0000-0001-9410-4844",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/prerana-agrawal/"
+  },
+  {
+    "name": "Ricky Chung",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "ricky-chung",
+    "orcid": "0000-0003-1875-7346",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/ricky-chung/"
+  },
+  {
+    "name": "Simeng Liu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "simeng-liu",
+    "orcid": "0000-0002-6062-8743",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/simeng-liu/"
+  },
+  {
+    "name": "Stijn Masschelein",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "stijn-masschelein",
+    "orcid": "0000-0002-1291-6222",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/stijn-masschelein/"
+  },
+  {
+    "name": "Thanesvary Subraamanniam",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "thanesvary-subraamanniam",
+    "orcid": "0000-0002-3040-9152",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/thanesvary-subraamanniam/"
+  },
+  {
+    "name": "Vincent Chong",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "vincent-chong",
+    "orcid": "0000-0003-4207-2718",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/vincent-chong/"
+  },
+  {
+    "name": "Warrick Van Zyl",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Western Australia",
+    "field_of_research": "Accounting",
+    "source_id": "warrick-van-zyl",
+    "orcid": "0000-0001-8029-6611",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/warrick-van-zyl/"
+  },
+  {
+    "name": "Chloe Ho",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "choy-yeing-ho",
+    "orcid": "0000-0001-6168-0490",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/choy-yeing-ho/"
+  },
+  {
+    "name": "Daniel Cahill",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "daniel-cahill",
+    "orcid": "0000-0001-5676-4913",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/daniel-cahill/"
+  },
+  {
+    "name": "Dirk Baur",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "dirk-baur",
+    "orcid": "0000-0002-0185-0424",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/dirk-baur/"
+  },
+  {
+    "name": "Duc Vo",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "duc-vo",
+    "orcid": "0000-0001-7823-0349",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/duc-vo/"
+  },
+  {
+    "name": "Elizabeth Ooi",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "elizabeth-ooi",
+    "orcid": "0000-0002-0868-4561",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/elizabeth-ooi/"
+  },
+  {
+    "name": "Farhan Shazia",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "farhan-shazia",
+    "orcid": "0000-0003-2162-6451",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/farhan-shazia/"
+  },
+  {
+    "name": "Frank Liu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "frank-liu",
+    "orcid": "0000-0001-9962-3854",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/frank-liu/"
+  },
+  {
+    "name": "Gary Smith",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "gary-smith",
+    "orcid": null,
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/gary-smith/"
+  },
+  {
+    "name": "Joey Yang",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "joey-yang",
+    "orcid": "0000-0001-7655-0568",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/joey-yang/"
+  },
+  {
+    "name": "Kam Chan",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "kam-chan",
+    "orcid": "0000-0002-3868-3842",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/kam-chan/"
+  },
+  {
+    "name": "Kevin Na",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "kevin-na",
+    "orcid": null,
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/kevin-na/"
+  },
+  {
+    "name": "Lai Hoang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "lai-hoang",
+    "orcid": "0000-0002-4147-4611",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/lai-hoang/"
+  },
+  {
+    "name": "Lee Smales",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "lee-smales",
+    "orcid": "0000-0002-9094-9089",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/lee-smales/"
+  },
+  {
+    "name": "Mosharraf Hossain",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "mosharraf-hossain",
+    "orcid": "0000-0002-6453-4437",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/mosharraf-hossain/"
+  },
+  {
+    "name": "Paul Gerrans",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "paul-gerrans",
+    "orcid": "0000-0002-5690-7141",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/paul-gerrans/"
+  },
+  {
+    "name": "Raymond Da Silva Rosa",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "raymond-da-silva-rosa",
+    "orcid": "0000-0002-3610-3461",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/raymond-da-silva-rosa/"
+  },
+  {
+    "name": "Rui Zhong",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "rui-zhong",
+    "orcid": "0000-0002-9347-4146",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/rui-zhong/"
+  },
+  {
+    "name": "Russell Poskitt",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "russell-poskitt",
+    "orcid": null,
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/russell-poskitt/"
+  },
+  {
+    "name": "Thao Hoang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "thao-hoang",
+    "orcid": "0000-0003-0741-1817",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/thao-hoang/"
+  },
+  {
+    "name": "Vincent Chong",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "vincent-chong",
+    "orcid": "0000-0003-4207-2718",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/vincent-chong/"
+  },
+  {
+    "name": "Yeok-Fun Mah",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "yeok-fun-mah",
+    "orcid": null,
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/yeok-fun-mah/"
+  },
+  {
+    "name": "Yihui Lan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "yihui-lan",
+    "orcid": "0000-0002-0312-9868",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/yihui-lan/"
+  },
+  {
+    "name": "Yuanji Wen",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "yuanji-wen",
+    "orcid": "0000-0002-9725-5741",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/yuanji-wen/"
+  },
+  {
+    "name": "Zhengge Zhou",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Western Australia",
+    "field_of_research": "Finance",
+    "source_id": "zhengge-zhou",
+    "orcid": "0009-0008-5926-2570",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/zhengge-zhou/"
+  }
+]

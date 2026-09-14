@@ -1,0 +1,23 @@
+[
+  {
+    "university": "University of Western Australia",
+    "source": "Crossref",
+    "last_run": "2026-09-13T08:30:20.255793+00:00",
+    "latest_year": 2026,
+    "record_count": 188
+  },
+  {
+    "university": "University of Western Australia",
+    "source": "ORCID",
+    "last_run": "2026-09-13T08:30:20.255793+00:00",
+    "latest_year": 2026,
+    "record_count": 355
+  },
+  {
+    "university": "University of Western Australia",
+    "source": "UWA Pure",
+    "last_run": "2026-09-13T08:30:20.255793+00:00",
+    "latest_year": 2026,
+    "record_count": 1395
+  }
+]

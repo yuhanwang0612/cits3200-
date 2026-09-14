@@ -23,6 +23,9 @@ engine = create_engine(
 
 Session = sessionmaker(bind=engine)
 
+from admin import make_admin_bp
+app.register_blueprint(make_admin_bp(Session))
+
 
 @app.route("/")
 def index():
