@@ -18,6 +18,7 @@
 <body>
   <div class="admin-wrap">
     <h1>Edit publications</h1>
+    <p style="margin-top:-0.5rem;"><a href="/admin/logout">Log out</a></p>
     <p class="muted">Download every publication as an Excel sheet, edit the cells,
       then upload it back. Rows are matched on <code>publication_id</code>; leave that
       cell blank to add a new publication (it will need a valid <code>researcher_id</code>).
@@ -58,6 +59,11 @@
       try {
         const res = await fetch("/api/admin/publications?dry_run=" + (dry ? "1" : "0"),
                                 { method: "POST", body: fd });
+        if (res.status === 401) {
+          show("Your session expired. Please log in again.");
+          setTimeout(() => location.href = "/admin/login", 1200);
+          return;
+        }
         const data = await res.json();
         if (data.error) { show("Error: " + data.error); return; }
 

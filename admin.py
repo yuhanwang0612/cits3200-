@@ -1,33 +1,36 @@
-"""Admin: download all publications as Excel, edit, upload to change the DB.
+"""Admin: log in, download all publications as Excel, edit, upload to change the DB.
 
-Plugs into the existing app.py as a Blueprint (see the two-line hook at the
-bottom of this docstring) so app.py itself doesn't need rewriting.
+Plugs into app.py as a Blueprint (same two lines as before):
 
-    # in app.py, after `app = Flask(...)` and the engine/Session setup:
     from admin import make_admin_bp
     app.register_blueprint(make_admin_bp(Session))
 
-Round-trip key: `publication_id`. It's downloaded in the sheet and matched
-exactly on upload, so an edited row updates the right publication with no
-DOI/title guessing. A row with a blank publication_id is treated as a NEW
-publication (insert) and needs a researcher_id.
+The blueprint loads .env and sets app.secret_key itself (see _setup), so app.py
+needs no extra wiring. Put these in your .env (already gitignored):
 
-Scope (iteration 1): only columns that live on the Publication table are
-editable. researcher_name / university / journal_name / issn are included in
-the sheet for context but ignored on upload — journal fields live on the
-Journal table and editing them per-row is ambiguous (rename the journal vs
-re-point the publication), so that's deliberately left for a later pass.
+    SECRET_KEY=<some long random string>
+    ADMIN_PASSWORD=<the admin password>
 
-NOTE: edits change site/research.db directly. Re-running load.py rebuilds the
-DB from the CSVs and will overwrite them — see option B we discussed.
+Auth: a single shared admin password (fine for this tool). On success the
+session cookie carries is_admin=True; every admin route below is gated.
+Pages redirect to /admin/login when logged out; /api/ routes return 401 so the
+upload page can show a message instead of an HTML redirect.
+
+Round-trip key: publication_id (see upsert_from_dataframe). Editing scope is
+the Publication table only; researcher/journal columns are context, ignored on
+upload. Edits change site/research.db directly and are overwritten by load.py.
 """
 
 from __future__ import annotations
 
+import hmac
 import io
+import os
+from functools import wraps
 
 import pandas as pd
-from flask import Blueprint, jsonify, request, send_file, send_from_directory
+from flask import (Blueprint, abort, jsonify, redirect, request, send_file,
+                   send_from_directory, session)
 
 from models import Publication, Researcher, Journal
 
@@ -84,12 +87,31 @@ def _coerce(col, v):
 
 
 # --------------------------------------------------------------------------
+# auth
+# --------------------------------------------------------------------------
+
+def _admin_password():
+    return os.environ.get("ADMIN_PASSWORD")
+
+
+def login_required(view):
+    @wraps(view)
+    def wrapped(*args, **kwargs):
+        if session.get("is_admin"):
+            return view(*args, **kwargs)
+        if request.path.startswith("/api/"):
+            return jsonify(error="not authenticated"), 401
+        return redirect("/admin/login")
+    return wrapped
+
+
+# --------------------------------------------------------------------------
 # export
 # --------------------------------------------------------------------------
 
-def _export_dataframe(session) -> pd.DataFrame:
+def _export_dataframe(session_):
     rows = []
-    q = (session.query(Publication)
+    q = (session_.query(Publication)
          .join(Researcher, Publication.researcher_id == Researcher.researcher_id)
          .outerjoin(Journal, Publication.journal_id == Journal.journal_id)
          .order_by(Researcher.university, Researcher.name, Publication.year.desc()))
@@ -113,7 +135,7 @@ def _export_dataframe(session) -> pd.DataFrame:
 # import / upsert
 # --------------------------------------------------------------------------
 
-def upsert_from_dataframe(session, df: pd.DataFrame, *, dry_run: bool = False) -> dict:
+def upsert_from_dataframe(session_, df, *, dry_run=False):
     df = df.where(pd.notna(df), None)
     df.columns = [str(c).strip() for c in df.columns]
     summary = {"inserted": 0, "updated": 0, "skipped": 0, "errors": []}
@@ -124,7 +146,7 @@ def upsert_from_dataframe(session, df: pd.DataFrame, *, dry_run: bool = False) -
             values = {c: _coerce(c, raw.get(c)) for c in EDITABLE_COLS if c in raw}
 
             if pid is not None:
-                pub = session.get(Publication, pid)
+                pub = session_.get(Publication, pid)
                 if pub is None:
                     summary["errors"].append(
                         {"row": i, "error": f"{KEY_COL} {pid} not found"})
@@ -140,7 +162,7 @@ def upsert_from_dataframe(session, df: pd.DataFrame, *, dry_run: bool = False) -
                     summary["updated"] += 1
             else:
                 rid = _as_int(raw.get("researcher_id"))
-                if rid is None or session.get(Researcher, rid) is None:
+                if rid is None or session_.get(Researcher, rid) is None:
                     summary["errors"].append(
                         {"row": i, "error": "new row needs a valid researcher_id"})
                     continue
@@ -149,20 +171,20 @@ def upsert_from_dataframe(session, df: pd.DataFrame, *, dry_run: bool = False) -
                         {"row": i, "error": "new row needs a title"})
                     continue
                 jname = _clean(raw.get("journal_name"))
-                journal = (session.query(Journal)
+                journal = (session_.query(Journal)
                            .filter(Journal.journal_name == jname).first()
                            if jname else None)
                 if not dry_run:
-                    session.add(Publication(researcher_id=rid,
-                                            journal=journal, **values))
+                    session_.add(Publication(researcher_id=rid,
+                                             journal=journal, **values))
                 summary["inserted"] += 1
         except Exception as e:                                # noqa: BLE001
             summary["errors"].append({"row": i, "error": str(e)})
 
     if summary["errors"]:
-        session.rollback()          # all-or-nothing: one bad row aborts the batch
+        session_.rollback()          # all-or-nothing: one bad row aborts the batch
     elif not dry_run:
-        session.commit()
+        session_.commit()
     return summary
 
 
@@ -173,17 +195,73 @@ def upsert_from_dataframe(session, df: pd.DataFrame, *, dry_run: bool = False) -
 def make_admin_bp(Session):
     bp = Blueprint("admin", __name__)
 
+    @bp.record_once
+    def _setup(state):
+        app = state.app
+        try:
+            from dotenv import load_dotenv
+            load_dotenv()
+        except Exception:                                     # noqa: BLE001
+            pass
+        if not app.secret_key:
+            app.secret_key = os.environ.get("SECRET_KEY") or "dev-insecure-change-me"
+            if app.secret_key == "dev-insecure-change-me":
+                app.logger.warning(
+                    "SECRET_KEY not set - using an insecure dev key. "
+                    "Set SECRET_KEY in .env before deploying.")
+        if not _admin_password():
+            app.logger.warning(
+                "ADMIN_PASSWORD not set - admin login is disabled until it is "
+                "set in .env.")
+
+    # ---- close the static-file bypass ----
+    # app.py serves the whole site/ folder at the root (static_url_path="").
+    # That would otherwise expose the admin page shell and, worse, the SQLite
+    # DB (site/research.db) to anyone. This app-level guard runs before the
+    # static handler on every request.
+    @bp.before_app_request
+    def _guard_public_files():
+        path = request.path
+        if path == "/admin.html":
+            return redirect("/admin")          # force through the gated route
+        if path.endswith(".db"):
+            abort(404)                          # never serve the database file
+
+    # ---- auth routes ----
+
+    @bp.get("/admin/login")
+    def login_page():
+        return send_from_directory("site", "admin_login.html")
+
+    @bp.post("/admin/login")
+    def login_submit():
+        expected = _admin_password()
+        supplied = request.form.get("password", "")
+        if expected and hmac.compare_digest(supplied, expected):
+            session["is_admin"] = True
+            return redirect("/admin")
+        return redirect("/admin/login?error=1")
+
+    @bp.get("/admin/logout")
+    def logout():
+        session.clear()
+        return redirect("/admin/login")
+
+    # ---- gated admin routes ----
+
     @bp.get("/admin")
+    @login_required
     def admin_page():
         return send_from_directory("site", "admin.html")
 
     @bp.get("/api/admin/publications.xlsx")
+    @login_required
     def download_xlsx():
-        session = Session()
+        s = Session()
         try:
-            df = _export_dataframe(session)
+            df = _export_dataframe(s)
         finally:
-            session.close()
+            s.close()
         buf = io.BytesIO()
         with pd.ExcelWriter(buf, engine="openpyxl") as w:
             df.to_excel(w, index=False, sheet_name="publications")
@@ -194,6 +272,7 @@ def make_admin_bp(Session):
                       "spreadsheetml.sheet"))
 
     @bp.post("/api/admin/publications")
+    @login_required
     def upload_xlsx():
         f = request.files.get("file")
         if f is None:
@@ -206,11 +285,11 @@ def make_admin_bp(Session):
             return jsonify(error=f"sheet must include a {KEY_COL} column"), 400
 
         dry = request.args.get("dry_run") == "1"
-        session = Session()
+        s = Session()
         try:
-            result = upsert_from_dataframe(session, df, dry_run=dry)
+            result = upsert_from_dataframe(s, df, dry_run=dry)
         finally:
-            session.close()
+            s.close()
         result["dry_run"] = dry
         return jsonify(result), (200 if not result["errors"] else 422)
 
