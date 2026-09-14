@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Edit publications</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .admin-wrap { max-width: 820px; margin: 2rem auto; padding: 0 1rem; }
+    .admin-step { margin: 1.5rem 0; padding: 1rem 1.25rem; border: 1px solid #ddd; border-radius: 8px; }
+    .admin-step h2 { margin-top: 0; font-size: 1.1rem; }
+    .muted { color: #666; font-size: 0.9rem; }
+    #result { white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 0.85rem;
+              background: #f6f6f6; border-radius: 6px; padding: 0.75rem; margin-top: 0.75rem; }
+    .warn { color: #a15c00; }
+  </style>
+</head>
+<body>
+  <div class="admin-wrap">
+    <h1>Edit publications</h1>
+    <p class="muted">Download every publication as an Excel sheet, edit the cells,
+      then upload it back. Rows are matched on <code>publication_id</code>; leave that
+      cell blank to add a new publication (it will need a valid <code>researcher_id</code>).
+      Only the publication columns are saved — <code>researcher_name</code>,
+      <code>university</code>, <code>journal_name</code> and <code>issn</code> are shown for
+      context and ignored on upload.</p>
+
+    <div class="admin-step">
+      <h2>1. Download</h2>
+      <a class="btn" href="/api/admin/publications.xlsx">Download publications.xlsx</a>
+    </div>
+
+    <div class="admin-step">
+      <h2>2. Upload edited sheet</h2>
+      <input type="file" id="file" accept=".xlsx">
+      <label style="display:block; margin:0.6rem 0;">
+        <input type="checkbox" id="dry" checked>
+        Preview only (dry run) — don't change the database yet
+      </label>
+      <button class="btn" id="btn-upload" type="button">Upload</button>
+      <div id="result" hidden></div>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById("btn-upload");
+    const out = document.getElementById("result");
+
+    btn.addEventListener("click", async () => {
+      const f = document.getElementById("file").files[0];
+      if (!f) { show("Choose a file first."); return; }
+      const dry = document.getElementById("dry").checked;
+
+      const fd = new FormData();
+      fd.append("file", f);
+      show("Working…");
+      btn.disabled = true;
+      try {
+        const res = await fetch("/api/admin/publications?dry_run=" + (dry ? "1" : "0"),
+                                { method: "POST", body: fd });
+        const data = await res.json();
+        if (data.error) { show("Error: " + data.error); return; }
+
+        let msg = (data.dry_run ? "PREVIEW (nothing saved)\n" : "SAVED TO DATABASE\n")
+          + `inserted: ${data.inserted}\nupdated:  ${data.updated}\nskipped:  ${data.skipped}\n`
+          + `errors:   ${data.errors.length}`;
+        if (data.errors.length) {
+          msg += "\n\n" + data.errors.slice(0, 20)
+            .map(e => `  row ${e.row}: ${e.error}`).join("\n");
+          if (data.errors.length > 20) msg += `\n  …and ${data.errors.length - 20} more`;
+          msg += "\n\n(no rows were saved — fix these and re-upload)";
+        }
+        show(msg);
+      } catch (e) {
+        show("Upload failed: " + e);
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    function show(text) { out.hidden = false; out.textContent = text; }
+  </script>
+</body>
+</html>
