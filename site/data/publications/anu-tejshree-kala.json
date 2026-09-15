@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "anu-tejshree-kala",
+    "name": "Tejshree Kala",
+    "job_title": "Lecturer",
+    "academic_level": "Lecturer",
+    "level_code": "B",
+    "university": "The Australian National University",
+    "university_code": "ANU",
+    "field_of_research": "Accounting",
+    "orcid": "0000-0003-4145-2671",
+    "profile_url": "https://rsa.anu.edu.au/people/tejshree-kala",
+    "publication_count": 2,
+    "abdc_ranked_count": 2,
+    "count_a_star": 2,
+    "count_a": 0,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "Are Individual Analysts' Responses to Management Forecasts Conditioned by Managers' Forecasting Track Records?",
+      "journal_name": "The European Accounting Review",
+      "issn": "0963-8180; 1468-4497",
+      "year": 2024,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.2,
+      "impact_factor_5yr": 4.8,
+      "cited_by_count": 2,
+      "citation_percentile": 0.85517053,
+      "fwci": 1.3705,
+      "doi": "10.1080/09638180.2024.2413001",
+      "article_url": "https://doi.org/10.1080/09638180.2024.2413001",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "ANU staff profile"
+    },
+    {
+      "title": "SEC Compensation-related Comment Letters and Excess CEO Compensation",
+      "journal_name": "The European Accounting Review",
+      "issn": "0963-8180; 1468-4497",
+      "year": 2022,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.2,
+      "impact_factor_5yr": 4.8,
+      "cited_by_count": 10,
+      "citation_percentile": 0.84745763,
+      "fwci": 1.6701,
+      "doi": "10.1080/09638180.2022.2046120",
+      "article_url": "https://doi.org/10.1080/09638180.2022.2046120",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "ANU staff profile"
+    }
+  ]
+}

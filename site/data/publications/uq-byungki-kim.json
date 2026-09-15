@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "uq-byungki-kim",
+    "name": "Byungki Kim",
+    "job_title": "Lecturer",
+    "academic_level": "Lecturer",
+    "level_code": "B",
+    "university": "The University of Queensland",
+    "university_code": "UQ",
+    "field_of_research": "Accounting",
+    "orcid": "0000-0001-9481-2082",
+    "profile_url": "https://business.uq.edu.au/profile/1424/byungki-kim",
+    "publication_count": 2,
+    "abdc_ranked_count": 2,
+    "count_a_star": 1,
+    "count_a": 1,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "Information content of credit rating affirmations",
+      "journal_name": "Contemporary Accounting Research",
+      "issn": "0823-9150; 1911-3846",
+      "year": 2024,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 4.9,
+      "impact_factor_5yr": 6.8,
+      "cited_by_count": 2,
+      "citation_percentile": 0.68678546,
+      "fwci": 0.4928,
+      "doi": "10.1111/1911-3846.12921",
+      "article_url": "https://doi.org/10.1111/1911-3846.12921",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    },
+    {
+      "title": "Business groups and tunneling: evidence from corporate charitable contributions by Korean companies",
+      "journal_name": "Journal of Business Ethics",
+      "issn": "1573-0697; 0167-4544",
+      "year": 2019,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 6.3,
+      "impact_factor_5yr": 9.7,
+      "cited_by_count": 47,
+      "citation_percentile": 0.95323266,
+      "fwci": 5.372,
+      "doi": "10.1007/s10551-016-3415-0",
+      "article_url": "https://doi.org/10.1007/s10551-016-3415-0",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    }
+  ]
+}

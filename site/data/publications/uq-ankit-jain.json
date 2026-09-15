@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "uq-ankit-jain",
+    "name": "Ankit Jain",
+    "job_title": "Senior Lecturer",
+    "academic_level": "Senior Lecturer",
+    "level_code": "C",
+    "university": "The University of Queensland",
+    "university_code": "UQ",
+    "field_of_research": "Accounting",
+    "orcid": "0000-0002-9457-2880",
+    "profile_url": "https://business.uq.edu.au/profile/1433/ankit-jain",
+    "publication_count": 5,
+    "abdc_ranked_count": 5,
+    "count_a_star": 4,
+    "count_a": 1,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "Financial statement comparability and qualitative disclosures",
+      "journal_name": "Journal of Accounting and Public Policy",
+      "issn": "0278-4254; 1873-2070",
+      "year": 2026,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.2,
+      "impact_factor_5yr": 4.1,
+      "cited_by_count": 1,
+      "citation_percentile": 0.97801859,
+      "fwci": 21.484,
+      "doi": "10.1016/j.jaccpubpol.2026.107418",
+      "article_url": "https://doi.org/10.1016/j.jaccpubpol.2026.107418",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    },
+    {
+      "title": "Disclosure tone and short-selling pressure: evidence from Regulation-SHO",
+      "journal_name": "The European Accounting Review",
+      "issn": "0963-8180; 1468-4497",
+      "year": 2025,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.2,
+      "impact_factor_5yr": 4.8,
+      "cited_by_count": 11,
+      "citation_percentile": 0.93941883,
+      "fwci": 4.0737,
+      "doi": "10.1080/09638180.2023.2270655",
+      "article_url": "https://doi.org/10.1080/09638180.2023.2270655",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    },
+    {
+      "title": "Is more always better? Information acquisition and stock price crash risk",
+      "journal_name": "Economics Letters",
+      "issn": "0165-1765; 1873-7374",
+      "year": 2024,
+      "quality_rank": "A",
+      "scimago_quartile": "Q2",
+      "impact_factor": 2.0,
+      "impact_factor_5yr": 2.0,
+      "cited_by_count": 2,
+      "citation_percentile": 0.70827396,
+      "fwci": 0.8214,
+      "doi": "10.1016/j.econlet.2024.111574",
+      "article_url": "https://doi.org/10.1016/j.econlet.2024.111574",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    },
+    {
+      "title": "Institutional ownership and the informativeness of disclosure tone",
+      "journal_name": "Journal of Business Finance & Accounting",
+      "issn": "0306-686X; 1468-5957",
+      "year": 2022,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.6,
+      "impact_factor_5yr": 3.5,
+      "cited_by_count": 25,
+      "citation_percentile": 0.95320886,
+      "fwci": 4.9822,
+      "doi": "10.1111/jbfa.12640",
+      "article_url": "https://doi.org/10.1111/jbfa.12640",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    },
+    {
+      "title": "Demand curves for stocks do not slope downwards: evidence using an exogenous supply shock",
+      "journal_name": "Journal of Banking & Finance",
+      "issn": "0378-4266; 1872-6372",
+      "year": 2019,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 4.0,
+      "impact_factor_5yr": 4.7,
+      "cited_by_count": 11,
+      "citation_percentile": 0.85680335,
+      "fwci": 1.8586,
+      "doi": "10.1016/j.jbankfin.2019.03.012",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2019.03.012",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    }
+  ]
+}

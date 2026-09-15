@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "anu-nhan-le",
+    "name": "Nhan Le",
+    "job_title": "Senior Lecturer",
+    "academic_level": "Senior Lecturer",
+    "level_code": "C",
+    "university": "The Australian National University",
+    "university_code": "ANU",
+    "field_of_research": "Finance",
+    "orcid": null,
+    "profile_url": "https://rsfas.anu.edu.au/people/nhan-le",
+    "publication_count": 2,
+    "abdc_ranked_count": 2,
+    "count_a_star": 2,
+    "count_a": 0,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "Local Bankruptcy and Geographic Contagion in the Bank Loan Market",
+      "journal_name": "Review of Finance",
+      "issn": "1572-3097; 1573-692X",
+      "year": 2020,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 7.2,
+      "impact_factor_5yr": 10.4,
+      "cited_by_count": 33,
+      "citation_percentile": 0.90801543,
+      "fwci": 2.6866,
+      "doi": "10.1093/rof/rfz023",
+      "article_url": "https://doi.org/10.1093/rof/rfz023",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "ANU staff profile"
+    },
+    {
+      "title": "Does risk of shareholder litigation affect corporate information environments?",
+      "journal_name": "Journal of Financial Markets",
+      "issn": "1386-4181; 1878-576X",
+      "year": 2019,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.5,
+      "impact_factor_5yr": 2.5,
+      "cited_by_count": null,
+      "citation_percentile": null,
+      "fwci": null,
+      "doi": null,
+      "article_url": null,
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "ANU staff profile"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "uwa-glen-hutchings",
+    "name": "Glen Hutchings",
+    "job_title": "Senior Lecturer",
+    "academic_level": "Senior Lecturer",
+    "level_code": "C",
+    "university": "The University of Western Australia",
+    "university_code": "UWA",
+    "field_of_research": "Accounting",
+    "orcid": "0000-0003-0500-656X",
+    "profile_url": "https://research-repository.uwa.edu.au/en/persons/glen-hutchings/",
+    "publication_count": 5,
+    "abdc_ranked_count": 4,
+    "count_a_star": 1,
+    "count_a": 2,
+    "count_b": 0,
+    "count_c": 1,
+    "count_unranked": 0,
+    "count_rank_unknown": 1
+  },
+  "publications": [
+    {
+      "title": "Reducing public speaking anxiety in accounting students: a guided mastery approach to developing self-efficacy",
+      "journal_name": "Accounting Education",
+      "issn": "0963-9284; 1468-4489",
+      "year": 2026,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.5,
+      "impact_factor_5yr": 3.8,
+      "cited_by_count": 3,
+      "citation_percentile": 0.89535118,
+      "fwci": 2.0748,
+      "doi": "10.1080/09639284.2024.2428625",
+      "article_url": "https://doi.org/10.1080/09639284.2024.2428625",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UWA Pure"
+    },
+    {
+      "title": "The impact of an ESG nudge on retail investor engagement in sustainable finance: evidence from an investment decision experiment",
+      "journal_name": "Sustainability Accounting, Management and Policy Journal",
+      "issn": "2040-8021; 2040-803X",
+      "year": 2025,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 8.8,
+      "impact_factor_5yr": 9.0,
+      "cited_by_count": 6,
+      "citation_percentile": 0.95582975,
+      "fwci": 5.9771,
+      "doi": "10.1108/sampj-10-2024-1104",
+      "article_url": "https://doi.org/10.1108/sampj-10-2024-1104",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UWA Pure"
+    },
+    {
+      "title": "The development and application of a decision-useful measure of environmental best practice for the mining industry",
+      "journal_name": "Accounting Auditing and Accountability Journal",
+      "issn": "0951-3574; 1368-0668; 1758-4205; 2051-3151",
+      "year": 2022,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.7,
+      "impact_factor_5yr": 5.1,
+      "cited_by_count": 10,
+      "citation_percentile": 0.78743814,
+      "fwci": 0.8998,
+      "doi": "10.1108/aaaj-11-2020-5014",
+      "article_url": "https://doi.org/10.1108/aaaj-11-2020-5014",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UWA Pure"
+    },
+    {
+      "title": "Collaborative industry-based case studies and their moderating influence on the development of non-technical skills and student perceptions of accounting",
+      "journal_name": "Journal of International Business Education",
+      "issn": "1649-4946",
+      "year": 2009,
+      "quality_rank": "C",
+      "scimago_quartile": "Q4",
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": null,
+      "citation_percentile": null,
+      "fwci": null,
+      "doi": null,
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/collaborative-industry-based-case-studies-and-their-moderating-in/",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UWA Pure"
+    },
+    {
+      "title": "The intra-industry effects of a major environmental event on cumulative abnormal returns and environmental disclosures in the mining industry",
+      "journal_name": "Asian Review of Accounting",
+      "issn": "1321-7348",
+      "year": 2000,
+      "quality_rank": null,
+      "scimago_quartile": "Q2",
+      "impact_factor": 3.3,
+      "impact_factor_5yr": 2.7,
+      "cited_by_count": null,
+      "citation_percentile": null,
+      "fwci": null,
+      "doi": null,
+      "article_url": "https://research-repository.uwa.edu.au/en/publications/the-intra-industry-effects-of-a-major-environmental-event-on-cumu/",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UWA Pure"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "uq-mark-wallis",
+    "name": "Mark Wallis",
+    "job_title": "Senior Lecturer",
+    "academic_level": "Senior Lecturer",
+    "level_code": "C",
+    "university": "The University of Queensland",
+    "university_code": "UQ",
+    "field_of_research": "Accounting",
+    "orcid": "0000-0002-1897-6330",
+    "profile_url": "https://business.uq.edu.au/profile/1418/mark-wallis",
+    "publication_count": 4,
+    "abdc_ranked_count": 4,
+    "count_a_star": 1,
+    "count_a": 3,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "Has accounting really lost its value relevance?",
+      "journal_name": "Accounting and Finance",
+      "issn": "0810-5391; 1467-629X",
+      "year": 2026,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.6,
+      "impact_factor_5yr": 3.6,
+      "cited_by_count": 1,
+      "citation_percentile": 0.90261616,
+      "fwci": 2.123,
+      "doi": "10.1111/acfi.70127",
+      "article_url": "https://doi.org/10.1111/acfi.70127",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    },
+    {
+      "title": "Why do analysts use a zero forecast for other comprehensive income?",
+      "journal_name": "Abacus",
+      "issn": "0001-3072; 1467-6281",
+      "year": 2023,
+      "quality_rank": "A",
+      "scimago_quartile": "Q2",
+      "impact_factor": 1.7,
+      "impact_factor_5yr": 2.8,
+      "cited_by_count": 4,
+      "citation_percentile": 0.85120827,
+      "fwci": 1.5989,
+      "doi": "10.1111/abac.12292",
+      "article_url": "https://doi.org/10.1111/abac.12292",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    },
+    {
+      "title": "The effects of relaxing Australia's statutory dividend restrictions",
+      "journal_name": "Accounting and Finance",
+      "issn": "0810-5391; 1467-629X",
+      "year": 2021,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.6,
+      "impact_factor_5yr": 3.6,
+      "cited_by_count": 0,
+      "citation_percentile": 0.20968489,
+      "fwci": 0.0,
+      "doi": "10.1111/acfi.12716",
+      "article_url": "https://doi.org/10.1111/acfi.12716",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    },
+    {
+      "title": "Critique on the 'manager effects' research and implications for management accounting research",
+      "journal_name": "Journal of Management Accounting Research",
+      "issn": "1049-2127; 1558-8033",
+      "year": 2018,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 1.5,
+      "impact_factor_5yr": 2.1,
+      "cited_by_count": 51,
+      "citation_percentile": 0.96736789,
+      "fwci": 7.7023,
+      "doi": "10.2308/jmar-52030",
+      "article_url": "https://doi.org/10.2308/jmar-52030",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UQ eSpace"
+    }
+  ]
+}

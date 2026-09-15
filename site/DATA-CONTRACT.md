@@ -20,8 +20,9 @@ joins land.
 
 ## How to run it
 
-No build step, no dependencies, no internet needed.
+Generate the real site dataset from the scraper CSV outputs, then serve it:
 
+    python build_site_data.py
     cd site
     python -m http.server 8000
 
@@ -39,16 +40,15 @@ block that on `file://`. Serve the folder.
 | `assets/style.css` | Jamie | Done — the visual system. Add to it; don't write CSS elsewhere. |
 | `assets/app.js` | Jamie | Done — shared helpers: load, sort, paginate, escape, CSV export. |
 | `index.html` | Alex | **Working example.** Home page with university cards. |
-| `universities.html` | Alex | Stub — per-university detail. |
+| `universities.html` | Alex | Working university rankings page. |
 | `researchers.html` | Jamie | **Working example.** Filters + sortable ranked table. |
 | `researcher.html` | Zarin | **Working example.** One researcher's publications. |
 | `documentation.html` | Yuhan | Stub. |
-| `data/*.json` | Sean (real) / Jamie (sample) | **Sample data only.** See below. |
-| `gen_sample_data.py` | Jamie | Regenerates the sample data. Delete once real data is wired in. |
+| `data/*.json` | Generated | Real data written by `../build_site_data.py`. |
+| `gen_sample_data.py` | Jamie | Legacy design-data generator; do not run for a client build. |
 
-`index.html`, `researchers.html` and `researcher.html` are fully working against the sample data.
-Copy their structure rather than starting from scratch — the header, footer, filter panel, table
-and pager are all already styled.
+`index.html`, `universities.html`, `researchers.html` and `researcher.html` work against the
+generated real data. The header, footer, filter panel, table and pager remain shared elements.
 
 ---
 
@@ -57,8 +57,14 @@ and pager are all already styled.
 The site is **client-side**. Pages `fetch()` JSON from `data/` and render in the browser. The back
 end's only job is to write these three shapes. Nothing else is required of it.
 
-Every file carries a `meta` object. `is_sample_data: true` is what makes the yellow banner honest —
-set it to `false` on real exports and delete the banner element from each page.
+Every file carries a `meta` object. `build_site_data.py` writes `is_sample_data: false`, records
+the exact source files and carries coverage warnings. The legacy sample generator writes
+`is_sample_data: true`, which makes the yellow banner visible.
+
+The exporter is deliberately strict about missing data. It never derives current staff from
+publication authors, never guesses Accounting/Finance membership from a job title, and never
+turns an unavailable metric into zero. University rows include a `coverage` object; unavailable
+values stay `null`, render as an em-dash, and do not receive a rank for that metric.
 
 ### 1. `data/universities.json` — home page
 
@@ -71,7 +77,13 @@ set it to `false` on real exports and delete the banner element from each page.
       "name": "The Australian National University",
       "researcher_count": 44,
       "publication_count": 296,
-      "abdc_ranked_count": 287
+      "abdc_ranked_count": 287,
+      "coverage": {
+        "staff": "complete",
+        "publications": "available",
+        "discipline_split": "complete",
+        "jif": "available"
+      }
     }
   ]
 }

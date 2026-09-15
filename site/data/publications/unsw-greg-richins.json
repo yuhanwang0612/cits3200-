@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "unsw-greg-richins",
+    "name": "Greg Richins",
+    "job_title": "Lecturer",
+    "academic_level": "Lecturer",
+    "level_code": "B",
+    "university": "The University of New South Wales",
+    "university_code": "UNSW",
+    "field_of_research": "Accounting",
+    "orcid": "0000-0002-2955-7246",
+    "profile_url": "https://www.unsw.edu.au/staff/greg-richins",
+    "publication_count": 4,
+    "abdc_ranked_count": 4,
+    "count_a_star": 1,
+    "count_a": 3,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "Goal Setting in Accounting Research: A Systematic Review and Reflections on Future Research Opportunities With AI-Assisted Augmentation",
+      "journal_name": "Accounting and Finance",
+      "issn": "0810-5391; 1467-629X",
+      "year": 2025,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.6,
+      "impact_factor_5yr": 3.6,
+      "cited_by_count": 2,
+      "citation_percentile": 0.82533589,
+      "fwci": 1.7605,
+      "doi": "10.1111/acfi.70036",
+      "article_url": "https://doi.org/10.1111/acfi.70036",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    },
+    {
+      "title": "The effects of prevalence induced concept change on audit scepticism judgements",
+      "journal_name": "Accounting and Finance",
+      "issn": "0810-5391; 1467-629X",
+      "year": 2024,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.6,
+      "impact_factor_5yr": 3.6,
+      "cited_by_count": 1,
+      "citation_percentile": 0.67020426,
+      "fwci": 0.3578,
+      "doi": "10.1111/acfi.13312",
+      "article_url": "https://doi.org/10.1111/acfi.13312",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    },
+    {
+      "title": "Small sample field study: The effects of team-based recognition on employee engagement and effort",
+      "journal_name": "Management Accounting Research",
+      "issn": null,
+      "year": 2023,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": 28,
+      "citation_percentile": 0.97375371,
+      "fwci": 7.6008,
+      "doi": "10.1016/j.mar.2022.100829",
+      "article_url": "https://doi.org/10.1016/j.mar.2022.100829",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    },
+    {
+      "title": "Big Data Analytics: Opportunity or Threat for the Accounting Profession?",
+      "journal_name": "Journal of Information Systems",
+      "issn": "0888-7985; 1558-7959",
+      "year": 2017,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.9,
+      "impact_factor_5yr": 3.3,
+      "cited_by_count": 356,
+      "citation_percentile": 0.99796506,
+      "fwci": 36.7722,
+      "doi": "10.2308/isys-51805",
+      "article_url": "https://doi.org/10.2308/isys-51805",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "uom-tongqing-tony-ding",
+    "name": "Tongqing (Tony) Ding",
+    "job_title": "Senior Lecturer",
+    "academic_level": "Senior Lecturer",
+    "level_code": "C",
+    "university": "The University of Melbourne",
+    "university_code": "UOM",
+    "field_of_research": "Accounting",
+    "orcid": "0000-0001-9335-6644",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/tongqing-ding",
+    "publication_count": 1,
+    "abdc_ranked_count": 1,
+    "count_a_star": 1,
+    "count_a": 0,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "Are climate scenario analysis disclosures valued by investors?",
+      "journal_name": "Journal of Accounting and Public Policy",
+      "issn": "0278-4254; 1873-2070; 18732070 02784254; 02784254",
+      "year": 2025,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 2.2,
+      "impact_factor_5yr": 4.1,
+      "cited_by_count": 8,
+      "citation_percentile": 0.98782905,
+      "fwci": 15.1855,
+      "doi": "10.1016/j.jaccpubpol.2025.107313",
+      "article_url": "https://doi.org/10.1016/j.jaccpubpol.2025.107313",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UniMelb Minerva"
+    }
+  ]
+}
