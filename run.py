@@ -104,6 +104,11 @@ def main():
     step(12, "export")
     export(records, pubs, out_dir=out,
            drop_staff_without_pubs=args.drop_empty_staff)
+    quality_writer = getattr(adapter, "write_quality_report", None)
+    if callable(quality_writer):
+        quality_writer(out)
+        print(f"  quality        -> {out / (args.uni + '_adapter_quality.json')}")
+        print(f"  identity review -> {out / (args.uni + '_identity_review.csv')}")
 
     print(f"\ndone in {time.time() - started:.0f}s")
 
