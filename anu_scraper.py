@@ -67,6 +67,7 @@ and sleeps REQUEST_DELAY seconds between requests.
 from __future__ import annotations
 
 import csv
+import datetime as _dt
 import json
 import re
 import sys
@@ -1299,6 +1300,31 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     journal = _tidy(journal)
     coauthors = _tidy(coauthors)
 
+    # FIX H: the title is really "Author list [YEAR] [real title]", or just
+    # an author list with no year and no journal at all (a textbook/book
+    # entry, not an article). Runs BEFORE the year search below so a
+    # confidently-extracted year here isn't second-guessed by a stray
+    # number (e.g. a page-range end) elsewhere in the raw text.
+    year_from_author_list = None
+    if title:
+        m = AUTHOR_LIST_YEAR_PREFIX_RE.match(title)
+        if m:
+            candidate = _LEADING_PAREN_CLAUSE_RE.sub("", m.group("rest").strip())
+            candidate = _tidy(candidate)
+            if candidate and len(candidate) >= 15 and candidate[:1].isupper():
+                title = candidate
+                year_from_author_list = int(m.group("year"))
+            else:
+                # Nothing sensible left once the author list and year are
+                # stripped — don't guess at a title.
+                title = None
+                confident = False
+        elif FULL_AUTHOR_LIST_RE.match(title):
+            # The whole "title" is just an author list — a textbook/book
+            # citation (no journal, no year), not a journal article.
+            title = None
+            confident = False
+
     # FIX C: never take the publication year from inside the title text — a
     # year can appear there (e.g. "...Common Law (1987-2016)") without being
     # the actual publication year, which is often given separately, later in
@@ -1306,17 +1332,25 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     # title's own span in `text` and skip any year match inside it; if every
     # year found is inside the title (or there is no title), leave the year
     # blank rather than guess.
-    year = None
-    title_span = None
-    if title:
-        idx = text.find(title)
-        if idx != -1:
-            title_span = (idx, idx + len(title))
-    for year_m in YEAR_RE.finditer(text):
-        if title_span and title_span[0] <= year_m.start() < title_span[1]:
-            continue
-        year = int(year_m.group(0))
-        break
+    if year_from_author_list is not None:
+        year = year_from_author_list
+    else:
+        year = None
+        title_span = None
+        if title:
+            idx = text.find(title)
+            if idx != -1:
+                title_span = (idx, idx + len(title))
+        for year_m in YEAR_RE.finditer(text):
+            if title_span and title_span[0] <= year_m.start() < title_span[1]:
+                continue
+            year = int(year_m.group(0))
+            break
+
+    # FIX H sanity check: an implausible year (typo, OCR/page-range noise,
+    # etc.) is left blank and counted rather than trusted.
+    if year is not None and not (1950 <= year <= _dt.date.today().year + 1):
+        year = None
 
     if not title:
         confident = False
@@ -1442,6 +1476,34 @@ ACCEPTED_JOURNAL_RE = re.compile(
 # safety net (see parse_publication's final confidence check) rather than a
 # fix for any one specific formatting quirk.
 AUTHOR_LIST_PATTERN_RE = re.compile(r"(?:[A-Z][A-Za-z'\-]+,\s*[A-Z]\.?\s*){2,}")
+
+# FIX H: a parsed title that's really "Author list [YEAR] [real title]" —
+# Rebecca Tan's two textbook citations (author list, no year, no journal —
+# not an article at all) and three of Tracy (Kun) Wang's citations (author
+# list then year then the real title, one of them with a stray page-range
+# number, "...1893-1942", that would otherwise be mistaken for the year —
+# see the year sanity check below). Allows both "Surname, Initial" and
+# "Surname Initial" (no comma — seen on live RSFAS pages), 1-2 further
+# initials, and trailing asterisk footnote markers ("Wu, Y.**").
+_AUTHOR_TOKEN_H = r"[A-Z][A-Za-z'\-]+,?\s*[A-Z](?:\.\s?[A-Z](?![a-z]))*\.?\**"
+_AUTHOR_SEP_H = r"(?:,\s*(?:&\s*|and\s+)?|\s*&\s*|\s+and\s+)"
+_ET_AL_H = r"(?:,?\s*[Ee]t\.?\s*[Aa]l\.?)?"
+
+AUTHOR_LIST_YEAR_PREFIX_RE = re.compile(
+    rf"^(?P<authors>(?:{_AUTHOR_TOKEN_H}{_AUTHOR_SEP_H})+{_AUTHOR_TOKEN_H})"
+    rf"\.?,?\s+(?P<year>(?:19|20)\d{{2}})\.?\s+(?P<rest>.+)$"
+)
+# The WHOLE title is nothing but an author list (with an optional trailing
+# "et al.") — a textbook/book citation with no journal and no year at all,
+# not a journal article. Only ever checked when AUTHOR_LIST_YEAR_PREFIX_RE
+# above didn't match (i.e. no year is present anywhere in the title).
+FULL_AUTHOR_LIST_RE = re.compile(
+    rf"^(?:{_AUTHOR_TOKEN_H}{_AUTHOR_SEP_H})*{_AUTHOR_TOKEN_H}{_ET_AL_H}\.?\s*$"
+)
+# A leading "(...)" clause left over once the author list and year are
+# stripped (e.g. "(First online 2 January 2021), Academy fellow...") is
+# citation metadata, not part of the title.
+_LEADING_PAREN_CLAUSE_RE = re.compile(r"^\([^)]*\)\s*,?\s*")
 
 
 def _find_year_boundary(before: str):

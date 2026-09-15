@@ -6,9 +6,10 @@ ANU schools within scope. Every number below was computed directly from the
 current data files; the command is shown so it can be re-run.
 
 **Updated 15 Sep 2026** after the data-quality pass described in
-`docs/DECISIONS.md`'s "15 Sep 2026" entries (heading-truncation fix,
+`docs/DECISIONS.md`'s four "15 Sep 2026" entries (heading-truncation fix,
 page-ORCID fallback, ABDC title fallback plus its ISSN-backfill addendum
-(FIX E2), curly-quote/year dedup fix, title/journal/year parsing fixes).
+(FIX E2), curly-quote/year dedup fix, title/journal/year parsing fixes,
+near-duplicate merge (FIX G) and author-list-as-title fix (FIX H)).
 Numbers below are from `final output/anu/`, written by the shared
 `run.py`/`export.py` pipeline — this replaces the standalone
 `anu_scraper.py` output paths (`output/anu_*.csv`) this page originally
@@ -30,11 +31,15 @@ validated ORCID this pass and which one page candidate was rejected.
 
 - **46 researchers** (33 Accounting, 13 Finance), all with an academic
   level assigned (B: 14, C: 12, D: 9, E: 11).
-- **610 publications**, all journal articles (non-journal-article types —
+- **574 publications**, all journal articles (non-journal-article types —
   conference papers, research reports, book chapters, textbooks — are
-  filtered out by `export.py`, not included in this file).
-- **522 of those 610 (85.6%) carry a real ABDC rating** — 189 A\*, 283 A, 44
-  B, 6 C, and 88 with no ABDC match (either genuinely not on the ABDC list,
+  filtered out by `export.py`, not included in this file). Down from 610
+  after FIX G (32 near-duplicate rows merged) and FIX H (3 rows that
+  weren't real journal articles at all — two textbook citations and one
+  whose real title, written in lower case on the page itself, couldn't be
+  confidently recovered — correctly excluded rather than shipped wrong).
+- **495 of those 574 (86.2%) carry a real ABDC rating** — 182 A\*, 267 A, 40
+  B, 6 C, and 79 with no ABDC match (either genuinely not on the ABDC list,
   or no journal name to match against). ABDC matching is ISSN-first, falling
   back to an exact normalised-title match when there is no ISSN — see FIX E
   in docs/DECISIONS.md.
@@ -47,22 +52,23 @@ python -c "import csv; from collections import Counter; print(Counter(r['quality
 
 | Field | Coverage | Note |
 |---|---|---|
-| title, journal_name | 610/610 (100%) | |
-| year | 600/610 (98.4%) | the 10 blanks are cases where the only 4-digit year found was inside the title itself — left blank rather than guessed, per FIX C |
-| ABDC quality_rank | 522/610 (85.6%) | ISSN-first, title fallback where there's no ISSN — see FIX E |
-| Scimago quartile | 540/610 (88.5%) | 74.4% before FIX E2's ISSN backfill — see below |
-| citation percentile (OpenAlex) | 458/610 (75.1%) | tracks DOI coverage — OpenAlex needs a DOI to look a paper up (unaffected by FIX E2, which backfills from the ABDC sheet, not OpenAlex) |
-| distinct journals | 185 | |
-| DOI | 476/610 (78.0%) | |
+| title, journal_name | 574/574 (100%) | |
+| year | 566/574 (98.6%) | the blanks are cases where no 4-digit year could be confirmed outside the title itself, or (FIX H) an implausible year (<1950 or >current+1) — left blank rather than guessed |
+| ABDC quality_rank | 495/574 (86.2%) | ISSN-first, title fallback where there's no ISSN — see FIX E |
+| Scimago quartile | 513/574 (89.4%) | 74.4% before FIX E2's ISSN backfill — see below |
+| citation percentile (OpenAlex) | 458/574 (79.8%) | tracks DOI coverage — OpenAlex needs a DOI to look a paper up (unaffected by FIX E2, which backfills from the ABDC sheet, not OpenAlex) |
+| distinct journals | 179 | |
+| DOI | 471/574 (82.1%) | |
 | staff with a validated ORCID | 33/46 (71.7%) | 18 from the hand-verified seed (`data/anu_identity.csv`), 15 newly accepted from the researcher's own profile page this pass — see FIX D |
-| `anu_journals.csv` rows with an ISSN | 150/201 (74.6%) | 49.3% before FIX E2 |
-| `anu_journals.csv` rows with an `impact_factor` (Clarivate JIF) | 127/201 (63.2%) | 42.8% before FIX E2 |
+| `anu_journals.csv` rows with an ISSN | 150/198 (75.8%) | 49.3% before FIX E2 |
+| `anu_journals.csv` rows with an `impact_factor` (Clarivate JIF) | 127/198 (64.1%) | 42.8% before FIX E2 |
+| near-duplicate rows remaining (ratio ≥ 0.85, same researcher) | 0 | 32 removed by FIX G this run |
 
 The run log (`scratch/_anu15/run_output.txt`) reports 604 of 698 journal
 articles rated before type-filtering and the FIX F dedup pass — 427 by ISSN,
 182 by the new title fallback. `abdc_match` (which of the two matched) is an
 internal diagnostic field, not one of the exported columns, so the ISSN/title
-split for the final 610-row/522-rated set specifically isn't recoverable from
+split for the final 574-row/495-rated set specifically isn't recoverable from
 `anu_publications.csv` alone.
 
 **FIX E2 addendum**: 181 of those 182 title-matched rows had no ISSN of
@@ -90,8 +96,19 @@ docs/DECISIONS.md's "15 Sep 2026 (addendum)" entry.
 - **ABDC ISSN backfill** (FIX E2): a title-matched row with no ISSN of its
   own now picks up the ABDC sheet's own ISSN for that journal, so Clarivate
   (JIF) and Scimago (SJR/quartile) — both ISSN-only joins — can find it
-  too. Scimago quartile coverage 74.4% -> 88.5%; Clarivate JIF coverage
-  (of the pre-export 698-row pool) 448 -> 613 of 698.
+  too. Scimago quartile coverage 74.4% -> 88.5% (of the 610-row set at the
+  time; 89.4% of the current 574-row set after FIX G/H); Clarivate JIF
+  coverage (of the pre-export ~698-row pool) 448 -> 613.
+- **Near-duplicate rows merged** (FIX G): 32 ANU rows removed — a
+  page-scraped copy of a paper and its ORCID/Crossref/OpenAlex copy,
+  differing by a word or an SSRN-preprint-vs-real DOI, that the exact
+  dedup rule (FIX F) couldn't see. 0 remain.
+- **Author-list-as-title fixed** (FIX H): 3 rows that weren't real,
+  confidently-parsed journal articles — two textbook citations and one
+  whose real title (written lower case on the page) couldn't be
+  confidently recovered — correctly excluded rather than shipped with a
+  wrong title. 1 more row's year was corrected from a clearly wrong 1942
+  (a page-range end mistaken for the year) to the real 2024.
 
 ## What's not done, and why
 
@@ -104,10 +121,15 @@ docs/DECISIONS.md's "15 Sep 2026 (addendum)" entry.
   McPhee, Jean You, Keturah Whitford, Pat Barrett, Yue Cai — down from 9
   before this pass. Each was checked: no Publications section on their page,
   no seed or validated page ORCID to retrieve from elsewhere.
-- **12 rows still trip a data-quality heuristic** (title looks like a whole
-  citation, a bare year inside the title, etc.) — listed individually in
-  `scratch/_anu15/after.txt` and `REPORT.md` rather than chased one by one,
-  per this pass's own instruction not to keep adding narrow rules.
+- **10 rows still trip a data-quality heuristic** (down from 12 —
+  title looks like a whole citation, a bare year inside the title, etc.) —
+  listed individually in `scratch/_anu16/measure_after.txt` and
+  `REPORT.md` rather than chased one by one, per this pass's own
+  instruction not to keep adding narrow rules.
+- **3 near-duplicate candidates in UNSW's own committed data remain
+  ambiguous** rather than clearly resolved by FIX G's rule (not applied to
+  UNSW's files this pass either way) — see docs/DECISIONS.md's FIX G/H
+  addendum.
 - **Wai-Man (Raymond) Liu's retrieved rows include several medical/health
   journals** (via his own validated ORCID — the ORCID record's name matches
   him exactly, but its own works list appears to include entries outside

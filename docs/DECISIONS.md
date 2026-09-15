@@ -696,3 +696,209 @@ this pass nor the review that produced 197 had the underlying per-row
 **What was refused / deliberately not done (E2-specific):** nothing beyond
 what FIX E already refused — this is a narrow, additive extension of the
 same fallback, gated by the same safety-check-before-applying discipline.
+
+## 15 Sep 2026 (addendum) — FIX G/H: near-duplicate rows and citations parsed as a title
+
+Follow-up request on the same branch, working tree, same day. Two more
+defects the reviewer found by hand: ~28 near-duplicate ANU row pairs
+(same paper, a slightly reworded title from a different source) surviving
+the exact-match dedup, and 5 ANU rows whose "title" was really an author
+list (two of them straight-up textbook citations, three of them a real
+paper with the author list glued onto the front of the title — one of
+which also carried a visibly wrong year, 1942).
+
+### FIX G — near-duplicate merge (`export.py`, shared)
+
+**What was wrong:** the exact-match dedup rule (15 Sep, earlier entry)
+only catches an identical normalised title. A page-scraped copy and its
+ORCID/Crossref/OpenAlex copy of the same paper often differ by a word —
+"...value of cash holdings" vs "...value of cash holding", "Earnings
+Management in Australian Corporations" vs "...: A Review" — or the page
+copy carries an SSRN preprint DOI while the retrieved copy carries the
+real, published DOI for literally the same paper. Both look like two
+different, unrelated publications to the exact rule, so both survive.
+
+**What changed:** `export.build_publications` now calls
+`merge_near_duplicates()` on the output of the exact-match pass. Two rows
+are a near-duplicate when: same researcher name; `difflib.SequenceMatcher`
+ratio ≥ 0.85 on the two normalised titles; years equal, differ by at most
+1, or either is blank; and NOT (each row carries its own distinct real
+DOI — see below). Of a merged pair, the surviving row is: the one with a
+real (non-SSRN) DOI, if only one has one; otherwise the one from a
+retrieval source (ORCID/Crossref/OpenAlex) over a university page source;
+otherwise the first-encountered row.
+
+- **SSRN preprint DOIs don't count as identifying a row for this purpose**
+  (`_dedup_doi`): a DOI starting with `10.2139/ssrn.` is treated as no DOI
+  for the near-duplicate comparison only — the exported `doi` value itself
+  is never touched. This is what lets Neil Fargher's and Marvin Wee's
+  "The impact of Ball and Brown (1968)..." (page copy: SSRN DOI; ORCID
+  copy: `10.1016/j.pacfin.2019.01.006`) and Louise Lu's "The Opioid
+  Crisis..." merge correctly, keeping the real DOI.
+- **Two rows that each carry their own distinct real DOI are never
+  merged**, whatever their titles look like — checked explicitly against
+  "Busy directors and firm performance" (2020, Pacific-Basin Finance
+  Journal, `10.1016/j.pacfin.2020.101434`) vs (2021, Accounting and
+  Finance, `10.1111/acfi.12631`): both DOIs are real and different, both
+  rows survive, confirmed via a dedicated test.
+
+**Safety check before applying**
+(`scratch/_anu16/neardup_simulate.py` → `scratch/_anu16/
+neardup_simulation.txt`): simulated on all four committed publication
+files. First pass (ratio 0.85, DOI-only guard): ANU 32 pairs, UNSW 67, UQ
+0, UWA 1. Manual review of every pair found 4 clear false positives — two
+genuinely different papers, not a duplicate:
+1. Dale Boccabella (UNSW): "...Burton has a case - Part 1/2/3" — three
+   distinct published notes sharing a long lead-in sentence, ratio ~0.99.
+2. Same author: "High Court...suggested considerations - Part 1/2".
+3. Gordon Mackenzie (UNSW): "So, you want to get into the SMSF market?...
+   Part 2" (2016) vs the same sentence with no "Part 2" (2015) — confirmed
+   as two different notes via distinct LexisNexis document keys in the
+   `link` field.
+4. Same author: "Dealing with goodwill...roll-overs and exemptions: part
+   I" vs "...part II" — same series shape, roman numeral.
+
+A bare threshold increase (e.g. to 0.90, as floated as an example in the
+brief) would NOT have caught these — all four score above 0.99 similarity,
+the difference being just the part marker — while it WOULD have broken 7
+of ANU's own 32 genuine matches (the lowest genuine-match ratio in ANU's
+own data is 0.8589). Instead, two targeted guards were added to
+`is_near_duplicate()`:
+- a "Part N" marker (digit or roman numeral) differing between the two
+  titles blocks the merge outright, regardless of ratio (`_PART_MARKER_RE`,
+  `_differing_part_marker`);
+- when NEITHER row has a DOI at all (not even SSRN), a differing
+  non-empty `link` value also blocks the merge — this is what catches the
+  SMSF Part 2 case, whose two rows have no DOI but genuinely distinct
+  source URLs. (Deliberately scoped to the no-DOI case only: a `link` is
+  usually doi-derived, e.g. `https://doi.org/<doi>`, so checking it
+  unconditionally would have wrongly re-split the SSRN-vs-real-DOI pairs
+  the DOI guard above exists to merge — confirmed by a dedicated test.)
+
+Re-run after tightening: **ANU 32 (unchanged — all 32 were already
+genuine), UNSW 60, UQ 0, UWA 0**. Isabel Wang's two different papers
+("...likelihood of financial misstatements" 2015 vs "...fraud risk
+assessments" 2017, ratio 0.786) were checked explicitly and confirmed
+never in the merge list, at any point in this process.
+
+**Residual, reported not resolved:** 3 UNSW pairs remain ambiguous rather
+than clearly wrong ("Hidden tax Advantages..." vs "Managing the Tax
+Advantages..."; "Effect of the debt/equity rules..." vs "Impact of the
+new debt/equity rules..."; "Taxing Retirement funding of the self
+employed" vs "...of the employed") — none carries a Part-N marker or two
+distinct real links, and I can't confirm from title text alone whether
+each pair is one practitioner note re-titled or two different ones. None
+of these three are in ANU's own data — every one of ANU's 32 simulated
+pairs was manually confirmed as a genuine duplicate. UQ (0) and UWA (0)
+are both well under the 3-row threshold, so the decision was: apply FIX G
+(tightened) to ANU; do not touch UNSW/UQ/UWA's files (per the hard rule —
+the simulation only reports); flag the residual UNSW ambiguity here rather
+than silently resolve or silently ignore it.
+
+**Result on ANU:** 32 rows removed this run (matching the simulation
+exactly). Publication count 610 → (574 after FIX G+H together — see
+below).
+
+### FIX H — author list parsed as the title (`anu_scraper.py`)
+
+**What was wrong:** on two related citation shapes, the author list ended
+up AS the title:
+- Rebecca Tan's two textbook citations — the existing "before the
+  italicised journal name" splitter has no concept of a book citation
+  shape ("Authors (Year). *Book Title*, Nth Edition, Publisher, City
+  (ISBN...)."); once the parenthesised year is consumed as a boundary, the
+  leftover author list becomes "the title", and the *italicised* run (the
+  BOOK's own title, not a journal) gets treated as a journal — so the row
+  passes every existing check and ships as a fake journal article.
+- Tracy (Kun) Wang's "Authors YEAR real-title. *Journal*, vol(issue),
+  pages." shape (no comma before the year, no "with" clause) isn't one of
+  the shapes the existing before/after-italics splitter recognises either,
+  so the whole "Authors YEAR real-title" run becomes the title. One
+  instance of this ("Wang, K.T., & Wu, Y.** 2024 Corporate social
+  responsibility reporting and investment...") also picked up **1942** as
+  its year — not from inside the title (FIX C's guard doesn't apply, this
+  IS outside the title span) but from the page-range end, "51 (7-8),
+  1893-**1942**.", elsewhere in the same citation.
+
+**What changed:** two new module-level regexes in `anu_scraper.py`,
+checked right after `title`/`journal`/`coauthors` are tidied, BEFORE the
+FIX C year search runs:
+- `AUTHOR_LIST_YEAR_PREFIX_RE` — matches a title starting with one or
+  more "Surname, Initials" (or "Surname Initials" with no comma — seen on
+  a live RSFAS page, "Quan Y." not "Quan, Y.") tokens, optional trailing
+  asterisk footnote markers (`Wu, Y.**`), joined by `,`/`&`/`and`, followed
+  by a bare 4-digit year, followed by the real title. When it matches: the
+  year is taken from THIS match (not the general text search — this is
+  what fixes the 1942 bug, since the real year, 2024, is now read
+  confidently off the author-list prefix and the page-range number is
+  never consulted at all), a leading `(...)` clause left on the front of
+  the extracted title (e.g. "(First online 2 January 2021)," — citation
+  metadata, not the title) is stripped, and the result re-tidied.
+- `FULL_AUTHOR_LIST_RE` — matches a title that is NOTHING BUT an author
+  list (optionally ending "et al."/"et. al", both cases) — checked only
+  when the year-prefix pattern above didn't match (no year present at
+  all). This is the textbook/book shape.
+- **Do not guess**: if the year-prefix pattern matches but what's left
+  isn't a sensible title (empty, under 15 characters, or doesn't start
+  with a capital letter — e.g. "nonfinancial corporate social
+  responsibility reporting..." on Tracy Wang's page, written in lower case
+  prose style by the page itself), the row is marked unparsed rather than
+  guessed at (no auto-capitalisation). Same for the full-author-list case.
+- **Year sanity check**: after all year logic (FIX C's and FIX H's), a
+  year outside `1950..current_year+1` is discarded and counted rather than
+  trusted — a defence against any future stray-number-mistaken-for-a-year
+  case this pass didn't specifically find.
+
+**Result, checked directly against the real live pages** (all 5 rows,
+full end-to-end `parse_publication` calls, not just regex checks):
+- Rebecca Tan's two textbook citations: now `confident=False`,
+  `title=None` — excluded from the pipeline entirely (previously shipped
+  as fake journal articles with journal = the book's own italicised
+  title).
+- Tracy Wang's "Tsang, A....nonfinancial corporate social responsibility
+  reporting and firm value..." row: now `confident=False` (title would
+  start lowercase) — excluded, not guessed at.
+- Tracy Wang's "Wang, K.T., & Wu, Y.**...Corporate social responsibility
+  reporting and investment..." row: **year fixed, 1942 → 2024**; title
+  correctly reads "Corporate social responsibility reporting and
+  investment: Evidence from mergers and acquisitions".
+- Tracy Wang's "Li, S....Academy fellow independent directors and
+  innovation" row: year correctly reads 2022 (not blank, as it was
+  before); title correctly reads "Academy fellow independent directors
+  and innovation" (the "(First online 2 January 2021)," clause stripped).
+
+### Combined result of FIX G + FIX H, this run
+
+`python run.py --uni anu --ror 019wvm592` (no `--refresh`), 104s, exit 0.
+No 403/429/Cloudflare, no exceptions — full log:
+`scratch/_anu16/run_output.txt`. `clarivate: 613 of 694 journal articles
+have a 2025 JIF (313 ISSNs queried)` — no errors, nothing to flag at the
+top of the report.
+
+Publications: 610 → 574 (−36: 32 from FIX G's near-duplicate merge, 3 from
+FIX H marking a row unparsed rather than shipping a wrong title, ~1 from
+ordinary run-to-run variance in the live Crossref/OpenAlex calls between
+this run and the previous one — the same kind of ±1 drift already noted
+for Louise Lu earlier the same day). 12 researchers had a changed row
+count, all explained by FIX G/H; full detail:
+`scratch/_anu16/per_researcher_changes.txt`. Remaining near-duplicate
+pairs in the final output (same finder as the simulation): **0**.
+Remaining STEP-8-style flagged rows: 12 → 10 (the 2 Tracy Wang
+author-list-as-title rows that used to trip "title is a whole quoted
+citation"-adjacent heuristics are simply gone now, not fixed-in-place).
+`python load.py`: all four universities still **100.0% matched**.
+
+**What was refused / deliberately not done (G/H-specific):**
+- The 3 residual ambiguous UNSW near-duplicate candidates (see above) —
+  not resolved, not applied to UNSW's files, reported.
+- Patching the existing (separately buggy) `AUTHOR_LIST_PATTERN_RE`
+  safety net, which turned out not to actually match a comma-separated
+  author list the way its own comment implies (its trailing `\s*` can't
+  cross a `,` between tokens, so it silently never fires on the exact
+  "Surname, Initial., Surname, Initial., ..." shape it looks like it was
+  written for) — out of scope for FIX H specifically; FIX H's own new
+  regexes don't share this bug, and the old regex is left exactly as
+  found rather than patched as a drive-by fix.
+- Re-running UNSW/UQ/UWA, or applying FIX G/H's shared-file half
+  (`export.py`'s `merge_near_duplicates`) to their committed data — out of
+  scope this pass.
