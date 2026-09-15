@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "unsw-henry-yip",
+    "name": "Henry Yip",
+    "job_title": "Senior Lecturer",
+    "academic_level": "Senior Lecturer",
+    "level_code": "C",
+    "university": "The University of New South Wales",
+    "university_code": "UNSW",
+    "field_of_research": "Finance",
+    "orcid": null,
+    "profile_url": "https://www.unsw.edu.au/staff/henry-yip",
+    "publication_count": 2,
+    "abdc_ranked_count": 1,
+    "count_a_star": 0,
+    "count_a": 0,
+    "count_b": 1,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 1
+  },
+  "publications": [
+    {
+      "title": "A spreadsheet application to evaluate the performance of protective puts",
+      "journal_name": "Journal of Economics and Finance Education",
+      "issn": null,
+      "year": 2009,
+      "quality_rank": null,
+      "scimago_quartile": null,
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": null,
+      "citation_percentile": null,
+      "fwci": null,
+      "doi": null,
+      "article_url": "http://www.economics-finance.org/jefe/fin/Yip2paper.pdf",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    },
+    {
+      "title": "What do Options have to do With It?: Inclusion of Options Market Indicators in Bid‐ask Spread Decomposition*",
+      "journal_name": "Asia-Pacific Journal of Financial Studies",
+      "issn": "2041-6156; 2041-9945",
+      "year": 2009,
+      "quality_rank": "B",
+      "scimago_quartile": "Q2",
+      "impact_factor": 1.4,
+      "impact_factor_5yr": 1.9,
+      "cited_by_count": 4,
+      "citation_percentile": 0.86652498,
+      "fwci": 1.4615,
+      "doi": "10.1111/j.2041-6156.2009.tb00020.x",
+      "article_url": "https://doi.org/10.1111/j.2041-6156.2009.tb00020.x",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "uom-geoffrey-burrows",
+    "name": "Geoffrey Burrows",
+    "job_title": "Associate Professor",
+    "academic_level": "Associate Professor",
+    "level_code": "D",
+    "university": "The University of Melbourne",
+    "university_code": "UOM",
+    "field_of_research": "Accounting",
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/geoffrey_burrows",
+    "publication_count": 5,
+    "abdc_ranked_count": 5,
+    "count_a_star": 0,
+    "count_a": 5,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "World War 2 governmental cost-plus procurement: An Australian case study",
+      "journal_name": "Accounting History",
+      "issn": "1032-3732; 1749-3374",
+      "year": 2024,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 1.2,
+      "impact_factor_5yr": 1.3,
+      "cited_by_count": 0,
+      "citation_percentile": 0.17023268,
+      "fwci": 0.0,
+      "doi": "10.1177/10323732241258560",
+      "article_url": "https://doi.org/10.1177/10323732241258560",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UniMelb Minerva"
+    },
+    {
+      "title": "A progressive traditionalist: Sir Edwin Van-Der-Vord Nixon CMG, Accountant, (1876–1955)",
+      "journal_name": "Accounting History",
+      "issn": "1032-3732; 1749-3374",
+      "year": 2019,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 1.2,
+      "impact_factor_5yr": 1.3,
+      "cited_by_count": 8,
+      "citation_percentile": 0.8389431,
+      "fwci": 1.3986,
+      "doi": "10.1177/1032373219830430",
+      "article_url": "https://doi.org/10.1177/1032373219830430",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "OpenAlex"
+    },
+    {
+      "title": "Biography in accounting history: Some personal reflections",
+      "journal_name": "Accounting History",
+      "issn": "1032-3732; 1749-3374",
+      "year": 2018,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 1.2,
+      "impact_factor_5yr": 1.3,
+      "cited_by_count": 20,
+      "citation_percentile": 0.93896476,
+      "fwci": 4.2835,
+      "doi": "10.1177/1032373218795720",
+      "article_url": "https://doi.org/10.1177/1032373218795720",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "OpenAlex"
+    },
+    {
+      "title": "The profession of arms and the profession of accounting numbers – Accounting, the military and war: A review",
+      "journal_name": "Accounting History",
+      "issn": "1032-3732; 1749-3374",
+      "year": 2018,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 1.2,
+      "impact_factor_5yr": 1.3,
+      "cited_by_count": 19,
+      "citation_percentile": 0.88016037,
+      "fwci": 2.1044,
+      "doi": "10.1177/1032373218779188",
+      "article_url": "https://doi.org/10.1177/1032373218779188",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "OpenAlex"
+    },
+    {
+      "title": "A fine education but no “bluestocking”: Harriett Amies, pioneer female accounting professional",
+      "journal_name": "Accounting History",
+      "issn": "1032-3732; 1749-3374",
+      "year": 2015,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": 1.2,
+      "impact_factor_5yr": 1.3,
+      "cited_by_count": 12,
+      "citation_percentile": 0.8184933,
+      "fwci": 1.0188,
+      "doi": "10.1177/1032373215574032",
+      "article_url": "https://doi.org/10.1177/1032373215574032",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "OpenAlex"
+    }
+  ]
+}

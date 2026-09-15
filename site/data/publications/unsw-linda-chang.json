@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "unsw-linda-chang",
+    "name": "Linda Chang",
+    "job_title": "Associate Professor",
+    "academic_level": "Associate Professor",
+    "level_code": "D",
+    "university": "The University of New South Wales",
+    "university_code": "UNSW",
+    "field_of_research": "Accounting",
+    "orcid": "0000-0002-2844-6149",
+    "profile_url": "https://www.unsw.edu.au/staff/linda-chang",
+    "publication_count": 5,
+    "abdc_ranked_count": 5,
+    "count_a_star": 5,
+    "count_a": 0,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 0
+  },
+  "publications": [
+    {
+      "title": "Reducing Strategy Surrogation: The Effects of Performance Measurement System Flexibility and Environmental Dynamism",
+      "journal_name": "The Accounting Review",
+      "issn": "0001-4826; 1558-7967",
+      "year": 2023,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 4.0,
+      "impact_factor_5yr": 7.2,
+      "cited_by_count": 6,
+      "citation_percentile": 0.81494523,
+      "fwci": 1.139,
+      "doi": "10.2308/tar-2019-0523",
+      "article_url": "https://doi.org/10.2308/TAR-2019-0523",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    },
+    {
+      "title": "ABC Cost Driver Framing and Altering the Balance of Power in Customer-Supplier Negotiations",
+      "journal_name": "The Accounting Review",
+      "issn": "0001-4826; 1558-7967",
+      "year": 2022,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 4.0,
+      "impact_factor_5yr": 7.2,
+      "cited_by_count": 3,
+      "citation_percentile": 0.70937799,
+      "fwci": 0.6193,
+      "doi": "10.2308/tar-2017-0441",
+      "article_url": "https://doi.org/10.2308/TAR-2017-0441",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    },
+    {
+      "title": "The effect of outcome and process accountability on customer-supplier negotiations",
+      "journal_name": "Accounting, Organizations and Society",
+      "issn": null,
+      "year": 2013,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": 44,
+      "citation_percentile": 0.97534865,
+      "fwci": 9.5816,
+      "doi": "10.1016/j.aos.2012.12.002",
+      "article_url": "https://doi.org/10.1016/j.aos.2012.12.002",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    },
+    {
+      "title": "The effect of framing and negotiation partner’s objective on judgments about negotiated transfer prices",
+      "journal_name": "Accounting, Organizations and Society",
+      "issn": null,
+      "year": 2008,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": 57,
+      "citation_percentile": 0.94796531,
+      "fwci": 5.1912,
+      "doi": "10.1016/j.aos.2008.01.002",
+      "article_url": "https://doi.org/10.1016/j.aos.2008.01.002",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UNSW staff profile"
+    },
+    {
+      "title": "Managing intellectual capital in a professional service firm: Exploring the creativity-productivity paradox",
+      "journal_name": "Management Accounting Research",
+      "issn": null,
+      "year": 2004,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": 111,
+      "citation_percentile": 0.94871071,
+      "fwci": 4.9347,
+      "doi": "10.1016/j.mar.2003.10.004",
+      "article_url": "https://doi.org/10.1016/j.mar.2003.10.004",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "ORCID"
+    }
+  ]
+}

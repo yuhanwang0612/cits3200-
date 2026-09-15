@@ -23,7 +23,7 @@
 <main>
   <div class="wrap">
 
-    <div class="banner-sample">
+    <div class="banner-sample" id="sample-banner" hidden>
       <span>&#9888;</span>
       <div><strong>Sample data.</strong> Every name, publication and rating on this site is
       invented for design purposes.</div>
@@ -123,33 +123,13 @@
 <script>
 (async function () {
   const tbody = document.getElementById('tbody');
-  const params = new URLSearchParams(window.location.search);
-
-  async function loadResearchers() {
-
-      const query = new URLSearchParams();
-
-      const university = params.get("university");
-
-      if (university) {
-          query.set("university", university);
-      }
-
-      const response = await fetch(
-          "/api/researchers?" + query.toString()
-      );
-
-      if (!response.ok) {
-          throw new Error("Failed to load researchers");
-      }
-
-      const data = await response.json();
-
-      return data.researchers || [];
+  const data = await loadJSON('data/researchers.json');
+  if (!data) {
+    showLoadError(tbody, 'data/researchers.json');
+    return;
   }
-
-
-const ALL = await loadResearchers();
+  document.getElementById('sample-banner').hidden = !(data.meta || {}).is_sample_data;
+  const ALL = data.researchers || [];
 
   let view = ALL.slice();
   let page = 1;
@@ -167,40 +147,18 @@ const ALL = await loadResearchers();
   const preUni = param('university');
   if (preUni) fUni.value = preUni;
 
-  async function apply() {
-
-    const query = new URLSearchParams();
-
-    if (fUni.value) {
-        query.set("university", fUni.value);
-    }
-
-    if (fFor.value) {
-        query.set("field", fFor.value);
-    }
-
-    if (fLevel.value) {
-        query.set("level", fLevel.value);
-    }
-
-    if (fName.value.trim()) {
-        query.set("name", fName.value.trim());
-    }
-
-    const response = await fetch(
-        "/api/researchers?" + query.toString()
+  function apply() {
+    const query = fName.value.trim().toLowerCase();
+    view = ALL.filter(researcher =>
+      (!fUni.value || researcher.university === fUni.value) &&
+      (!fFor.value || researcher.field_of_research === fFor.value) &&
+      (!fLevel.value || researcher.level_code === fLevel.value) &&
+      (!query || (researcher.name || '').toLowerCase().includes(query))
     );
-
-    const data = await response.json();
-
-    view = data.researchers || [];
-
     view.sort(multiCompare(sortSpecs));
-
     page = 1;
-
     render();
-}
+  }
 
   function render() {
     const size  = Number(fSize.value);

@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "adl-mahmud-masum",
+    "name": "Mahmud Masum",
+    "job_title": null,
+    "academic_level": null,
+    "level_code": null,
+    "university": "The University of Adelaide",
+    "university_code": "ADL",
+    "field_of_research": "Accounting & Finance",
+    "orcid": null,
+    "profile_url": "https://adelaide.edu.au/people/mahmud.masum",
+    "publication_count": 4,
+    "abdc_ranked_count": 2,
+    "count_a_star": 0,
+    "count_a": 2,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 2
+  },
+  "publications": [
+    {
+      "title": "The interface between traditional organisational practices and a World Bank-led performance management reform",
+      "journal_name": "Meditari Accountancy Research",
+      "issn": "1022-2529",
+      "year": 2024,
+      "quality_rank": "A",
+      "scimago_quartile": "Q1",
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": null,
+      "citation_percentile": null,
+      "fwci": null,
+      "doi": "10.1108/medar-06-2023-2041",
+      "article_url": "https://doi.org/10.1108/medar-06-2023-2041",
+      "publication_type": "article",
+      "publication_status": null,
+      "source": "Meditari Accountancy Research"
+    },
+    {
+      "title": "Political colonization of a regulatory organization in a developing country: Implications for public accountability and organizational reform",
+      "journal_name": "Financial Accountability and Management",
+      "issn": "0267-4424",
+      "year": 2022,
+      "quality_rank": null,
+      "scimago_quartile": "Q1",
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": null,
+      "citation_percentile": null,
+      "fwci": null,
+      "doi": "10.1111/faam.12355",
+      "article_url": "https://doi.org/10.1111/faam.12355",
+      "publication_type": "article",
+      "publication_status": null,
+      "source": "Financial Accountability and Management"
+    },
+    {
+      "title": "Local implementation of global accounting reform: evidence from a developing country",
+      "journal_name": "Qualitative Research in Accounting & Management",
+      "issn": "1176-6093",
+      "year": 2020,
+      "quality_rank": "A",
+      "scimago_quartile": null,
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": null,
+      "citation_percentile": null,
+      "fwci": null,
+      "doi": "10.1108/qram-10-2018-0073",
+      "article_url": "https://doi.org/10.1108/qram-10-2018-0073",
+      "publication_type": "article",
+      "publication_status": null,
+      "source": "Qualitative Research in Accounting & Management"
+    },
+    {
+      "title": "Financial Analysts' Forecast Accuracy : Before and After the Introduction of AIFRS",
+      "journal_name": "Research Online (University of Wollongong)",
+      "issn": null,
+      "year": 2010,
+      "quality_rank": null,
+      "scimago_quartile": null,
+      "impact_factor": null,
+      "impact_factor_5yr": null,
+      "cited_by_count": null,
+      "citation_percentile": null,
+      "fwci": null,
+      "doi": null,
+      "article_url": null,
+      "publication_type": "article",
+      "publication_status": null,
+      "source": "Research Online (University of Wollongong)"
+    }
+  ]
+}

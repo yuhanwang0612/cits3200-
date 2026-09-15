@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "is_sample_data": false,
+    "note": "Generated from the team's real scraper CSV exports.",
+    "sources": [
+      {
+        "university": "ADL",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "adelaide_staff.csv",
+        "publication_file": "adelaide_publications.csv",
+        "input_publication_rows": 3337,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "ANU",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/anu/anu_staff.csv",
+        "publication_file": "final output/anu/anu_publications.csv",
+        "input_publication_rows": 574,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "MON",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "official staff export",
+        "staff_file": "monash_staff.csv",
+        "publication_file": "monash_publications.csv",
+        "input_publication_rows": 4273,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UOM",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unimelb/unimelb_staff.csv",
+        "publication_file": "final output/unimelb/unimelb_publications.csv",
+        "input_publication_rows": 821,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UNSW",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/unsw/unsw_staff.csv",
+        "publication_file": "final output/unsw/unsw_publications.csv",
+        "input_publication_rows": 2165,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "UQ",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uq/uq_staff.csv",
+        "publication_file": "final output/uq/uq_publications.csv",
+        "input_publication_rows": 654,
+        "unmatched_publication_rows": 0
+      },
+      {
+        "university": "USYD",
+        "source_kind": "legacy_fallback",
+        "staff_basis": "unavailable",
+        "staff_file": null,
+        "publication_file": "usyd_publications.csv",
+        "input_publication_rows": 2034,
+        "unmatched_publication_rows": 2034
+      },
+      {
+        "university": "UWA",
+        "source_kind": "canonical",
+        "staff_basis": "official staff export",
+        "staff_file": "final output/uwa/uwa_staff.csv",
+        "publication_file": "final output/uwa/uwa_publications.csv",
+        "input_publication_rows": 1054,
+        "unmatched_publication_rows": 0
+      }
+    ],
+    "warnings": [
+      "USYD: no staff CSV is available; researcher totals and researcher pages remain unknown.",
+      "ADL: 129 staff have combined or unclassified disciplines; Accounting/Finance split metrics remain unknown."
+    ]
+  },
+  "researcher": {
+    "id": "uom-bryan-lim",
+    "name": "Bryan Lim",
+    "job_title": "Associate Professor",
+    "academic_level": "Associate Professor",
+    "level_code": "D",
+    "university": "The University of Melbourne",
+    "university_code": "UOM",
+    "field_of_research": "Finance",
+    "orcid": "0000-0003-3756-3651",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/193012",
+    "publication_count": 4,
+    "abdc_ranked_count": 3,
+    "count_a_star": 2,
+    "count_a": 1,
+    "count_b": 0,
+    "count_c": 0,
+    "count_unranked": 0,
+    "count_rank_unknown": 1
+  },
+  "publications": [
+    {
+      "title": "The value of growth: Changes in profitability and future stock returns",
+      "journal_name": "Journal of Banking & Finance",
+      "issn": "0378-4266; 1872-6372; 03784266",
+      "year": 2024,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 4.0,
+      "impact_factor_5yr": 4.7,
+      "cited_by_count": 14,
+      "citation_percentile": 0.95322567,
+      "fwci": 5.1504,
+      "doi": "10.1016/j.jbankfin.2023.107036",
+      "article_url": "https://doi.org/10.1016/j.jbankfin.2023.107036",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UniMelb Minerva"
+    },
+    {
+      "title": "Expert advice in the presence of conflicts of interest: the case of star-crossed acquisitions",
+      "journal_name": "Review of Accounting Studies",
+      "issn": "1380-6653; 1573-7136; 13806653",
+      "year": 2022,
+      "quality_rank": "A*",
+      "scimago_quartile": "Q1",
+      "impact_factor": 5.7,
+      "impact_factor_5yr": 9.9,
+      "cited_by_count": 8,
+      "citation_percentile": 0.86642981,
+      "fwci": 1.9375,
+      "doi": "10.1007/s11142-022-09679-z",
+      "article_url": "https://doi.org/10.1007/s11142-022-09679-z",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "Crossref"
+    },
+    {
+      "title": "Good Bids Come to Those Who Wait: The Value of Late Bidding in Online Auctions",
+      "journal_name": "The Economic Record",
+      "issn": "0013-0249; 1475-4932",
+      "year": 2019,
+      "quality_rank": "A",
+      "scimago_quartile": "Q2",
+      "impact_factor": 0.8,
+      "impact_factor_5yr": 1.3,
+      "cited_by_count": 0,
+      "citation_percentile": 0.01512942,
+      "fwci": 0.0,
+      "doi": "10.1111/1475-4932.12456",
+      "article_url": "https://doi.org/10.1111/1475-4932.12456",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "UniMelb Minerva"
+    },
+    {
+      "title": "Travel vaccination recommendations and infection risk in HIV-positive travellers",
+      "journal_name": "Journal of Travel Medicine",
+      "issn": "1195-1982; 1708-8305",
+      "year": 2019,
+      "quality_rank": null,
+      "scimago_quartile": "Q1",
+      "impact_factor": 5.5,
+      "impact_factor_5yr": 6.4,
+      "cited_by_count": 31,
+      "citation_percentile": 0.86472861,
+      "fwci": 2.1258,
+      "doi": "10.1093/jtm/taz034",
+      "article_url": "https://doi.org/10.1093/jtm/taz034",
+      "publication_type": "journal_article",
+      "publication_status": "published",
+      "source": "OpenAlex"
+    }
+  ]
+}
