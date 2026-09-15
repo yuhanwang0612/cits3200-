@@ -5,7 +5,10 @@ retrieval upstream is deliberately unfiltered so that exclusions are
 visible and reversible rather than baked into each source.
 """
 
+import difflib
 import json
+import re
+import unicodedata
 from collections import Counter
 from datetime import datetime, timezone
 
@@ -15,6 +18,164 @@ from core.config import OUTPUT_DIR
 from core.titles import level
 
 TABLES = ("staff", "journals", "publications", "harvest")
+
+_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
+
+
+def _normalise_title(title):
+    """NFKC, lowercase, every run of non-alphanumeric characters -> one
+    space, then trim. Used only for the dedup key below — curly vs straight
+    quotes and similar cosmetic differences must not defeat it."""
+    t = unicodedata.normalize("NFKC", title or "").lower()
+    return _NON_ALNUM_RE.sub(" ", t).strip()
+
+
+# --- FIX G: near-duplicate merge (applied AFTER the exact-match rule
+# above) -------------------------------------------------------------------
+#
+# The exact rule only catches an identical normalised title. A page-scraped
+# copy of a paper and its ORCID/Crossref/OpenAlex copy sometimes differ by a
+# word or two ("...value of cash holdings" vs "...value of cash holding"),
+# or the page copy carries an SSRN preprint DOI while the retrieved copy
+# carries the real, published DOI for literally the same paper — the exact
+# rule sees those as two different, unrelated publications and keeps both.
+
+SSRN_DOI_PREFIX = "10.2139/ssrn."
+NEAR_DUP_TITLE_RATIO = 0.85
+# Sources that came from a retrieval step rather than the university's own
+# page — mirrors screen.py's RETRIEVED set. Preferred over a page source
+# when neither row in a near-duplicate pair has a distinguishing DOI.
+_RETRIEVED_SOURCES = {"ORCID", "Crossref", "OpenAlex"}
+# A trailing "Part N" (or "- Part N", digits or roman numerals) on an
+# otherwise near-identical title marks a DIFFERENT instalment of a series,
+# not a duplicate — confirmed on UNSW practitioner-note series that would
+# otherwise score >0.99 on title similarity alone (e.g. "...Burton has a
+# case - Part 1/2/3", three distinct published notes with the same lead-in
+# sentence; "...roll-overs and exemptions: part I" / "part II", same shape
+# with roman numerals).
+_PART_MARKER_RE = re.compile(r"\bpart\s+([ivx]+|\d+)\b", re.IGNORECASE)
+
+
+def _dedup_doi(doi):
+    """For near-duplicate comparison ONLY — never changes the exported doi
+    value. An SSRN preprint DOI doesn't identify a specific publication the
+    way a real journal DOI does: the same paper's published version usually
+    gets its own, different DOI, so an SSRN DOI here counts as no DOI."""
+    d = (doi or "").strip().lower()
+    return "" if d.startswith(SSRN_DOI_PREFIX) else d
+
+
+def _differing_part_marker(title_a, title_b):
+    ma = _PART_MARKER_RE.search(title_a or "")
+    mb = _PART_MARKER_RE.search(title_b or "")
+    return bool(ma and mb and ma.group(1).lower() != mb.group(1).lower())
+
+
+def is_near_duplicate(a, b):
+    """True if publication rows `a` and `b` (each needing name/title/year/
+    doi/link keys) are the same researcher's same paper under a fuzzy title
+    match. Never true when: the two rows each carry their own distinct real
+    (non-SSRN) DOI; the two rows each carry their own distinct, non-empty
+    `link` (confirmed on UNSW practitioner notes with no DOI at all, each
+    with its own real, distinct source URL — a strong identifier even
+    without a DOI); or the titles differ only by a "Part N" marker (a
+    different instalment of a series, not a duplicate)."""
+    if a.get("name") != b.get("name"):
+        return False
+    title_a, title_b = a.get("title"), b.get("title")
+    if _differing_part_marker(title_a, title_b):
+        return False
+    ratio = difflib.SequenceMatcher(
+        None, _normalise_title(title_a), _normalise_title(title_b)
+    ).ratio()
+    if ratio < NEAR_DUP_TITLE_RATIO:
+        return False
+    ya, yb = (a.get("year") or "").strip(), (b.get("year") or "").strip()
+    if ya and yb:
+        try:
+            if abs(int(ya) - int(yb)) > 1:
+                return False
+        except ValueError:
+            pass  # non-numeric year text — don't let it block an otherwise-clear match
+    doi_a, doi_b = _dedup_doi(a.get("doi")), _dedup_doi(b.get("doi"))
+    if doi_a and doi_b and doi_a != doi_b:
+        return False
+    # The link guard only applies when NEITHER row has a doi at all (not
+    # even an SSRN one) — a `link` is usually doi-derived (e.g.
+    # "https://doi.org/<doi>"), so comparing it when an SSRN-vs-real-DOI
+    # pair is exactly what should merge would wrongly re-introduce the
+    # same false split the DOI check above already resolves.
+    if not a.get("doi") and not b.get("doi"):
+        link_a, link_b = (a.get("link") or "").strip(), (b.get("link") or "").strip()
+        if link_a and link_b and link_a != link_b:
+            return False
+    return True
+
+
+def _prefer(e, c):
+    """Given two near-duplicate rows, return the one to KEEP. `e` is the
+    earlier-encountered row (kept by default — 'otherwise keep the
+    first')."""
+    doi_e, doi_c = _dedup_doi(e.get("doi")), _dedup_doi(c.get("doi"))
+    if doi_e and not doi_c:
+        return e
+    if doi_c and not doi_e:
+        return c
+    e_retrieved = e.get("source") in _RETRIEVED_SOURCES
+    c_retrieved = c.get("source") in _RETRIEVED_SOURCES
+    if c_retrieved and not e_retrieved:
+        return c
+    return e
+
+
+def merge_near_duplicates_traced(rows):
+    """Same logic as merge_near_duplicates, but also returns the list of
+    (kept_row, dropped_row) pairs it merged — used by build_publications
+    (which only needs the filtered list) and by
+    scratch/_anu16/neardup_simulate.py (which needs to show every pair it
+    would merge), so the two never drift apart.
+
+    Groups by name first (a near-duplicate is only ever the same
+    researcher's own paper), compares within each group against surviving
+    representatives only (not every pair), and preserves the original
+    relative row order of whichever row in each pair survives.
+    """
+    keep = [True] * len(rows)
+    pairs: list[tuple[dict, dict]] = []
+    by_name: dict[str, list[int]] = {}
+    for i, r in enumerate(rows):
+        by_name.setdefault(r.get("name"), []).append(i)
+
+    for idxs in by_name.values():
+        representatives: list[int] = []
+        for i in idxs:
+            r = rows[i]
+            matched = next(
+                (pos for pos, rep_i in enumerate(representatives)
+                 if is_near_duplicate(r, rows[rep_i])),
+                None,
+            )
+            if matched is None:
+                representatives.append(i)
+                continue
+            rep_i = representatives[matched]
+            winner = _prefer(rows[rep_i], r)
+            if winner is rows[rep_i]:
+                keep[i] = False
+                pairs.append((rows[rep_i], r))
+            else:
+                keep[rep_i] = False
+                pairs.append((r, rows[rep_i]))
+                representatives[matched] = i
+
+    return [r for i, r in enumerate(rows) if keep[i]], pairs
+
+
+def merge_near_duplicates(rows):
+    """FIX G: collapse near-duplicate rows the exact-match rule above can't
+    see. See merge_near_duplicates_traced for the algorithm."""
+    kept, _pairs = merge_near_duplicates_traced(rows)
+    return kept
 
 
 def build_staff(records):
@@ -69,14 +230,26 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     key in a merged table.
     """
     orcid_by_name = {r["name_clean"]: r.get("orcid") for r in (records or [])}
-    seen, out = set(), []
+    out = []
+    kept_dois_by_key = {}
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x.get("type") != keep_type or not x.get("title"):
             continue
-        k = (x["name"], x["title"].lower().strip(), x.get("year"))
-        if k in seen:
-            continue
-        seen.add(k)
+        k = (x["name"], _normalise_title(x["title"]))
+        doi = (x.get("doi") or "").strip().lower()
+        if k not in kept_dois_by_key:
+            kept_dois_by_key[k] = set()
+            if doi:
+                kept_dois_by_key[k].add(doi)
+        else:
+            # A later row with the same (name, normalised title) is a
+            # duplicate unless it carries a DOI genuinely different from
+            # every DOI already kept under this key — curly vs straight
+            # quotes and cosmetic differences must not let a no-DOI page
+            # copy survive next to the properly-identified one.
+            if not doi or doi in kept_dois_by_key[k]:
+                continue
+            kept_dois_by_key[k].add(doi)
         out.append({
             "name": x["name"],
             "orcid": orcid_by_name.get(x["name"]),
@@ -101,6 +274,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "source": x.get("source"),
         })
 
+    before_near_dup = len(out)
+    out = merge_near_duplicates(out)
+
     if verbose:
         dropped = Counter((x.get("source"), x.get("type"))
                           for x in pubs if x.get("type") != keep_type)
@@ -108,6 +284,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             print("  excluded by type:")
             for (s, t), n in dropped.most_common(10):
                 print(f"    {n:4}  {s or '?':10} {t}")
+        near_dup_removed = before_near_dup - len(out)
+        if near_dup_removed:
+            print(f"  removed {near_dup_removed} near-duplicate row(s) (FIX G)")
     return out
 
 

@@ -24,6 +24,16 @@ of that.
 
 ## Run it
 
+The shared pipeline is the current way to produce `final output/anu/`:
+
+```bash
+python run.py --uni anu --ror 019wvm592
+```
+
+`anu_scraper.py` itself can still be run standalone for just the staff/
+publication scrape (no ORCID/Crossref/OpenAlex retrieval, no ABDC/Scimago/
+Clarivate enrichment):
+
 ```bash
 pip install requests beautifulsoup4
 python anu_scraper.py
@@ -42,6 +52,16 @@ Field names match the **Scope of Work data dictionary (section 3.5.4)** on purpo
 so this output loads into the shared database with no reshaping.
 
 ## Approach to parsing
+
+The Publications section on a profile page ends only at a heading of the
+same or higher level as the "Publications" heading itself — a lower-level
+sub-heading (or a short bold label paragraph like "Selected working
+papers:") starts a labelled sub-section instead, and a sub-section whose
+label matches a media/interview/working-paper/grant/etc. pattern is skipped
+entirely (see FIX A in `docs/DECISIONS.md`, 15 Sep 2026). An ORCID published
+on the profile page itself (`anu_scraper.extract_orcids`) is also read from
+the same page fetch and, once validated (checksum, exact name match against
+the public ORCID record), used to fill in a missing seed ORCID — see FIX D.
 
 Publications are written as free-text prose by each academic individually, so
 formatting varies a lot — between the two schools and between individuals on
