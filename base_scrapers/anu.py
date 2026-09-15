@@ -62,8 +62,10 @@ WHAT THIS ADAPTER DELIBERATELY DOES NOT DO
 
 from __future__ import annotations
 
+import csv
 import re
 import sys
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -73,9 +75,12 @@ if str(_REPO_ROOT) not in sys.path:
 
 import anu_scraper  # noqa: E402  (needs the sys.path fix-up above)
 
-from core.config import DATA_DIR  # noqa: E402
+from core.config import DATA_DIR, ORCID_BASE, ORCID_HEADERS  # noqa: E402
+from core.http import cached_get  # noqa: E402
 from core.schema import blank_pub  # noqa: E402
 from core.titles import level, rank, split_prefix  # noqa: E402
+
+ORCID_DECISIONS_LOG = _REPO_ROOT / "scratch" / "_anu15" / "orcid_decisions.csv"
 
 UNIVERSITY = "Australian National University"
 ROR = "019wvm592"
@@ -192,6 +197,156 @@ def _staff_record(researcher, identity_by_name):
 
 
 # ---------------------------------------------------------------------------
+# FIX D — page ORCIDs
+# ---------------------------------------------------------------------------
+#
+# Sixteen ANU staff publish their own ORCID on their RSA/RSFAS profile page,
+# but data/anu_identity.csv (the hand-verified seed) only covers 18 of the
+# 46 staff, so ORCID/Crossref/OpenAlex retrieval skips most of the roster.
+# A page ORCID is accepted only when ALL of: exactly one distinct ORCID
+# appears on the page, its ISO 7064 mod 11-2 checksum is valid, and the
+# public ORCID record's name matches the staff member. The seed always
+# wins over a page ORCID; a disagreement between the two is reported, not
+# silently overridden. Every accepted and rejected candidate is logged to
+# ORCID_DECISIONS_LOG for hand review.
+
+def _orcid_checksum_valid(orcid: str) -> bool:
+    digits = orcid.replace("-", "")
+    if len(digits) != 16 or not digits[:-1].isdigit():
+        return False
+    total = 0
+    for ch in digits[:-1]:
+        total = (total + int(ch)) * 2
+    remainder = total % 11
+    result = (12 - remainder) % 11
+    check_char = "X" if result == 10 else str(result)
+    return digits[-1].upper() == check_char
+
+
+def _fold_name(s):
+    """Lower-case, accent- and hyphen/space-stripped, for a tolerant name
+    comparison ('ignoring case, accents and hyphens')."""
+    s = unicodedata.normalize("NFKD", s or "")
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return re.sub(r"[\s\-]", "", s).lower()
+
+
+_NAME_PARTS_RE = re.compile(r"^(?P<first>\S+)\s*(?:\((?P<bracket>[^)]+)\)\s*)?(?P<rest>.+)$")
+
+
+def _split_name(name: str):
+    """'Tracy (Kun) Wang' -> ('Tracy', 'Kun', 'Wang'). A name with no
+    bracketed preferred name just leaves that slot None."""
+    m = _NAME_PARTS_RE.match((name or "").strip())
+    if not m:
+        return (name or "").strip(), None, ""
+    first, bracket, rest = m.group("first"), m.group("bracket"), m.group("rest").strip()
+    surname = rest.split()[-1] if rest else ""
+    return first, bracket, surname
+
+
+def _orcid_record_matches(person, researcher_name: str) -> bool:
+    """True if the ORCID public /person record's family name equals the
+    staff member's surname and its given name's first letter matches the
+    first given name or the bracketed preferred name (e.g. 'Tracy (Kun)
+    Wang' accepts a record whose given name starts with T or K)."""
+    if not person:
+        return False
+    name = person.get("name") or {}
+    family = ((name.get("family-name") or {}) or {}).get("value") or ""
+    given = ((name.get("given-names") or {}) or {}).get("value") or ""
+    if not family.strip() or not given.strip():
+        return False
+    first, bracket, surname = _split_name(researcher_name)
+    if not surname or _fold_name(family) != _fold_name(surname):
+        return False
+    accepted_initials = {s[0].lower() for s in (first, bracket) if s}
+    return given.strip()[0].lower() in accepted_initials
+
+
+def _fetch_orcid_person(orcid: str):
+    try:
+        return cached_get(f"{ORCID_BASE}/{orcid}/person",
+                           headers=ORCID_HEADERS, sleep=0.5, allow_404=True)
+    except Exception as e:
+        print(f"    ORCID lookup failed for {orcid}: {type(e).__name__} {e}")
+        return None
+
+
+def _apply_page_orcid_fallback(researchers, records, log_path=ORCID_DECISIONS_LOG, verbose=True):
+    """Second pass over `records` (after anu_scraper.scrape_profile has run
+    for every researcher and populated anu_scraper.PROFILE_ORCIDS): fill in
+    a validated page ORCID for any staff member the seed left blank, and
+    log every accepted/rejected candidate. Mutates `records` in place."""
+    decisions = []
+    accepted = conflicts = 0
+
+    for researcher, rec in zip(researchers, records):
+        candidates = anu_scraper.PROFILE_ORCIDS.get(researcher.name, [])
+        seed_orcid = rec.get("orcid")
+
+        if seed_orcid:
+            for c in candidates:
+                if c != seed_orcid:
+                    conflicts += 1
+                    decisions.append({
+                        "name": researcher.name, "orcid": c,
+                        "decision": "rejected",
+                        "reason": f"seed already has {seed_orcid!r}; page disagrees",
+                    })
+                    print(f"    ! ORCID conflict for {researcher.name}: "
+                          f"seed={seed_orcid} page={c} — keeping seed")
+            continue
+
+        if not candidates:
+            continue
+        if len(candidates) > 1:
+            for c in candidates:
+                decisions.append({
+                    "name": researcher.name, "orcid": c, "decision": "rejected",
+                    "reason": f"{len(candidates)} distinct ORCIDs on page, not exactly 1",
+                })
+            continue
+
+        candidate = candidates[0]
+        if not _orcid_checksum_valid(candidate):
+            decisions.append({
+                "name": researcher.name, "orcid": candidate, "decision": "rejected",
+                "reason": "invalid ISO 7064 mod 11-2 checksum",
+            })
+            continue
+
+        person = _fetch_orcid_person(candidate)
+        if not _orcid_record_matches(person, researcher.name):
+            decisions.append({
+                "name": researcher.name, "orcid": candidate, "decision": "rejected",
+                "reason": "ORCID public record name does not match staff member"
+                          if person else "could not fetch ORCID public record",
+            })
+            continue
+
+        rec["orcid"] = candidate
+        accepted += 1
+        decisions.append({
+            "name": researcher.name, "orcid": candidate, "decision": "accepted",
+            "reason": "exactly 1 candidate; checksum valid; ORCID record name matches",
+        })
+
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(log_path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=["name", "orcid", "decision", "reason"])
+        w.writeheader()
+        w.writerows(decisions)
+
+    if verbose:
+        print(f"\n  page-ORCID fallback: {accepted} accepted, "
+              f"{len(decisions) - accepted - conflicts} rejected, "
+              f"{conflicts} seed/page conflicts (seed kept) "
+              f"-> {log_path}")
+    return decisions
+
+
+# ---------------------------------------------------------------------------
 # Publications
 # ---------------------------------------------------------------------------
 
@@ -288,6 +443,8 @@ def collect(verbose=True, refresh=False):
                   f"{len(confident):>3} pubs"
                   + (f"  ({len(unparsed)} unparsed)" if unparsed else "")
                   + note)
+
+    _apply_page_orcid_fallback(researchers, records, verbose=verbose)
 
     staff_no_pubs = [r.name for r in researchers if pubs_by_name[r.name] == 0]
     emeritus_no_pubs = [

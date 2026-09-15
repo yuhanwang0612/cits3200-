@@ -6,6 +6,8 @@ visible and reversible rather than baked into each source.
 """
 
 import json
+import re
+import unicodedata
 from collections import Counter
 from datetime import datetime, timezone
 
@@ -15,6 +17,16 @@ from core.config import OUTPUT_DIR
 from core.titles import level
 
 TABLES = ("staff", "journals", "publications", "harvest")
+
+_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
+
+
+def _normalise_title(title):
+    """NFKC, lowercase, every run of non-alphanumeric characters -> one
+    space, then trim. Used only for the dedup key below — curly vs straight
+    quotes and similar cosmetic differences must not defeat it."""
+    t = unicodedata.normalize("NFKC", title or "").lower()
+    return _NON_ALNUM_RE.sub(" ", t).strip()
 
 
 def build_staff(records):
@@ -69,14 +81,26 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     key in a merged table.
     """
     orcid_by_name = {r["name_clean"]: r.get("orcid") for r in (records or [])}
-    seen, out = set(), []
+    out = []
+    kept_dois_by_key = {}
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x.get("type") != keep_type or not x.get("title"):
             continue
-        k = (x["name"], x["title"].lower().strip(), x.get("year"))
-        if k in seen:
-            continue
-        seen.add(k)
+        k = (x["name"], _normalise_title(x["title"]))
+        doi = (x.get("doi") or "").strip().lower()
+        if k not in kept_dois_by_key:
+            kept_dois_by_key[k] = set()
+            if doi:
+                kept_dois_by_key[k].add(doi)
+        else:
+            # A later row with the same (name, normalised title) is a
+            # duplicate unless it carries a DOI genuinely different from
+            # every DOI already kept under this key — curly vs straight
+            # quotes and cosmetic differences must not let a no-DOI page
+            # copy survive next to the properly-identified one.
+            if not doi or doi in kept_dois_by_key[k]:
+                continue
+            kept_dois_by_key[k].add(doi)
         out.append({
             "name": x["name"],
             "orcid": orcid_by_name.get(x["name"]),

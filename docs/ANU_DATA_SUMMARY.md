@@ -1,118 +1,116 @@
 # ANU — Accounting & Finance data summary
 
-For the 26 Aug meeting. Covers the Research School of Accounting (RSA) and
-the Finance area of the Research School of Finance, Actuarial Studies &
-Statistics (RSFAS) — the two ANU schools within scope. Every number below
-was computed directly from the current data files; the command is shown so
-it can be re-run.
+Covers the Research School of Accounting (RSA) and the Finance area of the
+Research School of Finance, Actuarial Studies & Statistics (RSFAS) — the two
+ANU schools within scope. Every number below was computed directly from the
+current data files; the command is shown so it can be re-run.
+
+**Updated 15 Sep 2026** after the data-quality pass described in
+`docs/DECISIONS.md`'s "15 Sep 2026" entries (heading-truncation fix,
+page-ORCID fallback, ABDC title fallback plus its ISSN-backfill addendum
+(FIX E2), curly-quote/year dedup fix, title/journal/year parsing fixes).
+Numbers below are from `final output/anu/`, written by the shared
+`run.py`/`export.py` pipeline — this replaces the standalone
+`anu_scraper.py` output paths (`output/anu_*.csv`) this page originally
+referenced; those files no longer exist and `anu_publications.csv` now
+contains only journal articles (everything else — conference papers,
+research reports, book chapters, textbooks — is filtered out at export
+rather than kept and tagged).
 
 ## One caveat before the numbers
 
-My figures come from each academic's RSA/RSFAS profile page, which lists
-a self-curated selection of their publications, not a complete output
-list. Three other universities in this project (UQ, Monash, UniMelb) read
-from a complete institutional source instead (an eSpace/Minerva
-repository, or OpenAlex via ORCID). That difference cuts both ways here:
-ANU's publication counts below are a floor, not a full count, and the
-proportion rated A\*/A is upward-biased relative to a complete-output
-university, since a self-curated list keeps the strongest work and drops
-the rest. None of the individual numbers below are wrong for what they
-measure — but a direct ANU-vs-another-university comparison on volume or
-average quality isn't valid until ANU also moves to a complete-output
-source, which is the next piece of work, not something already done.
+My figures come from each academic's RSA/RSFAS profile page (plus, since 15
+Sep, their own ORCID/Crossref/OpenAlex records where a validated ORCID is
+available), not a complete institutional output list. Where a researcher has
+no validated ORCID, their count is still a floor, not a full count, in the
+way it always was. See docs/DECISIONS.md for exactly which 15 staff gained a
+validated ORCID this pass and which one page candidate was rejected.
 
 ## Headline numbers
 
-- **44 researchers** (33 Accounting, 11 Finance), all with an academic
-  level assigned (B: 14, C: 12, D: 7, E: 11).
-- **296 publications**, of which 287 are journal articles. The rest are
-  4 industry reports, 3 conference-presentation citations, 1 book chapter
-  and 1 textbook — kept and tagged rather than dropped, since they're real
-  entries on a researcher's profile, just not journal articles for the
-  ranking count.
-- **258 of those 296 (87%) now carry a real ABDC rating** — 101 A\*, 139 A,
-  14 B, 4 C, and 29 checked against the official ABDC list and confirmed
-  not on it (recorded as "none," not left blank, per your 12 Aug
-  instruction). This is new since the last time this was reported — ANU
-  had no ABDC rating in the data at all before this pass.
+- **46 researchers** (33 Accounting, 13 Finance), all with an academic
+  level assigned (B: 14, C: 12, D: 9, E: 11).
+- **610 publications**, all journal articles (non-journal-article types —
+  conference papers, research reports, book chapters, textbooks — are
+  filtered out by `export.py`, not included in this file).
+- **522 of those 610 (85.6%) carry a real ABDC rating** — 189 A\*, 283 A, 44
+  B, 6 C, and 88 with no ABDC match (either genuinely not on the ABDC list,
+  or no journal name to match against). ABDC matching is ISSN-first, falling
+  back to an exact normalised-title match when there is no ISSN — see FIX E
+  in docs/DECISIONS.md.
 
 ```
-python -c "import csv; from collections import Counter; print(Counter(r['quality_rank'] for r in csv.DictReader(open('anu_publications.csv', encoding='utf-8'))))"
+python -c "import csv; from collections import Counter; print(Counter(r['quality_rank'] for r in csv.DictReader(open('final output/anu/anu_publications.csv', encoding='utf-8-sig'))))"
 ```
 
 ## Coverage, field by field
 
 | Field | Coverage | Note |
 |---|---|---|
-| title, publication_type, author_count | 296/296 (100%) | |
-| journal_name | 287/296 (97%) | the 9 blanks are the non-journal items above |
-| year | 288/296 (97%) | |
-| ABDC quality_rank | 258/296 (87%) rated, 29/296 confirmed unrated | |
-| Scimago quartile | 244/296 (82%) | |
-| distinct journals with an ISSN | 103/129 (80%) | from the ABDC/Scimago join |
-| DOI | 74/296 (25%) | see "known gap" below |
-| citation percentile (OpenAlex) | 72/296 (24%) | tracks the DOI figure — OpenAlex needs a DOI to look a paper up |
+| title, journal_name | 610/610 (100%) | |
+| year | 600/610 (98.4%) | the 10 blanks are cases where the only 4-digit year found was inside the title itself — left blank rather than guessed, per FIX C |
+| ABDC quality_rank | 522/610 (85.6%) | ISSN-first, title fallback where there's no ISSN — see FIX E |
+| Scimago quartile | 540/610 (88.5%) | 74.4% before FIX E2's ISSN backfill — see below |
+| citation percentile (OpenAlex) | 458/610 (75.1%) | tracks DOI coverage — OpenAlex needs a DOI to look a paper up (unaffected by FIX E2, which backfills from the ABDC sheet, not OpenAlex) |
+| distinct journals | 185 | |
+| DOI | 476/610 (78.0%) | |
+| staff with a validated ORCID | 33/46 (71.7%) | 18 from the hand-verified seed (`data/anu_identity.csv`), 15 newly accepted from the researcher's own profile page this pass — see FIX D |
+| `anu_journals.csv` rows with an ISSN | 150/201 (74.6%) | 49.3% before FIX E2 |
+| `anu_journals.csv` rows with an `impact_factor` (Clarivate JIF) | 127/201 (63.2%) | 42.8% before FIX E2 |
 
-## The one real known gap: DOI coverage
+The run log (`scratch/_anu15/run_output.txt`) reports 604 of 698 journal
+articles rated before type-filtering and the FIX F dedup pass — 427 by ISSN,
+182 by the new title fallback. `abdc_match` (which of the two matched) is an
+internal diagnostic field, not one of the exported columns, so the ISSN/title
+split for the final 610-row/522-rated set specifically isn't recoverable from
+`anu_publications.csv` alone.
 
-ANU's profile pages don't reliably show a DOI or a working link the way
-some other universities' repositories do — this is a property of the
-source page, not something the scraper is missing. 25% is genuinely lower
-than UQ's roughly 90%+ DOI coverage from their institutional repository
-export.
+**FIX E2 addendum**: 181 of those 182 title-matched rows had no ISSN of
+their own and gained one from the ABDC sheet (the 1 exception: an ABDC
+entry with no ISSN on the sheet either). That's what moved Scimago
+coverage, journal-ISSN coverage and Clarivate JIF coverage — `quality_rank`
+itself is unchanged, since E2 only ever adds an ISSN, never a rating. See
+docs/DECISIONS.md's "15 Sep 2026 (addendum)" entry.
 
-Two consequences, both already handled rather than hidden:
+## What changed 15 Sep 2026 (see docs/DECISIONS.md for full detail)
 
-- **222 publications have no DOI at all** and are listed in
-  `output/anu_doi_manual_lookup.csv` (researcher, title, journal, year,
-  and the article URL we do have) for manual follow-up against Informit or
-  a similar source, per your 19 Aug instruction. This hasn't been worked
-  through yet — it's a to-do list, not a completed check.
-- **Citation data (OpenAlex) is only available for the same 25%**, since
-  OpenAlex looks papers up by DOI. Closing this gap properly means
-  matching each researcher to their OpenAlex author record directly
-  (via ORCID, the same method Monash used) rather than matching paper by
-  paper — that's real, unbuilt work, not something we're pretending is
-  done. It's on the list for after this meeting; see "what's not done" below.
+- **Heading-truncation bug fixed** (FIX A): three staff who use an h3
+  "Publications" heading with h4 sub-headings underneath it — Tracy (Kun)
+  Wang, Mark Wilson, Rebecca Tan — went from 0 confident rows on their own
+  page to 67, 37 and 17 total rows respectively (page + retrieved).
+- **Page ORCIDs** (FIX D): 15 staff gained a validated ORCID read from their
+  own profile page (1 candidate rejected — more than one distinct ORCID on
+  the page). ORCID coverage rose from 39.1% to 71.7% of staff, which in turn
+  unlocked ORCID/Crossref/OpenAlex retrieval for them.
+- **ABDC title fallback** (FIX E): rows with no DOI (so no ISSN) can now be
+  rated by an exact normalised journal-title match when there's no ISSN hit.
+- **Duplicate page/retrieved copies removed** (FIX F): 6 ANU rows where a
+  no-DOI page copy of a paper (curly vs straight quotes, or a differing
+  year) sat next to the properly-identified ORCID/OpenAlex copy.
+- **ABDC ISSN backfill** (FIX E2): a title-matched row with no ISSN of its
+  own now picks up the ABDC sheet's own ISSN for that journal, so Clarivate
+  (JIF) and Scimago (SJR/quartile) — both ISSN-only joins — can find it
+  too. Scimago quartile coverage 74.4% -> 88.5%; Clarivate JIF coverage
+  (of the pre-export 698-row pool) 448 -> 613 of 698.
 
 ## What's not done, and why
 
-- **Author-level citation harvest (ORCID → OpenAlex).** Would raise
-  coverage above the 25% DOI ceiling by looking up each researcher
-  directly rather than each paper. Not started this sprint — it's a
-  genuinely large piece of work, and the team's other university (Monash)
-  has a working version of this approach that's specific to their own
-  source pages. We want to agree on one shared way of doing this across
-  universities rather than each of us building our own, per the "uniform
-  your method" instruction — that conversation is happening at this
-  meeting, not pre-empted by me building an ANU-only version in the
-  meantime.
-- **23 publications are logged for manual review**
-  (`output/anu_unparsed_publications.csv`) rather than trusted — mostly
-  citations the parser couldn't confidently split into title/journal/year,
-  kept rather than guessed at.
-- **11 researchers have no inline Publications section** on their profile
-  page at all (`output/anu_no_publications.csv`) — a genuine gap in this
-  data source, not a parsing failure. Their ANU profile only links out to
-  the university's Pure research portal, which is behind bot-detection we
-  deliberately don't try to defeat.
-- **One Emeritus Professor** on staff (Neil Fargher) — checked against
-  your 19 Aug rule to exclude an Emeritus Professor with no output; he has
-  recorded publications, so no exclusion applies.
-
-## Specific things worth your check
-
-- **101 A\* and 139 A ratings** is a high proportion of a 296-publication
-  set — worth a sanity spot-check against a couple of researchers you know
-  well, since a systematic ABDC mismatch would be a serious finding, and
-  this is the first time this join has run for ANU.
-- **The 29 "none" ratings** are journals ANU researchers publish in that
-  are genuinely not on the current ABDC list (e.g. practitioner journals,
-  SSRN, some finance-specialist outlets) — worth confirming that's the
-  right treatment (kept and counted, rated "none") rather than something
-  that should be excluded outright.
-- **The 3 reclassified conference papers** (Alex Wang, presented at the
-  same accounting-education conference under two venues) — confirms the
-  "journals only" rule is now being applied correctly for this shape;
-  worth checking whether other researchers have similar
-  conference-presentation citations we should double-check.
+- **researchportalplus.anu.edu.au (Pure portal) is still out of scope** —
+  it sits behind Cloudflare bot detection the team decided not to try to
+  defeat. This remains the main ceiling on ANU coverage: a staff member with
+  no validated ORCID and a sparse or missing profile-page Publications
+  section is still under-counted.
+- **6 researchers still have no publications at all**: Bonnie Allan, Ian
+  McPhee, Jean You, Keturah Whitford, Pat Barrett, Yue Cai — down from 9
+  before this pass. Each was checked: no Publications section on their page,
+  no seed or validated page ORCID to retrieve from elsewhere.
+- **12 rows still trip a data-quality heuristic** (title looks like a whole
+  citation, a bare year inside the title, etc.) — listed individually in
+  `scratch/_anu15/after.txt` and `REPORT.md` rather than chased one by one,
+  per this pass's own instruction not to keep adding narrow rules.
+- **Wai-Man (Raymond) Liu's retrieved rows include several medical/health
+  journals** (via his own validated ORCID — the ORCID record's name matches
+  him exactly, but its own works list appears to include entries outside
+  accounting/finance). `screen.py`'s existing 25% discipline-share threshold
+  does not flag him (his share is 37.5%). Not removed — flagged for a
+  team/client decision. See docs/DECISIONS.md.
