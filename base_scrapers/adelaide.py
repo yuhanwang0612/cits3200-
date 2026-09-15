@@ -10,10 +10,13 @@ retrieves them using the ORCIDs this adapter provides.
 """
 
 import re
+import ssl
 import time
 
 import requests
 from bs4 import BeautifulSoup
+from requests.adapters import HTTPAdapter
+from urllib3.util.ssl_ import create_urllib3_context
 
 from core.titles import rank, split_prefix
 
@@ -28,6 +31,30 @@ _HEADERS = {
 }
 
 _ACCTFIN_RE = re.compile(r"\b(accounting|finance|financial)\b", re.I)
+
+
+class _LegacySSLAdapter(HTTPAdapter):
+    """Allow legacy SSL renegotiation for older university servers."""
+    def init_poolmanager(self, *args, **kwargs):
+        ctx = create_urllib3_context()
+        ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT
+        kwargs["ssl_context"] = ctx
+        super().init_poolmanager(*args, **kwargs)
+
+    def proxy_manager_for(self, proxy, **proxy_kwargs):
+        ctx = create_urllib3_context()
+        ctx.options |= 0x4
+        proxy_kwargs["ssl_context"] = ctx
+        return super().proxy_manager_for(proxy, **proxy_kwargs)
+
+
+def _get_session():
+    s = requests.Session()
+    s.mount("https://researchers.adelaide.edu.au", _LegacySSLAdapter())
+    return s
+
+
+_SESSION = _get_session()
 _SCHOOL_NAMES = [
     "school of accounting", "school of finance",
     "accounting and finance", "finance and accounting",
@@ -71,7 +98,7 @@ def scrape_staff(verbose=True):
     while page <= 300:
         url = f"https://researchers.adelaide.edu.au/?page={page}"
         try:
-            resp = requests.get(url, headers=_HEADERS, timeout=15)
+            resp = _SESSION.get(url, headers=_HEADERS, timeout=15)
             if resp.status_code != 200:
                 break
             soup = BeautifulSoup(resp.text, "html.parser")
@@ -106,7 +133,7 @@ def scrape_staff(verbose=True):
     for username in usernames:
         rurl = f"https://researchers.adelaide.edu.au/profile/{username}"
         try:
-            resp = requests.get(rurl, headers=_HEADERS, timeout=15)
+            resp = _SESSION.get(rurl, headers=_HEADERS, timeout=15)
             if resp.status_code != 200 or len(resp.text) < 500:
                 continue
             soup = BeautifulSoup(resp.text, "html.parser")
@@ -136,7 +163,7 @@ def scrape_staff(verbose=True):
 
             if not orcid:
                 try:
-                    pr = requests.get(
+                    pr = _SESSION.get(
                         f"https://adelaide.edu.au/people/{username}",
                         headers=_HEADERS, timeout=10,
                     )

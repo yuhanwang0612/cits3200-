@@ -104,6 +104,10 @@ def _make_driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
+    options.add_argument(
+        "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    )
     return webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=options,
@@ -310,14 +314,7 @@ def scrape_staff(verbose=True):
                 print(f"    {discipline}: {url}")
             try:
                 driver.get(url)
-                try:
-                    WebDriverWait(driver, 20).until(
-                        EC.presence_of_element_located(
-                            (By.CSS_SELECTOR, "a[href*='research.monash.edu/en/persons/']")
-                        )
-                    )
-                except Exception:
-                    time.sleep(10)
+                time.sleep(15)
             except Exception as exc:
                 if verbose:
                     print(f"    browser error ({exc}), restarting ...")
@@ -327,14 +324,7 @@ def scrape_staff(verbose=True):
                     pass
                 driver = _make_driver()
                 driver.get(url)
-                try:
-                    WebDriverWait(driver, 20).until(
-                        EC.presence_of_element_located(
-                            (By.CSS_SELECTOR, "a[href*='research.monash.edu/en/persons/']")
-                        )
-                    )
-                except Exception:
-                    time.sleep(10)
+                time.sleep(15)
 
             # Use Selenium's live DOM directly — bypasses BeautifulSoup parsing issues
             # with dynamically rendered content.
