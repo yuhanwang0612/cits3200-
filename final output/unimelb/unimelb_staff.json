@@ -1,0 +1,992 @@
+[
+  {
+    "name": "Margaret Abernethy",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "4757",
+    "orcid": "0000-0002-1244-7593",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/14551"
+  },
+  {
+    "name": "Rosemary Addis",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-9466-4470",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/rosemary-addis"
+  },
+  {
+    "name": "Gary Biddle",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "120646",
+    "orcid": "0000-0003-3405-0738",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/774767"
+  },
+  {
+    "name": "Stuart Black",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "164026",
+    "orcid": "0000-0002-5391-256X",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/900177"
+  },
+  {
+    "name": "Jonathan Black",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "182928",
+    "orcid": "0000-0001-9805-5672",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/1045278"
+  },
+  {
+    "name": "Noel Boys",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/11503"
+  },
+  {
+    "name": "Albie Brooks",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/177702"
+  },
+  {
+    "name": "Geoffrey Burrows",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "11110",
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/geoffrey_burrows"
+  },
+  {
+    "name": "Danny Burton",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0009-0009-8084-9058",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/danny-burton"
+  },
+  {
+    "name": "Phill Cobbin",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-1117-7341",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/13986"
+  },
+  {
+    "name": "Wayne Coetzee",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/wayne-coetzee"
+  },
+  {
+    "name": "Bob Cornick",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/bob-cornick"
+  },
+  {
+    "name": "Greg Cusack",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/greg-cusack"
+  },
+  {
+    "name": "Michael Davern",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "4743",
+    "orcid": "0000-0002-9572-812X",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/14375"
+  },
+  {
+    "name": "Tongqing (Tony) Ding",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "151430",
+    "orcid": "0000-0001-9335-6644",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/tongqing-ding"
+  },
+  {
+    "name": "Matt Dyki",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/223994"
+  },
+  {
+    "name": "Patrick Ferguson",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "59488",
+    "orcid": "0000-0003-2376-5463",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/196369"
+  },
+  {
+    "name": "Jennifer Grafton",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "8626",
+    "orcid": "0000-0003-3545-3870",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/2122"
+  },
+  {
+    "name": "Lisa Greig",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0009-0000-2997-4309",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/lisa-greig"
+  },
+  {
+    "name": "Jane Hronsky",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "11236",
+    "orcid": "0000-0002-1987-7668",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/14595"
+  },
+  {
+    "name": "Chung-Yu Hung",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "116746",
+    "orcid": "0000-0003-0805-5260",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/759375"
+  },
+  {
+    "name": "Xue Jia",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "124963",
+    "orcid": "0000-0002-0843-9259",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/788715"
+  },
+  {
+    "name": "Like Jiang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "115447",
+    "orcid": "0000-0003-1704-9751",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/747313"
+  },
+  {
+    "name": "Flora Kuang",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-5095-4118",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/743113"
+  },
+  {
+    "name": "Warren Lee",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0009-0009-2000-0538",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/warren-lee"
+  },
+  {
+    "name": "Stewart Leech",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "33361",
+    "orcid": "0000-0001-6956-1357",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/278"
+  },
+  {
+    "name": "Anne Lillis",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "590",
+    "orcid": "0000-0002-3057-6428",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/14425"
+  },
+  {
+    "name": "Joana Linggo Liong",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/joana-linggo-liong"
+  },
+  {
+    "name": "Junhao Liu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/1093039"
+  },
+  {
+    "name": "Derick Lyle",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/826860"
+  },
+  {
+    "name": "Rebecca Mattocks",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/rebecca-mattocks"
+  },
+  {
+    "name": "Warren McKeown",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/178662"
+  },
+  {
+    "name": "Tasneem Mohammed",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-3591-1368",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/tasneem-mohammed"
+  },
+  {
+    "name": "Vic Naiker",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "132071",
+    "orcid": "0000-0002-7069-8497",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/798347"
+  },
+  {
+    "name": "Sujay Nair",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "1904",
+    "orcid": "0000-0002-1506-6921",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/429349"
+  },
+  {
+    "name": "Matthew Pinnuck",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "94",
+    "orcid": "0000-0002-7743-5796",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/1798"
+  },
+  {
+    "name": "Brad Potter",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-6593-7871",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/20553"
+  },
+  {
+    "name": "Bo Qin",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "115157",
+    "orcid": "0000-0001-5817-1169",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/743093"
+  },
+  {
+    "name": "Michelle Sabe",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0009-0000-2679-0205",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/michelle-sabe"
+  },
+  {
+    "name": "Stefan Schantl",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "117320",
+    "orcid": "0000-0002-3777-6756",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/761836"
+  },
+  {
+    "name": "Maggie Singorahardjo",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "132066",
+    "orcid": "0000-0003-4778-3746",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/maggie-singorahardjo"
+  },
+  {
+    "name": "Naomi Soderstrom",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "5569",
+    "orcid": "0000-0001-7602-9182",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/183513"
+  },
+  {
+    "name": "Nasser Spear",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "15033",
+    "orcid": "0000-0002-6073-3092",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/1559"
+  },
+  {
+    "name": "Maiying Sui",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0002-1566-522X",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/maiying-sui"
+  },
+  {
+    "name": "Michael Taouk",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0003-1529-813X",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/michael-taouk"
+  },
+  {
+    "name": "Eu-Jin Teo",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "942",
+    "orcid": "0000-0002-7196-5462",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/52200"
+  },
+  {
+    "name": "Di (Demi) Wang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "137207",
+    "orcid": "0000-0002-9656-5705",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/demi-wang"
+  },
+  {
+    "name": "Martin Weisner",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "127594",
+    "orcid": "0000-0003-1702-6277",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/796580"
+  },
+  {
+    "name": "Sarah Yang Spencer",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": null,
+    "orcid": "0000-0001-5350-6476",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/826429"
+  },
+  {
+    "name": "Qingbo Yuan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Accounting",
+    "source_id": "1556",
+    "orcid": "0000-0003-4660-4283",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/233936"
+  },
+  {
+    "name": "Gil Aharoni",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "1207",
+    "orcid": "0000-0001-5792-7171",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/144989"
+  },
+  {
+    "name": "Attila Balogh",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "172695",
+    "orcid": "0000-0002-7026-1965",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/954317"
+  },
+  {
+    "name": "Elizabeth Bowman",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/elizabeth-bowman"
+  },
+  {
+    "name": "James Brugler",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "117315",
+    "orcid": "0000-0002-3905-6007",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/761748"
+  },
+  {
+    "name": "Shuang Chen",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-5894-6072",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/shuang-chen"
+  },
+  {
+    "name": "Carole Comerton-Forde",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "25276",
+    "orcid": "0000-0002-1618-0371",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/532357"
+  },
+  {
+    "name": "Jonathan Dark",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "12012",
+    "orcid": "0000-0002-7688-0193",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/181374"
+  },
+  {
+    "name": "Assaf Dekel",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/assaf-dekel"
+  },
+  {
+    "name": "Juan Pablo Franco",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/803361"
+  },
+  {
+    "name": "Jon Gauntlett",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/jon-gauntlett"
+  },
+  {
+    "name": "Marina Gertsberg",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "169936",
+    "orcid": "0000-0003-4682-3654",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/955361"
+  },
+  {
+    "name": "André Gygax",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "223",
+    "orcid": "0000-0001-7265-9400",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/4210"
+  },
+  {
+    "name": "John Handley",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "14958",
+    "orcid": "0000-0003-0734-5119",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/116"
+  },
+  {
+    "name": "Allan Horsfall",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/allan-horsfall"
+  },
+  {
+    "name": "Joachim Inkmann",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "10095",
+    "orcid": "0000-0002-5526-7648",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/250474"
+  },
+  {
+    "name": "Eduard Inozemtsev",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "184695",
+    "orcid": "0009-0005-3542-0392",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/1050858"
+  },
+  {
+    "name": "Hae Won (Henny) Jung",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "8445",
+    "orcid": "0000-0002-7268-7505",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/510793"
+  },
+  {
+    "name": "Patrick J. Kelly",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-8540-7488",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/437404"
+  },
+  {
+    "name": "Minsoo Kim",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0001-6263-6360",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/minsoo-kim"
+  },
+  {
+    "name": "Paul Kofman",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "6753",
+    "orcid": "0000-0003-0479-5026",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/7994"
+  },
+  {
+    "name": "Asjeet Lamba",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "2727",
+    "orcid": "0000-0002-7541-967X",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/14988"
+  },
+  {
+    "name": "Gabriele Lattanzio",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "182846",
+    "orcid": "0000-0003-1592-433X",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gabriele-lattanzio"
+  },
+  {
+    "name": "Natalie (Nhung) Le",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/natalie-le"
+  },
+  {
+    "name": "Tania Lee",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0009-0008-8892-4625",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/tania-lee"
+  },
+  {
+    "name": "Bob Li",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/bob-li"
+  },
+  {
+    "name": "Bryan Lim",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "7805",
+    "orcid": "0000-0003-3756-3651",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/193012"
+  },
+  {
+    "name": "Andrea Lu",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "54873",
+    "orcid": "0000-0002-8635-2167",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/664549"
+  },
+  {
+    "name": "Lucie Lu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0009-0001-4310-0082",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/lucie-lu"
+  },
+  {
+    "name": "Maurice McCourt",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "141610",
+    "orcid": "0000-0002-1808-8675",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/833272"
+  },
+  {
+    "name": "Mrinal Mishra",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0009-0007-6232-9038",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/mrinal-mishra"
+  },
+  {
+    "name": "Carsten Murawski",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "5544",
+    "orcid": "0000-0002-1237-9535",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/179115"
+  },
+  {
+    "name": "Federico Nardari",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "25842",
+    "orcid": "0000-0002-8654-9285",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/551184"
+  },
+  {
+    "name": "Gaby Nardari",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gaby-berhe-nardari"
+  },
+  {
+    "name": "Anthony Ng",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0002-5098-5616",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/anthony-ng"
+  },
+  {
+    "name": "Linh Nguyen",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/999882"
+  },
+  {
+    "name": "Hoonsuk Park",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "158952",
+    "orcid": "0000-0003-1271-4804",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/hoonsuk-park"
+  },
+  {
+    "name": "Hung (Harry) Viet Pham",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "182729",
+    "orcid": "0000-0001-8163-4010",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/hung-harry-viet-pham"
+  },
+  {
+    "name": "Sean Pinder",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "321",
+    "orcid": "0000-0003-3083-6047",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/6726"
+  },
+  {
+    "name": "Chander Shekhar",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "105",
+    "orcid": "0000-0003-4689-5172",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/1994"
+  },
+  {
+    "name": "Zhen Shi",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": null,
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/250294"
+  },
+  {
+    "name": "Bryan Tan",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "154830",
+    "orcid": null,
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/bryan-tan"
+  },
+  {
+    "name": "Ekaterina Volkova",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "133551",
+    "orcid": "0000-0002-6589-0433",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/810575"
+  },
+  {
+    "name": "Xiaoting Wei",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0001-6490-9967",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/xiaoting-wei"
+  },
+  {
+    "name": "Nitin Yadav",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "127160",
+    "orcid": "0000-0003-0132-1028",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/788118"
+  },
+  {
+    "name": "Jun Yu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0000-0003-2360-5873",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/cabe/jun-yu"
+  },
+  {
+    "name": "Qi Zeng",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "11502",
+    "orcid": "0000-0003-1228-0794",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/25878"
+  },
+  {
+    "name": "Zhuo Zhong",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "54898",
+    "orcid": "0000-0001-6251-2552",
+    "profile_url": "https://findanexpert.unimelb.edu.au/profile/667468"
+  },
+  {
+    "name": "Yun (Tracy) Zhou",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "195949",
+    "orcid": "0000-0003-0115-3124",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/yun-tracy-zhou"
+  },
+  {
+    "name": "Silvia Zia",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Melbourne",
+    "field_of_research": "Finance",
+    "source_id": "178941",
+    "orcid": "0009-0001-9381-1421",
+    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/silvia-zia"
+  }
+]

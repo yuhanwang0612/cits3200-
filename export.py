@@ -191,18 +191,21 @@ def build_staff(records):
     } for p in records]
 
 
-def build_journals(pubs):
+def build_journals(pubs, used_names=None):
     """One row per journal, keyed on the ABDC canonical title where we have
     one. Keying on ISSN splits print from online; keying on the raw name
     splits 'and' from '&'. The canonical title collapses both."""
     out = {}
     for x in pubs:
-        if not x.get("journal"):
+        # A sparse ORCID row can arrive without a journal title but still be
+        # matched to ABDC by an ISSN. In that case `abdc_title` is the canonical
+        # journal name and must be enough to create the referenced journal row.
+        if not (x.get("abdc_title") or x.get("journal")):
             continue
-        key = x.get("abdc_title") or x["journal"]
-        if key in out:
+        key = x.get("abdc_title") or x.get("journal")
+        if used_names is not None and key not in used_names:
             continue
-        out[key] = {
+        candidate = {
             "journal_name": key,
             "journal_raw": x["journal"],
             "publisher": x.get("publisher"),
@@ -218,6 +221,31 @@ def build_journals(pubs):
             "cites_per_doc_2y": x.get("cites_per_doc_2y"),
             "scimago_year": x.get("scimago_year"),
         }
+        if key not in out:
+            out[key] = candidate
+            continue
+
+        # Several source copies can represent the same journal. Retain the
+        # first non-empty scalar value and union their ISSNs rather than
+        # letting the first (possibly sparse) copy permanently win.
+        current = out[key]
+        for field, value in candidate.items():
+            if field == "issn":
+                existing = [v.strip() for v in (current.get(field) or "").split(";") if v.strip()]
+                incoming = [v.strip() for v in (value or "").split(";") if v.strip()]
+                merged = existing + [v for v in incoming if v not in existing]
+                current[field] = "; ".join(merged) or None
+            elif not current.get(field) and value:
+                current[field] = value
+
+    if used_names is not None and "unknown" in used_names:
+        out.setdefault("unknown", {
+            "journal_name": "unknown", "journal_raw": None, "publisher": None,
+            "issn": None, "quality_rank": None, "abdc_edition": None,
+            "impact_factor": None, "impact_factor_5yr": None, "jcr_year": None,
+            "sjr": None, "sjr_quartile": None, "h_index": None,
+            "cites_per_doc_2y": None, "scimago_year": None,
+        })
     return list(out.values())
 
 
@@ -348,7 +376,9 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
 
     tables = {
         "staff": staff,
-        "journals": build_journals(pubs),
+        "journals": build_journals(
+            pubs, used_names={p["journal_name"] for p in publications}
+        ),
         "publications": publications,
         "harvest": build_harvest(records, pubs, publications),
     }

@@ -108,6 +108,20 @@ def test_the_out_of_discipline_rows_are_removed():
     assert len(kept) == 1
 
 
+def test_repository_verified_identity_is_not_overruled_by_abdc_coverage():
+    """ABDC is a journal ranking list, not an author identity authority."""
+    verified = person("Interdisciplinary Researcher")
+    verified.update({
+        "source_id": "minerva-123",
+        "identity_confidence": "high",
+        "identity_source": "minerva_seed_exact_name",
+    })
+    pubs = contaminated(name="Interdisciplinary Researcher")
+    kept = sc.screen([verified], pubs, verbose=False)
+    assert len(kept) == len(pubs)
+    assert verified["orcid"] == "0000-0002-1234-5678"
+
+
 def test_the_rows_the_university_listed_are_never_touched():
     """Those came from the institution's own record of its own staff. If they
     are wrong that is a different problem, and deleting them hides it."""
