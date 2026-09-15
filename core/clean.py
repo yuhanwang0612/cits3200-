@@ -136,7 +136,12 @@ def clean_pub(pub, log=None):
 
     ty0 = pub.get("type")
     pub["type"] = norm_type(ty0)
-    if (pub.get("journal") or "").strip().lower() in _PREPRINT_VENUES:
+    venue = (pub.get("journal") or "").strip().lower()
+    # RePEc is an index/repository, and OpenAlex can expose labels such as
+    # "RePEc: Research Papers in Economics" rather than the bare "repec"
+    # token.  Treat those as repository records so they cannot masquerade as
+    # journal articles in the final export.
+    if venue in _PREPRINT_VENUES or venue.startswith("repec:"):
         pub["type"] = "Preprint"
     if ty0 != pub["type"]:
         note(f"    type    {who}: {ty0!r} -> {pub['type']!r}  ({pub.get('journal')!r})")
