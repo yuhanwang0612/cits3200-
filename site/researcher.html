@@ -267,18 +267,47 @@
   el('q').addEventListener('input', apply);
   el('only-abdc').addEventListener('change', apply);
 
-  el('btn-export').addEventListener('click', () => exportCSV(view, [
-    { key: 'title',            label: 'Title' },
-    { key: 'journal_name',     label: 'Journal' },
-    { key: 'issn',             label: 'ISSN' },
-    { key: 'year',             label: 'Year' },
-    { key: 'quality_rank',     label: 'ABDC' },
-    { key: 'scimago_quartile', label: 'Scimago quartile' },
-    { key: 'impact_factor',    label: 'Impact factor' },
-    { key: 'cited_by_count',   label: 'Cited by' },
-    { key: 'doi',              label: 'DOI' },
-    { key: 'article_url',      label: 'URL' },
-  ], (r.name || 'researcher').replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '-publications.csv'));
+  // The export carries every field the API returns, not just the seven the
+  // table has room for: the table is a screen-sized summary, the CSV is the
+  // copy people take away and analyse. The researcher's own name and
+  // university are stamped onto each row so that two exports concatenated
+  // together are still readable — the filename is lost once that happens.
+  el('btn-export').addEventListener('click', () => exportCSV(
+    view.map(p => Object.assign({
+      researcher: r.name,
+      researcher_university: r.university,
+      researcher_orcid: r.orcid,
+    }, p)),
+    [
+      { key: 'researcher',            label: 'Researcher' },
+      { key: 'researcher_university', label: 'University' },
+      { key: 'researcher_orcid',      label: 'Researcher ORCID' },
+
+      { key: 'title',                 label: 'Title' },
+      { key: 'journal_name',          label: 'Journal' },
+      { key: 'issn',                  label: 'ISSN' },
+      { key: 'year',                  label: 'Year' },
+      { key: 'authors',               label: 'Authors' },
+      { key: 'author_count',          label: 'Author count' },
+
+      { key: 'quality_rank',          label: 'ABDC' },
+      { key: 'scimago_quartile',      label: 'Scimago quartile' },
+      { key: 'impact_factor',         label: 'Impact factor' },
+      { key: 'impact_factor_5yr',     label: 'Impact factor (5 year)' },
+      { key: 'cited_by_count',        label: 'Cited by' },
+      { key: 'citation_percentile',   label: 'Citation percentile' },
+      { key: 'fwci',                  label: 'FWCI' },
+
+      { key: 'doi',                   label: 'DOI' },
+      { key: 'article_url',           label: 'URL' },
+      { key: 'link',                  label: 'Link' },
+      { key: 'oa_status',             label: 'Open access status' },
+      { key: 'oa_url',                label: 'Open access URL' },
+
+      { key: 'publication_status',    label: 'Publication status' },
+      { key: 'source',                label: 'Source' },
+    ],
+    (r.name || 'researcher').replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '-publications.csv'));
 
   render();
 })().catch(function (err) {
