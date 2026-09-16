@@ -21,11 +21,15 @@
     <h1>Edit data</h1>
     <p style="margin-top:-0.5rem;"><a href="/admin/logout">Log out</a></p>
     <p class="muted">Pick a dataset, download it as Excel, edit the cells, then upload it back.
-      Rows match on the id column (<code>publication_id</code> / <code>journal_id</code> /
-      <code>researcher_id</code>); leave that cell blank to add a new row.
-      Each dataset is separate: journal details live only in <strong>Journals</strong>, so editing a
-      journal there updates every publication in that journal automatically. In
-      <strong>Publications</strong> you point a paper at a journal by its <code>journal_id</code>.</p>
+      There are 3 different data sets that can be downloaded; Journals, Pulbications and Staff (researcher)
+      In order for an edit to take affect, ensure that you choose the correct data set, download the Excel
+      sheet, edit and save your changes, and re-upload the sheet. Make sure that section 1. "Choose dataset"
+      is set to the correct one when uploading the Excel sheet. 
+      </p>
+      <p class="muted">
+      Note: Changes made to the Journal and Staff (researcher) datasets will affect the publications dataset,
+      while the reverse is not true.
+      </p>
 
     <div class="admin-step">
       <h2>1. Choose dataset</h2>
