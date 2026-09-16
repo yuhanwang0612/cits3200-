@@ -33,6 +33,7 @@ from flask import (Blueprint, abort, jsonify, redirect, request, send_file,
                    send_from_directory, session)
 
 from models import Publication, Researcher, Journal
+from refresh_manager import RefreshManager
 
 # publication_id first (the key), then read-only context, then editables.
 KEY_COL = "publication_id"
@@ -192,8 +193,11 @@ def upsert_from_dataframe(session_, df, *, dry_run=False):
 # blueprint
 # --------------------------------------------------------------------------
 
-def make_admin_bp(Session):
+def make_admin_bp(Session, refresh_manager=None):
     bp = Blueprint("admin", __name__)
+    if refresh_manager is None:
+        engine = getattr(Session, "kw", {}).get("bind")
+        refresh_manager = RefreshManager(engine=engine)
 
     @bp.record_once
     def _setup(state):
@@ -292,5 +296,20 @@ def make_admin_bp(Session):
             s.close()
         result["dry_run"] = dry
         return jsonify(result), (200 if not result["errors"] else 422)
+
+    @bp.get("/api/admin/refresh/status")
+    @login_required
+    def refresh_status():
+        return jsonify(refresh_manager.snapshot())
+
+    @bp.post("/api/admin/refresh")
+    @login_required
+    def refresh_start():
+        started, state = refresh_manager.start()
+        if started:
+            return jsonify(state), 202
+        if state.get("state") in {"queued", "running"}:
+            return jsonify(state), 409
+        return jsonify(state), 500
 
     return bp
