@@ -145,7 +145,7 @@ def _fetch_research_profile(research_url):
         try:
             resp = requests.get(research_url, headers=_HEADERS, timeout=15)
             if resp.status_code == 429:
-                time.sleep(10 * (attempt + 1))
+                time.sleep(15 * (attempt + 1))
                 continue
             if resp.status_code != 200 or not resp.text:
                 return None, 0, None
@@ -178,7 +178,7 @@ def _fetch_research_profile(research_url):
 
             return title_raw, pub_count, orcid
         except Exception:
-            time.sleep(3)
+            time.sleep(2)
     return None, 0, None
 
 
@@ -190,11 +190,11 @@ def _oa_get(url, params):
         try:
             resp = requests.get(url, params=params, headers=_OA_HEADERS, timeout=20)
             if resp.status_code == 429:
-                time.sleep(30)
+                time.sleep(15)
                 continue
             return resp
         except Exception:
-            time.sleep(10)
+            time.sleep(5)
     return None
 
 
@@ -214,7 +214,7 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
             results = resp.json().get("results", [])
             if results:
                 author_id = results[0]["id"]
-        time.sleep(1)
+        time.sleep(0.2)
         if not author_id:
             return []
     else:
@@ -232,7 +232,7 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
         if not match:
             return []
         author_id = match["id"]
-        time.sleep(1)
+        time.sleep(0.2)
 
     # Cursor-paginate all works
     pubs = []
@@ -284,7 +284,7 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
         cursor = data.get("meta", {}).get("next_cursor")
         if not cursor:
             break
-        time.sleep(0.5)
+        time.sleep(0.2)
 
     # Sanity check: discard if name-only match returns unreasonably many pubs
     if not orcid:
@@ -387,7 +387,7 @@ def scrape_staff(verbose=True):
         if verbose:
             tag = f"[orcid={orcid}]" if orcid else "[no orcid]"
             print(f"  + {r['name_clean']:40s}  pubs={pub_count}  {tag}")
-        time.sleep(1.5)
+        time.sleep(0.3)   # was 1.5 s
 
     if verbose:
         print(f"  {len(records)} Monash A&F staff")
@@ -413,7 +413,7 @@ def collect(verbose=True):
         tag = "[ORCID]" if orcid else "[name->Monash]"
         if verbose:
             print(f"    {name:40s}  {len(person_pubs)} pubs  {tag}")
-        time.sleep(3)
+        time.sleep(0.5)   # was 3 s
 
     if verbose:
         print(f"  {len(pubs)} total publications")
