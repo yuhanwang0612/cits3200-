@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin — Data management</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .admin-step select, .admin-step input[type=file] { padding: 0.4rem; }
+  </style>
 </head>
 <body>
   <div class="admin-wrap">
@@ -12,9 +15,18 @@
     <p class="admin-logout"><a href="/admin/logout">Log out</a></p>
 
     <section class="admin-step">
-      <h2>Edit publications</h2>
-      <p class="muted">Download every publication as an Excel sheet, edit the cells,
-        then upload it back. Rows are matched on <code>publication_id</code>; leave that
+      <h2>Edit data</h2>
+      <p class="muted">Pick a dataset, download it as Excel, edit the cells, then upload it back.
+        There are 3 different data sets that can be downloaded; Journals, Pulbications and Staff (researcher)
+        In order for an edit to take affect, ensure that you choose the correct data set, download the Excel
+        sheet, edit and save your changes, and re-upload the sheet. Make sure that section 1. "Choose dataset"
+        is set to the correct one when uploading the Excel sheet.
+      </p>
+      <p class="muted">
+        Note: Changes made to the Journal and Staff (researcher) datasets will affect the publications dataset,
+        while the reverse is not true.
+      </p>
+      <p class="muted">For publications, rows are matched on <code>publication_id</code>; leave that
         cell blank to add a new publication (it will need a valid <code>researcher_id</code>).
         Only the publication columns are saved — <code>researcher_name</code>,
         <code>university</code>, <code>journal_name</code> and <code>issn</code> are shown for
@@ -24,12 +36,21 @@
         edits can be replaced; the refresh creates a database backup first.</p>
 
       <div class="admin-action-block">
-        <h3>1. Download</h3>
-        <a class="btn" href="/api/admin/publications.xlsx">Download publications.xlsx</a>
+        <h3>1. Choose dataset</h3>
+        <select id="dataset">
+          <option value="publications">Publications</option>
+          <option value="journals">Journals</option>
+          <option value="researchers">Staff (researchers)</option>
+        </select>
       </div>
 
       <div class="admin-action-block">
-        <h3>2. Upload edited sheet</h3>
+        <h3>2. Download</h3>
+        <button class="btn" id="btn-download" type="button">Download Excel</button>
+      </div>
+
+      <div class="admin-action-block">
+        <h3>3. Upload edited sheet</h3>
         <input type="file" id="file" accept=".xlsx">
         <label class="admin-check-row">
           <input type="checkbox" id="dry" checked>
@@ -70,32 +91,39 @@
   </div>
 
   <script>
-    const uploadBtn = document.getElementById("btn-upload");
-    const out = document.getElementById("result");
-    const refreshBtn = document.getElementById("btn-refresh");
-    const refreshState = document.getElementById("refresh-state");
-    const refreshSources = document.getElementById("refresh-sources");
+    const el = id => document.getElementById(id);
+    const uploadBtn = el("btn-upload");
+    const out = el("result");
+    const dataset = () => el("dataset").value;
+    const refreshBtn = el("btn-refresh");
+    const refreshState = el("refresh-state");
+    const refreshSources = el("refresh-sources");
     let pollTimer = null;
 
+    el("btn-download").addEventListener("click", () => {
+      window.location = `/api/admin/${dataset()}.xlsx`;
+    });
+
     uploadBtn.addEventListener("click", async () => {
-      const f = document.getElementById("file").files[0];
+      const f = el("file").files[0];
       if (!f) { showUpload("Choose a file first."); return; }
-      const dry = document.getElementById("dry").checked;
+      const dry = el("dry").checked;
 
       const fd = new FormData();
       fd.append("file", f);
       showUpload("Working…");
       uploadBtn.disabled = true;
       try {
-        const res = await fetch("/api/admin/publications?dry_run=" + (dry ? "1" : "0"),
+        const res = await fetch(`/api/admin/${dataset()}?dry_run=${dry ? "1" : "0"}`,
                                 { method: "POST", body: fd });
-        if (await handleExpired(res)) return;
+        if (await handleExpired(res, showUpload)) return;
         const data = await res.json();
         if (data.error) { showUpload("Error: " + data.error); return; }
 
         let msg = (data.dry_run ? "PREVIEW (nothing saved)\n" : "SAVED TO DATABASE\n")
           + `inserted: ${data.inserted}\nupdated:  ${data.updated}\nskipped:  ${data.skipped}\n`
           + `errors:   ${data.errors.length}`;
+        if (data.cascaded_pubs) msg += `\npublications updated from journal changes: ${data.cascaded_pubs}`;
         if (data.errors.length) {
           msg += "\n\n" + data.errors.slice(0, 20)
             .map(e => `  row ${e.row}: ${e.error}`).join("\n");
@@ -120,12 +148,12 @@
       refreshBtn.disabled = true;
       try {
         const res = await fetch("/api/admin/refresh", { method: "POST" });
-        if (await handleExpired(res)) return;
+        if (await handleExpired(res, showRefreshMessage)) return;
         const data = await res.json();
         renderRefresh(data);
         schedulePoll();
       } catch (e) {
-        document.getElementById("refresh-message").textContent = "Could not start refresh: " + e;
+        showRefreshMessage("Could not start refresh: " + e);
         refreshBtn.disabled = false;
       }
     });
@@ -133,10 +161,10 @@
     async function loadRefreshStatus() {
       try {
         const res = await fetch("/api/admin/refresh/status", { cache: "no-store" });
-        if (await handleExpired(res)) return;
+        if (await handleExpired(res, showRefreshMessage)) return;
         renderRefresh(await res.json());
       } catch (e) {
-        document.getElementById("refresh-message").textContent = "Could not read refresh status: " + e;
+        showRefreshMessage("Could not read refresh status: " + e);
       }
     }
 
@@ -145,13 +173,13 @@
       refreshState.textContent = state;
       refreshState.dataset.state = state;
       refreshBtn.disabled = state === "queued" || state === "running";
-      document.getElementById("refresh-current").textContent = data.current_source || "—";
-      document.getElementById("refresh-started").textContent = data.started_at || "—";
-      document.getElementById("refresh-finished").textContent = data.finished_at || "—";
-      document.getElementById("refresh-clarivate").textContent = data.clarivate || "—";
-      document.getElementById("refresh-backup").textContent = data.backup_path || "—";
-      document.getElementById("refresh-log").textContent = data.log_path || "—";
-      document.getElementById("refresh-message").textContent = data.message || "";
+      el("refresh-current").textContent = data.current_source || "—";
+      el("refresh-started").textContent = data.started_at || "—";
+      el("refresh-finished").textContent = data.finished_at || "—";
+      el("refresh-clarivate").textContent = data.clarivate || "—";
+      el("refresh-backup").textContent = data.backup_path || "—";
+      el("refresh-log").textContent = data.log_path || "—";
+      showRefreshMessage(data.message || "");
 
       refreshSources.replaceChildren();
       const sourceRows = data.sources && data.sources.length
@@ -190,10 +218,11 @@
       pollTimer = null;
     }
 
-    async function handleExpired(res) {
+    // Shows the expiry notice where the user is looking: the upload result box
+    // for an upload, the refresh message line for a refresh.
+    async function handleExpired(res, report) {
       if (res.status !== 401) return false;
-      document.getElementById("refresh-message").textContent =
-        "Your session expired. Please log in again.";
+      report("Your session expired. Please log in again.");
       setTimeout(() => location.href = "/admin/login", 1200);
       return true;
     }
@@ -201,6 +230,10 @@
     function showUpload(text) {
       out.hidden = false;
       out.textContent = text;
+    }
+
+    function showRefreshMessage(text) {
+      el("refresh-message").textContent = text;
     }
 
     loadRefreshStatus();
