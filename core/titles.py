@@ -10,7 +10,7 @@ import re
 
 PREFIX = re.compile(
     r"^(Associate Professor|Emeritus Professor|Professor|Dr|Mr|Mrs|Ms|Miss"
-    r"|A/Prof|Prof|Assoc\.? Prof\.?)\.?\s+",
+    r"|A/Prof|APrf|Prof|Assoc\.? Prof\.?)\.?\s+",
     re.IGNORECASE,
 )
 
@@ -21,7 +21,7 @@ SUFFIX = re.compile(r"\s*\([^)]*\)\s*$")
 # or "Associate Lecturer" matches the "Lecturer" pattern first.
 LADDER = [
     ("Emeritus Professor",     r"emeritus prof"),
-    ("Associate Professor",    r"associate prof|a/prof"),
+    ("Associate Professor",    r"associate prof|a/prof|aprof|aprf"),
     ("Associate Lecturer",     r"associate lecturer"),
     ("Senior Lecturer",        r"senior lecturer"),
     ("Senior Research Fellow", r"senior research fellow"),
@@ -52,6 +52,17 @@ LEVEL = {
 # Honorifics that say nothing about rank.
 _QUALIFICATIONS = {"dr", "mr", "mrs", "ms", "miss"}
 
+# Shorthands that appear in name prefixes → canonical ladder label.
+_PREFIX_NORM = {
+    "aprof": "Associate Professor",
+    "aprf":  "Associate Professor",
+    "a/prof": "Associate Professor",
+    "assoc. prof": "Associate Professor",
+    "assoc prof": "Associate Professor",
+    "prof": "Professor",
+    "emeritus professor": "Emeritus Professor",
+}
+
 
 def split_prefix(name):
     """('Associate Professor Jane Doe') -> ('Jane Doe', 'Associate Professor')"""
@@ -70,7 +81,7 @@ def rank(title, prefix=None):
         if title and re.search(pat, title, re.I):
             return label
     if prefix and prefix.lower() not in _QUALIFICATIONS:
-        return prefix
+        return _PREFIX_NORM.get(prefix.lower(), prefix)
     return None
 
 
