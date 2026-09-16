@@ -1,0 +1,103 @@
+{
+ "researcher": {
+  "id": "adl-elena-moreau",
+  "name": "Elena Moreau",
+  "university": "The University of Adelaide",
+  "university_code": "ADL",
+  "field_of_research": "Finance",
+  "academic_level": "Lecturer",
+  "level_code": "B",
+  "publication_count": 6,
+  "abdc_ranked_count": 6,
+  "count_a_star": 2,
+  "count_a": 1,
+  "count_b": 1,
+  "count_c": 2,
+  "count_unranked": 0
+ },
+ "publications": [
+  {
+   "title": "Algorithmic board diversity and firm value",
+   "journal_name": "Contemporary Accounting Research",
+   "issn": "0823-9150",
+   "year": 2026,
+   "quality_rank": "A*",
+   "impact_factor": 3.2,
+   "scimago_quartile": "Q2",
+   "cited_by_count": 249,
+   "doi": "10.1111/contem.2026.8704",
+   "article_url": "https://doi.org/10.1111/contem.2026.8704",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Comparative market microstructure in the banking sector",
+   "journal_name": "Pacific-Basin Finance Journal",
+   "issn": "0927-538X",
+   "year": 2023,
+   "quality_rank": "B",
+   "impact_factor": 4.0,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 217,
+   "doi": "10.1052/pacifi.2023.4337",
+   "article_url": "https://doi.org/10.1052/pacifi.2023.4337",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Corporate dividend policy in emerging markets",
+   "journal_name": "Review of Financial Studies",
+   "issn": "0893-9454",
+   "year": 2023,
+   "quality_rank": "A*",
+   "impact_factor": 6.8,
+   "scimago_quartile": "Q3",
+   "cited_by_count": 71,
+   "doi": "10.1062/review.2023.3064",
+   "article_url": "https://doi.org/10.1062/review.2023.3064",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Institutional executive compensation and investor attention",
+   "journal_name": "Managerial Auditing Journal",
+   "issn": "0268-6902",
+   "year": 2022,
+   "quality_rank": "C",
+   "impact_factor": null,
+   "scimago_quartile": null,
+   "cited_by_count": null,
+   "doi": null,
+   "article_url": null,
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Institutional IPO underpricing and the cost of equity",
+   "journal_name": "Journal of Applied Accounting Research",
+   "issn": "0967-5426",
+   "year": 2019,
+   "quality_rank": "C",
+   "impact_factor": null,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 82,
+   "doi": "10.1013/journa.2019.3249",
+   "article_url": "https://doi.org/10.1013/journa.2019.3249",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Post-crisis ESG reporting in emerging markets",
+   "journal_name": "Journal of Banking and Finance",
+   "issn": "0378-4266",
+   "year": 2018,
+   "quality_rank": "A",
+   "impact_factor": 3.6,
+   "scimago_quartile": "Q3",
+   "cited_by_count": 294,
+   "doi": "10.1093/journa.2018.2953",
+   "article_url": "https://doi.org/10.1093/journa.2018.2953",
+   "publication_type": "journal_article"
+  }
+ ],
+ "meta": {
+  "generated": "2026-09-03",
+  "is_sample_data": true,
+  "note": "SAMPLE DATA generated for the site design shell. Replace with real exports."
+ }
+}

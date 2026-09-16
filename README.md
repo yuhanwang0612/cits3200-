@@ -48,19 +48,3 @@ Official staff without a verified publication are retained by default, as the
 staff directory defines who is in scope. Use `--drop-empty-staff` only when an
 explicit downstream export requires it. Generated files are written under
 `final output/<uni>/`.
-
-## Build the website data
-
-After refreshing scraper outputs, convert the real CSV files into the static
-JSON contract consumed by the website:
-
-```bash
-python build_site_data.py
-cd site
-python -m http.server 8000
-```
-
-`python build_site_data.py --check` validates all eight sources without
-replacing `site/data`. Canonical files under `final output/<uni>/` are
-preferred; the current Adelaide, Monash and USyd root-level exports are
-documented legacy fallbacks until those adapters are migrated.

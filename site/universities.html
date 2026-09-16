@@ -26,10 +26,6 @@
       <span aria-hidden="true">&#9888;</span>
       <div><strong>Sample data.</strong> The current site dataset is for design and integration testing.</div>
     </div>
-    <div class="banner-sample" id="coverage-banner" hidden>
-      <span aria-hidden="true">&#9888;</span>
-      <div><strong>Coverage note.</strong> <span id="coverage-note"></span></div>
-    </div>
 
     <div class="page-head university-rankings-head">
       <h1>University Rankings</h1>
@@ -73,45 +69,39 @@
   const body = document.getElementById('ranking-body');
   const shell = document.getElementById('table-shell');
   const rankBy = document.getElementById('rank-by');
-  const universityData = await loadJSON('data/universities.json');
-
-  if (!universityData) {
-    shell.innerHTML = '';
-    showLoadError(shell, 'data/universities.json');
+  let response;
+  try {
+    response = await fetch('/api/universities', { cache: 'no-store' });
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+  } catch (error) {
+    shell.innerHTML = '<div class="load-error"><strong>Unable to load university rankings.</strong>' +
+      '<div>The database API did not respond. Start the Flask application and try again.</div></div>';
     return;
   }
 
-  const displayCodes = { ADL: 'UA', UOM: 'UM', MON: 'MONASH' };
-  const all = (universityData.universities || []).map(u => ({
-    code: u.code,
-    display_code: displayCodes[u.code] || u.code,
-    name: u.name,
-    researcher_count: u.researcher_count,
-    article_count: u.publication_count,
-    top_count: u.top_tier_count,
-    avg_jif: u.avg_jif,
-    avg_jif_5: u.avg_jif_5,
-    avg_articles: u.researcher_count && u.publication_count !== null
-      ? u.publication_count / u.researcher_count
-      : null,
-    coverage: u.coverage || {},
-    accounting: fieldMetrics(u.accounting),
-    finance: fieldMetrics(u.finance)
+  const payload = await response.json();
+  const all = (payload.universities || []).map(row => ({
+    ...row,
+    display_code: row.code,
+    article_count: row.publication_count,
+    top_count: row.top_tier_count,
+    accounting: {
+      researchers: row.accounting.researcher_count,
+      articles: row.accounting.publication_count,
+      top: row.accounting.top_tier_count,
+      avg_jif: row.accounting.avg_jif,
+      avg_jif_5: row.accounting.avg_jif_5,
+      avg_articles: row.accounting.avg_articles
+    },
+    finance: {
+      researchers: row.finance.researcher_count,
+      articles: row.finance.publication_count,
+      top: row.finance.top_tier_count,
+      avg_jif: row.finance.avg_jif,
+      avg_jif_5: row.finance.avg_jif_5,
+      avg_articles: row.finance.avg_articles
+    }
   }));
-
-  function fieldMetrics(field) {
-    field = field || {};
-    return {
-      researchers: field.researcher_count,
-      articles: field.publication_count,
-      top: field.top_tier_count,
-      avg_jif: field.avg_jif,
-      avg_jif_5: field.avg_jif_5,
-      avg_articles: field.researcher_count && field.publication_count !== null
-        ? field.publication_count / field.researcher_count
-        : null
-    };
-  }
 
   const modes = {
     total_researchers: {
@@ -172,25 +162,13 @@
     const ranked = all.slice().sort((a, b) => compareScores(a, b, mode));
     head.innerHTML = '<tr><th>Rank<br><span class="rank-arrow">&#9660;</span></th><th>University</th>' +
       mode.labels.map(label => '<th>' + esc(label) + '</th>').join('') + '</tr>';
-    body.innerHTML = ranked.map((row, index) => {
-      const score = mode.score(row);
-      const rank = score === null || score === undefined ? na() : String(index + 1);
-      const university = row.researcher_count === null
-        ? '<span title="Staff data unavailable">' + esc(row.display_code) + '</span>'
-        : '<a title="' + esc(row.name) + ' — view researchers" href="researchers.html?university=' + encodeURIComponent(row.name) + '">' + esc(row.display_code) + '</a>';
-      return '<tr><td class="rank">' + rank + '</td>' +
-        '<td>' + university + '</td>' +
-        mode.values(row).map(value => '<td>' + metric(value, mode.decimals) + '</td>').join('') + '</tr>';
-    }).join('');
+    body.innerHTML = ranked.map((row, index) => '<tr><td class="rank">' + (index + 1) + '</td>' +
+      '<td><a title="' + esc(row.name) + ' — view researchers" href="researchers.html?university=' + encodeURIComponent(row.name) + '">' + esc(row.display_code) + '</a></td>' +
+      mode.values(row).map(value => '<td>' + metric(value, mode.decimals) + '</td>').join('') + '</tr>').join('');
   }
 
   document.getElementById('update').addEventListener('click', render);
-  document.getElementById('sample-banner').hidden = !(universityData.meta || {}).is_sample_data;
-  const warnings = (universityData.meta || {}).warnings || [];
-  if (warnings.length) {
-    document.getElementById('coverage-note').textContent = warnings.join(' ');
-    document.getElementById('coverage-banner').hidden = false;
-  }
+  document.getElementById('sample-banner').hidden = true;
   render();
 })();
 </script>

@@ -1,0 +1,90 @@
+{
+ "researcher": {
+  "id": "uom-kiran-delacroix",
+  "name": "Kiran Delacroix",
+  "university": "The University of Melbourne",
+  "university_code": "UOM",
+  "field_of_research": "Accounting",
+  "academic_level": "Associate Lecturer",
+  "level_code": "A",
+  "publication_count": 5,
+  "abdc_ranked_count": 5,
+  "count_a_star": 0,
+  "count_a": 2,
+  "count_b": 1,
+  "count_c": 2,
+  "count_unranked": 0
+ },
+ "publications": [
+  {
+   "title": "Empirical disclosure quality during monetary tightening",
+   "journal_name": "Financial Markets, Institutions and Instruments",
+   "issn": "0963-8008",
+   "year": 2025,
+   "quality_rank": "B",
+   "impact_factor": null,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 105,
+   "doi": "10.1033/financ.2025.4359",
+   "article_url": "https://doi.org/10.1033/financ.2025.4359",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Cross-border analyst forecasts in family firms",
+   "journal_name": "Journal of Applied Accounting Research",
+   "issn": "0967-5426",
+   "year": 2024,
+   "quality_rank": "C",
+   "impact_factor": null,
+   "scimago_quartile": "Q1",
+   "cited_by_count": 291,
+   "doi": "10.1054/journa.2024.8236",
+   "article_url": "https://doi.org/10.1054/journa.2024.8236",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Retail liquidity provision and investor attention",
+   "journal_name": "Journal of Applied Accounting Research",
+   "issn": "0967-5426",
+   "year": 2020,
+   "quality_rank": "C",
+   "impact_factor": null,
+   "scimago_quartile": "Q2",
+   "cited_by_count": 68,
+   "doi": "10.1103/journa.2020.7182",
+   "article_url": "https://doi.org/10.1103/journa.2020.7182",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Comparative bank lending after IFRS adoption",
+   "journal_name": "Auditing: A Journal of Practice and Theory",
+   "issn": "0278-0380",
+   "year": 2017,
+   "quality_rank": "A",
+   "impact_factor": 2.4,
+   "scimago_quartile": "Q3",
+   "cited_by_count": 278,
+   "doi": "10.1082/auditi.2017.7078",
+   "article_url": "https://doi.org/10.1082/auditi.2017.7078",
+   "publication_type": "journal_article"
+  },
+  {
+   "title": "Comparative audit fees under regulatory change",
+   "journal_name": "European Accounting Review",
+   "issn": "0963-8180",
+   "year": 2015,
+   "quality_rank": "A",
+   "impact_factor": 3.1,
+   "scimago_quartile": null,
+   "cited_by_count": 258,
+   "doi": "10.1029/europe.2015.7169",
+   "article_url": "https://doi.org/10.1029/europe.2015.7169",
+   "publication_type": "journal_article"
+  }
+ ],
+ "meta": {
+  "generated": "2026-09-03",
+  "is_sample_data": true,
+  "note": "SAMPLE DATA generated for the site design shell. Replace with real exports."
+ }
+}

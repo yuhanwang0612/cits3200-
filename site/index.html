@@ -26,7 +26,7 @@
   <div class="wrap">
 
     <!-- Delete this banner when real data is wired in. -->
-    <div class="banner-sample" id="sample-banner" hidden>
+    <div class="banner-sample">
       <span>&#9888;</span>
       <div><strong>Sample data.</strong> Every name, publication and rating on this site is
       invented for design purposes. Nothing here is real research output.</div>
@@ -62,8 +62,6 @@
   const path = 'data/universities.json';
   const data = await loadJSON(path);
   if (!data) return showLoadError(grid, path);
-
-  document.getElementById('sample-banner').hidden = !(data.meta || {}).is_sample_data;
 
   const unis = data.universities || [];
   if (!unis.length) { grid.innerHTML = '<div class="empty">No universities in the dataset.</div>'; return; }
