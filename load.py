@@ -12,7 +12,11 @@ from models import Base, Researcher, Journal, Publication
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "site", "research.db")
+DEFAULT_DB_PATH = os.path.join(BASE_DIR, "site", "research.db")
+# The admin refresh workflow builds a staging database first, then atomically
+# swaps it into place only after the complete load succeeds. Normal CLI usage
+# still writes to site/research.db.
+DB_PATH = os.environ.get("RESEARCH_DB_PATH") or DEFAULT_DB_PATH
 
 # ============================================================
 # CONFIG
