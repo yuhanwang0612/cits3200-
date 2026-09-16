@@ -165,6 +165,26 @@ def test_the_publisher_is_filled_but_never_overwritten(stub):
     assert already["publisher"] == "Elsevier"
 
 
+def test_missing_year_is_filled_from_doi_metadata(stub):
+    w = work()
+    w["publication_year"] = 2025
+    stub([w])
+    row = blank_pub(doi="10.1111/jofi.12345", year=None,
+                    type="Journal Article")
+    oa_enrich.enrich([row], verbose=False)
+    assert row["year"] == "2025"
+
+
+def test_existing_year_is_not_overwritten(stub):
+    w = work()
+    w["publication_year"] = 2025
+    stub([w])
+    row = blank_pub(doi="10.1111/jofi.12345", year="2024",
+                    type="Journal Article")
+    oa_enrich.enrich([row], verbose=False)
+    assert row["year"] == "2024"
+
+
 def test_a_work_with_no_percentile_still_yields_its_citation_count(stub):
     w = work()
     w.pop("citation_normalized_percentile")
@@ -225,3 +245,56 @@ def test_a_uq_style_record_is_unaffected():
     """UQ records carry an ORCID from eSpace and no author ids at all."""
     clause, how = oa_get.author_filter({"orcid": "0000-0002-1825-0097"})
     assert how == "orcid" and clause.endswith("0000-0002-1825-0097")
+
+
+def _author_work(index):
+    return {
+        "id": f"https://openalex.org/W{index}",
+        "doi": f"https://doi.org/10.1000/example.{index}",
+        "display_name": f"Paper {index}",
+        "publication_year": 2024,
+        "type": "article",
+        "authorships": [],
+        "primary_location": {"source": {
+            "display_name": "Accounting Review", "issn": ["0001-4826"],
+        }},
+    }
+
+
+def test_repository_volume_does_not_reject_ror_constrained_works(monkeypatch):
+    """A repository deposit count is not a completeness ground truth."""
+    monkeypatch.setattr(oa_get, "_works", lambda clause, ror=None: [_author_work(i) for i in range(30)])
+    records = [{"name_clean": "Jane Example", "orcid": "0000-0001-0000-0001"}]
+    pubs = [blank_pub(
+        name="Jane Example", title="Repository paper", year="2023",
+        type="Journal Article", doi="10.1000/repository", source="Repository",
+    )]
+    oa_get.retrieve(records, pubs, ror="01ej9dk98", verbose=False)
+    assert len(pubs) == 31
+
+
+def test_manually_verified_author_is_not_limited_to_current_institution(monkeypatch):
+    """A DOI-backed manual identity may have published at an earlier employer."""
+    calls = []
+    monkeypatch.setattr(
+        oa_get, "_works",
+        lambda clause, ror=None: calls.append((clause, ror)) or [_author_work(1)],
+    )
+    records = [{
+        "name_clean": "Jane Example",
+        "openalex_author_ids": ["A1"],
+        "identity_source": "manual_verified_override",
+    }]
+    oa_get.retrieve(records, [], ror="01ej9dk98", verbose=False)
+    assert calls == [("author.id:A1", None)]
+
+
+def test_volume_guard_remains_when_no_institution_constraint(monkeypatch):
+    monkeypatch.setattr(oa_get, "_works", lambda clause, ror=None: [_author_work(i) for i in range(30)])
+    records = [{"name_clean": "Jane Example", "orcid": "0000-0001-0000-0001"}]
+    pubs = [blank_pub(
+        name="Jane Example", title="Repository paper", year="2023",
+        type="Journal Article", doi="10.1000/repository", source="Repository",
+    )]
+    oa_get.retrieve(records, pubs, ror=None, verbose=False)
+    assert len(pubs) == 1

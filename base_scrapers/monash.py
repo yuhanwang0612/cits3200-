@@ -16,6 +16,9 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 from core.titles import rank, split_prefix
@@ -101,6 +104,10 @@ def _make_driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
+    options.add_argument(
+        "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    )
     return webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=options,
@@ -138,7 +145,7 @@ def _fetch_research_profile(research_url):
         try:
             resp = requests.get(research_url, headers=_HEADERS, timeout=15)
             if resp.status_code == 429:
-                time.sleep(10 * (attempt + 1))
+                time.sleep(15 * (attempt + 1))
                 continue
             if resp.status_code != 200 or not resp.text:
                 return None, 0, None
@@ -171,7 +178,7 @@ def _fetch_research_profile(research_url):
 
             return title_raw, pub_count, orcid
         except Exception:
-            time.sleep(3)
+            time.sleep(2)
     return None, 0, None
 
 
@@ -183,11 +190,11 @@ def _oa_get(url, params):
         try:
             resp = requests.get(url, params=params, headers=_OA_HEADERS, timeout=20)
             if resp.status_code == 429:
-                time.sleep(30)
+                time.sleep(15)
                 continue
             return resp
         except Exception:
-            time.sleep(10)
+            time.sleep(5)
     return None
 
 
@@ -207,7 +214,7 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
             results = resp.json().get("results", [])
             if results:
                 author_id = results[0]["id"]
-        time.sleep(1)
+        time.sleep(0.2)
         if not author_id:
             return []
     else:
@@ -225,7 +232,7 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
         if not match:
             return []
         author_id = match["id"]
-        time.sleep(1)
+        time.sleep(0.2)
 
     # Cursor-paginate all works
     pubs = []
@@ -277,7 +284,7 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
         cursor = data.get("meta", {}).get("next_cursor")
         if not cursor:
             break
-        time.sleep(0.5)
+        time.sleep(0.2)
 
     # Sanity check: discard if name-only match returns unreasonably many pubs
     if not orcid:
@@ -307,8 +314,7 @@ def scrape_staff(verbose=True):
                 print(f"    {discipline}: {url}")
             try:
                 driver.get(url)
-                time.sleep(5)
-                page_source = driver.page_source
+                time.sleep(15)
             except Exception as exc:
                 if verbose:
                     print(f"    browser error ({exc}), restarting ...")
@@ -318,57 +324,28 @@ def scrape_staff(verbose=True):
                     pass
                 driver = _make_driver()
                 driver.get(url)
-                time.sleep(5)
-                page_source = driver.page_source
+                time.sleep(15)
 
-            soup = BeautifulSoup(page_source, "html.parser")
-
-            CARD_SELECTORS = [
-                ".staff-profile", ".profile-card", ".people-listing__item",
-                ".person--teaser", ".staff-member", ".staff-list__item",
-                ".people__item", ".team-member",
-            ]
-            cards = []
-            for sel in CARD_SELECTORS:
-                cards = soup.select(sel)
-                if cards:
-                    break
-
+            # Use Selenium's live DOM directly — bypasses BeautifulSoup parsing issues
+            # with dynamically rendered content.
             entries = []
-            if cards:
-                for card in cards:
-                    link = card.select_one("h2 a, h3 a, h4 a, [class*='name'] a")
-                    if not link:
-                        continue
-                    raw = link.get_text(strip=True)
-                    if not _is_real_person(raw):
-                        continue
-                    profile_url = urljoin(url, link.get("href", ""))
-                    if profile_url in seen:
-                        continue
-                    seen.add(profile_url)
-                    title_tag = card.select_one("[class*='title'],[class*='position'],[class*='role']")
-                    title_raw = title_tag.get_text(strip=True) if title_tag else None
-                    entries.append((raw, profile_url, title_raw))
-            else:
-                # Fallback: collect profile links
-                ALLOWED = ("https://www.monash.edu", "https://monash.edu", "https://research.monash.edu")
-                for a in soup.find_all("a", href=True):
-                    href = a["href"]
-                    text = a.get_text(strip=True)
-                    if href.startswith("http") and not any(href.startswith(d) for d in ALLOWED):
-                        continue
-                    if not any(k in href for k in _PROFILE_KEYS) or not text:
-                        continue
-                    if not _is_real_person(text):
-                        continue
-                    profile_url = urljoin(url, href)
-                    if profile_url in seen:
-                        continue
-                    seen.add(profile_url)
-                    name_tmp = _PREFIX_RE.sub("", text).strip()
-                    title_raw = _title_near_link(a, name_tmp)
-                    entries.append((text, profile_url, title_raw))
+            els = driver.find_elements(
+                By.CSS_SELECTOR, "a[href*='research.monash.edu/en/persons/']"
+            )
+            for el in els:
+                href = el.get_attribute("href") or ""
+                text = el.text.strip()
+                if not text:
+                    text = el.get_attribute("textContent") or ""
+                    text = text.strip()
+                if not text or not _is_real_person(text):
+                    continue
+                profile_url = href.rstrip("/") + "/"
+                if profile_url in seen:
+                    continue
+                seen.add(profile_url)
+                # Title is fetched in Phase 2 from the research profile
+                entries.append((text, profile_url, None))
 
             if verbose:
                 print(f"    {discipline}: {len(entries)} staff found")
@@ -410,7 +387,7 @@ def scrape_staff(verbose=True):
         if verbose:
             tag = f"[orcid={orcid}]" if orcid else "[no orcid]"
             print(f"  + {r['name_clean']:40s}  pubs={pub_count}  {tag}")
-        time.sleep(1.5)
+        time.sleep(0.3)   # was 1.5 s
 
     if verbose:
         print(f"  {len(records)} Monash A&F staff")
@@ -436,7 +413,7 @@ def collect(verbose=True):
         tag = "[ORCID]" if orcid else "[name->Monash]"
         if verbose:
             print(f"    {name:40s}  {len(person_pubs)} pubs  {tag}")
-        time.sleep(3)
+        time.sleep(0.5)   # was 3 s
 
     if verbose:
         print(f"  {len(pubs)} total publications")

@@ -6,10 +6,11 @@ is common, several real people get merged into one entity and the ORCID
 inherits all of their work — one finance lecturer's ORCID returned 278
 papers spanning nanomedicine, gastric surgery and THz optics.
 
-Two defences. A volume guard skips anyone whose OpenAlex count is
-implausible against the repository count. An optional institution (ROR)
-filter restricts results to work carrying that university's affiliation,
-which removes the contamination but also drops legitimate earlier work.
+Two defences are available. When no institution filter is supplied, a volume
+guard skips implausibly large author clusters. When a ROR is supplied, the
+works themselves must carry that university affiliation, so an incomplete
+repository count is not used as a second rejection rule. A later discipline
+screen remains responsible for detecting an incorrectly resolved namesake.
 
 ORCID FIRST, AUTHOR ID SECOND, NEVER A SEARCH
 ---------------------------------------------
@@ -87,13 +88,27 @@ def retrieve(records, pubs, ror=None, verbose=True):
         name = p["name_clean"]
 
         try:
-            works = _works(clause, ror)
+            # An adapter's manually approved override is backed by direct
+            # evidence (normally an official profile plus a publication DOI).
+            # Once that author identity has been established, restricting the
+            # query to the current university would wrongly discard papers
+            # published at an earlier employer. Automatically name-resolved
+            # identities retain the institution guard.
+            work_ror = None if p.get("identity_source") == "manual_verified_override" else ror
+            works = _works(clause, work_ror)
         except Exception as e:
             print(f"  {name}: {type(e).__name__} {e}")
             continue
 
         repo_n = counts.get(name, 0)
-        if works and repo_n and len(works) > max(RATIO_LIMIT * repo_n, ABSOLUTE_FLOOR):
+        # Repository coverage is not a ground truth. Minerva, for example,
+        # can list one departmental deposit for a verified researcher while
+        # OpenAlex has 20+ works carrying UniMelb's ROR. Applying the ratio
+        # guard there discarded established professors precisely because the
+        # repository was incomplete. Without a ROR the guard is still useful;
+        # with a ROR, the institution constraint plus the later ABDC
+        # discipline screen are the appropriate safeguards.
+        if not ror and works and repo_n and len(works) > max(RATIO_LIMIT * repo_n, ABSOLUTE_FLOOR):
             print(f"  SKIP {name}: OpenAlex has {len(works)} vs {repo_n} in the "
                   f"repository — probably a merged author entity")
             skipped += 1

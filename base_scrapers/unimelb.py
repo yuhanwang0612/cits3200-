@@ -1,9 +1,11 @@
 """University of Melbourne Accounting and Finance adapter.
 
 ``collect()`` returns the shared team contract: a staff list and a list of
-researcher-publication rows.  Current staff are taken from the official FBE
-directory.  Publications and persistent author identifiers come from the
-official Minerva Access API.
+researcher-publication rows. Current staff are taken from the official FBE
+directory. Publications and persistent author identifiers come first from the
+official Minerva Access API; staff absent from Minerva are resolved
+conservatively against OpenAlex by exact name plus the UniMelb ROR so the
+shared retrieval stage can search for their publications.
 
 The collector is deliberately independent of previous project output.  It can
 bootstrap from an empty data directory using the live FBE directory and
@@ -32,13 +34,19 @@ from urllib.parse import urlencode
 import requests
 from bs4 import BeautifulSoup
 
+from core.config import OA_HEADERS, ORCID_HEADERS, openalex_budget
+from core.http import cached_get
+
 
 UNIVERSITY = "University of Melbourne"
 ROR = "01ej9dk98"
 ROOT = Path(__file__).resolve().parents[1]
+IDENTITY_OVERRIDES_FILE = ROOT / "data" / "unimelb_identity_overrides.csv"
 API_ROOT = "https://minerva-access.unimelb.edu.au/server/api"
 SEARCH_URL = f"{API_ROOT}/discover/search/objects"
 USER_AGENT = "CITS3200-Team20/3.0 (academic research; respectful automated collection)"
+OPENALEX_AUTHORS_URL = "https://api.openalex.org/authors"
+ORCID_EXPANDED_SEARCH_URL = "https://pub.orcid.org/v3.0/expanded-search/"
 
 TARGETS = {
     "Accounting": {
@@ -121,6 +129,473 @@ def normalize_text(value: Any) -> str:
 def person_key(value: Any) -> str:
     tokens = [token for token in normalize_text(value).split() if token not in PERSON_TITLES]
     return " ".join(sorted(set(tokens)))
+
+
+def name_aliases(value: Any) -> list[str]:
+    """Return only mechanically defensible aliases for a printed staff name.
+
+    The FBE directory frequently prints both a legal given name and a nickname,
+    for example ``Tongqing (Tony) Ding``.  Minerva and OpenAlex commonly use
+    either ``Tongqing Ding`` or ``Tony Ding``.  Treating the parenthesised word
+    as a mandatory third name made otherwise exact identities invisible.
+
+    No initials are invented and no fuzzy comparison is used here.  A common
+    name still has to resolve to one candidate at the University of Melbourne
+    (or to candidates carrying a single ORCID) before it is accepted.
+    """
+    raw = clean(value)
+    if not raw:
+        return []
+    without_parenthetical = clean(re.sub(r"\([^)]*\)", " ", raw))
+    aliases = [without_parenthetical, raw]
+    outside_tokens = without_parenthetical.split()
+    family = outside_tokens[-1] if outside_tokens else ""
+    for group in re.findall(r"\(([^)]*)\)", raw):
+        nickname = clean(group)
+        if nickname and family:
+            aliases.append(f"{nickname} {family}")
+    return list(dict.fromkeys(alias for alias in aliases if alias))
+
+
+def person_keys(value: Any) -> set[str]:
+    return {key for alias in name_aliases(value) if (key := person_key(alias))}
+
+
+def _one_token_name_extension(official_keys: set[str], candidate_keys: set[str]) -> bool:
+    """Whether a candidate adds exactly one name token to an official name.
+
+    This covers a profile printed as ``Flora Kuang`` while the bibliographic
+    identity is ``Yu Flora Kuang``.  It is only used when there is exactly one
+    such candidate at UniMelb; it is not a general partial/fuzzy match.
+    """
+    for official in official_keys:
+        official_tokens = set(official.split())
+        if len(official_tokens) < 2:
+            continue
+        for candidate in candidate_keys:
+            candidate_tokens = set(candidate.split())
+            if official_tokens < candidate_tokens and len(candidate_tokens - official_tokens) == 1:
+                return True
+    return False
+
+
+def _middle_initial_compatible(official_keys: set[str], candidate_keys: set[str]) -> bool:
+    def without_initials(key: str) -> tuple[str, ...]:
+        return tuple(token for token in key.split() if len(token) > 1)
+
+    official = {without_initials(key) for key in official_keys}
+    candidate = {without_initials(key) for key in candidate_keys}
+    return bool(official.intersection(candidate))
+
+
+def _openalex_names(author: dict[str, Any]) -> list[str]:
+    return [
+        name for name in [author.get("display_name"), *(author.get("display_name_alternatives") or [])]
+        if name
+    ]
+
+
+def _openalex_rors(author: dict[str, Any]) -> set[str]:
+    """All institutions OpenAlex has associated with an author over time."""
+    found: set[str] = set()
+    for institution in author.get("last_known_institutions") or []:
+        if institution.get("ror"):
+            found.add(institution["ror"].rsplit("/", 1)[-1].lower())
+    for affiliation in author.get("affiliations") or []:
+        institution = affiliation.get("institution") or {}
+        if institution.get("ror"):
+            found.add(institution["ror"].rsplit("/", 1)[-1].lower())
+    return found
+
+
+def load_identity_overrides(path: Path = IDENTITY_OVERRIDES_FILE) -> list[dict[str, Any]]:
+    """Load only explicitly approved, profile-keyed identity decisions."""
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    approved = []
+    for row in rows:
+        if clean(row.get("review_decision")).lower() not in {"approve", "approved", "accept"}:
+            continue
+        item = {key: clean(value) for key, value in row.items()}
+        item["openalex_author_ids"] = [
+            value for value in re.split(r"[;,\s]+", item.get("openalex_author_ids", "")) if value
+        ]
+        approved.append(item)
+    return approved
+
+
+def _apply_manual_retrieval_overrides(
+    records: list[dict[str, Any]], identity_overrides: Iterable[dict[str, Any]]
+) -> int:
+    by_profile = {
+        (item.get("discipline"), item.get("profile_url")): item
+        for item in identity_overrides
+        if item.get("profile_url")
+    }
+    applied = 0
+    for person in records:
+        override = by_profile.get((person.get("discipline"), person.get("profile_url")))
+        if not override or person_key(override.get("name")) != person_key(person.get("name_clean")):
+            continue
+        orcid = clean(override.get("orcid")).removeprefix("https://orcid.org/")
+        openalex_ids = [
+            clean(value).rsplit("/", 1)[-1]
+            for value in (override.get("openalex_author_ids") or [])
+            if clean(value)
+        ]
+        if orcid:
+            person["orcid"] = orcid
+        if openalex_ids:
+            person["openalex_author_ids"] = sorted(set(openalex_ids))
+        if orcid or openalex_ids:
+            person["identity_source"] = "manual_verified_override"
+            person["identity_confidence"] = "high_with_discipline_screen"
+            person["identity_evidence_url"] = override.get("evidence_url") or None
+            applied += 1
+    return applied
+
+
+def _orcid_names(candidate: dict[str, Any]) -> list[str]:
+    names = [candidate.get("credit-name")]
+    given = clean(candidate.get("given-names"))
+    family = clean(candidate.get("family-names"))
+    if given and family:
+        names.append(f"{given} {family}")
+    names.extend(candidate.get("other-name") or [])
+    return [name for name in names if name]
+
+
+def _has_unimelb_orcid_affiliation(candidate: dict[str, Any]) -> bool:
+    return any(
+        "university of melbourne" in normalize_text(institution)
+        for institution in (candidate.get("institution-name") or [])
+    )
+
+
+def _add_orcid_ids(
+    records: list[dict[str, Any]], *, refresh: bool = False, verbose: bool = True
+) -> dict[str, Any]:
+    """Resolve an ORCID only from exact name plus a UniMelb affiliation.
+
+    ORCID is self-maintained and therefore incomplete, but a positive match is
+    stronger identity evidence than an inferred OpenAlex author cluster.  An
+    exact name without a University of Melbourne affiliation is reported as a
+    candidate, never accepted automatically.
+    """
+    stats: dict[str, Any] = {
+        "queries": 0, "resolved": 0, "ambiguous": 0, "not_found": 0,
+        "errors": [], "skipped_existing_orcid": 0,
+        "aborted_after_repeated_errors": 0,
+    }
+    consecutive_errors = 0
+    for index, person in enumerate(records):
+        person["orcid_identity_candidate_count"] = 0
+        person["orcid_review_candidates"] = []
+        if person.get("orcid"):
+            person["orcid_identity_status"] = "not_needed_existing_orcid"
+            stats["skipped_existing_orcid"] += 1
+            continue
+
+        aliases = name_aliases(person.get("name_clean"))
+        query_name = aliases[0] if aliases else person.get("name_clean")
+        stats["queries"] += 1
+        try:
+            data = cached_get(
+                ORCID_EXPANDED_SEARCH_URL,
+                params={"q": f'given-and-family-names:"{query_name}"', "rows": 50},
+                headers=ORCID_HEADERS,
+                sleep=0.2,
+                force=refresh,
+            )
+        except Exception as error:
+            person["orcid_identity_status"] = "lookup_error"
+            stats["errors"].append({"name": person["name_clean"], "error": str(error)})
+            consecutive_errors += 1
+            if consecutive_errors >= 3:
+                remaining = 0
+                for pending in records[index + 1:]:
+                    pending.setdefault("orcid_identity_candidate_count", 0)
+                    if not pending.get("orcid"):
+                        pending["orcid_identity_status"] = "not_attempted_after_repeated_errors"
+                        remaining += 1
+                stats["aborted_after_repeated_errors"] = remaining
+                break
+            continue
+
+        consecutive_errors = 0
+        official_keys = person_keys(person.get("name_clean"))
+        candidates = list(data.get("expanded-result") or [])
+
+        def same_person_name(candidate: dict[str, Any]) -> bool:
+            candidate_keys = {
+                key for candidate_name in _orcid_names(candidate)
+                for key in person_keys(candidate_name)
+            }
+            return (
+                bool(official_keys.intersection(candidate_keys))
+                or _middle_initial_compatible(official_keys, candidate_keys)
+            )
+
+        def matching_at_unimelb(source: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+            matched: list[dict[str, Any]] = []
+            seen: set[str] = set()
+            for candidate in source:
+                candidate_orcid = candidate.get("orcid-id")
+                if (
+                    same_person_name(candidate)
+                    and _has_unimelb_orcid_affiliation(candidate)
+                    and candidate_orcid
+                    and candidate_orcid not in seen
+                ):
+                    matched.append(candidate)
+                    seen.add(candidate_orcid)
+            return matched
+
+        exact_at_unimelb = matching_at_unimelb(candidates)
+        name_parts = query_name.split()
+        if not exact_at_unimelb and len(name_parts) >= 2:
+            # ORCID's combined-name field is strict about middle initials.
+            # A fielded query can find "Patrick Kelly" when the directory says
+            # "Patrick J. Kelly", while the institution requirement still
+            # prevents a bare common-name match.
+            fielded_query = (
+                f'given-names:{name_parts[0]} AND family-name:{name_parts[-1]} '
+                'AND affiliation-org-name:"University of Melbourne"'
+            )
+            try:
+                stats["queries"] += 1
+                fielded = cached_get(
+                    ORCID_EXPANDED_SEARCH_URL,
+                    params={"q": fielded_query, "rows": 50},
+                    headers=ORCID_HEADERS,
+                    sleep=0.2,
+                    force=refresh,
+                )
+                fielded_candidates = fielded.get("expanded-result") or []
+                candidates.extend(fielded_candidates)
+                exact_at_unimelb = matching_at_unimelb(fielded_candidates)
+            except Exception as error:
+                stats["errors"].append({
+                    "name": person["name_clean"], "query": "fielded_fallback", "error": str(error)
+                })
+
+        person["orcid_review_candidates"] = [{
+            "orcid": candidate.get("orcid-id"),
+            "credit_name": candidate.get("credit-name"),
+            "given_names": candidate.get("given-names"),
+            "family_names": candidate.get("family-names"),
+            "institutions": candidate.get("institution-name") or [],
+            "has_unimelb_affiliation": _has_unimelb_orcid_affiliation(candidate),
+        } for candidate in {
+            candidate.get("orcid-id"): candidate
+            for candidate in candidates
+            if candidate.get("orcid-id") and same_person_name(candidate)
+        }.values()]
+
+        orcids = sorted({
+            candidate.get("orcid-id") for candidate in exact_at_unimelb
+            if candidate.get("orcid-id")
+        })
+        person["orcid_identity_candidate_count"] = len(orcids)
+        if len(orcids) == 1:
+            person["orcid"] = orcids[0]
+            person["orcid_identity_status"] = "verified_exact_name_and_unimelb_affiliation"
+            if not person.get("identity_source"):
+                person["identity_source"] = "orcid_exact_name_and_unimelb_affiliation"
+                person["identity_confidence"] = "high_with_discipline_screen"
+            stats["resolved"] += 1
+        elif len(orcids) > 1:
+            person["orcid_identity_status"] = "ambiguous"
+            stats["ambiguous"] += 1
+        else:
+            person["orcid_identity_status"] = "not_found"
+            stats["not_found"] += 1
+
+    if verbose:
+        print(
+            f"  ORCID identities: {stats['resolved']} newly resolved; "
+            f"{stats['ambiguous']} ambiguous, {stats['not_found']} not found, "
+            f"{len(stats['errors'])} lookup errors"
+        )
+    return stats
+
+
+def _add_openalex_ids(
+    records: list[dict[str, Any]], *, refresh: bool = False, verbose: bool = True
+) -> dict[str, Any]:
+    """Resolve staff omitted by Minerva to verified OpenAlex author IDs.
+
+    Minerva is still the preferred identity source.  We search OpenAlex only
+    when the official roster plus Minerva did not yield an ORCID, and accept a
+    result only when an exact, normalised name alias is tied to the UniMelb
+    ROR.  Multiple candidates with different ORCIDs are left unresolved.
+
+    This function records identifiers on staff; the shared ``info/openalex``
+    stage retrieves the works.  Keeping retrieval there avoids a second copy
+    of the OpenAlex publication parser in this university adapter.
+    """
+    select = (
+        "id,display_name,display_name_alternatives,orcid,works_count,"
+        "last_known_institutions,affiliations"
+    )
+    stats: dict[str, Any] = {
+        "queries": 0,
+        "resolved": 0,
+        "ambiguous": 0,
+        "not_found": 0,
+        "errors": [],
+        "skipped_existing_orcid": 0,
+        "skipped_existing_identifier": 0,
+        "aborted_after_repeated_errors": 0,
+    }
+
+    consecutive_errors = 0
+    for index, person in enumerate(records):
+        person.setdefault("openalex_author_ids", [])
+        person["openalex_identity_candidate_count"] = 0
+        person["openalex_review_candidates"] = []
+        if person.get("orcid") or person.get("openalex_author_ids"):
+            person["openalex_identity_status"] = "not_needed_verified_identifier"
+            if person.get("orcid"):
+                stats["skipped_existing_orcid"] += 1
+            stats["skipped_existing_identifier"] += 1
+            continue
+
+        aliases = name_aliases(person.get("name_clean"))
+        query_name = aliases[0] if aliases else person.get("name_clean")
+        stats["queries"] += 1
+        try:
+            data = cached_get(
+                OPENALEX_AUTHORS_URL,
+                params={"search": query_name, "per-page": 25, "select": select},
+                headers=OA_HEADERS,
+                sleep=0.2,
+                force=refresh,
+            )
+        except Exception as error:
+            person["openalex_identity_status"] = "lookup_error"
+            stats["errors"].append({"name": person["name_clean"], "error": str(error)})
+            if verbose:
+                print(f"  {person['name_clean']}: OpenAlex {type(error).__name__}: {error}")
+            consecutive_errors += 1
+            if consecutive_errors >= 3:
+                remaining = 0
+                for pending in records[index + 1:]:
+                    pending.setdefault("openalex_author_ids", [])
+                    pending.setdefault("openalex_identity_candidate_count", 0)
+                    if not pending.get("orcid"):
+                        pending["openalex_identity_status"] = "not_attempted_after_repeated_errors"
+                        remaining += 1
+                stats["aborted_after_repeated_errors"] = remaining
+                break
+            continue
+
+        consecutive_errors = 0
+
+        official_keys = person_keys(person.get("name_clean"))
+        search_results = data.get("results") or []
+        at_unimelb = [
+            author for author in search_results
+            if ROR.lower() in _openalex_rors(author)
+        ]
+        keys_by_id = {
+            author.get("id"): {
+                key
+                for candidate_name in _openalex_names(author)
+                for key in person_keys(candidate_name)
+            }
+            for author in at_unimelb
+            if author.get("id")
+        }
+        all_keys_by_id = {
+            author.get("id"): {
+                key
+                for candidate_name in _openalex_names(author)
+                for key in person_keys(candidate_name)
+            }
+            for author in search_results
+            if author.get("id")
+        }
+        review_matches = [
+            author for author in search_results
+            if (
+                official_keys.intersection(all_keys_by_id.get(author.get("id"), set()))
+                or _one_token_name_extension(
+                    official_keys, all_keys_by_id.get(author.get("id"), set())
+                )
+            )
+        ]
+        person["openalex_review_candidates"] = [{
+            "openalex_author_id": author["id"].rsplit("/", 1)[-1],
+            "display_name": author.get("display_name"),
+            "orcid": (author.get("orcid") or "").rsplit("/", 1)[-1] or None,
+            "works_count": author.get("works_count"),
+            "has_unimelb_affiliation": ROR.lower() in _openalex_rors(author),
+        } for author in review_matches]
+        exact = [
+            author for author in at_unimelb
+            if official_keys.intersection(keys_by_id.get(author.get("id"), set()))
+        ]
+        match_kind = "exact_name"
+        if not exact:
+            extended = [
+                author for author in at_unimelb
+                if _one_token_name_extension(
+                    official_keys, keys_by_id.get(author.get("id"), set())
+                )
+            ]
+            if len(extended) == 1:
+                exact = extended
+                match_kind = "one_token_name_extension"
+        exact = list({author.get("id"): author for author in exact if author.get("id")}.values())
+        person["openalex_identity_candidate_count"] = len(exact)
+
+        if not exact:
+            person["openalex_identity_status"] = "not_found"
+            stats["not_found"] += 1
+            continue
+
+        distinct_orcids = {
+            author["orcid"].rsplit("/", 1)[-1]
+            for author in exact
+            if author.get("orcid")
+        }
+        if len(exact) > 1 and len(distinct_orcids) != 1:
+            person["openalex_identity_status"] = "ambiguous"
+            stats["ambiguous"] += 1
+            if verbose:
+                print(
+                    f"  {person['name_clean']}: {len(exact)} exact UniMelb OpenAlex "
+                    "candidates; identifiers left blank"
+                )
+            continue
+
+        person["openalex_author_ids"] = sorted(
+            {author["id"].rsplit("/", 1)[-1] for author in exact}
+        )
+        if len(distinct_orcids) == 1:
+            person["orcid"] = next(iter(distinct_orcids))
+        person["openalex_identity_status"] = f"verified_{match_kind}_and_unimelb_affiliation"
+        if not person.get("identity_source"):
+            person["identity_source"] = f"openalex_{match_kind}_and_unimelb_affiliation"
+            person["identity_confidence"] = "high_with_discipline_screen"
+        stats["resolved"] += 1
+
+    if verbose:
+        reachable = sum(bool(person.get("orcid") or person.get("openalex_author_ids")) for person in records)
+        print(
+            f"  OpenAlex identities: {stats['resolved']} newly resolved; "
+            f"{reachable}/{len(records)} staff reachable by ORCID or author ID; "
+            f"{stats['ambiguous']} ambiguous, {stats['not_found']} not found, "
+            f"{len(stats['errors'])} lookup errors"
+        )
+        print(
+            f"  {stats['queries']} author searches, about ${stats['queries'] * 0.001:.3f} "
+            f"of today's ${openalex_budget():.2f} budget; responses are cached"
+        )
+    return stats
 
 
 def split_prefix(name: str) -> tuple[str, str | None]:
@@ -415,11 +890,9 @@ def _build_identities(
     by_name: dict[str, dict[str, dict[str, str]]] = {}
     for publication in seed:
         for identity in publication.get("internal_authors", []):
-            key = person_key(identity.get("name"))
-            if not key:
-                continue
             identity_id = identity.get("internal_id") or identity.get("orcid") or identity.get("raw")
-            by_name.setdefault(key, {})[identity_id] = identity
+            for key in person_keys(identity.get("name")):
+                by_name.setdefault(key, {})[identity_id] = identity
     override_map = {
         (item.get("discipline"), item.get("profile_url")): item
         for item in identity_overrides
@@ -427,7 +900,10 @@ def _build_identities(
     }
     identities = []
     for person in staff:
-        candidates = list(by_name.get(person_key(person["name_clean"]), {}).values())
+        candidate_map: dict[str, dict[str, str]] = {}
+        for key in person_keys(person["name_clean"]):
+            candidate_map.update(by_name.get(key, {}))
+        candidates = list(candidate_map.values())
         internal_ids = sorted({item["internal_id"] for item in candidates if item.get("internal_id")})
         orcids = sorted({item["orcid"] for item in candidates if item.get("orcid")})
         unambiguous = bool(candidates) and len(internal_ids) <= 1 and len(orcids) <= 1
@@ -438,6 +914,7 @@ def _build_identities(
             "repository_author_name": candidates[0].get("name", "") if unambiguous else "",
             "candidate_count": len(candidates),
             "confidence": "high" if unambiguous and (internal_ids or orcids) else "none" if not candidates else "ambiguous",
+            "identity_source": "minerva_seed_exact_name" if unambiguous and (internal_ids or orcids) else None,
         }
         override = override_map.get((person.get("discipline"), person.get("profile_url")))
         if (
@@ -457,6 +934,8 @@ def _build_identities(
         if identity["confidence"] == "high":
             person["source_id"] = identity["internal_id"] or None
             person["orcid"] = person.get("orcid") or identity["orcid"] or None
+            person["identity_source"] = identity.get("identity_source")
+            person["identity_confidence"] = "high"
         identities.append(identity)
     return identities
 
@@ -486,6 +965,113 @@ def _identity_search_url(identity: dict[str, Any], page: int) -> str:
         "sort": "dc.date.issued,DESC",
     })
     return f"{SEARCH_URL}?{query}"
+
+
+def repository_author_names(value: Any) -> list[str]:
+    """Exact Minerva author spellings worth trying for an official name."""
+    names: list[str] = []
+    for alias in name_aliases(value):
+        parts = alias.split()
+        if len(parts) >= 2:
+            names.append(f"{parts[-1]}, {' '.join(parts[:-1])}")
+        names.append(alias)
+    return list(dict.fromkeys(name for name in names if name))
+
+
+def _discover_minerva_identity(
+    client: HttpClient, identity: dict[str, Any]
+) -> tuple[list[dict[str, str]], int]:
+    """Find exact internal author identifiers without relying on a seed set.
+
+    DSpace exposes an exact author facet but no standalone author directory.
+    We therefore try only deterministic renderings of the official name, then
+    require the returned item's internal-author metadata to match one of the
+    same exact aliases.  A common name yielding several IDs remains ambiguous.
+    """
+    official_keys = person_keys(identity["person"]["name_clean"])
+    candidates: dict[str, dict[str, str]] = {}
+    queries = 0
+    for author_name in repository_author_names(identity["person"]["name_clean"]):
+        page, total_pages = 0, 1
+        while page < total_pages:
+            queries += 1
+            probe = {"repository_author_name": author_name}
+            response = client.get_json(_identity_search_url(probe, page))
+            result = response.get("_embedded", {}).get("searchResult", {})
+            total_pages = result.get("page", {}).get("totalPages", 1)
+            for wrapper in result.get("_embedded", {}).get("objects", []):
+                publication = _parse_item(wrapper)
+                if not publication:
+                    continue
+                for author in publication.get("internal_authors", []):
+                    if not official_keys.intersection(person_keys(author.get("name"))):
+                        continue
+                    identity_id = author.get("internal_id") or author.get("orcid") or author.get("raw")
+                    if identity_id:
+                        candidates[identity_id] = author
+            page += 1
+    return list(candidates.values()), queries
+
+
+def _resolve_missing_minerva_identities(
+    client: HttpClient,
+    identities: list[dict[str, Any]],
+    *,
+    max_workers: int,
+    verbose: bool,
+) -> dict[str, Any]:
+    """Resolve staff absent from the two small departmental seed collections."""
+    unresolved = [identity for identity in identities if identity["confidence"] != "high"]
+    stats: dict[str, Any] = {
+        "attempted": len(unresolved), "resolved": 0, "ambiguous": 0,
+        "not_found": 0, "queries": 0, "errors": [],
+    }
+    with ThreadPoolExecutor(max_workers=max(1, min(max_workers, 3))) as pool:
+        jobs = {
+            pool.submit(_discover_minerva_identity, client, identity): identity
+            for identity in unresolved
+        }
+        for future in as_completed(jobs):
+            identity = jobs[future]
+            person = identity["person"]
+            try:
+                candidates, queries = future.result()
+                stats["queries"] += queries
+            except Exception as error:
+                stats["errors"].append({"name": person["name_clean"], "error": str(error)})
+                continue
+
+            internal_ids = sorted({item["internal_id"] for item in candidates if item.get("internal_id")})
+            orcids = sorted({item["orcid"] for item in candidates if item.get("orcid")})
+            unambiguous = bool(candidates) and len(internal_ids) <= 1 and len(orcids) <= 1
+            if unambiguous and (internal_ids or orcids):
+                identity.update({
+                    "internal_id": internal_ids[0] if internal_ids else "",
+                    "orcid": orcids[0] if orcids else "",
+                    "repository_author_name": candidates[0].get("name", ""),
+                    "candidate_count": len(candidates),
+                    "confidence": "high",
+                    "identity_source": "minerva_repository_exact_author_discovery",
+                })
+                person["source_id"] = identity["internal_id"] or None
+                person["orcid"] = person.get("orcid") or identity["orcid"] or None
+                person["identity_source"] = identity["identity_source"]
+                person["identity_confidence"] = "high"
+                stats["resolved"] += 1
+            elif candidates:
+                identity["candidate_count"] = len(candidates)
+                identity["confidence"] = "ambiguous"
+                stats["ambiguous"] += 1
+            else:
+                stats["not_found"] += 1
+
+    if verbose:
+        print(
+            f"  Minerva identity discovery: {stats['resolved']} newly resolved from "
+            f"{stats['attempted']} staff; {stats['ambiguous']} ambiguous, "
+            f"{stats['not_found']} not found, {len(stats['errors'])} errors"
+        )
+    return stats
 
 
 def _search_identity(client: HttpClient, identity: dict[str, Any]) -> list[dict[str, Any]]:
@@ -530,13 +1116,46 @@ def _publication_contract(publication: dict[str, Any], identity: dict[str, Any],
     }
 
 
+def _review_guidance(identity: dict[str, Any]) -> dict[str, str | None]:
+    person = identity["person"]
+    title = person.get("title")
+    ambiguous = (
+        identity.get("confidence") == "ambiguous"
+        or person.get("orcid_identity_status") == "ambiguous"
+        or person.get("openalex_identity_status") == "ambiguous"
+    )
+    teaching_role = bool(re.search(
+        r"teaching|education.focus|\btutor\b|assistant lecturer|business manager",
+        title or "",
+        re.I,
+    ))
+    if ambiguous:
+        priority = "high"
+        action = (
+            "Compare candidate publications and identifiers with the official profile; "
+            "approve only an identifier supported by direct evidence."
+        )
+    elif teaching_role:
+        priority = "low"
+        action = (
+            "Keep the official staff row usable for headcount. Leave publication coverage "
+            "as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+        )
+    else:
+        priority = "medium"
+        action = (
+            "Check the official profile or CV for an ORCID/author identifier, then record "
+            "an approved override with its evidence URL."
+        )
+    return {"job_title": title, "review_priority": priority, "recommended_action": action}
+
+
 def _collect_live(
     disciplines: Iterable[str], *, refresh: bool, max_workers: int, limit_staff: int | None,
     verbose: bool, identity_overrides: Iterable[dict[str, Any]] = (),
 ):
     client = HttpClient(refresh=refresh)
     staff: list[dict[str, Any]] = []
-    identities: list[dict[str, Any]] = []
     roster_sources: dict[str, str] = {}
     seed_counts: dict[str, int] = {}
     seed_reconciliation: dict[str, dict[str, Any]] = {}
@@ -555,9 +1174,23 @@ def _collect_live(
         seeds[discipline] = seed
         roster_sources[discipline] = roster_source
         staff.extend(local_staff)
-        identities.extend(_build_identities(local_staff, seed, identity_overrides))
         if limit_staff is not None and len(staff) >= limit_staff:
             break
+
+    # Build the identity index from both departmental collections.  A current
+    # Accounting staff member can have older Finance-affiliated deposits (and
+    # vice versa); limiting their identity lookup to only the current
+    # department silently made those people disappear.
+    all_seed = [publication for discipline_seed in seeds.values() for publication in discipline_seed]
+    identities = _build_identities(staff, all_seed, identity_overrides)
+    minerva_discovery_stats = _resolve_missing_minerva_identities(
+        client, identities, max_workers=max_workers, verbose=verbose
+    )
+    manual_retrieval_overrides_applied = _apply_manual_retrieval_overrides(
+        staff, identity_overrides
+    )
+    orcid_identity_stats = _add_orcid_ids(staff, refresh=refresh, verbose=verbose)
+    openalex_identity_stats = _add_openalex_ids(staff, refresh=refresh, verbose=verbose)
 
     accepted = [identity for identity in identities if identity["confidence"] == "high"]
     failures: list[dict[str, Any]] = []
@@ -618,6 +1251,16 @@ def _collect_live(
         "staff_records": len(staff),
         "staff_with_high_confidence_minerva_identity": len(accepted),
         "staff_without_high_confidence_identity": len(staff) - len(accepted),
+        "minerva_identity_discovery": minerva_discovery_stats,
+        "orcid_identity_resolution": orcid_identity_stats,
+        "openalex_identity_resolution": openalex_identity_stats,
+        "staff_reachable_by_supplementary_orcid_or_openalex_author_id": sum(
+            bool(person.get("orcid") or person.get("openalex_author_ids")) for person in staff
+        ),
+        "staff_without_any_verified_retrieval_identity": sum(
+            not (person.get("source_id") or person.get("orcid") or person.get("openalex_author_ids"))
+            for person in staff
+        ),
         "departmental_seed_publications": seed_counts,
         "departmental_seed_reconciliation": seed_reconciliation,
         "exact_seed_relationships": seed_relationships,
@@ -626,20 +1269,53 @@ def _collect_live(
         "manual_identity_overrides_applied": sum(
             identity.get("identity_source") == "manual_verified_override" for identity in identities
         ),
+        "manual_retrieval_overrides_applied": manual_retrieval_overrides_applied,
         "search_failures": failures + aborted_searches,
         "searches_aborted_by_circuit_breaker": len(aborted_searches),
         "attribution_rule": "exact Minerva internal author ID or ORCID only",
         "refresh_note": "all records come from the live/cached official endpoints; no previous project dataset is read",
+        "minerva_identity_review_queue": [
+            {
+                "name": identity["person"]["name_clean"],
+                "discipline": identity["person"]["discipline"],
+                "profile_url": identity["person"]["profile_url"],
+                "minerva_identity_confidence": identity["confidence"],
+                "minerva_candidate_count": identity["candidate_count"],
+                "orcid_identity_status": identity["person"].get("orcid_identity_status"),
+                "orcid_candidate_count": identity["person"].get("orcid_identity_candidate_count", 0),
+                "orcid_review_candidates": identity["person"].get("orcid_review_candidates", []),
+                "openalex_identity_status": identity["person"].get("openalex_identity_status"),
+                "openalex_candidate_count": identity["person"].get("openalex_identity_candidate_count", 0),
+                "openalex_review_candidates": identity["person"].get("openalex_review_candidates", []),
+            }
+            for identity in identities
+            if identity["confidence"] != "high"
+        ],
+        # This is the actionable queue.  A missing Minerva identity is no
+        # longer labelled as zero publications when OpenAlex independently
+        # supplied a verified author identifier.
         "identity_review_queue": [
             {
                 "name": identity["person"]["name_clean"],
                 "discipline": identity["person"]["discipline"],
                 "profile_url": identity["person"]["profile_url"],
-                "identity_confidence": identity["confidence"],
-                "candidate_count": identity["candidate_count"],
+                "minerva_identity_confidence": identity["confidence"],
+                "minerva_candidate_count": identity["candidate_count"],
+                "orcid_identity_status": identity["person"].get("orcid_identity_status"),
+                "orcid_candidate_count": identity["person"].get("orcid_identity_candidate_count", 0),
+                "orcid_review_candidates": identity["person"].get("orcid_review_candidates", []),
+                "openalex_identity_status": identity["person"].get("openalex_identity_status"),
+                "openalex_candidate_count": identity["person"].get("openalex_identity_candidate_count", 0),
+                "openalex_review_candidates": identity["person"].get("openalex_review_candidates", []),
+                "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+                **_review_guidance(identity),
             }
             for identity in identities
-            if identity["confidence"] != "high"
+            if not (
+                identity["confidence"] == "high"
+                or identity["person"].get("orcid")
+                or identity["person"].get("openalex_author_ids")
+            )
         ],
     }
     return staff, pubs, quality
@@ -655,20 +1331,23 @@ def collect(
     refresh: bool = False,
     max_workers: int = 3,
     limit_staff: int | None = None,
-    identity_overrides: Iterable[dict[str, Any]] = (),
+    identity_overrides: Iterable[dict[str, Any]] | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Return ``(staff, publications)`` satisfying the shared team contract."""
     selected = tuple(disciplines)
     unknown = set(selected) - set(TARGETS)
     if unknown:
         raise ValueError(f"unknown disciplines: {sorted(unknown)}")
+    selected_overrides = (
+        load_identity_overrides() if identity_overrides is None else list(identity_overrides)
+    )
     staff, pubs, quality = _collect_live(
         selected,
         refresh=refresh,
         max_workers=max_workers,
         limit_staff=limit_staff,
         verbose=verbose,
-        identity_overrides=identity_overrides,
+        identity_overrides=selected_overrides,
     )
     LAST_QUALITY.clear()
     LAST_QUALITY.update(quality)
@@ -694,9 +1373,41 @@ def write_snapshot(staff: list[dict[str, Any]], pubs: list[dict[str, Any]], outp
             writer = csv.DictWriter(handle, fieldnames=headers)
             writer.writeheader()
             writer.writerows({key: _csv_value(value) for key, value in row.items()} for row in rows)
+    write_quality_report(output_dir)
+
+
+def write_quality_report(output_dir: Path) -> None:
+    """Write machine-readable quality evidence and an actionable review CSV."""
+    output_dir.mkdir(parents=True, exist_ok=True)
     (output_dir / "unimelb_adapter_quality.json").write_text(
         json.dumps(LAST_QUALITY, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
+    queue = LAST_QUALITY.get("identity_review_queue") or []
+    columns = [
+        "name", "discipline", "job_title", "profile_url", "review_priority",
+        "reason", "recommended_action",
+        "minerva_identity_confidence", "minerva_candidate_count",
+        "orcid_identity_status", "orcid_candidate_count", "orcid_review_candidates",
+        "openalex_identity_status", "openalex_candidate_count", "openalex_review_candidates",
+        "review_decision", "review_notes",
+    ]
+    with (output_dir / "unimelb_identity_review.csv").open(
+        "w", newline="", encoding="utf-8"
+    ) as handle:
+        writer = csv.DictWriter(handle, fieldnames=columns, extrasaction="ignore")
+        writer.writeheader()
+        for item in queue:
+            writer.writerow({
+                **item,
+                "orcid_review_candidates": json.dumps(
+                    item.get("orcid_review_candidates") or [], ensure_ascii=False
+                ),
+                "openalex_review_candidates": json.dumps(
+                    item.get("openalex_review_candidates") or [], ensure_ascii=False
+                ),
+                "review_decision": "",
+                "review_notes": "",
+            })
 
 
 def main() -> None:

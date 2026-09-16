@@ -3,96 +3,240 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin — Edit data</title>
+  <title>Admin — Data management</title>
   <link rel="stylesheet" href="assets/style.css">
   <style>
-    .admin-wrap { max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
-    .admin-step { margin: 1.25rem 0; padding: 1rem 1.25rem; border: 1px solid #ddd; border-radius: 8px; }
-    .admin-step h2 { margin-top: 0; font-size: 1.1rem; }
-    .muted { color: #666; font-size: 0.9rem; }
-    label.inline { display:block; margin:0.6rem 0; }
-    select, input[type=file] { padding: 0.4rem; }
-    #result { white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 0.85rem;
-              background:#f6f6f6; border-radius:6px; padding:0.75rem; margin-top:0.75rem; }
+    .admin-step select, .admin-step input[type=file] { padding: 0.4rem; }
   </style>
 </head>
 <body>
   <div class="admin-wrap">
-    <h1>Edit data</h1>
-    <p style="margin-top:-0.5rem;"><a href="/admin/logout">Log out</a></p>
-    <p class="muted">Pick a dataset, download it as Excel, edit the cells, then upload it back.
-      There are 3 different data sets that can be downloaded; Journals, Pulbications and Staff (researcher)
-      In order for an edit to take affect, ensure that you choose the correct data set, download the Excel
-      sheet, edit and save your changes, and re-upload the sheet. Make sure that section 1. "Choose dataset"
-      is set to the correct one when uploading the Excel sheet. 
+    <h1>Data management</h1>
+    <p class="admin-logout"><a href="/admin/logout">Log out</a></p>
+
+    <section class="admin-step">
+      <h2>Edit data</h2>
+      <p class="muted">Pick a dataset, download it as Excel, edit the cells, then upload it back.
+        There are 3 different data sets that can be downloaded; Journals, Pulbications and Staff (researcher)
+        In order for an edit to take affect, ensure that you choose the correct data set, download the Excel
+        sheet, edit and save your changes, and re-upload the sheet. Make sure that section 1. "Choose dataset"
+        is set to the correct one when uploading the Excel sheet.
       </p>
       <p class="muted">
-      Note: Changes made to the Journal and Staff (researcher) datasets will affect the publications dataset,
-      while the reverse is not true.
+        Note: Changes made to the Journal and Staff (researcher) datasets will affect the publications dataset,
+        while the reverse is not true.
       </p>
+      <p class="muted">For publications, rows are matched on <code>publication_id</code>; leave that
+        cell blank to add a new publication (it will need a valid <code>researcher_id</code>).
+        Only the publication columns are saved — <code>researcher_name</code>,
+        <code>university</code>, <code>journal_name</code> and <code>issn</code> are shown for
+        context and ignored on upload.</p>
+      <p class="warn"><strong>Note:</strong> spreadsheet edits change the live database.
+        A later full source refresh rebuilds that database from the pipeline outputs, so manual
+        edits can be replaced; the refresh creates a database backup first.</p>
 
-    <div class="admin-step">
-      <h2>1. Choose dataset</h2>
-      <select id="dataset">
-        <option value="publications">Publications</option>
-        <option value="journals">Journals</option>
-        <option value="researchers">Staff (researchers)</option>
-      </select>
-    </div>
+      <div class="admin-action-block">
+        <h3>1. Choose dataset</h3>
+        <select id="dataset">
+          <option value="publications">Publications</option>
+          <option value="journals">Journals</option>
+          <option value="researchers">Staff (researchers)</option>
+        </select>
+      </div>
 
-    <div class="admin-step">
-      <h2>2. Download</h2>
-      <button class="btn" id="btn-download" type="button">Download Excel</button>
-    </div>
+      <div class="admin-action-block">
+        <h3>2. Download</h3>
+        <button class="btn" id="btn-download" type="button">Download Excel</button>
+      </div>
 
-    <div class="admin-step">
-      <h2>3. Upload edited sheet</h2>
-      <input type="file" id="file" accept=".xlsx">
-      <label class="inline"><input type="checkbox" id="dry" checked>
-        Preview only (dry run) — don't change the database yet</label>
-      <button class="btn" id="btn-upload" type="button">Upload</button>
-      <div id="result" hidden></div>
-    </div>
+      <div class="admin-action-block">
+        <h3>3. Upload edited sheet</h3>
+        <input type="file" id="file" accept=".xlsx">
+        <label class="admin-check-row">
+          <input type="checkbox" id="dry" checked>
+          Preview only (dry run) — don't change the database yet
+        </label>
+        <button class="btn" id="btn-upload" type="button">Upload</button>
+        <div class="admin-result" id="result" hidden></div>
+      </div>
+    </section>
+
+    <section class="admin-step" aria-labelledby="refresh-heading">
+      <h2 id="refresh-heading">Refresh source data</h2>
+      <p>Run every available Group of Eight university scraper and rebuild the database
+        from the new pipeline outputs.</p>
+      <p class="warn"><strong>Important:</strong> this can take a long time. The current
+        website database stays in place while scraping runs. A backup is created first,
+        and the live database is replaced only after every university and the database
+        reload succeed.</p>
+      <p class="muted">If one source fails, the job stops and reports which source failed.
+        The existing live database is left unchanged; see the job log for the source error.</p>
+
+      <div class="admin-refresh-toolbar">
+        <button class="btn" id="btn-refresh" type="button">Refresh all data</button>
+        <span class="status-badge" id="refresh-state" data-state="idle">Loading status…</span>
+      </div>
+
+      <dl class="admin-summary">
+        <div><dt>Current step</dt><dd id="refresh-current">—</dd></div>
+        <div><dt>Started</dt><dd id="refresh-started">—</dd></div>
+        <div><dt>Finished</dt><dd id="refresh-finished">—</dd></div>
+        <div><dt>Clarivate</dt><dd id="refresh-clarivate">—</dd></div>
+        <div><dt>Backup</dt><dd id="refresh-backup">—</dd></div>
+        <div><dt>Log</dt><dd id="refresh-log">—</dd></div>
+      </dl>
+      <p class="admin-message" id="refresh-message"></p>
+      <ul class="admin-source-list" id="refresh-sources"></ul>
+    </section>
   </div>
 
   <script>
     const el = id => document.getElementById(id);
+    const uploadBtn = el("btn-upload");
     const out = el("result");
     const dataset = () => el("dataset").value;
-    const show = t => { out.hidden = false; out.textContent = t; };
+    const refreshBtn = el("btn-refresh");
+    const refreshState = el("refresh-state");
+    const refreshSources = el("refresh-sources");
+    let pollTimer = null;
 
     el("btn-download").addEventListener("click", () => {
       window.location = `/api/admin/${dataset()}.xlsx`;
     });
 
-    el("btn-upload").addEventListener("click", async () => {
+    uploadBtn.addEventListener("click", async () => {
       const f = el("file").files[0];
-      if (!f) { show("Choose a file first."); return; }
+      if (!f) { showUpload("Choose a file first."); return; }
       const dry = el("dry").checked;
-      const fd = new FormData(); fd.append("file", f);
-      show("Working\u2026"); el("btn-upload").disabled = true;
+
+      const fd = new FormData();
+      fd.append("file", f);
+      showUpload("Working…");
+      uploadBtn.disabled = true;
       try {
         const res = await fetch(`/api/admin/${dataset()}?dry_run=${dry ? "1" : "0"}`,
                                 { method: "POST", body: fd });
-        if (res.status === 401) {
-          show("Your session expired. Please log in again.");
-          setTimeout(() => location.href = "/admin/login", 1200); return;
+        if (await handleExpired(res, showUpload)) return;
+        const data = await res.json();
+        if (data.error) { showUpload("Error: " + data.error); return; }
+
+        let msg = (data.dry_run ? "PREVIEW (nothing saved)\n" : "SAVED TO DATABASE\n")
+          + `inserted: ${data.inserted}\nupdated:  ${data.updated}\nskipped:  ${data.skipped}\n`
+          + `errors:   ${data.errors.length}`;
+        if (data.cascaded_pubs) msg += `\npublications updated from journal changes: ${data.cascaded_pubs}`;
+        if (data.errors.length) {
+          msg += "\n\n" + data.errors.slice(0, 20)
+            .map(e => `  row ${e.row}: ${e.error}`).join("\n");
+          if (data.errors.length > 20) msg += `\n  …and ${data.errors.length - 20} more`;
+          msg += "\n\n(no rows were saved — fix these and re-upload)";
         }
-        const d = await res.json();
-        if (d.error) { show("Error: " + d.error); return; }
-        let msg = (d.dry_run ? "PREVIEW (nothing saved)\n" : "SAVED TO DATABASE\n")
-          + `inserted: ${d.inserted}\nupdated:  ${d.updated}\nskipped:  ${d.skipped}\n`
-          + `errors:   ${d.errors.length}`;
-        if (d.cascaded_pubs) msg += `\npublications updated from journal changes: ${d.cascaded_pubs}`;
-        if (d.errors.length) {
-          msg += "\n\n" + d.errors.slice(0, 20).map(e => `  row ${e.row}: ${e.error}`).join("\n");
-          if (d.errors.length > 20) msg += `\n  \u2026and ${d.errors.length - 20} more`;
-          msg += "\n\n(no rows were saved \u2014 fix these and re-upload)";
-        }
-        show(msg);
-      } catch (e) { show("Upload failed: " + e); }
-      finally { el("btn-upload").disabled = false; }
+        showUpload(msg);
+      } catch (e) {
+        showUpload("Upload failed: " + e);
+      } finally {
+        uploadBtn.disabled = false;
+      }
     });
+
+    refreshBtn.addEventListener("click", async () => {
+      const ok = confirm(
+        "Refresh every university now? This can take a long time. " +
+        "The current database will remain live until the complete refresh succeeds."
+      );
+      if (!ok) return;
+
+      refreshBtn.disabled = true;
+      try {
+        const res = await fetch("/api/admin/refresh", { method: "POST" });
+        if (await handleExpired(res, showRefreshMessage)) return;
+        const data = await res.json();
+        renderRefresh(data);
+        schedulePoll();
+      } catch (e) {
+        showRefreshMessage("Could not start refresh: " + e);
+        refreshBtn.disabled = false;
+      }
+    });
+
+    async function loadRefreshStatus() {
+      try {
+        const res = await fetch("/api/admin/refresh/status", { cache: "no-store" });
+        if (await handleExpired(res, showRefreshMessage)) return;
+        renderRefresh(await res.json());
+      } catch (e) {
+        showRefreshMessage("Could not read refresh status: " + e);
+      }
+    }
+
+    function renderRefresh(data) {
+      const state = data.state || "idle";
+      refreshState.textContent = state;
+      refreshState.dataset.state = state;
+      refreshBtn.disabled = state === "queued" || state === "running";
+      el("refresh-current").textContent = data.current_source || "—";
+      el("refresh-started").textContent = data.started_at || "—";
+      el("refresh-finished").textContent = data.finished_at || "—";
+      el("refresh-clarivate").textContent = data.clarivate || "—";
+      el("refresh-backup").textContent = data.backup_path || "—";
+      el("refresh-log").textContent = data.log_path || "—";
+      showRefreshMessage(data.message || "");
+
+      refreshSources.replaceChildren();
+      const sourceRows = data.sources && data.sources.length
+        ? data.sources
+        : (data.available_sources || []).map(name => ({ name, state: "available" }));
+      for (const source of sourceRows) {
+        const li = document.createElement("li");
+        const name = document.createElement("strong");
+        name.textContent = source.name;
+        const status = document.createElement("span");
+        status.className = "source-state";
+        status.textContent = source.state || "pending";
+        li.append(name, status);
+        if (source.error) {
+          const err = document.createElement("span");
+          err.className = "source-error";
+          err.textContent = source.error;
+          li.append(err);
+        }
+        refreshSources.append(li);
+      }
+
+      if (state === "queued" || state === "running") schedulePoll();
+      else stopPoll();
+    }
+
+    function schedulePoll() {
+      stopPoll();
+      pollTimer = setTimeout(async () => {
+        await loadRefreshStatus();
+      }, 3000);
+    }
+
+    function stopPoll() {
+      if (pollTimer) clearTimeout(pollTimer);
+      pollTimer = null;
+    }
+
+    // Shows the expiry notice where the user is looking: the upload result box
+    // for an upload, the refresh message line for a refresh.
+    async function handleExpired(res, report) {
+      if (res.status !== 401) return false;
+      report("Your session expired. Please log in again.");
+      setTimeout(() => location.href = "/admin/login", 1200);
+      return true;
+    }
+
+    function showUpload(text) {
+      out.hidden = false;
+      out.textContent = text;
+    }
+
+    function showRefreshMessage(text) {
+      el("refresh-message").textContent = text;
+    }
+
+    loadRefreshStatus();
   </script>
 </body>
 </html>
