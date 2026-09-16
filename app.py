@@ -23,6 +23,24 @@ engine = create_engine(
 
 Session = sessionmaker(bind=engine)
 
+
+UNIVERSITY_CODES = {
+    "Australian National University": "ANU",
+    "Monash University": "MONASH",
+    "The University of Adelaide": "UA",
+    "University of Adelaide": "UA",
+    "The University of Melbourne": "UM",
+    "University of Melbourne": "UM",
+    "The University of New South Wales": "UNSW",
+    "UNSW Sydney": "UNSW",
+    "The University of Queensland": "UQ",
+    "University of Queensland": "UQ",
+    "The University of Sydney": "USYD",
+    "University of Sydney": "USYD",
+    "The University of Western Australia": "UWA",
+    "University of Western Australia": "UWA",
+}
+
 from admin import make_admin_bp
 app.register_blueprint(make_admin_bp(Session))
 
@@ -130,6 +148,117 @@ def get_researchers():
     return jsonify({
         "researchers": result
     })
+
+
+# ---------------------------------------------------------
+# Universities
+# ---------------------------------------------------------
+
+@app.route("/api/universities")
+def get_universities():
+    """Aggregate university rankings from the database.
+
+    Publication totals are researcher-publication links, matching the rest of
+    the application: a paper co-authored by two included researchers counts
+    once for each researcher. Missing JIF values are excluded from the mean;
+    they are never treated as zero.
+    """
+
+    session = Session()
+
+    try:
+        researchers = (
+            session.query(Researcher)
+            .options(
+                joinedload(Researcher.publications)
+                .joinedload(Publication.journal)
+            )
+            .all()
+        )
+
+        universities = {}
+
+        def new_metrics():
+            return {
+                "researcher_count": 0,
+                "publication_count": 0,
+                "top_tier_count": 0,
+                "jif_values": [],
+                "jif_5_values": [],
+            }
+
+        for researcher in researchers:
+            name = researcher.university
+            if name not in universities:
+                universities[name] = {
+                    "name": name,
+                    "code": UNIVERSITY_CODES.get(name, name),
+                    "overall": new_metrics(),
+                    "Accounting": new_metrics(),
+                    "Finance": new_metrics(),
+                }
+
+            university = universities[name]
+            overall = university["overall"]
+            field = university.get(researcher.field_of_research)
+
+            overall["researcher_count"] += 1
+            if field is not None:
+                field["researcher_count"] += 1
+
+            for publication in researcher.publications:
+                rank = (publication.quality_rank or "").strip().upper()
+                journal = publication.journal
+                jif = journal.impact_factor if journal else None
+                jif_5 = journal.impact_factor_5yr if journal else None
+
+                for metrics in (overall, field):
+                    if metrics is None:
+                        continue
+                    metrics["publication_count"] += 1
+                    if rank in {"A*", "A"}:
+                        metrics["top_tier_count"] += 1
+                    if jif is not None:
+                        metrics["jif_values"].append(float(jif))
+                    if jif_5 is not None:
+                        metrics["jif_5_values"].append(float(jif_5))
+
+        def serialise_metrics(metrics):
+            researcher_count = metrics["researcher_count"]
+            publication_count = metrics["publication_count"]
+            jif_values = metrics.pop("jif_values")
+            jif_5_values = metrics.pop("jif_5_values")
+            return {
+                **metrics,
+                "avg_jif": (
+                    sum(jif_values) / len(jif_values)
+                    if jif_values else None
+                ),
+                "avg_jif_5": (
+                    sum(jif_5_values) / len(jif_5_values)
+                    if jif_5_values else None
+                ),
+                "avg_articles": (
+                    publication_count / researcher_count
+                    if researcher_count else None
+                ),
+            }
+
+        result = []
+        for university in universities.values():
+            overall = serialise_metrics(university["overall"])
+            result.append({
+                "name": university["name"],
+                "code": university["code"],
+                **overall,
+                "accounting": serialise_metrics(university["Accounting"]),
+                "finance": serialise_metrics(university["Finance"]),
+            })
+
+        result.sort(key=lambda row: row["name"])
+        return jsonify({"universities": result})
+    finally:
+        session.close()
 
 
 # ---------------------------------------------------------

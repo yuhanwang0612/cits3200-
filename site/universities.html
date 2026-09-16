@@ -69,85 +69,39 @@
   const body = document.getElementById('ranking-body');
   const shell = document.getElementById('table-shell');
   const rankBy = document.getElementById('rank-by');
-  const results = await Promise.all([
-    loadJSON('data/universities.json'),
-    loadJSON('data/researchers.json')
-  ]);
-  const universityData = results[0];
-  const researcherData = results[1];
-
-  if (!universityData || !researcherData) {
-    shell.innerHTML = '';
-    showLoadError(shell, !universityData ? 'data/universities.json' : 'data/researchers.json');
+  let response;
+  try {
+    response = await fetch('/api/universities', { cache: 'no-store' });
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+  } catch (error) {
+    shell.innerHTML = '<div class="load-error"><strong>Unable to load university rankings.</strong>' +
+      '<div>The database API did not respond. Start the Flask application and try again.</div></div>';
     return;
   }
 
-  const displayCodes = { ADL: 'UA', UOM: 'UM', MON: 'MONASH' };
-  const rows = new Map();
-  (universityData.universities || []).forEach(u => rows.set(u.code, {
-    code: u.code,
-    display_code: displayCodes[u.code] || u.code,
-    name: u.name,
-    researcher_count: Number(u.researcher_count) || 0,
-    article_count: Number(u.publication_count) || 0,
-    top_count: firstNumber(u, ['top_tier_count', 'abdc_a_star_a_count']),
-    avg_jif: firstNumber(u, ['avg_jif', 'average_jif']),
-    avg_jif_5: firstNumber(u, ['avg_jif_5', 'average_5_year_jif']),
-    accounting: blankField(),
-    finance: blankField()
-  }));
-
-  function blankField() {
-    return { researchers: 0, articles: 0, top: 0, jifSum: 0, jifN: 0, jif5Sum: 0, jif5N: 0 };
-  }
-  function firstNumber(object, keys) {
-    for (const key of keys) {
-      if (object[key] !== null && object[key] !== undefined && object[key] !== '') {
-        const value = Number(object[key]);
-        if (!Number.isNaN(value)) return value;
-      }
+  const payload = await response.json();
+  const all = (payload.universities || []).map(row => ({
+    ...row,
+    display_code: row.code,
+    article_count: row.publication_count,
+    top_count: row.top_tier_count,
+    accounting: {
+      researchers: row.accounting.researcher_count,
+      articles: row.accounting.publication_count,
+      top: row.accounting.top_tier_count,
+      avg_jif: row.accounting.avg_jif,
+      avg_jif_5: row.accounting.avg_jif_5,
+      avg_articles: row.accounting.avg_articles
+    },
+    finance: {
+      researchers: row.finance.researcher_count,
+      articles: row.finance.publication_count,
+      top: row.finance.top_tier_count,
+      avg_jif: row.finance.avg_jif,
+      avg_jif_5: row.finance.avg_jif_5,
+      avg_articles: row.finance.avg_articles
     }
-    return null;
-  }
-
-  (researcherData.researchers || []).forEach(r => {
-    const code = r.university_code;
-    if (!code) return;
-    if (!rows.has(code)) rows.set(code, {
-      code: code, display_code: displayCodes[code] || code,
-      name: r.university || code, researcher_count: 0, article_count: 0,
-      top_count: null, avg_jif: null, avg_jif_5: null,
-      accounting: blankField(), finance: blankField()
-    });
-    const row = rows.get(code);
-    const key = String(r.field_of_research || '').toLowerCase();
-    if (key !== 'accounting' && key !== 'finance') return;
-    const field = row[key];
-    field.researchers += 1;
-    field.articles += Number(r.publication_count) || 0;
-    field.top += (Number(r.count_a_star) || 0) + (Number(r.count_a) || 0);
-    const jif = firstNumber(r, ['avg_jif', 'average_jif']);
-    const jif5 = firstNumber(r, ['avg_jif_5', 'average_5_year_jif']);
-    if (jif !== null) { field.jifSum += jif; field.jifN += 1; }
-    if (jif5 !== null) { field.jif5Sum += jif5; field.jif5N += 1; }
-  });
-
-  const all = Array.from(rows.values()).map(row => {
-    const derivedResearchers = row.accounting.researchers + row.finance.researchers;
-    const derivedArticles = row.accounting.articles + row.finance.articles;
-    const derivedTop = row.accounting.top + row.finance.top;
-    if (!row.researcher_count) row.researcher_count = derivedResearchers;
-    if (!row.article_count) row.article_count = derivedArticles;
-    if (row.top_count === null) row.top_count = derivedTop;
-    row.avg_articles = row.researcher_count ? row.article_count / row.researcher_count : null;
-    row.accounting.avg_articles = row.accounting.researchers ? row.accounting.articles / row.accounting.researchers : null;
-    row.finance.avg_articles = row.finance.researchers ? row.finance.articles / row.finance.researchers : null;
-    row.accounting.avg_jif = row.accounting.jifN ? row.accounting.jifSum / row.accounting.jifN : null;
-    row.finance.avg_jif = row.finance.jifN ? row.finance.jifSum / row.finance.jifN : null;
-    row.accounting.avg_jif_5 = row.accounting.jif5N ? row.accounting.jif5Sum / row.accounting.jif5N : null;
-    row.finance.avg_jif_5 = row.finance.jif5N ? row.finance.jif5Sum / row.finance.jif5N : null;
-    return row;
-  });
+  }));
 
   const modes = {
     total_researchers: {
@@ -214,7 +168,7 @@
   }
 
   document.getElementById('update').addEventListener('click', render);
-  document.getElementById('sample-banner').hidden = !(universityData.meta || {}).is_sample_data;
+  document.getElementById('sample-banner').hidden = true;
   render();
 })();
 </script>
