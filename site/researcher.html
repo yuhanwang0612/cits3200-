@@ -121,8 +121,15 @@
     return;
   }
 
-  const path = 'data/publications/' + encodeURIComponent(id) + '.json';
-  const data = await loadJSON(path);
+  // Two calls, not one: the publications endpoint carries the publication
+  // rows and enough of the researcher to name the page, but the ORCID,
+  // profile URL and the ABDC tallies are only on the single-researcher
+  // endpoint. Issued in parallel so the page waits for one, not both.
+  const [summary, data] = await Promise.all([
+    loadJSON('/api/researchers/' + encodeURIComponent(id)),
+    loadJSON('/api/researchers/' + encodeURIComponent(id) + '/publications')
+  ]);
+
   if (!data) {
     head.innerHTML = '<div class="empty">No record found for <code>' + esc(id) +
       '</code>. <a href="researchers.html">Back to the rankings.</a></div>';
@@ -130,12 +137,15 @@
     return;
   }
 
-  // Only claim the data is invented if the file says so.
+  // Only claim the data is invented if the source says so. The database is
+  // real data, so this stays hidden; the check is kept for the sample files.
   if (data.meta && data.meta.is_sample_data) {
     document.getElementById('sample-banner').hidden = false;
   }
 
-  const r    = data.researcher || {};
+  // The summary wins where both carry a field. If that call is the one that
+  // fails, the page still renders the name and university from the other.
+  const r    = Object.assign({}, data.researcher || {}, summary || {});
   const ALL  = data.publications || [];
   document.title = (r.name || 'Researcher') + ' — G8 Research Output Database';
 
@@ -271,7 +281,29 @@
   ], (r.name || 'researcher').replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '-publications.csv'));
 
   render();
-})();
+})().catch(function (err) {
+  /* Anything thrown above used to leave "Loading…" on screen forever, which
+     reads as a hung page and hides the actual cause. Report it instead.
+     Built with textContent, not the esc() helper, because the most likely
+     thing to throw is assets/app.js having failed to load — in which case
+     esc() is not defined either. */
+  console.error(err);
+  const head = document.getElementById('head-card');
+  const box = document.createElement('div');
+  box.className = 'empty';
+  const line = document.createElement('strong');
+  line.textContent = 'This page failed to load.';
+  const detail = document.createElement('div');
+  detail.className = 'small';
+  detail.style.marginTop = '8px';
+  detail.textContent = (err && err.message) ? err.message : String(err);
+  box.appendChild(line);
+  box.appendChild(detail);
+  head.textContent = '';
+  head.appendChild(box);
+  const section = document.getElementById('pub-section');
+  if (section) section.hidden = true;
+});
 </script>
 </body>
 </html>
