@@ -27,7 +27,7 @@ LADDER = [
     ("Senior Research Fellow", r"senior research fellow"),
     ("Research Fellow",        r"research fellow"),
     ("Teaching Associate",     r"teaching associate"),
-    ("Professor",              r"\bprofessor\b|chair in"),
+    ("Professor",              r"\bprofessor\b|chair in|\bdean\b"),
     ("Lecturer",               r"\blecturer\b"),
 ]
 

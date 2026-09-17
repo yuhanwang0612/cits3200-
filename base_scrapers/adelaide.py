@@ -187,12 +187,21 @@ def _visit_profile(username):
             return None
 
         title_raw = None
-        for tag in soup.find_all(["p", "h2", "h3", "div", "span"], limit=40):
+        _TITLE_WORDS = [
+            "professor", "lecturer", "researcher", "fellow", "associate",
+            "adjunct", "honorary", "visiting", "emeritus", "dean",
+            "director", "chair", "tutor", "postdoc",
+        ]
+        for tag in soup.find_all(["p", "h2", "h3", "div", "span"], limit=80):
             text = tag.get_text(strip=True)
-            if any(w in text.lower() for w in ["professor", "lecturer", "researcher", "fellow", "associate"]):
+            if any(w in text.lower() for w in _TITLE_WORDS):
                 if 3 < len(text) < 120:
                     title_raw = text
                     break
+
+        # Strip discipline suffix: "Lecturer, Accounting" -> "Lecturer"
+        if title_raw:
+            title_raw = re.sub(r",\s*(Accounting|Finance|Financial\w*)[^,]*$", "", title_raw, flags=re.I).strip()
 
         orcid = None
         for a in soup.find_all("a", href=True):
