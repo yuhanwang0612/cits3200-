@@ -367,6 +367,25 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
     publications = build_publications(pubs, records, verbose=verbose)
     staff = build_staff(records)
 
+    # Apply manual staff title overrides from data/staff_overrides.csv.
+    # This ensures titles confirmed from profile screenshots survive pipeline reruns.
+    _overrides_path = Path(__file__).resolve().parent / "data" / "staff_overrides.csv"
+    if _overrides_path.exists():
+        import csv as _csv
+        with _overrides_path.open(encoding="utf-8") as _f:
+            _overrides = {
+                (row["university"].strip().lower(), row["name"].strip()): row["job_title"].strip()
+                for row in _csv.DictReader(_f)
+            }
+        _applied = 0
+        for _s in staff:
+            _key = (_s.get("university", "").strip().lower(), (_s.get("name") or "").strip())
+            if _key in _overrides and not _s.get("job_title"):
+                _s["job_title"] = _overrides[_key]
+                _applied += 1
+        if verbose and _applied:
+            print(f"  applied {_applied} staff title override(s) from staff_overrides.csv")
+
     if drop_staff_without_pubs:
         have = {p["name"] for p in publications}
         before = len(staff)
