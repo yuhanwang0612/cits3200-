@@ -1,0 +1,1062 @@
+[
+  {
+    "name": "Nurul Alam",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "nurul.alam",
+    "orcid": "0000-0002-9956-2753",
+    "profile_url": "https://profiles.sydney.edu.au/nurul.alam"
+  },
+  {
+    "name": "Eddie Anderson",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "edward.anderson",
+    "orcid": "0000-0002-6375-4067",
+    "profile_url": "https://profiles.sydney.edu.au/edward.anderson"
+  },
+  {
+    "name": "Jane Andrew",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "jane.andrew",
+    "orcid": "0000-0002-3543-5317",
+    "profile_url": "https://profiles.sydney.edu.au/jane.andrew"
+  },
+  {
+    "name": "Max Baker",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "max.baker",
+    "orcid": "0000-0002-0322-3010",
+    "profile_url": "https://profiles.sydney.edu.au/max.baker"
+  },
+  {
+    "name": "Paul Blayney",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "paul.blayney",
+    "orcid": "0000-0002-5231-4306",
+    "profile_url": "https://profiles.sydney.edu.au/paul.blayney"
+  },
+  {
+    "name": "Roel Boomsma",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "roel.boomsma",
+    "orcid": "0000-0002-4255-8323",
+    "profile_url": "https://profiles.sydney.edu.au/roel.boomsma"
+  },
+  {
+    "name": "Sara Cao",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "sara.cao",
+    "orcid": "0000-0002-3779-7418",
+    "profile_url": "https://profiles.sydney.edu.au/sara.cao"
+  },
+  {
+    "name": "David Chaikin",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "david.chaikin",
+    "orcid": "0000-0002-9354-2268",
+    "profile_url": "https://profiles.sydney.edu.au/david.chaikin"
+  },
+  {
+    "name": "Demetris Christodoulou",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "demetris.christodoulou",
+    "orcid": "0000-0002-2896-6486",
+    "profile_url": "https://profiles.sydney.edu.au/demetris.christodoulou"
+  },
+  {
+    "name": "Wai-Fong Chua",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "waifong.chua",
+    "orcid": "0000-0002-1634-7151",
+    "profile_url": "https://profiles.sydney.edu.au/waifong.chua"
+  },
+  {
+    "name": "Janine Coupe",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "janine.coupe",
+    "orcid": "0009-0006-5392-2473",
+    "profile_url": "https://profiles.sydney.edu.au/janine.coupe"
+  },
+  {
+    "name": "Rodney Coyte",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "rodney.coyte",
+    "orcid": "0000-0002-8816-0687",
+    "profile_url": "https://profiles.sydney.edu.au/rodney.coyte"
+  },
+  {
+    "name": "Graeme Dean",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "graeme.dean",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/graeme.dean"
+  },
+  {
+    "name": "Cary DiLernia",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "cary.dilernia",
+    "orcid": "0000-0002-4348-0476",
+    "profile_url": "https://profiles.sydney.edu.au/cary.dilernia"
+  },
+  {
+    "name": "Maria Dyball",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "maria.dyball",
+    "orcid": "0000-0001-6196-0142",
+    "profile_url": "https://profiles.sydney.edu.au/maria.dyball"
+  },
+  {
+    "name": "Matthew Egan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "matthew.egan",
+    "orcid": "0000-0002-3388-3458",
+    "profile_url": "https://profiles.sydney.edu.au/matthew.egan"
+  },
+  {
+    "name": "Clinton Free",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "clinton.free",
+    "orcid": "0000-0001-6685-1682",
+    "profile_url": "https://profiles.sydney.edu.au/clinton.free"
+  },
+  {
+    "name": "Geoff Frost",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "geoffrey.frost",
+    "orcid": "0000-0003-4990-2382",
+    "profile_url": "https://profiles.sydney.edu.au/geoffrey.frost"
+  },
+  {
+    "name": "Uri Gal",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "uri.gal",
+    "orcid": "0000-0002-6356-3869",
+    "profile_url": "https://profiles.sydney.edu.au/uri.gal"
+  },
+  {
+    "name": "Fei Gao",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "fei.gao",
+    "orcid": "0009-0007-6410-1547",
+    "profile_url": "https://profiles.sydney.edu.au/fei.gao"
+  },
+  {
+    "name": "Olga Gouveros",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "olga.gouveros",
+    "orcid": "0009-0001-1830-2651",
+    "profile_url": "https://profiles.sydney.edu.au/olga.gouveros"
+  },
+  {
+    "name": "Wes Hamilton-Jessop",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "wes.hamilton-jessop",
+    "orcid": "0000-0003-1297-4497",
+    "profile_url": "https://profiles.sydney.edu.au/wes.hamilton-jessop"
+  },
+  {
+    "name": "Angela Hecimovic",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "angela.hecimovic",
+    "orcid": "0000-0003-2811-0554",
+    "profile_url": "https://profiles.sydney.edu.au/angela.hecimovic"
+  },
+  {
+    "name": "Eva Huang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "eva.huang",
+    "orcid": "0000-0002-5663-5828",
+    "profile_url": "https://profiles.sydney.edu.au/eva.huang"
+  },
+  {
+    "name": "Tina Huynh",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "tina.huynh",
+    "orcid": "0000-0003-0194-8963",
+    "profile_url": "https://profiles.sydney.edu.au/tina.huynh"
+  },
+  {
+    "name": "Kaiying Ji",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "kaiying.ji",
+    "orcid": "0000-0002-4332-3892",
+    "profile_url": "https://profiles.sydney.edu.au/kaiying.ji"
+  },
+  {
+    "name": "Stewart Jones",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "stewart.jones",
+    "orcid": "0000-0003-1600-3030",
+    "profile_url": "https://profiles.sydney.edu.au/stewart.jones"
+  },
+  {
+    "name": "Amanda Kennedy",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "amanda.kennedy",
+    "orcid": "0000-0003-2020-1144",
+    "profile_url": "https://profiles.sydney.edu.au/amanda.kennedy"
+  },
+  {
+    "name": "Tai-Joo Koh",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "tai-joo.koh",
+    "orcid": "0009-0004-9388-8236",
+    "profile_url": "https://profiles.sydney.edu.au/tai-joo.koh"
+  },
+  {
+    "name": "Vikas Kumar",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "vikas.kumar",
+    "orcid": "0000-0002-4129-8216",
+    "profile_url": "https://profiles.sydney.edu.au/vikas.kumar"
+  },
+  {
+    "name": "Benjamin Lay",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "benjamin.lay",
+    "orcid": "0000-0003-4003-7695",
+    "profile_url": "https://profiles.sydney.edu.au/benjamin.lay"
+  },
+  {
+    "name": "Chang-Yuan Loh",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "chang.loh",
+    "orcid": "0000-0002-6585-6032",
+    "profile_url": "https://profiles.sydney.edu.au/chang.loh"
+  },
+  {
+    "name": "Louise Luff",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "louise.luff",
+    "orcid": "0009-0009-6959-9430",
+    "profile_url": "https://profiles.sydney.edu.au/louise.luff"
+  },
+  {
+    "name": "Vijaya Murthy",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "vijaya.murthy",
+    "orcid": "0000-0002-8473-7565",
+    "profile_url": "https://profiles.sydney.edu.au/vijaya.murthy"
+  },
+  {
+    "name": "Camille Peng",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "shiyao.peng",
+    "orcid": "0009-0002-0853-1861",
+    "profile_url": "https://profiles.sydney.edu.au/shiyao.peng"
+  },
+  {
+    "name": "Julian Prester",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "julian.prester",
+    "orcid": "0000-0003-2682-8036",
+    "profile_url": "https://profiles.sydney.edu.au/julian.prester"
+  },
+  {
+    "name": "Krithika Randhawa",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "krithika.randhawa",
+    "orcid": "0000-0001-6972-2827",
+    "profile_url": "https://profiles.sydney.edu.au/krithika.randhawa"
+  },
+  {
+    "name": "Abdul Razeed",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "abdul.razeed",
+    "orcid": "0000-0001-8774-6216",
+    "profile_url": "https://profiles.sydney.edu.au/abdul.razeed"
+  },
+  {
+    "name": "John Roberts",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "john.roberts",
+    "orcid": "0000-0003-4965-9626",
+    "profile_url": "https://profiles.sydney.edu.au/john.roberts"
+  },
+  {
+    "name": "Ravi Seethamraju",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "ravi.seethamraju",
+    "orcid": "0000-0002-1419-3806",
+    "profile_url": "https://profiles.sydney.edu.au/ravi.seethamraju"
+  },
+  {
+    "name": "Baljit Sidhu",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "baljit.sidhu",
+    "orcid": "0000-0003-0303-361X",
+    "profile_url": "https://profiles.sydney.edu.au/baljit.sidhu"
+  },
+  {
+    "name": "Simon Tan",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "simon.tan",
+    "orcid": "0000-0002-8828-4655",
+    "profile_url": "https://profiles.sydney.edu.au/simon.tan"
+  },
+  {
+    "name": "Farzana Tanima",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "farzana.tanima",
+    "orcid": "0000-0002-2449-1460",
+    "profile_url": "https://profiles.sydney.edu.au/farzana.tanima"
+  },
+  {
+    "name": "Andrew Terry",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "andrew.terry",
+    "orcid": "0000-0003-0529-4557",
+    "profile_url": "https://profiles.sydney.edu.au/andrew.terry"
+  },
+  {
+    "name": "Sandra Van Der Laan",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "sandra.vanderlaan",
+    "orcid": "0000-0002-7773-8447",
+    "profile_url": "https://profiles.sydney.edu.au/sandra.vanderlaan"
+  },
+  {
+    "name": "Mark Waddington",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "mark.waddington",
+    "orcid": "0009-0004-2947-0441",
+    "profile_url": "https://profiles.sydney.edu.au/mark.waddington"
+  },
+  {
+    "name": "Jo Wang",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "jo.wang",
+    "orcid": "0000-0002-3741-4122",
+    "profile_url": "https://profiles.sydney.edu.au/jo.wang"
+  },
+  {
+    "name": "Timothy Wang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "timothy.wang",
+    "orcid": "0000-0002-6646-0566",
+    "profile_url": "https://profiles.sydney.edu.au/timothy.wang"
+  },
+  {
+    "name": "Peter Wolnizer",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "peter.wolnizer",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/peter.wolnizer"
+  },
+  {
+    "name": "Anna Young-Ferris",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "anna.young-ferris",
+    "orcid": "0000-0001-5492-846X",
+    "profile_url": "https://profiles.sydney.edu.au/anna.young-ferris"
+  },
+  {
+    "name": "Chuan Yu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "c.yu",
+    "orcid": "0000-0002-9003-1198",
+    "profile_url": "https://profiles.sydney.edu.au/c.yu"
+  },
+  {
+    "name": "Muchen Yu",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "muchen.yu",
+    "orcid": "0009-0000-7557-5835",
+    "profile_url": "https://profiles.sydney.edu.au/muchen.yu"
+  },
+  {
+    "name": "Reaven Yu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "lichen.yu",
+    "orcid": "0000-0003-0952-8015",
+    "profile_url": "https://profiles.sydney.edu.au/lichen.yu"
+  },
+  {
+    "name": "Eagle Zhang",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "eagle.zhang",
+    "orcid": "0000-0002-6322-1148",
+    "profile_url": "https://profiles.sydney.edu.au/eagle.zhang"
+  },
+  {
+    "name": "David Jun Zhao",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "jun.zhao",
+    "orcid": "0000-0001-7182-8583",
+    "profile_url": "https://profiles.sydney.edu.au/jun.zhao"
+  },
+  {
+    "name": "Shan Zhou",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Accounting",
+    "source_id": "shan.zhou",
+    "orcid": "0000-0001-8367-5326",
+    "profile_url": "https://profiles.sydney.edu.au/shan.zhou"
+  },
+  {
+    "name": "Shumi Akhtar",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "shumi.akhtar",
+    "orcid": "0000-0001-7432-9536",
+    "profile_url": "https://profiles.sydney.edu.au/shumi.akhtar"
+  },
+  {
+    "name": "Angelo Aspris",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "angelo.aspris",
+    "orcid": "0000-0002-1433-1113",
+    "profile_url": "https://profiles.sydney.edu.au/angelo.aspris"
+  },
+  {
+    "name": "Emanuela Benincasa",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "emanuela.benincasa",
+    "orcid": "0009-0003-9091-9642",
+    "profile_url": "https://profiles.sydney.edu.au/emanuela.benincasa"
+  },
+  {
+    "name": "DuckKi Cho",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "d.cho",
+    "orcid": "0000-0002-7940-7350",
+    "profile_url": "https://profiles.sydney.edu.au/d.cho"
+  },
+  {
+    "name": "Hedda Cui",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "hedda.cui",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/hedda.cui"
+  },
+  {
+    "name": "Wei Cui",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "wei.cui",
+    "orcid": "0009-0001-8403-7833",
+    "profile_url": "https://profiles.sydney.edu.au/wei.cui"
+  },
+  {
+    "name": "Quan Gan",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "quan.gan",
+    "orcid": "0000-0002-4465-4562",
+    "profile_url": "https://profiles.sydney.edu.au/quan.gan"
+  },
+  {
+    "name": "Andrew Grant",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "andrew.grant",
+    "orcid": "0000-0003-1252-6029",
+    "profile_url": "https://profiles.sydney.edu.au/andrew.grant"
+  },
+  {
+    "name": "Iftekhar Hasan",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "iftekhar.hasan",
+    "orcid": "0000-0003-2469-0539",
+    "profile_url": "https://profiles.sydney.edu.au/iftekhar.hasan"
+  },
+  {
+    "name": "Guanglian Hu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "guanglian.hu",
+    "orcid": "0000-0001-6339-9264",
+    "profile_url": "https://profiles.sydney.edu.au/guanglian.hu"
+  },
+  {
+    "name": "He Huang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "he.huang",
+    "orcid": "0000-0003-3715-6490",
+    "profile_url": "https://profiles.sydney.edu.au/he.huang"
+  },
+  {
+    "name": "George Issa",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "george.issa",
+    "orcid": "0009-0008-1361-5764",
+    "profile_url": "https://profiles.sydney.edu.au/george.issa"
+  },
+  {
+    "name": "Elvis Jarnecic",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "elvis.jarnecic",
+    "orcid": "0000-0003-3533-9963",
+    "profile_url": "https://profiles.sydney.edu.au/elvis.jarnecic"
+  },
+  {
+    "name": "Danielle Kent",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "danielle.kent",
+    "orcid": "0000-0002-4751-1321",
+    "profile_url": "https://profiles.sydney.edu.au/danielle.kent"
+  },
+  {
+    "name": "Suk-Joong Kim",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "sukjoong.kim",
+    "orcid": "0000-0003-2056-2847",
+    "profile_url": "https://profiles.sydney.edu.au/sukjoong.kim"
+  },
+  {
+    "name": "Tro Kortian",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "tro.kortian",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/tro.kortian"
+  },
+  {
+    "name": "Doowon Lee",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "doowon.lee",
+    "orcid": "0000-0001-8251-0714",
+    "profile_url": "https://profiles.sydney.edu.au/doowon.lee"
+  },
+  {
+    "name": "Haekwon Lee",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "haekwon.lee",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/haekwon.lee"
+  },
+  {
+    "name": "Henry Leung",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "henry.leung",
+    "orcid": "0000-0002-1288-6596",
+    "profile_url": "https://profiles.sydney.edu.au/henry.leung"
+  },
+  {
+    "name": "Lantian Liang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "lantian.liang",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/lantian.liang"
+  },
+  {
+    "name": "Yiyi Liao",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "yiyi.liao",
+    "orcid": "0009-0001-7806-2899",
+    "profile_url": "https://profiles.sydney.edu.au/yiyi.liao"
+  },
+  {
+    "name": "Daisy Liu",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "ya.liu",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/ya.liu"
+  },
+  {
+    "name": "Danilo Lopomo Beteto",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "danilo.lopomobeteto",
+    "orcid": "0000-0002-0258-6127",
+    "profile_url": "https://profiles.sydney.edu.au/danilo.lopomobeteto"
+  },
+  {
+    "name": "Andre Lot",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "andre.lot",
+    "orcid": "0000-0002-2217-8358",
+    "profile_url": "https://profiles.sydney.edu.au/andre.lot"
+  },
+  {
+    "name": "Duc Huy Truong Mai",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "duc.mai",
+    "orcid": "0009-0000-5250-206X",
+    "profile_url": "https://profiles.sydney.edu.au/duc.mai"
+  },
+  {
+    "name": "Hamish Malloch",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "hamish.malloch",
+    "orcid": "0009-0001-7403-8955",
+    "profile_url": "https://profiles.sydney.edu.au/hamish.malloch"
+  },
+  {
+    "name": "Yingdong Mao",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "yingdong.mao",
+    "orcid": "0009-0003-6163-1527",
+    "profile_url": "https://profiles.sydney.edu.au/yingdong.mao"
+  },
+  {
+    "name": "Craig Mellare",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "craig.mellare",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/craig.mellare"
+  },
+  {
+    "name": "Guangqian Pan",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "guangqian.pan",
+    "orcid": "0009-0003-0242-7040",
+    "profile_url": "https://profiles.sydney.edu.au/guangqian.pan"
+  },
+  {
+    "name": "Peter Pham",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "peter.pham",
+    "orcid": "0000-0002-1985-7798",
+    "profile_url": "https://profiles.sydney.edu.au/peter.pham"
+  },
+  {
+    "name": "Richard Philip",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "richard.philip",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/richard.philip"
+  },
+  {
+    "name": "Buhui Qiu",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "buhui.qiu",
+    "orcid": "0000-0003-2233-0986",
+    "profile_url": "https://profiles.sydney.edu.au/buhui.qiu"
+  },
+  {
+    "name": "Yancheng Qiu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "yancheng.qiu",
+    "orcid": "0000-0003-2357-9134",
+    "profile_url": "https://profiles.sydney.edu.au/yancheng.qiu"
+  },
+  {
+    "name": "Reuben Segara",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "reuben.segara",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/reuben.segara"
+  },
+  {
+    "name": "Noman Shaheer",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "noman.shaheer",
+    "orcid": "0000-0003-3025-2340",
+    "profile_url": "https://profiles.sydney.edu.au/noman.shaheer"
+  },
+  {
+    "name": "Mandeep Singh",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "mandeep.singh",
+    "orcid": "0000-0003-2808-2100",
+    "profile_url": "https://profiles.sydney.edu.au/mandeep.singh"
+  },
+  {
+    "name": "Jennifer Sun",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "jennifer.sun",
+    "orcid": "0000-0002-5066-0205",
+    "profile_url": "https://profiles.sydney.edu.au/jennifer.sun"
+  },
+  {
+    "name": "Jiri Svec",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "jiri.svec",
+    "orcid": "0000-0002-8035-3310",
+    "profile_url": "https://profiles.sydney.edu.au/jiri.svec"
+  },
+  {
+    "name": "Thomas To",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "thomas.to",
+    "orcid": "0000-0002-5535-7256",
+    "profile_url": "https://profiles.sydney.edu.au/thomas.to"
+  },
+  {
+    "name": "Cara Vansteenkiste",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "cara.vansteenkiste",
+    "orcid": "0000-0001-6990-1235",
+    "profile_url": "https://profiles.sydney.edu.au/cara.vansteenkiste"
+  },
+  {
+    "name": "Zeyu Wang",
+    "job_title": "Associate Lecturer",
+    "academic_level": "A",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "zeyu.wang",
+    "orcid": null,
+    "profile_url": "https://profiles.sydney.edu.au/zeyu.wang"
+  },
+  {
+    "name": "Joakim Westerholm",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "joakim.westerholm",
+    "orcid": "0000-0002-1533-8720",
+    "profile_url": "https://profiles.sydney.edu.au/joakim.westerholm"
+  },
+  {
+    "name": "Danika Wright",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "danika.wright",
+    "orcid": "0000-0002-2561-6763",
+    "profile_url": "https://profiles.sydney.edu.au/danika.wright"
+  },
+  {
+    "name": "Eliza Wu",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "eliza.wu",
+    "orcid": "0000-0003-3937-8660",
+    "profile_url": "https://profiles.sydney.edu.au/eliza.wu"
+  },
+  {
+    "name": "Vycke Wu",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "vycke.wu",
+    "orcid": "0009-0007-3365-9441",
+    "profile_url": "https://profiles.sydney.edu.au/vycke.wu"
+  },
+  {
+    "name": "Pramod Kumar Yadav",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "pramodkumar.yadav",
+    "orcid": "0009-0008-0712-2285",
+    "profile_url": "https://profiles.sydney.edu.au/pramodkumar.yadav"
+  },
+  {
+    "name": "Juan Yao",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "juan.yao",
+    "orcid": "0000-0002-8361-3544",
+    "profile_url": "https://profiles.sydney.edu.au/juan.yao"
+  },
+  {
+    "name": "Jing Yu",
+    "job_title": null,
+    "academic_level": null,
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "jing.yu",
+    "orcid": "0000-0002-5544-3648",
+    "profile_url": "https://profiles.sydney.edu.au/jing.yu"
+  },
+  {
+    "name": "Fan Zhang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "fan.zhang3",
+    "orcid": "0009-0009-8561-4215",
+    "profile_url": "https://profiles.sydney.edu.au/fan.zhang3"
+  },
+  {
+    "name": "Yuyang Zhang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "yuyang.zhang",
+    "orcid": "0000-0003-2790-9858",
+    "profile_url": "https://profiles.sydney.edu.au/yuyang.zhang"
+  }
+]

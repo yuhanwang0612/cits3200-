@@ -37,3 +37,8 @@ output/clarivate_jif.csv
 cache/
 # HTTP and profile cache, rebuildable and large
 cache/
+
+# Admin refresh runtime artefacts
+backups/
+logs/
+site/research.refresh-*.db

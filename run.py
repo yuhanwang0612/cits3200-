@@ -58,8 +58,13 @@ def main():
     # HTTP cache. Pass the refresh request when their interface supports it,
     # while remaining compatible with the existing UQ/UNSW adapters.
     collect_kwargs = {}
-    if "refresh" in inspect.signature(adapter.collect).parameters:
+    collect_params = inspect.signature(adapter.collect).parameters
+    if "refresh" in collect_params:
         collect_kwargs["refresh"] = args.refresh
+    elif "refresh_roster" in collect_params:
+        # UNSW names its source-specific cache flag differently from the newer
+        # adapters. --refresh should still mean a genuinely fresh scrape.
+        collect_kwargs["refresh_roster"] = args.refresh
     records, pubs = adapter.collect(**collect_kwargs)
 
     if not args.no_supplementary:

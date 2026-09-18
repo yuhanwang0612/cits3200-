@@ -256,11 +256,18 @@ const ALL = await loadResearchers();
     apply();
   });
 
+  // As on researcher.html: the CSV carries every field the API returns, not
+  // only the columns the table shows. The job title is the raw one from the
+  // university directory, which is what someone checking our level mapping
+  // needs; the ORCID and profile URL are how they confirm the identity.
   el('btn-export').addEventListener('click', () => exportCSV(view, [
     { key: 'name',              label: 'Researcher' },
     { key: 'university',        label: 'University' },
     { key: 'field_of_research', label: 'Field of Research' },
     { key: 'academic_level',    label: 'Academic Level' },
+    { key: 'job_title',         label: 'Job Title' },
+    { key: 'orcid',             label: 'ORCID' },
+    { key: 'profile_url',       label: 'Profile URL' },
     { key: 'count_a_star',      label: 'A*' },
     { key: 'count_a',           label: 'A' },
     { key: 'count_b',           label: 'B' },

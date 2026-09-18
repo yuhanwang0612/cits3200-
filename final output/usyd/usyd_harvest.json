@@ -1,0 +1,30 @@
+[
+  {
+    "university": "University of Sydney",
+    "source": "Crossref",
+    "last_run": "2026-09-16T06:55:59.740386+00:00",
+    "latest_year": 2021,
+    "record_count": 31
+  },
+  {
+    "university": "University of Sydney",
+    "source": "ORCID",
+    "last_run": "2026-09-16T06:55:59.740386+00:00",
+    "latest_year": 2025,
+    "record_count": 149
+  },
+  {
+    "university": "University of Sydney",
+    "source": "OpenAlex",
+    "last_run": "2026-09-16T06:55:59.740386+00:00",
+    "latest_year": 2026,
+    "record_count": 333
+  },
+  {
+    "university": "University of Sydney",
+    "source": "Sydney Profiles",
+    "last_run": "2026-09-16T06:55:59.740386+00:00",
+    "latest_year": 2027,
+    "record_count": 3506
+  }
+]
