@@ -29,6 +29,9 @@ caches it, and hands the ids over.
 An adapter that records neither is skipped, exactly as before.
 """
 
+import re
+import unicodedata
+
 from core.config import OA_HEADERS, OPENALEX_BASE
 from core.http import cached_get
 from core.schema import blank_pub, clean_journal, norm_type
@@ -38,6 +41,50 @@ from enrichment.openalex import AGGREGATOR_ISSNS, hyphenate
 # Both thresholds are judgement calls — watch the SKIP lines and adjust.
 RATIO_LIMIT = 3.0
 ABSOLUTE_FLOOR = 20
+
+
+def _title_year_key(title, year):
+    """Conservative fallback identity for genuine works without a DOI."""
+    text = unicodedata.normalize("NFKD", str(title or ""))
+    text = "".join(c for c in text if not unicodedata.combining(c)).casefold()
+    text = re.sub(r"[^a-z0-9]+", " ", text).strip()
+    return (text, str(year or "")) if text else None
+
+
+def _publication_source(work):
+    """Return the best journal source across all OpenAlex locations.
+
+    Older works and DOI-less records often have an empty/repository primary
+    location while another location carries the actual journal. Prefer an
+    explicitly journal-typed source, then any named non-repository source,
+    and use the primary source only as the final fallback.
+    """
+    primary = (work.get("primary_location") or {}).get("source") or {}
+    locations = [work.get("primary_location") or {}, work.get("best_oa_location") or {}]
+    locations.extend(work.get("locations") or [])
+    sources = []
+    seen = set()
+    for location in locations:
+        source = (location or {}).get("source") or {}
+        marker = source.get("id") or (source.get("display_name"), tuple(source.get("issn") or []))
+        if source and marker not in seen:
+            seen.add(marker)
+            sources.append(source)
+
+    journal = next(
+        (source for source in sources
+         if source.get("type") == "journal" and source.get("display_name")),
+        None,
+    )
+    if journal:
+        return journal
+    non_repository = next(
+        (source for source in sources
+         if source.get("display_name")
+         and source.get("type") not in {"repository", "ebook platform"}),
+        None,
+    )
+    return non_repository or primary
 
 
 def author_filter(person):
@@ -71,11 +118,14 @@ def _works(clause, ror=None):
 
 
 def retrieve(records, pubs, ror=None, verbose=True):
-    have, counts = {}, {}
+    have, have_title_year, counts = {}, {}, {}
     for x in pubs:
         counts[x["name"]] = counts.get(x["name"], 0) + 1
         if x.get("doi"):
             have.setdefault(x["name"], set()).add(x["doi"].lower())
+        key = _title_year_key(x.get("title"), x.get("year"))
+        if key:
+            have_title_year.setdefault(x["name"], set()).add(key)
 
     added = skipped = unreachable = 0
     by_key = {}
@@ -94,7 +144,10 @@ def retrieve(records, pubs, ror=None, verbose=True):
             # query to the current university would wrongly discard papers
             # published at an earlier employer. Automatically name-resolved
             # identities retain the institution guard.
-            work_ror = None if p.get("identity_source") == "manual_verified_override" else ror
+            work_ror = None if (
+                p.get("identity_source") == "manual_verified_override"
+                or p.get("retrieve_all_career_works")
+            ) else ror
             works = _works(clause, work_ror)
         except Exception as e:
             print(f"  {name}: {type(e).__name__} {e}")
@@ -108,21 +161,30 @@ def retrieve(records, pubs, ror=None, verbose=True):
         # repository was incomplete. Without a ROR the guard is still useful;
         # with a ROR, the institution constraint plus the later ABDC
         # discipline screen are the appropriate safeguards.
-        if not ror and works and repo_n and len(works) > max(RATIO_LIMIT * repo_n, ABSOLUTE_FLOOR):
+        if (work_ror is None and not p.get("retrieve_all_career_works")
+                and works and repo_n
+                and len(works) > max(RATIO_LIMIT * repo_n, ABSOLUTE_FLOOR)):
             print(f"  SKIP {name}: OpenAlex has {len(works)} vs {repo_n} in the "
                   f"repository — probably a merged author entity")
             skipped += 1
             continue
 
         seen = have.setdefault(name, set())
+        seen_title_year = have_title_year.setdefault(name, set())
         n = 0
         for w in works:
             doi = (w.get("doi") or "").replace("https://doi.org/", "").lower()
-            if not doi or doi in seen:
+            title_year = _title_year_key(w.get("display_name"), w.get("publication_year"))
+            if doi and doi in seen:
                 continue
-            seen.add(doi)
+            if not doi and (not title_year or title_year in seen_title_year):
+                continue
+            if doi:
+                seen.add(doi)
+            if title_year:
+                seen_title_year.add(title_year)
 
-            src = (w.get("primary_location") or {}).get("source") or {}
+            src = _publication_source(w)
             issns = src.get("issn") or []
             if isinstance(issns, str):
                 issns = [issns]
@@ -150,7 +212,7 @@ def retrieve(records, pubs, ror=None, verbose=True):
                 issns=issns,
                 journal=clean_journal(src.get("display_name")),
                 publisher=src.get("host_organization_name"),
-                doi=doi,
+                doi=doi or None,
                 link=w.get("id"),
                 source="OpenAlex",
             ))

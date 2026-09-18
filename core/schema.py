@@ -65,6 +65,10 @@ TYPE_MAP = {
     "working-paper": "Working Paper",
     "data-set": "Data Collection",
     "dataset": "Data Collection",
+    # Pure occasionally exposes these labels as publication types even though
+    # they do not identify a client-facing journal article.
+    "other": "Other",
+    "peer-review": "Other",
 }
 
 # Repositories that appear in a journal-name field but are not journals.
