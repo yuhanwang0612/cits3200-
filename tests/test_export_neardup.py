@@ -11,6 +11,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+import export as exp  # noqa: E402
 from export import build_publications, is_near_duplicate  # noqa: E402
 
 
@@ -153,6 +154,165 @@ def test_ssrn_link_difference_does_not_block_the_ssrn_merge():
                       doi="10.1080/09638180.2023.2272622", year="2023", source="Crossref",
                       link="https://doi.org/10.1080/09638180.2023.2272622")
     assert is_near_duplicate(page, retrieved) is True
+
+
+# --------------------------------------------------------- FIX K (scratch/_anu18)
+# Exact title+year+journal duplicate merge, checked BEFORE is_near_duplicate's
+# own "two distinct real DOIs never merge" guard — for the same paper indexed
+# twice under two different DOIs by a retrieval source, not two genuinely
+# different papers that happen to share a title.
+
+def test_same_paper_indexed_twice_with_different_dois_merges():
+    """Susanna Ho shape: same normalised title, same year, same journal,
+    but two different real DOIs (10.17705/1cais.03823 vs
+    10.17705/1cais.038123 — the second is the first with an extra digit
+    spliced in; both resolve to the exact same page at doi.org). The
+    is_near_duplicate DOI guard alone would keep both; FIX K merges them."""
+    a = _pub(name="Susanna Ho",
+             title=("Partial Least Squares Structural Equation Modeling "
+                    "Approach for Analyzing a Model with a Binary Indicator "
+                    "as an Endogenous Variable"),
+             doi="10.17705/1cais.03823", year="2016",
+             journal="Communications of the Association for Information Systems")
+    b = _pub(name="Susanna Ho",
+             title=("Partial Least Squares Structural Equation Modeling "
+                    "Approach for Analyzing a Model with a Binary Indicator "
+                    "as an Endogenous Variable"),
+             doi="10.17705/1cais.038123", year="2016",
+             journal="Communications of the Association for Information Systems")
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 1
+    # shorter/canonical DOI wins
+    assert out[0]["doi"] == "10.17705/1cais.03823"
+
+
+def test_busy_directors_pair_still_not_touched_by_fix_k():
+    """Same fixture as test_two_different_real_dois_never_merge above,
+    re-asserted here to pin down that FIX K specifically (year AND journal
+    both differ) doesn't merge it either, not just is_near_duplicate."""
+    a = _pub(title="Busy directors and firm performance",
+             doi="10.1016/j.pacfin.2020.101434", year="2020",
+             journal="Pacific-Basin Finance Journal")
+    b = _pub(title="Busy directors and firm performance",
+             doi="10.1111/acfi.12631", year="2021",
+             journal="Accounting and Finance")
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 2
+
+
+def test_exact_dup_rule_requires_same_journal_too():
+    """Exact title and year, but a different journal — a real coincidence,
+    not a double-indexed duplicate. Must not merge."""
+    a = _pub(name="Someone", title="A Shared Title By Coincidence",
+             doi="10.1/aaa", year="2020", journal="Journal A")
+    b = _pub(name="Someone", title="A Shared Title By Coincidence",
+             doi="10.1/bbb", year="2020", journal="Journal B")
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 2
+
+
+# --------------------------------------------------------- FIX L (scratch/_anu19)
+# Prefix-containment duplicate merge: ORCID returns a truncated main-title-only
+# copy, the ANU staff page returns the full title including its subtitle —
+# same paper, but title-similarity ratio is far below NEAR_DUP_TITLE_RATIO and
+# FIX K needs an identical title, so neither existing rule sees it.
+
+def test_tracy_wang_prefix_subtitle_merges_keeping_the_doi_copy():
+    short = _pub(name="Tracy (Kun) Wang", title="Analyst Coverage and Corporate Innovation",
+                 doi="10.1111/abac.12360", year="2025", journal="Abacus")
+    long_ = _pub(name="Tracy (Kun) Wang",
+                 title=("Analyst Coverage and Corporate Innovation: Evidence "
+                        "from Exogenous Changes in Analyst Coverage"),
+                 doi=None, year="2025", journal="Abacus")
+    out = build_publications([short, long_], verbose=False)
+    assert len(out) == 1
+    assert out[0]["doi"] == "10.1111/abac.12360"
+    assert out[0]["title"] == "Analyst Coverage and Corporate Innovation"
+
+
+def test_busy_directors_pair_not_merged_by_fix_l():
+    """Negative test required by the brief: the genuine 'Busy directors and
+    firm performance' pair must survive FIX L too, not just FIX K/G — it
+    fails on title (identical, not a strict prefix — there is no subtitle
+    to strip) as well as on year and journal, so it was never at risk, but
+    this pins that down explicitly rather than leaving it implicit."""
+    a = _pub(name="Sorin Daniliuc", title="Busy directors and firm performance",
+             doi="10.1111/acfi.12631", year="2021", journal="Accounting and Finance")
+    b = _pub(name="Sorin Daniliuc", title="Busy directors and firm performance",
+             doi="10.1016/j.pacfin.2020.101434", year="2020",
+             journal="Pacific-Basin Finance Journal")
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 2
+    assert {r["doi"] for r in out} == {"10.1111/acfi.12631", "10.1016/j.pacfin.2020.101434"}
+
+
+def test_prefix_rule_requires_shorter_title_at_least_20_chars():
+    """A short common opening phrase on two otherwise-unrelated titles must
+    not match just because one happens to start with the other's words."""
+    a = _pub(name="Someone", title="An Audit Study", doi="10.1/aaa",
+             year="2020", journal="Journal A")
+    b = _pub(name="Someone", title="An Audit Study of Board Composition",
+             doi=None, year="2020", journal="Journal A")
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 2
+
+
+def test_prefix_rule_requires_a_word_boundary_not_a_mid_word_cut():
+    """The shorter title must be a whole-word prefix of the longer one —
+    "...corporate innovation" must not match "...corporate innovations"."""
+    a = _pub(name="Someone", title="A Study of Corporate Innovation Outcomes",
+             doi="10.1/aaa", year="2020", journal="Journal A")
+    b = _pub(name="Someone", title="A Study of Corporate Innovation Outcomeses Elsewhere",
+             doi=None, year="2020", journal="Journal A")
+    assert exp._is_prefix_duplicate(a, b) is False
+
+
+def test_prefix_rule_requires_same_year():
+    """Confirmed real case: Sorin Daniliuc's 'Busy Directors and Firm
+    Performance: a Replication and Extension of Hauser' (2020, no doi)
+    prefix-matches his real, doi'd 'Busy directors and firm performance'
+    row — but only the 2021 Accounting and Finance one, which is a
+    DIFFERENT year. Must not merge — this is one of the 6 report-only
+    year-off-by-one pairs, not a merge candidate."""
+    a = _pub(name="Sorin Daniliuc", title="Busy directors and firm performance",
+             doi="10.1111/acfi.12631", year="2021", journal="Accounting and Finance")
+    b = _pub(name="Sorin Daniliuc",
+             title="Busy Directors and Firm Performance: a Replication and Extension of Hauser",
+             doi=None, year="2020", journal="Accounting and Finance")
+    assert exp._is_prefix_duplicate(a, b) is False
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 2
+
+
+def test_prefix_rule_requires_same_journal():
+    a = _pub(name="Someone", title="A Long Enough Title About Something Specific",
+             doi="10.1/aaa", year="2020", journal="Journal A")
+    b = _pub(name="Someone",
+             title="A Long Enough Title About Something Specific: With a Subtitle",
+             doi=None, year="2020", journal="Journal B")
+    assert exp._is_prefix_duplicate(a, b) is False
+
+
+def test_prefix_rule_skips_and_reports_when_neither_row_has_a_doi():
+    a = _pub(name="Someone", title="A Long Enough Title About Something Specific",
+             doi=None, year="2020", journal="Journal A")
+    b = _pub(name="Someone",
+             title="A Long Enough Title About Something Specific: With a Subtitle",
+             doi=None, year="2020", journal="Journal A")
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 2
+    assert len(exp.SKIPPED_PREFIX_DUPS) == 1
+
+
+def test_prefix_rule_skips_and_reports_when_both_rows_have_a_doi():
+    a = _pub(name="Someone", title="A Long Enough Title About Something Specific",
+             doi="10.1/aaa", year="2020", journal="Journal A")
+    b = _pub(name="Someone",
+             title="A Long Enough Title About Something Specific: With a Subtitle",
+             doi="10.1/bbb", year="2020", journal="Journal A")
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 2
+    assert len(exp.SKIPPED_PREFIX_DUPS) == 1
 
 
 if __name__ == "__main__":
