@@ -123,11 +123,34 @@
 <script>
 (async function () {
   const tbody = document.getElementById('tbody');
-  const path  = 'data/researchers.json';
-  const data  = await loadJSON(path);
-  if (!data) return showLoadError(tbody, path);
+  const params = new URLSearchParams(window.location.search);
 
-  const ALL = data.researchers || [];
+  async function loadResearchers() {
+
+      const query = new URLSearchParams();
+
+      const university = params.get("university");
+
+      if (university) {
+          query.set("university", university);
+      }
+
+      const response = await fetch(
+          "/api/researchers?" + query.toString()
+      );
+
+      if (!response.ok) {
+          throw new Error("Failed to load researchers");
+      }
+
+      const data = await response.json();
+
+      return data.researchers || [];
+  }
+
+
+const ALL = await loadResearchers();
+
   let view = ALL.slice();
   let page = 1;
   let sortSpecs = [{ key: 'abdc_ranked_count', dir: 'desc', type: 'num' }];
@@ -144,18 +167,40 @@
   const preUni = param('university');
   if (preUni) fUni.value = preUni;
 
-  function apply() {
-    const nameQ = fName.value.trim().toLowerCase();
-    view = ALL.filter(r =>
-      (!fUni.value   || r.university === fUni.value) &&
-      (!fFor.value   || r.field_of_research === fFor.value) &&
-      (!fLevel.value || r.level_code === fLevel.value) &&
-      (!nameQ        || r.name.toLowerCase().includes(nameQ))
+  async function apply() {
+
+    const query = new URLSearchParams();
+
+    if (fUni.value) {
+        query.set("university", fUni.value);
+    }
+
+    if (fFor.value) {
+        query.set("field", fFor.value);
+    }
+
+    if (fLevel.value) {
+        query.set("level", fLevel.value);
+    }
+
+    if (fName.value.trim()) {
+        query.set("name", fName.value.trim());
+    }
+
+    const response = await fetch(
+        "/api/researchers?" + query.toString()
     );
+
+    const data = await response.json();
+
+    view = data.researchers || [];
+
     view.sort(multiCompare(sortSpecs));
+
     page = 1;
+
     render();
-  }
+}
 
   function render() {
     const size  = Number(fSize.value);
@@ -175,7 +220,7 @@
         '<td><a href="researcher.html?id=' + encodeURIComponent(r.id) + '">' + esc(r.name) + '</a></td>' +
         '<td>' + val(r.field_of_research) + '</td>' +
         '<td class="nowrap">' + val(r.level_code) + '</td>' +
-        '<td>' + val(r.university_code) + '</td>' +
+        '<td>' + val(r.university) + '</td>' +
         '<td class="num">' + num(r.count_a_star) + '</td>' +
         '<td class="num">' + num(r.count_a) + '</td>' +
         '<td class="num">' + num(r.count_b) + '</td>' +
@@ -211,11 +256,18 @@
     apply();
   });
 
+  // As on researcher.html: the CSV carries every field the API returns, not
+  // only the columns the table shows. The job title is the raw one from the
+  // university directory, which is what someone checking our level mapping
+  // needs; the ORCID and profile URL are how they confirm the identity.
   el('btn-export').addEventListener('click', () => exportCSV(view, [
     { key: 'name',              label: 'Researcher' },
     { key: 'university',        label: 'University' },
     { key: 'field_of_research', label: 'Field of Research' },
     { key: 'academic_level',    label: 'Academic Level' },
+    { key: 'job_title',         label: 'Job Title' },
+    { key: 'orcid',             label: 'ORCID' },
+    { key: 'profile_url',       label: 'Profile URL' },
     { key: 'count_a_star',      label: 'A*' },
     { key: 'count_a',           label: 'A' },
     { key: 'count_b',           label: 'B' },

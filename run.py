@@ -58,8 +58,13 @@ def main():
     # HTTP cache. Pass the refresh request when their interface supports it,
     # while remaining compatible with the existing UQ/UNSW adapters.
     collect_kwargs = {}
-    if "refresh" in inspect.signature(adapter.collect).parameters:
+    collect_params = inspect.signature(adapter.collect).parameters
+    if "refresh" in collect_params:
         collect_kwargs["refresh"] = args.refresh
+    elif "refresh_roster" in collect_params:
+        # UNSW names its source-specific cache flag differently from the newer
+        # adapters. --refresh should still mean a genuinely fresh scrape.
+        collect_kwargs["refresh_roster"] = args.refresh
     records, pubs = adapter.collect(**collect_kwargs)
 
     if not args.no_supplementary:
@@ -104,6 +109,11 @@ def main():
     step(12, "export")
     export(records, pubs, out_dir=out,
            drop_staff_without_pubs=args.drop_empty_staff)
+    quality_writer = getattr(adapter, "write_quality_report", None)
+    if callable(quality_writer):
+        quality_writer(out)
+        print(f"  quality        -> {out / (args.uni + '_adapter_quality.json')}")
+        print(f"  identity review -> {out / (args.uni + '_identity_review.csv')}")
 
     print(f"\ndone in {time.time() - started:.0f}s")
 

@@ -1,0 +1,5652 @@
+{
+  "generated_at": "2026-09-16T08:24:47.388429+00:00",
+  "mode": "live",
+  "roster_sources": {
+    "Accounting": "live",
+    "Finance": "live"
+  },
+  "staff_records": 99,
+  "staff_with_high_confidence_minerva_identity": 57,
+  "staff_without_high_confidence_identity": 42,
+  "minerva_identity_discovery": {
+    "attempted": 45,
+    "resolved": 3,
+    "ambiguous": 2,
+    "not_found": 40,
+    "queries": 98,
+    "errors": []
+  },
+  "orcid_identity_resolution": {
+    "queries": 68,
+    "resolved": 17,
+    "ambiguous": 1,
+    "not_found": 23,
+    "errors": [],
+    "skipped_existing_orcid": 58,
+    "aborted_after_repeated_errors": 0
+  },
+  "openalex_identity_resolution": {
+    "queries": 20,
+    "resolved": 10,
+    "ambiguous": 1,
+    "not_found": 9,
+    "errors": [],
+    "skipped_existing_orcid": 75,
+    "skipped_existing_identifier": 79,
+    "aborted_after_repeated_errors": 0
+  },
+  "staff_reachable_by_supplementary_orcid_or_openalex_author_id": 89,
+  "staff_without_any_verified_retrieval_identity": 10,
+  "departmental_seed_publications": {
+    "Accounting": 168,
+    "Finance": 254
+  },
+  "departmental_seed_reconciliation": {
+    "Accounting": {
+      "reported_record_count": 168,
+      "extracted_record_count": 168,
+      "count_reconciles": true
+    },
+    "Finance": {
+      "reported_record_count": 254,
+      "extracted_record_count": 254,
+      "count_reconciles": true
+    }
+  },
+  "exact_seed_relationships": 261,
+  "researcher_publication_links": 273,
+  "live_researcher_searches": 57,
+  "manual_identity_overrides_applied": 0,
+  "manual_retrieval_overrides_applied": 7,
+  "search_failures": [],
+  "searches_aborted_by_circuit_breaker": 0,
+  "attribution_rule": "exact Minerva internal author ID or ORCID only",
+  "refresh_note": "all records come from the live/cached official endpoints; no previous project dataset is read",
+  "minerva_identity_review_queue": [
+    {
+      "name": "Rosemary Addis",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/rosemary-addis",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_needed_existing_orcid",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Noel Boys",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/11503",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-5864-8390",
+          "credit_name": null,
+          "given_names": "Noel",
+          "family_names": "Boys",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "openalex_candidate_count": 1,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5089570425",
+          "display_name": "Noel Boys",
+          "orcid": null,
+          "works_count": 5,
+          "has_unimelb_affiliation": true
+        }
+      ]
+    },
+    {
+      "name": "Albie Brooks",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/177702",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "openalex_candidate_count": 1,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5083519194",
+          "display_name": "Albie Brooks",
+          "orcid": null,
+          "works_count": 31,
+          "has_unimelb_affiliation": true
+        }
+      ]
+    },
+    {
+      "name": "Danny Burton",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/danny-burton",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-4696-8493",
+          "credit_name": null,
+          "given_names": "Danny",
+          "family_names": "Burton",
+          "institutions": [
+            "Deakin University - Geelong Campus at Waurn Ponds",
+            "Queensland University of Technology"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0705-9489",
+          "credit_name": null,
+          "given_names": "Danny",
+          "family_names": "Burton",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-8084-9058",
+          "credit_name": null,
+          "given_names": "Danny",
+          "family_names": "Burton",
+          "institutions": [
+            "The University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Phill Cobbin",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/13986",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_needed_existing_orcid",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Wayne Coetzee",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/wayne-coetzee",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0001-6530-0053",
+          "credit_name": null,
+          "given_names": "Wayne",
+          "family_names": "Coetzee",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5045389138",
+          "display_name": "Wayne Stephen Coetzee",
+          "orcid": "0000-0002-2808-183X",
+          "works_count": 13,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5017379919",
+          "display_name": "Cuan Wayne Coetzee",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        }
+      ]
+    },
+    {
+      "name": "Bob Cornick",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/bob-cornick",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Greg Cusack",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/greg-cusack",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0001-7369-7185",
+          "credit_name": "Greg Cusack",
+          "given_names": "Greg",
+          "family_names": "Cusack",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5020434662",
+          "display_name": "Greg Cusack",
+          "orcid": null,
+          "works_count": 11,
+          "has_unimelb_affiliation": false
+        }
+      ]
+    },
+    {
+      "name": "Matt Dyki",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/223994",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "openalex_candidate_count": 1,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5031791587",
+          "display_name": "Matt Dyki",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5033610117",
+          "display_name": "Matthew Dyki",
+          "orcid": null,
+          "works_count": 3,
+          "has_unimelb_affiliation": true
+        }
+      ]
+    },
+    {
+      "name": "Lisa Greig",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/lisa-greig",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0009-0000-2997-4309",
+          "credit_name": null,
+          "given_names": "Lisa",
+          "family_names": "Greig",
+          "institutions": [
+            "University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Flora Kuang",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/743113",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "verified_one_token_name_extension_and_unimelb_affiliation",
+      "openalex_candidate_count": 1,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5049443262",
+          "display_name": "Yu Flora Kuang",
+          "orcid": "0000-0001-5095-4118",
+          "works_count": 56,
+          "has_unimelb_affiliation": true
+        }
+      ]
+    },
+    {
+      "name": "Warren Lee",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/warren-lee",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-0400-889X",
+          "credit_name": null,
+          "given_names": "Warren",
+          "family_names": "Lee",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0576-0776",
+          "credit_name": null,
+          "given_names": "Warren",
+          "family_names": "Lee",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-2023-716X",
+          "credit_name": null,
+          "given_names": "warren",
+          "family_names": "lee",
+          "institutions": [
+            "Northeast Ohio Medical University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-2000-0538",
+          "credit_name": null,
+          "given_names": "Warren",
+          "family_names": "Lee",
+          "institutions": [
+            "Australian Securities and Investments Commission",
+            "CPA Australia",
+            "HomeTopia Accounting and Taxation Services",
+            "Legal Services Board",
+            "Leo Cussen Institute",
+            "Tax Practitioners Board",
+            "University of Melbourne",
+            "Xero Ltd"
+          ],
+          "has_unimelb_affiliation": true
+        },
+        {
+          "orcid": "0000-0001-7121-2148",
+          "credit_name": null,
+          "given_names": "Warren",
+          "family_names": "Lee",
+          "institutions": [
+            "Canadian Centre for Climate Modelling and Analysis"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6401-7640",
+          "credit_name": null,
+          "given_names": "Warren",
+          "family_names": "Lee",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1788-6587",
+          "credit_name": "Warren L. Lee",
+          "given_names": "Warren",
+          "family_names": "Lee",
+          "institutions": [
+            "Keenan Research Centre for Biomedical Sciences",
+            "St. Michael's Hospital",
+            "University of Toronto",
+            "Weill Medical College, Cornell University"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Joana Linggo Liong",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/joana-linggo-liong",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Junhao Liu",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/1093039",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0003-4963-2538",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5512-0710",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8338-5062",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7397-897X",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-6297-1426",
+          "credit_name": null,
+          "given_names": "junhao",
+          "family_names": "liu",
+          "institutions": [
+            "Xinjiang University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-5763-8349",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Zhejiang Gongshang University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1492-1292",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5696-7283",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7337-6370",
+          "credit_name": null,
+          "given_names": "junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5227-3965",
+          "credit_name": null,
+          "given_names": "JUNHAO",
+          "family_names": "LIU",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-2661-3229",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-9353-6929",
+          "credit_name": null,
+          "given_names": "JunHao",
+          "family_names": "Liu",
+          "institutions": [
+            "City University of Macau"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-5871-9062",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0008-3874-2532",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Northeast Petroleum University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0003-0405-5420",
+          "credit_name": null,
+          "given_names": "junhao",
+          "family_names": "liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-2689-617X",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "ShanghaiTech University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-4910-6639",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3184-0470",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-3694-7799",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "University of California, Irvine"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5071-7454",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0786-4760",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5797-4469",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-2263-9970",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "LIU",
+          "institutions": [
+            "Northeast Forestry University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0003-2705-5124",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-3200-2687",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Civil Aviation Flight University of China"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-5400-3524",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-2553-8606",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Shaoxing University",
+            "University of Shanghai for Science and Technology"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-8135-7376",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-8498-2062",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2545-7176",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Hansoh Pharma (China)"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0002-9090-9236",
+          "credit_name": null,
+          "given_names": "JUNHAO",
+          "family_names": "LIU",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0008-3691-1953",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "NWAFU"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0008-6316-0649",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-7309-6970",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Sun Yat-sen University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0002-3510-7679",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-7596-9846",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-1519-327X",
+          "credit_name": null,
+          "given_names": "JunHao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-7348-1680",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "LIU",
+          "institutions": [
+            "Hebei University of Economics and Business"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-5924-113X",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "University College London"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-8535-4349",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Chongqing Normal University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6084-266X",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-4452-0851",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Guangdong Ocean University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0008-1621-6654",
+          "credit_name": null,
+          "given_names": "JunHao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-6423-889X",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Guangzhou University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0003-4366-5010",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Guizhou University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-2403-6563",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-9949-6583",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Peking University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3350-442X",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Institute of Process Engineering",
+            "University of Science and Technology Beijing,"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-5384-2509",
+          "credit_name": null,
+          "given_names": "Junhao",
+          "family_names": "Liu",
+          "institutions": [
+            "Northwestern Polytechnical University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-1069-5365",
+          "credit_name": null,
+          "given_names": "junhao",
+          "family_names": "liu",
+          "institutions": [
+            "Xinjiang University"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Derick Lyle",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/826860",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-5744-2710",
+          "credit_name": null,
+          "given_names": "Derick",
+          "family_names": "Lyle",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Rebecca Mattocks",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/rebecca-mattocks",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0009-0007-8558-527X",
+          "credit_name": null,
+          "given_names": "Rebecca",
+          "family_names": "Mattocks",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "openalex_candidate_count": 1,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5084556299",
+          "display_name": "Rebecca Mattocks",
+          "orcid": null,
+          "works_count": 3,
+          "has_unimelb_affiliation": true
+        }
+      ]
+    },
+    {
+      "name": "Warren McKeown",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/178662",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "openalex_candidate_count": 1,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5046781276",
+          "display_name": "Warren McKeown",
+          "orcid": null,
+          "works_count": 8,
+          "has_unimelb_affiliation": true
+        }
+      ]
+    },
+    {
+      "name": "Tasneem Mohammed",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/tasneem-mohammed",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0003-3591-1368",
+          "credit_name": null,
+          "given_names": "Tasneem",
+          "family_names": "Mohammed",
+          "institutions": [
+            "University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        },
+        {
+          "orcid": "0009-0006-4201-8454",
+          "credit_name": null,
+          "given_names": "Tasneem",
+          "family_names": "Mohammed",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4563-2354",
+          "credit_name": null,
+          "given_names": "Tasneem",
+          "family_names": "Mohammed",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0179-3797",
+          "credit_name": null,
+          "given_names": "Tasneem",
+          "family_names": "Mohammed",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-5196-8291",
+          "credit_name": null,
+          "given_names": "Tasneem",
+          "family_names": "Mohammed",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-7437-2728",
+          "credit_name": null,
+          "given_names": "Tasneem",
+          "family_names": "Mohammed",
+          "institutions": [
+            "Qatar University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2279-7068",
+          "credit_name": null,
+          "given_names": "Tasneem",
+          "family_names": "Mohammed",
+          "institutions": [
+            "Anwarul Uloom Educational Association",
+            "Ibn Sina National College for Medical Studies",
+            "Nizam Institute of Pharmacy",
+            "Osmania University",
+            "University of Hyderabad School of Chemistry"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Brad Potter",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/20553",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "openalex_candidate_count": 2,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5087819053",
+          "display_name": "Brad J. Potter",
+          "orcid": null,
+          "works_count": 41,
+          "has_unimelb_affiliation": true
+        },
+        {
+          "openalex_author_id": "A5069247196",
+          "display_name": "Brad Potter",
+          "orcid": "0000-0001-6593-7871",
+          "works_count": 36,
+          "has_unimelb_affiliation": true
+        }
+      ]
+    },
+    {
+      "name": "Michelle Sabe",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/michelle-sabe",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0009-0000-2679-0205",
+          "credit_name": null,
+          "given_names": "Michelle",
+          "family_names": "Sabe",
+          "institutions": [
+            "The University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Maiying Sui",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/maiying-sui",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-1566-522X",
+          "credit_name": null,
+          "given_names": "Maiying",
+          "family_names": "Sui",
+          "institutions": [
+            "The University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Michael Taouk",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/michael-taouk",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0003-1529-813X",
+          "credit_name": null,
+          "given_names": "Michael",
+          "family_names": "Taouk",
+          "institutions": [
+            "RMIT University",
+            "University of Melbourne",
+            "University of New South Wales",
+            "Wuxi Suntech Power Co Ltd"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Sarah Yang Spencer",
+      "discipline": "Accounting",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/826429",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0001-5350-6476",
+          "credit_name": null,
+          "given_names": "Sarah",
+          "family_names": "Yang Spencer",
+          "institutions": [
+            "American Accounting Association",
+            "CPA Australia",
+            "Institute of Management Accountants Inc",
+            "La Trobe University",
+            "South China Normal University",
+            "University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Elizabeth Bowman",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/elizabeth-bowman",
+      "minerva_identity_confidence": "ambiguous",
+      "minerva_candidate_count": 2,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0003-3208-0298",
+          "credit_name": null,
+          "given_names": "Elizabeth",
+          "family_names": "Bowman",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9823-3002",
+          "credit_name": null,
+          "given_names": "Elizabeth",
+          "family_names": "Bowman",
+          "institutions": [
+            "SARSEF: Southern Arizona Research Science and Engineering Foundation"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9757-0488",
+          "credit_name": null,
+          "given_names": "Elizabeth",
+          "family_names": "Bowman",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-6804-8227",
+          "credit_name": null,
+          "given_names": "Elizabeth",
+          "family_names": "Bowman",
+          "institutions": [
+            "Brown University",
+            "Indiana University Indianapolis"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6876-6446",
+          "credit_name": null,
+          "given_names": "Elizabeth",
+          "family_names": "Bowman",
+          "institutions": [
+            "Australian National University",
+            "The University of Melbourne",
+            "University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        },
+        {
+          "orcid": "0000-0003-3733-4920",
+          "credit_name": null,
+          "given_names": "Elizabeth",
+          "family_names": "Bowman",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9631-3559",
+          "credit_name": null,
+          "given_names": "Elizabeth",
+          "family_names": "Bowman",
+          "institutions": [
+            "Brackenridge Field Laboratory",
+            "Brackenridge Field Station",
+            "Oregon State University",
+            "University of Arizona"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2028-4031",
+          "credit_name": "Elizabeth Bowman",
+          "given_names": "Elizabeth",
+          "family_names": "Bowman McLaughlin",
+          "institutions": [
+            "Gallaudet University",
+            "The Catholic University of America"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Shuang Chen",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/shuang-chen",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-7013-5774",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3812-2906",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0561-447X",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6145-6616",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1545-8589",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1651-0593",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7758-0734",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0806-0043",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8958-8335",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0368-5829",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8690-0514",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9476-2385",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2692-6413",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9911-4213",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-3864-9406",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0527-0280",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8690-9930",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4995-0579",
+          "credit_name": null,
+          "given_names": "SHUANG",
+          "family_names": "CHEN",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7441-4749",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [
+            "Shenyang University of Technology"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0520-3718",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4351-7475",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4475-8799",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0352-6281",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-3215-4023",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3220-3262",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-5750-6448",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [
+            "Zhejiang University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5437-7012",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [
+            "武汉大学"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7876-9560",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1127-8759",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0947-0098",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4532-5058",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5315-4538",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4844-6661",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-4642-5620",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [
+            "Tangshan Ophthalmic Hospital"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0911-9767",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5452-194X",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-8456-8089",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-3519-9762",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6982-6968",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8096-9692",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6725-0317",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9871-8747",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4001-950X",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2754-277X",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1667-3835",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [
+            "Chongqing Technology and Business University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-3738-2987",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6095-2538",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3835-7027",
+          "credit_name": null,
+          "given_names": "shuang",
+          "family_names": "chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-3299-2860",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4086-747X",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [
+            "Shandong University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5894-6072",
+          "credit_name": null,
+          "given_names": "Shuang",
+          "family_names": "Chen",
+          "institutions": [
+            "The University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Assaf Dekel",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/assaf-dekel",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0003-2074-3218",
+          "credit_name": null,
+          "given_names": "Assaf",
+          "family_names": "Dekel",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5073649601",
+          "display_name": "Assaf Dekel",
+          "orcid": null,
+          "works_count": 11,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5034509563",
+          "display_name": "Dekel Assaf",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        }
+      ]
+    },
+    {
+      "name": "Juan Pablo Franco",
+      "discipline": "Finance",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/803361",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0009-0007-8625-3357",
+          "credit_name": null,
+          "given_names": "Juan Pablo",
+          "family_names": "Franco",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2608-2035",
+          "credit_name": "Juan Pablo Franco",
+          "given_names": "Juan Pablo",
+          "family_names": "Franco",
+          "institutions": [
+            "Banco de la República de Colombia",
+            "California Institute of Technology",
+            "JPMorgan",
+            "Maastricht University",
+            "Universidad de los Andes",
+            "University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Jon Gauntlett",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/jon-gauntlett",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Allan Horsfall",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/allan-horsfall",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5119611925",
+          "display_name": "Allan Horsfall",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5119611549",
+          "display_name": "Allan Horsfall",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        }
+      ]
+    },
+    {
+      "name": "Patrick J. Kelly",
+      "discipline": "Finance",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/437404",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-8540-7488",
+          "credit_name": null,
+          "given_names": "Patrick",
+          "family_names": "Kelly",
+          "institutions": [
+            "Arizona State University",
+            "New Economic School",
+            "The University of Melbourne",
+            "University of Melbourne",
+            "University of South Florida"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Minsoo Kim",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/minsoo-kim",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-2175-3322",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Sogang University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8410-7523",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Daelim Industrial Co Ltd",
+            "Yonsei University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2799-9315",
+          "credit_name": null,
+          "given_names": "MINSOO",
+          "family_names": "KIM",
+          "institutions": [
+            "Saint Louis University Hospital"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4439-3777",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7000-593X",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7585-7656",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Yonsei University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6488-4349",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-3978-2073",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2861-2968",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7044-1299",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2006-9104",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Konkuk University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7756-9911",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4232-4831",
+          "credit_name": null,
+          "given_names": "minsoo",
+          "family_names": "kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9169-2991",
+          "credit_name": null,
+          "given_names": "minsoo",
+          "family_names": "kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9477-5573",
+          "credit_name": null,
+          "given_names": "MINSOO",
+          "family_names": "KIM",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1905-9662",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4556-5569",
+          "credit_name": null,
+          "given_names": "minsoo",
+          "family_names": "kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4394-6528",
+          "credit_name": null,
+          "given_names": "MINSOO",
+          "family_names": "KIM",
+          "institutions": [
+            "Celltrion Inc",
+            "Korea Advanced Institute of Science and Technology",
+            "Korea Research Institute of Bioscience and Biotechnology",
+            "University of Sheffield"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0003-4921-8617",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "University of Pennsylvania"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7551-9489",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5280-2994",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "University of Pennsylvania"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-9495-4882",
+          "credit_name": null,
+          "given_names": "minsoo",
+          "family_names": "kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-0062-8983",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Seowon University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8180-0901",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1155-6077",
+          "credit_name": null,
+          "given_names": "minsoo",
+          "family_names": "kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1831-1507",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3443-5016",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7056-1952",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Chonnam National University",
+            "Mokpo National University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-2518-629X",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Incheon National University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5497-2193",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-2666-4963",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2300-1279",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Seoul National University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0003-2475-4835",
+          "credit_name": null,
+          "given_names": "MINSOO",
+          "family_names": "KIM",
+          "institutions": [
+            "National Health Insurance Service Ilsan Hospital"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-6011-4418",
+          "credit_name": null,
+          "given_names": "MinSoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Pukyong National University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-1153-7585",
+          "credit_name": null,
+          "given_names": "MINSOO",
+          "family_names": "KIM",
+          "institutions": [
+            "Kunsan National University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0002-4858-9750",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0008-6320-762X",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Hokkaido University",
+            "Kookmin University",
+            "Korea Institute of Science and Technology",
+            "RWTH Aachen University",
+            "Sungkyunkwan University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0008-5493-4315",
+          "credit_name": null,
+          "given_names": "minsoo",
+          "family_names": "kim",
+          "institutions": [
+            "Agency for Defense Development"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-9332-7014",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "KIM",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-4423-1689",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4621-5715",
+          "credit_name": "Min Soo Kim",
+          "given_names": "MINSOO",
+          "family_names": "KIM",
+          "institutions": [
+            "Seoul National University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6657-8786",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0008-7916-0619",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Pohang University of Science and Technology"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-0655-7110",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0003-7496-0864",
+          "credit_name": null,
+          "given_names": "MINSOO",
+          "family_names": "KIM",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-8203-0214",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Jeju National University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-5486-317X",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Yonsei University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-0292-6331",
+          "credit_name": null,
+          "given_names": "MINSOO",
+          "family_names": "KIM",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-2921-1524",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Korea Advanced Institute of Science and Technology"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2435-874X",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "Gyeongsang National University",
+            "Hanwha Systems",
+            "Pusan National University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6263-6360",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "The University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Natalie (Nhung) Le",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/natalie-le",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0009-0005-5257-6372",
+          "credit_name": "Natalie Bao Tram Le",
+          "given_names": "Natalie",
+          "family_names": "Le",
+          "institutions": [
+            "Harvard University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-3717-4722",
+          "credit_name": null,
+          "given_names": "Natalie",
+          "family_names": "Le",
+          "institutions": [
+            "The Heart Research Institute",
+            "University of New South Wales",
+            "University of Sydney"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5054754469",
+          "display_name": "Natalie Le Sage",
+          "orcid": "0000-0003-4762-8156",
+          "works_count": 111,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5109242023",
+          "display_name": "Natalie Le",
+          "orcid": null,
+          "works_count": 10,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5101521402",
+          "display_name": "Nhat Le",
+          "orcid": "0009-0007-1122-4981",
+          "works_count": 27,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5077142326",
+          "display_name": "Natalie Le Clue",
+          "orcid": "0000-0002-3224-139X",
+          "works_count": 21,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5062514560",
+          "display_name": "Natalie le Roux",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5093390692",
+          "display_name": "Natalie Le Lay",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5100859480",
+          "display_name": "Natalie Le",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5108260171",
+          "display_name": "Ms Natalie le Roux",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5073482156",
+          "display_name": "Natalie Le Clézio",
+          "orcid": null,
+          "works_count": 3,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5114449912",
+          "display_name": "Natalie Le-Blanc",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5107694535",
+          "display_name": "Natalie B. Le",
+          "orcid": "0009-0005-5257-6372",
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5125775931",
+          "display_name": "Natalie Le",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5123750525",
+          "display_name": "Natalie Le",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5149958621",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5106773710",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5127681682",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5116883975",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5131359706",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5023944113",
+          "display_name": "Natalie Le Roux",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5106773698",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        }
+      ]
+    },
+    {
+      "name": "Tania Lee",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/tania-lee",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0009-0004-7915-6856",
+          "credit_name": null,
+          "given_names": "Tania",
+          "family_names": "Lee",
+          "institutions": [
+            "Peruvian University of Applied Sciences"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0008-8892-4625",
+          "credit_name": null,
+          "given_names": "Tania",
+          "family_names": "Lee",
+          "institutions": [
+            "The University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Bob Li",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/bob-li",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-9919-4452",
+          "credit_name": null,
+          "given_names": "bob",
+          "family_names": "li",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0517-1920",
+          "credit_name": null,
+          "given_names": "Bob",
+          "family_names": "Li",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7127-0249",
+          "credit_name": null,
+          "given_names": "bob",
+          "family_names": "li",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2637-4943",
+          "credit_name": null,
+          "given_names": "Bob",
+          "family_names": "Li",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6661-8733",
+          "credit_name": "Bob T. Li",
+          "given_names": "Bob",
+          "family_names": "Li",
+          "institutions": [
+            "Memorial Sloan-Kettering Cancer Center"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5042115782",
+          "display_name": "Bob T. Li",
+          "orcid": "0000-0001-6661-8733",
+          "works_count": 607,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5108213143",
+          "display_name": "B. Li",
+          "orcid": null,
+          "works_count": 9,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5036510236",
+          "display_name": "Bob Li",
+          "orcid": null,
+          "works_count": 3,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5051173116",
+          "display_name": "LI Xiao-bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5020438713",
+          "display_name": "LI Bob",
+          "orcid": null,
+          "works_count": 5,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5079070343",
+          "display_name": "Bob X Li",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5077772142",
+          "display_name": "T Li Bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5015098225",
+          "display_name": "LI Jing-bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5048304831",
+          "display_name": "XU Li-bob",
+          "orcid": null,
+          "works_count": 3,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5013791201",
+          "display_name": "LI Guang-bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        }
+      ]
+    },
+    {
+      "name": "Lucie Lu",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/lucie-lu",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-3698-5134",
+          "credit_name": null,
+          "given_names": "Lucie",
+          "family_names": "Lu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3580-6608",
+          "credit_name": null,
+          "given_names": "Lucie",
+          "family_names": "Lu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-4310-0082",
+          "credit_name": "Lucie Y. Lu",
+          "given_names": "Lucie",
+          "family_names": "Lu",
+          "institutions": [
+            "McGill University",
+            "University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Mrinal Mishra",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/mrinal-mishra",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-7065-4099",
+          "credit_name": null,
+          "given_names": "Mrinal",
+          "family_names": "Mishra",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7890-8663",
+          "credit_name": null,
+          "given_names": "Mrinal",
+          "family_names": "Mishra",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-2789-2913",
+          "credit_name": null,
+          "given_names": "Mrinal",
+          "family_names": "Mishra",
+          "institutions": [
+            "BML Munjal University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6581-1726",
+          "credit_name": null,
+          "given_names": "Mrinal",
+          "family_names": "Mishra",
+          "institutions": [
+            "Feinberg School of Medicine",
+            "Teknologian tutkimuskeskus VTT Oy Lääketieteellinen biotekniikka",
+            "University of Florida",
+            "University of Turku"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-6232-9038",
+          "credit_name": null,
+          "given_names": "Mrinal",
+          "family_names": "Mishra",
+          "institutions": [
+            "The University of Melbourne",
+            "University of Melbourne",
+            "University of Zurich"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Gaby Nardari",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gaby-berhe-nardari",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Anthony Ng",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/anthony-ng",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "orcid_candidate_count": 1,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-7673-6941",
+          "credit_name": null,
+          "given_names": "Anthony",
+          "family_names": "Ng",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9746-1852",
+          "credit_name": "Anthony Ng",
+          "given_names": "Anthony",
+          "family_names": "Ng",
+          "institutions": [
+            "Chinese University of Hong Kong",
+            "Hong Kong Baptist University",
+            "University of South Australia"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9069-2925",
+          "credit_name": null,
+          "given_names": "Anthony",
+          "family_names": "Ng",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2470-7660",
+          "credit_name": null,
+          "given_names": "Anthony",
+          "family_names": "NG",
+          "institutions": [
+            "Distinctively English Workshop Ltd.",
+            "Hong Kong Institute of Education",
+            "The Hong Kong Polytechnic University",
+            "University of Central Lancashire"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-1007-6342",
+          "credit_name": null,
+          "given_names": "Anthony",
+          "family_names": "NG",
+          "institutions": [
+            "Acadia Hospital"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5098-5616",
+          "credit_name": null,
+          "given_names": "Anthony",
+          "family_names": "Ng",
+          "institutions": [
+            "CPA Australia",
+            "City University of Hong Kong",
+            "Deakin University",
+            "Hong Kong Polytechnic University",
+            "Monash University Caulfield Campus",
+            "RMIT University",
+            "The University of Melbourne",
+            "University of Chicago",
+            "University of Melbourne",
+            "University of Pennsylvania"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Linh Nguyen",
+      "discipline": "Finance",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/999882",
+      "minerva_identity_confidence": "ambiguous",
+      "minerva_candidate_count": 2,
+      "orcid_identity_status": "ambiguous",
+      "orcid_candidate_count": 2,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0001-8619-0308",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2966-2270",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1551-8588",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "nguyen",
+          "institutions": [
+            "Orenburg State University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1252-6168",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Loughborough University",
+            "University of Western Sydney School of Business"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2624-9176",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyễn",
+          "institutions": [
+            "Foreign Trade University",
+            "University of East Anglia"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4454-7310",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Coventry University",
+            "Vysnova"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6681-2552",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8732-8436",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6101-4911",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6423-6042",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyễn",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2980-3248",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0837-5945",
+          "credit_name": "Nguyen Tran Bao Linh",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Hiroshima University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8030-5001",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7029-5081",
+          "credit_name": "Linh91",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Can Tho University",
+            "Mekong University",
+            "PCR Biotechnology Com., Ltd.",
+            "Tan Tao University",
+            "University of Tsukuba",
+            "Wellcome Trust"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4695-5446",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2870-4934",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9310-0753",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7167-8455",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1240-6094",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8129-0446",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0650-6227",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1392-3165",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2822-9777",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Development and Policies Research Center",
+            "University of Groningen",
+            "Vietnam National University of Agriculture"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7814-1418",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9561-4352",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7278-8835",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Hue University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8257-5902",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Tohoku University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-0808-0695",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6801-1679",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Applied Molecular Transport",
+            "Stanford University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4916-4693",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Hue University",
+            "Quang Nam univeristy"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2905-3291",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4298-113X",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyễn",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4052-0791",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9588-0287",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8171-1303",
+          "credit_name": "Linh Duy Nguyen",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3228-6520",
+          "credit_name": "Linh T. Nguyen",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Ho Chi Minh City University of Science",
+            "Humboldt-Universität zu Berlin",
+            "Max Delbrück Center for Molecular Medicine",
+            "University of Tsukuba"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4566-2668",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5825-1601",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-4734-3463",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-5648-4021",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Vietnam National University, Hanoi"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4021-8720",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8995-2822",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyễn",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8344-3418",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "University of Oxford"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0776-9480",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-3184-5649",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "University of Economics Ho Chi Minh City"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-1824-4959",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "National Economics University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3324-9107",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4567-5162",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3457-5764",
+          "credit_name": "Linh T. T. Nguyen",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "The University of Queensland",
+            "Vietnam National University of Agriculture"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-2927-7295",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-7425-6342",
+          "credit_name": "Dr Linh Nguyen",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Monash University",
+            "University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        },
+        {
+          "orcid": "0009-0006-1582-8160",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Australian and New Zealand Association of Clinical Anatomists",
+            "Australian and New Zealand Orthopaedic Research Society",
+            "Australian and New Zealand Society of Biomechanics",
+            "The University of Melbourne",
+            "University of Auckland"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "ambiguous",
+      "openalex_candidate_count": 2,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5015096941",
+          "display_name": "Paul L. Nguyen",
+          "orcid": "0000-0003-4268-3973",
+          "works_count": 926,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5039423086",
+          "display_name": "Linh T. Nguyen",
+          "orcid": "0000-0003-3470-1318",
+          "works_count": 147,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5101684958",
+          "display_name": "Linh P. Nguyen",
+          "orcid": "0000-0003-3373-0838",
+          "works_count": 55,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5036310727",
+          "display_name": "Nguyễn Thị Thùy Linh",
+          "orcid": null,
+          "works_count": 120,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5067470754",
+          "display_name": "Ngoc Cuong Nguyen",
+          "orcid": "0000-0001-9167-5780",
+          "works_count": 205,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5101777505",
+          "display_name": "Linh Nguyen",
+          "orcid": "0000-0003-4820-6967",
+          "works_count": 78,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5046137901",
+          "display_name": "Linh V. Nguyen",
+          "orcid": "0000-0002-2543-2374",
+          "works_count": 116,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5060426055",
+          "display_name": "Linh Nhat Nguyen",
+          "orcid": "0000-0003-1967-3857",
+          "works_count": 63,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5034201659",
+          "display_name": "Van-Linh Nguyen",
+          "orcid": "0000-0002-3472-0108",
+          "works_count": 109,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5058186317",
+          "display_name": "Linh Hồ Thùy Nguyễn",
+          "orcid": "0000-0003-3187-8310",
+          "works_count": 113,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5053404847",
+          "display_name": "Thu Anh Nguyen",
+          "orcid": "0000-0002-2089-2902",
+          "works_count": 178,
+          "has_unimelb_affiliation": true
+        },
+        {
+          "openalex_author_id": "A5059294221",
+          "display_name": "Linda Nguyen",
+          "orcid": "0000-0002-7165-6678",
+          "works_count": 108,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5106428542",
+          "display_name": "Linh T. Nguyen",
+          "orcid": "0000-0002-4143-5225",
+          "works_count": 132,
+          "has_unimelb_affiliation": true
+        },
+        {
+          "openalex_author_id": "A5103391433",
+          "display_name": "Linh N Nguyen",
+          "orcid": null,
+          "works_count": 7,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5055424683",
+          "display_name": "Linh Anh Nguyen",
+          "orcid": "0000-0002-8109-0567",
+          "works_count": 171,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5021335306",
+          "display_name": "Linh Nguyen",
+          "orcid": "0000-0002-6132-8312",
+          "works_count": 101,
+          "has_unimelb_affiliation": true
+        },
+        {
+          "openalex_author_id": "A5063877992",
+          "display_name": "Nguyen Thuy Ba Linh",
+          "orcid": "0000-0002-8532-8296",
+          "works_count": 58,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5101741884",
+          "display_name": "Hong‐Kong T. Nguyen",
+          "orcid": "0000-0003-4075-9823",
+          "works_count": 121,
+          "has_unimelb_affiliation": false
+        }
+      ]
+    },
+    {
+      "name": "Zhen Shi",
+      "discipline": "Finance",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/250294",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-1218-1676",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7225-4857",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8309-3967",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6221-087X",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6068-5203",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0346-1940",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0131-0871",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4161-0169",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7560-1810",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9844-8940",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9553-9305",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7699-545X",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5550-8635",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5009-9227",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7164-6819",
+          "credit_name": null,
+          "given_names": "ZHEN",
+          "family_names": "SHI",
+          "institutions": [
+            "Guangxi University",
+            "University of Strathclyde"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5701-1849",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6532-0994",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9715-9098",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-6179-3317",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6988-1676",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-9849-3782",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0450-9053",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0002-7871-0910",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-9452-5390",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0003-5018-8232",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1637-1231",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-8448-8645",
+          "credit_name": null,
+          "given_names": "ZHEN",
+          "family_names": "SHI",
+          "institutions": [
+            "Inner Mongolia Medical University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0007-9097-3576",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "Fifth Affiliated Hospital of Zhengzhou University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8994-3942",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "Peking University First Hospital"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-5478-2724",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-8285-5795",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "University of Reading"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5986-1524",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-9348-1969",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-8502-7978",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "Genentech"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5354-1703",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "City University of Hong Kong",
+            "Hangzhou Dianzi University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-1169-4081",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0002-2872-1750",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "Shanghai Jiao Tong University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4051-3727",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-3287-8540",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0002-4021-8410",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "Henan Polytechnic University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-9352-3153",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "Affiliated Hospital of Guangdong Medical College Hospital"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9505-0622",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1332-1762",
+          "credit_name": null,
+          "given_names": "zhen",
+          "family_names": "shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-7397-0757",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "University of Akron",
+            "Virginia Tech"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5868-4191",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-7270-1166",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3218-396X",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-3998-177X",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "广西师范大学"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Xiaoting Wei",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/xiaoting-wei",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_needed_existing_orcid",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_needed_verified_identifier",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": []
+    },
+    {
+      "name": "Jun Yu",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/cabe/jun-yu",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-9155-138X",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7750-6419",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0922-3107",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4900-2165",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3325-3878",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4346-9266",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2364-1009",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8226-3423",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0961-8539",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0017-5834",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0286-1632",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2309-5412",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6051-751X",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "YU",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7853-1309",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-8117-2220",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2800-7397",
+          "credit_name": null,
+          "given_names": "JUN",
+          "family_names": "YU",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4917-205X",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1955-237X",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-3249-5469",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [
+            "Stanford University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8150-7994",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9578-2882",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6628-6609",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8032-0757",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8211-3073",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4718-409X",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7351-9191",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-3795-6346",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8562-8152",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7061-3115",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5116-1136",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7549-6467",
+          "credit_name": null,
+          "given_names": "JUN",
+          "family_names": "YU",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8262-0689",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0009-1137-6410",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4340-6356",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8570-0599",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6609-966X",
+          "credit_name": null,
+          "given_names": "JUN",
+          "family_names": "YU",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1237-8564",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9500-0171",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [
+            "Xidian University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-2500-0949",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-6348-2424",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5009-2941",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5711-3696",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-1508-4213",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-2316-5478",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [
+            "Hangzhou Dianzi University",
+            "Harbin Institute of Technology",
+            "Nanyang Technological University",
+            "Xiamen University",
+            "Zhejiang University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9971-557X",
+          "credit_name": null,
+          "given_names": "jun",
+          "family_names": "yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2676-0927",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-5778-9343",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3927-0804",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [
+            "Zhejiang University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4329-024X",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8973-5537",
+          "credit_name": null,
+          "given_names": "Jun",
+          "family_names": "Yu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "openalex_candidate_count": 1,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5100614702",
+          "display_name": "Jun Yu",
+          "orcid": "0000-0001-5008-2153",
+          "works_count": 1813,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5100728445",
+          "display_name": "Jun Yu",
+          "orcid": "0000-0002-2702-055X",
+          "works_count": 486,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5100374639",
+          "display_name": "Xianjun Yu",
+          "orcid": "0000-0002-6697-7143",
+          "works_count": 923,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5006572968",
+          "display_name": "Ki Jun Yu",
+          "orcid": "0000-0002-2922-2702",
+          "works_count": 135,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5050817770",
+          "display_name": "Jun Yu",
+          "orcid": "0000-0003-1922-7283",
+          "works_count": 451,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5100639000",
+          "display_name": "Jianjun Yu",
+          "orcid": "0000-0001-9434-088X",
+          "works_count": 116,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5022118078",
+          "display_name": "Haijun Yu",
+          "orcid": "0000-0002-3398-0880",
+          "works_count": 430,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5033829154",
+          "display_name": "Jun Yu",
+          "orcid": "0000-0003-3435-6550",
+          "works_count": 257,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5084275232",
+          "display_name": "Jun Yu",
+          "orcid": "0000-0003-2360-5873",
+          "works_count": 355,
+          "has_unimelb_affiliation": true
+        },
+        {
+          "openalex_author_id": "A5064261325",
+          "display_name": "Haijun Yu",
+          "orcid": "0000-0003-0204-9943",
+          "works_count": 216,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5063184651",
+          "display_name": "Jun Yu",
+          "orcid": "0000-0003-4530-2179",
+          "works_count": 172,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5100375406",
+          "display_name": "Jian Zhen Yu",
+          "orcid": "0000-0002-6165-6500",
+          "works_count": 661,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5089977649",
+          "display_name": "Jianjun Yu",
+          "orcid": "0000-0002-2101-7018",
+          "works_count": 1106,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5029633264",
+          "display_name": "Junyu Dong",
+          "orcid": "0000-0001-7012-2087",
+          "works_count": 847,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5066455710",
+          "display_name": "Yijun Yu",
+          "orcid": "0000-0002-4006-8072",
+          "works_count": 161,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5034667645",
+          "display_name": "Hong Yu",
+          "orcid": "0000-0002-1748-8693",
+          "works_count": 233,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5008960436",
+          "display_name": "Dong‐Jun Yu",
+          "orcid": "0000-0002-6786-8053",
+          "works_count": 215,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5088630517",
+          "display_name": "Young‐Jun Yu",
+          "orcid": "0000-0001-9446-1526",
+          "works_count": 97,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5046436370",
+          "display_name": "Bo Yu",
+          "orcid": "0000-0002-2045-8567",
+          "works_count": 574,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5058873525",
+          "display_name": "Shujun Yu",
+          "orcid": null,
+          "works_count": 182,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5000972714",
+          "display_name": "Jun Yu",
+          "orcid": null,
+          "works_count": 150,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5065929644",
+          "display_name": "Huijun Yu",
+          "orcid": "0000-0001-8108-4434",
+          "works_count": 263,
+          "has_unimelb_affiliation": false
+        }
+      ]
+    }
+  ],
+  "identity_review_queue": [
+    {
+      "name": "Wayne Coetzee",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/wayne-coetzee",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0001-6530-0053",
+          "credit_name": null,
+          "given_names": "Wayne",
+          "family_names": "Coetzee",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5045389138",
+          "display_name": "Wayne Stephen Coetzee",
+          "orcid": "0000-0002-2808-183X",
+          "works_count": 13,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5017379919",
+          "display_name": "Cuan Wayne Coetzee",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Teaching Fellow",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Bob Cornick",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/bob-cornick",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Lecturer (Education Focussed)",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Greg Cusack",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/greg-cusack",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0001-7369-7185",
+          "credit_name": "Greg Cusack",
+          "given_names": "Greg",
+          "family_names": "Cusack",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5020434662",
+          "display_name": "Greg Cusack",
+          "orcid": null,
+          "works_count": 11,
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Teaching Fellow",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Joana Linggo Liong",
+      "discipline": "Accounting",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/joana-linggo-liong",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Tutor in Charge",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Assaf Dekel",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/assaf-dekel",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0003-2074-3218",
+          "credit_name": null,
+          "given_names": "Assaf",
+          "family_names": "Dekel",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5073649601",
+          "display_name": "Assaf Dekel",
+          "orcid": null,
+          "works_count": 11,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5034509563",
+          "display_name": "Dekel Assaf",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Tutor - Education Focussed",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Allan Horsfall",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/allan-horsfall",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5119611925",
+          "display_name": "Allan Horsfall",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5119611549",
+          "display_name": "Allan Horsfall",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Tutor - Education Focussed",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Natalie (Nhung) Le",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/natalie-le",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0009-0005-5257-6372",
+          "credit_name": "Natalie Bao Tram Le",
+          "given_names": "Natalie",
+          "family_names": "Le",
+          "institutions": [
+            "Harvard University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-3717-4722",
+          "credit_name": null,
+          "given_names": "Natalie",
+          "family_names": "Le",
+          "institutions": [
+            "The Heart Research Institute",
+            "University of New South Wales",
+            "University of Sydney"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5054754469",
+          "display_name": "Natalie Le Sage",
+          "orcid": "0000-0003-4762-8156",
+          "works_count": 111,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5109242023",
+          "display_name": "Natalie Le",
+          "orcid": null,
+          "works_count": 10,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5101521402",
+          "display_name": "Nhat Le",
+          "orcid": "0009-0007-1122-4981",
+          "works_count": 27,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5077142326",
+          "display_name": "Natalie Le Clue",
+          "orcid": "0000-0002-3224-139X",
+          "works_count": 21,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5062514560",
+          "display_name": "Natalie le Roux",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5093390692",
+          "display_name": "Natalie Le Lay",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5100859480",
+          "display_name": "Natalie Le",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5108260171",
+          "display_name": "Ms Natalie le Roux",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5073482156",
+          "display_name": "Natalie Le Clézio",
+          "orcid": null,
+          "works_count": 3,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5114449912",
+          "display_name": "Natalie Le-Blanc",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5107694535",
+          "display_name": "Natalie B. Le",
+          "orcid": "0009-0005-5257-6372",
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5125775931",
+          "display_name": "Natalie Le",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5123750525",
+          "display_name": "Natalie Le",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5149958621",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5106773710",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5127681682",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 2,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5116883975",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5131359706",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5023944113",
+          "display_name": "Natalie Le Roux",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5106773698",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Tutor - Education Focussed",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Bob Li",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/bob-li",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0002-9919-4452",
+          "credit_name": null,
+          "given_names": "bob",
+          "family_names": "li",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0517-1920",
+          "credit_name": null,
+          "given_names": "Bob",
+          "family_names": "Li",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7127-0249",
+          "credit_name": null,
+          "given_names": "bob",
+          "family_names": "li",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2637-4943",
+          "credit_name": null,
+          "given_names": "Bob",
+          "family_names": "Li",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6661-8733",
+          "credit_name": "Bob T. Li",
+          "given_names": "Bob",
+          "family_names": "Li",
+          "institutions": [
+            "Memorial Sloan-Kettering Cancer Center"
+          ],
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5042115782",
+          "display_name": "Bob T. Li",
+          "orcid": "0000-0001-6661-8733",
+          "works_count": 607,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5108213143",
+          "display_name": "B. Li",
+          "orcid": null,
+          "works_count": 9,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5036510236",
+          "display_name": "Bob Li",
+          "orcid": null,
+          "works_count": 3,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5051173116",
+          "display_name": "LI Xiao-bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5020438713",
+          "display_name": "LI Bob",
+          "orcid": null,
+          "works_count": 5,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5079070343",
+          "display_name": "Bob X Li",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5077772142",
+          "display_name": "T Li Bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5015098225",
+          "display_name": "LI Jing-bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5048304831",
+          "display_name": "XU Li-bob",
+          "orcid": null,
+          "works_count": 3,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5013791201",
+          "display_name": "LI Guang-bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Teaching Specialist",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Gaby Nardari",
+      "discipline": "Finance",
+      "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gaby-berhe-nardari",
+      "minerva_identity_confidence": "none",
+      "minerva_candidate_count": 0,
+      "orcid_identity_status": "not_found",
+      "orcid_candidate_count": 0,
+      "orcid_review_candidates": [],
+      "openalex_identity_status": "not_found",
+      "openalex_candidate_count": 0,
+      "openalex_review_candidates": [],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Lecturer - Education Focussed",
+      "review_priority": "low",
+      "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
+    },
+    {
+      "name": "Linh Nguyen",
+      "discipline": "Finance",
+      "profile_url": "https://findanexpert.unimelb.edu.au/profile/999882",
+      "minerva_identity_confidence": "ambiguous",
+      "minerva_candidate_count": 2,
+      "orcid_identity_status": "ambiguous",
+      "orcid_candidate_count": 2,
+      "orcid_review_candidates": [
+        {
+          "orcid": "0000-0001-8619-0308",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2966-2270",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-1551-8588",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "nguyen",
+          "institutions": [
+            "Orenburg State University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1252-6168",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Loughborough University",
+            "University of Western Sydney School of Business"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2624-9176",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyễn",
+          "institutions": [
+            "Foreign Trade University",
+            "University of East Anglia"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4454-7310",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Coventry University",
+            "Vysnova"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6681-2552",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8732-8436",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6101-4911",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-6423-6042",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyễn",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2980-3248",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0837-5945",
+          "credit_name": "Nguyen Tran Bao Linh",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Hiroshima University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8030-5001",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7029-5081",
+          "credit_name": "Linh91",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Can Tho University",
+            "Mekong University",
+            "PCR Biotechnology Com., Ltd.",
+            "Tan Tao University",
+            "University of Tsukuba",
+            "Wellcome Trust"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4695-5446",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-2870-4934",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9310-0753",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-7167-8455",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1240-6094",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8129-0446",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-0650-6227",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-1392-3165",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2822-9777",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Development and Policies Research Center",
+            "University of Groningen",
+            "Vietnam National University of Agriculture"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7814-1418",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-9561-4352",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-7278-8835",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Hue University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8257-5902",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Tohoku University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0005-0808-0695",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-6801-1679",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Applied Molecular Transport",
+            "Stanford University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4916-4693",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Hue University",
+            "Quang Nam univeristy"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-2905-3291",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4298-113X",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyễn",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4052-0791",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-9588-0287",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8171-1303",
+          "credit_name": "Linh Duy Nguyen",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3228-6520",
+          "credit_name": "Linh T. Nguyen",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Ho Chi Minh City University of Science",
+            "Humboldt-Universität zu Berlin",
+            "Max Delbrück Center for Molecular Medicine",
+            "University of Tsukuba"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-4566-2668",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-5825-1601",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0000-4734-3463",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-5648-4021",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Vietnam National University, Hanoi"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4021-8720",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0001-8995-2822",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyễn",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-8344-3418",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "University of Oxford"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0003-0776-9480",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-3184-5649",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "University of Economics Ho Chi Minh City"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0004-1824-4959",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "National Economics University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3324-9107",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4567-5162",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-3457-5764",
+          "credit_name": "Linh T. T. Nguyen",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "The University of Queensland",
+            "Vietnam National University of Agriculture"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0001-2927-7295",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0006-7425-6342",
+          "credit_name": "Dr Linh Nguyen",
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Monash University",
+            "University of Melbourne"
+          ],
+          "has_unimelb_affiliation": true
+        },
+        {
+          "orcid": "0009-0006-1582-8160",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [
+            "Australian and New Zealand Association of Clinical Anatomists",
+            "Australian and New Zealand Orthopaedic Research Society",
+            "Australian and New Zealand Society of Biomechanics",
+            "The University of Melbourne",
+            "University of Auckland"
+          ],
+          "has_unimelb_affiliation": true
+        }
+      ],
+      "openalex_identity_status": "ambiguous",
+      "openalex_candidate_count": 2,
+      "openalex_review_candidates": [
+        {
+          "openalex_author_id": "A5015096941",
+          "display_name": "Paul L. Nguyen",
+          "orcid": "0000-0003-4268-3973",
+          "works_count": 926,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5039423086",
+          "display_name": "Linh T. Nguyen",
+          "orcid": "0000-0003-3470-1318",
+          "works_count": 147,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5101684958",
+          "display_name": "Linh P. Nguyen",
+          "orcid": "0000-0003-3373-0838",
+          "works_count": 55,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5036310727",
+          "display_name": "Nguyễn Thị Thùy Linh",
+          "orcid": null,
+          "works_count": 120,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5067470754",
+          "display_name": "Ngoc Cuong Nguyen",
+          "orcid": "0000-0001-9167-5780",
+          "works_count": 205,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5101777505",
+          "display_name": "Linh Nguyen",
+          "orcid": "0000-0003-4820-6967",
+          "works_count": 78,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5046137901",
+          "display_name": "Linh V. Nguyen",
+          "orcid": "0000-0002-2543-2374",
+          "works_count": 116,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5060426055",
+          "display_name": "Linh Nhat Nguyen",
+          "orcid": "0000-0003-1967-3857",
+          "works_count": 63,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5034201659",
+          "display_name": "Van-Linh Nguyen",
+          "orcid": "0000-0002-3472-0108",
+          "works_count": 109,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5058186317",
+          "display_name": "Linh Hồ Thùy Nguyễn",
+          "orcid": "0000-0003-3187-8310",
+          "works_count": 113,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5053404847",
+          "display_name": "Thu Anh Nguyen",
+          "orcid": "0000-0002-2089-2902",
+          "works_count": 178,
+          "has_unimelb_affiliation": true
+        },
+        {
+          "openalex_author_id": "A5059294221",
+          "display_name": "Linda Nguyen",
+          "orcid": "0000-0002-7165-6678",
+          "works_count": 108,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5106428542",
+          "display_name": "Linh T. Nguyen",
+          "orcid": "0000-0002-4143-5225",
+          "works_count": 132,
+          "has_unimelb_affiliation": true
+        },
+        {
+          "openalex_author_id": "A5103391433",
+          "display_name": "Linh N Nguyen",
+          "orcid": null,
+          "works_count": 7,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5055424683",
+          "display_name": "Linh Anh Nguyen",
+          "orcid": "0000-0002-8109-0567",
+          "works_count": 171,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5021335306",
+          "display_name": "Linh Nguyen",
+          "orcid": "0000-0002-6132-8312",
+          "works_count": 101,
+          "has_unimelb_affiliation": true
+        },
+        {
+          "openalex_author_id": "A5063877992",
+          "display_name": "Nguyen Thuy Ba Linh",
+          "orcid": "0000-0002-8532-8296",
+          "works_count": 58,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5101741884",
+          "display_name": "Hong‐Kong T. Nguyen",
+          "orcid": "0000-0003-4075-9823",
+          "works_count": 121,
+          "has_unimelb_affiliation": false
+        }
+      ],
+      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
+      "job_title": "Lecturer - Education Focussed & Program Director (Master of Applied Finance)",
+      "review_priority": "high",
+      "recommended_action": "Compare candidate publications and identifiers with the official profile; approve only an identifier supported by direct evidence."
+    }
+  ]
+}

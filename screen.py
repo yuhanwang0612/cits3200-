@@ -133,7 +133,21 @@ def screen(records, pubs, out_dir=None, verbose=True):
     person to trust it.
     """
     stats = summarise(pubs)
-    flagged = {name for name, entry in stats.items() if suspect(entry)}
+    # A repository-issued author ID plus an exact repository relationship is
+    # direct identity evidence.  ABDC coverage is not: legitimate accounting
+    # and finance researchers also publish interdisciplinary work in journals
+    # outside that list.  Keep the heuristic for name-resolved OpenAlex
+    # identities, but never use it to overrule an adapter's verified internal
+    # author identifier.
+    repository_verified = {
+        person.get("name_clean")
+        for person in records
+        if person.get("source_id") and person.get("identity_confidence") == "high"
+    }
+    flagged = {
+        name for name, entry in stats.items()
+        if suspect(entry) and name not in repository_verified
+    }
 
     if not flagged:
         if verbose:

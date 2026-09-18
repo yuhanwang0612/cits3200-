@@ -67,10 +67,12 @@ and sleeps REQUEST_DELAY seconds between requests.
 from __future__ import annotations
 
 import csv
+import datetime as _dt
 import json
 import re
 import sys
 import time
+from collections import Counter
 from html import unescape as _unescape
 import urllib.robotparser
 from dataclasses import dataclass, asdict
@@ -79,6 +81,9 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
+
+from enrichment.abdc import known_titles as _abdc_known_titles
+from enrichment.abdc import normalise_title as _normalise_abdc_title
 
 # ----------------------------------------------------------------------------
 # Config
@@ -378,6 +383,42 @@ def academic_level(job_title: str) -> str | None:
 
 
 YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+
+# FIX D: an ORCID id published anywhere on the profile page itself (in an
+# href or in visible text), e.g. "https://orcid.org/0000-0002-4737-4507".
+# The checksum digit is a plain digit 90% of the time but can legitimately
+# be an upper-case X (ISO 7064 mod 11-2) — case-insensitive here, normalised
+# to upper-case on extraction.
+ORCID_URL_RE = re.compile(
+    r"orcid\.org/(\d{4}-\d{4}-\d{4}-\d{3}[0-9Xx])", re.IGNORECASE,
+)
+# researcher name -> distinct ORCIDs found on their own profile page, filled
+# in by scrape_profile() and read by base_scrapers/anu.py right afterwards.
+PROFILE_ORCIDS: dict[str, list[str]] = {}
+
+
+def extract_orcids(html: str) -> list[str]:
+    """Distinct ORCID ids (case-normalised) found anywhere in the raw page
+    HTML as an orcid.org URL. Order of first appearance is preserved."""
+    seen: list[str] = []
+    for m in ORCID_URL_RE.finditer(html or ""):
+        oid = m.group(1).upper()
+        if oid not in seen:
+            seen.append(oid)
+    return seen
+
+
+# FIX B: a block whose text says the work isn't actually published yet is
+# never a journal article, whatever else it looks like. "forthcoming" and
+# "in press" are deliberately NOT here — those are accepted, published
+# papers whose page number hasn't been assigned yet.
+NOT_YET_PUBLISHED_RE = re.compile(
+    r"\br\s*&\s*r\b|revise and resubmit|under review|submitted to|working paper",
+    re.IGNORECASE,
+)
+# researcher name -> count of blocks excluded by NOT_YET_PUBLISHED_RE, for
+# main()'s summary print.
+NOT_YET_PUBLISHED_COUNTS: "Counter[str]" = Counter()
 # A parenthesised year, e.g. "(2018)" — the boundary for the "Authors (Year)
 # Title" citation shape, which has no "with" keyword separating authors from
 # title at all.
@@ -597,6 +638,28 @@ def _split_leading_year_authors(before: str) -> tuple[str, str] | None:
 # however many commas it contains — is the title.
 NUMERIC_TAIL_SEGMENT_RE = re.compile(r"^\(?\d+\)?[a-z]?$|^\d+\s*[\-–]\s*\d+\.?$")
 
+_ABDC_TITLES: set[str] | None = None
+
+
+def _abdc_titles() -> set[str]:
+    """The full set of normalised ABDC journal titles, loaded once (see
+    enrichment.abdc.known_titles, which itself caches the spreadsheet
+    read)."""
+    global _ABDC_TITLES
+    if _ABDC_TITLES is None:
+        _ABDC_TITLES = _abdc_known_titles()
+    return _ABDC_TITLES
+
+
+# A journal name is never itself a conjunction/connective — this only ever
+# fires when the comma-flow splitter has grabbed the tail end of a journal
+# name that itself contains a comma or "and"/"&" before the REAL journal
+# (e.g. "Privatization, Distortions, and Productivity" splitting to journal
+# "and Productivity"). See FIX C in docs/DECISIONS.md.
+JOURNAL_CONJUNCTION_RE = re.compile(
+    r"^(?:and|or|but|nor|as well as)\b|^&", re.IGNORECASE,
+)
+
 
 def _split_comma_flow_title_journal(text: str) -> tuple[str, str] | None:
     """
@@ -606,16 +669,38 @@ def _split_comma_flow_title_journal(text: str) -> tuple[str, str] | None:
     like this — e.g. it's genuinely just a plain title with an internal
     comma and no separate journal segment at all — so the caller can keep
     whatever it already had instead of trusting a bad split.
+
+    A journal name can itself contain a comma or "&"/"and" (e.g. "Journal
+    of Money, Credit & Banking"), which the plain "last comma segment is
+    the journal" rule below would wrongly split apart. Before falling back
+    to that rule, check whether joining the LAST k segments (k=3 then k=2)
+    gives an exact normalised ABDC title — if so, that whole run is the
+    journal, not just its final segment.
     """
     segments = [s.strip() for s in text.strip(" .").split(",")]
     while segments and (not segments[-1] or NUMERIC_TAIL_SEGMENT_RE.match(segments[-1])):
         segments.pop()
     if len(segments) < 2:
         return None
-    journal = segments[-1].strip(" .")
+
+    journal = None
+    abdc_titles = _abdc_titles()
+    for k in (3, 2):
+        if len(segments) <= k:
+            continue
+        candidate = ", ".join(segments[-k:]).strip(" .")
+        if candidate and _normalise_abdc_title(candidate) in abdc_titles:
+            journal = candidate
+            title = ", ".join(segments[:-k]).strip(" .")
+            break
+    else:
+        journal = segments[-1].strip(" .")
+        title = ", ".join(segments[:-1]).strip(" .")
+
     if not journal or JOURNAL_SKIP_RE.match(journal) or not re.search(r"[A-Za-z]", journal):
         return None
-    title = ", ".join(segments[:-1]).strip(" .")
+    if JOURNAL_CONJUNCTION_RE.match(journal):
+        return None
     if len(title) < 15:
         return None
     return title, journal
@@ -630,6 +715,34 @@ def _clean_journal_tail(journal: str) -> str | None:
     """
     journal = re.sub(r"\s*https?://\S+\s*$", "", journal)
     journal = re.sub(r"\s+\d+\s*[:,]?\s*[\d\-–,\s]*$", "", journal)
+    return journal.strip(" .,;:") or None
+
+
+# FIX C journal-tail clean-up: strip a self-reported ABDC rating
+# ("(ABDC: A)", "(ABDC A, 2019 edition)"), a "forthcoming"/"in press" status
+# marker, an impact-factor note, a bare volume/page run ("62: 2467-2496."),
+# or a URL, glued onto an otherwise-correct journal name with no comma to
+# separate it. Applied repeatedly since these stack, e.g. "Accounting and
+# Finance 62: 2467-2496. (ABDC: A)".
+_JOURNAL_TAIL_PATTERNS = [
+    re.compile(r"\s*https?://\S+\s*$"),
+    re.compile(r",?\s*\(?\s*impact factor\b[^)]*\)?\s*$", re.IGNORECASE),
+    re.compile(r",?\s*\(\s*abdc\s*:?[^)]*\)\s*$", re.IGNORECASE),
+    re.compile(r",?\s*forthcoming\b\.?\s*$", re.IGNORECASE),
+    re.compile(r",?\s*in press\b\.?\s*$", re.IGNORECASE),
+    re.compile(r"\s+\d+\s*[:,]?\s*[\d\-–,\s]*\.?\s*$"),
+]
+
+
+def _strip_journal_junk(journal: str | None) -> str | None:
+    if not journal:
+        return journal
+    prev = None
+    while prev != journal:
+        prev = journal
+        for pat in _JOURNAL_TAIL_PATTERNS:
+            journal = pat.sub("", journal)
+        journal = journal.strip()
     return journal.strip(" .,;:") or None
 
 
@@ -870,8 +983,13 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     if len(text) < 12:
         return None, False
 
-    year_m = YEAR_RE.search(text)
-    year = int(year_m.group(0)) if year_m else None
+    # FIX B: R&R / under review / submitted / working-paper entries are not
+    # yet published, so they are never a journal article — excluded (and
+    # counted) here regardless of which sub-section they came from.
+    # "forthcoming" and "in press" are accepted papers, not excluded.
+    if NOT_YET_PUBLISHED_RE.search(text):
+        NOT_YET_PUBLISHED_COUNTS[researcher.name] += 1
+        return None, False
 
     # DOI: prefer a real doi.org link if the paragraph has one — far more
     # reliable than pattern-matching visible text, and works even when the
@@ -1176,10 +1294,63 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
 
     if journal:
         journal = _strip_trailing_numeric_segments(journal)
+        journal = _strip_journal_junk(journal)
 
     title = _tidy(title)
     journal = _tidy(journal)
     coauthors = _tidy(coauthors)
+
+    # FIX H: the title is really "Author list [YEAR] [real title]", or just
+    # an author list with no year and no journal at all (a textbook/book
+    # entry, not an article). Runs BEFORE the year search below so a
+    # confidently-extracted year here isn't second-guessed by a stray
+    # number (e.g. a page-range end) elsewhere in the raw text.
+    year_from_author_list = None
+    if title:
+        m = AUTHOR_LIST_YEAR_PREFIX_RE.match(title)
+        if m:
+            candidate = _LEADING_PAREN_CLAUSE_RE.sub("", m.group("rest").strip())
+            candidate = _tidy(candidate)
+            if candidate and len(candidate) >= 15 and candidate[:1].isupper():
+                title = candidate
+                year_from_author_list = int(m.group("year"))
+            else:
+                # Nothing sensible left once the author list and year are
+                # stripped — don't guess at a title.
+                title = None
+                confident = False
+        elif FULL_AUTHOR_LIST_RE.match(title):
+            # The whole "title" is just an author list — a textbook/book
+            # citation (no journal, no year), not a journal article.
+            title = None
+            confident = False
+
+    # FIX C: never take the publication year from inside the title text — a
+    # year can appear there (e.g. "...Common Law (1987-2016)") without being
+    # the actual publication year, which is often given separately, later in
+    # the citation (e.g. "'...(1987-2016)' (2021) 21(1) Oxford..."). Find the
+    # title's own span in `text` and skip any year match inside it; if every
+    # year found is inside the title (or there is no title), leave the year
+    # blank rather than guess.
+    if year_from_author_list is not None:
+        year = year_from_author_list
+    else:
+        year = None
+        title_span = None
+        if title:
+            idx = text.find(title)
+            if idx != -1:
+                title_span = (idx, idx + len(title))
+        for year_m in YEAR_RE.finditer(text):
+            if title_span and title_span[0] <= year_m.start() < title_span[1]:
+                continue
+            year = int(year_m.group(0))
+            break
+
+    # FIX H sanity check: an implausible year (typo, OCR/page-range noise,
+    # etc.) is left blank and counted rather than trusted.
+    if year is not None and not (1950 <= year <= _dt.date.today().year + 1):
+        year = None
 
     if not title:
         confident = False
@@ -1305,6 +1476,34 @@ ACCEPTED_JOURNAL_RE = re.compile(
 # safety net (see parse_publication's final confidence check) rather than a
 # fix for any one specific formatting quirk.
 AUTHOR_LIST_PATTERN_RE = re.compile(r"(?:[A-Z][A-Za-z'\-]+,\s*[A-Z]\.?\s*){2,}")
+
+# FIX H: a parsed title that's really "Author list [YEAR] [real title]" —
+# Rebecca Tan's two textbook citations (author list, no year, no journal —
+# not an article at all) and three of Tracy (Kun) Wang's citations (author
+# list then year then the real title, one of them with a stray page-range
+# number, "...1893-1942", that would otherwise be mistaken for the year —
+# see the year sanity check below). Allows both "Surname, Initial" and
+# "Surname Initial" (no comma — seen on live RSFAS pages), 1-2 further
+# initials, and trailing asterisk footnote markers ("Wu, Y.**").
+_AUTHOR_TOKEN_H = r"[A-Z][A-Za-z'\-]+,?\s*[A-Z](?:\.\s?[A-Z](?![a-z]))*\.?\**"
+_AUTHOR_SEP_H = r"(?:,\s*(?:&\s*|and\s+)?|\s*&\s*|\s+and\s+)"
+_ET_AL_H = r"(?:,?\s*[Ee]t\.?\s*[Aa]l\.?)?"
+
+AUTHOR_LIST_YEAR_PREFIX_RE = re.compile(
+    rf"^(?P<authors>(?:{_AUTHOR_TOKEN_H}{_AUTHOR_SEP_H})+{_AUTHOR_TOKEN_H})"
+    rf"\.?,?\s+(?P<year>(?:19|20)\d{{2}})\.?\s+(?P<rest>.+)$"
+)
+# The WHOLE title is nothing but an author list (with an optional trailing
+# "et al.") — a textbook/book citation with no journal and no year at all,
+# not a journal article. Only ever checked when AUTHOR_LIST_YEAR_PREFIX_RE
+# above didn't match (i.e. no year is present anywhere in the title).
+FULL_AUTHOR_LIST_RE = re.compile(
+    rf"^(?:{_AUTHOR_TOKEN_H}{_AUTHOR_SEP_H})*{_AUTHOR_TOKEN_H}{_ET_AL_H}\.?\s*$"
+)
+# A leading "(...)" clause left over once the author list and year are
+# stripped (e.g. "(First online 2 January 2021), Academy fellow...") is
+# citation metadata, not part of the title.
+_LEADING_PAREN_CLAUSE_RE = re.compile(r"^\([^)]*\)\s*,?\s*")
 
 
 def _find_year_boundary(before: str):
@@ -1480,6 +1679,43 @@ def scrape_directory(source: dict) -> list[Researcher]:
     return researchers
 
 
+_HEADING_LEVEL = {"h2": 2, "h3": 3, "h4": 4}
+
+# A sub-section label (an h4 under an h3 "Publications" heading, or a short
+# bold paragraph like "Selected working papers:") whose text matches any of
+# these (case-insensitive substring) holds nothing that should ever be
+# counted as a journal article — see FIX A in docs/DECISIONS.md.
+SUBSECTION_SKIP_SUBSTRINGS = (
+    "media", "interview", "newspaper", "press", "forum", "blog", "podcast",
+    "working paper", "work in progress", "under review", "presentation",
+    "seminar", "grant", "award",
+)
+
+
+def _subsection_skip(label: str | None) -> bool:
+    if not label:
+        return False
+    low = label.lower()
+    return any(sub in low for sub in SUBSECTION_SKIP_SUBSTRINGS)
+
+
+def _bold_label(p_tag, txt: str) -> str | None:
+    """
+    A paragraph that is ONLY a short bold label ending in ":" (e.g.
+    "Selected working papers:" or "Publication:") sets the current
+    sub-section and is not itself a publication. Returns the label text
+    (trailing colon stripped) or None if `txt` doesn't look like one.
+    """
+    if not txt.endswith(":") or len(txt) > 80:
+        return None
+    bold_bits = [clean_text(b.get_text(" ", strip=True))
+                 for b in p_tag.find_all(["b", "strong"])]
+    bold_text = " ".join(b for b in bold_bits if b).strip(" :")
+    if bold_text and bold_text == txt.strip(" :"):
+        return bold_text
+    return None
+
+
 def extract_publications_block(html: str) -> list[dict]:
     """
     Pull the list of publication paragraphs from a profile page, keeping BOTH
@@ -1487,6 +1723,15 @@ def extract_publications_block(html: str) -> list[dict]:
     (link text, href) pairs found in each paragraph. This matters because
     some publication titles are hyperlinks whose destination only exists as
     an href, not as visible text — get_text() alone throws that address away.
+
+    The section only ends at a heading of the SAME OR HIGHER level as the
+    "Publications" heading itself (e.g. for an h3 Publications heading, the
+    next h2 or h3 — not a lower-level h4, which is a sub-section INSIDE
+    Publications, not the start of a new page section). Every block found
+    under a lower-level heading, or under a short bold label paragraph like
+    "Selected working papers:", records that sub-section's label in a
+    "section" key on the block dict; a sub-section whose label matches
+    SUBSECTION_SKIP_SUBSTRINGS is skipped entirely (see FIX A).
     """
     soup = BeautifulSoup(html, "html.parser")
 
@@ -1498,18 +1743,31 @@ def extract_publications_block(html: str) -> list[dict]:
     if heading is None:
         return []
 
+    heading_level = _HEADING_LEVEL[heading.name]
+    section: str | None = None
+
     blocks: list[dict] = []
     for sib in heading.find_all_next():
         if sib.name in ("h2", "h3", "h4") and sib is not heading:
-            break
+            if _HEADING_LEVEL[sib.name] <= heading_level:
+                break
+            # A lower-level heading starts a new sub-section under Publications.
+            section = clean_text(sib.get_text(" ", strip=True)) or None
+            continue
         if sib.name in ("p", "li"):
             txt = clean_text(sib.get_text(" ", strip=True))
             if not txt or txt.lower().startswith("view research profile"):
+                continue
+            label = _bold_label(sib, txt)
+            if label is not None:
+                section = label
                 continue
             low = txt.strip(" .:").lower()
             if low in NON_PUBLICATION_HEADINGS:
                 continue
             if any(sub in low for sub in NON_PUBLICATION_SUBSTRINGS):
+                continue
+            if _subsection_skip(section):
                 continue
             links = [(clean_text(a.get_text(strip=True)), a["href"])
                      for a in sib.find_all("a") if a.get("href")]
@@ -1520,17 +1778,26 @@ def extract_publications_block(html: str) -> list[dict]:
             italics = [clean_text(em.get_text(strip=True))
                        for em in sib.find_all(["i", "em"])
                        if em.get_text(strip=True)]
-            blocks.append({"text": txt, "links": links, "italics": italics})
+            blocks.append({"text": txt, "links": links, "italics": italics,
+                            "section": section})
     return blocks
 
 
 def scrape_profile(researcher: Researcher) -> tuple[list[Publication], list[Publication], bool]:
     """
     Returns (confident_pubs, unparsed_pubs, had_publications_section).
+
+    Does NOT change shape for existing callers/tests. Any ORCID found on the
+    page (see extract_orcids) is stashed in PROFILE_ORCIDS, keyed by
+    researcher name, as a side channel — read by base_scrapers/anu.py right
+    after calling this function. This reuses the one page fetch already
+    made here instead of costing every profile a second HTTP request just
+    to look for an ORCID (see FIX D in docs/DECISIONS.md).
     """
     resp = get(researcher.profile_url)
     if resp is None:
         return [], [], False
+    PROFILE_ORCIDS[researcher.name] = extract_orcids(resp.text)
     blocks = extract_publications_block(resp.text)
     if not blocks:
         return [], [], False

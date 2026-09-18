@@ -128,6 +128,7 @@ def extract(work):
         "oa_status": oa.get("oa_status"),
         "oa_url": oa.get("oa_url"),
         "openalex_id": (work.get("id") or "").rsplit("/", 1)[-1] or None,
+        "publication_year": work.get("publication_year"),
         # Staff directories carry no publisher, so that column sat empty on
         # every UNSW row. OpenAlex knows it for anything already matched and
         # returns it in the same response, so it costs nothing extra.
@@ -194,6 +195,8 @@ def enrich(pubs, verbose=True):
             x["authors"] = hit["authors"]
         if hit.get("n_authors") and not x.get("n_authors"):    
             x["n_authors"] = hit["n_authors"]
+        if hit.get("publication_year") and not x.get("year"):
+            x["year"] = str(hit["publication_year"])
 
     if verbose:
         arts = [x for x in pubs if x.get("type") == "Journal Article"]

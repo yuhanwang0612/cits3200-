@@ -8,6 +8,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -137,6 +138,208 @@ class ParsingTests(unittest.TestCase):
         self.assertIn("f.author=Biddle%2C+Gary%2Cequals", url)
         self.assertIn("dsoType=item", url)
         self.assertNotIn("query=", url)
+
+    def test_unimelb_generates_minerva_family_first_author_name(self):
+        names = unimelb.repository_author_names("Tongqing (Tony) Ding")
+        self.assertIn("Ding, Tongqing", names)
+        self.assertIn("Ding, Tony", names)
+
+    def test_unimelb_can_discover_identity_outside_department_seed(self):
+        person = {
+            "name_clean": "Tongqing (Tony) Ding", "discipline": "Accounting",
+            "profile_url": "https://findanexpert.unimelb.edu.au/profile/1",
+            "source_id": None, "orcid": None,
+        }
+        wrapper = {
+            "_embedded": {"indexableObject": {
+                "type": "item", "uuid": "abc", "metadata": {
+                    "dc.title": [{"value": "A paper"}],
+                    "melbourne.internal.authorids": [{
+                        "value": "Ding, Tongqing; 12345; 0000-0001-0000-0001"
+                    }],
+                },
+            }},
+        }
+
+        class Client:
+            def get_json(self, url):
+                if "Ding%2C+Tongqing" in url:
+                    return {"_embedded": {"searchResult": {
+                        "page": {"totalPages": 1},
+                        "_embedded": {"objects": [wrapper]},
+                    }}}
+                return {"_embedded": {"searchResult": {
+                    "page": {"totalPages": 1}, "_embedded": {"objects": []},
+                }}}
+
+        identity = {
+            "person": person, "confidence": "none", "candidate_count": 0,
+            "internal_id": "", "orcid": "", "repository_author_name": "",
+        }
+        stats = unimelb._resolve_missing_minerva_identities(
+            Client(), [identity], max_workers=1, verbose=False
+        )
+        self.assertEqual(identity["confidence"], "high")
+        self.assertEqual(person["source_id"], "12345")
+        self.assertEqual(person["orcid"], "0000-0001-0000-0001")
+        self.assertEqual(stats["resolved"], 1)
+
+    def test_unimelb_parenthesised_nickname_does_not_block_identity_match(self):
+        person = {
+            "name_clean": "Tongqing (Tony) Ding", "discipline": "Accounting",
+            "profile_url": "https://findanexpert.unimelb.edu.au/profile/1",
+            "source_id": None, "orcid": None,
+        }
+        seed = [{"internal_authors": [{
+            "name": "Ding, Tongqing", "internal_id": "12345", "orcid": "", "raw": "Ding, Tongqing; 12345",
+        }]}]
+        identity = unimelb._build_identities([person], seed)[0]
+        self.assertEqual(identity["confidence"], "high")
+        self.assertEqual(identity["internal_id"], "12345")
+
+    def test_unimelb_openalex_identity_requires_name_and_institution(self):
+        person = {
+            "name_clean": "Tongqing (Tony) Ding", "discipline": "Accounting",
+            "profile_url": "https://findanexpert.unimelb.edu.au/profile/1",
+            "source_id": None, "orcid": None,
+        }
+        response = {"results": [
+            {
+                "id": "https://openalex.org/A1", "display_name": "Tongqing Ding",
+                "display_name_alternatives": [], "orcid": "https://orcid.org/0000-0001-0000-0001",
+                "last_known_institutions": [{"ror": "https://ror.org/01ej9dk98"}], "affiliations": [],
+            },
+            {
+                "id": "https://openalex.org/A2", "display_name": "Tongqing Ding",
+                "display_name_alternatives": [], "orcid": "https://orcid.org/0000-0002-0000-0002",
+                "last_known_institutions": [{"ror": "https://ror.org/not-unimelb"}], "affiliations": [],
+            },
+        ]}
+        with patch.object(unimelb, "cached_get", return_value=response):
+            stats = unimelb._add_openalex_ids([person], verbose=False)
+        self.assertEqual(person["openalex_author_ids"], ["A1"])
+        self.assertEqual(person["orcid"], "0000-0001-0000-0001")
+        self.assertEqual(stats["resolved"], 1)
+
+    def test_unimelb_orcid_identity_requires_name_and_institution(self):
+        person = {
+            "name_clean": "Michelle Sabe", "discipline": "Accounting",
+            "profile_url": "https://fbe.unimelb.edu.au/michelle-sabe",
+            "source_id": None, "orcid": None,
+        }
+        response = {"expanded-result": [
+            {
+                "orcid-id": "0009-0000-2679-0205", "given-names": "Michelle",
+                "family-names": "Sabe", "institution-name": ["The University of Melbourne"],
+            },
+            {
+                "orcid-id": "0000-0001-9999-9999", "given-names": "Michelle",
+                "family-names": "Sabe", "institution-name": ["Another University"],
+            },
+        ]}
+        with patch.object(unimelb, "cached_get", return_value=response):
+            stats = unimelb._add_orcid_ids([person], verbose=False)
+        self.assertEqual(person["orcid"], "0009-0000-2679-0205")
+        self.assertEqual(
+            person["orcid_identity_status"],
+            "verified_exact_name_and_unimelb_affiliation",
+        )
+        self.assertEqual(stats["resolved"], 1)
+
+    def test_unimelb_orcid_without_unimelb_affiliation_is_not_guessed(self):
+        person = {
+            "name_clean": "Rosemary Addis", "discipline": "Accounting",
+            "profile_url": "https://fbe.unimelb.edu.au/rosemary-addis",
+            "source_id": None, "orcid": None,
+        }
+        response = {"expanded-result": [{
+            "orcid-id": "0000-0001-9466-4470", "given-names": "Rosemary",
+            "family-names": "Addis", "institution-name": [],
+        }]}
+        with patch.object(unimelb, "cached_get", return_value=response):
+            stats = unimelb._add_orcid_ids([person], verbose=False)
+        self.assertIsNone(person["orcid"])
+        self.assertEqual(person["orcid_identity_status"], "not_found")
+        self.assertEqual(stats["not_found"], 1)
+
+    def test_unimelb_unique_extra_given_name_can_be_verified(self):
+        person = {
+            "name_clean": "Flora Kuang", "discipline": "Accounting",
+            "profile_url": "https://findanexpert.unimelb.edu.au/profile/743113",
+            "source_id": None, "orcid": None,
+        }
+        response = {"results": [{
+            "id": "https://openalex.org/A5049443262", "display_name": "Yu Flora Kuang",
+            "display_name_alternatives": ["Flora Yu Kuang"],
+            "orcid": "https://orcid.org/0000-0001-5095-4118",
+            "last_known_institutions": [{"ror": "https://ror.org/01ej9dk98"}],
+            "affiliations": [],
+        }]}
+        with patch.object(unimelb, "cached_get", return_value=response):
+            stats = unimelb._add_openalex_ids([person], verbose=False)
+        self.assertEqual(person["openalex_author_ids"], ["A5049443262"])
+        self.assertEqual(
+            person["openalex_identity_status"],
+            "verified_one_token_name_extension_and_unimelb_affiliation",
+        )
+        self.assertEqual(stats["resolved"], 1)
+
+    def test_unimelb_openalex_ambiguous_people_are_not_guessed(self):
+        person = {
+            "name_clean": "Alex Smith", "discipline": "Finance",
+            "profile_url": "https://findanexpert.unimelb.edu.au/profile/2",
+            "source_id": None, "orcid": None,
+        }
+        response = {"results": [
+            {
+                "id": "https://openalex.org/A1", "display_name": "Alex Smith",
+                "orcid": "https://orcid.org/0000-0001-0000-0001",
+                "last_known_institutions": [{"ror": "https://ror.org/01ej9dk98"}], "affiliations": [],
+            },
+            {
+                "id": "https://openalex.org/A2", "display_name": "Alex Smith",
+                "orcid": "https://orcid.org/0000-0002-0000-0002",
+                "last_known_institutions": [],
+                "affiliations": [{"institution": {"ror": "https://ror.org/01ej9dk98"}}],
+            },
+        ]}
+        with patch.object(unimelb, "cached_get", return_value=response):
+            stats = unimelb._add_openalex_ids([person], verbose=False)
+        self.assertEqual(person["openalex_author_ids"], [])
+        self.assertIsNone(person["orcid"])
+        self.assertEqual(person["openalex_identity_status"], "ambiguous")
+        self.assertEqual(stats["ambiguous"], 1)
+
+    def test_unimelb_openalex_lookup_stops_after_repeated_failures(self):
+        people = [{
+            "name_clean": f"Person {index}", "discipline": "Finance",
+            "profile_url": f"https://findanexpert.unimelb.edu.au/profile/{index}",
+            "source_id": None, "orcid": None,
+        } for index in range(4)]
+        with patch.object(unimelb, "cached_get", side_effect=ConnectionError("offline")) as lookup:
+            stats = unimelb._add_openalex_ids(people, verbose=False)
+        self.assertEqual(lookup.call_count, 3)
+        self.assertEqual(stats["aborted_after_repeated_errors"], 1)
+        self.assertEqual(people[-1]["openalex_identity_status"], "not_attempted_after_repeated_errors")
+
+    def test_unimelb_approved_openalex_override_survives_automatic_lookup(self):
+        person = {
+            "name_clean": "Jane Example", "discipline": "Finance",
+            "profile_url": "https://findanexpert.unimelb.edu.au/profile/1",
+            "source_id": None, "orcid": None,
+        }
+        override = {
+            "name": "Jane Example", "discipline": "Finance",
+            "profile_url": person["profile_url"],
+            "openalex_author_ids": ["A123"], "orcid": "",
+            "evidence_url": "https://openalex.org/A123",
+        }
+        self.assertEqual(unimelb._apply_manual_retrieval_overrides([person], [override]), 1)
+        with patch.object(unimelb, "cached_get") as lookup:
+            unimelb._add_openalex_ids([person], verbose=False)
+        lookup.assert_not_called()
+        self.assertEqual(person["openalex_author_ids"], ["A123"])
+        self.assertEqual(person["identity_source"], "manual_verified_override")
 
     def test_verified_identity_override_requires_same_person_and_profile(self):
         person = {
