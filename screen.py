@@ -62,6 +62,7 @@ the judgement here is a heuristic and a human has to be able to overrule it.
 """
 
 import csv
+import re
 
 # Below this many JUDGEABLE rows, one odd journal proves nothing: a researcher
 # with three retrieved papers, one of them in a medical journal, is a normal
@@ -73,6 +74,54 @@ MIN_ABDC_SHARE = 0.25
 
 # Sources that added rows we did not scrape ourselves.
 RETRIEVED = {"ORCID", "Crossref", "OpenAlex"}
+
+# Reviewed UniMelb OpenAlex collisions.  These rules are deliberately scoped
+# to one named researcher and to OpenAlex additions: official Minerva rows and
+# self-declared ORCID rows are never removed by them.  Common names such as
+# Jun Yu and Qi Zeng are heavily merged in OpenAlex; their ABDC-matched rows
+# form a conservative business-publication subset, while the unranked cluster
+# consists overwhelmingly of engineering, materials and clinical papers.
+_DROP_ALL_OPENALEX = {"Bryan Lim", "Patrick J. Kelly"}
+_OPENALEX_REQUIRE_ABDC = {"Albie Brooks", "Jun Yu", "Nitin Yadav", "Qi Zeng"}
+_MICHAEL_DAVERN_NAMESAKE = re.compile(
+    r"health|medicaid|medicare|uninsur|insurance coverage|census|schip|"
+    r"patient|asthma|tobacco|cancer surgery|minority group|rural latino|"
+    r"telephone survey|survey sample|survey estimates|race and ethnicity|"
+    r"social networks|face-to-face interviews|the polls|prestige attainment|"
+    r"population survey|public use data|privately insured|auxiliary sample frame|"
+    r"\bchip\b",
+    re.I,
+)
+_CONFIRMED_WRONG_DOIS = {
+    ("Qingbo Yuan", "10.1007/s10404-017-1854-2"),
+    ("Stefan Schantl", "10.1109/access.2021.3112297"),
+}
+_CONFIRMED_WRONG_TITLES = {
+    ("Mrinal Mishra", "study on impact of covid-19 on 5a's of telemedicine"),
+    ("Mrinal Mishra", "the effect of conflict on lending: evidence from indian border areas"),
+}
+
+
+def reviewed_namesake_reason(row):
+    """Return a reason for a specifically reviewed OpenAlex collision."""
+    if row.get("source") != "OpenAlex":
+        return None
+    name = row.get("name") or ""
+    title = (row.get("title") or "").strip()
+    doi = (row.get("doi") or "").strip().lower()
+    if name in _DROP_ALL_OPENALEX:
+        return "reviewed OpenAlex namesake cluster outside this researcher's field"
+    if name in _OPENALEX_REQUIRE_ABDC and not row.get("abdc"):
+        return "common-name OpenAlex cluster; no business-journal evidence for this row"
+    if name == "Qi Zeng" and "immunoassay" in title.lower():
+        return "reviewed medical-statistics namesake publication"
+    if name == "Michael Davern" and _MICHAEL_DAVERN_NAMESAKE.search(title + " " + (row.get("journal") or "")):
+        return "reviewed US public-health researcher namesake publication"
+    if (name, doi) in _CONFIRMED_WRONG_DOIS:
+        return "reviewed namesake publication outside Accounting/Finance"
+    if (name, title.lower()) in _CONFIRMED_WRONG_TITLES:
+        return "reviewed namesake publication outside Accounting/Finance"
+    return None
 
 
 def rateable(row):
@@ -149,15 +198,26 @@ def screen(records, pubs, out_dir=None, verbose=True):
         if suspect(entry) and name not in repository_verified
     }
 
-    if not flagged:
+    reviewed_present = any(reviewed_namesake_reason(row) for row in pubs)
+    if not flagged and not reviewed_present:
         if verbose:
             print("screen: nothing looks out of discipline")
         return pubs
 
     kept, dropped = [], []
     for row in pubs:
-        if row.get("name") in flagged and row.get("source") in RETRIEVED:
-            dropped.append(row)
+        reviewed_reason = reviewed_namesake_reason(row)
+        if reviewed_reason:
+            dropped.append(dict(row, _screened_reason=reviewed_reason))
+        elif row.get("name") in flagged and row.get("source") in RETRIEVED:
+            dropped.append(dict(
+                row,
+                _screened_reason=(
+                    f"only {stats[row['name']]['share']:.0%} of this researcher's "
+                    "retrieved journal articles are in an ABDC-rated journal; "
+                    "the identifier probably belongs to a namesake"
+                ),
+            ))
         else:
             kept.append(row)
 
@@ -180,12 +240,9 @@ def screen(records, pubs, out_dir=None, verbose=True):
             writer = csv.DictWriter(f, fieldnames=columns, extrasaction="ignore")
             writer.writeheader()
             for row in dropped:
-                share = stats[row["name"]]["share"]
                 writer.writerow(dict(
-                    row, screened_reason=(
-                        f"only {share:.0%} of this researcher's retrieved "
-                        f"journal articles are in an ABDC-rated journal; the "
-                        f"ORCID they came from is probably a namesake's")))
+                    row, screened_reason=row.get("_screened_reason") or
+                    "reviewed namesake publication"))
 
     if verbose:
         print(f"screen: removed {len(dropped)} retrieved rows from "

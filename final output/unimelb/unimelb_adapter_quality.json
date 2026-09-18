@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T08:24:47.388429+00:00",
+  "generated_at": "2026-09-18T11:41:21.219260+00:00",
   "mode": "live",
   "roster_sources": {
     "Accounting": "live",
@@ -2473,6 +2473,13 @@
           "has_unimelb_affiliation": false
         },
         {
+          "openalex_author_id": "A5023944113",
+          "display_name": "Natalie Le Roux",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
           "openalex_author_id": "A5106773710",
           "display_name": "Natalie Le Clue",
           "orcid": null,
@@ -2487,6 +2494,13 @@
           "has_unimelb_affiliation": false
         },
         {
+          "openalex_author_id": "A5106773698",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
           "openalex_author_id": "A5116883975",
           "display_name": "Natalie Le Clue",
           "orcid": null,
@@ -2495,20 +2509,6 @@
         },
         {
           "openalex_author_id": "A5131359706",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5023944113",
-          "display_name": "Natalie Le Roux",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5106773698",
           "display_name": "Natalie Le Clue",
           "orcid": null,
           "works_count": 1,
@@ -3439,18 +3439,18 @@
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5053404847",
-          "display_name": "Thu Anh Nguyen",
-          "orcid": "0000-0002-2089-2902",
-          "works_count": 178,
-          "has_unimelb_affiliation": true
-        },
-        {
           "openalex_author_id": "A5059294221",
           "display_name": "Linda Nguyen",
           "orcid": "0000-0002-7165-6678",
           "works_count": 108,
           "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5053404847",
+          "display_name": "Thu Anh Nguyen",
+          "orcid": "0000-0002-2089-2902",
+          "works_count": 178,
+          "has_unimelb_affiliation": true
         },
         {
           "openalex_author_id": "A5106428542",
@@ -4833,6 +4833,13 @@
           "has_unimelb_affiliation": false
         },
         {
+          "openalex_author_id": "A5023944113",
+          "display_name": "Natalie Le Roux",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
           "openalex_author_id": "A5106773710",
           "display_name": "Natalie Le Clue",
           "orcid": null,
@@ -4847,6 +4854,13 @@
           "has_unimelb_affiliation": false
         },
         {
+          "openalex_author_id": "A5106773698",
+          "display_name": "Natalie Le Clue",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
           "openalex_author_id": "A5116883975",
           "display_name": "Natalie Le Clue",
           "orcid": null,
@@ -4855,20 +4869,6 @@
         },
         {
           "openalex_author_id": "A5131359706",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5023944113",
-          "display_name": "Natalie Le Roux",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5106773698",
           "display_name": "Natalie Le Clue",
           "orcid": null,
           "works_count": 1,
@@ -5587,18 +5587,18 @@
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5053404847",
-          "display_name": "Thu Anh Nguyen",
-          "orcid": "0000-0002-2089-2902",
-          "works_count": 178,
-          "has_unimelb_affiliation": true
-        },
-        {
           "openalex_author_id": "A5059294221",
           "display_name": "Linda Nguyen",
           "orcid": "0000-0002-7165-6678",
           "works_count": 108,
           "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5053404847",
+          "display_name": "Thu Anh Nguyen",
+          "orcid": "0000-0002-2089-2902",
+          "works_count": 178,
+          "has_unimelb_affiliation": true
         },
         {
           "openalex_author_id": "A5106428542",

@@ -9,6 +9,8 @@ float — so both are coerced. Journals with no report for the requested
 year return None rather than raising; ESCI-only titles often have none.
 """
 
+import re
+
 from core.config import JCR_BASE, JCR_SLEEP, JCR_YEAR, jcr_headers
 from core.http import cached_get
 
@@ -38,9 +40,21 @@ def _lookup_issn(issn, headers):
     }
 
 
+def _issns(values):
+    """Split malformed combined ISSN cells into individual API query keys."""
+    found = []
+    for value in values or []:
+        for raw in re.findall(r"\b\d{4}-?\d{3}[\dX]\b", str(value), re.I):
+            compact = raw.upper().replace("-", "")
+            issn = f"{compact[:4]}-{compact[4:]}"
+            if issn not in found:
+                found.append(issn)
+    return found
+
+
 def enrich(pubs, verbose=True):
     headers = jcr_headers()
-    issns = sorted({i for x in pubs for i in (x.get("issns") or [])})
+    issns = sorted({i for x in pubs for i in _issns(x.get("issns"))})
     cache = {}
 
     for n, issn in enumerate(issns, 1):
@@ -53,7 +67,7 @@ def enrich(pubs, verbose=True):
             print(f"  {n}/{len(issns)} ISSNs")
 
     for x in pubs:
-        hit = next((cache[i] for i in (x.get("issns") or []) if cache.get(i)), None)
+        hit = next((cache[i] for i in _issns(x.get("issns")) if cache.get(i)), None)
         x["impact_factor"] = hit["impact_factor"] if hit else None
         x["impact_factor_5yr"] = hit["impact_factor_5yr"] if hit else None
         x["jcr_year"] = JCR_YEAR if hit else None

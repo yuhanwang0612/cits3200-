@@ -27,6 +27,19 @@ if _ov_path.exists():
         for row in csv.DictReader(f):          # columns: doi,field,value
             _OVERRIDES.setdefault(row["doi"].lower(), {})[row["field"]] = row["value"]
 
+# Confirmed author-identity collisions.  These are deliberately keyed by both
+# researcher name and DOI: a paper can be a valid record for one staff member
+# while being a namesake false-positive for another.  Keeping the evidence in
+# data/ makes every future refresh reproduce the reviewed decision instead of
+# relying on a one-off edit to the exported CSV.
+_PUBLICATION_EXCLUSIONS = {}
+_ex_path = Path(__file__).resolve().parents[1] / "data" / "publication_exclusions.csv"
+if _ex_path.exists():
+    with open(_ex_path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            key = (row["name"].strip().casefold(), row["doi"].strip().lower())
+            _PUBLICATION_EXCLUSIONS[key] = row
+
 def _apply_overrides(pub):
     doi = (pub.get("doi") or "").lower()
     for field, value in _OVERRIDES.get(doi, {}).items():
@@ -45,6 +58,11 @@ _PREPRINT_VENUES = {
     "preprints.org", "research square", "repec",
     "nber", "national bureau of economic research",
 }
+
+# SSRN DOIs identify working-paper/preprint records even when ORCID or another
+# upstream source incorrectly labels the item as a journal article and omits
+# the venue. Venue-only filtering cannot catch that shape.
+_PREPRINT_DOI_PREFIXES = ("10.2139/ssrn.",)
 
 # Non-substantive items that eSpace/Crossref/ORCID tag as "Journal Article".
 # Anchored to the START so it drops "Erratum to…", "Corrigendum to…",
@@ -91,6 +109,11 @@ def clean_doi(value):
     if not value:
         return None
     doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", value.strip(), flags=re.I)
+    # DOI URLs copied from feeds sometimes retain analytics parameters or an
+    # HTML suffix after the DOI.  Crossref treats those as part of the DOI and
+    # returns HTTP 400, so remove URL-only decoration before validation.
+    doi = re.sub(r"[?#].*$", "", doi)
+    doi = re.sub(r"\.html?$", "", doi, flags=re.I)
     return doi if _DOI_RE.match(doi) else None
 
 
@@ -109,7 +132,13 @@ def is_excluded(pub):
     check that must run post-info/, because those sources re-introduce rows
     the adapter's own filter never sees."""
     title = pub.get("title")
-    return bool(title and _EXCLUDE_TITLE.match(title))
+    if title and _EXCLUDE_TITLE.match(title):
+        return True
+    key = (
+        (pub.get("name") or "").strip().casefold(),
+        (pub.get("doi") or "").strip().lower(),
+    )
+    return key in _PUBLICATION_EXCLUSIONS
 
 
 def clean_pub(pub, log=None):
@@ -160,6 +189,11 @@ def clean_pub(pub, log=None):
         note(f"    link    {who}: dropped dead doi.org link {pub['link']!r}")
         pub["link"] = None
 
+    if pub.get("doi") and pub["doi"].lower().startswith(_PREPRINT_DOI_PREFIXES):
+        if pub.get("type") != "Preprint":
+            note(f"    type    {who}: {pub.get('type')!r} -> 'Preprint'  (SSRN DOI)")
+        pub["type"] = "Preprint"
+
     for field, value in _OVERRIDES.get(raw_doi, {}).items():
         pub[field] = value
     if pub.get("doi") and not pub.get("link"):
@@ -184,7 +218,13 @@ def clean_pubs(pubs, verbose=False):
             for line in log:
                 print(line)
         for p in dropped:
-            print(f"    drop    {p.get('name','?')}: {p.get('title')!r}")
+            key = (
+                (p.get("name") or "").strip().casefold(),
+                (p.get("doi") or "").strip().lower(),
+            )
+            reviewed = _PUBLICATION_EXCLUSIONS.get(key)
+            reason = f" ({reviewed['reason']})" if reviewed else ""
+            print(f"    drop    {p.get('name','?')}: {p.get('title')!r}{reason}")
         print(f"  kept {len(kept)}, dropped {len(dropped)}")
 
     return kept

@@ -445,6 +445,59 @@ def _discover_publication_urls(client: HttpClient, person: dict[str, Any]) -> tu
         return sorted(urls), str(error)
 
 
+def _merge_duplicate_staff_affiliations(
+    staff: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Return one staff row per official Pure person profile.
+
+    Pure can list the same person under both Accounting and Finance.  The
+    shared staff/DB contract stores one field_of_research and uniquely keys a
+    researcher within a university, so emitting two rows inflates headcount
+    and the database silently keeps only one. Prefer the affiliation that has
+    the strongest appointment metadata and record the other discipline in the
+    quality report instead of pretending it is a second person.
+    """
+
+    groups: dict[str, list[dict[str, Any]]] = {}
+    order: list[str] = []
+    for row in staff:
+        key = row.get("profile_url") or row.get("source_id") or row.get("orcid") or row["name_clean"].casefold()
+        if key not in groups:
+            groups[key] = []
+            order.append(key)
+        groups[key].append(row)
+
+    merged: list[dict[str, Any]] = []
+    audit: list[dict[str, Any]] = []
+    for key in order:
+        rows = groups[key]
+        winner = max(
+            enumerate(rows),
+            key=lambda pair: (
+                bool(pair[1].get("title")),
+                bool(pair[1].get("level_code")),
+                bool(pair[1].get("person_type")),
+                -pair[0],
+            ),
+        )[1]
+        chosen = dict(winner)
+        disciplines = list(dict.fromkeys(row["discipline"] for row in rows))
+        chosen["additional_disciplines"] = [
+            discipline for discipline in disciplines
+            if discipline != chosen["discipline"]
+        ]
+        merged.append(chosen)
+        if len(rows) > 1:
+            audit.append({
+                "name": chosen["name_clean"],
+                "profile_url": chosen.get("profile_url"),
+                "primary_discipline": chosen["discipline"],
+                "additional_disciplines": chosen["additional_disciplines"],
+                "reason": "same official Pure person profile listed by multiple organisations",
+            })
+    return merged, audit
+
+
 def _collect_live(
     disciplines: Iterable[str], *, refresh: bool, max_workers: int, limit_staff: int | None, verbose: bool
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
@@ -455,6 +508,8 @@ def _collect_live(
         rows, failures = _discover_staff(client, discipline, verbose)
         staff.extend(rows)
         staff_failures.extend(failures)
+    raw_staff_count = len(staff)
+    staff, affiliation_merges = _merge_duplicate_staff_affiliations(staff)
     if limit_staff is not None:
         staff = staff[:limit_staff]
 
@@ -528,7 +583,9 @@ def _collect_live(
     quality = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "mode": "live",
+        "raw_staff_affiliation_rows": raw_staff_count,
         "staff_records": len(staff),
+        "staff_affiliation_merges": affiliation_merges,
         "unique_publication_urls": len(all_urls),
         "researcher_publication_links": len(pubs),
         "publication_feed_reconciliation": discovery_checks,
