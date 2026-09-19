@@ -21,7 +21,7 @@
   },
   {
     "name": "Francisco Barillas Bedoya",
-    "job_title": "Professor",
+    "job_title": "Head of School",
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -101,7 +101,7 @@
   },
   {
     "name": "Demi Chung",
-    "job_title": "Senior Lecturer",
+    "job_title": "Adjunct Senior Lecturer",
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -271,7 +271,7 @@
   },
   {
     "name": "Noel Harding",
-    "job_title": "Professor",
+    "job_title": "Head of School",
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -341,7 +341,7 @@
   },
   {
     "name": "Alexandre Jeanneret",
-    "job_title": "Professor",
+    "job_title": "Deputy Head of School - Research",
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -471,7 +471,7 @@
   },
   {
     "name": "Gordon Mackenzie",
-    "job_title": "Senior Lecturer",
+    "job_title": "Adjunct Senior Lecturer",
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -521,7 +521,7 @@
   },
   {
     "name": "Malcolm Miller",
-    "job_title": "Associate Professor",
+    "job_title": "Honorary Associate Professor",
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -770,18 +770,8 @@
     "profile_url": "https://www.unsw.edu.au/staff/andrew-terry"
   },
   {
-    "name": "Wing Wah Tham",
-    "job_title": "Associate Professor",
-    "academic_level": "D",
-    "university": "UNSW Sydney",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": "0000-0002-1169-0073",
-    "profile_url": "https://www.unsw.edu.au/staff/wing-wah-tham"
-  },
-  {
     "name": "Thuy Duong To",
-    "job_title": "Associate Professor",
+    "job_title": "Deputy Head of School - Education",
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -801,7 +791,7 @@
   },
   {
     "name": "Michael Triguboff",
-    "job_title": "Professor",
+    "job_title": "Adjunct Professor",
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -871,7 +861,7 @@
   },
   {
     "name": "Yan Xu",
-    "job_title": "Professor",
+    "job_title": "Scientia Professor",
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",

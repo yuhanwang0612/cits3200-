@@ -1,7 +1,7 @@
 name,job_title,academic_level,university,field_of_research,source_id,orcid,profile_url
 Nicole Ang,Senior Lecturer,C,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/nicole-ang
 Maria Balatbat,Senior Lecturer,C,UNSW Sydney,Accounting,,0000-0001-5180-0057,https://www.unsw.edu.au/staff/maria-balatbat
-Francisco Barillas Bedoya,Professor,E,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/francisco-barillas-bedoya
+Francisco Barillas Bedoya,Head of School,E,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/francisco-barillas-bedoya
 Dale Boccabella,Associate Professor,D,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/dale-boccabella
 Rodney Brown,Senior Lecturer,C,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/rodney-brown
 Elizabeth Carson,Emeritus Professor,E,UNSW Sydney,Accounting,,0000-0003-1601-4290,https://www.unsw.edu.au/staff/elizabeth-carson
@@ -9,7 +9,7 @@ Linda Chang,Associate Professor,D,UNSW Sydney,Accounting,,0000-0002-2844-6149,ht
 Wei Chen,Professor,E,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/wei-chen
 Zongxi Chen,Associate Lecturer,A,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/zongxi-chen
 Mandy Cheng,Professor,E,UNSW Sydney,Accounting,,0000-0003-2487-2543,https://www.unsw.edu.au/staff/mandy-cheng
-Demi Chung,Senior Lecturer,C,UNSW Sydney,Accounting,,0000-0002-9678-7412,https://www.unsw.edu.au/staff/demi-chung
+Demi Chung,Adjunct Senior Lecturer,C,UNSW Sydney,Accounting,,0000-0002-9678-7412,https://www.unsw.edu.au/staff/demi-chung
 Oleg Chuprinin,Associate Professor,D,UNSW Sydney,Finance,,0000-0003-4805-2451,https://www.unsw.edu.au/staff/oleg-chuprinin
 Victoria Clout,Senior Lecturer,C,UNSW Sydney,Accounting,,0000-0002-3442-7315,https://www.unsw.edu.au/staff/victoria-clout
 Conor Clune,Associate Professor,D,UNSW Sydney,Accounting,,0000-0002-8894-3438,https://www.unsw.edu.au/staff/conor-clune
@@ -26,14 +26,14 @@ Mathieu Fournier,Associate Professor,D,UNSW Sydney,Finance,,0000-0003-2373-5950,
 Luis Filipe Goncalves-Pinto,Associate Professor,D,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/luis-filipe-goncalves-pinto
 Jennie Granger,Professor,E,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/jennie-granger
 Ed Harbor,Lecturer,B,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/ed-harbor
-Noel Harding,Professor,E,UNSW Sydney,Accounting,,0000-0003-4647-4335,https://www.unsw.edu.au/staff/noel-harding
+Noel Harding,Head of School,E,UNSW Sydney,Accounting,,0000-0003-4647-4335,https://www.unsw.edu.au/staff/noel-harding
 Hien Hoang,Senior Lecturer,C,UNSW Sydney,Accounting,,0000-0003-4939-180X,https://www.unsw.edu.au/staff/hien-hoang
 Sarowar Hossain,Senior Lecturer,C,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/sarowar-hossain
 Mark Humphery-Jenner,Associate Professor,D,UNSW Sydney,Finance,,0000-0002-0541-1541,https://www.unsw.edu.au/staff/mark-humphery-jenner
 Kerry Humphreys,Professor,E,UNSW Sydney,Accounting,,0000-0003-4861-8312,https://www.unsw.edu.au/staff/kerry-humphreys
 Andrew Jackson,Associate Professor,D,UNSW Sydney,Accounting,,0000-0002-2074-2787,https://www.unsw.edu.au/staff/andrew-jackson
 Yeejin Jang,Associate Professor,D,UNSW Sydney,Finance,,0000-0003-1143-7534,https://www.unsw.edu.au/staff/yeejin-jang
-Alexandre Jeanneret,Professor,E,UNSW Sydney,Finance,,0000-0003-4628-1955,https://www.unsw.edu.au/staff/alexandre-jeanneret
+Alexandre Jeanneret,Deputy Head of School - Research,E,UNSW Sydney,Finance,,0000-0003-4628-1955,https://www.unsw.edu.au/staff/alexandre-jeanneret
 Helen Kang,Associate Professor,D,UNSW Sydney,Accounting,,0000-0002-6258-1264,https://www.unsw.edu.au/staff/helen-kang
 Ann Kayis-Kumar,Professor,E,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/ann-kayis-kumar
 Amy Kwan,Senior Lecturer,C,UNSW Sydney,Finance,,0000-0002-7480-1279,https://www.unsw.edu.au/staff/amy-kwan
@@ -46,12 +46,12 @@ Youngdeok Lim,Associate Professor,D,UNSW Sydney,Accounting,,0000-0002-3715-2927,
 Yiping Lin,Lecturer,B,UNSW Sydney,Finance,,0000-0002-9130-0927,https://www.unsw.edu.au/staff/yiping-lin
 Benjamin Loos,Associate Professor,D,UNSW Sydney,Finance,,0000-0002-4687-6708,https://www.unsw.edu.au/staff/benjamin-loos
 Jing Lu,Lecturer,B,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/jing-lu
-Gordon Mackenzie,Senior Lecturer,C,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/gordon-mackenzie
+Gordon Mackenzie,Adjunct Senior Lecturer,C,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/gordon-mackenzie
 Faiza Majid,Senior Lecturer,C,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/faiza-majid
 Fiona Martin,Emeritus Professor,E,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/fiona-martin
 Ronald Masulis,Professor,E,UNSW Sydney,Finance,,0000-0001-5205-341X,https://www.unsw.edu.au/staff/ronald-masulis
 Edouard Mattille,Lecturer,B,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/edouard-mattille
-Malcolm Miller,Associate Professor,D,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/malcolm-miller
+Malcolm Miller,Honorary Associate Professor,D,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/malcolm-miller
 Gary Monroe,Professor,E,UNSW Sydney,Accounting,,0000-0003-2608-0531,https://www.unsw.edu.au/staff/gary-monroe
 Kate Morgan,Senior Lecturer,C,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/kate-morgan
 Richard Morris,Associate Professor,D,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/richard-morris1
@@ -76,17 +76,16 @@ Elvira Sojli,Associate Professor,D,UNSW Sydney,Finance,,0000-0002-1567-8901,http
 Peter Swan,Professor,E,UNSW Sydney,Finance,,0000-0001-8406-2564,https://www.unsw.edu.au/staff/peter-swan
 Stuart Taylor,Lecturer,B,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/stuart-taylor
 Andrew Terry,Emeritus Professor,E,UNSW Sydney,Accounting,,0000-0002-0619-7233,https://www.unsw.edu.au/staff/andrew-terry
-Wing Wah Tham,Associate Professor,D,UNSW Sydney,Finance,,0000-0002-1169-0073,https://www.unsw.edu.au/staff/wing-wah-tham
-Thuy Duong To,Associate Professor,D,UNSW Sydney,Finance,,0000-0001-9125-7773,https://www.unsw.edu.au/staff/thuy-to
+Thuy Duong To,Deputy Head of School - Education,D,UNSW Sydney,Finance,,0000-0001-9125-7773,https://www.unsw.edu.au/staff/thuy-to
 Binh Tran-Nam,Professor,E,UNSW Sydney,Accounting,,0000-0001-5516-7762,https://www.unsw.edu.au/staff/binh-tran-nam
-Michael Triguboff,Professor,E,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/michael-triguboff
+Michael Triguboff,Adjunct Professor,E,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/michael-triguboff
 Ken Trotman,Professor,E,UNSW Sydney,Accounting,,0000-0003-1211-2379,https://www.unsw.edu.au/staff/ken-trotman
 Robert Tumarkin,Senior Lecturer,C,UNSW Sydney,Finance,,0000-0003-3164-1049,https://www.unsw.edu.au/staff/robert-tumarkin
 Kristina Vojvoda,Lecturer,B,UNSW Sydney,Accounting,,0000-0001-5882-9223,https://www.unsw.edu.au/staff/kristina-vojvoda
 Michael Walpole,Professor,E,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/michael-walpole
 Neil Warren,Emeritus Professor,E,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/neil-warren
 Su-Ming Wong,Professor,E,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/su-ming-wong
-Yan Xu,Professor,E,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/yan-xu
+Yan Xu,Scientia Professor,E,UNSW Sydney,Accounting,,,https://www.unsw.edu.au/staff/yan-xu
 Yuchen Xu,Senior Lecturer,C,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/yuchen-xu
 Zhaoxia Xu,Associate Professor,D,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/zhaoxia-xu
 Li Yang,Professor,E,UNSW Sydney,Finance,,,https://www.unsw.edu.au/staff/li-yang
