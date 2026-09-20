@@ -19,8 +19,8 @@ def test_offline_exclusion_keeps_csv_json_and_journals_in_sync(tmp_path):
         {"name": "Bryan Lim", "title": "Right", "doi": "10.1000/right", "journal_name": "Right Journal"},
     ]
     journals = [
-        {"journal_name": "Wrong Journal", "issn": "1"},
-        {"journal_name": "Right Journal", "issn": "2"},
+        {"journal_name": "Wrong Journal", "issn": "1", "jcr_year": "2025.0"},
+        {"journal_name": "Right Journal", "issn": "2", "jcr_year": "2025.0"},
     ]
     _write_csv(out / "unimelb_publications.csv", publications)
     _write_csv(out / "unimelb_journals.csv", journals)
@@ -32,4 +32,6 @@ def test_offline_exclusion_keeps_csv_json_and_journals_in_sync(tmp_path):
     with (out / "unimelb_publications.csv").open(newline="") as handle:
         assert [row["title"] for row in csv.DictReader(handle)] == ["Right"]
     assert [row["title"] for row in json.loads((out / "unimelb_publications.json").read_text())] == ["Right"]
-    assert [row["journal_name"] for row in json.loads((out / "unimelb_journals.json").read_text())] == ["Right Journal"]
+    final_journals = json.loads((out / "unimelb_journals.json").read_text())
+    assert [row["journal_name"] for row in final_journals] == ["Right Journal"]
+    assert final_journals[0]["jcr_year"] == 2025

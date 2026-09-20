@@ -32,13 +32,19 @@ if _ov_path.exists():
 # while being a namesake false-positive for another.  Keeping the evidence in
 # data/ makes every future refresh reproduce the reviewed decision instead of
 # relying on a one-off edit to the exported CSV.
-_PUBLICATION_EXCLUSIONS = {}
+_PUBLICATION_EXCLUSIONS_BY_DOI = {}
+_PUBLICATION_EXCLUSIONS_BY_TITLE = {}
 _ex_path = Path(__file__).resolve().parents[1] / "data" / "publication_exclusions.csv"
 if _ex_path.exists():
     with open(_ex_path, encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            key = (row["name"].strip().casefold(), row["doi"].strip().lower())
-            _PUBLICATION_EXCLUSIONS[key] = row
+            name = row["name"].strip().casefold()
+            doi = (row.get("doi") or "").strip().lower()
+            title = (row.get("title") or "").strip().casefold()
+            if doi:
+                _PUBLICATION_EXCLUSIONS_BY_DOI[(name, doi)] = row
+            if title:
+                _PUBLICATION_EXCLUSIONS_BY_TITLE[(name, title)] = row
 
 def _apply_overrides(pub):
     doi = (pub.get("doi") or "").lower()
@@ -126,6 +132,25 @@ def clean_year(value):
     return y if y.isdigit() and 1900 <= int(y) <= date.today().year + 2 else None
 
 
+def reviewed_exclusion(pub):
+    """Return a reviewed exclusion matched by researcher plus DOI or title.
+
+    DOI remains the preferred stable key.  Title matching supports confirmed
+    false positives whose source record has no DOI; it is still scoped to the
+    named researcher so the same title can remain valid for another person.
+    """
+    name = (pub.get("name") or "").strip().casefold()
+    doi = (pub.get("doi") or "").strip().lower()
+    title = (pub.get("title") or "").strip().casefold()
+    if doi:
+        reviewed = _PUBLICATION_EXCLUSIONS_BY_DOI.get((name, doi))
+        if reviewed:
+            return reviewed
+    if title:
+        return _PUBLICATION_EXCLUSIONS_BY_TITLE.get((name, title))
+    return None
+
+
 def is_excluded(pub):
     """True for errata / editorials / corrigenda / rejoinders / comments,
     whatever source they came from (eSpace, ORCID, Crossref). This is the
@@ -134,11 +159,7 @@ def is_excluded(pub):
     title = pub.get("title")
     if title and _EXCLUDE_TITLE.match(title):
         return True
-    key = (
-        (pub.get("name") or "").strip().casefold(),
-        (pub.get("doi") or "").strip().lower(),
-    )
-    return key in _PUBLICATION_EXCLUSIONS
+    return reviewed_exclusion(pub) is not None
 
 
 def clean_pub(pub, log=None):
@@ -218,11 +239,7 @@ def clean_pubs(pubs, verbose=False):
             for line in log:
                 print(line)
         for p in dropped:
-            key = (
-                (p.get("name") or "").strip().casefold(),
-                (p.get("doi") or "").strip().lower(),
-            )
-            reviewed = _PUBLICATION_EXCLUSIONS.get(key)
+            reviewed = reviewed_exclusion(p)
             reason = f" ({reviewed['reason']})" if reviewed else ""
             print(f"    drop    {p.get('name','?')}: {p.get('title')!r}{reason}")
         print(f"  kept {len(kept)}, dropped {len(dropped)}")

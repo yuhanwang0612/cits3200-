@@ -40,3 +40,29 @@ def test_exclusion_is_scoped_to_the_named_researcher():
     }
 
     assert clean_pubs([pub]) == [pub]
+
+
+def test_confirmed_namesake_without_doi_is_excluded_by_title():
+    pub = {
+        "name": "Margaret Abernethy",
+        "title": "Public Education and Taxes, from the Personal Files of the Sybil Hyatt Papers",
+        "doi": None,
+        "type": "Journal Article",
+        "journal": "North Carolina Memory",
+        "year": "1916",
+    }
+
+    assert clean_pubs([pub]) == []
+
+
+def test_title_exclusion_is_scoped_to_the_named_researcher():
+    pub = {
+        "name": "Another Researcher",
+        "title": "Public Education and Taxes, from the Personal Files of the Sybil Hyatt Papers",
+        "doi": None,
+        "type": "Journal Article",
+        "journal": "North Carolina Memory",
+        "year": "1916",
+    }
+
+    assert clean_pubs([pub]) == [pub]

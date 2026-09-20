@@ -76,7 +76,7 @@ def apply(out_dir: Path):
         json.dumps(
             json_rows(
                 kept_journals,
-                integer_fields={"h_index"},
+                integer_fields={"h_index", "jcr_year"},
                 float_fields={
                     "impact_factor", "impact_factor_5yr", "sjr", "cites_per_doc_2y"
                 },
