@@ -7,6 +7,7 @@ Run with:  python3 monash_scraper.py
 """
 
 import re, time, requests, csv
+from pathlib import Path
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
@@ -556,13 +557,36 @@ def fetch_pubs_openalex(name, orcid=None):
 
     return pubs, h_index
 
+# Load manual identity overrides (ORCIDs / publication name corrections)
+import csv as _csv
+_overrides_path = Path(__file__).resolve().parent / "data" / "monash_identity_overrides.csv"
+_identity_overrides = {}
+if _overrides_path.exists():
+    with _overrides_path.open(encoding="utf-8") as _f:
+        for _row in _csv.DictReader(_f):
+            _key = _row["name"].strip()
+            _identity_overrides[_key] = {
+                "orcid": _row.get("orcid", "").strip(),
+                "publication_name": _row.get("publication_name", "").strip(),
+            }
+    print(f"Loaded {len(_identity_overrides)} identity overrides from monash_identity_overrides.csv")
+
 all_pubs = []
 for r in records:
     name = r["name_clean"]
     if len(name.split()) < 2 or len(name) > 60:
         continue
+    # Apply identity override: use verified ORCID or alternate publication name
+    _override = _identity_overrides.get(name, {})
+    if _override.get("orcid"):
+        r["orcid"] = _override["orcid"]
     orcid = r.get("orcid")
-    pubs, h_index = fetch_pubs_openalex(name, orcid=orcid)
+    # If publication name differs (e.g. John Chu publishes as "Zhu, Z."), skip name search
+    if not orcid and _override.get("publication_name"):
+        print(f"  {name}: skipping OpenAlex name search (publishes as {_override['publication_name']!r})")
+        pubs, h_index = [], 0
+    else:
+        pubs, h_index = fetch_pubs_openalex(name, orcid=orcid)
     # Sanity check: if name-match returns >5x the Pure pub_count, discard
     profile_count = r.get("pub_count", 0) or 0
     if not orcid and profile_count == 0 and len(pubs) > 50:
