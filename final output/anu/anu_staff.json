@@ -11,7 +11,7 @@
   },
   {
     "name": "Bonnie Allan",
-    "job_title": "Lecturer",
+    "job_title": "Casual Lecturer",
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -21,7 +21,7 @@
   },
   {
     "name": "Pat Barrett",
-    "job_title": "Professor",
+    "job_title": "Distinguished Honorary Professor & Senior Fellow - ANCAAR",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -101,7 +101,7 @@
   },
   {
     "name": "Janet Lee",
-    "job_title": "Associate Professor",
+    "job_title": "Honorary Associate Professor",
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -121,7 +121,7 @@
   },
   {
     "name": "Louise Lu",
-    "job_title": "Professor",
+    "job_title": "Professor & Convenor of HDR, Co-Director of ANCAAR",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -141,7 +141,7 @@
   },
   {
     "name": "Ian McPhee",
-    "job_title": "Professor",
+    "job_title": "Distinguished Honorary Professor",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -151,7 +151,7 @@
   },
   {
     "name": "Juliana Ng",
-    "job_title": null,
+    "job_title": "Director, Research School of Accounting",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -161,7 +161,7 @@
   },
   {
     "name": "Greg Shailer",
-    "job_title": "Professor",
+    "job_title": "Professor, Director of ANCAAR",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -171,7 +171,7 @@
   },
   {
     "name": "Madhukar Singh",
-    "job_title": "Lecturer",
+    "job_title": "Lecturer and Undergraduate Program Convenor",
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -181,7 +181,7 @@
   },
   {
     "name": "Rebecca Tan",
-    "job_title": "Senior Lecturer",
+    "job_title": "Senior Lecturer & Masters Course Work Convenor",
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -201,7 +201,7 @@
   },
   {
     "name": "Alex Wang",
-    "job_title": "Senior Lecturer",
+    "job_title": "Senior Lecturer, CPA Liaison Officer at Research School of Accounting",
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -221,7 +221,7 @@
   },
   {
     "name": "Kathy Wang",
-    "job_title": "Lecturer",
+    "job_title": "Lecturer and course convenor",
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -241,7 +241,7 @@
   },
   {
     "name": "Marvin Wee",
-    "job_title": "Professor",
+    "job_title": "Professor and Deputy Director Education",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -251,7 +251,7 @@
   },
   {
     "name": "Keturah Whitford",
-    "job_title": null,
+    "job_title": "Reader",
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -261,7 +261,7 @@
   },
   {
     "name": "Mark Wilson",
-    "job_title": "Professor",
+    "job_title": "Professor & Deputy Director (Research)",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -271,7 +271,7 @@
   },
   {
     "name": "Steven Wu",
-    "job_title": "Associate Professor",
+    "job_title": "Associate Professor, Director of HDR",
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -381,7 +381,7 @@
   },
   {
     "name": "Jo Drienko",
-    "job_title": null,
+    "job_title": "Deputy Director (Education)",
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Finance",
