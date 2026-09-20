@@ -1,33 +1,54 @@
-name,doi,reason,evidence_url,title
-Chander Shekhar,10.2471/blt.20.268037,Namesake at the Indian Council of Medical Research,https://pmc.ncbi.nlm.nih.gov/articles/PMC7941112/
-Chander Shekhar,10.1016/S2214-109X(17)30453-9,Namesake at the International Institute for Population Sciences,https://pubmed.ncbi.nlm.nih.gov/29241602/
-Chander Shekhar,10.1371/journal.pone.0144400,Namesake population-health researcher in India,https://doi.org/10.1371/journal.pone.0144400
-Chander Shekhar,10.1186/1475-2875-11-274,Namesake at the Indian Council of Medical Research,https://doi.org/10.1186/1475-2875-11-274
-Chander Shekhar,10.1155/2008/708218,Namesake at the Neurogastroenterology Unit Wythenshawe Hospital,https://pmc.ncbi.nlm.nih.gov/articles/PMC2672159/
-Qingbo Yuan,10.1111/pbi.13963,Namesake at the Chinese Academy of Sciences plant-genomics laboratory,https://doi.org/10.1111/pbi.13963
-Bryan Lim,10.1093/jtm/taz034,Namesake medical researcher at University of Galway and IMU University,https://openalex.org/W2944129234
-Bryan Tan,10.3109/08941939.2013.797057,Namesake surgeon at Austin Health,https://pubmed.ncbi.nlm.nih.gov/23957638/
-Michael Davern,10.1093/pubmed/fdz094,Namesake population-health researcher at UniMelb and RMIT,https://pubmed.ncbi.nlm.nih.gov/31690938/
-Di (Demi) Wang,10.1088/1367-2630/ac58b6,Namesake physics researcher working on diamond quantum sensing,https://doi.org/10.1088/1367-2630/ac58b6
-Di (Demi) Wang,10.1088/1361-6463/ae410e,Namesake physics researcher working on diamond quantum sensing,https://doi.org/10.1088/1361-6463/ae410e
-Tanya Fiedler,10.1016/j.bej.2017.10.015,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1016/j.bej.2017.10.015,
-Tanya Fiedler,10.1080/10934529.2017.1356194,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1080/10934529.2017.1356194,
-Tanya Fiedler,10.1007/s00217-006-0442-6,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1007/s00217-006-0442-6,
-Tanya Fiedler,10.2202/1556-3758.1250,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.2202/1556-3758.1250,
-Tanya Fiedler,10.1007/s00217-006-0277-1,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1007/s00217-006-0277-1,
-Tanya Fiedler,10.1063/1.2186080,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1063/1.2186080,
-Tanya Fiedler,,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://www.unsw.edu.au/staff/tanya-fiedler,The formation of colored compounds in technical sucrose solutions - new knowledge about their molecular basics and molecular size distribution
-Andrew Jackson,10.1039/c4dt00734d,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1039/c4dt00734d,
-Andrew Jackson,10.1021/om201050j,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/om201050j,
-Andrew Jackson,10.1016/j.ica.2010.10.032,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1016/j.ica.2010.10.032,
-Andrew Jackson,10.1021/om7009039,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/om7009039,
-Andrew Jackson,10.1021/ic800738a,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/ic800738a,
-Andrew Jackson,10.1021/ja0728270,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/ja0728270,
-Andrew Jackson,10.1021/ic0600329,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/ic0600329,
-Roger Simnett,,Namesake: 1980s pump-engineering trade articles by R.W. Simnett; listed on UNSW's own profile,https://www.unsw.edu.au/staff/roger-simnett,AIR-MOTOR DRIVES FOR SMALL PUMPS.
-Roger Simnett,,Namesake: 1980s pump-engineering trade articles by R.W. Simnett; listed on UNSW's own profile,https://www.unsw.edu.au/staff/roger-simnett,VACUUM/PRESSURE PUMP LENDS PRECISION TO DISCRETE SAMPLING.
-Li Yang,,Namesake: neurosurgery paper (Stoodley et al.); listed on UNSW's own profile,https://www.unsw.edu.au/staff/li-yang,Mechanisms underlying the formation and enlargement of noncommunicating syringomyelia: experimental studies
-Peter Swan,10.1111/1475-4932.12549,"Book review, not a research article",https://doi.org/10.1111/1475-4932.12549,
-Binh Tran-Nam,10.1111/j.1475-4932.1998.tb01935.x,"Book reviews, not research articles (Economic Record gave two reviews one DOI)",https://doi.org/10.1111/j.1475-4932.1998.tb01935.x,
-Binh Tran-Nam,,"Book reviews, not research articles (Economic Record gave two reviews one DOI)",https://www.unsw.edu.au/staff/binh-tran-nam,Agricultural reform in China
-Yan Xu,10.1017/s0305741022001540,"Book review, not a research article",https://doi.org/10.1017/s0305741022001540,
+name,doi,title,reason,evidence_url
+Chander Shekhar,10.2471/blt.20.268037,,Namesake at the Indian Council of Medical Research,https://pmc.ncbi.nlm.nih.gov/articles/PMC7941112/
+Chander Shekhar,10.1016/S2214-109X(17)30453-9,,Namesake at the International Institute for Population Sciences,https://pubmed.ncbi.nlm.nih.gov/29241602/
+Chander Shekhar,10.1371/journal.pone.0144400,,Namesake population-health researcher in India,https://doi.org/10.1371/journal.pone.0144400
+Chander Shekhar,10.1186/1475-2875-11-274,,Namesake at the Indian Council of Medical Research,https://doi.org/10.1186/1475-2875-11-274
+Chander Shekhar,10.1155/2008/708218,,Namesake at the Neurogastroenterology Unit Wythenshawe Hospital,https://pmc.ncbi.nlm.nih.gov/articles/PMC2672159/
+Qingbo Yuan,10.1111/pbi.13963,,Namesake at the Chinese Academy of Sciences plant-genomics laboratory,https://doi.org/10.1111/pbi.13963
+Bryan Lim,10.1093/jtm/taz034,,Namesake medical researcher at University of Galway and IMU University,https://openalex.org/W2944129234
+Bryan Tan,10.3109/08941939.2013.797057,,Namesake surgeon at Austin Health,https://pubmed.ncbi.nlm.nih.gov/23957638/
+Michael Davern,10.1093/pubmed/fdz094,,Namesake population-health researcher at UniMelb and RMIT,https://pubmed.ncbi.nlm.nih.gov/31690938/
+Di (Demi) Wang,10.1088/1367-2630/ac58b6,,Namesake physics researcher working on diamond quantum sensing,https://doi.org/10.1088/1367-2630/ac58b6
+Di (Demi) Wang,10.1088/1361-6463/ae410e,,Namesake physics researcher working on diamond quantum sensing,https://doi.org/10.1088/1361-6463/ae410e
+Margaret Abernethy,10.1086/453790,,Namesake publication from 1908,https://doi.org/10.1086/453790
+Margaret Abernethy,,"Public Education and Taxes, from the Personal Files of the Sybil Hyatt Papers",Namesake archival record from 1916,https://lib.digitalnc.org/record/32782
+Di (Demi) Wang,10.1016/S0022-0248(00)00430-9,,GaN semiconductor paper; conflicts with the official accounting profile,https://fbe.unimelb.edu.au/our-people/staff/accounting/demi-wang
+Di (Demi) Wang,10.1016/S0022-0248(02)01310-6,,GaN semiconductor paper; conflicts with the official accounting profile,https://fbe.unimelb.edu.au/our-people/staff/accounting/demi-wang
+Di (Demi) Wang,10.1016/S0022-0248(01)02220-5,,GaN semiconductor paper; conflicts with the official accounting profile,https://fbe.unimelb.edu.au/our-people/staff/accounting/demi-wang
+Like Jiang,10.1177/1478422x241278895,,Materials-engineering paper; conflicts with the official accounting profile,https://fbe.unimelb.edu.au/our-people/staff/accounting/like-jiang
+Like Jiang,10.1016/j.jmmm.2023.170441,,Materials-engineering paper; conflicts with the official accounting profile,https://fbe.unimelb.edu.au/our-people/staff/accounting/like-jiang
+Like Jiang,10.1016/j.engfracmech.2024.109881,,Engineering paper; conflicts with the official accounting profile,https://fbe.unimelb.edu.au/our-people/staff/accounting/like-jiang
+Bo Qin,10.3390/su16229615,,Transport/bibliometrics paper by a different Bo Qin,https://doi.org/10.3390/su16229615
+Bo Qin,10.7544/issn1000-1239.2020.20190379,,Chinese cybersecurity paper by a different Bo Qin,https://doi.org/10.7544/issn1000-1239.2020.20190379
+Bo Qin,10.1360/crad20060105,,Chinese cryptography paper by a different Bo Qin,https://doi.org/10.1360/crad20060105
+Bo Qin,10.4028/www.scientific.net/amm.401-403.2193,,Industrial-engineering paper by a different Bo Qin,https://doi.org/10.4028/www.scientific.net/amm.401-403.2193
+Jon Gauntlett,,"Real-time Gross Settlement in Australia | Bulletin – September Quarter 2010",Philadelphia Museum of Art source collision with the genuine RBA article,https://www.rba.gov.au/publications/bulletin/2010/sep/8.html
+Hoonsuk Park,,Three Essays in Household Finance,Doctoral dissertation; not a journal article,https://etd.ohiolink.edu/acprod/odb_etd/etd/r/1501/10?clear=10&p10_accession_num=osu1492511169579377
+Hae Won (Henny) Jung,10.57709/2808911,,GSU dissertation record; not a journal article,https://scholarworks.gsu.edu/rmi_diss/27
+Flora Kuang,10.22158/wjeh.v6n5p245,,Confirmed namesake/non-accounting paper; no Chengdu university affiliation in her record,https://fbe.unimelb.edu.au/our-people/staff/accounting/flora-kuang
+Andrea Lu,10.1126/science.321.5889.626a,,Confirmed out-of-scope/early namesake record; author had not completed the relevant degree at that time,https://fbe.unimelb.edu.au/our-people/staff/finance/andrea-lu
+Stuart Black,,Building your business advisory practice - practice management tips for SMPS: practice management,Practitioner magazine item; not a formal journal article,https://www.ifac.org/who-we-are/stuart-black
+Stuart Black,,Social media marketing may be the key to practice profitability,Practitioner magazine item; not a formal journal article,https://www.ifac.org/who-we-are/stuart-black
+Stuart Black,,How to build your business advisory practice - practice management tips for SMPs: IFAC,Practitioner magazine item; not a formal journal article,https://www.ifac.org/who-we-are/stuart-black
+Stuart Black,,How accounting practices can support the globalisation of small business: SMEs,Practitioner magazine item; not a formal journal article,https://www.ifac.org/who-we-are/stuart-black
+Tanya Fiedler,10.1016/j.bej.2017.10.015,,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1016/j.bej.2017.10.015
+Tanya Fiedler,10.1080/10934529.2017.1356194,,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1080/10934529.2017.1356194
+Tanya Fiedler,10.1007/s00217-006-0442-6,,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1007/s00217-006-0442-6
+Tanya Fiedler,10.2202/1556-3758.1250,,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.2202/1556-3758.1250
+Tanya Fiedler,10.1007/s00217-006-0277-1,,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1007/s00217-006-0277-1
+Tanya Fiedler,10.1063/1.2186080,,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1063/1.2186080
+Tanya Fiedler,,The formation of colored compounds in technical sucrose solutions - new knowledge about their molecular basics and molecular size distribution,"Namesake: food-chemistry and process-engineering papers; listed on UNSW's own profile",https://www.unsw.edu.au/staff/tanya-fiedler
+Andrew Jackson,10.1039/c4dt00734d,,"Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile",https://doi.org/10.1039/c4dt00734d
+Andrew Jackson,10.1021/om201050j,,"Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile",https://doi.org/10.1021/om201050j
+Andrew Jackson,10.1016/j.ica.2010.10.032,,"Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile",https://doi.org/10.1016/j.ica.2010.10.032
+Andrew Jackson,10.1021/om7009039,,"Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile",https://doi.org/10.1021/om7009039
+Andrew Jackson,10.1021/ic800738a,,"Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile",https://doi.org/10.1021/ic800738a
+Andrew Jackson,10.1021/ja0728270,,"Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile",https://doi.org/10.1021/ja0728270
+Andrew Jackson,10.1021/ic0600329,,"Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile",https://doi.org/10.1021/ic0600329
+Roger Simnett,,AIR-MOTOR DRIVES FOR SMALL PUMPS,"Namesake: 1980s pump-engineering trade articles by R.W. Simnett; listed on UNSW's own profile",https://www.unsw.edu.au/staff/roger-simnett
+Roger Simnett,,VACUUM/PRESSURE PUMP LENDS PRECISION TO DISCRETE SAMPLING,"Namesake: 1980s pump-engineering trade articles by R.W. Simnett; listed on UNSW's own profile",https://www.unsw.edu.au/staff/roger-simnett
+Li Yang,,Mechanisms underlying the formation and enlargement of noncommunicating syringomyelia: experimental studies,"Namesake: neurosurgery paper; listed on UNSW's own profile",https://www.unsw.edu.au/staff/li-yang
+Peter Swan,10.1111/1475-4932.12549,,"Book review, not a research article",https://doi.org/10.1111/1475-4932.12549
+Binh Tran-Nam,10.1111/j.1475-4932.1998.tb01935.x,,"Book reviews, not research articles (Economic Record gave two reviews one DOI)",https://doi.org/10.1111/j.1475-4932.1998.tb01935.x
+Binh Tran-Nam,,Agricultural reform in China,"Book reviews, not research articles (Economic Record gave two reviews one DOI)",https://www.unsw.edu.au/staff/binh-tran-nam
+Yan Xu,10.1017/s0305741022001540,,"Book review, not a research article",https://doi.org/10.1017/s0305741022001540

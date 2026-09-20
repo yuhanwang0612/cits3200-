@@ -144,6 +144,17 @@ def clean_year(value):
     return y if y.isdigit() and 1900 <= int(y) <= date.today().year + 2 else None
 
 
+def reviewed_exclusion(pub):
+    """Return a reviewed exclusion matched by researcher plus DOI or title.
+
+    DOI remains the preferred stable key.  Title matching supports confirmed
+    false positives whose source record has no DOI; it is still scoped to the
+    named researcher so the same title can remain valid for another person.
+    """
+    key = _exclusion_key(pub.get("name"), pub.get("doi"), pub.get("title"))
+    return _PUBLICATION_EXCLUSIONS.get(key) if key else None
+
+
 def is_excluded(pub):
     """True for errata / editorials / corrigenda / rejoinders / comments,
     whatever source they came from (eSpace, ORCID, Crossref). This is the
@@ -152,8 +163,7 @@ def is_excluded(pub):
     title = pub.get("title")
     if title and _EXCLUDE_TITLE.match(title):
         return True
-    return _exclusion_key(pub.get("name"), pub.get("doi"),
-                          pub.get("title")) in _PUBLICATION_EXCLUSIONS
+    return reviewed_exclusion(pub) is not None
 
 
 def clean_pub(pub, log=None):
@@ -242,8 +252,7 @@ def clean_pubs(pubs, verbose=False):
             for line in log:
                 print(line)
         for p in dropped:
-            reviewed = _PUBLICATION_EXCLUSIONS.get(
-                _exclusion_key(p.get("name"), p.get("doi"), p.get("title")))
+            reviewed = reviewed_exclusion(p)
             reason = f" ({reviewed['reason']})" if reviewed else ""
             print(f"    drop    {p.get('name','?')}: {p.get('title')!r}{reason}")
         print(f"  kept {len(kept)}, dropped {len(dropped)}")
