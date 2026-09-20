@@ -89,6 +89,7 @@ def _differing_part_marker(title_a, title_b):
 # each other stay separate: Economic Record gave a batch of book reviews one
 # DOI, and those are separate items.
 MIN_PREFIX_WORDS = 3
+MIN_SAME_PAPER_WORDS = 4
 
 
 def _same_doi_subtitle_dropped(a, b):
@@ -146,7 +147,16 @@ def is_near_duplicate(a, b):
             or _repository_like_journal(a.get("journal_name"))
             or _repository_like_journal(b.get("journal_name"))
         )
-        if not (exact_title and exact_year and compatible_journal):
+        # The same paper listed twice under two DOIs, one of them mistyped or
+        # an old alias: UNSW has 10.1111/j.1467.8683.2007.00554.x where ORCID
+        # has 10.1111/j.1467-8683.2007.00554.x, and the Journal of Banking &
+        # Finance appears under both its bankfin and jbankfin prefixes. An
+        # identical title, year and journal is the same paper. Short titles
+        # are left alone, since "Discussion" or "Book review" can repeat.
+        same_journal = bool(ja and jb and ja == jb and ja != "unknown")
+        long_title = len(_normalise_title(title_a).split()) >= MIN_SAME_PAPER_WORDS
+        same_paper = exact_title and exact_year and same_journal and long_title
+        if not (exact_title and exact_year and compatible_journal) and not same_paper:
             return False
     # The link guard only applies when NEITHER row has a doi at all (not
     # even an SSRN one) — a `link` is usually doi-derived (e.g.
@@ -246,6 +256,32 @@ def build_staff(records):
     } for p in records]
 
 
+_REPOSITORY_ISSNS = {"1556-5068"}   # SSRN Electronic Journal
+_ISSN_RE = re.compile(r"\b(\d{4})-?(\d{3}[\dXx])\b")
+
+
+def _clean_issns(values):
+    """Every ISSN in `values`, hyphenated, each once, in first-seen order.
+
+    Sources disagree on the format: some give "0810-5391", some "08105391",
+    and some a space-joined pair "08105391 1467629X" in a single entry. One
+    UNSW row even carried the publisher, "Emerald Group Publishing", split
+    into three ISSN slots. ABDC and Scimago join on the hyphenated form, so
+    anything that is not an ISSN is dropped and the rest are written one way.
+
+    SSRN's own ISSN is dropped too. ORCID copies it from a preprint record
+    onto the published article, so The Journal of Finance ended up carrying
+    it, and it is never the ISSN of the journal the row names.
+    """
+    out = []
+    for value in values or []:
+        for a, b in _ISSN_RE.findall(str(value)):
+            issn = f"{a}-{b.upper()}"
+            if issn not in out and issn not in _REPOSITORY_ISSNS:
+                out.append(issn)
+    return out
+
+
 def build_journals(pubs, used_names=None):
     """One row per journal, keyed on the ABDC canonical title where we have
     one. Keying on ISSN splits print from online; keying on the raw name
@@ -264,7 +300,7 @@ def build_journals(pubs, used_names=None):
             "journal_name": key,
             "journal_raw": x["journal"],
             "publisher": x.get("publisher"),
-            "issn": "; ".join(x.get("issns") or []) or None,
+            "issn": "; ".join(_clean_issns(x.get("issns"))) or None,
             "quality_rank": x.get("abdc"),
             "abdc_edition": x.get("abdc_edition"),
             "impact_factor": x.get("impact_factor"),
@@ -288,8 +324,7 @@ def build_journals(pubs, used_names=None):
             if field == "issn":
                 existing = [v.strip() for v in (current.get(field) or "").split(";") if v.strip()]
                 incoming = [v.strip() for v in (value or "").split(";") if v.strip()]
-                merged = existing + [v for v in incoming if v not in existing]
-                current[field] = "; ".join(merged) or None
+                current[field] = "; ".join(_clean_issns(existing + incoming)) or None
             elif not current.get(field) and value:
                 current[field] = value
 
