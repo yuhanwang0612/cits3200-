@@ -21,6 +21,11 @@ def _num(v):
         return None
 
 
+def _quartile(value):
+    text = str(value).strip().upper()
+    return text if text in {"Q1", "Q2", "Q3", "Q4"} else None
+
+
 def _build():
     global _lookup
     if _lookup is not None:
@@ -31,7 +36,9 @@ def _build():
     for _, row in df.iterrows():
         entry = {
             "sjr": _num(row["SJR"]),
-            "sjr_quartile": str(row["SJR Best Quartile"]).strip(),
+            # Scimago writes "-" for a journal it lists but has not given a
+            # quartile. That is a missing value, not a fifth quartile.
+            "sjr_quartile": _quartile(row["SJR Best Quartile"]),
             "h_index": row["H index"],
             "cites_per_doc_2y": _num(row["Citations / Doc. (2years)"]),
         }

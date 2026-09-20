@@ -11,6 +11,7 @@ import re
 import unicodedata
 from collections import Counter
 from datetime import datetime, timezone
+from pathlib import Path
 
 import pandas as pd
 
@@ -79,6 +80,28 @@ def _differing_part_marker(title_a, title_b):
     return bool(ma and mb and ma.group(1).lower() != mb.group(1).lower())
 
 
+# One listing often drops the subtitle: UNSW has "Elevating professional
+# scepticism" where ORCID has "Elevating Professional Scepticism: An
+# Exploratory Study Into ...", both under DOI 10.1108/maj-08-2013-0914. The
+# similarity ratio is low only because one title is much longer. When both
+# rows carry the SAME real DOI and one title is the start of the other, they
+# are the same paper. Different titles under one DOI that are not a prefix of
+# each other stay separate: Economic Record gave a batch of book reviews one
+# DOI, and those are separate items.
+MIN_PREFIX_WORDS = 3
+
+
+def _same_doi_subtitle_dropped(a, b):
+    doi_a, doi_b = _dedup_doi(a.get("doi")), _dedup_doi(b.get("doi"))
+    if not doi_a or doi_a != doi_b:
+        return False
+    ta, tb = _normalise_title(a.get("title")), _normalise_title(b.get("title"))
+    short, long_ = sorted((ta, tb), key=len)
+    if len(short.split()) < MIN_PREFIX_WORDS:
+        return False
+    return long_ == short or long_.startswith(short + " ")
+
+
 def is_near_duplicate(a, b):
     """True if publication rows `a` and `b` (each needing name/title/year/
     doi/link keys) are the same researcher's same paper under a fuzzy title
@@ -96,7 +119,7 @@ def is_near_duplicate(a, b):
     ratio = difflib.SequenceMatcher(
         None, _normalise_title(title_a), _normalise_title(title_b)
     ).ratio()
-    if ratio < NEAR_DUP_TITLE_RATIO:
+    if ratio < NEAR_DUP_TITLE_RATIO and not _same_doi_subtitle_dropped(a, b):
         return False
     ya, yb = (a.get("year") or "").strip(), (b.get("year") or "").strip()
     if ya and yb:
@@ -408,6 +431,25 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
            verbose=True):
     publications = build_publications(pubs, records, verbose=verbose)
     staff = build_staff(records)
+
+    # Apply manual staff title overrides from data/staff_overrides.csv.
+    # This ensures titles confirmed from profile screenshots survive pipeline reruns.
+    _overrides_path = Path(__file__).resolve().parent / "data" / "staff_overrides.csv"
+    if _overrides_path.exists():
+        import csv as _csv
+        with _overrides_path.open(encoding="utf-8") as _f:
+            _overrides = {
+                (row["university"].strip().lower(), row["name"].strip()): row["job_title"].strip()
+                for row in _csv.DictReader(_f)
+            }
+        _applied = 0
+        for _s in staff:
+            _key = (_s.get("university", "").strip().lower(), (_s.get("name") or "").strip())
+            if _key in _overrides and not _s.get("job_title"):
+                _s["job_title"] = _overrides[_key]
+                _applied += 1
+        if verbose and _applied:
+            print(f"  applied {_applied} staff title override(s) from staff_overrides.csv")
 
     if drop_staff_without_pubs:
         have = {p["name"] for p in publications}
