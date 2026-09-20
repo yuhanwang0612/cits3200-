@@ -21,7 +21,7 @@ Management Science,Management Science,Institute for Operations Research and the 
 The Journal of Finance,Journal of Finance,Wiley,0022-1082; 1540-6261,A*,2025,12.2,12.3,2025.0,22.27,Q1,386.0,12.3,2025
 The Review of Financial Studies,Review of Financial Studies,Oxford University Press,0893-9454; 1465-7368,A*,2025,7.6,12.7,2025.0,17.406,Q1,268.0,8.71,2025
 Journal of Economic Theory,Journal of Economic Theory,Elsevier BV,0022-0531; 1095-7235,A*,2025,1.1,1.6,2025.0,2.842,Q1,124.0,1.35,2025
-Journal of Economic Dynamics and Control,Journal of Economic Dynamics and Control,Elsevier BV,0165-1889; 1879-1743; 01651889,A*,2025,1.8,2.2,2025.0,1.324,Q1,110.0,2.1,2025
+Journal of Economic Dynamics and Control,Journal of Economic Dynamics and Control,Elsevier BV,0165-1889; 1879-1743,A*,2025,1.8,2.2,2025.0,1.324,Q1,110.0,2.1,2025
 Canadian Public Policy / Analyse de Politiques,Canadian Public Policy,University of Toronto Press,0317-0861; 1911-9917,B,2025,1.4,1.7,2025.0,0.429,Q2,45.0,1.34,2025
 Applied Economics,Applied Economics,Taylor & Francis,0003-6846; 1466-4283,A,2025,2.6,2.5,2025.0,0.625,Q2,126.0,3.31,2025
 Australian Tax Review,AUSTRALIAN TAX REVIEW,,0311-094X,A,2025,0.1,0.1,2025.0,,,,,
@@ -54,9 +54,9 @@ Butterworth's Capital Gains Tax Circular,Butterworth's Capital Gains Tax Circula
 British Tax Review,British Tax Review,,0007-1870,A*,2025,,,,0.174,Q3,5.0,0.28,2025
 Journal of Accounting and Public Policy,Journal of Accounting and Public Policy,Elsevier BV,0278-4254; 1873-2070,A*,2025,2.2,4.1,2025.0,0.97,Q1,104.0,2.74,2025
 Journal of Accounting Research,Journal of Accounting Research,Wiley,0021-8456; 1475-679X,A*,2025,10.4,10.3,2025.0,9.774,Q1,186.0,12.22,2025
-Auditing: A Journal of Practice and Theory,Auditing: A journal of Practice and Theory,American Accounting Association,0278-0380; 1558-7991; 02780380 15587991,A*,2025,3.7,4.1,2025.0,2.32,Q1,111.0,4.48,2025
-Australian Journal of Management,Australian Journal of Management,SAGE Publishing,0312-8962; 1327-2020; 13272020 03128962; 03128962 13272020,A,2025,3.1,5.0,2025.0,0.778,Q1,57.0,3.96,2025
-Australian Accounting Review,Australian Accounting Review,Wiley,1035-6908; 1835-2561; 18352561 10356908,B,2025,2.8,3.1,2025.0,0.702,Q2,54.0,3.1,2025
+Auditing: A Journal of Practice and Theory,Auditing: A journal of Practice and Theory,American Accounting Association,0278-0380; 1558-7991,A*,2025,3.7,4.1,2025.0,2.32,Q1,111.0,4.48,2025
+Australian Journal of Management,Australian Journal of Management,SAGE Publishing,0312-8962; 1327-2020,A,2025,3.1,5.0,2025.0,0.778,Q1,57.0,3.96,2025
+Australian Accounting Review,Australian Accounting Review,Wiley,1035-6908; 1835-2561,B,2025,2.8,3.1,2025.0,0.702,Q2,54.0,3.1,2025
 Managerial Auditing Journal,Managerial Auditing Journal,Emerald Publishing Limited,0268-6902; 1758-7735,A,2025,2.6,3.4,2025.0,0.676,Q1,83.0,3.39,2025
 Journal of Information Systems,Journal of Information Systems,American Accounting Association,0888-7985; 1558-7959,A,2025,2.9,3.3,2025.0,0.731,Q1,52.0,2.83,2025
 International Journal of Auditing,International Journal of Auditing,Wiley,1090-6738; 1099-1123,A,2025,2.7,3.1,2025.0,0.681,Q1,42.0,3.19,2025
@@ -73,7 +73,7 @@ Managerial and Decision Economics,Managerial and Decision Economics,Wiley,0143-6
 Journal of Management Accounting Research,Journal of Management Accounting Research,American Accounting Association,1049-2127; 1558-8033,A*,2025,1.5,2.1,2025.0,1.248,Q1,38.0,1.91,2025
 The European Accounting Review,European Accounting Review,Routledge,0963-8180; 1468-4497,A*,2025,2.2,4.8,2025.0,2.272,Q1,98.0,6.0,2025
 China Management Accounting Review,China Management Accounting Review,,,,,,,,,,,,
-Contemporary Accounting Research,Contemporary Accounting Research,Wiley,0823-9150; 1911-3846; 08239150,A*,2025,4.9,6.8,2025.0,3.686,Q1,141.0,6.37,2025
+Contemporary Accounting Research,Contemporary Accounting Research,Wiley,0823-9150; 1911-3846,A*,2025,4.9,6.8,2025.0,3.686,Q1,141.0,6.37,2025
 Journal of International Financial Management and Accounting,Journal of International Financial Management and Accounting,Wiley,0954-1314; 1467-646X,A,2025,5.5,7.1,2025.0,1.639,Q1,55.0,6.94,2025
 Transportation Research Part A: Policy and Practice,Transportation Research Part A Policy and Practice,Elsevier BV,0965-8564; 1879-2375,A*,2025,7.2,8.5,2025.0,1.843,Q1,199.0,7.75,2025
 Financial Accountability and Management,Financial Accountability & Management,Wiley,0267-4424; 1468-0408,A,2025,2.3,3.7,2025.0,1.136,Q1,58.0,4.33,2025
@@ -95,7 +95,7 @@ Mathematics,Mathematics,Multidisciplinary Digital Publishing Institute,2227-7390
 Statistics & Probability Letters,Statistics and Probability Letters,Elsevier BV,0167-7152; 1879-2103,B,2025,0.7,0.8,2025.0,0.421,Q3,79.0,0.72,2025
 International Review of Finance,International Review of Finance,Wiley,1369-412X; 1468-2443,A,2025,2.3,2.2,2025.0,0.636,Q2,35.0,2.96,2025
 The European Journal of Finance,European Journal of Finance,Taylor & Francis,1351-847X; 1466-4364,A,2025,3.8,4.0,2025.0,0.998,Q1,61.0,4.85,2025
-The Journal of Futures Markets,Journal of Futures Markets,Wiley,0270-7314; 1096-9934; 10969934 02707314,A,2025,2.8,2.5,2025.0,0.599,Q2,69.0,2.93,2025
+The Journal of Futures Markets,Journal of Futures Markets,Wiley,0270-7314; 1096-9934,A,2025,2.8,2.5,2025.0,0.599,Q2,69.0,2.93,2025
 International Journal of Financial Markets and Derivatives,International Journal of Financial Markets and Derivatives,Inderscience Publishers,1756-7130; 1756-7149,C,2025,,,,,,,,
 Journal of Applied Statistical Science,Journal of Applied Statistical Science,,1067-5817,C,2025,,,,,,,,
 The Journal of Alternative Investments,The Journal of Alternative Investments,,1520-3255,B,2025,0.7,0.5,2025.0,0.243,Q3,28.0,0.65,2025
@@ -113,10 +113,10 @@ Journal of Accounting Literature,JOURNAL OF ACCOUNTING LITERATURE,Elsevier BV,07
 Review of Accounting Studies,Review of Accounting Studies,Springer Science+Business Media,1380-6653; 1573-7136,A*,2025,5.7,9.9,2025.0,5.56,Q1,118.0,8.99,2025
 Review of Finance,Review of Finance,Oxford University Press,1382-6662; 1573-692X; 1572-3097; 1875-824X,A*,2025,7.2,10.4,2025.0,9.87,Q1,91.0,7.62,2025
 Financial Review (US),The Financial Review,Wiley,0732-8516; 1540-6288,A,2025,2.1,2.2,2025.0,0.56,Q2,57.0,2.2,2025
-Journal of Banking & Finance,Journal of Banking & Finance,Elsevier BV,0378-4266; 1872-6372; 03784266,A*,2025,4.0,4.7,2025.0,1.954,Q1,225.0,5.11,2025
-Asia-Pacific Journal of Financial Studies,Asia-Pacific Journal of Financial Studies,Wiley,2041-6156; 2041-9945; 1226-1165,B,2025,1.4,1.9,2025.0,0.542,Q2,29.0,1.54,2025
-Journal of Corporate Finance,Journal of Corporate Finance,Elsevier BV,0929-1199; 1872-6313; 09291199,A*,2025,6.9,10.5,2025.0,2.706,Q1,166.0,7.97,2025
-Journal of Business Ethics,Journal of Business Ethics,Springer Science+Business Media,0167-4544; 1573-0697; 01674544,A,2025,6.3,9.7,2025.0,3.138,Q1,304.0,10.35,2025
+Journal of Banking & Finance,Journal of Banking & Finance,Elsevier BV,0378-4266; 1872-6372,A*,2025,4.0,4.7,2025.0,1.954,Q1,225.0,5.11,2025
+Asia-Pacific Journal of Financial Studies,Asia-Pacific Journal of Financial Studies,Wiley,2041-6156; 2041-9945,B,2025,1.4,1.9,2025.0,0.542,Q2,29.0,1.54,2025
+Journal of Corporate Finance,Journal of Corporate Finance,Elsevier BV,0929-1199; 1872-6313,A*,2025,6.9,10.5,2025.0,2.706,Q1,166.0,7.97,2025
+Journal of Business Ethics,Journal of Business Ethics,Springer Science+Business Media,0167-4544; 1573-0697,A,2025,6.3,9.7,2025.0,3.138,Q1,304.0,10.35,2025
 Decision Support Systems,Decision Support Systems,Elsevier BV,0167-9236; 1873-5797,A*,2025,7.5,8.2,2025.0,2.079,Q1,203.0,9.06,2025
 Harvard Business Review,Harvard Business Review,,0017-8012,A,2025,6.2,9.0,2025.0,0.356,Q3,221.0,1.22,2025
 Research in International Business and Finance,Research in International Business and Finance,Elsevier BV,0275-5319; 1878-3384,A,2025,7.6,7.0,2025.0,1.509,Q1,99.0,9.31,2025
@@ -303,6 +303,7 @@ Frontiers in Neuroscience,Frontiers in Neuroscience,Frontiers Media,1662-453X; 1
 PLoS Computational Biology,PLoS Computational Biology,Public Library of Science,1553-7358; 1553-734X,,,3.7,4.4,2025.0,1.466,Q1,237.0,3.5,2025
 Economics Letters,Economics Letters,Elsevier BV,0165-1765; 1873-7374,A,2025,2.0,2.0,2025.0,0.718,Q2,142.0,2.2,2025
 Annals of Actuarial Science,Annals of Actuarial Science,Cambridge University Press,1748-4995; 1748-5002,A,2025,1.0,1.5,2025.0,0.456,Q2,21.0,1.2,2025
+Journal of Forecasting,Journal of Forecasting,Wiley,0277-6693; 1099-131X,A,2025,2.6,3.2,2025.0,0.665,Q2,74.0,3.43,2025
 Insurance: Mathematics & Economics,Insurance Mathematics and Economics,Elsevier BV,0167-6687; 1873-5959,A*,2025,1.8,2.2,2025.0,1.117,Q1,95.0,2.01,2025
 Finance and Economics Discussion Series,Finance and Economics Discussion Series,,1936-2854; 2767-3898,,,,,,,,,,
 International Journal of Forecasting,International Journal of Forecasting,Elsevier BV,0169-2070; 1872-8200,A,2025,5.7,9.0,2025.0,2.272,Q1,135.0,6.46,2025
@@ -343,7 +344,7 @@ Journal of Public Economics,Journal of Public Economics,Elsevier BV,0047-2727; 1
 Econometrica,Econometrica,Wiley,0012-9682; 1468-0262,A*,2025,6.2,9.4,2025.0,19.935,Q1,242.0,5.94,2025
 Journal of Political Economy,Journal of Political Economy,University of Chicago Press,0022-3808; 1537-534X,A*,2025,6.4,11.2,2025.0,16.25,Q1,235.0,6.7,2025
 The Review of Economic Studies,Review of Economic Studies,Oxford University Press,0034-6527; 1467-937X,A*,2025,9.7,10.1,2025.0,23.622,Q1,184.0,11.42,2025
-The Quarterly Journal of Economics,Quarterly Journal of Economics,Oxford University Press,0033-5533; 1531-4650; 1556-5068,A*,2025,13.1,20.9,2025.0,33.069,Q1,336.0,17.3,2025
+The Quarterly Journal of Economics,Quarterly Journal of Economics,Oxford University Press,0033-5533; 1531-4650,A*,2025,13.1,20.9,2025.0,33.069,Q1,336.0,17.3,2025
 BELL JOURNAL OF ECONOMICS AND MANAGEMENT SCIENCE,BELL JOURNAL OF ECONOMICS AND MANAGEMENT SCIENCE,,0005-8556; 2325-5323,,,,,,,,,,
 The American Economic Review,The American Economic Review,,0002-8282; 0065-812X,A*,2025,9.5,18.5,2025.0,23.489,Q1,399.0,9.55,2025
 Australian Economic Papers,AUSTRALIAN ECONOMIC PAPERS,Wiley,0004-900X; 1467-8454,B,2025,1.3,1.3,2025.0,0.368,Q2,26.0,1.48,2025
