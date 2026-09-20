@@ -1,24 +1,19 @@
 """Monash University adapter.
 
 Phase 1: Selenium scrapes JS-rendered staff directories (Banking & Finance + Accounting).
-Phase 2: requests visits each research.monash.edu profile for ORCID + pub_count.
-Phase 3: collect() fetches publications via OpenAlex, with pub_count sanity check.
-
-Unlike Adelaide, publications ARE fetched here because Pure CMS pub_count is used
-as a threshold to filter false-positive name-only OpenAlex matches.
+Phase 2: parallel requests visit each research.monash.edu profile for ORCID + pub_count.
+Phase 3: parallel OpenAlex fetches for publications, with pub_count sanity check.
 """
 
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 from core.titles import rank, split_prefix
@@ -49,13 +44,6 @@ _POSITION_RE = re.compile(
     re.IGNORECASE,
 )
 
-_PREFIX_RE = re.compile(
-    r"^(Emeritus Professor|Associate Professor|Distinguished Professor"
-    r"|Professor|Senior Lecturer|Lecturer|Dr|Mr|Mrs|Ms|Miss"
-    r"|A/Prof|Assoc\.?\s*Prof\.?)\.?\s+",
-    re.IGNORECASE,
-)
-
 _PROFILE_KEYS = ("/profile/", "/people/", "/persons/", "/staff/", "/our-people/")
 
 
@@ -77,25 +65,6 @@ def _is_real_person(name):
     if re.search(r"\d", name):
         return False
     return True
-
-
-def _title_near_link(a_tag, name):
-    node = a_tag
-    for _ in range(3):
-        parent = node.parent
-        if parent is None:
-            break
-        if any(
-            x is not a_tag and any(k in x.get("href", "") for k in _PROFILE_KEYS)
-            for x in parent.find_all("a", href=True)
-        ):
-            break
-        node = parent
-        txt = re.sub(re.escape(name), " ", node.get_text(" ", strip=True), flags=re.I)
-        m = _POSITION_RE.search(txt)
-        if m:
-            return m.group(0).strip()
-    return None
 
 
 def _make_driver():
@@ -182,6 +151,18 @@ def _fetch_research_profile(research_url):
     return None, 0, None
 
 
+def _process_phase2(record):
+    """Phase 2 worker: look up research profile, fill ORCID + pub_count. Mutates record."""
+    rurl = _find_research_url(record["profile_url"], record["name_clean"])
+    title_from_profile, pub_count, orcid = _fetch_research_profile(rurl)
+    record["orcid"] = orcid
+    record["_pub_count"] = pub_count
+    if title_from_profile and not record["title"]:
+        record["title"] = title_from_profile
+        record["title_clean"] = rank(title_from_profile, record["prefix"])
+    return record
+
+
 # ── OpenAlex ──────────────────────────────────────────────────────────
 
 
@@ -202,8 +183,6 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
     """
     Fetch all publications for one researcher from OpenAlex.
     Uses ORCID when available; falls back to name + Monash affiliation check.
-    Applies sanity check against profile_pub_count to discard false-positive matches.
-    Returns list of pub dicts matching core.schema PUB_REQUIRED/OPTIONAL.
     """
     author_id = None
 
@@ -234,7 +213,6 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
         author_id = match["id"]
         time.sleep(0.2)
 
-    # Cursor-paginate all works
     pubs = []
     cursor = "*"
     while True:
@@ -286,7 +264,6 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
             break
         time.sleep(0.2)
 
-    # Sanity check: discard if name-only match returns unreasonably many pubs
     if not orcid:
         if profile_pub_count == 0 and len(pubs) > 50:
             return []
@@ -296,11 +273,22 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
     return pubs
 
 
+def _process_phase3(record):
+    """Phase 3 worker: fetch pubs from OpenAlex. Returns (record, pubs)."""
+    name = record["name_clean"]
+    pub_count = record.get("_pub_count", 0) or 0
+    if len(name.split()) < 2 or len(name) > 60:
+        return record, []
+    orcid = record.get("orcid")
+    person_pubs = _fetch_pubs_openalex(name, orcid=orcid, profile_pub_count=pub_count)
+    return record, person_pubs
+
+
 # ── public API ────────────────────────────────────────────────────────
 
 
 def scrape_staff(verbose=True):
-    """Phase 1 (Selenium) + Phase 2 (research profiles). Returns staff records."""
+    """Phase 1 (Selenium) + Phase 2 parallel profile fetches. Returns staff records."""
     if verbose:
         print("  Phase 1: loading Monash staff directories with Selenium ...")
 
@@ -326,8 +314,6 @@ def scrape_staff(verbose=True):
                 driver.get(url)
                 time.sleep(15)
 
-            # Use Selenium's live DOM directly — bypasses BeautifulSoup parsing issues
-            # with dynamically rendered content.
             entries = []
             els = driver.find_elements(
                 By.CSS_SELECTOR, "a[href*='research.monash.edu/en/persons/']"
@@ -336,21 +322,19 @@ def scrape_staff(verbose=True):
                 href = el.get_attribute("href") or ""
                 text = el.text.strip()
                 if not text:
-                    text = el.get_attribute("textContent") or ""
-                    text = text.strip()
+                    text = (el.get_attribute("textContent") or "").strip()
                 if not text or not _is_real_person(text):
                     continue
                 profile_url = href.rstrip("/") + "/"
                 if profile_url in seen:
                     continue
                 seen.add(profile_url)
-                # Title is fetched in Phase 2 from the research profile
-                entries.append((text, profile_url, None))
+                entries.append((text, profile_url))
 
             if verbose:
                 print(f"    {discipline}: {len(entries)} staff found")
 
-            for name_raw, profile_url, title_raw in entries:
+            for name_raw, profile_url in entries:
                 name_clean, prefix = split_prefix(name_raw)
                 if not name_clean or len(name_clean) < 3:
                     continue
@@ -360,8 +344,8 @@ def scrape_staff(verbose=True):
                     "name": name_raw,
                     "name_clean": name_clean,
                     "prefix": prefix,
-                    "title": title_raw,
-                    "title_clean": rank(title_raw, prefix),
+                    "title": None,
+                    "title_clean": rank(None, prefix),
                     "profile_url": profile_url,
                     "orcid": None,
                     "_pub_count": 0,
@@ -373,21 +357,16 @@ def scrape_staff(verbose=True):
             pass
 
     if verbose:
-        print(f"  Phase 1 done: {len(records)} staff. Phase 2: research profiles ...")
+        print(f"  Phase 1 done: {len(records)} staff. Phase 2: research profiles (5 parallel workers) ...")
 
-    # Phase 2: research.monash.edu -> ORCID + pub_count
-    for r in records:
-        rurl = _find_research_url(r["profile_url"], r["name_clean"])
-        title_from_profile, pub_count, orcid = _fetch_research_profile(rurl)
-        r["orcid"] = orcid
-        r["_pub_count"] = pub_count
-        if title_from_profile and not r["title"]:
-            r["title"] = title_from_profile
-            r["title_clean"] = rank(title_from_profile, r["prefix"])
-        if verbose:
-            tag = f"[orcid={orcid}]" if orcid else "[no orcid]"
-            print(f"  + {r['name_clean']:40s}  pubs={pub_count}  {tag}")
-        time.sleep(0.3)   # was 1.5 s
+    # ── Phase 2: parallel research profile fetches ────────────────────────
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        futures = {pool.submit(_process_phase2, r): r for r in records}
+        for future in as_completed(futures):
+            r = future.result()
+            if verbose:
+                tag = f"[orcid={r['orcid']}]" if r["orcid"] else "[no orcid]"
+                print(f"  + {r['name_clean']:40s}  pubs={r['_pub_count']}  {tag}")
 
     if verbose:
         print(f"  {len(records)} Monash A&F staff")
@@ -399,21 +378,19 @@ def collect(verbose=True):
     records = scrape_staff(verbose)
 
     if verbose:
-        print("  Phase 3: fetching publications via OpenAlex ...")
+        print("  Phase 3: fetching publications via OpenAlex (3 parallel workers) ...")
 
     pubs = []
-    for r in records:
-        name = r["name_clean"]
-        pub_count = r.pop("_pub_count", 0) or 0
-        if len(name.split()) < 2 or len(name) > 60:
-            continue
-        orcid = r.get("orcid")
-        person_pubs = _fetch_pubs_openalex(name, orcid=orcid, profile_pub_count=pub_count)
-        pubs.extend(person_pubs)
-        tag = "[ORCID]" if orcid else "[name->Monash]"
-        if verbose:
-            print(f"    {name:40s}  {len(person_pubs)} pubs  {tag}")
-        time.sleep(0.5)   # was 3 s
+    # 3 workers — conservative to respect OpenAlex rate limits
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        futures = {pool.submit(_process_phase3, r): r for r in records}
+        for future in as_completed(futures):
+            r, person_pubs = future.result()
+            r.pop("_pub_count", None)
+            pubs.extend(person_pubs)
+            tag = "[ORCID]" if r.get("orcid") else "[name->Monash]"
+            if verbose:
+                print(f"    {r['name_clean']:40s}  {len(person_pubs)} pubs  {tag}")
 
     if verbose:
         print(f"  {len(pubs)} total publications")

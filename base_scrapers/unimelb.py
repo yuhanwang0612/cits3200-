@@ -1192,6 +1192,15 @@ def _collect_live(
     orcid_identity_stats = _add_orcid_ids(staff, refresh=refresh, verbose=verbose)
     openalex_identity_stats = _add_openalex_ids(staff, refresh=refresh, verbose=verbose)
 
+    # The identity lookups above already require the official staff name and a
+    # University of Melbourne affiliation (or a manually reviewed override).
+    # Once the person is identified, collect their whole publication career.
+    # Restricting every work to the UniMelb ROR would omit papers written at a
+    # previous employer and substantially undercount current staff output.
+    for person in staff:
+        if person.get("orcid") or person.get("openalex_author_ids"):
+            person["retrieve_all_career_works"] = True
+
     accepted = [identity for identity in identities if identity["confidence"] == "high"]
     failures: list[dict[str, Any]] = []
     rows: list[dict[str, Any]] = []

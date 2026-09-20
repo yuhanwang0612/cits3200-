@@ -54,6 +54,14 @@ _RETRIEVED_SOURCES = {"ORCID", "Crossref", "OpenAlex"}
 # sentence; "...roll-overs and exemptions: part I" / "part II", same shape
 # with roman numerals).
 _PART_MARKER_RE = re.compile(r"\bpart\s+([ivx]+|\d+)\b", re.IGNORECASE)
+_REPOSITORY_JOURNAL_MARKERS = (
+    "repository", "archive", "research collection", "eprints", "minerva access",
+)
+
+
+def _repository_like_journal(value):
+    journal = (value or "").strip().lower()
+    return any(marker in journal for marker in _REPOSITORY_JOURNAL_MARKERS)
 
 
 def _dedup_doi(doi):
@@ -99,7 +107,24 @@ def is_near_duplicate(a, b):
             pass  # non-numeric year text — don't let it block an otherwise-clear match
     doi_a, doi_b = _dedup_doi(a.get("doi")), _dedup_doi(b.get("doi"))
     if doi_a and doi_b and doi_a != doi_b:
-        return False
+        # Some articles have DOI aliases: publisher vs repository deposit,
+        # or legacy JSTOR vs current publisher DOI. Merge only when the
+        # title/year are exact and the journal identity is compatible.
+        exact_title = _normalise_title(title_a) == _normalise_title(title_b)
+        exact_year = bool(ya and yb and ya == yb)
+        ja = _normalise_title(a.get("journal_name") or "")
+        jb = _normalise_title(b.get("journal_name") or "")
+        legacy_jstor_alias = (
+            bool(ja and jb and ja == jb)
+            and (doi_a.startswith("10.2307/") or doi_b.startswith("10.2307/"))
+        )
+        compatible_journal = (
+            legacy_jstor_alias
+            or _repository_like_journal(a.get("journal_name"))
+            or _repository_like_journal(b.get("journal_name"))
+        )
+        if not (exact_title and exact_year and compatible_journal):
+            return False
     # The link guard only applies when NEITHER row has a doi at all (not
     # even an SSRN one) — a `link` is usually doi-derived (e.g.
     # "https://doi.org/<doi>"), so comparing it when an SSRN-vs-real-DOI
@@ -117,6 +142,10 @@ def _prefer(e, c):
     earlier-encountered row (kept by default — 'otherwise keep the
     first')."""
     doi_e, doi_c = _dedup_doi(e.get("doi")), _dedup_doi(c.get("doi"))
+    e_repository = _repository_like_journal(e.get("journal_name"))
+    c_repository = _repository_like_journal(c.get("journal_name"))
+    if e_repository != c_repository:
+        return c if e_repository else e
     if doi_e and not doi_c:
         return e
     if doi_c and not doi_e:
@@ -181,7 +210,10 @@ def merge_near_duplicates(rows):
 def build_staff(records):
     return [{
         "name": p["name_clean"],
-        "job_title": p.get("title_clean"),
+        # The agreed staff dictionary asks for the official/raw job title.
+        # title_clean is only the derived academic-rank label and previously
+        # erased valid roles such as teaching-focused appointments.
+        "job_title": p.get("title") or p.get("title_clean"),
         "academic_level": p.get("level_code") or level(p.get("title_clean")),
         "university": p["university"],
         "field_of_research": p["discipline"],
@@ -260,8 +292,16 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     orcid_by_name = {r["name_clean"]: r.get("orcid") for r in (records or [])}
     out = []
     kept_dois_by_key = {}
+    missing_journal = 0
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x.get("type") != keep_type or not x.get("title"):
+            continue
+        journal_name = x.get("abdc_title") or x.get("journal")
+        # A row cannot be delivered as a verified journal article when no
+        # journal can be named. Keep such records upstream for review, but do
+        # not let them into the client-facing publication table.
+        if not journal_name:
+            missing_journal += 1
             continue
         k = (x["name"], _normalise_title(x["title"]))
         doi = (x.get("doi") or "").strip().lower()
@@ -282,7 +322,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "name": x["name"],
             "orcid": orcid_by_name.get(x["name"]),
             "source_id": x.get("source_id"),
-            "journal_name": x.get("abdc_title") or x.get("journal") or "unknown",
+            "journal_name": journal_name,
             "title": x["title"],
             "year": x.get("year"),
             "author_count": x.get("n_authors"),
@@ -298,7 +338,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "fwci": x.get("fwci"),
             "oa_status": x.get("oa_status"),
             "oa_url": x.get("oa_url"),
-            "publication_status": "published",
+            "publication_status": x.get("publication_status") or "published",
             "source": x.get("source"),
         })
 
@@ -312,6 +352,8 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             print("  excluded by type:")
             for (s, t), n in dropped.most_common(10):
                 print(f"    {n:4}  {s or '?':10} {t}")
+        if missing_journal:
+            print(f"  excluded {missing_journal} journal-article row(s) with no verified journal name")
         near_dup_removed = before_near_dup - len(out)
         if near_dup_removed:
             print(f"  removed {near_dup_removed} near-duplicate row(s) (FIX G)")
@@ -366,6 +408,25 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
            verbose=True):
     publications = build_publications(pubs, records, verbose=verbose)
     staff = build_staff(records)
+
+    # Apply manual staff title overrides from data/staff_overrides.csv.
+    # This ensures titles confirmed from profile screenshots survive pipeline reruns.
+    _overrides_path = Path(__file__).resolve().parent / "data" / "staff_overrides.csv"
+    if _overrides_path.exists():
+        import csv as _csv
+        with _overrides_path.open(encoding="utf-8") as _f:
+            _overrides = {
+                (row["university"].strip().lower(), row["name"].strip()): row["job_title"].strip()
+                for row in _csv.DictReader(_f)
+            }
+        _applied = 0
+        for _s in staff:
+            _key = (_s.get("university", "").strip().lower(), (_s.get("name") or "").strip())
+            if _key in _overrides and not _s.get("job_title"):
+                _s["job_title"] = _overrides[_key]
+                _applied += 1
+        if verbose and _applied:
+            print(f"  applied {_applied} staff title override(s) from staff_overrides.csv")
 
     if drop_staff_without_pubs:
         have = {p["name"] for p in publications}
