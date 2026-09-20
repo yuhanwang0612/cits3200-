@@ -950,7 +950,11 @@ def parse_publications(soup, person):
         # identifier and the join key for OpenAlex. A bare "http://dx.doi.org"
         # with nothing after it is a broken link on UNSW's side, not a DOI,
         # so it is discarded rather than written out as a link going nowhere.
-        links = [a["href"].strip() for a in item.select("a[href]") if a.get("href")]
+        # Some hrefs are site-relative ("/content/dam/pdfs/..."), which is a
+        # working link on the page and a broken one in a CSV, so they are made
+        # absolute against the profile they were read from.
+        links = [urljoin(person["profile_url"], a["href"].strip())
+                 for a in item.select("a[href]") if a.get("href")]
         doi = doi_link = None
         for candidate in links:
             m = DOI_RE.search(candidate)

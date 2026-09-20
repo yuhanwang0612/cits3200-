@@ -33,12 +33,29 @@ if _ov_path.exists():
 # data/ makes every future refresh reproduce the reviewed decision instead of
 # relying on a one-off edit to the exported CSV.
 _PUBLICATION_EXCLUSIONS = {}
+
+
+def _exclusion_key(name, doi, title=None):
+    """(name, doi) when there is a DOI. Some wrong papers on a university's
+    own profile page have no DOI at all (UNSW lists a 1983 Chemical
+    Engineering article under an auditing professor), so a row with a blank
+    doi is matched on the normalised title instead. A blank doi is never
+    used as a key by itself, or it would drop every DOI-less paper that
+    researcher has."""
+    name = (name or "").strip().casefold()
+    doi = (doi or "").strip().lower()
+    if doi:
+        return (name, doi)
+    title = re.sub(r"[^a-z0-9]+", " ", (title or "").casefold()).strip()
+    return (name, "title:" + title) if title else None
+
 _ex_path = Path(__file__).resolve().parents[1] / "data" / "publication_exclusions.csv"
 if _ex_path.exists():
     with open(_ex_path, encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            key = (row["name"].strip().casefold(), row["doi"].strip().lower())
-            _PUBLICATION_EXCLUSIONS[key] = row
+            key = _exclusion_key(row["name"], row["doi"], row.get("title"))
+            if key:
+                _PUBLICATION_EXCLUSIONS[key] = row
 
 def _apply_overrides(pub):
     doi = (pub.get("doi") or "").lower()
@@ -49,6 +66,7 @@ def _apply_overrides(pub):
 
 # A DOI is "10." + registrant + "/" + suffix. The "s1474667017471096" that
 # came off an ORCID external-id is not one.
+_DOI_LINK_RE = re.compile(r"^https?://(dx\.)?doi\.org/", re.I)
 _DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$")
 
 # Repository venues that carry preprints/working papers. When one appears in
@@ -134,11 +152,8 @@ def is_excluded(pub):
     title = pub.get("title")
     if title and _EXCLUDE_TITLE.match(title):
         return True
-    key = (
-        (pub.get("name") or "").strip().casefold(),
-        (pub.get("doi") or "").strip().lower(),
-    )
-    return key in _PUBLICATION_EXCLUSIONS
+    return _exclusion_key(pub.get("name"), pub.get("doi"),
+                          pub.get("title")) in _PUBLICATION_EXCLUSIONS
 
 
 def clean_pub(pub, log=None):
@@ -188,6 +203,15 @@ def clean_pub(pub, log=None):
     if pub["doi"] is None and pub.get("link") and "doi.org" in pub["link"]:
         note(f"    link    {who}: dropped dead doi.org link {pub['link']!r}")
         pub["link"] = None
+    # ORCID builds its link as "https://doi.org/" + the DOI it was given, and
+    # some ORCID records store the DOI as a URL already, which gave links like
+    # https://doi.org/http://dx.doi.org/10.2308/bria-50333. The DOI itself is
+    # cleaned above, so a doi.org link is simply rebuilt from it.
+    if (pub["doi"] and pub.get("link")
+            and _DOI_LINK_RE.match(pub["link"])
+            and pub["link"] != f"https://doi.org/{pub['doi']}"):
+        note(f"    link    {who}: {pub['link']!r} -> rebuilt from the DOI")
+        pub["link"] = f"https://doi.org/{pub['doi']}"
 
     if pub.get("doi") and pub["doi"].lower().startswith(_PREPRINT_DOI_PREFIXES):
         if pub.get("type") != "Preprint":
@@ -218,11 +242,8 @@ def clean_pubs(pubs, verbose=False):
             for line in log:
                 print(line)
         for p in dropped:
-            key = (
-                (p.get("name") or "").strip().casefold(),
-                (p.get("doi") or "").strip().lower(),
-            )
-            reviewed = _PUBLICATION_EXCLUSIONS.get(key)
+            reviewed = _PUBLICATION_EXCLUSIONS.get(
+                _exclusion_key(p.get("name"), p.get("doi"), p.get("title")))
             reason = f" ({reviewed['reason']})" if reviewed else ""
             print(f"    drop    {p.get('name','?')}: {p.get('title')!r}{reason}")
         print(f"  kept {len(kept)}, dropped {len(dropped)}")

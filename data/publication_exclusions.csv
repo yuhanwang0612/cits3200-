@@ -1,4 +1,4 @@
-name,doi,reason,evidence_url
+name,doi,reason,evidence_url,title
 Chander Shekhar,10.2471/blt.20.268037,Namesake at the Indian Council of Medical Research,https://pmc.ncbi.nlm.nih.gov/articles/PMC7941112/
 Chander Shekhar,10.1016/S2214-109X(17)30453-9,Namesake at the International Institute for Population Sciences,https://pubmed.ncbi.nlm.nih.gov/29241602/
 Chander Shekhar,10.1371/journal.pone.0144400,Namesake population-health researcher in India,https://doi.org/10.1371/journal.pone.0144400
@@ -10,3 +10,24 @@ Bryan Tan,10.3109/08941939.2013.797057,Namesake surgeon at Austin Health,https:/
 Michael Davern,10.1093/pubmed/fdz094,Namesake population-health researcher at UniMelb and RMIT,https://pubmed.ncbi.nlm.nih.gov/31690938/
 Di (Demi) Wang,10.1088/1367-2630/ac58b6,Namesake physics researcher working on diamond quantum sensing,https://doi.org/10.1088/1367-2630/ac58b6
 Di (Demi) Wang,10.1088/1361-6463/ae410e,Namesake physics researcher working on diamond quantum sensing,https://doi.org/10.1088/1361-6463/ae410e
+Tanya Fiedler,10.1016/j.bej.2017.10.015,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1016/j.bej.2017.10.015,
+Tanya Fiedler,10.1080/10934529.2017.1356194,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1080/10934529.2017.1356194,
+Tanya Fiedler,10.1007/s00217-006-0442-6,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1007/s00217-006-0442-6,
+Tanya Fiedler,10.2202/1556-3758.1250,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.2202/1556-3758.1250,
+Tanya Fiedler,10.1007/s00217-006-0277-1,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1007/s00217-006-0277-1,
+Tanya Fiedler,10.1063/1.2186080,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://doi.org/10.1063/1.2186080,
+Tanya Fiedler,,"Namesake: food-chemistry and process-engineering papers (co-authors Kroh, Geissen at TU Berlin); listed on UNSW's own profile",https://www.unsw.edu.au/staff/tanya-fiedler,The formation of colored compounds in technical sucrose solutions - new knowledge about their molecular basics and molecular size distribution
+Andrew Jackson,10.1039/c4dt00734d,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1039/c4dt00734d,
+Andrew Jackson,10.1021/om201050j,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/om201050j,
+Andrew Jackson,10.1016/j.ica.2010.10.032,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1016/j.ica.2010.10.032,
+Andrew Jackson,10.1021/om7009039,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/om7009039,
+Andrew Jackson,10.1021/ic800738a,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/ic800738a,
+Andrew Jackson,10.1021/ja0728270,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/ja0728270,
+Andrew Jackson,10.1021/ic0600329,Namesake: organometallic chemistry papers from the Templeton group (UNC Chapel Hill); listed on UNSW's own profile,https://doi.org/10.1021/ic0600329,
+Roger Simnett,,Namesake: 1980s pump-engineering trade articles by R.W. Simnett; listed on UNSW's own profile,https://www.unsw.edu.au/staff/roger-simnett,AIR-MOTOR DRIVES FOR SMALL PUMPS.
+Roger Simnett,,Namesake: 1980s pump-engineering trade articles by R.W. Simnett; listed on UNSW's own profile,https://www.unsw.edu.au/staff/roger-simnett,VACUUM/PRESSURE PUMP LENDS PRECISION TO DISCRETE SAMPLING.
+Li Yang,,Namesake: neurosurgery paper (Stoodley et al.); listed on UNSW's own profile,https://www.unsw.edu.au/staff/li-yang,Mechanisms underlying the formation and enlargement of noncommunicating syringomyelia: experimental studies
+Peter Swan,10.1111/1475-4932.12549,"Book review, not a research article",https://doi.org/10.1111/1475-4932.12549,
+Binh Tran-Nam,10.1111/j.1475-4932.1998.tb01935.x,"Book reviews, not research articles (Economic Record gave two reviews one DOI)",https://doi.org/10.1111/j.1475-4932.1998.tb01935.x,
+Binh Tran-Nam,,"Book reviews, not research articles (Economic Record gave two reviews one DOI)",https://www.unsw.edu.au/staff/binh-tran-nam,Agricultural reform in China
+Yan Xu,10.1017/s0305741022001540,"Book review, not a research article",https://doi.org/10.1017/s0305741022001540,
