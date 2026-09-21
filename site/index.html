@@ -69,7 +69,19 @@
   const unis = payload.universities || [];
   if (!unis.length) { grid.innerHTML = '<div class="empty">No universities in the dataset.</div>'; return; }
 
-  grid.innerHTML = unis.map(u =>
+  // The client asked for the cards in the Group of Eight's own member order,
+  // not alphabetically. Keyed on the code so it does not depend on whether the
+  // database spells a name with a leading "The". Anything unrecognised sorts to
+  // the end rather than disappearing.
+  const CARD_ORDER = ['UA', 'ANU', 'UM', 'MONASH', 'UNSW', 'UQ', 'USYD', 'UWA'];
+  const rank = u => {
+    const i = CARD_ORDER.indexOf(u.code);
+    return i === -1 ? CARD_ORDER.length : i;
+  };
+  const ordered = unis.slice().sort((a, b) =>
+    rank(a) - rank(b) || String(a.name).localeCompare(String(b.name)));
+
+  grid.innerHTML = ordered.map(u =>
     '<a class="uni-card" href="researchers.html?university=' + encodeURIComponent(u.name) + '">' +
       '<span class="code">' + esc(u.code) + '</span>' +
       '<span class="name">' + esc(u.name) + '</span>' +
