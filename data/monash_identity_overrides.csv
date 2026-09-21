@@ -1,5 +1,6 @@
 name,profile_url,orcid,openalex_author_id,publication_name,notes
-Stephen Brown,https://research.monash.edu/en/persons/stephen-brown,0000-0002-0210-4562,,,
 Özlem Dursun-de Neef,https://research.monash.edu/en/persons/ozlem-dursun-de-neef,0000-0002-8487-3911,,,
 John Watson,https://research.monash.edu/en/persons/john-watson,0000-0001-6550-243X,,,
 John Chu,https://research.monash.edu/en/persons/john-chu,,,"Zhu, Z.",Papers published under surname Zhu not Chu - name search returns wrong person
+Christine Brown,https://research.monash.edu/en/persons/christine-brown,0000-0002-0306-2982,,,Emeritus Professor; 48 outputs
+Kym Brown,https://research.monash.edu/en/persons/kym-brown,0000-0003-2725-6236,,,Senior Lecturer; 33 outputs; was wrongly using Christine Brown ORCID
