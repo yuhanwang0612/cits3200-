@@ -82,7 +82,8 @@
     rank(a) - rank(b) || String(a.name).localeCompare(String(b.name)));
 
   grid.innerHTML = ordered.map(u =>
-    '<a class="uni-card" href="researchers.html?university=' + encodeURIComponent(u.name) + '">' +
+    '<a class="uni-card" data-code="' + esc(u.code) + '"' +
+        ' href="researchers.html?university=' + encodeURIComponent(u.name) + '">' +
       '<span class="code">' + esc(u.code) + '</span>' +
       '<span class="name">' + esc(u.name) + '</span>' +
       '<span class="stats">' +
