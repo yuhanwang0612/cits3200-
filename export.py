@@ -11,6 +11,7 @@ import re
 import unicodedata
 from collections import Counter
 from datetime import datetime, timezone
+from pathlib import Path
 
 import pandas as pd
 
@@ -70,6 +71,14 @@ _RETRIEVED_SOURCES = {"ORCID", "Crossref", "OpenAlex"}
 # sentence; "...roll-overs and exemptions: part I" / "part II", same shape
 # with roman numerals).
 _PART_MARKER_RE = re.compile(r"\bpart\s+([ivx]+|\d+)\b", re.IGNORECASE)
+_REPOSITORY_JOURNAL_MARKERS = (
+    "repository", "archive", "research collection", "eprints", "minerva access",
+)
+
+
+def _repository_like_journal(value):
+    journal = (value or "").strip().lower()
+    return any(marker in journal for marker in _REPOSITORY_JOURNAL_MARKERS)
 
 
 def _dedup_doi(doi):
@@ -85,6 +94,29 @@ def _differing_part_marker(title_a, title_b):
     ma = _PART_MARKER_RE.search(title_a or "")
     mb = _PART_MARKER_RE.search(title_b or "")
     return bool(ma and mb and ma.group(1).lower() != mb.group(1).lower())
+
+
+# One listing often drops the subtitle: UNSW has "Elevating professional
+# scepticism" where ORCID has "Elevating Professional Scepticism: An
+# Exploratory Study Into ...", both under DOI 10.1108/maj-08-2013-0914. The
+# similarity ratio is low only because one title is much longer. When both
+# rows carry the SAME real DOI and one title is the start of the other, they
+# are the same paper. Different titles under one DOI that are not a prefix of
+# each other stay separate: Economic Record gave a batch of book reviews one
+# DOI, and those are separate items.
+MIN_PREFIX_WORDS = 3
+MIN_SAME_PAPER_WORDS = 4
+
+
+def _same_doi_subtitle_dropped(a, b):
+    doi_a, doi_b = _dedup_doi(a.get("doi")), _dedup_doi(b.get("doi"))
+    if not doi_a or doi_a != doi_b:
+        return False
+    ta, tb = _normalise_title(a.get("title")), _normalise_title(b.get("title"))
+    short, long_ = sorted((ta, tb), key=len)
+    if len(short.split()) < MIN_PREFIX_WORDS:
+        return False
+    return long_ == short or long_.startswith(short + " ")
 
 
 def is_near_duplicate(a, b):
@@ -104,7 +136,7 @@ def is_near_duplicate(a, b):
     ratio = difflib.SequenceMatcher(
         None, _normalise_title(title_a), _normalise_title(title_b)
     ).ratio()
-    if ratio < NEAR_DUP_TITLE_RATIO:
+    if ratio < NEAR_DUP_TITLE_RATIO and not _same_doi_subtitle_dropped(a, b):
         return False
     ya, yb = (a.get("year") or "").strip(), (b.get("year") or "").strip()
     if ya and yb:
@@ -115,7 +147,33 @@ def is_near_duplicate(a, b):
             pass  # non-numeric year text — don't let it block an otherwise-clear match
     doi_a, doi_b = _dedup_doi(a.get("doi")), _dedup_doi(b.get("doi"))
     if doi_a and doi_b and doi_a != doi_b:
-        return False
+        # Some articles have DOI aliases: publisher vs repository deposit,
+        # or legacy JSTOR vs current publisher DOI. Merge only when the
+        # title/year are exact and the journal identity is compatible.
+        exact_title = _normalise_title(title_a) == _normalise_title(title_b)
+        exact_year = bool(ya and yb and ya == yb)
+        ja = _normalise_title(a.get("journal_name") or "")
+        jb = _normalise_title(b.get("journal_name") or "")
+        legacy_jstor_alias = (
+            bool(ja and jb and ja == jb)
+            and (doi_a.startswith("10.2307/") or doi_b.startswith("10.2307/"))
+        )
+        compatible_journal = (
+            legacy_jstor_alias
+            or _repository_like_journal(a.get("journal_name"))
+            or _repository_like_journal(b.get("journal_name"))
+        )
+        # The same paper listed twice under two DOIs, one of them mistyped or
+        # an old alias: UNSW has 10.1111/j.1467.8683.2007.00554.x where ORCID
+        # has 10.1111/j.1467-8683.2007.00554.x, and the Journal of Banking &
+        # Finance appears under both its bankfin and jbankfin prefixes. An
+        # identical title, year and journal is the same paper. Short titles
+        # are left alone, since "Discussion" or "Book review" can repeat.
+        same_journal = bool(ja and jb and ja == jb and ja != "unknown")
+        long_title = len(_normalise_title(title_a).split()) >= MIN_SAME_PAPER_WORDS
+        same_paper = exact_title and exact_year and same_journal and long_title
+        if not (exact_title and exact_year and compatible_journal) and not same_paper:
+            return False
     # The link guard only applies when NEITHER row has a doi at all (not
     # even an SSRN one) — a `link` is usually doi-derived (e.g.
     # "https://doi.org/<doi>"), so comparing it when an SSRN-vs-real-DOI
@@ -133,6 +191,10 @@ def _prefer(e, c):
     earlier-encountered row (kept by default — 'otherwise keep the
     first')."""
     doi_e, doi_c = _dedup_doi(e.get("doi")), _dedup_doi(c.get("doi"))
+    e_repository = _repository_like_journal(e.get("journal_name"))
+    c_repository = _repository_like_journal(c.get("journal_name"))
+    if e_repository != c_repository:
+        return c if e_repository else e
     if doi_e and not doi_c:
         return e
     if doi_c and not doi_e:
@@ -168,6 +230,14 @@ def _is_exact_title_year_journal_dup(a, b):
     if not a.get("title") or not b.get("title"):
         return False
     if _normalise_title(a["title"]) != _normalise_title(b["title"]):
+        return False
+    # A generic one-word heading ("Discussion", "Editorial", "Book Review")
+    # repeats legitimately within one journal and year, so an identical
+    # title is not evidence of the same paper unless the title is long
+    # enough to be distinctive. Without this the rule swallows the
+    # confirmed UNSW "Discussion" pair, which is two separate articles.
+    norm = _normalise_title(a["title"])
+    if len(norm) < _PREFIX_DUP_MIN_TITLE_LEN or len(norm.split()) < MIN_PREFIX_WORDS:
         return False
     ya, yb = (a.get("year") or "").strip(), (b.get("year") or "").strip()
     if not ya or not yb or ya != yb:
@@ -233,6 +303,16 @@ SKIPPED_PREFIX_DUPS = []
 
 def _is_prefix_duplicate(a, b):
     if a.get("name") != b.get("name"):
+        return False
+    # Two rows carrying the SAME doi are the same paper by definition, so
+    # there is nothing ambiguous to report: hand the pair to
+    # _same_doi_subtitle_dropped inside is_near_duplicate, which merges it
+    # and picks the surviving copy. Without this, _prefix_dup_winner sees
+    # "a doi on both rows", returns None, and the pair is reported instead
+    # of merged — this rule's no-signal guard was written for two DIFFERENT
+    # dois and must not claim the identical-doi case.
+    doi_a, doi_b = _dedup_doi(a.get("doi")), _dedup_doi(b.get("doi"))
+    if doi_a and doi_a == doi_b:
         return False
     ta, tb = _normalise_title(a.get("title")), _normalise_title(b.get("title"))
     if not ta or not tb or ta == tb:
@@ -336,7 +416,10 @@ def merge_near_duplicates(rows):
 def build_staff(records):
     return [{
         "name": p["name_clean"],
-        "job_title": p.get("title_clean"),
+        # The agreed staff dictionary asks for the official/raw job title.
+        # title_clean is only the derived academic-rank label and previously
+        # erased valid roles such as teaching-focused appointments.
+        "job_title": p.get("title") or p.get("title_clean"),
         "academic_level": p.get("level_code") or level(p.get("title_clean")),
         "university": p["university"],
         "field_of_research": p["discipline"],
@@ -344,6 +427,32 @@ def build_staff(records):
         "orcid": p.get("orcid"),
         "profile_url": p["profile_url"],
     } for p in records]
+
+
+_REPOSITORY_ISSNS = {"1556-5068"}   # SSRN Electronic Journal
+_ISSN_RE = re.compile(r"\b(\d{4})-?(\d{3}[\dXx])\b")
+
+
+def _clean_issns(values):
+    """Every ISSN in `values`, hyphenated, each once, in first-seen order.
+
+    Sources disagree on the format: some give "0810-5391", some "08105391",
+    and some a space-joined pair "08105391 1467629X" in a single entry. One
+    UNSW row even carried the publisher, "Emerald Group Publishing", split
+    into three ISSN slots. ABDC and Scimago join on the hyphenated form, so
+    anything that is not an ISSN is dropped and the rest are written one way.
+
+    SSRN's own ISSN is dropped too. ORCID copies it from a preprint record
+    onto the published article, so The Journal of Finance ended up carrying
+    it, and it is never the ISSN of the journal the row names.
+    """
+    out = []
+    for value in values or []:
+        for a, b in _ISSN_RE.findall(str(value)):
+            issn = f"{a}-{b.upper()}"
+            if issn not in out and issn not in _REPOSITORY_ISSNS:
+                out.append(issn)
+    return out
 
 
 def build_journals(pubs, used_names=None):
@@ -364,7 +473,7 @@ def build_journals(pubs, used_names=None):
             "journal_name": key,
             "journal_raw": x["journal"],
             "publisher": x.get("publisher"),
-            "issn": "; ".join(x.get("issns") or []) or None,
+            "issn": "; ".join(_clean_issns(x.get("issns"))) or None,
             "quality_rank": x.get("abdc"),
             "abdc_edition": x.get("abdc_edition"),
             "impact_factor": x.get("impact_factor"),
@@ -388,8 +497,7 @@ def build_journals(pubs, used_names=None):
             if field == "issn":
                 existing = [v.strip() for v in (current.get(field) or "").split(";") if v.strip()]
                 incoming = [v.strip() for v in (value or "").split(";") if v.strip()]
-                merged = existing + [v for v in incoming if v not in existing]
-                current[field] = "; ".join(merged) or None
+                current[field] = "; ".join(_clean_issns(existing + incoming)) or None
             elif not current.get(field) and value:
                 current[field] = value
 
@@ -456,14 +564,25 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     kept_dois_by_key = {}
     excluded_ssrn_preprints = 0
     anu_title_repairs = 0
+    missing_journal = 0
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x.get("type") != keep_type or not x.get("title"):
             continue
+        # Title repair runs before anything reads the title: the dedup key
+        # below is computed from it, so repairing afterwards would key the
+        # row on the mangled form and defeat FIX K / FIX L.
         if x.get("name") in anu_names:
             repaired = _anu_repair_title(x["title"])
             if repaired != x["title"]:
                 anu_title_repairs += 1
                 x["title"] = repaired
+        journal_name = x.get("abdc_title") or x.get("journal")
+        # A row cannot be delivered as a verified journal article when no
+        # journal can be named. Keep such records upstream for review, but do
+        # not let them into the client-facing publication table.
+        if not journal_name:
+            missing_journal += 1
+            continue
         if _is_anu_unranked_ssrn_preprint(x, anu_names):
             excluded_ssrn_preprints += 1
             continue
@@ -486,7 +605,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "name": x["name"],
             "orcid": orcid_by_name.get(x["name"]),
             "source_id": x.get("source_id"),
-            "journal_name": x.get("abdc_title") or x.get("journal") or "unknown",
+            "journal_name": journal_name,
             "title": x["title"],
             "year": x.get("year"),
             "author_count": x.get("n_authors"),
@@ -502,7 +621,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "fwci": x.get("fwci"),
             "oa_status": x.get("oa_status"),
             "oa_url": x.get("oa_url"),
-            "publication_status": "published",
+            "publication_status": x.get("publication_status") or "published",
             "source": x.get("source"),
         })
 
@@ -516,6 +635,8 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             print("  excluded by type:")
             for (s, t), n in dropped.most_common(10):
                 print(f"    {n:4}  {s or '?':10} {t}")
+        if missing_journal:
+            print(f"  excluded {missing_journal} journal-article row(s) with no verified journal name")
         near_dup_removed = before_near_dup - len(out)
         if near_dup_removed:
             print(f"  removed {near_dup_removed} near-duplicate row(s) (FIX G)")
@@ -607,6 +728,25 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
            verbose=True):
     publications = build_publications(pubs, records, verbose=verbose)
     staff = build_staff(records)
+
+    # Apply manual staff title overrides from data/staff_overrides.csv.
+    # This ensures titles confirmed from profile screenshots survive pipeline reruns.
+    _overrides_path = Path(__file__).resolve().parent / "data" / "staff_overrides.csv"
+    if _overrides_path.exists():
+        import csv as _csv
+        with _overrides_path.open(encoding="utf-8") as _f:
+            _overrides = {
+                (row["university"].strip().lower(), row["name"].strip()): row["job_title"].strip()
+                for row in _csv.DictReader(_f)
+            }
+        _applied = 0
+        for _s in staff:
+            _key = (_s.get("university", "").strip().lower(), (_s.get("name") or "").strip())
+            if _key in _overrides and not _s.get("job_title"):
+                _s["job_title"] = _overrides[_key]
+                _applied += 1
+        if verbose and _applied:
+            print(f"  applied {_applied} staff title override(s) from staff_overrides.csv")
 
     if drop_staff_without_pubs:
         have = {p["name"] for p in publications}

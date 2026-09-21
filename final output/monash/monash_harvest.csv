@@ -1,45 +1,807 @@
 university,source,last_run,latest_year,record_count
-Monash University,Accounting and Finance,2026-09-15T22:25:48.780448+00:00,2015.0,1
-Monash University,Applied Economics,2026-09-15T22:25:48.780448+00:00,2018.0,1
-Monash University,Australian Economic Papers,2026-09-15T22:25:48.780448+00:00,1988.0,1
-Monash University,Australian Journal of Management,2026-09-15T22:25:48.780448+00:00,2020.0,4
-Monash University,Chapters,2026-09-15T22:25:48.780448+00:00,2007.0,1
-Monash University,Crossref,2026-09-15T22:25:48.780448+00:00,2026.0,161
-Monash University,Economic Record,2026-09-15T22:25:48.780448+00:00,2018.0,10
-Monash University,Edward Elgar Publishing eBooks,2026-09-15T22:25:48.780448+00:00,,1
-Monash University,Emerging Markets Finance and Trade,2026-09-15T22:25:48.780448+00:00,2014.0,1
-Monash University,Emerging Markets Review,2026-09-15T22:25:48.780448+00:00,2017.0,1
-Monash University,European Finance Review,2026-09-15T22:25:48.780448+00:00,2015.0,1
-Monash University,European Financial Management,2026-09-15T22:25:48.780448+00:00,2012.0,1
-Monash University,Global Finance Journal,2026-09-15T22:25:48.780448+00:00,2006.0,1
-Monash University,Handbook of the economics of population aging,2026-09-15T22:25:48.780448+00:00,,1
-Monash University,Human Evolution,2026-09-15T22:25:48.780448+00:00,1986.0,1
-Monash University,Insurance Mathematics and Economics,2026-09-15T22:25:48.780448+00:00,2008.0,1
-Monash University,Journal of Banking & Finance,2026-09-15T22:25:48.780448+00:00,2022.0,5
-Monash University,Journal of Behavioral Finance,2026-09-15T22:25:48.780448+00:00,2011.0,1
-Monash University,Journal of Behavioral and Experimental Finance,2026-09-15T22:25:48.780448+00:00,2025.0,2
-Monash University,Journal of Consumer Affairs,2026-09-15T22:25:48.780448+00:00,2023.0,3
-Monash University,Journal of Economic Behavior & Organization,2026-09-15T22:25:48.780448+00:00,2024.0,3
-Monash University,Journal of Economic Dynamics and Control,2026-09-15T22:25:48.780448+00:00,2015.0,1
-Monash University,Journal of Financial Literacy and Wellbeing,2026-09-15T22:25:48.780448+00:00,2023.0,1
-Monash University,Journal of Futures Markets,2026-09-15T22:25:48.780448+00:00,2016.0,1
-Monash University,Journal of International Financial Markets Institutions and Money,2026-09-15T22:25:48.780448+00:00,2012.0,1
-Monash University,Journal of Multinational Financial Management,2026-09-15T22:25:48.780448+00:00,2007.0,1
-Monash University,Journal of Pensions Economics and Finance,2026-09-15T22:25:48.780448+00:00,2013.0,4
-Monash University,Journal of Population Economics,2026-09-15T22:25:48.780448+00:00,2009.0,1
-Monash University,Journal of Risk & Insurance,2026-09-15T22:25:48.780448+00:00,2022.0,2
-Monash University,Law and Financial Markets Review,2026-09-15T22:25:48.780448+00:00,2015.0,1
-Monash University,Management Science,2026-09-15T22:25:48.780448+00:00,2016.0,1
-Monash University,Numeracy,2026-09-15T22:25:48.780448+00:00,2013.0,1
-Monash University,ORCID,2026-09-15T22:25:48.780448+00:00,2026.0,978
-Monash University,Practical Applications,2026-09-15T22:25:48.780448+00:00,2014.0,1
-Monash University,QUT Business School,2026-09-15T22:25:48.780448+00:00,,1
-Monash University,RePEc: Research Papers in Economics,2026-09-15T22:25:48.780448+00:00,,26
-Monash University,SSRN Electronic Journal,2026-09-15T22:25:48.780448+00:00,,55
-Monash University,Teaching Statistics,2026-09-15T22:25:48.780448+00:00,2009.0,1
-Monash University,The Economic Journal,2026-09-15T22:25:48.780448+00:00,2016.0,1
-Monash University,The Journal of Financial Research,2026-09-15T22:25:48.780448+00:00,2007.0,1
-Monash University,The Journal of Portfolio Management,2026-09-15T22:25:48.780448+00:00,2013.0,1
-Monash University,The Journal of the Economics of Ageing,2026-09-15T22:25:48.780448+00:00,2023.0,1
-Monash University,"UNSWorks (University of New South Wales, Sydney, Australia)",2026-09-15T22:25:48.780448+00:00,,1
-Monash University,UTS ePRESS (University of Technology Sydney),2026-09-15T22:25:48.780448+00:00,2013.0,2
+Monash University,2015 Fall Conference: The Golden Age of Evidence-Based Policy,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,2018 APPAM Fall Research Conference: <i>Evidence for Action: Encouraging Innovation and Improvement</i>,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,2019 APPAM Fall Research Conference,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,2021 13th International Conference on Wireless Communications and Signal Processing (WCSP),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,27th Annual Meeting,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,ACM SIGMIS Database the DATABASE for Advances in Information Systems,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,ACS Applied Materials & Interfaces,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,AEA Randomized Controlled Trials,2026-09-19T13:39:03.092479+00:00,,6
+Monash University,AGUFM,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,AHFE international,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,AIDS,2026-09-19T13:39:03.092479+00:00,1995.0,1
+Monash University,AJIS. Australasian journal of information systems/AJIS. Australian journal of information systems/Australian journal of information systems,2026-09-19T13:39:03.092479+00:00,2023.0,3
+Monash University,ALGAE,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,ANU Open Research (Australian National University),2026-09-19T13:39:03.092479+00:00,1997.0,6
+Monash University,ANZ Journal of Surgery,2026-09-19T13:39:03.092479+00:00,2001.0,1
+Monash University,"ARRB Conference, 25th, 2012, Perth, Western Australia, Australia",2026-09-19T13:39:03.092479+00:00,,1
+Monash University,ASCILITE Publications,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Abacus,2026-09-19T13:39:03.092479+00:00,2025.0,18
+Monash University,Abstracts,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Academy of Accounting and Financial Studies journal,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,Academy of Management Learning and Education,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Academy of Management Proceedings,2026-09-19T13:39:03.092479+00:00,,5
+Monash University,Accounting Auditing & Accountability Journal,2026-09-19T13:39:03.092479+00:00,2026.0,34
+Monash University,Accounting Education,2026-09-19T13:39:03.092479+00:00,2026.0,18
+Monash University,Accounting Forum,2026-09-19T13:39:03.092479+00:00,2021.0,6
+Monash University,Accounting History,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Accounting History Review,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Accounting Horizons,2026-09-19T13:39:03.092479+00:00,2025.0,10
+Monash University,Accounting Organizations and Society,2026-09-19T13:39:03.092479+00:00,2026.0,30
+Monash University,Accounting Research Journal,2026-09-19T13:39:03.092479+00:00,2020.0,4
+Monash University,Accounting and Business Research,2026-09-19T13:39:03.092479+00:00,2023.0,9
+Monash University,Accounting and Finance,2026-09-19T13:39:03.092479+00:00,2026.0,96
+Monash University,Accounting and the Public Interest,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Accounting in Europe,2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,"Accounting, finance, sustainability, governance & fraud",2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Acoustical imaging,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Acta Scientiarum Naturalium Universitatis Sunyatseni,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Addictive Behaviors,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Adelaide Research & Scholarship (AR&S) (University of Adelaide),2026-09-19T13:39:03.092479+00:00,2017.0,3
+Monash University,Advanced materials research,2026-09-19T13:39:03.092479+00:00,2011.0,2
+Monash University,Advances in Accounting,2026-09-19T13:39:03.092479+00:00,2017.0,3
+Monash University,Advances in accounting behavioral research,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,"Advances in finance, accounting, and economics book series",2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Advances in information and communication technology education series/Advances in information and communication technology education (AICTE) book series,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Agenda - A Journal of Policy Analysis and Reform,2026-09-19T13:39:03.092479+00:00,2006.0,4
+Monash University,Agriculture Network Information,2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,Alimentary Pharmacology & Therapeutics,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,American Behavioral Scientist,2026-09-19T13:39:03.092479+00:00,2019.0,1
+Monash University,American Journal of Clinical Pathology,2026-09-19T13:39:03.092479+00:00,2011.0,2
+Monash University,American Journal of Dermatopathology,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,American Journal of Industrial and Business Management,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,American Journal of Tropical Medicine and Hygiene,2026-09-19T13:39:03.092479+00:00,1983.0,3
+Monash University,American Research Journal of Agriculture,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,American Sociological Review,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Analytical Chemistry,2026-09-19T13:39:03.092479+00:00,2002.0,1
+Monash University,Angiology,2026-09-19T13:39:03.092479+00:00,1994.0,1
+Monash University,Anhui nongye kexue,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Annals of Diagnostic Pathology,2026-09-19T13:39:03.092479+00:00,2004.0,1
+Monash University,Annual Review of Financial Economics,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Annual Review of Sociology,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Applied Catalysis,2026-09-19T13:39:03.092479+00:00,1989.0,1
+Monash University,Applied Economics,2026-09-19T13:39:03.092479+00:00,2024.0,10
+Monash University,Applied Economics Letters,2026-09-19T13:39:03.092479+00:00,2018.0,5
+Monash University,Applied Energy,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Applied Financial Economics,2026-09-19T13:39:03.092479+00:00,2013.0,5
+Monash University,Applied Financial Economics Letters,2026-09-19T13:39:03.092479+00:00,2008.0,2
+Monash University,Applied Research in Quality of Life,2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,Applied Sciences,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Applied demography series,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,"AquaDocs  (United Nations Educational, Scientific and Cultural Organization)",2026-09-19T13:39:03.092479+00:00,2002.0,1
+Monash University,Archives of Neurology,2026-09-19T13:39:03.092479+00:00,1998.0,1
+Monash University,Archives of Pediatric Infectious Diseases,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Asia Pacific Journal of Human Resources,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Asia Pacific Management Review,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,Asia-Pacific Financial Markets,2026-09-19T13:39:03.092479+00:00,2009.0,3
+Monash University,Asia-Pacific Journal of Accounting,2026-09-19T13:39:03.092479+00:00,1998.0,1
+Monash University,Asian Journal of Business and Accounting,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Asian Journal of Finance & Accounting,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Asian Review of Accounting,2026-09-19T13:39:03.092479+00:00,2017.0,2
+Monash University,Asian Social Science,2026-09-19T13:39:03.092479+00:00,2012.0,2
+Monash University,Asian Survey,2026-09-19T13:39:03.092479+00:00,1987.0,4
+Monash University,Asia‐Pacific Economic History Review,2026-09-19T13:39:03.092479+00:00,2021.0,2
+Monash University,Aston Publications Explorer (Aston University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Auditing A Journal of Practice & Theory,2026-09-19T13:39:03.092479+00:00,2026.0,33
+Monash University,Australasian Accounting Business and Finance Journal,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Australasian Journal of Educational Technology,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,Australian & New Zealand Journal of Psychiatry,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Australian Accounting Review,2026-09-19T13:39:03.092479+00:00,2020.0,21
+Monash University,Australian Economic Papers,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Australian Economic Review,2026-09-19T13:39:03.092479+00:00,2005.0,2
+Monash University,Australian Journal of Management,2026-09-19T13:39:03.092479+00:00,2023.0,43
+Monash University,Australian Outlook,2026-09-19T13:39:03.092479+00:00,1975.0,1
+Monash University,Australian and New Zealand Journal of Surgery,2026-09-19T13:39:03.092479+00:00,1998.0,5
+Monash University,BJPsych Open,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,BJUI Compass,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,BMGN - Low Countries Historical Review,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,BMJ,2026-09-19T13:39:03.092479+00:00,2023.0,2
+Monash University,BMJ Case Reports,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,BRAC University Institutional Repository (BRAC University),2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,Behavioral Research in Accounting,2026-09-19T13:39:03.092479+00:00,2022.0,10
+Monash University,Betriebswirtschaftliche Forschung und Praxis,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,Bioinformation,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Biological Chemistry Hoppe-Seyler,2026-09-19T13:39:03.092479+00:00,1993.0,1
+Monash University,Biomaterials,2026-09-19T13:39:03.092479+00:00,2013.0,2
+Monash University,Bioorganic & Medicinal Chemistry Letters,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Bladder,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Bond University Research Portal (Bond University),2026-09-19T13:39:03.092479+00:00,2008.0,4
+Monash University,Bone,2026-09-19T13:39:03.092479+00:00,2000.0,1
+Monash University,Bournemouth University Research Online (Bournemouth University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Briefings in Real Estate Finance,2026-09-19T13:39:03.092479+00:00,2005.0,1
+Monash University,British Journal of Radiology,2026-09-19T13:39:03.092479+00:00,1978.0,1
+Monash University,British Journal of Urology,2026-09-19T13:39:03.092479+00:00,2021.0,2
+Monash University,British journal of surgery,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Bulletin of the American Physical Society,2026-09-19T13:39:03.092479+00:00,2021.0,3
+Monash University,Business History,2026-09-19T13:39:03.092479+00:00,2025.0,11
+Monash University,Business Strategy and the Environment,2026-09-19T13:39:03.092479+00:00,2025.0,3
+Monash University,CBS Research Portal (Copenhagen Business School),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,CFA Digest,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,CFA Magazine,2026-09-19T13:39:03.092479+00:00,2003.0,2
+Monash University,CNS Spectrums,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Cai-jing yanjiu,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,Calhoun: The Naval Postgraduate School Institutional Archive (Naval Postgraduate School),2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,Cambridge University Press eBooks,2026-09-19T13:39:03.092479+00:00,1986.0,11
+Monash University,Canadian Journal of Administrative Sciences / Revue Canadienne des Sciences de l Administration,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Canadian Journal of Chemistry,2026-09-19T13:39:03.092479+00:00,1986.0,1
+Monash University,Canadian Journal of Information and Library Science,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Cellular and Molecular Life Sciences,2026-09-19T13:39:03.092479+00:00,1984.0,2
+Monash University,Chapters,2026-09-19T13:39:03.092479+00:00,2014.0,4
+Monash University,ChemInform,2026-09-19T13:39:03.092479+00:00,1992.0,12
+Monash University,Chemical Communications,2026-09-19T13:39:03.092479+00:00,2026.0,1
+Monash University,Chemical engineering transactions,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,Chemischer Informationsdienst Organische Chemie,2026-09-19T13:39:03.092479+00:00,1971.0,1
+Monash University,China Accounting and Finance Review,2026-09-19T13:39:03.092479+00:00,2025.0,2
+Monash University,China Economic Review,2026-09-19T13:39:03.092479+00:00,2005.0,1
+Monash University,China Finance Review International,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,China Journal of Accounting Research,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,Chinese Journal of Hygienic Insecticides of Equipments,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Cities,2026-09-19T13:39:03.092479+00:00,2026.0,1
+Monash University,Cliometrica,2026-09-19T13:39:03.092479+00:00,2022.0,2
+Monash University,Communications in Statistics - Simulation and Computation,2026-09-19T13:39:03.092479+00:00,1978.0,1
+Monash University,Communications of the ACM,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Communications on Stochastic Analysis,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Company and securities law journal,2026-09-19T13:39:03.092479+00:00,2020.0,2
+Monash University,Competition & regulation times,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Competitive Intelligence Review,2026-09-19T13:39:03.092479+00:00,1998.0,1
+Monash University,Complementary Therapies in Clinical Practice,2026-09-19T13:39:03.092479+00:00,2008.0,2
+Monash University,Comprehensive Reviews in Food Science and Food Safety,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Computers & Operations Research,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Contemporary Accounting Research,2026-09-19T13:39:03.092479+00:00,2025.0,12
+Monash University,Contemporary Sociology A Journal of Reviews,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Contemporary studies in economic and financial analysis,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Controlling & Management Review,2026-09-19T13:39:03.092479+00:00,2019.0,1
+Monash University,Corporate Governance,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,Corporate Governance An International Review,2026-09-19T13:39:03.092479+00:00,2022.0,5
+Monash University,Corporate Ownership and Control,2026-09-19T13:39:03.092479+00:00,2012.0,5
+Monash University,Corporate Social Responsibility and Environmental Management,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Criminal Justice,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Criminal Research,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,Criminologie,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,Critical Finance Review,2026-09-19T13:39:03.092479+00:00,2025.0,4
+Monash University,Critical Perspectives on Accounting,2026-09-19T13:39:03.092479+00:00,2024.0,5
+Monash University,Critical Reviews in Food Science and Nutrition,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Crossref,2026-09-19T13:39:03.092479+00:00,2026.0,23
+Monash University,Current Issues in Auditing,2026-09-19T13:39:03.092479+00:00,2023.0,5
+Monash University,Current Medicine Research and Practice,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,DEStech Transactions on Social Science Education and Human Science,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,DMW - Deutsche Medizinische Wochenschrift,2026-09-19T13:39:03.092479+00:00,1972.0,1
+Monash University,DOAJ (DOAJ: Directory of Open Access Journals),2026-09-19T13:39:03.092479+00:00,2017.0,7
+Monash University,Data Archiving and Networked Services (DANS),2026-09-19T13:39:03.092479+00:00,2004.0,10
+Monash University,Data and Information Management,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,De Economist,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Deakin Law Review,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,Deakin Research Online (Deakin University),2026-09-19T13:39:03.092479+00:00,2013.0,9
+Monash University,Decision Support Systems,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Deep Blue (University of Michigan),2026-09-19T13:39:03.092479+00:00,1997.0,21
+Monash University,Demography,2026-09-19T13:39:03.092479+00:00,2021.0,5
+Monash University,Dialnet (Universidad de la Rioja),2026-09-19T13:39:03.092479+00:00,,3
+Monash University,Digital Commons - PCOM (Philadelphia College of Osteopathic Medicine),2026-09-19T13:39:03.092479+00:00,2019.0,1
+Monash University,Diseases of the Esophagus,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Doria (University of Helsinki),2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Du Bois Review Social Science Research on Race,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,ENLIGHTEN (Jurnal Bimbingan dan Konseling Islam),2026-09-19T13:39:03.092479+00:00,2003.0,2
+Monash University,EUR Research Repository (Erasmus University Rotterdam),2026-09-19T13:39:03.092479+00:00,2013.0,8
+Monash University,Eco-efficiency in industry and science,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Econometrica,2026-09-19T13:39:03.092479+00:00,1984.0,1
+Monash University,Economic & Labour Market Review,2026-09-19T13:39:03.092479+00:00,2010.0,5
+Monash University,Economic Development Quarterly,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Economic Inquiry,2026-09-19T13:39:03.092479+00:00,2010.0,2
+Monash University,Economic Management,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Economic Modelling,2026-09-19T13:39:03.092479+00:00,2020.0,2
+Monash University,Economic Papers A journal of applied economics and policy,2026-09-19T13:39:03.092479+00:00,2006.0,4
+Monash University,Economic Record,2026-09-19T13:39:03.092479+00:00,2018.0,12
+Monash University,Economic Synopses,2026-09-19T13:39:03.092479+00:00,2013.0,18
+Monash University,Economic Systems,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Economics Letters,2026-09-19T13:39:03.092479+00:00,2011.0,2
+Monash University,Economisch Statistische Berichten,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Econstor (Econstor),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Education + Training,2026-09-19T13:39:03.092479+00:00,2020.0,3
+Monash University,Educational Practice and Theory,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,Edward Elgar Publishing eBooks,2026-09-19T13:39:03.092479+00:00,,24
+Monash University,Electronic Commerce Research,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Electronic Sumy State University Institutional Repository (Sumy State University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Elsevier eBooks,2026-09-19T13:39:03.092479+00:00,,14
+Monash University,Emerging Markets Finance and Trade,2026-09-19T13:39:03.092479+00:00,2021.0,3
+Monash University,Emerging Markets Review,2026-09-19T13:39:03.092479+00:00,2024.0,8
+Monash University,Energy Economics,2026-09-19T13:39:03.092479+00:00,2025.0,5
+Monash University,Enterprise & Society,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Entrepreneurship Theory and Practice,2026-09-19T13:39:03.092479+00:00,2026.0,3
+Monash University,Environment and Planning B Urban Analytics and City Science,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Environmental Science and Pollution Research,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Equity Jurnal Akuntansi,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,European Accounting Review,2026-09-19T13:39:03.092479+00:00,2026.0,29
+Monash University,European Addiction Research,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,European Economic Review,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,European Finance Review,2026-09-19T13:39:03.092479+00:00,2024.0,7
+Monash University,European Financial Management,2026-09-19T13:39:03.092479+00:00,2019.0,5
+Monash University,European Journal of Cancer,2026-09-19T13:39:03.092479+00:00,1997.0,2
+Monash University,European Journal of Cardio-Thoracic Surgery,2026-09-19T13:39:03.092479+00:00,2002.0,2
+Monash University,European Journal of Finance,2026-09-19T13:39:03.092479+00:00,2012.0,3
+Monash University,European Journal of Information Systems,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,European Journal of Operational Research,2026-09-19T13:39:03.092479+00:00,2024.0,2
+Monash University,European Journal of Public Health,2026-09-19T13:39:03.092479+00:00,2020.0,2
+Monash University,European Management Journal,2026-09-19T13:39:03.092479+00:00,2007.0,2
+Monash University,European Review of Economic History,2026-09-19T13:39:03.092479+00:00,2021.0,2
+Monash University,European Taxation,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,European Urology Supplements,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Experimental Parasitology,2026-09-19T13:39:03.092479+00:00,1986.0,9
+Monash University,Explorations in Economic History,2026-09-19T13:39:03.092479+00:00,2023.0,4
+Monash University,FEBS Letters,2026-09-19T13:39:03.092479+00:00,1995.0,2
+Monash University,Faculty Digital Archive (New York University Florence),2026-09-19T13:39:03.092479+00:00,,2
+Monash University,"Federal Reserve Bank of Dallas, Globalization and Monetary Policy Institute Working Papers",2026-09-19T13:39:03.092479+00:00,2017.0,2
+Monash University,Feminist Economics,2026-09-19T13:39:03.092479+00:00,2018.0,1
+Monash University,Figshare,2026-09-19T13:39:03.092479+00:00,,21
+Monash University,Finance research letters,2026-09-19T13:39:03.092479+00:00,2021.0,9
+Monash University,Financial Accountability and Management,2026-09-19T13:39:03.092479+00:00,2022.0,6
+Monash University,Financial Analysts Journal,2026-09-19T13:39:03.092479+00:00,2023.0,8
+Monash University,Financial History Review,2026-09-19T13:39:03.092479+00:00,2022.0,3
+Monash University,Financial Management,2026-09-19T13:39:03.092479+00:00,2026.0,11
+Monash University,Financial Markets Institutions and Instruments,2026-09-19T13:39:03.092479+00:00,2009.0,3
+Monash University,Financial Review,2026-09-19T13:39:03.092479+00:00,2026.0,4
+Monash University,Food Hydrocolloids,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Frontiers in Genetics,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Frontiers in Microbiology,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Frontiers in Psychiatry,2026-09-19T13:39:03.092479+00:00,2022.0,3
+Monash University,Frontiers in Psychology,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Frontiers in Public Health,2026-09-19T13:39:03.092479+00:00,2022.0,2
+Monash University,Frontiers in Veterinary Science,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Future of business and finance,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Games and Economic Behavior,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Geburtshilfe und Frauenheilkunde,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Gender Work and Organization,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Geografiska Annaler Series A Physical Geography,2026-09-19T13:39:03.092479+00:00,1972.0,1
+Monash University,Global Finance Journal,2026-09-19T13:39:03.092479+00:00,2006.0,2
+Monash University,Global Health Action,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Global financial markets.,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Griffith Research Online,2026-09-19T13:39:03.092479+00:00,2010.0,7
+Monash University,Guthrie Journal,2026-09-19T13:39:03.092479+00:00,1948.0,1
+Monash University,HAL (Le Centre pour la Communication Scientifique Directe),2026-09-19T13:39:03.092479+00:00,,3
+Monash University,HAL Portal Artxiker (Hindustan Aeronautics Limited (India)),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Handbook of the economics of population aging,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Handbooks of management accounting research,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Harmful Algae,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Harvard Dataverse,2026-09-19T13:39:03.092479+00:00,,3
+Monash University,Health Affairs,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Health Policy,2026-09-19T13:39:03.092479+00:00,2020.0,2
+Monash University,Heliyon,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Hematological Oncology,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,Higher Education Research & Development,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,Higher education review,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,Human Evolution,2026-09-19T13:39:03.092479+00:00,1986.0,1
+Monash University,ICPSR Data Holdings,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,IDS Bulletin,2026-09-19T13:39:03.092479+00:00,1979.0,1
+Monash University,IEEE Transactions on Automation Science and Engineering,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,IEEE Transactions on Engineering Management,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,IEEE Transactions on Mobile Computing,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,IEEE Transactions on Neural Networks,2026-09-19T13:39:03.092479+00:00,2004.0,1
+Monash University,IEEE Wireless Communications,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,IFAC Proceedings Volumes,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,IGI Global eBooks,2026-09-19T13:39:03.092479+00:00,,15
+Monash University,IJU Case Reports,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,INCOSE International Symposium,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,INFLIBNET,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,IOP Conference Series Earth and Environmental Science,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,IOS Press eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,IPN Journal of Research and Practice in Public Sector Accounting and Management,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,ISEAS Publishing eBooks,2026-09-19T13:39:03.092479+00:00,,7
+Monash University,Illinois Digital Environment for Access to Learning and Scholarship (University of Illinois at Urbana-Champaign),2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Indian Journal Of Applied Research,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Indian Journal of Clinical and Experimental Ophthalmology,2026-09-19T13:39:03.092479+00:00,2019.0,2
+Monash University,Indian Journal of Ophthalmology - Case Reports,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Indian Journal of Pain,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Indian journal of radiology and imaging - new series/Indian journal of radiology and imaging/Indian Journal of Radiology & Imaging,2026-09-19T13:39:03.092479+00:00,2009.0,2
+Monash University,Industrial Engineering and Engineering Management,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Industrial Marketing Management,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Industrial Relations A Journal of Economy and Society,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Industrial and Corporate Change,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,Information & Management,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Information Systems and e-Business Management,2026-09-19T13:39:03.092479+00:00,2009.0,2
+Monash University,Information Technology and People,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Insurance Mathematics and Economics,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Integrated Manufacturing Systems,2026-09-19T13:39:03.092479+00:00,1996.0,1
+Monash University,Intelligent Data Engineering and Automated Learning,2026-09-19T13:39:03.092479+00:00,1998.0,1
+Monash University,Internal Medicine Journal,2026-09-19T13:39:03.092479+00:00,2009.0,2
+Monash University,International Business Research,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,International Conference on Information and Communication Technologies,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,International Conference on Neural Information Processing,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,International Finance,2026-09-19T13:39:03.092479+00:00,2019.0,1
+Monash University,International Journal for Parasitology,2026-09-19T13:39:03.092479+00:00,1985.0,1
+Monash University,International Journal for Research Publication and Seminars,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,International Journal of Accounting Information Systems,2026-09-19T13:39:03.092479+00:00,2026.0,11
+Monash University,International Journal of Accounting and Information Management,2026-09-19T13:39:03.092479+00:00,2020.0,2
+Monash University,International Journal of Applied Economics Finance and Accounting,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,International Journal of Artificial Intelligence in Education,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,International Journal of Auditing,2026-09-19T13:39:03.092479+00:00,2026.0,21
+Monash University,International Journal of Banking Accounting and Finance,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,International Journal of Banking and Finance,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,International Journal of Business Governance and Ethics,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,International Journal of Business Information Systems,2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,International Journal of Business and Management,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,International Journal of Cancer,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,International Journal of Communication Systems,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,International Journal of Corporate Governance,2026-09-19T13:39:03.092479+00:00,2016.0,2
+Monash University,International Journal of Drug Delivery Technology,2026-09-19T13:39:03.092479+00:00,2014.0,2
+Monash University,International Journal of Electrical Power & Energy Systems,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,International Journal of Emerging Markets,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,International Journal of Environmental Research and Public Health,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,International Journal of Financial Research,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,International Journal of Forecasting,2026-09-19T13:39:03.092479+00:00,2024.0,2
+Monash University,International Journal of Global Energy Issues,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,International Journal of Indian Psychology,2026-09-19T13:39:03.092479+00:00,2016.0,2
+Monash University,International Journal of Industrial Organization,2026-09-19T13:39:03.092479+00:00,2005.0,1
+Monash University,International Journal of Machine Learning and Computing,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,International Journal of Management Reviews,2026-09-19T13:39:03.092479+00:00,2008.0,2
+Monash University,International Journal of Managerial Finance,2026-09-19T13:39:03.092479+00:00,2025.0,12
+Monash University,International Journal of Medical Anesthesiology,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,International Journal of Medical Science,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,International Journal of Neural Systems,2026-09-19T13:39:03.092479+00:00,1997.0,1
+Monash University,International Journal of Operations & Production Management,2026-09-19T13:39:03.092479+00:00,2014.0,2
+Monash University,International Journal of Pharma Medicine and Biological Sciences,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,International Journal of Psychophysiology,2026-09-19T13:39:03.092479+00:00,1993.0,1
+Monash University,International Journal of Radiation Oncology*Biology*Physics,2026-09-19T13:39:03.092479+00:00,1986.0,1
+Monash University,International Journal of Research in Modern Engineering & Emerging Technology,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,International Journal of Research in Orthopaedics,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,International Journal of Science and Research (IJSR),2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,International Journal of Surgery Case Reports,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,International Journal of Systems Science,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,International Journal of Theoretical and Applied Finance,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,International Migration Review,2026-09-19T13:39:03.092479+00:00,2014.0,4
+Monash University,International Review of Economics & Finance,2026-09-19T13:39:03.092479+00:00,2026.0,5
+Monash University,International Review of Finance,2026-09-19T13:39:03.092479+00:00,2025.0,29
+Monash University,International Review of Financial Analysis,2026-09-19T13:39:03.092479+00:00,2024.0,24
+Monash University,International Review of Law and Economics,2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,International Review of Victimology,2026-09-19T13:39:03.092479+00:00,2009.0,4
+Monash University,International Small Business Journal Researching Entrepreneurship,2026-09-19T13:39:03.092479+00:00,2025.0,4
+Monash University,International Transactions in Operational Research,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,International finance review,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,International series in management science/operations research/International series in operations research & management science,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Investigative Ophthalmology & Visual Science,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Investigative Radiology,2026-09-19T13:39:03.092479+00:00,1994.0,1
+Monash University,Issues in Accounting Education,2026-09-19T13:39:03.092479+00:00,2023.0,10
+Monash University,J. Willard Marriott Library,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,JAIDS Journal of Acquired Immune Deficiency Syndromes,2026-09-19T13:39:03.092479+00:00,2014.0,2
+Monash University,JASSA.,2026-09-19T13:39:03.092479+00:00,2014.0,6
+Monash University,JMIR Research Protocols,2026-09-19T13:39:03.092479+00:00,2026.0,1
+Monash University,JMIR Serious Games,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Japanese Journal of Administrative Science,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Jingji wenti,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal de pharmacie de Belgique,2026-09-19T13:39:03.092479+00:00,1996.0,1
+Monash University,Journal für praktische Chemie,2026-09-19T13:39:03.092479+00:00,1974.0,3
+Monash University,Journal of Accounting & Marketing,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal of Accounting Auditing & Finance,2026-09-19T13:39:03.092479+00:00,2026.0,6
+Monash University,Journal of Accounting Education,2026-09-19T13:39:03.092479+00:00,2025.0,3
+Monash University,Journal of Accounting Literature,2026-09-19T13:39:03.092479+00:00,2018.0,2
+Monash University,Journal of Accounting Research,2026-09-19T13:39:03.092479+00:00,2025.0,4
+Monash University,Journal of Accounting and Economics,2026-09-19T13:39:03.092479+00:00,2024.0,2
+Monash University,Journal of Accounting and Public Policy,2026-09-19T13:39:03.092479+00:00,2023.0,8
+Monash University,Journal of Affective Disorders,2026-09-19T13:39:03.092479+00:00,2026.0,2
+Monash University,Journal of Applied Biobehavioral Research,2026-09-19T13:39:03.092479+00:00,2001.0,1
+Monash University,Journal of Asian Economics,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Journal of Baltic Studies,2026-09-19T13:39:03.092479+00:00,1976.0,1
+Monash University,Journal of Banking & Finance,2026-09-19T13:39:03.092479+00:00,2026.0,79
+Monash University,Journal of Behavioral Addictions,2026-09-19T13:39:03.092479+00:00,2025.0,3
+Monash University,Journal of Behavioral Finance,2026-09-19T13:39:03.092479+00:00,2022.0,6
+Monash University,Journal of Behavioral and Experimental Finance,2026-09-19T13:39:03.092479+00:00,2026.0,7
+Monash University,Journal of Biological Chemistry,2026-09-19T13:39:03.092479+00:00,2010.0,2
+Monash University,Journal of Business Administration (JBA),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Journal of Business Ethics,2026-09-19T13:39:03.092479+00:00,2023.0,20
+Monash University,Journal of Business Ethics Education,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal of Business Finance &amp Accounting,2026-09-19T13:39:03.092479+00:00,2026.0,41
+Monash University,Journal of Business Research,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Journal of Business Venturing,2026-09-19T13:39:03.092479+00:00,2025.0,3
+Monash University,Journal of Business Venturing Insights,2026-09-19T13:39:03.092479+00:00,2026.0,1
+Monash University,Journal of Business and Economic Statistics,2026-09-19T13:39:03.092479+00:00,1988.0,2
+Monash University,Journal of Business and Green Innovation,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Journal of Chromatography A,2026-09-19T13:39:03.092479+00:00,2001.0,1
+Monash University,Journal of Clinical Densitometry,2026-09-19T13:39:03.092479+00:00,2003.0,1
+Monash University,Journal of Clinical Neuroscience,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Journal of Clinical Urology,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Journal of Consumer Affairs,2026-09-19T13:39:03.092479+00:00,2023.0,3
+Monash University,Journal of Consumer Psychology,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Journal of Contemporary Accounting & Economics,2026-09-19T13:39:03.092479+00:00,2026.0,19
+Monash University,Journal of Corporate Finance,2026-09-19T13:39:03.092479+00:00,2025.0,46
+Monash University,Journal of Derivatives & Hedge Funds,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Journal of Economic Behavior & Organization,2026-09-19T13:39:03.092479+00:00,2024.0,13
+Monash University,Journal of Economic Dynamics and Control,2026-09-19T13:39:03.092479+00:00,2025.0,9
+Monash University,Journal of Economic Psychology,2026-09-19T13:39:03.092479+00:00,2007.0,2
+Monash University,Journal of Economic Surveys,2026-09-19T13:39:03.092479+00:00,1997.0,1
+Monash University,Journal of Economics and Business,2026-09-19T13:39:03.092479+00:00,2026.0,1
+Monash University,Journal of Education and Educational Research,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Journal of Emerging Market Finance,2026-09-19T13:39:03.092479+00:00,2004.0,1
+Monash University,Journal of Empirical Finance,2026-09-19T13:39:03.092479+00:00,2024.0,6
+Monash University,Journal of Empirical Legal Studies,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Journal of Engineering Mechanics,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Journal of Enterprise Information Management,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Journal of Environmental Economics and Management,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Journal of Financial Economic Policy,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Journal of Financial Economics,2026-09-19T13:39:03.092479+00:00,2025.0,24
+Monash University,Journal of Financial Intermediation,2026-09-19T13:39:03.092479+00:00,2025.0,2
+Monash University,Journal of Financial Literacy and Wellbeing,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Journal of Financial Markets,2026-09-19T13:39:03.092479+00:00,2025.0,9
+Monash University,Journal of Financial and Quantitative Analysis,2026-09-19T13:39:03.092479+00:00,2023.0,20
+Monash University,Journal of Fluorine Chemistry,2026-09-19T13:39:03.092479+00:00,1985.0,1
+Monash University,Journal of Forecasting,2026-09-19T13:39:03.092479+00:00,2016.0,2
+Monash University,Journal of Forensic Accounting Research,2026-09-19T13:39:03.092479+00:00,2018.0,1
+Monash University,Journal of Freshwater Ecology,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Journal of Futures Markets,2026-09-19T13:39:03.092479+00:00,2019.0,17
+Monash University,Journal of Harmonized Research in Management,2026-09-19T13:39:03.092479+00:00,2019.0,2
+Monash University,Journal of Higher Education Theory and Practice,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Journal of History,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Journal of Information Science,2026-09-19T13:39:03.092479+00:00,2000.0,2
+Monash University,Journal of Information Systems,2026-09-19T13:39:03.092479+00:00,2025.0,15
+Monash University,Journal of Intellectual Disability Research,2026-09-19T13:39:03.092479+00:00,2011.0,2
+Monash University,Journal of International Accounting Research,2026-09-19T13:39:03.092479+00:00,2025.0,7
+Monash University,Journal of International Business Studies,2026-09-19T13:39:03.092479+00:00,2018.0,2
+Monash University,Journal of International Financial Management and Accounting,2026-09-19T13:39:03.092479+00:00,2021.0,2
+Monash University,Journal of International Financial Markets Institutions and Money,2026-09-19T13:39:03.092479+00:00,2021.0,28
+Monash University,Journal of International Money and Finance,2026-09-19T13:39:03.092479+00:00,2022.0,5
+Monash University,Journal of Internet Commerce,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal of Islamic Economics Banking and Finance,2026-09-19T13:39:03.092479+00:00,2009.0,2
+Monash University,Journal of Jiaying University,2026-09-19T13:39:03.092479+00:00,2005.0,1
+Monash University,Journal of Management Accounting Research,2026-09-19T13:39:03.092479+00:00,2023.0,9
+Monash University,Journal of Management History,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Journal of Management Inquiry,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Journal of Management Studies,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Journal of Manufacturing Systems,2026-09-19T13:39:03.092479+00:00,2003.0,1
+Monash University,Journal of Medical Entomology,2026-09-19T13:39:03.092479+00:00,1979.0,3
+Monash University,Journal of Medical Internet Research,2026-09-19T13:39:03.092479+00:00,2026.0,3
+Monash University,Journal of Medicinal Chemistry,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,Journal of Middle Eastern and Islamic Studies (in Asia),2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,Journal of Modern Accounting and Auditing,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Journal of Multinational Financial Management,2026-09-19T13:39:03.092479+00:00,2009.0,4
+Monash University,Journal of Nanoelectronics and Optoelectronics,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Journal of Neuropsychiatry,2026-09-19T13:39:03.092479+00:00,1994.0,1
+Monash University,Journal of Non-Crystalline Solids,2026-09-19T13:39:03.092479+00:00,1992.0,1
+Monash University,Journal of Northwest A&F University,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal of Oceanography,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Journal of Open Flexible and Distance Learning,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal of Operations Management,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,Journal of Organizational and End User Computing,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal of Organometallic Chemistry,2026-09-19T13:39:03.092479+00:00,1991.0,1
+Monash University,Journal of Pensions Economics and Finance,2026-09-19T13:39:03.092479+00:00,2013.0,4
+Monash University,Journal of Personality,2026-09-19T13:39:03.092479+00:00,2026.0,1
+Monash University,Journal of Personality and Social Psychology,2026-09-19T13:39:03.092479+00:00,1997.0,4
+Monash University,Journal of Photochemistry and Photobiology A Chemistry,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Journal of Policy Modeling,2026-09-19T13:39:03.092479+00:00,2019.0,1
+Monash University,Journal of Policy and Practice in Intellectual Disabilities,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Journal of Population Economics,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Journal of Quantum Science and Technology.,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Journal of Regional Science,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Journal of Retailing,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,Journal of Risk & Insurance,2026-09-19T13:39:03.092479+00:00,2022.0,2
+Monash University,Journal of Scandinavian Studies in Criminology and Crime Prevention,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,Journal of South Asian Development,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal of Testing and Evaluation,2026-09-19T13:39:03.092479+00:00,1991.0,1
+Monash University,Journal of University Teaching and Learning Practice,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,Journal of Vascular Surgery Cases and Innovative Techniques,2026-09-19T13:39:03.092479+00:00,2018.0,1
+Monash University,Journal of Vocational Education and Training,2026-09-19T13:39:03.092479+00:00,2018.0,1
+Monash University,Journal of Vocational Rehabilitation,2026-09-19T13:39:03.092479+00:00,1999.0,1
+Monash University,Journal of applied corporate finance,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Journal of risk and financial management,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Journal of technology management & innovation,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Journal of the American Academy of Psychiatry and the Law online/The journal of the American Academy of Psychiatry and the Law,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Journal of the American Taxation Association,2026-09-19T13:39:03.092479+00:00,2019.0,1
+Monash University,Journal of the Asia Pacific Economy,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Journal of the Association for Consumer Research,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Journal of the Association for Information Systems,2026-09-19T13:39:03.092479+00:00,2019.0,12
+Monash University,Journal of the Chemical Society Chemical Communications,2026-09-19T13:39:03.092479+00:00,1986.0,4
+Monash University,Journal of the Chemical Society Dalton Transactions,2026-09-19T13:39:03.092479+00:00,1986.0,1
+Monash University,Journal of the Chemical Society Perkin Transactions 2,2026-09-19T13:39:03.092479+00:00,1987.0,2
+Monash University,Journal of the Royal Statistical Society Series A (General),2026-09-19T13:39:03.092479+00:00,1973.0,1
+Monash University,Journal of the Transportation Research Forum,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,Keizai keizai,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,LISS Data Archive,2026-09-19T13:39:03.092479+00:00,2026.0,6
+Monash University,La Trobe University,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Lancaster EPrints (Lancaster University),2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Land,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Langenbeck s Archives of Surgery,2026-09-19T13:39:03.092479+00:00,1968.0,3
+Monash University,Langenbecks Archiv für Chirurgie. Supplement,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Law and Financial Markets Review,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,Learned Journal of Heilongjiang Financial College,2026-09-19T13:39:03.092479+00:00,2003.0,1
+Monash University,Lecture notes in computer science,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Lecture notes in electrical engineering,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Lecture notes on data engineering and communications technologies,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Legal Forum,2026-09-19T13:39:03.092479+00:00,2005.0,1
+Monash University,Lincoln Repository (University of Lincoln),2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Logistics,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,London School of Economics and Political Science Research Online (London School of Economics and Political Science),2026-09-19T13:39:03.092479+00:00,2015.0,18
+Monash University,London School of Economics and Political Science Theses Online (London School of Economics and Political Science),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Long Range Planning,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Loughborough University Institutional Repository (Loughborough University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Lund University Publications Student Papers (Lund University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Lung,2026-09-19T13:39:03.092479+00:00,1990.0,1
+Monash University,Lung Cancer,2026-09-19T13:39:03.092479+00:00,2000.0,4
+Monash University,MADOC (University of Mannheim),2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,Maandblad Voor Accountancy en Bedrijfseconomie,2026-09-19T13:39:03.092479+00:00,2024.0,20
+Monash University,Macmillan eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Macroeconomic Dynamics,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Malaysian Journal of Economic Studies,2026-09-19T13:39:03.092479+00:00,2003.0,1
+Monash University,Management Accounting Research,2026-09-19T13:39:03.092479+00:00,2025.0,22
+Monash University,Management Science,2026-09-19T13:39:03.092479+00:00,2026.0,11
+Monash University,Managerial Auditing Journal,2026-09-19T13:39:03.092479+00:00,2022.0,8
+Monash University,Managerial Finance,2026-09-19T13:39:03.092479+00:00,2019.0,4
+Monash University,Managerial and Decision Economics,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Market Forces,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,Materials science forum,2026-09-19T13:39:03.092479+00:00,1987.0,1
+Monash University,Mathematics,2026-09-19T13:39:03.092479+00:00,2026.0,2
+Monash University,McGraw-Hill eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Medical Entomology and Zoology,2026-09-19T13:39:03.092479+00:00,2010.0,17
+Monash University,Medical Recapitulate,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Medical Research Archives,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Meditari Accountancy Research,2026-09-19T13:39:03.092479+00:00,2026.0,11
+Monash University,Mental Retardation,2026-09-19T13:39:03.092479+00:00,2002.0,1
+Monash University,Minds at UW (University of Wisconsin),2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Minerva Access (University of Melbourne),2026-09-19T13:39:03.092479+00:00,2020.0,4
+Monash University,Monash Business Review,2026-09-19T13:39:03.092479+00:00,2008.0,6
+Monash University,Monash University,2026-09-19T13:39:03.092479+00:00,2017.0,14
+Monash University,Motivation and Emotion,2026-09-19T13:39:03.092479+00:00,2002.0,1
+Monash University,Movement Disorders,2026-09-19T13:39:03.092479+00:00,2005.0,1
+Monash University,Multinational Finance Journal,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,NBER Chapters,2026-09-19T13:39:03.092479+00:00,2005.0,1
+Monash University,National Bureau of Economic Research,2026-09-19T13:39:03.092479+00:00,,7
+Monash University,National Tax Journal,2026-09-19T13:39:03.092479+00:00,2004.0,1
+Monash University,Nature Biomedical Engineering,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Nature Climate Change,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Nature Human Behaviour,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Nelson eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,NeuroImage,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,Neuroscience Applied,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Nomos Verlagsgesellschaft mbH & Co. KG eBooks,2026-09-19T13:39:03.092479+00:00,,9
+Monash University,Nonprofit and Voluntary Sector Quarterly,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Northern Ireland Legal Quarterly,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Notes and Queries,2026-09-19T13:39:03.092479+00:00,1917.0,7
+Monash University,Nottingham Trent University's Institutional Repository (Nottingham Trent Repository),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Nuclear Medicine Communications,2026-09-19T13:39:03.092479+00:00,2001.0,8
+Monash University,Nuklearmedizin - NuclearMedicine,2026-09-19T13:39:03.092479+00:00,1990.0,1
+Monash University,Numeracy,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,ORCA Online Research @Cardiff (Cardiff University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,ORCID,2026-09-19T13:39:03.092479+00:00,2026.0,81
+Monash University,OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information),2026-09-19T13:39:03.092479+00:00,1976.0,4
+Monash University,OakTrust (Texas A&M University Libraries),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Obstetrical & Gynecological Survey,2026-09-19T13:39:03.092479+00:00,2005.0,1
+Monash University,Obstetrics and Gynecology,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Omega,2026-09-19T13:39:03.092479+00:00,2015.0,3
+Monash University,Open Learning The Journal of Open Distance and e-Learning,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,OpenAlex,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,OpenBU (Boston University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Optics & Laser Technology,2026-09-19T13:39:03.092479+00:00,1993.0,1
+Monash University,Optics Express,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Organometallics,2026-09-19T13:39:03.092479+00:00,1998.0,2
+Monash University,Osteoporosis International,2026-09-19T13:39:03.092479+00:00,2000.0,1
+Monash University,Otago University Research Archive (University of Otago),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Oxford University Press eBooks,2026-09-19T13:39:03.092479+00:00,,5
+Monash University,PAA 2018 Annual Meeting,2026-09-19T13:39:03.092479+00:00,2018.0,1
+Monash University,Pacific Accounting Review,2026-09-19T13:39:03.092479+00:00,2016.0,7
+Monash University,Pacific Asia Conference on Information Systems,2026-09-19T13:39:03.092479+00:00,,4
+Monash University,Pacific Economic Review,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Pacific-Basin Finance Journal,2026-09-19T13:39:03.092479+00:00,2025.0,55
+Monash University,Pakistan Armed Forces Medical Journal,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Palgrave Macmillan UK eBooks,2026-09-19T13:39:03.092479+00:00,,39
+Monash University,Palgrave Macmillan US eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Palgrave Macmillan eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Palgrave studies in economic history,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Parasitology,2026-09-19T13:39:03.092479+00:00,1981.0,1
+Monash University,Parasitology Today,2026-09-19T13:39:03.092479+00:00,1985.0,1
+Monash University,Pathology,2026-09-19T13:39:03.092479+00:00,2026.0,2
+Monash University,Personality and Individual Differences,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,Physics Procedia,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,Physikalische Blätter,2026-09-19T13:39:03.092479+00:00,1981.0,1
+Monash University,Phytotherapy Research,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Pitman Pub. eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Pneumologie,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,Polyhedron,2026-09-19T13:39:03.092479+00:00,1992.0,3
+Monash University,Population Research and Policy Review,2026-09-19T13:39:03.092479+00:00,2019.0,3
+Monash University,Population Space and Place,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Population and Development Review,2026-09-19T13:39:03.092479+00:00,2019.0,2
+Monash University,"Portuguese National Funding Agency for Science, Research and Technology (RCAAP Project by FCT)",2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Practical Applications,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Preprints.org,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Princeton University Press eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Proceedings of International Conference on Neural Networks (ICNN'97),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Proceedings of JSME-IIP/ASME-ISPS Joint Conference on Micromechatronics for Information and Precision Equipment IIP/ISPS joint MIPE,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Proceedings of the ... Annual Hawaii International Conference on System Sciences/Proceedings of the Annual Hawaii International Conference on System Sciences,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Proceedings of the Annual Conference of the IEEE Industrial Electronics Society,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Proceedings of the National Academy of Sciences,2026-09-19T13:39:03.092479+00:00,2024.0,3
+Monash University,Production and Operations Management,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,PsycTESTS Dataset,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Psychiatry Research,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Psychophysiology,2026-09-19T13:39:03.092479+00:00,1992.0,1
+Monash University,PubMed,2026-09-19T13:39:03.092479+00:00,2017.0,68
+Monash University,PubliCE,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,Public Affairs And Governance,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,Public Money & Management,2026-09-19T13:39:03.092479+00:00,2022.0,3
+Monash University,Purdue e-Pubs (Purdue University System),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,QUT Business School,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,QUT ePrints (Queensland University of Technology),2026-09-19T13:39:03.092479+00:00,2015.0,7
+Monash University,Qualitative Research in Accounting & Management,2026-09-19T13:39:03.092479+00:00,2020.0,4
+Monash University,Quality in Higher Education,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,Quantitative Finance,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,Quarterly Journal of Finance,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,RIT Scholar Works (Rochester Institute of Technology),2026-09-19T13:39:03.092479+00:00,,2
+Monash University,RMIT Research Repository (RMIT University Library),2026-09-19T13:39:03.092479+00:00,2024.0,5
+Monash University,RUNE (Research UNE),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Radiotherapy and Oncology,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Rare & Special e-Zone (The Hong Kong University of Science and Technology),2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,RePEc: Research Papers in Economics,2026-09-19T13:39:03.092479+00:00,,109
+Monash University,RePub (Erasmus University Rotterdam),2026-09-19T13:39:03.092479+00:00,,3
+Monash University,Real Estate Economics,2026-09-19T13:39:03.092479+00:00,2022.0,2
+Monash University,Report,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Repository of the University of Ljubljana (University of Ljubljana),2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,Research Explorer (The University of Manchester),2026-09-19T13:39:03.092479+00:00,2003.0,1
+Monash University,Research Online (University of Wollongong),2026-09-19T13:39:03.092479+00:00,2012.0,5
+Monash University,Research Policy,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Research Portal (Queen's University Belfast),2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,Research Publications (Maastricht University),2026-09-19T13:39:03.092479+00:00,2004.0,1
+Monash University,Research Square,2026-09-19T13:39:03.092479+00:00,,3
+Monash University,Research in International Business and Finance,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,Research portal (Tilburg University),2026-09-19T13:39:03.092479+00:00,2003.0,15
+Monash University,ResearchOnline at James Cook University (James Cook University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,ResearchOnline@ND (The University of Notre Dame),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Review of Accounting Studies,2026-09-19T13:39:03.092479+00:00,2026.0,16
+Monash University,Review of Corporate Finance,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Review of Financial Economics,2026-09-19T13:39:03.092479+00:00,2007.0,2
+Monash University,Review of Financial Studies,2026-09-19T13:39:03.092479+00:00,2023.0,8
+Monash University,Review of Managerial Science,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Review of Quantitative Finance and Accounting,2026-09-19T13:39:03.092479+00:00,2009.0,2
+Monash University,Revista Contabilidade & Finanças,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,SN Comprehensive Clinical Medicine,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,SSRN Electronic Journal,2026-09-19T13:39:03.092479+00:00,,994
+Monash University,Savings and Development,2026-09-19T13:39:03.092479+00:00,1993.0,3
+Monash University,ScholarSpace (University of Hawaii at Manoa),2026-09-19T13:39:03.092479+00:00,2019.0,5
+Monash University,ScholarWorks (Boise State University),2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,Scholarship @ Cornell Law (Cornell University),2026-09-19T13:39:03.092479+00:00,2002.0,1
+Monash University,Scholarship@Western (Western University),2026-09-19T13:39:03.092479+00:00,,2
+Monash University,School Effectiveness and School Improvement,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,Science Education,2026-09-19T13:39:03.092479+00:00,2001.0,2
+Monash University,Scientific Reports,2026-09-19T13:39:03.092479+00:00,2026.0,4
+Monash University,Sexually Transmitted Diseases,2026-09-19T13:39:03.092479+00:00,2011.0,1
+Monash University,Sexually Transmitted Infections,2026-09-19T13:39:03.092479+00:00,2011.0,4
+Monash University,Shanxi Architecture,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,Shima,2026-09-19T13:39:03.092479+00:00,2019.0,2
+Monash University,Shodhganga,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,Siglo Cero: Revista Española sobre Discapacidad Intelectual,2026-09-19T13:39:03.092479+00:00,2000.0,1
+Monash University,Singapore Management University Institutional Knowledge (InK) (Singapore Management University),2026-09-19T13:39:03.092479+00:00,2012.0,5
+Monash University,Smart computing and intelligence,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Social Forces,2026-09-19T13:39:03.092479+00:00,2018.0,4
+Monash University,Social Problems,2026-09-19T13:39:03.092479+00:00,2017.0,2
+Monash University,Social Science Research,2026-09-19T13:39:03.092479+00:00,2017.0,6
+Monash University,Social and Environmental Accountability Journal,2026-09-19T13:39:03.092479+00:00,2026.0,2
+Monash University,Social indicators research series,2026-09-19T13:39:03.092479+00:00,,3
+Monash University,Sociological Science,2026-09-19T13:39:03.092479+00:00,2024.0,2
+Monash University,Sociology of Race and Ethnicity,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,South Asian Journal of Global Business Research,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,South East Asia Research,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Southeast Asian Economies,2026-09-19T13:39:03.092479+00:00,1995.0,1
+Monash University,Southern Economic Journal,2026-09-19T13:39:03.092479+00:00,1983.0,1
+Monash University,Spectrochimica Acta Part A Molecular Spectroscopy,2026-09-19T13:39:03.092479+00:00,1986.0,1
+Monash University,SpringerPlus,2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,Structural Change and Economic Dynamics,2026-09-19T13:39:03.092479+00:00,2024.0,1
+Monash University,Studies in Economics and Econometrics,2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,Studies in Economics and Finance,2026-09-19T13:39:03.092479+00:00,2012.0,2
+Monash University,Studies in Higher Education,2026-09-19T13:39:03.092479+00:00,2024.0,2
+Monash University,Studies in fuzziness and soft computing,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Studies in surface science and catalysis,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Summit (Simon Fraser University),2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Supply Chain Management An International Journal,2026-09-19T13:39:03.092479+00:00,2016.0,2
+Monash University,Sustainability Accounting Management and Policy Journal,2026-09-19T13:39:03.092479+00:00,2018.0,3
+Monash University,Sustainable Cities and Society,2026-09-19T13:39:03.092479+00:00,2026.0,1
+Monash University,Swinburne figshare (Swinburne University of Technology),2026-09-19T13:39:03.092479+00:00,2017.0,7
+Monash University,Sydney University Press eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,TSEG/ Low Countries Journal of Social and Economic History,2026-09-19T13:39:03.092479+00:00,2018.0,1
+Monash University,TSpace (University of Toronto),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Teaching Statistics,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Technical programs and proceedings/Technical program and proceedings,2026-09-19T13:39:03.092479+00:00,,3
+Monash University,Technovation,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,The Accounting Review,2026-09-19T13:39:03.092479+00:00,2024.0,18
+Monash University,The Annals of the American Academy of Political and Social Science,2026-09-19T13:39:03.092479+00:00,2017.0,2
+Monash University,The Australian Quarterly,2026-09-19T13:39:03.092479+00:00,1976.0,1
+Monash University,The Blackwell Encyclopedia of Sociology,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,The British Accounting Review,2026-09-19T13:39:03.092479+00:00,2026.0,19
+Monash University,The British Journal of Criminology,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,The Business History Review,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,The Canadian Journal of Irish Studies,2026-09-19T13:39:03.092479+00:00,1989.0,1
+Monash University,The Chemical Engineering Journal,2026-09-19T13:39:03.092479+00:00,1988.0,4
+Monash University,The Chinese Journal of Geological Hazard and Control,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,The Contemporary Tax Journal,2026-09-19T13:39:03.092479+00:00,2019.0,2
+Monash University,The Economic History Review,2026-09-19T13:39:03.092479+00:00,2026.0,5
+Monash University,The Economic Journal,2026-09-19T13:39:03.092479+00:00,2016.0,2
+Monash University,The FASEB Journal,2026-09-19T13:39:03.092479+00:00,2008.0,1
+Monash University,The Howard Journal of Criminal Justice,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,The International Journal of Accounting,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,The International Journal of Education and Development using Information and Communication Technology (The University of the West Indies),2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,The International Journal of Environmental Cultural Economic and Social Sustainability Annual Review,2026-09-19T13:39:03.092479+00:00,2010.0,2
+Monash University,The International Journal of Interdisciplinary Environmental Studies,2026-09-19T13:39:03.092479+00:00,2016.0,1
+Monash University,The International Journal of Knowledge Culture and Change Management Annual Review,2026-09-19T13:39:03.092479+00:00,2006.0,1
+Monash University,The International Journal of Learning Annual Review,2026-09-19T13:39:03.092479+00:00,2009.0,5
+Monash University,The International Journal of Learning in Higher Education,2026-09-19T13:39:03.092479+00:00,2014.0,4
+Monash University,The International Journal of Logistics Management,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,The Journal of Alternative Investments,2026-09-19T13:39:03.092479+00:00,2007.0,4
+Monash University,The Journal of Asian Studies,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,The Journal of Business,2026-09-19T13:39:03.092479+00:00,2001.0,3
+Monash University,The Journal of Derivatives,2026-09-19T13:39:03.092479+00:00,2004.0,2
+Monash University,The Journal of Economic History,2026-09-19T13:39:03.092479+00:00,2025.0,4
+Monash University,The Journal of Finance,2026-09-19T13:39:03.092479+00:00,2025.0,27
+Monash University,The Journal of Financial Research,2026-09-19T13:39:03.092479+00:00,2025.0,13
+Monash University,The Journal of Higher Education,2026-09-19T13:39:03.092479+00:00,2022.0,1
+Monash University,The Journal of Immunology,2026-09-19T13:39:03.092479+00:00,1984.0,3
+Monash University,The Journal of Law and Economics,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,The Journal of Nervous and Mental Disease,2026-09-19T13:39:03.092479+00:00,1995.0,1
+Monash University,The Journal of Portfolio Management,2026-09-19T13:39:03.092479+00:00,2018.0,7
+Monash University,The Journal of Real Estate Finance and Economics,2026-09-19T13:39:03.092479+00:00,2021.0,1
+Monash University,The Journal of Supercomputing,2026-09-19T13:39:03.092479+00:00,2007.0,1
+Monash University,The Journal of Trading,2026-09-19T13:39:03.092479+00:00,2010.0,2
+Monash University,The Journal of the Economics of Ageing,2026-09-19T13:39:03.092479+00:00,2023.0,1
+Monash University,The Medical Journal of Australia,2026-09-19T13:39:03.092479+00:00,2007.0,2
+Monash University,The North American Journal of Economics and Finance,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,The Quarterly Review of Economics and Finance,2026-09-19T13:39:03.092479+00:00,1998.0,2
+Monash University,The Regional Economist,2026-09-19T13:39:03.092479+00:00,2015.0,2
+Monash University,The Review of Asset Pricing Studies,2026-09-19T13:39:03.092479+00:00,2025.0,5
+Monash University,The Review of Corporate Finance Studies,2026-09-19T13:39:03.092479+00:00,2025.0,7
+Monash University,The Sydney eScholarship Repository (The University of Sydney),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,The Thoracic and Cardiovascular Surgeon,2026-09-19T13:39:03.092479+00:00,1970.0,4
+Monash University,The University of Queensland,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Theseus (Ammattikorkeakoulujen),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Third World Quarterly,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Third sector review,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Thought,2026-09-19T13:39:03.092479+00:00,1930.0,4
+Monash University,Tijdschrift voor Geschiedenis,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Tuwhera (Auckland University of Technology),2026-09-19T13:39:03.092479+00:00,,2
+Monash University,UC Research Repository  (University of Canterbury),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,UKnowledge (University of Kentucky),2026-09-19T13:39:03.092479+00:00,1996.0,1
+Monash University,UNSWorks (UNSW Sydney),2026-09-19T13:39:03.092479+00:00,,2
+Monash University,"UNSWorks (University of New South Wales, Sydney, Australia)",2026-09-19T13:39:03.092479+00:00,,1
+Monash University,UPT. Syiah Kuala University Library (Syiah Kuala University),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,UTS ePRESS (University of Technology Sydney),2026-09-19T13:39:03.092479+00:00,2013.0,2
+Monash University,UWA Profiles and Research Repository (UWA),2026-09-19T13:39:03.092479+00:00,2002.0,15
+Monash University,UWA Profiles and Research Repository (University of Western Australia),2026-09-19T13:39:03.092479+00:00,2016.0,9
+Monash University,UWE Research Repository (UWE Bristol),2026-09-19T13:39:03.092479+00:00,2018.0,6
+Monash University,UiTM Institutional Repositories (Universiti Teknologi MARA),2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,Universal Research Reports,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,University of Birmingham Research Portal (University of Birmingham),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,University of Canberra Research Portal,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,University of Groningen research database (University of Groningen / Centre for Information Technology),2026-09-19T13:39:03.092479+00:00,2013.0,4
+Monash University,University of Malaya Students Repository,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,University of Michigan Library Repository,2026-09-19T13:39:03.092479+00:00,2009.0,2
+Monash University,University of Southern Queensland ePrints (University of Southern Queensland),2026-09-19T13:39:03.092479+00:00,,2
+Monash University,University of Twente Research Information,2026-09-19T13:39:03.092479+00:00,,5
+Monash University,Urban Studies,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,Urologia Internationalis,2026-09-19T13:39:03.092479+00:00,2010.0,2
+Monash University,Urology Case Reports,2026-09-19T13:39:03.092479+00:00,2022.0,2
+Monash University,Utrecht University Repository (Utrecht University),2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,UvA-DARE (University of Amsterdam),2026-09-19T13:39:03.092479+00:00,2013.0,5
+Monash University,VOLUNTAS International Journal of Voluntary and Nonprofit Organizations,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,VU Research Portal,2026-09-19T13:39:03.092479+00:00,2012.0,1
+Monash University,Value in Health,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Venture Capital,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,Veterinary Parasitology,2026-09-19T13:39:03.092479+00:00,1988.0,8
+Monash University,Voprosy Obrazovaniya/ Educational Studies Moscow,2026-09-19T13:39:03.092479+00:00,2013.0,1
+Monash University,WORLD SCIENTIFIC eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Wiley Encyclopedia of Management,2026-09-19T13:39:03.092479+00:00,,3
+Monash University,Wiley series in probability and statistics,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Willan eBooks,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,Wireless Personal Communications,2026-09-19T13:39:03.092479+00:00,2011.0,2
+Monash University,"World Academy of Science, Engineering and Technology, International Journal of Economics and Management Engineering",2026-09-19T13:39:03.092479+00:00,2015.0,1
+Monash University,World Development,2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,World Economy,2026-09-19T13:39:03.092479+00:00,2018.0,1
+Monash University,World Journal of Surgery,2026-09-19T13:39:03.092479+00:00,1988.0,1
+Monash University,World Scientific-Now Publishers series in business,2026-09-19T13:39:03.092479+00:00,,2
+Monash University,World sustainability series,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,ZCG digital/Zeitschrift für Corporate Governance,2026-09-19T13:39:03.092479+00:00,2014.0,1
+Monash University,Zenodo (CERN European Organization for Nuclear Research),2026-09-19T13:39:03.092479+00:00,2023.0,3
+Monash University,Zoological Research,2026-09-19T13:39:03.092479+00:00,2002.0,1
+Monash University,Zurich Open Repository and Archive (University of Zurich),2026-09-19T13:39:03.092479+00:00,2016.0,2
+Monash University,arXiv (Cornell University),2026-09-19T13:39:03.092479+00:00,,9
+Monash University,e-Competitions Bulletin,2026-09-19T13:39:03.092479+00:00,2020.0,1
+Monash University,e-publications@bond (Bond University),2026-09-19T13:39:03.092479+00:00,1991.0,3
+Monash University,eCite Digital Repository (University of Tasmania),2026-09-19T13:39:03.092479+00:00,,1
+Monash University,eYLS (Yale Law School),2026-09-19T13:39:03.092479+00:00,2017.0,1
+Monash University,iScience,2026-09-19T13:39:03.092479+00:00,2026.0,1
+Monash University,medRxiv,2026-09-19T13:39:03.092479+00:00,,1
+Monash University,The ICFAI Journal of Accounting Research,2026-09-19T13:39:03.092479+00:00,2009.0,1
+Monash University,The Lahore journal of economics,2026-09-19T13:39:03.092479+00:00,2000.0,1
+Monash University,"The international archives of the photogrammetry, remote sensing and spatial information sciences/International archives of the photogrammetry, remote sensing and spatial information sciences",2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,The journal of entrepreneurial finance,2026-09-19T13:39:03.092479+00:00,1996.0,1
+Monash University,Патологiя,2026-09-19T13:39:03.092479+00:00,2010.0,1
+Monash University,中国科学基金,2026-09-19T13:39:03.092479+00:00,2025.0,1
+Monash University,법과 사회,2026-09-19T13:39:03.092479+00:00,2018.0,1

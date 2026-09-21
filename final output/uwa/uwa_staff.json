@@ -81,7 +81,7 @@
   },
   {
     "name": "Leo Langa",
-    "job_title": "Professor",
+    "job_title": "Assistant Professor",
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -351,7 +351,7 @@
   },
   {
     "name": "Raymond Da Silva Rosa",
-    "job_title": "Professor",
+    "job_title": "Winthrop Professor",
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -388,16 +388,6 @@
     "source_id": "thao-hoang",
     "orcid": "0000-0003-0741-1817",
     "profile_url": "https://research-repository.uwa.edu.au/en/persons/thao-hoang/"
-  },
-  {
-    "name": "Vincent Chong",
-    "job_title": null,
-    "academic_level": null,
-    "university": "University of Western Australia",
-    "field_of_research": "Finance",
-    "source_id": "vincent-chong",
-    "orcid": "0000-0003-4207-2718",
-    "profile_url": "https://research-repository.uwa.edu.au/en/persons/vincent-chong/"
   },
   {
     "name": "Yeok-Fun Mah",

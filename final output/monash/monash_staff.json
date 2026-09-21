@@ -1,7 +1,7 @@
 [
   {
     "name": "Susan Thorp",
-    "job_title": null,
+    "job_title": "External positionsAcademic Council, International Centre for Pensions ManagementConsultative Committee, Australian Securities and Investments CommissionSteering Committee, Mercer CFA Global Pensions IndexBoard, New College Communities, Sydney",
     "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -51,7 +51,7 @@
   },
   {
     "name": "Michael Skully",
-    "job_title": "Professor",
+    "job_title": "ADJUNCT PROFESSOR",
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -96,7 +96,7 @@
     "university": "Monash University",
     "field_of_research": "Finance",
     "source_id": null,
-    "orcid": null,
+    "orcid": "0000-0001-7356-2977",
     "profile_url": "https://research.monash.edu/en/persons/yulia-merkoulova/"
   },
   {
@@ -176,7 +176,7 @@
     "university": "Monash University",
     "field_of_research": "Finance",
     "source_id": null,
-    "orcid": null,
+    "orcid": "0000-0001-7970-1464",
     "profile_url": "https://research.monash.edu/en/persons/thanh-huynh/"
   },
   {
@@ -196,7 +196,7 @@
     "university": "Monash University",
     "field_of_research": "Finance",
     "source_id": null,
-    "orcid": null,
+    "orcid": "0000-0002-7472-260X",
     "profile_url": "https://research.monash.edu/en/persons/hassan-naqvi/"
   },
   {
@@ -211,7 +211,7 @@
   },
   {
     "name": "Barry Williams",
-    "job_title": "Professor",
+    "job_title": "External positionsVisiting Research Professor,KOF Swiss Economic Institute2007→2020",
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -256,7 +256,7 @@
     "university": "Monash University",
     "field_of_research": "Finance",
     "source_id": null,
-    "orcid": null,
+    "orcid": "0000-0002-4337-6919",
     "profile_url": "https://research.monash.edu/en/persons/leo-bao/"
   },
   {
@@ -386,7 +386,7 @@
     "university": "Monash University",
     "field_of_research": "Finance",
     "source_id": null,
-    "orcid": null,
+    "orcid": "0000-0002-3557-9169",
     "profile_url": "https://research.monash.edu/en/persons/lubna-rahman/"
   },
   {
@@ -571,7 +571,7 @@
   },
   {
     "name": "Amanda Nguyen",
-    "job_title": null,
+    "job_title": "Scholarly Teaching Fellow",
     "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -611,7 +611,7 @@
   },
   {
     "name": "Michael Ciaravolo",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -621,7 +621,7 @@
   },
   {
     "name": "Giang Hoang",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -631,7 +631,7 @@
   },
   {
     "name": "Hassan Shahzad",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -701,7 +701,7 @@
   },
   {
     "name": "John Campbell",
-    "job_title": "Professor",
+    "job_title": "Professor (Research)",
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -711,7 +711,7 @@
   },
   {
     "name": "Matthew Hall",
-    "job_title": null,
+    "job_title": "External positionsResearch Associate,Handelshogskolan i Stockholm (Stockholm School of Economics)Jun 2017→ …Research Associate,London School of Economics and Political Science",
     "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -761,7 +761,7 @@
   },
   {
     "name": "Nicholas McGuigan",
-    "job_title": null,
+    "job_title": "External positionsProfessor,Universitat Rostock (University of Rostock)",
     "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -981,7 +981,7 @@
   },
   {
     "name": "Annemarie Conrath-Hargreaves",
-    "job_title": null,
+    "job_title": "Dr",
     "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1091,7 +1091,7 @@
   },
   {
     "name": "Mario Schabus",
-    "job_title": "Senior Lecturer",
+    "job_title": "External positionsAssistant Professor,Michigan State University15 Aug 2020→15 May 2024Senior Lecturer,University of Melbourne10 Sept 2017→1 Aug 2020",
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1261,7 +1261,7 @@
   },
   {
     "name": "Nuzi Abdul Cader",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1271,7 +1271,7 @@
   },
   {
     "name": "Anushya Edward",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1281,7 +1281,7 @@
   },
   {
     "name": "Kevin Handaya",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1291,7 +1291,7 @@
   },
   {
     "name": "Thomas Kern",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1311,7 +1311,7 @@
   },
   {
     "name": "Paul Liew",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1321,7 +1321,7 @@
   },
   {
     "name": "Ya Liu",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1331,7 +1331,7 @@
   },
   {
     "name": "Liz Martino",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1341,7 +1341,7 @@
   },
   {
     "name": "Shala Navissi",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1351,7 +1351,7 @@
   },
   {
     "name": "James Sewell",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1361,7 +1361,7 @@
   },
   {
     "name": "Shruti Verma",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1371,7 +1371,7 @@
   },
   {
     "name": "Joyce Zhang",
-    "job_title": "Lecturer",
+    "job_title": "Assistant Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1401,7 +1401,7 @@
   },
   {
     "name": "Ashna Prasad",
-    "job_title": "Senior Research Fellow",
+    "job_title": "ADJUNCT SENIOR RESEARCH FELLOW",
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1411,7 +1411,7 @@
   },
   {
     "name": "Dennis Fehrenbacher",
-    "job_title": "Associate Professor",
+    "job_title": "ADJUNCT ASSOCIATE PROFESSOR",
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",

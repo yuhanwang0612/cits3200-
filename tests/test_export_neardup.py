@@ -315,5 +315,36 @@ def test_prefix_rule_skips_and_reports_when_both_rows_have_a_doi():
     assert len(exp.SKIPPED_PREFIX_DUPS) == 1
 
 
+def test_exact_article_with_repository_doi_keeps_journal_version():
+    journal = _pub(
+        title="Reporting Bias and Monitoring", year="2021",
+        doi="10.1111/article", journal="Contemporary Accounting Research",
+        source="UniMelb Minerva",
+    )
+    repository = _pub(
+        title="Reporting Bias and Monitoring", year="2021",
+        doi="10.18154/deposit",
+        journal="Zurich Open Repository and Archive (University of Zurich)",
+        source="OpenAlex",
+    )
+    out = build_publications([journal, repository], verbose=False)
+    assert len(out) == 1
+    assert out[0]["doi"] == "10.1111/article"
+
+
+def test_exact_same_journal_doi_aliases_are_merged():
+    legacy = _pub(
+        title="Bayesian arbitrage threshold analysis", year="1999",
+        doi="10.2307/1392294",
+        journal="Journal of Business & Economic Statistics",
+    )
+    publisher = _pub(
+        title="Bayesian arbitrage threshold analysis", year="1999",
+        doi="10.1080/07350015.1999.10524825",
+        journal="Journal of Business & Economic Statistics", source="ORCID",
+    )
+    assert len(build_publications([legacy, publisher], verbose=False)) == 1
+
+
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q"]))

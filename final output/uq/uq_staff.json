@@ -1,5 +1,15 @@
 [
   {
+    "name": "Jacquelyn Humphrey",
+    "job_title": "Discipline Convenor, Finance",
+    "academic_level": "D",
+    "university": "University of Queensland",
+    "field_of_research": "Finance",
+    "source_id": "6336",
+    "orcid": "0000-0003-3085-9601",
+    "profile_url": "https://business.uq.edu.au/profile/572/jacquelyn-humphrey"
+  },
+  {
     "name": "Jon Aster",
     "job_title": "Associate Lecturer",
     "academic_level": "A",
@@ -31,7 +41,7 @@
   },
   {
     "name": "Alexander Cameron",
-    "job_title": "Associate Lecturer",
+    "job_title": "Associate Lecturer (Finance)",
     "academic_level": "A",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -71,7 +81,7 @@
   },
   {
     "name": "Stephen Gray",
-    "job_title": "Professor",
+    "job_title": "Program Convenor (Bachelor of Advanced Finance and Economics)",
     "academic_level": "E",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -81,7 +91,7 @@
   },
   {
     "name": "Khoa Hoang",
-    "job_title": "Senior Lecturer",
+    "job_title": "Senior Lecturer in Finance",
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -91,7 +101,7 @@
   },
   {
     "name": "Weiting Hu",
-    "job_title": "Lecturer",
+    "job_title": "Lecturer in Finance",
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -121,7 +131,7 @@
   },
   {
     "name": "Leo Luong",
-    "job_title": "Lecturer",
+    "job_title": "Lecturer in Finance",
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -130,18 +140,8 @@
     "profile_url": "https://business.uq.edu.au/profile/2530/leo-luong"
   },
   {
-    "name": "Jacquelyn Humphrey",
-    "job_title": "Associate Professor",
-    "academic_level": "D",
-    "university": "University of Queensland",
-    "field_of_research": "Finance",
-    "source_id": "6336",
-    "orcid": "0000-0003-3085-9601",
-    "profile_url": "https://business.uq.edu.au/profile/572/jacquelyn-humphrey"
-  },
-  {
     "name": "Lin Mi",
-    "job_title": "Senior Lecturer",
+    "job_title": "Senior Lecturer in Finance",
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -151,7 +151,7 @@
   },
   {
     "name": "Suman Neupane-Joshi",
-    "job_title": "Senior Lecturer",
+    "job_title": "Senior Lecturer in Finance",
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -161,8 +161,8 @@
   },
   {
     "name": "Lily Nguyen",
-    "job_title": "Associate Professor",
-    "academic_level": "D",
+    "job_title": "Program Convenor (Bachelor of Commerce and Master of Commerce)",
+    "academic_level": null,
     "university": "University of Queensland",
     "field_of_research": "Finance",
     "source_id": "5508774",
@@ -201,7 +201,7 @@
   },
   {
     "name": "Eric Tan",
-    "job_title": "Senior Lecturer",
+    "job_title": "Senior Lecturer in Finance",
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -211,7 +211,7 @@
   },
   {
     "name": "Kelvin Tan",
-    "job_title": "Associate Professor",
+    "job_title": "Associate Professor in Finance",
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -221,7 +221,7 @@
   },
   {
     "name": "Elizabeth Zhu",
-    "job_title": "Senior Lecturer",
+    "job_title": "Senior Lecturer in Finance",
     "academic_level": "C",
     "university": "University of Queensland",
     "field_of_research": "Finance",
@@ -241,7 +241,7 @@
   },
   {
     "name": "Robyn King",
-    "job_title": "Associate Professor",
+    "job_title": "Head of Department - Accounting & Finance",
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
@@ -261,7 +261,7 @@
   },
   {
     "name": "Byungki Kim",
-    "job_title": "Lecturer",
+    "job_title": "Lecturer in Accounting",
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
@@ -281,7 +281,7 @@
   },
   {
     "name": "Bobae Choi",
-    "job_title": "Associate Professor",
+    "job_title": "Major Convenor (Accounting)",
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
@@ -301,7 +301,7 @@
   },
   {
     "name": "Mia Han",
-    "job_title": "Lecturer",
+    "job_title": "Lecturer in Audit (Teaching Focused)",
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
@@ -311,7 +311,7 @@
   },
   {
     "name": "Kathleen Herbohn",
-    "job_title": "Professor",
+    "job_title": "Research Hub Co Leader",
     "academic_level": "E",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
@@ -361,7 +361,7 @@
   },
   {
     "name": "Natalie Peng",
-    "job_title": "Lecturer",
+    "job_title": "Lecturer in Accounting",
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
@@ -371,7 +371,7 @@
   },
   {
     "name": "Peter Clarkson",
-    "job_title": "Professor",
+    "job_title": "Discipline Convenor, Accounting",
     "academic_level": "E",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
@@ -391,7 +391,7 @@
   },
   {
     "name": "Sergeja Slapnicar",
-    "job_title": "Associate Professor",
+    "job_title": "Associate Professor in Accounting",
     "academic_level": "D",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
@@ -411,7 +411,7 @@
   },
   {
     "name": "Yang Xu",
-    "job_title": "Lecturer",
+    "job_title": "Lecturer in Accounting",
     "academic_level": "B",
     "university": "University of Queensland",
     "field_of_research": "Accounting",
