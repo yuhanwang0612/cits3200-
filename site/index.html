@@ -25,13 +25,6 @@
 <main>
   <div class="wrap">
 
-    <!-- Delete this banner when real data is wired in. -->
-    <div class="banner-sample">
-      <span>&#9888;</span>
-      <div><strong>Sample data.</strong> Every name, publication and rating on this site is
-      invented for design purposes. Nothing here is real research output.</div>
-    </div>
-
     <div class="page-head">
       <h1>Welcome to the G8 Research Output Database</h1>
       <p>Publication output for Accounting and Finance researchers across Australia's Group of
@@ -59,11 +52,21 @@
 <script>
 (async function () {
   const grid = document.getElementById('uni-grid');
-  const path = 'data/universities.json';
-  const data = await loadJSON(path);
-  if (!data) return showLoadError(grid, path);
 
-  const unis = data.universities || [];
+  let response;
+  try {
+    response = await fetch('/api/universities', { cache: 'no-store' });
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+  } catch (error) {
+    console.error('Failed to load /api/universities', error);
+    grid.innerHTML = '<div class="empty"><strong>Unable to load universities.</strong>' +
+      '<br><span class="small">The database API did not respond. Start the Flask application ' +
+      '(<code>python app.py</code>) and reload this page.</span></div>';
+    return;
+  }
+
+  const payload = await response.json();
+  const unis = payload.universities || [];
   if (!unis.length) { grid.innerHTML = '<div class="empty">No universities in the dataset.</div>'; return; }
 
   grid.innerHTML = unis.map(u =>
