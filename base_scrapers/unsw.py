@@ -421,7 +421,239 @@ def _meta(soup):
 
 
 # ---------------------------------------------------------------------------
-# 3. ORCIDs, from OpenAlex author search
+# 3. ORCIDs, from the researcher's own UNSW research profile
+# ---------------------------------------------------------------------------
+# UNSW runs TWO profile systems. The staff directory this adapter scrapes
+# (unsw.edu.au/staff/<slug>) carries no ORCID anywhere: grep the cached HTML of
+# any of them and the string does not appear. The research directory
+# (research.unsw.edu.au/people/<title-slug>) publishes one, under the heading
+# "ORCID as entered in ROS" — ROS being UNSW's own Research Outputs System, so
+# the value is the university's own record of that person rather than an
+# inference.
+#
+# That distinction is the whole point. The alternative, add_openalex_ids below,
+# asks "who is called this?" and takes the best match. It is how a finance
+# lecturer acquired a medical physicist's 57 papers. This asks the person's own
+# employer, on the person's own page.
+#
+# Measured on the 42 staff who had no ORCID: 24 found here, and every one of the
+# 12 that a separate UNSWorks harvest also resolved agreed exactly. It also
+# separates Yan Xu from Yuchen Xu, which no name-based method can, because each
+# has their own page.
+RESEARCH_BASE = "https://research.unsw.edu.au"
+RESEARCH_SEARCH = RESEARCH_BASE + "/researcher"
+RESEARCH_CACHE = CACHE_DIR.parent / "unsw_research_profiles"
+
+ORCID_RE = re.compile(r"orcid\.org/(\d{4}-\d{4}-\d{4}-\d{3}[\dX])", re.I)
+PEOPLE_HREF = re.compile(r"^/people/[a-z0-9-]+$", re.I)
+
+
+def _name_words(name):
+    """['binh', 'tran', 'nam'] — hyphens split, so they line up with the slug."""
+    folded = unicodedata.normalize("NFKD", name or "")
+    folded = folded.encode("ascii", "ignore").decode().lower()
+    return [w for w in re.split(r"[^a-z]+", folded) if len(w) > 1]
+
+
+def _slug_words(href):
+    """'/people/dr-yanbin-xu' -> ['dr', 'yanbin', 'xu'].
+
+    Segments, never substrings. Testing `'yan' in href` puts Yan Xu on Yanbin
+    Xu's profile, which is the same class of mistake as a name search and just
+    as invisible afterwards.
+    """
+    return [w for w in href.rstrip("/").split("/")[-1].split("-") if w]
+
+
+def _research_html(session, url, refresh=False):
+    """One research.unsw.edu.au page, cached as HTML beside the staff pages."""
+    name = re.sub(r"[^A-Za-z0-9._-]+", "_", url.split("://", 1)[-1])[:120]
+    path = RESEARCH_CACHE / f"{name}.html"
+    if path.exists() and not refresh:
+        return path.read_text(encoding="utf-8")
+    if not may_fetch(url):
+        print(f"    robots.txt disallows {url}")
+        return None
+    try:
+        response = session.get(url, timeout=20)
+    except requests.RequestException as e:
+        print(f"    ! {url}: {e}")
+        return None
+    time.sleep(PROFILE_DELAY)
+    if response.status_code != 200:
+        return None
+    RESEARCH_CACHE.mkdir(parents=True, exist_ok=True)
+    path.write_text(response.text, encoding="utf-8")
+    return response.text
+
+
+def find_research_profile(session, name, refresh=False):
+    """The researcher's page on research.unsw.edu.au, or None.
+
+    The URL cannot be constructed: it embeds the academic title, and the titles
+    used there do not match the staff directory's. `professor-michael-walpole`
+    and `associate-professor-dale-boccabella` resolve;
+    `senior-lecturer-gordon-mackenzie` is a 404 for someone who is a Senior
+    Lecturer. So it has to be searched.
+
+    Searching on the surname alone rather than the full name, because the search
+    is OR-ish across words and a full name buries the person among everyone
+    sharing a first name.
+
+    Returns nothing rather than a guess when two profiles match: Richard Morris
+    has both `richard-morris` and `richard-morris-0`, and picking one at random
+    is how the wrong ORCID gets attached to a real person.
+    """
+    words = _name_words(name)
+    if not words:
+        return None
+    html_text = _research_html(session, f"{RESEARCH_SEARCH}?key={words[-1]}",
+                               refresh=refresh)
+    if not html_text:
+        return None
+
+    soup = BeautifulSoup(html_text, "html.parser")
+    seen, hits = set(), []
+    for a in soup.select('a[href^="/people/"]'):
+        href = (a.get("href") or "").split("?")[0].rstrip("/")
+        if not PEOPLE_HREF.match(href) or href in seen:
+            continue
+        seen.add(href)
+        segments = _slug_words(href)
+        if all(w in segments for w in words):
+            hits.append(href)
+
+    if len(hits) == 1:
+        return RESEARCH_BASE + hits[0]
+    return None
+
+
+def profile_counts(html_text):
+    """{'Journal Article': 130, 'Book Chapter': 11, ...} from a research profile.
+
+    UNSW's research profile states how many outputs of each kind it holds:
+
+        <a href=".../publications?type=journalarticles">
+          Journal articles <span class="badge">130</span></a>
+
+    The labels are the same ones the staff directory uses for its publication
+    accordions, so UNSW_TYPES maps both and there is no second table to keep
+    in step. Several labels collapse onto "Other", so counts are summed rather
+    than assigned.
+    """
+    counts = {}
+    soup = BeautifulSoup(html_text, "html.parser")
+    for link in soup.select('a[href*="/publications?type="]'):
+        badge = link.select_one(".badge")
+        if not badge:
+            continue
+        label = link.get_text(" ", strip=True)
+        label = label.replace(badge.get_text(strip=True), "").strip().lower()
+        try:
+            n = int(badge.get_text(strip=True).replace(",", ""))
+        except ValueError:
+            continue
+        kind = UNSW_TYPES.get(label)
+        if kind:
+            counts[kind] = counts.get(kind, 0) + n
+    return counts
+
+
+# A researcher can legitimately differ by a little: the research profile is
+# fed from ROS, the staff page shows what the school chose to display, and the
+# two are updated at different times. A large gap is a different thing, and
+# usually means the scrape stopped early or a whole accordion was missed.
+COMPLETENESS_TOLERANCE = 2
+
+
+def report_completeness(records, pubs, verbose=True):
+    """Compare what we parsed against what UNSW says it holds.
+
+    This does not change anything, and it must not: the staff page is the
+    source we are entitled to, and the research profile is a second opinion,
+    not an authority. It exists so that losing half of someone's output shows
+    up as a line of output rather than as a quietly smaller number.
+    """
+    mine = Counter()
+    for pub in pubs:
+        mine[(pub["name"], pub.get("type"))] += 1
+
+    short, checked = [], 0
+    for person in records:
+        claimed = person.get("profile_counts")
+        if not claimed:
+            continue                      # no profile matched, nothing to check
+        checked += 1
+        for kind, expected in sorted(claimed.items()):
+            got = mine[(person["name_clean"], kind)]
+            if expected - got > COMPLETENESS_TOLERANCE:
+                short.append((person["name_clean"], kind, got, expected))
+
+    if not verbose:
+        return short
+
+    if not checked:
+        print("  completeness: no research profiles to compare against")
+        return short
+    if not short:
+        print(f"  completeness: {checked} researchers checked against UNSW's "
+              f"own counts, nothing materially short")
+        return short
+
+    people = len({n for n, _, _, _ in short})
+    print(f"  completeness: {checked} researchers checked against UNSW's own "
+          f"counts, {len(short)} gap(s) across {people} researcher(s)")
+    print("    (the two systems are updated separately, so a small gap is "
+          "normal;\n     a large one usually means the scrape stopped early)")
+    for name, kind, got, expected in sorted(short, key=lambda r: r[2] - r[3])[:15]:
+        print(f"      {name:<26} {kind:<18} we have {got:>4}, "
+              f"UNSW says {expected:>4}")
+    return short
+
+
+def add_research_profile_orcids(session, records, verbose=True, refresh=False):
+    """Fill person['orcid'] from research.unsw.edu.au where it is published.
+
+    Runs before add_openalex_ids so that the cheap, authoritative source goes
+    first and the expensive, inferential one only covers what is left.
+    """
+    found = missing = unresolved = 0
+    for person in records:
+        if person.get("orcid"):
+            continue
+        url = find_research_profile(session, person["name_clean"], refresh=refresh)
+        if not url:
+            unresolved += 1
+            continue
+        page = _research_html(session, url, refresh=refresh)
+        if not page:
+            unresolved += 1
+            continue
+        # Taken whether or not the page carries an ORCID: the counts are a
+        # separate thing and useful even for someone with no ORCID in ROS.
+        counts = profile_counts(page)
+        if counts:
+            person["profile_counts"] = counts
+
+        match = ORCID_RE.search(page)
+        if match:
+            person["orcid"] = match.group(1).upper()
+            person["orcid_source"] = "research.unsw.edu.au"
+            person["research_profile_url"] = url
+            found += 1
+        else:
+            # The page exists and simply has no ORCID in ROS. That is an
+            # answer, not a failure, and OpenAlex will be asked instead.
+            missing += 1
+
+    if verbose:
+        print(f"  research profiles: {found} ORCIDs found, "
+              f"{missing} profiles carry none, {unresolved} not matched to a profile")
+    return found
+
+
+# ---------------------------------------------------------------------------
+# 4. ORCIDs, from OpenAlex author search (only for whoever is left)
 # ---------------------------------------------------------------------------
 def _fold(name):
     """Normalise a personal name for comparison.
@@ -491,10 +723,21 @@ def add_openalex_ids(records, verbose=True):
     """
     select = ("id,display_name,display_name_alternatives,orcid,works_count,"
               "last_known_institutions,affiliations")
-    with_orcid_n = with_id_n = ambiguous = searches = 0
+    with_orcid_n = with_id_n = ambiguous = searches = skipped = 0
 
     for person in records:
         name = person["name_clean"]
+        person.setdefault("openalex_author_ids", [])
+
+        # Already answered by the researcher's own research profile. The
+        # author id is only needed to reach people who have no ORCID —
+        # info/openalex.py filters on author.orcid when one is present — so
+        # there is nothing left to look up, and the search is the one metered
+        # call in this pipeline.
+        if person.get("orcid"):
+            skipped += 1
+            continue
+
         person["orcid"] = None
         person["openalex_author_ids"] = []
 
@@ -548,11 +791,16 @@ def add_openalex_ids(records, verbose=True):
         with_id_n += 1
 
     if verbose:
-        print(f"  {with_orcid_n} of {len(records)} have an ORCID, "
+        held = sum(1 for p in records if p.get("orcid"))
+        print(f"  {held} of {len(records)} have an ORCID "
+              f"({skipped} from their research profile, {with_orcid_n} from here), "
               f"{with_id_n} have an OpenAlex author id "
               f"({ambiguous} ambiguous, left blank)")
         print(f"  {searches} searches, about ${searches * 0.001:.3f} of today's "
               f"${openalex_budget():.2f} budget. Cached, so a re-run is free.")
+        if skipped:
+            print(f"  {skipped} searches not made, saving ${skipped * 0.001:.3f}: "
+                  f"their ORCID came from UNSW's own record.")
     return records
 
 
@@ -702,7 +950,11 @@ def parse_publications(soup, person):
         # identifier and the join key for OpenAlex. A bare "http://dx.doi.org"
         # with nothing after it is a broken link on UNSW's side, not a DOI,
         # so it is discarded rather than written out as a link going nowhere.
-        links = [a["href"].strip() for a in item.select("a[href]") if a.get("href")]
+        # Some hrefs are site-relative ("/content/dam/pdfs/..."), which is a
+        # working link on the page and a broken one in a CSV, so they are made
+        # absolute against the profile they were read from.
+        links = [urljoin(person["profile_url"], a["href"].strip())
+                 for a in item.select("a[href]") if a.get("href")]
         doi = doi_link = None
         for candidate in links:
             m = DOI_RE.search(candidate)
@@ -893,7 +1145,20 @@ def collect(verbose=True, refresh_roster=False):
         if failed:
             print(f"  {len(failed)} profile pages could not be fetched")
 
-    print("\n  openalex author lookup (orcid and author ids)")
+    # Cheapest and most authoritative source first: UNSW's own research
+    # profiles. Whoever is left falls through to the OpenAlex name search,
+    # which is the only metered call here and the only one that can return
+    # the wrong person.
+    print("\n  research profiles (orcid, from UNSW's own record)")
+    add_research_profile_orcids(session, records, verbose=verbose,
+                                refresh=refresh_roster)
+
+    # The research profile also states how many outputs of each kind UNSW
+    # holds, which is the only second opinion available on whether the scrape
+    # got everything. Reported, never acted on.
+    report_completeness(records, pubs, verbose=verbose)
+
+    print("\n  openalex author lookup (orcid and author ids for the rest)")
     add_openalex_ids(records, verbose=verbose)
 
     return records, pubs

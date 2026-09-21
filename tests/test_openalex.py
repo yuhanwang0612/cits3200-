@@ -218,6 +218,25 @@ def test_an_orcid_is_preferred():
     assert clause == "author.orcid:0000-0001-7701-3721" and how == "orcid"
 
 
+def test_verified_career_identity_is_not_restricted_to_current_ror(monkeypatch):
+    """A verified current staff member keeps papers from earlier employers."""
+    calls = []
+
+    def fake_works(clause, ror=None):
+        calls.append((clause, ror))
+        return []
+
+    monkeypatch.setattr(oa_get, "_works", fake_works)
+    records = [{
+        "name_clean": "Jane Example",
+        "orcid": "0000-0001-0000-0001",
+        "retrieve_all_career_works": True,
+    }]
+    oa_get.retrieve(records, [], ror="01ej9dk98", verbose=False)
+
+    assert calls == [("author.orcid:0000-0001-0000-0001", None)]
+
+
 def test_author_ids_are_the_fallback_when_there_is_no_orcid():
     """About forty of UNSW's ninety-three have no ORCID anywhere. Skipping
     them loses their work entirely."""
@@ -287,6 +306,57 @@ def test_manually_verified_author_is_not_limited_to_current_institution(monkeypa
     }]
     oa_get.retrieve(records, [], ror="01ej9dk98", verbose=False)
     assert calls == [("author.id:A1", None)]
+
+
+def test_verified_openalex_work_without_doi_is_kept(monkeypatch):
+    work = _author_work(1)
+    work["doi"] = None
+    monkeypatch.setattr(oa_get, "_works", lambda clause, ror=None: [work])
+    records = [{
+        "name_clean": "Jane Example",
+        "openalex_author_ids": ["A1"],
+        "retrieve_all_career_works": True,
+    }]
+
+    pubs = oa_get.retrieve(records, [], ror="01ej9dk98", verbose=False)
+
+    assert len(pubs) == 1
+    assert pubs[0]["doi"] is None
+    assert pubs[0]["title"] == "Paper 1"
+
+
+def test_no_doi_openalex_copy_deduplicates_by_title_and_year(monkeypatch):
+    work = _author_work(1)
+    work["doi"] = None
+    monkeypatch.setattr(oa_get, "_works", lambda clause, ror=None: [work])
+    records = [{"name_clean": "Jane Example", "openalex_author_ids": ["A1"]}]
+    pubs = [blank_pub(
+        name="Jane Example", title="Paper 1", year="2024",
+        type="Journal Article", doi=None, source="Repository",
+    )]
+
+    oa_get.retrieve(records, pubs, ror="01ej9dk98", verbose=False)
+
+    assert len(pubs) == 1
+
+
+def test_no_doi_work_uses_journal_from_alternate_location(monkeypatch):
+    work = _author_work(1)
+    work["doi"] = None
+    work["primary_location"] = {"source": None}
+    work["locations"] = [{"source": {
+        "id": "https://openalex.org/S1",
+        "display_name": "Accounting Review",
+        "type": "journal",
+        "issn": ["0001-4826"],
+    }}]
+    monkeypatch.setattr(oa_get, "_works", lambda clause, ror=None: [work])
+    records = [{"name_clean": "Jane Example", "openalex_author_ids": ["A1"]}]
+
+    pubs = oa_get.retrieve(records, [], ror="01ej9dk98", verbose=False)
+
+    assert pubs[0]["journal"] == "Accounting Review"
+    assert pubs[0]["issns"] == ["0001-4826"]
 
 
 def test_volume_guard_remains_when_no_institution_constraint(monkeypatch):

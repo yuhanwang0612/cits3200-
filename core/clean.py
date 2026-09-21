@@ -27,6 +27,36 @@ if _ov_path.exists():
         for row in csv.DictReader(f):          # columns: doi,field,value
             _OVERRIDES.setdefault(row["doi"].lower(), {})[row["field"]] = row["value"]
 
+# Confirmed author-identity collisions.  These are deliberately keyed by both
+# researcher name and DOI: a paper can be a valid record for one staff member
+# while being a namesake false-positive for another.  Keeping the evidence in
+# data/ makes every future refresh reproduce the reviewed decision instead of
+# relying on a one-off edit to the exported CSV.
+_PUBLICATION_EXCLUSIONS = {}
+
+
+def _exclusion_key(name, doi, title=None):
+    """(name, doi) when there is a DOI. Some wrong papers on a university's
+    own profile page have no DOI at all (UNSW lists a 1983 Chemical
+    Engineering article under an auditing professor), so a row with a blank
+    doi is matched on the normalised title instead. A blank doi is never
+    used as a key by itself, or it would drop every DOI-less paper that
+    researcher has."""
+    name = (name or "").strip().casefold()
+    doi = (doi or "").strip().lower()
+    if doi:
+        return (name, doi)
+    title = re.sub(r"[^a-z0-9]+", " ", (title or "").casefold()).strip()
+    return (name, "title:" + title) if title else None
+
+_ex_path = Path(__file__).resolve().parents[1] / "data" / "publication_exclusions.csv"
+if _ex_path.exists():
+    with open(_ex_path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            key = _exclusion_key(row["name"], row["doi"], row.get("title"))
+            if key:
+                _PUBLICATION_EXCLUSIONS[key] = row
+
 def _apply_overrides(pub):
     doi = (pub.get("doi") or "").lower()
     for field, value in _OVERRIDES.get(doi, {}).items():
@@ -36,6 +66,7 @@ def _apply_overrides(pub):
 
 # A DOI is "10." + registrant + "/" + suffix. The "s1474667017471096" that
 # came off an ORCID external-id is not one.
+_DOI_LINK_RE = re.compile(r"^https?://(dx\.)?doi\.org/", re.I)
 _DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$")
 
 # Repository venues that carry preprints/working papers. When one appears in
@@ -45,6 +76,11 @@ _PREPRINT_VENUES = {
     "preprints.org", "research square", "repec",
     "nber", "national bureau of economic research",
 }
+
+# SSRN DOIs identify working-paper/preprint records even when ORCID or another
+# upstream source incorrectly labels the item as a journal article and omits
+# the venue. Venue-only filtering cannot catch that shape.
+_PREPRINT_DOI_PREFIXES = ("10.2139/ssrn.",)
 
 # Non-substantive items that eSpace/Crossref/ORCID tag as "Journal Article".
 # Anchored to the START so it drops "Erratum to…", "Corrigendum to…",
@@ -91,6 +127,11 @@ def clean_doi(value):
     if not value:
         return None
     doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", value.strip(), flags=re.I)
+    # DOI URLs copied from feeds sometimes retain analytics parameters or an
+    # HTML suffix after the DOI.  Crossref treats those as part of the DOI and
+    # returns HTTP 400, so remove URL-only decoration before validation.
+    doi = re.sub(r"[?#].*$", "", doi)
+    doi = re.sub(r"\.html?$", "", doi, flags=re.I)
     return doi if _DOI_RE.match(doi) else None
 
 
@@ -103,13 +144,26 @@ def clean_year(value):
     return y if y.isdigit() and 1900 <= int(y) <= date.today().year + 2 else None
 
 
+def reviewed_exclusion(pub):
+    """Return a reviewed exclusion matched by researcher plus DOI or title.
+
+    DOI remains the preferred stable key.  Title matching supports confirmed
+    false positives whose source record has no DOI; it is still scoped to the
+    named researcher so the same title can remain valid for another person.
+    """
+    key = _exclusion_key(pub.get("name"), pub.get("doi"), pub.get("title"))
+    return _PUBLICATION_EXCLUSIONS.get(key) if key else None
+
+
 def is_excluded(pub):
     """True for errata / editorials / corrigenda / rejoinders / comments,
     whatever source they came from (eSpace, ORCID, Crossref). This is the
     check that must run post-info/, because those sources re-introduce rows
     the adapter's own filter never sees."""
     title = pub.get("title")
-    return bool(title and _EXCLUDE_TITLE.match(title))
+    if title and _EXCLUDE_TITLE.match(title):
+        return True
+    return reviewed_exclusion(pub) is not None
 
 
 def clean_pub(pub, log=None):
@@ -159,6 +213,20 @@ def clean_pub(pub, log=None):
     if pub["doi"] is None and pub.get("link") and "doi.org" in pub["link"]:
         note(f"    link    {who}: dropped dead doi.org link {pub['link']!r}")
         pub["link"] = None
+    # ORCID builds its link as "https://doi.org/" + the DOI it was given, and
+    # some ORCID records store the DOI as a URL already, which gave links like
+    # https://doi.org/http://dx.doi.org/10.2308/bria-50333. The DOI itself is
+    # cleaned above, so a doi.org link is simply rebuilt from it.
+    if (pub["doi"] and pub.get("link")
+            and _DOI_LINK_RE.match(pub["link"])
+            and pub["link"] != f"https://doi.org/{pub['doi']}"):
+        note(f"    link    {who}: {pub['link']!r} -> rebuilt from the DOI")
+        pub["link"] = f"https://doi.org/{pub['doi']}"
+
+    if pub.get("doi") and pub["doi"].lower().startswith(_PREPRINT_DOI_PREFIXES):
+        if pub.get("type") != "Preprint":
+            note(f"    type    {who}: {pub.get('type')!r} -> 'Preprint'  (SSRN DOI)")
+        pub["type"] = "Preprint"
 
     for field, value in _OVERRIDES.get(raw_doi, {}).items():
         pub[field] = value
@@ -184,7 +252,9 @@ def clean_pubs(pubs, verbose=False):
             for line in log:
                 print(line)
         for p in dropped:
-            print(f"    drop    {p.get('name','?')}: {p.get('title')!r}")
+            reviewed = reviewed_exclusion(p)
+            reason = f" ({reviewed['reason']})" if reviewed else ""
+            print(f"    drop    {p.get('name','?')}: {p.get('title')!r}{reason}")
         print(f"  kept {len(kept)}, dropped {len(dropped)}")
 
     return kept
