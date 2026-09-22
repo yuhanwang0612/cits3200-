@@ -48,7 +48,7 @@ def run_all(args):
         ("--refresh", args.refresh),
         ("--no-supplementary", args.no_supplementary),
         ("--skip-clarivate", args.skip_clarivate),
-        ("--drop-empty-staff", args.drop_empty_staff),
+        ("--keep-empty-staff", args.keep_empty_staff),
     ) if enabled]
 
     unis = discover_adapters()
@@ -91,8 +91,11 @@ def main():
                     help="skip JIF (slowest step, needs an API key)")
     ap.add_argument("--ror", default=None,
                     help="restrict OpenAlex retrieval to this institution ROR")
-    ap.add_argument("--drop-empty-staff", action="store_true",
-                    help="exclude staff who have no publications (all official staff are kept by default)")
+    ap.add_argument("--keep-empty-staff", action="store_true",
+                    help="keep staff who have no publications (they are dropped by default)")
+    # Dropping is now the default; the old flag is still accepted so existing
+    # commands and scripts keep working.
+    ap.add_argument("--drop-empty-staff", action="store_true", help=argparse.SUPPRESS)
     args = ap.parse_args()
 
     if args.all:
@@ -168,7 +171,7 @@ def main():
 
     step(12, "export")
     export(records, pubs, out_dir=out,
-           drop_staff_without_pubs=args.drop_empty_staff)
+           drop_staff_without_pubs=not args.keep_empty_staff)
     quality_writer = getattr(adapter, "write_quality_report", None)
     if callable(quality_writer):
         quality_writer(out)
