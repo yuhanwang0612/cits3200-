@@ -410,6 +410,16 @@
     "profile_url": "https://www.unsw.edu.au/staff/rachael-lewis"
   },
   {
+    "name": "Gen Li",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "UNSW Sydney",
+    "field_of_research": "Finance",
+    "source_id": null,
+    "orcid": "0009-0006-8140-0250",
+    "profile_url": "https://www.unsw.edu.au/staff/gen-li"
+  },
+  {
     "name": "Leonard Leye Li",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -760,14 +770,14 @@
     "profile_url": "https://www.unsw.edu.au/staff/andrew-terry"
   },
   {
-    "name": "Wing Wah Tham",
-    "job_title": "Associate Professor",
+    "name": "Thuy Duong To",
+    "job_title": "Deputy Head of School - Education",
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
     "source_id": null,
-    "orcid": "0000-0002-1169-0073",
-    "profile_url": "https://www.unsw.edu.au/staff/wing-wah-tham"
+    "orcid": "0000-0001-9125-7773",
+    "profile_url": "https://www.unsw.edu.au/staff/thuy-to"
   },
   {
     "name": "Binh Tran-Nam",
