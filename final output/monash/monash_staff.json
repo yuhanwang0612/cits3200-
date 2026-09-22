@@ -1,11 +1,11 @@
 [
   {
     "name": "Susan Thorp",
-    "job_title": "External positionsAcademic Council, International Centre for Pensions ManagementConsultative Committee, Australian Securities and Investments CommissionSteering Committee, Mercer CFA Global Pensions IndexBoard, New College Communities, Sydney",
-    "academic_level": null,
+    "job_title": "Professor",
+    "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "susan-thorp",
     "orcid": "0000-0003-3462-0876",
     "profile_url": "https://research.monash.edu/en/persons/susan-thorp/"
   },
@@ -15,7 +15,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "huu-nhan-duong",
     "orcid": "0000-0002-2252-2913",
     "profile_url": "https://research.monash.edu/en/persons/huu-nhan-duong/"
   },
@@ -25,7 +25,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "john-watson",
     "orcid": "0000-0001-6550-243X",
     "profile_url": "https://research.monash.edu/en/persons/john-watson/"
   },
@@ -35,7 +35,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "christine-brown",
     "orcid": "0000-0002-0306-2982",
     "profile_url": "https://research.monash.edu/en/persons/christine-brown/"
   },
@@ -45,7 +45,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "stephen-brown",
     "orcid": "0000-0002-0210-4562",
     "profile_url": "https://research.monash.edu/en/persons/stephen-brown/"
   },
@@ -55,7 +55,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "michael-skully",
     "orcid": "0000-0002-4904-9003",
     "profile_url": "https://research.monash.edu/en/persons/michael-skully/"
   },
@@ -65,7 +65,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "abe-de-jong",
     "orcid": "0000-0002-2809-5465",
     "profile_url": "https://research.monash.edu/en/persons/abe-de-jong/"
   },
@@ -75,7 +75,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "neal-galpin",
     "orcid": "0000-0002-7187-0308",
     "profile_url": "https://research.monash.edu/en/persons/neal-galpin/"
   },
@@ -85,7 +85,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "yulia-merkoulova",
     "orcid": "0000-0001-7356-2977",
     "profile_url": "https://research.monash.edu/en/persons/yulia-merkoulova/"
   },
@@ -95,7 +95,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "lyndon-moore",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/lyndon-moore/"
   },
@@ -105,9 +105,19 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "chris-veld",
     "orcid": "0000-0003-3971-0600",
     "profile_url": "https://research.monash.edu/en/persons/chris-veld/"
+  },
+  {
+    "name": "Ying Xia",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Monash University",
+    "field_of_research": "Finance",
+    "source_id": "ying-xia",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/ying-xia/"
   },
   {
     "name": "John Chu",
@@ -115,7 +125,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "john-chu",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/john-chu/"
   },
@@ -125,7 +135,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "silvio-contessi",
     "orcid": "0000-0002-7517-5417",
     "profile_url": "https://research.monash.edu/en/persons/silvio-contessi/"
   },
@@ -135,7 +145,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "ying-dou",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/ying-dou/"
   },
@@ -145,7 +155,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "philip-gharghori",
     "orcid": "0000-0002-6148-7305",
     "profile_url": "https://research.monash.edu/en/persons/philip-gharghori/"
   },
@@ -155,7 +165,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "thanh-huynh",
     "orcid": "0000-0001-7970-1464",
     "profile_url": "https://research.monash.edu/en/persons/thanh-huynh/"
   },
@@ -165,7 +175,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "paul-lajbcygier",
     "orcid": "0000-0003-2064-9774",
     "profile_url": "https://research.monash.edu/en/persons/paul-lajbcygier/"
   },
@@ -175,7 +185,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "hassan-naqvi",
     "orcid": "0000-0002-7472-260X",
     "profile_url": "https://research.monash.edu/en/persons/hassan-naqvi/"
   },
@@ -185,17 +195,17 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "abu-zafar-shahriar",
     "orcid": "0000-0003-1357-003X",
     "profile_url": "https://research.monash.edu/en/persons/abu-zafar-shahriar/"
   },
   {
     "name": "Barry Williams",
-    "job_title": "External positionsVisiting Research Professor,KOF Swiss Economic Institute2007→2020",
-    "academic_level": "E",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "barry-williams",
     "orcid": "0000-0001-8751-1003",
     "profile_url": "https://research.monash.edu/en/persons/barry-williams/"
   },
@@ -205,7 +215,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "jin-yu",
     "orcid": "0000-0002-1517-2740",
     "profile_url": "https://research.monash.edu/en/persons/jin-yu/"
   },
@@ -215,7 +225,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "zhe-an",
     "orcid": "0000-0002-6977-2186",
     "profile_url": "https://research.monash.edu/en/persons/zhe-an/"
   },
@@ -225,7 +235,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "hue-hwa-au-yong",
     "orcid": "0000-0003-4739-2016",
     "profile_url": "https://research.monash.edu/en/persons/hue-hwa-au-yong/"
   },
@@ -235,7 +245,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "leo-bao",
     "orcid": "0000-0002-4337-6919",
     "profile_url": "https://research.monash.edu/en/persons/leo-bao/"
   },
@@ -245,8 +255,8 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": "0000-0002-0306-2982",
+    "source_id": "kym-brown",
+    "orcid": "0000-0003-2725-6236",
     "profile_url": "https://research.monash.edu/en/persons/kym-brown/"
   },
   {
@@ -255,9 +265,19 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "binh-do",
     "orcid": "0000-0003-3921-7576",
     "profile_url": "https://research.monash.edu/en/persons/binh-do/"
+  },
+  {
+    "name": "Minh Viet Do",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Monash University",
+    "field_of_research": "Finance",
+    "source_id": "minh-do",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/minh-do/"
   },
   {
     "name": "Özlem Dursun-de Neef",
@@ -265,7 +285,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "ozlem-dursun-de-neef",
     "orcid": "0000-0002-8487-3911",
     "profile_url": "https://research.monash.edu/en/persons/ozlem-dursun-de-neef/"
   },
@@ -275,7 +295,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "jean-pierre-fenech",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/jean-pierre-fenech/"
   },
@@ -285,7 +305,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "li-ge",
     "orcid": "0000-0001-9988-005X",
     "profile_url": "https://research.monash.edu/en/persons/li-ge/"
   },
@@ -295,7 +315,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "abey-gunasekarage",
     "orcid": "0000-0003-4934-881X",
     "profile_url": "https://research.monash.edu/en/persons/abey-gunasekarage/"
   },
@@ -305,9 +325,19 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "idan-hodor",
     "orcid": "0000-0002-2397-5738",
     "profile_url": "https://research.monash.edu/en/persons/idan-hodor/"
+  },
+  {
+    "name": "Emdad Islam",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Monash University",
+    "field_of_research": "Finance",
+    "source_id": "emdad-islam",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/emdad-islam/"
   },
   {
     "name": "Hannah Nguyen",
@@ -315,7 +345,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "hannah-nguyen",
     "orcid": "0000-0002-8335-8846",
     "profile_url": "https://research.monash.edu/en/persons/hannah-nguyen/"
   },
@@ -325,9 +355,19 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "lubna-rahman",
     "orcid": "0000-0002-3557-9169",
     "profile_url": "https://research.monash.edu/en/persons/lubna-rahman/"
+  },
+  {
+    "name": "Joshua Shemesh",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Monash University",
+    "field_of_research": "Finance",
+    "source_id": "joshua-shemesh",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/joshua-shemesh/"
   },
   {
     "name": "Yushui Shi",
@@ -335,7 +375,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "yushui-shi",
     "orcid": "0000-0002-3299-6768",
     "profile_url": "https://research.monash.edu/en/persons/yushui-shi/"
   },
@@ -345,7 +385,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "tram-vu",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/tram-vu/"
   },
@@ -355,7 +395,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "yongxin-xu",
     "orcid": "0000-0003-0818-6738",
     "profile_url": "https://research.monash.edu/en/persons/yongxin-xu/"
   },
@@ -365,7 +405,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "wayne-wan",
     "orcid": "0000-0003-1738-0815",
     "profile_url": "https://research.monash.edu/en/persons/wayne-wan/"
   },
@@ -375,7 +415,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "eden-zhang",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/eden-zhang/"
   },
@@ -385,9 +425,19 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "emma-zhang",
     "orcid": "0009-0003-2709-3809",
     "profile_url": "https://research.monash.edu/en/persons/emma-zhang/"
+  },
+  {
+    "name": "Viet Nga Cao",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Monash University",
+    "field_of_research": "Finance",
+    "source_id": "viet-nga-cao",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/viet-nga-cao/"
   },
   {
     "name": "Arseny Gorbenko",
@@ -395,9 +445,19 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "arseny-gorbenko",
     "orcid": "0000-0001-7328-4225",
     "profile_url": "https://research.monash.edu/en/persons/arseny-gorbenko/"
+  },
+  {
+    "name": "Sergio de Holanda Rocha",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Monash University",
+    "field_of_research": "Finance",
+    "source_id": "sergio-de-holanda-rocha",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/sergio-de-holanda-rocha/"
   },
   {
     "name": "Manapon Limkriangkrai",
@@ -405,7 +465,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "manapon-limkriangkrai",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/manapon-limkriangkrai/"
   },
@@ -415,7 +475,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "zoltan-murgulov",
     "orcid": "0000-0002-6443-5850",
     "profile_url": "https://research.monash.edu/en/persons/zoltan-murgulov/"
   },
@@ -425,7 +485,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "bharat-parajuli",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/bharat-parajuli/"
   },
@@ -435,7 +495,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "amale-scally",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/amale-scally/"
   },
@@ -445,7 +505,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "ali-sheikhbahaei",
     "orcid": "0000-0002-0002-3662",
     "profile_url": "https://research.monash.edu/en/persons/ali-sheikhbahaei/"
   },
@@ -455,7 +515,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "simon-yap",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/simon-yap/"
   },
@@ -465,17 +525,27 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "nafisa-ovi",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/nafisa-ovi/"
   },
   {
-    "name": "Hassan Shahzad",
-    "job_title": "Assistant Lecturer",
+    "name": "Giang Hoang",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
-    "source_id": null,
+    "source_id": "giang-hoang",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/giang-hoang/"
+  },
+  {
+    "name": "Hassan Shahzad",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Monash University",
+    "field_of_research": "Finance",
+    "source_id": "hassan-shahzad",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/hassan-shahzad/"
   },
@@ -485,7 +555,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "michaela-rankin",
     "orcid": "0000-0003-3087-8845",
     "profile_url": "https://research.monash.edu/en/persons/michaela-rankin/"
   },
@@ -495,7 +565,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "chen-chen",
     "orcid": "0000-0003-4438-1258",
     "profile_url": "https://research.monash.edu/en/persons/chen-chen/"
   },
@@ -505,7 +575,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "carly-moulang",
     "orcid": "0000-0002-6264-6945",
     "profile_url": "https://research.monash.edu/en/persons/carly-moulang/"
   },
@@ -515,7 +585,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "gladys-lee",
     "orcid": "0000-0002-6797-0875",
     "profile_url": "https://research.monash.edu/en/persons/gladys-lee/"
   },
@@ -525,7 +595,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "christo-karunananthan",
     "orcid": "0000-0001-5179-4793",
     "profile_url": "https://research.monash.edu/en/persons/christo-karunananthan/"
   },
@@ -535,17 +605,27 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "lorena-mitrione",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/lorena-mitrione/"
   },
   {
-    "name": "Matthew Hall",
-    "job_title": "External positionsResearch Associate,Handelshogskolan i Stockholm (Stockholm School of Economics)Jun 2017→ …Research Associate,London School of Economics and Political Science",
-    "academic_level": null,
+    "name": "John Campbell",
+    "job_title": "Professor",
+    "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "john-campbell",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/john-campbell/"
+  },
+  {
+    "name": "Matthew Hall",
+    "job_title": "Professor",
+    "academic_level": "E",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "matthew-hall",
     "orcid": "0000-0001-5170-6124",
     "profile_url": "https://research.monash.edu/en/persons/matthew-hall/"
   },
@@ -555,7 +635,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "wen-he",
     "orcid": "0000-0001-7421-6208",
     "profile_url": "https://research.monash.edu/en/persons/wen-he/"
   },
@@ -565,7 +645,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "ralph-kober",
     "orcid": "0000-0003-2503-9211",
     "profile_url": "https://research.monash.edu/en/persons/ralph-kober/"
   },
@@ -575,17 +655,17 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "kalle-kraus",
     "orcid": "0000-0001-7253-2063",
     "profile_url": "https://research.monash.edu/en/persons/kalle-kraus/"
   },
   {
     "name": "Nicholas McGuigan",
-    "job_title": "External positionsProfessor,Universitat Rostock (University of Rostock)",
-    "academic_level": null,
+    "job_title": "Professor",
+    "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "nicholas-mcguigan",
     "orcid": "0000-0002-0491-2504",
     "profile_url": "https://research.monash.edu/en/persons/nicholas-mcguigan/"
   },
@@ -595,7 +675,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "kristian-rotaru",
     "orcid": "0000-0003-2570-2044",
     "profile_url": "https://research.monash.edu/en/persons/kristian-rotaru/"
   },
@@ -605,7 +685,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "roger-simnett",
     "orcid": "0000-0001-9881-8553",
     "profile_url": "https://research.monash.edu/en/persons/roger-simnett/"
   },
@@ -615,7 +695,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "cameron-truong",
     "orcid": "0000-0002-9113-8739",
     "profile_url": "https://research.monash.edu/en/persons/cameron-truong/"
   },
@@ -625,7 +705,7 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "carla-wilkin",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/carla-wilkin/"
   },
@@ -635,9 +715,19 @@
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "robert-chenhall",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/robert-chenhall/"
+  },
+  {
+    "name": "Kim Langfield-Smith",
+    "job_title": "Emeritus Professor",
+    "academic_level": "E",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "kim-langfield-smith",
+    "orcid": "0000-0001-5134-6931",
+    "profile_url": "https://research.monash.edu/en/persons/kim-langfield-smith/"
   },
   {
     "name": "Aldónio Ferreira",
@@ -645,7 +735,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "aldonio-fernandes-ferreira",
     "orcid": "0000-0003-1405-3704",
     "profile_url": "https://research.monash.edu/en/persons/aldonio-fernandes-ferreira/"
   },
@@ -655,7 +745,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "mukesh-garg",
     "orcid": "0000-0002-2029-1875",
     "profile_url": "https://research.monash.edu/en/persons/mukesh-garg/"
   },
@@ -665,7 +755,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "joey-huang",
     "orcid": "0000-0001-9709-002X",
     "profile_url": "https://research.monash.edu/en/persons/joey-huang/"
   },
@@ -675,9 +765,19 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "mehdi-khedmati",
     "orcid": "0000-0001-5163-3068",
     "profile_url": "https://research.monash.edu/en/persons/mehdi-khedmati/"
+  },
+  {
+    "name": "Sunyoung Kim",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "sunyoung-kim",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/sunyoung-kim/"
   },
   {
     "name": "Soon-Yeow Phang",
@@ -685,7 +785,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "soon-yeow-phang",
     "orcid": "0000-0002-5647-1122",
     "profile_url": "https://research.monash.edu/en/persons/soon-yeow-phang/"
   },
@@ -695,7 +795,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "lisa-powell",
     "orcid": "0000-0002-9607-2003",
     "profile_url": "https://research.monash.edu/en/persons/lisa-powell/"
   },
@@ -705,7 +805,7 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "paul-j-thambar",
     "orcid": "0000-0002-0586-1796",
     "profile_url": "https://research.monash.edu/en/persons/paul-j-thambar/"
   },
@@ -715,9 +815,19 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "xinning-xiao",
     "orcid": "0000-0003-2701-9767",
     "profile_url": "https://research.monash.edu/en/persons/xinning-xiao/"
+  },
+  {
+    "name": "John Webster",
+    "job_title": "Associate Professor",
+    "academic_level": "D",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "john-webster-2",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/john-webster-2/"
   },
   {
     "name": "Jin Zhang",
@@ -725,9 +835,19 @@
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "jin-zhang",
     "orcid": "0000-0001-9265-1051",
     "profile_url": "https://research.monash.edu/en/persons/jin-zhang/"
+  },
+  {
+    "name": "Ahmed Abdalla",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "ahmed-abdalla",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/ahmed-abdalla/"
   },
   {
     "name": "Christofer Adrian",
@@ -735,27 +855,17 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "chris-adrian",
     "orcid": "0000-0002-9366-3473",
     "profile_url": "https://research.monash.edu/en/persons/chris-adrian/"
   },
   {
-    "name": "Ellinor Allen",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "Monash University",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://research.monash.edu/en/persons/ellinor-allen/"
-  },
-  {
     "name": "Annemarie Conrath-Hargreaves",
-    "job_title": "Dr",
+    "job_title": null,
     "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "annemarie-conrath-hargreaves",
     "orcid": "0000-0001-9546-4147",
     "profile_url": "https://research.monash.edu/en/persons/annemarie-conrath-hargreaves/"
   },
@@ -765,7 +875,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "sandip-dhole",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/sandip-dhole/"
   },
@@ -775,7 +885,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "zhiyun-gong",
     "orcid": "0000-0003-0889-6297",
     "profile_url": "https://research.monash.edu/en/persons/zhiyun-gong/"
   },
@@ -785,7 +895,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "jenny-guan",
     "orcid": "0000-0003-3976-1280",
     "profile_url": "https://research.monash.edu/en/persons/jenny-guan/"
   },
@@ -795,9 +905,19 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "janto-haman",
     "orcid": "0000-0001-8936-6815",
     "profile_url": "https://research.monash.edu/en/persons/janto-haman/"
+  },
+  {
+    "name": "John Ko",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "john-ko",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/john-ko/"
   },
   {
     "name": "Yi-Hung (Jerry) Lin",
@@ -805,9 +925,19 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "jerry-lin",
     "orcid": "0000-0001-7114-2098",
     "profile_url": "https://research.monash.edu/en/persons/jerry-lin/"
+  },
+  {
+    "name": "Wei Lu",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "wei-lu",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/wei-lu/"
   },
   {
     "name": "Dharmendra Naidu",
@@ -815,7 +945,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "dharmendra-naidu",
     "orcid": "0000-0002-2455-1128",
     "profile_url": "https://research.monash.edu/en/persons/dharmendra-naidu/"
   },
@@ -825,7 +955,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "richard-pucci",
     "orcid": "0000-0002-3479-4115",
     "profile_url": "https://research.monash.edu/en/persons/richard-pucci/"
   },
@@ -835,19 +965,29 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "jacob-raleigh",
     "orcid": "0000-0001-8522-5329",
     "profile_url": "https://research.monash.edu/en/persons/jacob-raleigh/"
   },
   {
     "name": "Mario Schabus",
-    "job_title": "External positionsAssistant Professor,Michigan State University15 Aug 2020→15 May 2024Senior Lecturer,University of Melbourne10 Sept 2017→1 Aug 2020",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "mario-schabus",
     "orcid": "0000-0003-3534-333X",
     "profile_url": "https://research.monash.edu/en/persons/mario-schabus/"
+  },
+  {
+    "name": "Edward Tello",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "edward-tello-melendez",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/edward-tello-melendez/"
   },
   {
     "name": "Prabanga Thoradeniya",
@@ -855,7 +995,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "prabanga-thoradeniya",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/prabanga-thoradeniya/"
   },
@@ -865,7 +1005,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "lu-yang",
     "orcid": "0000-0002-1131-8124",
     "profile_url": "https://research.monash.edu/en/persons/lu-yang/"
   },
@@ -875,7 +1015,7 @@
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "xiaoxiao-yu",
     "orcid": "0000-0001-5805-1669",
     "profile_url": "https://research.monash.edu/en/persons/xiaoxiao-yu/"
   },
@@ -885,7 +1025,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "brett-considine",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/brett-considine/"
   },
@@ -895,7 +1035,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "daniela-juric",
     "orcid": "0000-0003-1516-1344",
     "profile_url": "https://research.monash.edu/en/persons/daniela-juric/"
   },
@@ -905,9 +1045,19 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "dhayani-kirubaharan",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/dhayani-kirubaharan/"
+  },
+  {
+    "name": "Brett Lombardi",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "brett-lombardi",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/brett-lombardi/"
   },
   {
     "name": "Lan Nguyen",
@@ -915,7 +1065,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "lan-nguyen-2",
     "orcid": "0009-0004-9947-7665",
     "profile_url": "https://research.monash.edu/en/persons/lan-nguyen-2/"
   },
@@ -925,7 +1075,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "anna-stamatelatos",
     "orcid": "0000-0002-7668-3165",
     "profile_url": "https://research.monash.edu/en/persons/anna-stamatelatos/"
   },
@@ -935,7 +1085,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "tirukumar-thiagarajah",
     "orcid": "0009-0007-0887-035X",
     "profile_url": "https://research.monash.edu/en/persons/tirukumar-thiagarajah/"
   },
@@ -945,7 +1095,7 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "mengjie-yang",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/mengjie-yang/"
   },
@@ -955,28 +1105,68 @@
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "wanjia-zhao",
     "orcid": "0009-0008-2212-0544",
     "profile_url": "https://research.monash.edu/en/persons/wanjia-zhao/"
   },
   {
-    "name": "James Sewell",
-    "job_title": "Assistant Lecturer",
+    "name": "Thomas Kern",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "thomas-kern",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/thomas-kern/"
+  },
+  {
+    "name": "James Sewell",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "james-sewell",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/james-sewell/"
   },
   {
+    "name": "Joyce Zhang",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "joyce-zhang",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/joyce-zhang/"
+  },
+  {
+    "name": "Chenlan (Michelle) Song",
+    "job_title": "Lecturer",
+    "academic_level": "B",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "chenlan-song",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/chenlan-song/"
+  },
+  {
     "name": "Ashna Prasad",
-    "job_title": "ADJUNCT SENIOR RESEARCH FELLOW",
+    "job_title": "SENIOR RESEARCH FELLOW",
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
-    "source_id": null,
+    "source_id": "ashna-prasad",
     "orcid": "0000-0002-5442-3952",
     "profile_url": "https://research.monash.edu/en/persons/ashna-prasad/"
+  },
+  {
+    "name": "Dennis Fehrenbacher",
+    "job_title": "ASSOCIATE PROFESSOR",
+    "academic_level": "D",
+    "university": "Monash University",
+    "field_of_research": "Accounting",
+    "source_id": "dennis-fehrenbacher",
+    "orcid": null,
+    "profile_url": "https://research.monash.edu/en/persons/dennis-fehrenbacher/"
   }
 ]
