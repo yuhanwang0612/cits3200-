@@ -165,6 +165,7 @@ code.field {
           <li><a href="#pipeline">Pipeline</a></li>
           <li><a href="#schema">Database Schema</a></li>
           <li><a href="#rankings">Ranking Metrics</a></li>
+          <li><a href="#columns">Column Guide</a></li>
           <li><a href="#limitations">Limitations</a></li>
           <li><a href="#example">Worked Example</a></li>
           <li><a href="#universities">Universities</a></li>
@@ -190,7 +191,7 @@ code.field {
           <ul>
             <li><strong>ABDC Journal Quality List 2025</strong> — sourced from <code class="field">anu_journals.csv</code>. Provides <code class="field">quality_rank</code> (A*, A, B, C) and <code class="field">abdc_edition</code>.</li>
             <li><strong>Scimago Journal Rankings</strong> — sourced from <code class="field">scimago.csv</code>. Provides <code class="field">sjr</code>, <code class="field">sjr_quartile</code>, and <code class="field">cites_per_doc_2y</code>.</li>
-            <li><strong>Clarivate Journal Impact Factor (JCR)</strong> — the schema reserves <code class="field">impact_factor</code> and <code class="field">jcr_year</code> columns for JCR data, but these are currently <code class="field">null</code> for all journals. Populating them requires an institutional API arrangement with Clarivate that is not yet in place. Scimago's <code class="field">cites_per_doc_2y</code> serves as the equivalent metric in the current release.</li>
+            <li><strong>Clarivate Journal Impact Factor (JCR)</strong> — fetched from the Clarivate Journal Citation Reports API when an API key is configured. Provides <code class="field">impact_factor</code>, <code class="field">impact_factor_5yr</code> and <code class="field">jcr_year</code>. Only journals indexed in Web of Science have an impact factor; for the rest these are null.</li>
           </ul>
         </section>
 
@@ -211,7 +212,7 @@ code.field {
           <p>Journal records are matched by ISSN whenever an ISSN is present in both the publication and the journal list. If no ISSN match is found, the pipeline falls back to a normalised journal-name comparison. This two-step approach handles journals that appear under slightly different names across sources.</p>
 
           <h3>OpenAlex percentile</h3>
-          <p>Where available, OpenAlex returns a <code class="field">cited_by_percentile_year.min</code> value indicating a publication's citation standing within its year and field. This is stored as <code class="field">citation_percentile</code> in the database.</p>
+          <p>Where available, OpenAlex returns a <code class="field">citation_normalized_percentile</code> value indicating a publication's citation standing among comparable works. This is stored as <code class="field">citation_percentile</code> in the database.</p>
         </section>
 
         <!-- 3. Schema -->
@@ -226,7 +227,7 @@ code.field {
               <tbody>
                 <tr><td><code class="field">id</code></td><td class="type">INTEGER PK</td><td>Auto-increment</td></tr>
                 <tr><td><code class="field">name</code></td><td class="type">TEXT</td><td>Full name as scraped</td></tr>
-                <tr><td><code class="field">university</code></td><td class="type">TEXT</td><td>Canonical university name (see §7)</td></tr>
+                <tr><td><code class="field">university</code></td><td class="type">TEXT</td><td>Canonical university name (see §8)</td></tr>
                 <tr><td><code class="field">job_title</code></td><td class="type">TEXT</td><td>May be null for synthesised rows</td></tr>
                 <tr><td><code class="field">academic_level</code></td><td class="type">TEXT</td><td>A–E scale where available</td></tr>
                 <tr><td><code class="field">field_of_research</code></td><td class="type">TEXT</td><td>FoR code / label</td></tr>
@@ -249,7 +250,7 @@ code.field {
                 <tr><td><code class="field">sjr</code></td><td class="type">REAL</td><td>Scimago Journal Rank score</td></tr>
                 <tr><td><code class="field">sjr_quartile</code></td><td class="type">TEXT</td><td>Q1–Q4 per Scimago</td></tr>
                 <tr><td><code class="field">cites_per_doc_2y</code></td><td class="type">REAL</td><td>Scimago 2-year citation rate</td></tr>
-                <tr><td><code class="field">impact_factor</code></td><td class="type">REAL</td><td>Clarivate JCR — null if not subscribed</td></tr>
+                <tr><td><code class="field">impact_factor</code></td><td class="type">REAL</td><td>Clarivate JCR — null for journals outside Web of Science</td></tr>
                 <tr><td><code class="field">jcr_year</code></td><td class="type">INTEGER</td><td>Year the JCR value applies to</td></tr>
               </tbody>
             </table>
@@ -297,15 +298,69 @@ code.field {
           </ul>
 
           <h3>Clarivate Journal Impact Factor (JCR)</h3>
-          <p>The <code class="field">impact_factor</code> and <code class="field">jcr_year</code> columns are reserved for the Clarivate 2-year Journal Impact Factor from Web of Science Journal Citation Reports. In the current release these columns are <code class="field">null</code> for all journals — populating them requires an institutional API arrangement with Clarivate. Scimago's <code class="field">cites_per_doc_2y</code> is the equivalent metric available now.</p>
+          <p><code class="field">impact_factor</code> is the Clarivate 2-year Journal Impact Factor from Web of Science Journal Citation Reports, and <code class="field">impact_factor_5yr</code> the 5-year version; <code class="field">jcr_year</code> is the JCR release they come from. They are null for journals outside Web of Science. Scimago's <code class="field">cites_per_doc_2y</code> is a similar measure with wider coverage.</p>
 
           <h3>OpenAlex Citation Percentile</h3>
-          <p><code class="field">citation_percentile</code> is OpenAlex's field- and year-normalised citation percentile (0–100) for the individual publication, not the journal. A value of 95 means the paper is cited more than 95% of papers in the same field published in the same year.</p>
+          <p><code class="field">citation_percentile</code> is OpenAlex's citation percentile for the individual publication, not the journal, normalised by publication year, type and subfield. It is stored as a fraction from 0 to 1: a value of 0.95 means the paper is cited more than 95% of comparable papers.</p>
         </section>
 
-        <!-- 5. Limitations -->
+        <!-- 5. Column guide -->
+        <section class="doc-section card card-pad" id="columns">
+          <h2>5. Column Guide</h2>
+          <p>A short guide to the columns in the data. A blank value always means
+            <em>not available</em>, never zero: a journal with no ABDC rating is simply not on
+            the ABDC list.</p>
+
+          <h3>Researchers</h3>
+          <div class="table-scroll">
+            <table class="schema-table">
+              <thead><tr><th>Column</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code class="field">academic_level</code></td><td>Australian academic level from the job title: A Associate Lecturer, B Lecturer, C Senior Lecturer, D Associate Professor, E Professor.</td></tr>
+                <tr><td><code class="field">field_of_research</code></td><td>Accounting or Finance, from the department the university lists the person under.</td></tr>
+                <tr><td><code class="field">orcid</code></td><td>A permanent researcher identifier, used to find their publications reliably.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Publications</h3>
+          <div class="table-scroll" style="margin-top:12px;">
+            <table class="schema-table">
+              <thead><tr><th>Column</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code class="field">cited_by_count</code></td><td>How many times the article has been cited.</td></tr>
+                <tr><td><code class="field">fwci</code></td><td>Field-Weighted Citation Impact: citations compared with similar articles of the same field, year and type. <strong>1.0 is the world average</strong>; 2.0 is twice as many citations as expected.</td></tr>
+                <tr><td><code class="field">citation_percentile</code></td><td>Where the article ranks by citations among comparable articles, from 0 to 1. <strong>0.91 means cited more than about 91%</strong> of them.</td></tr>
+                <tr><td><code class="field">oa_status</code></td><td>Whether it is free to read: gold, diamond, hybrid or bronze (free from the publisher), green (a free copy in a repository), or closed.</td></tr>
+                <tr><td><code class="field">source</code></td><td>Where the record came from: the university's own system (the official record) or an open index (ORCID, Crossref, OpenAlex).</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Journals</h3>
+          <div class="table-scroll" style="margin-top:12px;">
+            <table class="schema-table">
+              <thead><tr><th>Column</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code class="field">quality_rank</code></td><td>ABDC rating: A* (highest), A, B or C.</td></tr>
+                <tr><td><code class="field">impact_factor</code></td><td>Clarivate Journal Impact Factor: average citations in a year to the journal's articles from the previous two years. Only journals in Web of Science have one.</td></tr>
+                <tr><td><code class="field">impact_factor_5yr</code></td><td>The same over five years; steadier, and better suited to slower-citing fields such as accounting.</td></tr>
+                <tr><td><code class="field">sjr</code></td><td>SCImago Journal Rank: citations weighted by the prestige of the citing journals. Higher is better.</td></tr>
+                <tr><td><code class="field">sjr_quartile</code></td><td>Q1 (top 25% of its subject category) to Q4 (bottom 25%).</td></tr>
+                <tr><td><code class="field">h_index</code></td><td>The journal's h-index: <em>h</em> of its articles have each been cited at least <em>h</em> times.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="margin-top:16px;">The full data dictionary explains every column in every table,
+            where each value comes from, and how to read the metrics.</p>
+          <a class="btn" href="/downloads/data-dictionary.md" download>Download the full data dictionary</a>
+          <p class="muted small" style="margin-top:8px;">A Markdown text file; it opens in any text editor.</p>
+        </section>
+
+        <!-- 6. Limitations -->
         <section class="doc-section card card-pad" id="limitations">
-          <h2>5. Known Limitations</h2>
+          <h2>6. Known Limitations</h2>
 
           <div class="callout">
             <strong>Co-authorship counting.</strong> Publication counts are researcher–publication pairs. A paper co-authored by two staff members at the same university appears twice in the database — once for each author. Totals shown on the site reflect this.
@@ -324,9 +379,9 @@ code.field {
           </div>
         </section>
 
-        <!-- 6. Worked Example -->
+        <!-- 7. Worked Example -->
         <section class="doc-section card card-pad" id="example">
-          <h2>6. Worked Example</h2>
+          <h2>7. Worked Example</h2>
           <p>A researcher at Monash University publishes a paper in the <em>Journal of Finance</em> (ISSN 0022-1082). Here is how the record is assembled:</p>
           <ol>
             <li><strong>Scraper</strong> finds the researcher on the Monash research portal and writes a row to <code class="field">monash_staff.csv</code> and a publication row to <code class="field">monash_publications.csv</code> with ISSN <code class="field">0022-1082</code>.</li>
@@ -337,9 +392,9 @@ code.field {
           </ol>
         </section>
 
-        <!-- 7. Universities -->
+        <!-- 8. Universities -->
         <section class="doc-section card card-pad" id="universities">
-          <h2>7. Universities Covered</h2>
+          <h2>8. Universities Covered</h2>
           <p>The database covers Accounting &amp; Finance researchers at eight Group of Eight Australian universities. The canonical name stored in the database is shown below.</p>
           <div class="uni-grid">
             <div class="uni-card"><strong>Monash University</strong><span>monash_publications.csv</span></div>
