@@ -178,19 +178,29 @@ code.field {
         <!-- 1. Data Sources -->
         <section class="doc-section card card-pad" id="sources">
           <h2>1. Data Sources &amp; Joins</h2>
-          <p>Each record in the database is the result of joining three independent sources:</p>
+          <p>Each record combines three kinds of source: the university's official staff list, the university's own publication records supplemented by open indexes, and journal ranking lists.</p>
 
           <h3>Researcher profiles</h3>
-          <p>Staff lists are scraped directly from each university's research portal. For universities with structured staff exports (Monash, Adelaide, UQ, ANU), a <code class="field">*_staff.csv</code> is produced containing name, job title, academic level, field of research, profile URL, and ORCID where available. For universities without a structured export (UniMelb, USyd, UWA, UNSW), researcher records are synthesised from the author fields in their publication data.</p>
+          <p>For every university, the staff list comes from the official Accounting and Finance staff directory. Each researcher's profile provides their name, job title (from which the academic level is derived), field of research, profile URL and, where the university publishes them, an ORCID iD and a repository ID (<code class="field">source_id</code>). Staff with no publications are left out.</p>
 
           <h3>Publications</h3>
-          <p>Publication metadata — title, DOI, year, venue, citation counts — is fetched from the <strong>OpenAlex API</strong> using each researcher's name and ORCID as identifiers. A publication is linked to a researcher when at least one author's ORCID or display name matches. Co-authored papers are counted once per matching author, so a paper with two staff co-authors appears twice in the database.</p>
+          <p>Publications come first from each university's own system, which is treated as the official record:</p>
+          <ul>
+            <li><strong>UQ</strong> — UQ eSpace, looked up by each person's eSpace author ID.</li>
+            <li><strong>UWA</strong> — UWA's Pure research portal: each person's publication feed and publication pages.</li>
+            <li><strong>Monash</strong> — Monash's Pure research portal: each person's publication feed. OpenAlex then adds DOIs and ISSNs to the portal's papers by exact title match, using only OpenAlex records whose ORCID matches the researcher.</li>
+            <li><strong>Melbourne</strong> — Minerva Access, the University of Melbourne repository.</li>
+            <li><strong>ANU, UNSW and Sydney</strong> — each researcher's official staff profile page.</li>
+            <li><strong>Adelaide</strong> — no official publication source is used yet; its publications come only from the open indexes below.</li>
+          </ul>
+          <p>Three open indexes then add papers the university's records miss: <strong>ORCID</strong> (the researcher's own public record), <strong>Crossref</strong> and <strong>OpenAlex</strong>. They are looked up by ORCID iD, and the OpenAlex search is restricted to papers written while at that university. Duplicate copies of the same paper are merged by DOI, or by title and year where there is no DOI. Only journal articles are kept.</p>
+          <p>Co-authored papers are counted once per matching author, so a paper with two staff co-authors appears twice in the database.</p>
 
           <h3>Journal rankings</h3>
-          <p>Journal quality data comes from three sources, joined to publications by ISSN (preferred) then journal name:</p>
+          <p>Journal quality data comes from three sources, matched to publications by ISSN (the ABDC list falls back to an exact title match when a paper has no ISSN):</p>
           <ul>
-            <li><strong>ABDC Journal Quality List 2025</strong> — sourced from <code class="field">anu_journals.csv</code>. Provides <code class="field">quality_rank</code> (A*, A, B, C) and <code class="field">abdc_edition</code>.</li>
-            <li><strong>Scimago Journal Rankings</strong> — sourced from <code class="field">scimago.csv</code>. Provides <code class="field">sjr</code>, <code class="field">sjr_quartile</code>, and <code class="field">cites_per_doc_2y</code>.</li>
+            <li><strong>ABDC Journal Quality List 2025</strong> — from <code class="field">data/ABDC-JQL-2025-v1-260326.xlsx</code>. Provides <code class="field">quality_rank</code> (A*, A, B, C) and <code class="field">abdc_edition</code>.</li>
+            <li><strong>Scimago Journal Rankings 2025</strong> — from <code class="field">data/scimagojr 2025.csv</code>. Provides <code class="field">sjr</code>, <code class="field">sjr_quartile</code>, <code class="field">h_index</code> and <code class="field">cites_per_doc_2y</code>.</li>
             <li><strong>Clarivate Journal Impact Factor (JCR)</strong> — fetched from the Clarivate Journal Citation Reports API when an API key is configured. Provides <code class="field">impact_factor</code>, <code class="field">impact_factor_5yr</code> and <code class="field">jcr_year</code>. Only journals indexed in Web of Science have an impact factor; for the rest these are null.</li>
           </ul>
         </section>
@@ -199,17 +209,28 @@ code.field {
         <section class="doc-section card card-pad" id="pipeline">
           <h2>2. Standardisation Pipeline</h2>
 
-          <h3>Step 1 — Scrape</h3>
-          <p>Each university has a dedicated scraper (<code class="field">*_scraper.py</code>) that writes <code class="field">*_staff.csv</code> and <code class="field">*_publications.csv</code> to the project root.</p>
+          <p>One command runs the whole pipeline for a university: <code class="field">python run.py --uni &lt;name&gt;</code>, or <code class="field">python run.py --all</code> for all eight. Each university goes through the same steps:</p>
 
-          <h3>Step 2 — Merge</h3>
-          <p><code class="field">merge_publications.py</code> concatenates all eight <code class="field">*_publications.csv</code> files into <code class="field">combined_publications.csv</code>, normalising university names and column headers to a shared schema.</p>
+          <h3>Step 1 — Collect</h3>
+          <p>The university's adapter (<code class="field">base_scrapers/&lt;name&gt;.py</code>) reads the official staff directory and the university's own publication records. Reviewed identity corrections in <code class="field">data/</code> (for example a verified ORCID) are applied here.</p>
 
-          <h3>Step 3 — Load</h3>
-          <p><code class="field">load.py</code> reads <code class="field">combined_publications.csv</code>, <code class="field">anu_journals.csv</code>, and <code class="field">jcr.csv</code> (if present), performs the ISSN-first journal join, and writes everything into the SQLite database (<code class="field">research.db</code>) via SQLAlchemy.</p>
+          <h3>Step 2 — Supplement</h3>
+          <p>ORCID, Crossref and OpenAlex are searched for papers the university's records miss.</p>
 
-          <h3>ISSN-first matching</h3>
-          <p>Journal records are matched by ISSN whenever an ISSN is present in both the publication and the journal list. If no ISSN match is found, the pipeline falls back to a normalised journal-name comparison. This two-step approach handles journals that appear under slightly different names across sources.</p>
+          <h3>Step 3 — Clean and enrich</h3>
+          <p>Titles, years, DOIs and publication types are cleaned; errata, editorials and reviewed exclusions (<code class="field">data/publication_exclusions.csv</code>) are removed. OpenAlex and Crossref then add citation metrics, open-access status and missing ISSNs by DOI.</p>
+
+          <h3>Step 4 — Rate journals</h3>
+          <p>Each journal is matched to the ABDC list, Clarivate Journal Citation Reports (when an API key is configured) and Scimago.</p>
+
+          <h3>Step 5 — Screen</h3>
+          <p><code class="field">screen.py</code> removes open-index papers that probably belong to someone else with the same name: when a researcher has at least five open-index journal articles and fewer than a quarter of them are in ABDC-rated journals, those papers are set aside. Some specific cases are also handled by hand-reviewed rules. Papers from the university's own records are never removed. Everything set aside is listed in <code class="field">&lt;uni&gt;_screened_out.csv</code> with the reason.</p>
+
+          <h3>Step 6 — Export</h3>
+          <p>The results are written to <code class="field">final output/&lt;uni&gt;/</code> as four tables — staff, publications, journals and harvest — each as CSV and JSON.</p>
+
+          <h3>Step 7 — Load</h3>
+          <p><code class="field">load.py</code> rebuilds the website's SQLite database (<code class="field">site/research.db</code>) from every university's folder in <code class="field">final output/</code>. The admin page's <strong>Refresh</strong> button runs the pipeline for one or all universities and then this step, replacing the live database only if everything succeeds.</p>
 
           <h3>OpenAlex percentile</h3>
           <p>Where available, OpenAlex returns a <code class="field">citation_normalized_percentile</code> value indicating a publication's citation standing among comparable works. This is stored as <code class="field">citation_percentile</code> in the database.</p>
@@ -218,21 +239,22 @@ code.field {
         <!-- 3. Schema -->
         <section class="doc-section card card-pad" id="schema">
           <h2>3. Database Schema</h2>
-          <p>The database (<code class="field">research.db</code>) is a SQLite file managed by SQLAlchemy. It contains four tables:</p>
+          <p>The database (<code class="field">site/research.db</code>) is a SQLite file managed by SQLAlchemy and rebuilt by <code class="field">load.py</code>. It has three tables in use, below. A fourth, <code class="field">harvest</code>, is defined but not currently filled; when each source was last harvested is recorded in each university's <code class="field">&lt;uni&gt;_harvest</code> file instead.</p>
 
           <h3>Researcher</h3>
           <div class="table-scroll">
             <table class="schema-table">
               <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
               <tbody>
-                <tr><td><code class="field">id</code></td><td class="type">INTEGER PK</td><td>Auto-increment</td></tr>
-                <tr><td><code class="field">name</code></td><td class="type">TEXT</td><td>Full name as scraped</td></tr>
-                <tr><td><code class="field">university</code></td><td class="type">TEXT</td><td>Canonical university name (see §8)</td></tr>
-                <tr><td><code class="field">job_title</code></td><td class="type">TEXT</td><td>May be null for synthesised rows</td></tr>
-                <tr><td><code class="field">academic_level</code></td><td class="type">TEXT</td><td>A–E scale where available</td></tr>
-                <tr><td><code class="field">field_of_research</code></td><td class="type">TEXT</td><td>FoR code / label</td></tr>
-                <tr><td><code class="field">profile_url</code></td><td class="type">TEXT</td><td>Link to researcher's university page</td></tr>
-                <tr><td><code class="field">orcid</code></td><td class="type">TEXT</td><td>ORCID iD where available</td></tr>
+                <tr><td><code class="field">researcher_id</code></td><td class="type">INTEGER PK</td><td>Auto-increment</td></tr>
+                <tr><td><code class="field">name</code></td><td class="type">TEXT</td><td>Name with titles removed</td></tr>
+                <tr><td><code class="field">job_title</code></td><td class="type">TEXT</td><td>Position as the university lists it</td></tr>
+                <tr><td><code class="field">academic_level</code></td><td class="type">TEXT</td><td>A–E, derived from the job title; null when it doesn't map</td></tr>
+                <tr><td><code class="field">university</code></td><td class="type">TEXT</td><td>University name (see §8)</td></tr>
+                <tr><td><code class="field">field_of_research</code></td><td class="type">TEXT</td><td>Accounting or Finance</td></tr>
+                <tr><td><code class="field">source_id</code></td><td class="type">TEXT</td><td>ID in the university's own system, where published</td></tr>
+                <tr><td><code class="field">orcid</code></td><td class="type">TEXT</td><td>ORCID iD, where available</td></tr>
+                <tr><td><code class="field">profile_url</code></td><td class="type">TEXT</td><td>Link to the official university profile</td></tr>
               </tbody>
             </table>
           </div>
@@ -242,16 +264,21 @@ code.field {
             <table class="schema-table">
               <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
               <tbody>
-                <tr><td><code class="field">id</code></td><td class="type">INTEGER PK</td><td></td></tr>
-                <tr><td><code class="field">issn</code></td><td class="type">TEXT</td><td>Primary join key</td></tr>
-                <tr><td><code class="field">journal_name</code></td><td class="type">TEXT</td><td>Fallback join key</td></tr>
-                <tr><td><code class="field">quality_rank</code></td><td class="type">TEXT</td><td>ABDC: A*, A, B, C, "none", or null — see §4</td></tr>
+                <tr><td><code class="field">journal_id</code></td><td class="type">INTEGER PK</td><td></td></tr>
+                <tr><td><code class="field">journal_name</code></td><td class="type">TEXT</td><td>ABDC title where listed, otherwise the name as found; unique</td></tr>
+                <tr><td><code class="field">journal_raw</code></td><td class="type">TEXT</td><td>Name exactly as the source gave it</td></tr>
+                <tr><td><code class="field">publisher</code></td><td class="type">TEXT</td><td></td></tr>
+                <tr><td><code class="field">issn</code></td><td class="type">TEXT</td><td>One or more ISSNs, separated by <code class="field">; </code></td></tr>
+                <tr><td><code class="field">quality_rank</code></td><td class="type">TEXT</td><td>ABDC: A*, A, B or C; null if not on the list (see §4)</td></tr>
                 <tr><td><code class="field">abdc_edition</code></td><td class="type">TEXT</td><td>E.g. "2025"</td></tr>
+                <tr><td><code class="field">impact_factor</code></td><td class="type">REAL</td><td>Clarivate 2-year JIF; null outside Web of Science</td></tr>
+                <tr><td><code class="field">impact_factor_5yr</code></td><td class="type">REAL</td><td>Clarivate 5-year JIF</td></tr>
+                <tr><td><code class="field">jcr_year</code></td><td class="type">INTEGER</td><td>JCR release the impact factors come from</td></tr>
                 <tr><td><code class="field">sjr</code></td><td class="type">REAL</td><td>Scimago Journal Rank score</td></tr>
                 <tr><td><code class="field">sjr_quartile</code></td><td class="type">TEXT</td><td>Q1–Q4 per Scimago</td></tr>
-                <tr><td><code class="field">cites_per_doc_2y</code></td><td class="type">REAL</td><td>Scimago 2-year citation rate</td></tr>
-                <tr><td><code class="field">impact_factor</code></td><td class="type">REAL</td><td>Clarivate JCR — null for journals outside Web of Science</td></tr>
-                <tr><td><code class="field">jcr_year</code></td><td class="type">INTEGER</td><td>Year the JCR value applies to</td></tr>
+                <tr><td><code class="field">h_index</code></td><td class="type">INTEGER</td><td>Journal h-index per Scimago</td></tr>
+                <tr><td><code class="field">cites_per_doc_2y</code></td><td class="type">REAL</td><td>Scimago 2-year citations per document</td></tr>
+                <tr><td><code class="field">scimago_year</code></td><td class="type">TEXT</td><td>Scimago release the figures come from</td></tr>
               </tbody>
             </table>
           </div>
@@ -261,15 +288,25 @@ code.field {
             <table class="schema-table">
               <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
               <tbody>
-                <tr><td><code class="field">id</code></td><td class="type">INTEGER PK</td><td></td></tr>
-                <tr><td><code class="field">researcher_id</code></td><td class="type">INTEGER FK</td><td>→ Researcher.id</td></tr>
-                <tr><td><code class="field">journal_id</code></td><td class="type">INTEGER FK</td><td>→ Journal.id (nullable)</td></tr>
+                <tr><td><code class="field">publication_id</code></td><td class="type">INTEGER PK</td><td></td></tr>
+                <tr><td><code class="field">researcher_id</code></td><td class="type">INTEGER FK</td><td>→ researcher.researcher_id</td></tr>
+                <tr><td><code class="field">journal_id</code></td><td class="type">INTEGER FK</td><td>→ journal.journal_id (nullable)</td></tr>
                 <tr><td><code class="field">title</code></td><td class="type">TEXT</td><td></td></tr>
-                <tr><td><code class="field">doi</code></td><td class="type">TEXT</td><td></td></tr>
                 <tr><td><code class="field">year</code></td><td class="type">INTEGER</td><td></td></tr>
+                <tr><td><code class="field">author_count</code></td><td class="type">INTEGER</td><td>Including external co-authors</td></tr>
+                <tr><td><code class="field">authors</code></td><td class="type">TEXT</td><td>All authors, separated by <code class="field">; </code></td></tr>
+                <tr><td><code class="field">doi</code></td><td class="type">TEXT</td><td></td></tr>
+                <tr><td><code class="field">article_url</code></td><td class="type">TEXT</td><td>DOI link, or the source's link when there is no DOI</td></tr>
+                <tr><td><code class="field">link</code></td><td class="type">TEXT</td><td>Link given by the source</td></tr>
+                <tr><td><code class="field">quality_rank</code></td><td class="type">TEXT</td><td>The journal's ABDC rating, copied for convenience</td></tr>
+                <tr><td><code class="field">sjr_quartile</code></td><td class="type">TEXT</td><td>The journal's Scimago quartile, copied for convenience</td></tr>
+                <tr><td><code class="field">citation_percentile</code></td><td class="type">REAL</td><td>OpenAlex citation percentile, 0–1</td></tr>
                 <tr><td><code class="field">cited_by_count</code></td><td class="type">INTEGER</td><td>From OpenAlex</td></tr>
-                <tr><td><code class="field">citation_percentile</code></td><td class="type">REAL</td><td>OpenAlex field-year percentile</td></tr>
-                <tr><td><code class="field">openalex_id</code></td><td class="type">TEXT</td><td></td></tr>
+                <tr><td><code class="field">fwci</code></td><td class="type">REAL</td><td>OpenAlex Field-Weighted Citation Impact</td></tr>
+                <tr><td><code class="field">oa_status</code></td><td class="type">TEXT</td><td>gold, diamond, hybrid, bronze, green or closed</td></tr>
+                <tr><td><code class="field">oa_url</code></td><td class="type">TEXT</td><td>Link to a free copy, where one exists</td></tr>
+                <tr><td><code class="field">publication_status</code></td><td class="type">TEXT</td><td>published or forthcoming (UWA rows use UWA's own wording, e.g. "Published - Jun 2024")</td></tr>
+                <tr><td><code class="field">source</code></td><td class="type">TEXT</td><td>The university system or open index the record came from</td></tr>
               </tbody>
             </table>
           </div>
@@ -280,13 +317,12 @@ code.field {
           <h2>4. Ranking Metrics</h2>
 
           <h3>ABDC Journal Quality List</h3>
-          <p>The Australian Business Deans Council (ABDC) Journal Quality List rates journals in business and economics. The 2025 edition is used. The <code class="field">quality_rank</code> field takes one of five values:</p>
+          <p>The Australian Business Deans Council (ABDC) Journal Quality List rates journals in business and economics. The 2025 edition is used. The <code class="field">quality_rank</code> field takes one of four values, or is blank when the journal is not on the list — common and expected for journals outside business, such as medical or engineering journals:</p>
           <div class="metric-badges">
             <div class="mbadge"><strong>A*</strong>Top 7% of journals in the field. Highest quality.</div>
             <div class="mbadge"><strong>A</strong>High quality, well regarded by the field.</div>
             <div class="mbadge"><strong>B</strong>Recognised quality journals in the field.</div>
             <div class="mbadge"><strong>C</strong>Recognised journals, lower tier.</div>
-            <div class="mbadge"><strong>"none"</strong>Journal was checked against the ABDC list but received no rating. Distinct from null (not yet checked).</div>
           </div>
 
           <h3>Scimago Journal Rankings (SJR)</h3>
@@ -366,16 +402,22 @@ code.field {
             <strong>Co-authorship counting.</strong> Publication counts are researcher–publication pairs. A paper co-authored by two staff members at the same university appears twice in the database — once for each author. Totals shown on the site reflect this.
           </div>
           <div class="callout" style="margin-top:10px;">
-            <strong>Repository-only coverage.</strong> Publications are identified from each university's research repository. Papers not deposited in the repository — including some older works or works under embargo — will not appear even if the researcher is otherwise present.
+            <strong>Coverage depends on the university's own records.</strong> Papers missing from a university's system are only recovered if an open index (ORCID, Crossref or OpenAlex) has them. Work from before a researcher joined the university is often absent, particularly for Monash, where OpenAlex only adds papers written while at Monash.
           </div>
           <div class="callout" style="margin-top:10px;">
-            <strong>Name-based matching.</strong> Researchers without an ORCID iD are matched by display name. Common names, name variants, and transliterations may produce false matches or missed matches.
+            <strong>Adelaide has no official publication source yet.</strong> Its publications come only from ORCID, Crossref and OpenAlex, found through each researcher's ORCID iD. Adelaide staff without an ORCID iD therefore have no publications and are left out.
+          </div>
+          <div class="callout" style="margin-top:10px;">
+            <strong>Namesakes.</strong> Open indexes sometimes attach another person's papers to a researcher, especially for common names. The screening step removes the clear cases and lists them in <code class="field">&lt;uni&gt;_screened_out.csv</code>, but a researcher whose genuine output is large can still carry some wrong papers. Corrections belong in the files in <code class="field">data/</code>, not in the outputs, which the next run overwrites.
           </div>
           <div class="callout" style="margin-top:10px;">
             <strong>Journal coverage gaps.</strong> Not every journal has an ABDC rating, a Scimago entry, or a JCR Impact Factor. Null values in those columns indicate the journal was not found in the respective list, not that the journal is unranked.
           </div>
           <div class="callout" style="margin-top:10px;">
-            <strong>UniMelb, USyd, UWA, UNSW researcher metadata.</strong> These four universities do not expose a structured staff export. Researcher rows are synthesised from the author fields of publication records, so job title and profile URL are not available for most of their staff.
+            <strong>Citation figures change between refreshes.</strong> Citation counts, FWCI and citation percentiles are live values from OpenAlex, so they drift every time the data is refreshed.
+          </div>
+          <div class="callout" style="margin-top:10px;">
+            <strong>Academic levels.</strong> A small number of staff have no academic level, where the university lists an administrative title (such as "Deputy Head of School") or none at all.
           </div>
         </section>
 
@@ -384,27 +426,29 @@ code.field {
           <h2>7. Worked Example</h2>
           <p>A researcher at Monash University publishes a paper in the <em>Journal of Finance</em> (ISSN 0022-1082). Here is how the record is assembled:</p>
           <ol>
-            <li><strong>Scraper</strong> finds the researcher on the Monash research portal and writes a row to <code class="field">monash_staff.csv</code> and a publication row to <code class="field">monash_publications.csv</code> with ISSN <code class="field">0022-1082</code>.</li>
-            <li><strong>merge_publications.py</strong> copies the row into <code class="field">combined_publications.csv</code> with <code class="field">university = "Monash University"</code>.</li>
-            <li><strong>load.py</strong> looks up <code class="field">0022-1082</code> in <code class="field">anu_journals.csv</code> and finds <code class="field">quality_rank = "A*"</code>. It then looks up the same ISSN in <code class="field">scimago.csv</code> and attaches <code class="field">sjr</code>, <code class="field">sjr_quartile</code>, and <code class="field">cites_per_doc_2y</code>. Finally it checks <code class="field">jcr.csv</code> and attaches <code class="field">impact_factor</code> if present.</li>
-            <li><strong>OpenAlex</strong> returns citation metadata and a field-year percentile, which is stored as <code class="field">citation_percentile</code> on the Publication record.</li>
-            <li>The front end displays the researcher's publication with an <span class="abdc" data-r="A*">A*</span> badge and the numerical metrics in the table columns.</li>
+            <li><strong>Collect.</strong> The Monash adapter finds the researcher in the Accounting staff directory, reads their ORCID iD from their Monash research profile, and finds the paper in their profile's publication feed.</li>
+            <li><strong>Identifiers.</strong> OpenAlex is searched by the researcher's ORCID iD, using only records that carry that exact ORCID. The OpenAlex copy with the same title supplies the paper's DOI and the journal's ISSN, <code class="field">0022-1082</code>.</li>
+            <li><strong>Enrich.</strong> OpenAlex adds the citation count, FWCI, citation percentile and open-access status, looked up by DOI.</li>
+            <li><strong>Rate the journal.</strong> ISSN <code class="field">0022-1082</code> is found on the ABDC list as <code class="field">A*</code>, in Clarivate JCR (<code class="field">impact_factor</code>, <code class="field">impact_factor_5yr</code>) and in Scimago (<code class="field">sjr</code>, <code class="field">sjr_quartile</code>, <code class="field">h_index</code>, <code class="field">cites_per_doc_2y</code>).</li>
+            <li><strong>Screen.</strong> The paper came from Monash's own records, so the screening step leaves it alone.</li>
+            <li><strong>Export and load.</strong> It is written to <code class="field">final output/monash/monash_publications.csv</code>, with the journal in <code class="field">monash_journals.csv</code>, and <code class="field">load.py</code> puts both into the database.</li>
+            <li>The website displays the publication with an <span class="abdc" data-r="A*">A*</span> badge and the metrics in the table columns.</li>
           </ol>
         </section>
 
         <!-- 8. Universities -->
         <section class="doc-section card card-pad" id="universities">
           <h2>8. Universities Covered</h2>
-          <p>The database covers Accounting &amp; Finance researchers at eight Group of Eight Australian universities. The canonical name stored in the database is shown below.</p>
+          <p>The database covers Accounting &amp; Finance researchers at the eight Group of Eight Australian universities. Each card shows the name stored in the database and the university's output folder.</p>
           <div class="uni-grid">
-            <div class="uni-card"><strong>Monash University</strong><span>monash_publications.csv</span></div>
-            <div class="uni-card"><strong>Adelaide University</strong><span>adelaide_publications.csv</span></div>
-            <div class="uni-card"><strong>The University of Queensland</strong><span>uq_publications.csv</span></div>
-            <div class="uni-card"><strong>The University of Melbourne</strong><span>unimelb_publications.csv</span></div>
-            <div class="uni-card"><strong>The University of Sydney</strong><span>usyd_publications.csv</span></div>
-            <div class="uni-card"><strong>The University of Western Australia</strong><span>uwa_publications.csv</span></div>
-            <div class="uni-card"><strong>Australian National University</strong><span>anu_publications.csv</span></div>
-            <div class="uni-card"><strong>UNSW Sydney</strong><span>unsw_publications.csv</span></div>
+            <div class="uni-card"><strong>Adelaide University</strong><span>final output/adelaide/</span></div>
+            <div class="uni-card"><strong>Australian National University</strong><span>final output/anu/</span></div>
+            <div class="uni-card"><strong>University of Melbourne</strong><span>final output/unimelb/</span></div>
+            <div class="uni-card"><strong>Monash University</strong><span>final output/monash/</span></div>
+            <div class="uni-card"><strong>UNSW Sydney</strong><span>final output/unsw/</span></div>
+            <div class="uni-card"><strong>University of Queensland</strong><span>final output/uq/</span></div>
+            <div class="uni-card"><strong>University of Sydney</strong><span>final output/usyd/</span></div>
+            <div class="uni-card"><strong>University of Western Australia</strong><span>final output/uwa/</span></div>
           </div>
           <p class="muted small" style="margin-top:14px;">Scraping is limited to researchers listed under Accounting &amp; Finance on each university's business school research portal.</p>
         </section>
