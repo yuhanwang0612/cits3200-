@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 import time
 from pathlib import Path
 
@@ -18,11 +19,15 @@ class FakeManager:
     def __init__(self, state="idle"):
         self.state = state
         self.starts = 0
+        self.last_source = "never called"
 
     def snapshot(self):
         return {"state": self.state, "available_sources": ["anu"], "sources": []}
 
-    def start(self):
+    def start(self, source=None):
+        if source not in (None, "anu"):
+            raise ValueError(f"unknown university: {source!r}")
+        self.last_source = source
         self.starts += 1
         if self.state in {"queued", "running"}:
             return False, self.snapshot()
@@ -62,6 +67,31 @@ def test_refresh_api_starts_and_reports_conflict(admin_app):
     assert manager.starts == 1
     second = client.post("/api/admin/refresh")
     assert second.status_code == 409
+
+
+def test_refresh_api_passes_one_university_through(admin_app):
+    app, manager = admin_app
+    client = app.test_client()
+    login(client)
+    assert client.post("/api/admin/refresh", json={"source": "anu"}).status_code == 202
+    assert manager.last_source == "anu"
+
+
+def test_refresh_api_without_a_university_refreshes_all(admin_app):
+    app, manager = admin_app
+    client = app.test_client()
+    login(client)
+    assert client.post("/api/admin/refresh").status_code == 202
+    assert manager.last_source is None
+
+
+def test_refresh_api_rejects_an_unknown_university(admin_app):
+    app, manager = admin_app
+    client = app.test_client()
+    login(client)
+    response = client.post("/api/admin/refresh", json={"source": "anu; rm -rf /"})
+    assert response.status_code == 400
+    assert manager.starts == 0
 
 
 def test_discovery_uses_go8_order(tmp_path):
@@ -189,6 +219,76 @@ def test_second_start_is_rejected_while_running(tmp_path):
     assert not started_again
     assert state["state"] in {"queued", "running"}
     _wait(manager)
+
+
+def test_single_university_refresh_runs_only_that_one_then_rebuilds(tmp_path):
+    manager, db = _prepare_manager(tmp_path, sources=("anu", "monash", "usyd"))
+    calls = []
+
+    def fake_run(command, log_path, *, env):
+        calls.append(command)
+        if command[1] == "load.py":
+            Path(env["RESEARCH_DB_PATH"]).write_bytes(b"NEW-DB")
+        return 0
+
+    manager._run_command = fake_run
+    started, state = manager.start("monash")
+    assert started
+    assert state["scope"] == "monash"
+    assert [s["name"] for s in state["sources"]] == ["monash"]
+    # The page fills its university list from this, so it must stay complete.
+    assert state["available_sources"] == ["anu", "monash", "usyd"]
+
+    final = _wait(manager)
+    assert final["state"] == "succeeded"
+    assert [c[3] for c in calls if c[1] == "run.py"] == ["monash"]
+    assert any(c[1] == "load.py" for c in calls)
+    assert db.read_bytes() == b"NEW-DB"
+
+
+def test_unknown_university_is_rejected_before_anything_runs(tmp_path):
+    manager, db = _prepare_manager(tmp_path, sources=("anu",))
+    manager._run_command = lambda *a, **k: pytest.fail("nothing should run")
+
+    with pytest.raises(ValueError):
+        manager.start("not-a-university")
+
+    assert manager.snapshot()["state"] == "idle"
+    assert db.read_bytes() == b"OLD-DB"
+
+
+def test_every_child_process_writes_utf8(tmp_path):
+    manager, _ = _prepare_manager(tmp_path, sources=("anu",))
+    envs = []
+
+    def fake_run(command, log_path, *, env):
+        envs.append(env)
+        if command[1] == "load.py":
+            Path(env["RESEARCH_DB_PATH"]).write_bytes(b"NEW-DB")
+        return 0
+
+    manager._run_command = fake_run
+    manager.start()
+    assert _wait(manager)["state"] == "succeeded"
+    assert len(envs) == 2  # the pipeline run and load.py
+    assert all(env["PYTHONIOENCODING"] == "utf-8" for env in envs)
+
+
+def test_real_child_can_log_non_cp1252_titles(tmp_path, monkeypatch):
+    """A pipeline printing "Tax‐Aggressive" to the log used to die with
+    UnicodeEncodeError on Windows, failing the refresh at its first university."""
+    monkeypatch.delenv("PYTHONIOENCODING", raising=False)
+    monkeypatch.delenv("PYTHONUTF8", raising=False)
+    manager = RefreshManager(root=tmp_path, db_path=tmp_path / "research.db")
+    log = tmp_path / "refresh.log"
+    title = "Does Tax‐Aggressive Behavior Motivate CSR? β →"
+
+    code = manager._run_command(
+        [sys.executable, "-c", f"print({title!r})"], log, env=manager._child_env()
+    )
+
+    assert code == 0
+    assert title in log.read_text(encoding="utf-8")
 
 
 def test_load_py_accepts_staging_database_env():

@@ -92,12 +92,24 @@ class RefreshManager:
             )
         return snap
 
-    def start(self) -> tuple[bool, dict]:
+    def start(self, source: str | None = None) -> tuple[bool, dict]:
+        """Start a refresh of every university, or of `source` alone.
+
+        A single-university refresh still rebuilds the whole database: load.py
+        reads every folder in final output/, so the other universities keep
+        their existing outputs. `source` becomes a command-line argument, so
+        only a name from discover_sources() is accepted.
+        """
         with self._lock:
             if self._state["state"] in _RUNNING_STATES:
                 return False, copy.deepcopy(self._state)
 
-            sources = self.discover_sources()
+            available = self.discover_sources()
+            sources = available
+            if source is not None:
+                if source not in available:
+                    raise ValueError(f"unknown university: {source!r}")
+                sources = [source]
             if not sources:
                 self._state = self._idle_state()
                 self._state.update(state="failed", finished_at=_utc_now(),
@@ -111,8 +123,9 @@ class RefreshManager:
                 "started_at": _utc_now(),
                 "finished_at": None,
                 "current_source": None,
-                "message": "Refresh queued",
-                "available_sources": sources,
+                "message": "Refresh queued" if source is None else f"Refresh of {source} queued",
+                "scope": source or "all",
+                "available_sources": available,
                 "sources": [
                     {"name": source, "state": "pending", "started_at": None,
                      "finished_at": None, "seconds": None, "error": None}
@@ -139,6 +152,20 @@ class RefreshManager:
                 if item["name"] == source:
                     item.update(values)
                     break
+
+    @staticmethod
+    def _child_env() -> dict[str, str]:
+        """Environment for the pipeline subprocesses.
+
+        Their output goes to a log file, not a console, and on Windows Python
+        then encodes it as cp1252. The pipeline prints publication titles, and
+        a title such as "Tax‐Aggressive" (U+2010 hyphen) raised
+        UnicodeEncodeError, so the first university failed and the refresh
+        stopped. The log is opened as UTF-8, so write UTF-8 to it.
+        """
+        env = os.environ.copy()
+        env["PYTHONIOENCODING"] = "utf-8"
+        return env
 
     @staticmethod
     def _append_log(log_path: Path, text: str) -> None:
@@ -184,10 +211,10 @@ class RefreshManager:
             else:
                 self._append_log(log_path, "No existing database was present to back up.")
 
-            env = os.environ.copy()
+            env = self._child_env()
             use_clarivate = _clarivate_enabled(env.get("CLARIVATE_API_KEY"))
 
-            for source in snap["available_sources"]:
+            for source in [item["name"] for item in snap["sources"]]:
                 started = time.monotonic()
                 self._update(current_source=source, message=f"Refreshing {source}")
                 self._update_source(source, state="running", started_at=_utc_now())

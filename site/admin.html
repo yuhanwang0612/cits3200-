@@ -63,16 +63,21 @@
 
     <section class="admin-step" aria-labelledby="refresh-heading">
       <h2 id="refresh-heading">Refresh source data</h2>
-      <p>Run every available Group of Eight university scraper and rebuild the database
-        from the new pipeline outputs.</p>
+      <p>Run the Group of Eight university scrapers and rebuild the database from the new
+        pipeline outputs. Choose one university to refresh just that one; the database is
+        still rebuilt from every university's existing outputs.</p>
       <p class="warn"><strong>Important:</strong> this can take a long time. The current
         website database stays in place while scraping runs. A backup is created first,
-        and the live database is replaced only after every university and the database
-        reload succeed.</p>
+        and the live database is replaced only after the selected universities and the
+        database reload succeed.</p>
       <p class="muted">If one source fails, the job stops and reports which source failed.
         The existing live database is left unchanged; see the job log for the source error.</p>
 
       <div class="admin-refresh-toolbar">
+        <label for="refresh-scope">University</label>
+        <select id="refresh-scope">
+          <option value="">All universities</option>
+        </select>
         <button class="btn" id="btn-refresh" type="button">Refresh all data</button>
         <span class="status-badge" id="refresh-state" data-state="idle">Loading status…</span>
       </div>
@@ -98,7 +103,20 @@
     const refreshBtn = el("btn-refresh");
     const refreshState = el("refresh-state");
     const refreshSources = el("refresh-sources");
+    const refreshScope = el("refresh-scope");
     let pollTimer = null;
+
+    function labelRefreshButton() {
+      refreshBtn.textContent = refreshScope.value
+        ? `Refresh ${refreshScope.value}` : "Refresh all data";
+    }
+    refreshScope.addEventListener("change", labelRefreshButton);
+
+    // Fill the university choices once, from the server's list of adapters.
+    function fillScope(sources) {
+      if (refreshScope.options.length > 1 || !sources || !sources.length) return;
+      for (const name of sources) refreshScope.add(new Option(name, name));
+    }
 
     el("btn-download").addEventListener("click", () => {
       window.location = `/api/admin/${dataset()}.xlsx`;
@@ -139,17 +157,28 @@
     });
 
     refreshBtn.addEventListener("click", async () => {
+      const source = refreshScope.value;
       const ok = confirm(
-        "Refresh every university now? This can take a long time. " +
-        "The current database will remain live until the complete refresh succeeds."
+        (source ? `Refresh ${source} now? ` : "Refresh every university now? ") +
+        "This can take a long time. " +
+        "The current database will remain live until the refresh succeeds."
       );
       if (!ok) return;
 
       refreshBtn.disabled = true;
       try {
-        const res = await fetch("/api/admin/refresh", { method: "POST" });
+        const res = await fetch("/api/admin/refresh", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(source ? { source } : {}),
+        });
         if (await handleExpired(res, showRefreshMessage)) return;
         const data = await res.json();
+        if (data.error) {
+          showRefreshMessage("Could not start refresh: " + data.error);
+          refreshBtn.disabled = false;
+          return;
+        }
         renderRefresh(data);
         schedulePoll();
       } catch (e) {
@@ -172,7 +201,10 @@
       const state = data.state || "idle";
       refreshState.textContent = state;
       refreshState.dataset.state = state;
-      refreshBtn.disabled = state === "queued" || state === "running";
+      const busy = state === "queued" || state === "running";
+      refreshBtn.disabled = busy;
+      refreshScope.disabled = busy;
+      fillScope(data.available_sources);
       el("refresh-current").textContent = data.current_source || "—";
       el("refresh-started").textContent = data.started_at || "—";
       el("refresh-finished").textContent = data.finished_at || "—";
