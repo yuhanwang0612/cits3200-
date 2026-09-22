@@ -68,9 +68,7 @@ def test_publication_name_without_orcid_skips_name_search(monkeypatch):
         "name": "John Chu", "profile_url": "", "orcid": "", "publication_name": "Zhu, Z.",
     }])
 
-    _, pubs = monash._process_phase3(person)
-
-    assert pubs == []
+    assert monash._openalex_pubs(person) == []
 
 
 def test_publication_name_with_orcid_still_fetches(monkeypatch):
@@ -84,7 +82,7 @@ def test_publication_name_with_orcid_still_fetches(monkeypatch):
         "publication_name": "Zhu, Z.",
     }])
 
-    monash._process_phase3(person)
+    monash._openalex_pubs(person)
 
     assert calls == ["0000-0001-2345-6789"]
 
