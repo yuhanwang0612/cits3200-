@@ -127,15 +127,27 @@ def _find_research_url(profile_url, name):
             resp = requests.get(profile_url, headers=_HEADERS, timeout=10)
             if resp.status_code == 200 and resp.text:
                 soup = BeautifulSoup(resp.text, "html.parser")
-                last_name = _name_to_slug(name.split()[-1])
-                first_name = _name_to_slug(name.split()[0])
+                name_parts = name.split()
+                expected_slug = _name_to_slug(name)
+                last_name = _name_to_slug(name_parts[-1])
+                first_name = _name_to_slug(name_parts[0])
+                candidates = []
                 for a in soup.find_all("a", href=True):
                     href = a["href"]
                     if not href.startswith("https://research.monash.edu/en/persons/"):
                         continue
                     slug_part = href.split("/en/persons/")[-1].rstrip("/")
-                    if last_name in slug_part or first_name in slug_part:
-                        return href.rstrip("/") + "/"
+                    candidates.append((slug_part, href.rstrip("/") + "/"))
+                # Never accept a namesake merely because the surname occurs
+                # in its URL (Kym Brown previously resolved to Christine
+                # Brown). Prefer the exact full-name slug, then require both
+                # first and last name as the conservative fallback.
+                for slug_part, href in candidates:
+                    if slug_part == expected_slug:
+                        return href
+                for slug_part, href in candidates:
+                    if first_name in slug_part and last_name in slug_part:
+                        return href
         except Exception:
             pass
     return f"https://research.monash.edu/en/persons/{_name_to_slug(name)}/"
@@ -144,8 +156,13 @@ def _find_research_url(profile_url, name):
 def _fetch_research_profile(research_url):
     """Return (title_raw, pub_count, orcid) from a research.monash.edu Pure profile."""
     _RANK_SELECTORS = [
-        ".person-details-info", ".person-position", ".person-details__position",
-        "[class*='person'][class*='position']", "[class*='job-title']",
+        # Pure exposes the actual appointment in ``.job-title``.  Broad
+        # containers such as ``.person-details-info`` can also contain other
+        # people's positions and previously turned Kym Brown into an
+        # "Emeritus Professor".  Exact selectors must therefore come first.
+        ".job-title", "[class~='job-title']", ".person-position",
+        ".person-details__position", "[class*='person'][class*='position']",
+        "[class*='job-title']", ".person-details-info",
         "[class*='title']", ".rendering_person_short .type", "span.type",
     ]
     for attempt in range(3):
@@ -208,7 +225,12 @@ def _request_text(url):
 def _pure_type(raw_type):
     text = _clean_text(raw_type).lower()
     if "contribution to journal" in text:
-        return "Journal Article"
+        # Pure's parent category also contains Short Review, Editorial,
+        # Letter, Commentary, etc.  The project scope is journal *articles*,
+        # so require the explicit Article subtype rather than accepting the
+        # whole parent category.
+        parts = [part.strip() for part in re.split(r"[›>]", text)]
+        return "Journal Article" if "article" in parts[1:] else "Other"
     if "conference" in text:
         return "Conference Paper"
     if "chapter" in text:

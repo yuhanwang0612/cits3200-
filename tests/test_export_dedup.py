@@ -87,5 +87,57 @@ def test_normalise_title_helper():
     assert _normalise_title("A, B: C!") == "a b c"
 
 
+def test_verified_doi_typo_is_repaired_repeatably():
+    row = _pub(doi="10.1111/j.1468-2443.2006.00055x")
+    out = build_publications([row], verbose=False)
+    assert out[0]["doi"] == "10.1111/j.1468-2443.2006.00055.x"
+    assert out[0]["article_url"] == \
+        "https://doi.org/10.1111/j.1468-2443.2006.00055.x"
+
+
+def test_same_doi_coauthor_rows_receive_consistent_metadata():
+    doi = "10.1108/aaaj-10-2023-6704"
+    short = _pub(
+        name="Tirukumar Thiagarajah",
+        title="This is not an experiment: using vignettes in qualitative accounting research",
+        doi=doi,
+        year="2024",
+        journal="Accounting Auditing and Accountability Journal",
+    )
+    full_title = (
+        "Methodological Insights: This is not an experiment: using vignettes "
+        "in qualitative accounting research"
+    )
+    rows = [short]
+    for name in ("Leona Wiegmann", "Matthew Hall", "Ralph Kober"):
+        rows.append(_pub(name=name, title=full_title, doi=doi, year="2025",
+                         journal="Accounting Auditing and Accountability Journal"))
+
+    out = build_publications(rows, verbose=False)
+
+    assert {row["title"] for row in out} == {full_title}
+    assert {row["year"] for row in out} == {"2025"}
+
+
+def test_same_doi_title_typo_and_truncation_are_harmonised():
+    doi = "10.1016/j.acclit.2018.03.003"
+    full = _pub(
+        name="Gladys Lee",
+        title="Whistleblowing on accountingy-related misconduct: A synthesis of the literature",
+        doi=doi,
+        year="2018",
+        journal="Accounting Literature",
+    )
+    short = _pub(
+        name="Xinning Xiao",
+        title="Whistleblowing on accounting-related misconduct",
+        doi=doi,
+        year="2018",
+        journal="Accounting Literature",
+    )
+    out = build_publications([full, short], verbose=False)
+    assert {row["title"] for row in out} == {full["title"]}
+
+
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q"]))
