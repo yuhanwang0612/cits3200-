@@ -71,6 +71,17 @@ def documentation_page():
     return send_from_directory("site", "documentation.html")
 
 
+@app.route("/downloads/data-dictionary.md")
+def data_dictionary_download():
+    # Served from docs/ so the documentation page's download and the repo
+    # copy are the same file; there is nothing to keep in sync.
+    return send_from_directory(
+        os.path.join(BASE_DIR, "docs"), "DATA_DICTIONARY.md",
+        as_attachment=True, download_name="G8-research-data-dictionary.md",
+        mimetype="text/markdown",
+    )
+
+
 # ---------------------------------------------------------
 # Researchers
 # ---------------------------------------------------------
