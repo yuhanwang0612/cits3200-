@@ -85,6 +85,45 @@ def test_profile_without_publications_gives_none():
     assert parse("<h1>Heather Prider</h1><p>Lecturer</p>") == []
 
 
+def header(position, department):
+    return (f'<h1>Prof Someone</h1><p class="u-lead-text position">{position}</p>'
+            f'<p class="u-lead-text department">{department}</p>'
+            f'<p class="u-lead-text organisation"> College of Business and Law</p>')
+
+
+def soup(html):
+    return BeautifulSoup(html, "html.parser")
+
+
+def test_member_of_the_school_is_in_scope():
+    page = header("Associate Professor", "School of Accounting and Finance")
+    assert adelaide._in_accounting_finance_school(soup(page))
+
+
+def test_publishing_in_accounting_and_finance_does_not_make_you_staff():
+    """Robert Elliott (School of Management) matched the old whole-page search
+    through a paper in the journal *Accounting and Finance*."""
+    page = header("Professor", "School of Management") + section("Journals", ARTICLE.replace(
+        "Pacific Basin Finance Journal", "Accounting and Finance"))
+    assert not adelaide._in_accounting_finance_school(soup(page))
+
+
+def test_a_biography_mentioning_the_field_does_not_count():
+    page = header("Professor", "School of Marketing") + \
+        "<p>She chaired the British Accounting and Finance Association.</p>"
+    assert not adelaide._in_accounting_finance_school(soup(page))
+
+
+def test_a_page_without_a_department_line_cannot_be_confirmed():
+    assert not adelaide._in_accounting_finance_school(soup("<h1>Someone</h1><p>School of Accounting and Finance</p>"))
+
+
+def test_position_is_read_from_its_own_line():
+    page = header("Associate Professor", "School of Accounting and Finance")
+    assert adelaide._profile_position(soup(page)) == "Associate Professor"
+    assert adelaide._profile_position(soup("<h1>Someone</h1>")) is None
+
+
 def test_collect_gathers_profile_publications_and_reports_unreadable_tables(monkeypatch, capsys):
     staff = [
         {"name_clean": "Kartick Gupta", "_pubs": parse(section("Journals", ARTICLE)), "_pub_error": None},

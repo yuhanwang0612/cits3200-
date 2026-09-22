@@ -89,7 +89,7 @@ def _card_is_af(link_tag):
           lives within that college, so include as candidate for Phase 2 to verify.
 
     We accept (b) to avoid false-negatives for staff whose cards omit the role.
-    Phase 2's _is_accounting_finance() will reject non-A&F people from that college.
+    Phase 2's _in_accounting_finance_school() rejects anyone outside that school.
     """
     href = link_tag.get("href", "")
     node = link_tag
@@ -120,28 +120,34 @@ def _card_is_af(link_tag):
     )
 
 
-def _is_accounting_finance(soup):
-    """Full-profile A&F check (secondary verification).
+ACCOUNTING_FINANCE_SCHOOL = "school of accounting and finance"
 
-    Adelaide University has a single 'School of Accounting and Finance', so every
-    A&F researcher's page contains both words. We only need to confirm they belong
-    to that school — discipline is determined separately via the job title.
+
+def _profile_departments(soup):
+    """The department lines under the name, e.g. "School of Accounting and Finance"."""
+    return [re.sub(r"\s+", " ", p.get_text(" ")).strip()
+            for p in soup.select("p.u-lead-text.department")]
+
+
+def _in_accounting_finance_school(soup):
+    """Is this person a member of Adelaide's School of Accounting and Finance?
+
+    Decided by the department line the profile states, as every other
+    university is scoped by its official department. This replaced a search of
+    the whole page for phrases such as "accounting and finance", which matched
+    publication lists and biographies: anyone who had published in the journal
+    *Accounting and Finance* was counted, e.g. a mathematician in the School of
+    Management with 331 papers going back to 1965. A page with no department
+    line cannot be confirmed and is left out.
     """
-    page_text = soup.get_text(" ", strip=True).lower()
-    # Fast exact-match on the known school name (most reliable)
-    if any(name in page_text for name in _SCHOOL_NAMES):
-        return True
-    # CSS-class fallback for any structural tags that name the school/dept
-    for tag in soup.find_all(
-        ["div", "span", "p", "li", "h2", "h3", "a"],
-        class_=re.compile(r"affili|school|department|faculty|unit|position|role|org", re.I),
-    ):
-        if _ACCTFIN_RE.search(tag.get_text(" ", strip=True)):
-            return True
-    # Broader proximity search as last resort
-    if re.search(r"\bschool\b.{0,80}\b(accounting|finance)\b", page_text, re.S):
-        return True
-    return False
+    return any(d.lower() == ACCOUNTING_FINANCE_SCHOOL for d in _profile_departments(soup))
+
+
+def _profile_position(soup):
+    """The job title the profile states under the name, e.g. "Associate Professor"."""
+    node = soup.select_one("p.u-lead-text.position")
+    text = re.sub(r"\s+", " ", node.get_text(" ")).strip() if node else ""
+    return text or None
 
 
 def _discipline(title_raw, soup):
@@ -279,7 +285,7 @@ def _visit_profile(username):
         if resp.status_code != 200 or len(resp.text) < 500:
             return None
         soup = BeautifulSoup(resp.text, "html.parser")
-        if not _is_accounting_finance(soup):
+        if not _in_accounting_finance_school(soup):
             return None
 
         h1 = soup.find("h1")
@@ -288,13 +294,15 @@ def _visit_profile(username):
         if not name_clean or len(name_clean) < 3:
             return None
 
-        title_raw = None
+        # The stated position first. Scanning the page for title words below
+        # produced titles such as "AppointmentsDatePositionInstitution na".
+        title_raw = _profile_position(soup)
         _TITLE_WORDS = [
             "professor", "lecturer", "researcher", "fellow", "associate",
             "adjunct", "honorary", "visiting", "emeritus", "dean",
             "director", "chair", "tutor", "postdoc",
         ]
-        for tag in soup.find_all(["p", "h2", "h3", "div", "span"], limit=80):
+        for tag in ([] if title_raw else soup.find_all(["p", "h2", "h3", "div", "span"], limit=80)):
             text = tag.get_text(strip=True)
             if any(w in text.lower() for w in _TITLE_WORDS):
                 if 3 < len(text) < 120:

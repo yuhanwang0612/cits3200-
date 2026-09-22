@@ -1,55 +1,77 @@
 name,job_title,academic_level,university,field_of_research,source_id,orcid,profile_url
-Youngnae Jun,,,Adelaide University,Finance,,0000-0002-9665-1363,https://adelaide.edu.au/people/youngnae.jun
-Scott Copeland,Program Director,,Adelaide University,Accounting,,0000-0003-2142-3814,https://adelaide.edu.au/people/scott.copeland
-Hasni Gunasekara,,,Adelaide University,Accounting,,0000-0002-1894-3555,https://adelaide.edu.au/people/hasni.gunasekara
-Rob Whait,Senior Lecturer,C,Adelaide University,Finance,,0000-0003-1129-887X,https://adelaide.edu.au/people/rob.whait
-Amanpreet Kaur,Senior Lecturer,C,Adelaide University,Accounting,,0000-0001-5438-7448,https://adelaide.edu.au/people/amanpreet.kaur01
-Sanjaya Kuruppu,Associate Professor of Accounting,D,Adelaide University,Accounting,,0000-0002-7282-272X,https://adelaide.edu.au/people/sanjaya.kuruppu
-Sumit Lodhia,Professor,E,Adelaide University,Accounting,,0000-0002-4459-2621,https://adelaide.edu.au/people/sumit.lodhia
-Niro Wellalage,Associate Professor of Finance,D,Adelaide University,Finance,,0000-0002-3316-3813,https://adelaide.edu.au/people/niro.wellalage
-Chandra Krishnamurti,Professor of Finance,E,Adelaide University,Finance,,0000-0001-6726-8018,https://adelaide.edu.au/people/chandra.krishnamurti
-Reza Bradrania,Senior Lecturer,C,Adelaide University,Finance,,0000-0003-4495-8408,https://adelaide.edu.au/people/reza.bradrania
-Mishkatur Rahman,,,Adelaide University,Finance,,0000-0002-1690-8246,https://adelaide.edu.au/people/mishkatur.rahman
-Mingwei Sun,Lecturer,B,Adelaide University,Finance,,0000-0003-0192-7863,https://adelaide.edu.au/people/m.sun-0
-Kathy Rao,Senior Lecturer,C,Adelaide University,Accounting,,0000-0002-3924-6361,https://adelaide.edu.au/people/kathy.rao
-Carol Tilt,Professor,E,Adelaide University,Accounting,,0000-0002-0341-2436,https://adelaide.edu.au/people/carol.tilt
-Guodong Yuan,Senior Lecturer and Online Course Facilitator,C,Adelaide University,Finance,,0000-0002-7935-1916,https://adelaide.edu.au/people/guodong.yuan
-Lei Xu,Associate Professor,D,Adelaide University,Finance,,0000-0001-5521-0185,https://adelaide.edu.au/people/lei.xu
-Basil Tucker,,,Adelaide University,Accounting,,0000-0002-1858-1590,https://adelaide.edu.au/people/basil.tucker
-Agus Wicaksana,Lecturer,B,Adelaide University,Accounting,,0000-0003-0763-9301,https://adelaide.edu.au/people/agus.wicaksana
-Christa Viljoen,Program Director,,Adelaide University,Finance,,0000-0002-9250-6409,https://adelaide.edu.au/people/christa.viljoen
-Ron McIver,Program Director,,Adelaide University,Finance,,0000-0001-8754-1560,https://adelaide.edu.au/people/ron.mciver
-Wei Qian,Associate Professor,D,Adelaide University,Accounting,,0000-0001-5197-5201,https://adelaide.edu.au/people/wei.qian
-Muhammad Hasanujzaman,,,Adelaide University,Finance,,0000-0002-3324-7013,https://adelaide.edu.au/people/muhammad.hasanujzaman
-Ali Fereydooni,,,Adelaide University,Finance,,0000-0003-0558-7747,https://adelaide.edu.au/people/ali.fereydooni
-Shunji Mei,Lecturer,B,Adelaide University,Finance,,0000-0002-8903-616X,https://adelaide.edu.au/people/shunji.mei
-Kevin Li,Associate Professor,D,Adelaide University,Accounting,,0000-0002-6769-8242,https://adelaide.edu.au/people/k.li
-Ilker Cingillioglu,Senior Lecturer,C,Adelaide University,Accounting,,0000-0002-2971-140X,https://adelaide.edu.au/people/ilker.cingillioglu
-Md Afnan Hossain,Senior Lecturer,C,Adelaide University,Finance,,0000-0003-2954-1823,https://adelaide.edu.au/people/mdafnan.hossain
-Xiaopeng Wei,Lecturer,B,Adelaide University,Finance,,0000-0001-9796-855X,https://adelaide.edu.au/people/xiaopeng.wei
-Marta Khomyn,Senior Lecturer,C,Adelaide University,Finance,,0000-0002-4244-6663,https://adelaide.edu.au/people/marta.khomyn
-Pide Lun,Lecturer,B,Adelaide University,Finance,,0009-0006-2656-7031,https://adelaide.edu.au/people/pide.lun
-Yunyan Zhang,Senior Lecturer,C,Adelaide University,Accounting,,0000-0002-1875-2599,https://adelaide.edu.au/people/yunyan.zhang
-Ivan Indriawan,Senior Lecturer,C,Adelaide University,Finance,,0000-0002-6558-5551,https://adelaide.edu.au/people/ivan.indriawan
-George Mihaylov,Senior Lecturer,C,Adelaide University,Finance,,0000-0001-8146-7881,https://adelaide.edu.au/people/george.mihaylov
-Gary Bowman,Associate Professor,D,Adelaide University,Finance,,0000-0001-5807-2320,https://adelaide.edu.au/people/g.bowman
-Hussain Rammal,Professor,E,Adelaide University,Finance,,0000-0002-3346-080X,https://adelaide.edu.au/people/hussain.rammal
-Chelsea Liu,Associate Professor,D,Adelaide University,Finance,,0000-0002-7100-7360,https://adelaide.edu.au/people/chelsea.liu
-Mahmud Masum,Program Director,,Adelaide University,Accounting,,0000-0002-9922-8173,https://adelaide.edu.au/people/mahmud.masum
-Chee Cheong,Associate Professor,D,Adelaide University,Finance,,0000-0001-8120-0167,https://adelaide.edu.au/people/chee.cheong
-Mark Giancaspro,Program Director,,Adelaide University,Finance,,0000-0002-0121-0590,https://adelaide.edu.au/people/mark.giancaspro
-Paul Coram,Professor,E,Adelaide University,Accounting,,0000-0003-3942-1497,https://adelaide.edu.au/people/paul.coram
-Ralf Zurbrugg,Professor of Finance,E,Adelaide University,Finance,,0000-0002-8652-0028,https://adelaide.edu.au/people/ralf.zurbrugg
-Sabine Schuhrer,,,Adelaide University,Accounting,,0000-0002-8492-7828,https://adelaide.edu.au/people/sabine.schuhrer
-Lingyu Kong,Lecturer,B,Adelaide University,Finance,,0000-0002-2337-617X,https://adelaide.edu.au/people/lingyu.kong
-Tracey Dodd,Senior Lecturer,C,Adelaide University,Accounting,,0000-0001-5971-7135,https://adelaide.edu.au/people/tracey.dodd
-Jane Luo,Program Director,,Adelaide University,Finance,,0000-0001-9548-077X,https://adelaide.edu.au/people/jane.luo
-Bryan Howieson,Associate Professor,D,Adelaide University,Accounting,,0000-0002-8162-7512,https://adelaide.edu.au/people/bryan.howieson
-Chris Leishman,Professor of Property and Housing Economics,E,Adelaide University,Finance,,0000-0002-7853-5035,https://adelaide.edu.au/people/chris.leishman
-Arvid Hoffmann,Professor of Marketing,E,Adelaide University,Finance,,0000-0003-4148-5078,https://adelaide.edu.au/people/arvid.hoffmann
-Indrit Troshani,Professor,E,Adelaide University,Accounting,,0000-0002-4266-2833,https://adelaide.edu.au/people/indrit.troshani
-Steve Goodman,Associate Professor,D,Adelaide University,Accounting,,0000-0002-6566-2633,https://adelaide.edu.au/people/steve.goodman
-Alfred Yawson,Professor of Corporate Finance,E,Adelaide University,Finance,,0000-0002-5000-7871,https://adelaide.edu.au/people/alfred.yawson
-Wenxiao Wang,"Lecturer, Economics",B,Adelaide University,Finance,,0000-0001-8197-8809,https://adelaide.edu.au/people/wenxiao.wang
-Sylvia Villios,Associate Professor,D,Adelaide University,Accounting,,0000-0002-1568-0550,https://adelaide.edu.au/people/sylvia.villios
-Sigitas Karpavicius,Program Director,D,Adelaide University,Finance,,0000-0001-9601-6397,https://adelaide.edu.au/people/sigitas.karpavicius
+Chris Kandunias,Senior Lecturer,C,Adelaide University,Accounting,chris.kandunias,,https://adelaide.edu.au/people/chris.kandunias
+Youngnae Jun,,,Adelaide University,Finance,youngnae.jun,0000-0002-9665-1363,https://adelaide.edu.au/people/youngnae.jun
+Scott Copeland,Program Director,,Adelaide University,Accounting,scott.copeland,0000-0003-2142-3814,https://adelaide.edu.au/people/scott.copeland
+Hasni Gunasekara,,,Adelaide University,Accounting,hasni.gunasekara,0000-0002-1894-3555,https://adelaide.edu.au/people/hasni.gunasekara
+John Christie,Lecturer,B,Adelaide University,Finance,john.christie,,https://adelaide.edu.au/people/john.christie
+Peter Rossini,Senior Lecturer,C,Adelaide University,Finance,peter.rossini,,https://adelaide.edu.au/people/peter.rossini
+Rob Whait,Senior Lecturer,C,Adelaide University,Finance,rob.whait,0000-0003-1129-887X,https://adelaide.edu.au/people/rob.whait
+Amanpreet Kaur,Senior Lecturer,C,Adelaide University,Accounting,amanpreet.kaur01,0000-0001-5438-7448,https://adelaide.edu.au/people/amanpreet.kaur01
+Upekha Atupola,,,Adelaide University,Accounting,upekha.atupola,,https://adelaide.edu.au/people/upekha.atupola
+John Pisaniello,Research Professor,E,Adelaide University,Accounting,john.pisaniello,,https://adelaide.edu.au/people/john.pisaniello
+Sanjaya Kuruppu,Associate Professor of Accounting,D,Adelaide University,Accounting,sanjaya.kuruppu,0000-0002-7282-272X,https://adelaide.edu.au/people/sanjaya.kuruppu
+Dinithi Dissanayake,Lecturer,B,Adelaide University,Accounting,dinithi.dissanayake,,https://adelaide.edu.au/people/dinithi.dissanayake
+Sumit Lodhia,Professor,E,Adelaide University,Accounting,sumit.lodhia,0000-0002-4459-2621,https://adelaide.edu.au/people/sumit.lodhia
+Niro Wellalage,Associate Professor of Finance,D,Adelaide University,Finance,niro.wellalage,0000-0002-3316-3813,https://adelaide.edu.au/people/niro.wellalage
+Chandra Krishnamurti,Professor of Finance,E,Adelaide University,Finance,chandra.krishnamurti,0000-0001-6726-8018,https://adelaide.edu.au/people/chandra.krishnamurti
+Belinda Harrison,Lecturer,B,Adelaide University,Accounting,belinda.harrison,,https://adelaide.edu.au/people/belinda.harrison
+Katherine Christ,Senior Lecturer,C,Adelaide University,Accounting,katherine.christ,,https://adelaide.edu.au/people/katherine.christ
+Reza Bradrania,Senior Lecturer,C,Adelaide University,Finance,reza.bradrania,0000-0003-4495-8408,https://adelaide.edu.au/people/reza.bradrania
+Mishkatur Rahman,,,Adelaide University,Finance,mishkatur.rahman,0000-0002-1690-8246,https://adelaide.edu.au/people/mishkatur.rahman
+Hao Zhou,Lecturer,B,Adelaide University,Finance,hao.zhou,,https://adelaide.edu.au/people/hao.zhou
+Amanda Carter,Lecturer,B,Adelaide University,Accounting,amanda.carter,,https://adelaide.edu.au/people/amanda.carter
+Mansoor Khan,Lecturer,B,Adelaide University,Finance,mansoor.khan,,https://adelaide.edu.au/people/mansoor.khan
+Kartick Gupta,Associate Professor,D,Adelaide University,Finance,kartick.gupta,,https://adelaide.edu.au/people/kartick.gupta
+Lin Crase,"Dean, School of Accounting and Finance",E,Adelaide University,Accounting,lin.crase,,https://adelaide.edu.au/people/lin.crase
+Joanne Tingey-Holyoak,Associate Professor,D,Adelaide University,Accounting,joanne.tingey-holyoak,,https://adelaide.edu.au/people/joanne.tingey-holyoak
+Mingwei Sun,Lecturer,B,Adelaide University,Finance,m.sun-0,0000-0003-0192-7863,https://adelaide.edu.au/people/m.sun-0
+Sumin Kim,Lecturer,B,Adelaide University,Accounting,sumin.kim,0000-0001-7438-2855,https://adelaide.edu.au/people/sumin.kim
+Winston Wu,Lecturer,B,Adelaide University,Finance,winston.wu,,https://adelaide.edu.au/people/winston.wu
+Aise Kim,,,Adelaide University,Accounting,aise.kim,,https://adelaide.edu.au/people/aise.kim
+Subha Parida,"Senior Lecturer, Property",C,Adelaide University,Accounting,subha.parida,,https://adelaide.edu.au/people/subha.parida
+Kathy Rao,Senior Lecturer,C,Adelaide University,Accounting,kathy.rao,0000-0002-3924-6361,https://adelaide.edu.au/people/kathy.rao
+Carol Tilt,Professor,E,Adelaide University,Accounting,carol.tilt,0000-0002-0341-2436,https://adelaide.edu.au/people/carol.tilt
+Glen Lehman,Associate Professor,D,Adelaide University,Accounting,glen.lehman,,https://adelaide.edu.au/people/glen.lehman
+Guodong Yuan,Senior Lecturer and Online Course Facilitator,C,Adelaide University,Finance,guodong.yuan,0000-0002-7935-1916,https://adelaide.edu.au/people/guodong.yuan
+Lei Xu,Associate Professor,D,Adelaide University,Finance,lei.xu,0000-0001-5521-0185,https://adelaide.edu.au/people/lei.xu
+Braam Lowies,"Senior Lecturer, Property",C,Adelaide University,Finance,braam.lowies,,https://adelaide.edu.au/people/braam.lowies
+Howard Harris,Associate Professor,D,Adelaide University,Finance,howard.harris,,https://adelaide.edu.au/people/howard.harris
+Shiao-Lan Chou,Lecturer,B,Adelaide University,Finance,shiao-lan.chou,,https://adelaide.edu.au/people/shiao-lan.chou
+Basil Tucker,,,Adelaide University,Accounting,basil.tucker,0000-0002-1858-1590,https://adelaide.edu.au/people/basil.tucker
+Agus Wicaksana,Lecturer,B,Adelaide University,Accounting,agus.wicaksana,0000-0003-0763-9301,https://adelaide.edu.au/people/agus.wicaksana
+Mei Lim,Senior Lecturer,C,Adelaide University,Accounting,mei.lim,,https://adelaide.edu.au/people/mei.lim
+Christa Viljoen,Program Director,,Adelaide University,Finance,christa.viljoen,0000-0002-9250-6409,https://adelaide.edu.au/people/christa.viljoen
+Ron McIver,Program Director,,Adelaide University,Finance,ron.mciver,0000-0001-8754-1560,https://adelaide.edu.au/people/ron.mciver
+Simon Cottrell,Senior Lecturer,C,Adelaide University,Finance,simon.cottrell,,https://adelaide.edu.au/people/simon.cottrell
+Courtney Regan,,,Adelaide University,Accounting,courtney.regan,,https://adelaide.edu.au/people/courtney.regan
+Wei Qian,Associate Professor,D,Adelaide University,Accounting,wei.qian,0000-0001-5197-5201,https://adelaide.edu.au/people/wei.qian
+Kesten Green,Senior Lecturer,C,Adelaide University,Finance,kesten.green,,https://adelaide.edu.au/people/kesten.green
+Ali Fereydooni,,,Adelaide University,Finance,ali.fereydooni,0000-0003-0558-7747,https://adelaide.edu.au/people/ali.fereydooni
+Kevin Li,Associate Professor,D,Adelaide University,Accounting,k.li,0000-0002-6769-8242,https://adelaide.edu.au/people/k.li
+Shunji Mei,Lecturer,B,Adelaide University,Finance,shunji.mei,0000-0002-8903-616X,https://adelaide.edu.au/people/shunji.mei
+Ilker Cingillioglu,Senior Lecturer,C,Adelaide University,Accounting,ilker.cingillioglu,0000-0002-2971-140X,https://adelaide.edu.au/people/ilker.cingillioglu
+Daniel Orlovsky,Lecturer,B,Adelaide University,Finance,daniel.orlovsky,0009-0005-6494-2771,https://adelaide.edu.au/people/daniel.orlovsky
+Md Afnan Hossain,Senior Lecturer,C,Adelaide University,Finance,mdafnan.hossain,0000-0003-2954-1823,https://adelaide.edu.au/people/mdafnan.hossain
+Xiaopeng Wei,Lecturer,B,Adelaide University,Finance,xiaopeng.wei,0000-0001-9796-855X,https://adelaide.edu.au/people/xiaopeng.wei
+Marta Khomyn,Senior Lecturer,C,Adelaide University,Finance,marta.khomyn,0000-0002-4244-6663,https://adelaide.edu.au/people/marta.khomyn
+Pide Lun,Lecturer,B,Adelaide University,Finance,pide.lun,0009-0006-2656-7031,https://adelaide.edu.au/people/pide.lun
+Nicholas Marzohl,Lecturer with experience facilitating seminars in:,B,Adelaide University,Accounting,nicholas.marzohl,0000-0002-3873-6676,https://adelaide.edu.au/people/nicholas.marzohl
+Lan Phuong Nguyen,Lecturer,B,Adelaide University,Finance,lanphuong.nguyen,,https://adelaide.edu.au/people/lanphuong.nguyen
+Sunze Yu,,,Adelaide University,Finance,sunze.yu,0000-0003-4990-3158,https://adelaide.edu.au/people/sunze.yu
+Yunyan Zhang,Senior Lecturer,C,Adelaide University,Accounting,yunyan.zhang,0000-0002-1875-2599,https://adelaide.edu.au/people/yunyan.zhang
+Ivan Indriawan,Senior Lecturer,C,Adelaide University,Finance,ivan.indriawan,0000-0002-6558-5551,https://adelaide.edu.au/people/ivan.indriawan
+George Mihaylov,Senior Lecturer,C,Adelaide University,Finance,george.mihaylov,0000-0001-8146-7881,https://adelaide.edu.au/people/george.mihaylov
+Mahmud Masum,Program Director,,Adelaide University,Accounting,mahmud.masum,0000-0002-9922-8173,https://adelaide.edu.au/people/mahmud.masum
+Chelsea Liu,Associate Professor,D,Adelaide University,Finance,chelsea.liu,0000-0002-7100-7360,https://adelaide.edu.au/people/chelsea.liu
+Gary Tan,Lecturer,B,Adelaide University,Finance,gary.tan,,https://adelaide.edu.au/people/gary.tan
+Lisa Powell,Senior Lecturer,C,Adelaide University,Accounting,lisa.powell,0000-0001-8769-2465,https://adelaide.edu.au/people/lisa.powell
+Su Kim,Lecturer,B,Adelaide University,Accounting,su.kim,0000-0001-9745-9667,https://adelaide.edu.au/people/su.kim
+Chee Cheong,Associate Professor,D,Adelaide University,Finance,chee.cheong,0000-0001-8120-0167,https://adelaide.edu.au/people/chee.cheong
+Paul Coram,Professor,E,Adelaide University,Accounting,paul.coram,0000-0003-3942-1497,https://adelaide.edu.au/people/paul.coram
+Ralf Zurbrugg,Professor of Finance,E,Adelaide University,Finance,ralf.zurbrugg,0000-0002-8652-0028,https://adelaide.edu.au/people/ralf.zurbrugg
+Limin Xu,Senior Lecturer,C,Adelaide University,Finance,limin.xu,,https://adelaide.edu.au/people/limin.xu
+Jane Luo,Program Director,,Adelaide University,Finance,jane.luo,0000-0001-9548-077X,https://adelaide.edu.au/people/jane.luo
+Chris Leishman,Professor of Property and Housing Economics,E,Adelaide University,Finance,chris.leishman,0000-0002-7853-5035,https://adelaide.edu.au/people/chris.leishman
+Indrit Troshani,Professor,E,Adelaide University,Accounting,indrit.troshani,0000-0002-4266-2833,https://adelaide.edu.au/people/indrit.troshani
+Alfred Yawson,Professor of Corporate Finance,E,Adelaide University,Finance,alfred.yawson,0000-0002-5000-7871,https://adelaide.edu.au/people/alfred.yawson
+Sigitas Karpavicius,Program Director,D,Adelaide University,Finance,sigitas.karpavicius,0000-0001-9601-6397,https://adelaide.edu.au/people/sigitas.karpavicius

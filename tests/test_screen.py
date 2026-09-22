@@ -265,3 +265,27 @@ def test_the_contaminated_case_still_fires_after_all_that():
     # Everything retrieved goes, preprints included: if the ORCID is wrong,
     # everything that came from it is wrong, whether or not it was judgeable.
     assert len(kept) == 1 and kept[0]["source"] == "UNSW staff profile"
+
+
+# ------------------------------------------------------------ the audit file
+
+def test_a_clean_run_removes_the_previous_runs_screened_out_file(tmp_path):
+    """Adelaide's file still listed 25 papers of someone no longer in the data,
+    because a run that removed nothing never rewrote it."""
+    out = tmp_path / "adelaide"
+    out.mkdir()
+    stale = out / "adelaide_screened_out.csv"
+    stale.write_text("name,title\nBoram Lee,An old paper\n", encoding="utf-8")
+
+    sc.screen([person("Fariborz Moshirian")], legitimate(), out_dir=out, verbose=False)
+
+    assert not stale.exists()
+
+
+def test_a_run_that_removes_rows_writes_them_out(tmp_path):
+    out = tmp_path / "unsw"
+    sc.screen([person("Suk Lee")], contaminated(n=10), out_dir=out, verbose=False)
+
+    with open(out / "unsw_screened_out.csv", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    assert len(rows) == 10 and {r["name"] for r in rows} == {"Suk Lee"}
