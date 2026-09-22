@@ -29,6 +29,7 @@ UNIVERSITY_CODES = {
     "Monash University": "MONASH",
     "The University of Adelaide": "UA",
     "University of Adelaide": "UA",
+    "Adelaide University": "UA",
     "The University of Melbourne": "UM",
     "University of Melbourne": "UM",
     "The University of New South Wales": "UNSW",
@@ -182,6 +183,7 @@ def get_universities():
             return {
                 "researcher_count": 0,
                 "publication_count": 0,
+                "abdc_ranked_count": 0,
                 "top_tier_count": 0,
                 "jif_values": [],
                 "jif_5_values": [],
@@ -216,6 +218,8 @@ def get_universities():
                     if metrics is None:
                         continue
                     metrics["publication_count"] += 1
+                    if rank:
+                        metrics["abdc_ranked_count"] += 1
                     if rank in {"A*", "A"}:
                         metrics["top_tier_count"] += 1
                     if jif is not None:

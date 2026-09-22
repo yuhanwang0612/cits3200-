@@ -38,6 +38,9 @@
   --radius:      8px;
   --radius-lg:   12px;
   --shadow:      0 1px 2px rgba(16,32,56,.06), 0 2px 8px rgba(16,32,56,.05);
+  /* Veil over a card's photo. Thin at the top so the image reads, thickening
+     towards the bottom where the grey stat labels need a clean background. */
+  --scrim:       linear-gradient(rgba(255,255,255,.35), rgba(255,255,255,.72) 55%, rgba(255,255,255,.92));
   --shadow-lift: 0 4px 14px rgba(16,32,56,.12);
 
   --maxw:        1440px;   /* content column */
@@ -266,6 +269,28 @@ main { padding: 30px 0 60px; }
   font-size: .98rem; font-weight: 660; line-height: 1.35;
   font-variant-numeric: tabular-nums; color: var(--ink);
 }
+
+/* Optional campus photo behind each card. Drop a file per university into
+   assets/unis/ using the lowercased code below; a card with no file just keeps
+   the plain --surface background, so this degrades quietly.
+
+   The white gradient is layered ON TOP of the photo, not under it: the card's
+   text is dark --ink, and an unscrimmed photo destroys that contrast. Raise the
+   two alpha values towards 1 for a fainter photo, lower them for a bolder one.
+   Keep them high enough that .stat .k (the muted grey labels) stays readable. */
+.uni-card[data-code] {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.uni-card[data-code="UA"]     { background-image: var(--scrim), url("unis/ua.jpg"); }
+.uni-card[data-code="ANU"]    { background-image: var(--scrim), url("unis/anu.jpg"); }
+.uni-card[data-code="UM"]     { background-image: var(--scrim), url("unis/um.jpg"); }
+.uni-card[data-code="MONASH"] { background-image: var(--scrim), url("unis/monash.jpg"); }
+.uni-card[data-code="UNSW"]   { background-image: var(--scrim), url("unis/unsw.jpg"); }
+.uni-card[data-code="UQ"]     { background-image: var(--scrim), url("unis/uq.jpg"); }
+.uni-card[data-code="USYD"]   { background-image: var(--scrim), url("unis/usyd.jpg"); }
+.uni-card[data-code="UWA"]    { background-image: var(--scrim), url("unis/uwa.jpg"); }
 
 /* ---------- 6. Filter panel -------------------------------- */
 .filters { margin-bottom: 18px; }
