@@ -580,6 +580,56 @@ def _is_anu_unranked_ssrn_preprint(x, anu_names):
     return not x.get("abdc")
 
 
+# --- ANU off-field clinical-journal screen ---------------------------------
+#
+# 22 Sep 2026 (v22): 40 of Wai-Man (Raymond) Liu's rows were excluded by
+# name+DOI/title as reviewed rows in data/publication_exclusions.csv (he is a
+# genuine ANU accounting/finance academic who also, genuinely, co-authors
+# clinical medicine papers — an MChD holder publishing outside this
+# dataset's accounting/finance scope, not a namesake). That list is a set of
+# specific rows: a fresh scrape that finds MORE of his clinical output (as
+# one did on 22 Sep — 10 more rows, none of them among the original 40)
+# walks straight past it, because a list can only ever catch rows it has
+# already seen.
+#
+# This is a rule instead: screened on JOURNAL NAME, checked case-
+# insensitively as a substring, never on DOI presence and never on ABDC
+# rank — two of Liu's legitimate finance/economics rows also have no DOI
+# (a page-scraped copy with a truncated journal name, "Journal of Money" /
+# "Annals of Operations" — both real papers, verified by title, just an
+# incidental parsing gap unrelated to this fix), and a DOI- or rank-based
+# rule would wrongly drop real accounting/finance work right alongside the
+# clinical papers it's meant to catch. Keyword stems below are derived
+# directly from the 10
+# confirmed clinical journal names in the current ANU export (verified: no
+# other ANU row's journal_name matches any of them, and
+# "European Journal of Health Economics" — Liu's own genuinely in-scope,
+# ABDC A-rated health-economics paper — matches none either; see the
+# regression test in tests/test_export_neardup.py). Visible and editable
+# here, not buried inside a function, since the underlying judgement call
+# (which fields count as "off-field") is exactly the kind of thing a future
+# reviewer needs to be able to find and adjust without reading the rest of
+# this file.
+ANU_OFF_FIELD_JOURNAL_KEYWORDS = [
+    "anaesth",             # anaesthesia, anaesthesiology (British spelling)
+    "anesth",              # anesthesia, anesthesiology (American spelling)
+    "palliative",
+    "rural health",
+    "nurse practitioner",
+    "pain medicine",
+    "arthroplasty",
+]
+
+
+def _is_anu_off_field_journal(x, anu_names):
+    if x.get("name") not in anu_names:
+        return False
+    journal = (x.get("abdc_title") or x.get("journal") or "").lower()
+    if not journal:
+        return False
+    return any(kw in journal for kw in ANU_OFF_FIELD_JOURNAL_KEYWORDS)
+
+
 def build_publications(pubs, records=None, keep_type="Journal Article",
                        verbose=True):
     """Records sort DOI-first so the better-catalogued copy survives dedup.
@@ -595,6 +645,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     kept_dois_by_key = {}
     excluded_ssrn_preprints = 0
     excluded_correction_notices = 0
+    excluded_off_field_journals = 0
     anu_title_repairs = 0
     missing_journal = 0
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
@@ -622,6 +673,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         # not let them into the client-facing publication table.
         if not journal_name:
             missing_journal += 1
+            continue
+        if _is_anu_off_field_journal(x, anu_names):
+            excluded_off_field_journals += 1
             continue
         if _is_anu_unranked_ssrn_preprint(x, anu_names):
             excluded_ssrn_preprints += 1
@@ -683,6 +737,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         near_dup_removed = before_near_dup - len(out)
         if near_dup_removed:
             print(f"  removed {near_dup_removed} near-duplicate row(s) (FIX G)")
+        if excluded_off_field_journals:
+            print(f"  excluded {excluded_off_field_journals} ANU row(s) in an "
+                  f"off-field clinical journal (see ANU_OFF_FIELD_JOURNAL_KEYWORDS)")
         if excluded_ssrn_preprints:
             print(f"  excluded {excluded_ssrn_preprints} ANU SSRN working "
                   f"paper row(s) with no journal and no ABDC rank")
