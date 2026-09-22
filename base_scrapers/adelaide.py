@@ -6,9 +6,14 @@ Phase 1: paginate the staff directory; filter A&F candidates from card text inli
          If card text shows dept → only ~83 profiles visited in Phase 2.
          If cards don't show dept → falls back to visiting all profiles.
 Phase 2: visit each A&F candidate profile in parallel (ThreadPoolExecutor).
+         The same profile page lists the person's publications; the "Journals"
+         table is read as the official record, labelled "Adelaide profile", so
+         screen.py never removes it. Each entry carries its own DOI.
 
-Publications are not fetched here — run.py's info/openalex.py step
-retrieves them using the ORCIDs this adapter provides.
+run.py's ORCID, Crossref and OpenAlex steps still add papers the profile lacks.
+Before profiles were read, those steps were the only source, so anyone without
+an ORCID on their profile (most of the School of Accounting and Finance) had no
+publications at all.
 """
 
 import re
@@ -84,7 +89,7 @@ def _card_is_af(link_tag):
           lives within that college, so include as candidate for Phase 2 to verify.
 
     We accept (b) to avoid false-negatives for staff whose cards omit the role.
-    Phase 2's _is_accounting_finance() will reject non-A&F people from that college.
+    Phase 2's _in_accounting_finance_school() rejects anyone outside that school.
     """
     href = link_tag.get("href", "")
     node = link_tag
@@ -115,28 +120,34 @@ def _card_is_af(link_tag):
     )
 
 
-def _is_accounting_finance(soup):
-    """Full-profile A&F check (secondary verification).
+ACCOUNTING_FINANCE_SCHOOL = "school of accounting and finance"
 
-    Adelaide University has a single 'School of Accounting and Finance', so every
-    A&F researcher's page contains both words. We only need to confirm they belong
-    to that school — discipline is determined separately via the job title.
+
+def _profile_departments(soup):
+    """The department lines under the name, e.g. "School of Accounting and Finance"."""
+    return [re.sub(r"\s+", " ", p.get_text(" ")).strip()
+            for p in soup.select("p.u-lead-text.department")]
+
+
+def _in_accounting_finance_school(soup):
+    """Is this person a member of Adelaide's School of Accounting and Finance?
+
+    Decided by the department line the profile states, as every other
+    university is scoped by its official department. This replaced a search of
+    the whole page for phrases such as "accounting and finance", which matched
+    publication lists and biographies: anyone who had published in the journal
+    *Accounting and Finance* was counted, e.g. a mathematician in the School of
+    Management with 331 papers going back to 1965. A page with no department
+    line cannot be confirmed and is left out.
     """
-    page_text = soup.get_text(" ", strip=True).lower()
-    # Fast exact-match on the known school name (most reliable)
-    if any(name in page_text for name in _SCHOOL_NAMES):
-        return True
-    # CSS-class fallback for any structural tags that name the school/dept
-    for tag in soup.find_all(
-        ["div", "span", "p", "li", "h2", "h3", "a"],
-        class_=re.compile(r"affili|school|department|faculty|unit|position|role|org", re.I),
-    ):
-        if _ACCTFIN_RE.search(tag.get_text(" ", strip=True)):
-            return True
-    # Broader proximity search as last resort
-    if re.search(r"\bschool\b.{0,80}\b(accounting|finance)\b", page_text, re.S):
-        return True
-    return False
+    return any(d.lower() == ACCOUNTING_FINANCE_SCHOOL for d in _profile_departments(soup))
+
+
+def _profile_position(soup):
+    """The job title the profile states under the name, e.g. "Associate Professor"."""
+    node = soup.select_one("p.u-lead-text.position")
+    text = re.sub(r"\s+", " ", node.get_text(" ")).strip() if node else ""
+    return text or None
 
 
 def _discipline(title_raw, soup):
@@ -164,6 +175,103 @@ def _discipline(title_raw, soup):
     return "Finance" if n_fin > n_acc else "Accounting"
 
 
+PROFILE_SOURCE = "Adelaide profile"
+_AUTHOR_RE = re.compile(r"[^,&]+?,\s*(?:[A-Z][A-Za-z\-]*\.\s*)+")
+_CITATION_RE = re.compile(r"^(?P<authors>.*?)\s*\((?P<year>[^)]*)\)\.\s*(?P<title>.*)$", re.S)
+
+
+def _clean_text(value):
+    return re.sub(r"\s+", " ", value or "").strip()
+
+
+def _citation_span(cell):
+    """The APA citation inside a publication cell, not the badge spans after it."""
+    span = cell.select_one("a > span")
+    if span:
+        return span
+    for span in cell.find_all("span"):
+        classes = set(span.get("class") or [])
+        parent = set(span.parent.get("class") or [])
+        if not classes and "citation-counts" not in parent:
+            return span
+    return None
+
+
+def _parse_profile_publications(soup, name, source_id=None):
+    """Journal articles from the "Journals" table of a researchers.adelaide.edu.au profile.
+
+    Each row is a year cell and an APA citation such as
+    "Gupta, K., & Krishnamurti, C. (2021). Title?. <i>Journal</i>, <i>68</i>, 1-9."
+    followed by a DOI link. Books, chapters and conference papers sit in other
+    tables and are not read: only journal articles are exported.
+    """
+    rows, seen = [], set()
+    for header in soup.select("h3.accordion-header"):
+        if _clean_text(header.get_text(" ")).lower() != "journals":
+            continue
+        item = header.find_parent(class_="accordion-item") or header.parent
+        table = item.find("table") if item else None
+        if table is None:
+            continue
+        for tr in table.select("tbody tr"):
+            cells = tr.find_all("td")
+            if len(cells) < 2:
+                continue
+            citation = _citation_span(cells[1])
+            if citation is None:
+                continue
+
+            journal_tag = citation.find("i")
+            journal = _clean_text(journal_tag.get_text(" ")) if journal_tag else None
+            # Everything before the first italic is "Authors (Year). Title."
+            before = []
+            for node in citation.children:
+                if node is journal_tag:
+                    break
+                before.append(node.get_text(" ") if hasattr(node, "get_text") else str(node))
+            match = _CITATION_RE.match(_clean_text("".join(before)))
+            if not match:
+                continue
+            title = re.sub(r"\s*\.\s*$", "", match.group("title")).strip()
+            title = re.sub(r"([?!])\.$", r"\1", title)
+            if not title:
+                continue
+
+            year = re.search(r"\b(?:18|19|20)\d{2}\b", cells[0].get_text()) or \
+                re.search(r"\b(?:18|19|20)\d{2}\b", match.group("year"))
+            authors = [a.strip(" ,&") for a in _AUTHOR_RE.findall(match.group("authors"))]
+
+            doi_link = cells[1].select_one("a[href*='doi.org/']")
+            doi = None
+            if doi_link:
+                doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi_link["href"], flags=re.I)
+                doi = doi.strip().rstrip(".").lower() or None
+            handle = next((a["href"] for a in cells[1].find_all("a", href=True)
+                           if "doi.org/" not in a["href"]), None)
+
+            key = doi or re.sub(r"[^a-z0-9]", "", title.lower())
+            if key in seen:
+                continue
+            seen.add(key)
+            rows.append({
+                "name": name,
+                "source_id": source_id,
+                "title": title,
+                "year": year.group(0) if year else None,
+                "type": "Journal Article",
+                "n_authors": len(authors) or None,
+                "authors": "; ".join(authors) or None,
+                "issns": [],
+                "journal": journal,
+                "journal_canonical": None,
+                "publisher": None,
+                "doi": doi,
+                "link": handle or (f"https://doi.org/{doi}" if doi else None),
+                "source": PROFILE_SOURCE,
+            })
+    return rows
+
+
 def _visit_profile(username):
     """
     Fetch and parse one researcher profile.
@@ -177,7 +285,7 @@ def _visit_profile(username):
         if resp.status_code != 200 or len(resp.text) < 500:
             return None
         soup = BeautifulSoup(resp.text, "html.parser")
-        if not _is_accounting_finance(soup):
+        if not _in_accounting_finance_school(soup):
             return None
 
         h1 = soup.find("h1")
@@ -186,13 +294,15 @@ def _visit_profile(username):
         if not name_clean or len(name_clean) < 3:
             return None
 
-        title_raw = None
+        # The stated position first. Scanning the page for title words below
+        # produced titles such as "AppointmentsDatePositionInstitution na".
+        title_raw = _profile_position(soup)
         _TITLE_WORDS = [
             "professor", "lecturer", "researcher", "fellow", "associate",
             "adjunct", "honorary", "visiting", "emeritus", "dean",
             "director", "chair", "tutor", "postdoc",
         ]
-        for tag in soup.find_all(["p", "h2", "h3", "div", "span"], limit=80):
+        for tag in ([] if title_raw else soup.find_all(["p", "h2", "h3", "div", "span"], limit=80)):
             text = tag.get_text(strip=True)
             if any(w in text.lower() for w in _TITLE_WORDS):
                 if 3 < len(text) < 120:
@@ -226,6 +336,13 @@ def _visit_profile(username):
             except Exception:
                 pass
 
+        # A publication table that fails to parse keeps the person, with no
+        # profile publications this run, rather than dropping them entirely.
+        try:
+            pubs, pub_error = _parse_profile_publications(soup, name_clean, username), None
+        except Exception as error:
+            pubs, pub_error = [], f"{type(error).__name__}: {error}"
+
         return {
             "university": UNIVERSITY,
             "discipline": _discipline(title_raw, soup),
@@ -235,7 +352,10 @@ def _visit_profile(username):
             "title": title_raw,
             "title_clean": rank(title_raw, prefix),
             "profile_url": f"https://adelaide.edu.au/people/{username}",
+            "source_id": username,
             "orcid": orcid,
+            "_pubs": pubs,
+            "_pub_error": pub_error,
         }
     except Exception:
         return None
@@ -315,7 +435,10 @@ def scrape_staff(verbose=True):
                 records.append(result)
                 if verbose:
                     tag = f"[orcid={result['orcid']}]" if result["orcid"] else "[no orcid]"
-                    print(f"  + {result['name_clean']:40s}  {tag}")
+                    pubs = f"{len(result['_pubs'])} profile journal articles"
+                    if result["_pub_error"]:
+                        pubs = f"publication table unreadable ({result['_pub_error']})"
+                    print(f"  + {result['name_clean']:40s}  {tag}  {pubs}")
 
     if verbose:
         print(f"  {len(records)} A&F staff")
@@ -325,4 +448,16 @@ def scrape_staff(verbose=True):
 def collect(verbose=True):
     """Return (records, pubs) satisfying the core.schema contract."""
     records = scrape_staff(verbose)
-    return records, []
+    pubs, failed = [], []
+    for record in records:
+        pubs.extend(record.pop("_pubs", []))
+        error = record.pop("_pub_error", None)
+        if error:
+            failed.append((record["name_clean"], error))
+    if verbose:
+        print(f"  {len(pubs)} journal articles from Adelaide profiles")
+        if failed:
+            print(f"  publication table unreadable for {len(failed)} staff:")
+            for name, error in sorted(failed):
+                print(f"    - {name}: {error}")
+    return records, pubs

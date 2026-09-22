@@ -173,6 +173,17 @@ def suspect(entry):
             and entry["share"] < MIN_ABDC_SHARE)
 
 
+def _remove_stale_screened_out(out_dir):
+    """A run that removes nothing must not leave an earlier run's list behind.
+
+    The file used to be written only when something was removed, so a clean
+    run kept the previous file: Adelaide's still listed 25 papers of a
+    researcher who was no longer in the data at all.
+    """
+    if out_dir is not None:
+        (out_dir / f"{out_dir.name}_screened_out.csv").unlink(missing_ok=True)
+
+
 def screen(records, pubs, out_dir=None, verbose=True):
     """Return pubs with out-of-discipline retrieved rows removed.
 
@@ -200,6 +211,7 @@ def screen(records, pubs, out_dir=None, verbose=True):
 
     reviewed_present = any(reviewed_namesake_reason(row) for row in pubs)
     if not flagged and not reviewed_present:
+        _remove_stale_screened_out(out_dir)
         if verbose:
             print("screen: nothing looks out of discipline")
         return pubs
@@ -231,7 +243,9 @@ def screen(records, pubs, out_dir=None, verbose=True):
             person["orcid"] = None
             person["openalex_author_ids"] = []
 
-    if out_dir is not None:
+    if out_dir is not None and not dropped:
+        _remove_stale_screened_out(out_dir)
+    elif out_dir is not None:
         path = out_dir / f"{out_dir.name}_screened_out.csv"
         out_dir.mkdir(parents=True, exist_ok=True)
         columns = ["name", "title", "year", "journal", "doi", "source",

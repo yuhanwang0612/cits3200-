@@ -106,7 +106,7 @@ Both are explained under **Journal metrics** below.
 
 | Column | Meaning |
 |---|---|
-| `source` | Where this record came from. The university's own system (`UQ eSpace`, `UWA Pure`, `Monash Pure`, `UniMelb Minerva`, `ANU staff profile`, `UNSW staff profile`, `Sydney Profiles`), or one of the open indexes the pipeline also searches (`ORCID`, `Crossref`, `OpenAlex`). University-system rows are treated as the official record. |
+| `source` | Where this record came from. The university's own system (`UQ eSpace`, `UWA Pure`, `Monash Pure`, `UniMelb Minerva`, `ANU staff profile`, `UNSW staff profile`, `Sydney Profiles`, `Adelaide profile`), or one of the open indexes the pipeline also searches (`ORCID`, `Crossref`, `OpenAlex`). University-system rows are treated as the official record. |
 
 ## Journals (`<uni>_journals`)
 

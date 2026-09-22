@@ -191,7 +191,7 @@ code.field {
             <li><strong>Monash</strong> — Monash's Pure research portal: each person's publication feed. OpenAlex then adds DOIs and ISSNs to the portal's papers by exact title match, using only OpenAlex records whose ORCID matches the researcher.</li>
             <li><strong>Melbourne</strong> — Minerva Access, the University of Melbourne repository.</li>
             <li><strong>ANU, UNSW and Sydney</strong> — each researcher's official staff profile page.</li>
-            <li><strong>Adelaide</strong> — no official publication source is used yet; its publications come only from the open indexes below.</li>
+            <li><strong>Adelaide</strong> — the journal articles listed on each researcher's Adelaide research profile, each with its DOI.</li>
           </ul>
           <p>Three open indexes then add papers the university's records miss: <strong>ORCID</strong> (the researcher's own public record), <strong>Crossref</strong> and <strong>OpenAlex</strong>. They are looked up by ORCID iD, and the OpenAlex search is restricted to papers written while at that university. Duplicate copies of the same paper are merged by DOI, or by title and year where there is no DOI. Only journal articles are kept.</p>
           <p>Co-authored papers are counted once per matching author, so a paper with two staff co-authors appears twice in the database.</p>
@@ -405,7 +405,7 @@ code.field {
             <strong>Coverage depends on the university's own records.</strong> Papers missing from a university's system are only recovered if an open index (ORCID, Crossref or OpenAlex) has them. Work from before a researcher joined the university is often absent, particularly for Monash, where OpenAlex only adds papers written while at Monash.
           </div>
           <div class="callout" style="margin-top:10px;">
-            <strong>Adelaide has no official publication source yet.</strong> Its publications come only from ORCID, Crossref and OpenAlex, found through each researcher's ORCID iD. Adelaide staff without an ORCID iD therefore have no publications and are left out.
+            <strong>Staff are chosen by department.</strong> As at every university, Adelaide staff are those whose profile lists the School of Accounting and Finance. A few researchers who work in accounting or finance but are based in another school, such as Management, are therefore not included.
           </div>
           <div class="callout" style="margin-top:10px;">
             <strong>Namesakes.</strong> Open indexes sometimes attach another person's papers to a researcher, especially for common names. The screening step removes the clear cases and lists them in <code class="field">&lt;uni&gt;_screened_out.csv</code>, but a researcher whose genuine output is large can still carry some wrong papers. Corrections belong in the files in <code class="field">data/</code>, not in the outputs, which the next run overwrites.
