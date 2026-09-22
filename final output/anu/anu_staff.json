@@ -10,36 +10,6 @@
     "profile_url": "https://rsa.anu.edu.au/people/sarah-adams"
   },
   {
-    "name": "Bonnie Allan",
-    "job_title": "Casual Lecturer",
-    "academic_level": "B",
-    "university": "Australian National University",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://rsa.anu.edu.au/people/bonnie-allan"
-  },
-  {
-    "name": "Pat Barrett",
-    "job_title": "Distinguished Honorary Professor & Senior Fellow - ANCAAR",
-    "academic_level": "E",
-    "university": "Australian National University",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://rsa.anu.edu.au/people/pat-barrett"
-  },
-  {
-    "name": "Yue Cai",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "Australian National University",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://rsa.anu.edu.au/people/yue-cai"
-  },
-  {
     "name": "Lily Chen",
     "job_title": "Associate Professor",
     "academic_level": "D",
@@ -138,16 +108,6 @@
     "source_id": null,
     "orcid": null,
     "profile_url": "https://rsa.anu.edu.au/people/scarlett-luo"
-  },
-  {
-    "name": "Ian McPhee",
-    "job_title": "Distinguished Honorary Professor",
-    "academic_level": "E",
-    "university": "Australian National University",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://rsa.anu.edu.au/people/ian-mcphee"
   },
   {
     "name": "Juliana Ng",
@@ -250,16 +210,6 @@
     "profile_url": "https://rsa.anu.edu.au/people/marvin-wee"
   },
   {
-    "name": "Keturah Whitford",
-    "job_title": "Reader",
-    "academic_level": "D",
-    "university": "Australian National University",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": "0000-0001-5975-7794",
-    "profile_url": "https://rsa.anu.edu.au/people/keturah-whitford"
-  },
-  {
     "name": "Mark Wilson",
     "job_title": "Professor & Deputy Director (Research)",
     "academic_level": "E",
@@ -278,16 +228,6 @@
     "source_id": null,
     "orcid": null,
     "profile_url": "https://rsa.anu.edu.au/people/steven-wu"
-  },
-  {
-    "name": "Jean You",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "Australian National University",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://rsa.anu.edu.au/people/jean-you"
   },
   {
     "name": "Wei Zeng",

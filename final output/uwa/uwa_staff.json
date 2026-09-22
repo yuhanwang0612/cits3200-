@@ -300,16 +300,6 @@
     "profile_url": "https://research-repository.uwa.edu.au/en/persons/kam-chan/"
   },
   {
-    "name": "Kevin Na",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "University of Western Australia",
-    "field_of_research": "Finance",
-    "source_id": "kevin-na",
-    "orcid": null,
-    "profile_url": "https://research-repository.uwa.edu.au/en/persons/kevin-na/"
-  },
-  {
     "name": "Lai Hoang",
     "job_title": "Lecturer",
     "academic_level": "B",
@@ -390,16 +380,6 @@
     "profile_url": "https://research-repository.uwa.edu.au/en/persons/thao-hoang/"
   },
   {
-    "name": "Yeok-Fun Mah",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "University of Western Australia",
-    "field_of_research": "Finance",
-    "source_id": "yeok-fun-mah",
-    "orcid": null,
-    "profile_url": "https://research-repository.uwa.edu.au/en/persons/yeok-fun-mah/"
-  },
-  {
     "name": "Yihui Lan",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -418,15 +398,5 @@
     "source_id": "yuanji-wen",
     "orcid": "0000-0002-9725-5741",
     "profile_url": "https://research-repository.uwa.edu.au/en/persons/yuanji-wen/"
-  },
-  {
-    "name": "Zhengge Zhou",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "University of Western Australia",
-    "field_of_research": "Finance",
-    "source_id": "zhengge-zhou",
-    "orcid": "0009-0008-5926-2570",
-    "profile_url": "https://research-repository.uwa.edu.au/en/persons/zhengge-zhou/"
   }
 ]

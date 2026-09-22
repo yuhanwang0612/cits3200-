@@ -1,13 +1,16 @@
-"""Run the pipeline for one university.
+"""Run the pipeline for one university, or all of them.
 
     python run.py --uni uq
     python run.py --uni uq --skip-clarivate --no-supplementary
     python run.py --uni uq --refresh
+    python run.py --all
+    python run.py --all --skip-clarivate
 """
 
 import argparse
 import importlib
 import inspect
+import subprocess
 import sys
 import time
 from core.clean import clean_pubs                        # noqa: E402
@@ -28,10 +31,59 @@ def step(n, label):
     print(f"\n=== {n}. {label} ===")
 
 
+def discover_adapters():
+    """Every adapter module in base_scrapers/, so a new one is picked up by --all."""
+    folder = Path(__file__).resolve().parent / "base_scrapers"
+    return sorted(p.stem for p in folder.glob("*.py") if not p.stem.startswith("_"))
+
+
+def run_all(args):
+    """Run each university in its own process and report which ones failed.
+
+    A separate process per university means one crash does not stop the rest,
+    and module-level state (http.FORCE_REFRESH, adapter caches) cannot leak from
+    one run into the next. refresh_manager.py drives run.py the same way.
+    """
+    passthrough = [flag for flag, enabled in (
+        ("--refresh", args.refresh),
+        ("--no-supplementary", args.no_supplementary),
+        ("--skip-clarivate", args.skip_clarivate),
+        ("--keep-empty-staff", args.keep_empty_staff),
+    ) if enabled]
+
+    unis = discover_adapters()
+    print(f"running {len(unis)} universities: {', '.join(unis)}")
+
+    started = time.time()
+    results = []
+    for uni in unis:
+        print(f"\n{'#' * 60}\n# {uni}\n{'#' * 60}", flush=True)
+        uni_started = time.time()
+        code = subprocess.call(
+            [sys.executable, str(Path(__file__).resolve()), "--uni", uni, *passthrough]
+        )
+        results.append((uni, code, time.time() - uni_started))
+
+    print(f"\n{'=' * 60}\nsummary\n{'=' * 60}")
+    for uni, code, seconds in results:
+        status = "ok" if code == 0 else f"FAILED (exit {code})"
+        print(f"  {uni:<10} {status:<20} {seconds:6.0f}s")
+
+    failed = [uni for uni, code, _ in results if code != 0]
+    print(f"\n{len(results) - len(failed)}/{len(results)} succeeded "
+          f"in {time.time() - started:.0f}s")
+    if failed:
+        print(f"failed: {', '.join(failed)}")
+    return 1 if failed else 0
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--uni", default="uq",
-                    help="module name in base_scrapers/")
+    target = ap.add_mutually_exclusive_group()
+    target.add_argument("--uni", default=None,
+                        help="module name in base_scrapers/ (default: uq)")
+    target.add_argument("--all", action="store_true",
+                        help="run every university in base_scrapers/, one after another")
     ap.add_argument("--refresh", action="store_true", help="ignore the HTTP cache")
     ap.add_argument("--no-supplementary", action="store_true",
                     help="skip ORCID/Crossref/OpenAlex retrieval")
@@ -39,9 +91,20 @@ def main():
                     help="skip JIF (slowest step, needs an API key)")
     ap.add_argument("--ror", default=None,
                     help="restrict OpenAlex retrieval to this institution ROR")
-    ap.add_argument("--drop-empty-staff", action="store_true",
-                    help="exclude staff who have no publications (all official staff are kept by default)")
+    ap.add_argument("--keep-empty-staff", action="store_true",
+                    help="keep staff who have no publications (they are dropped by default)")
+    # Dropping is now the default; the old flag is still accepted so existing
+    # commands and scripts keep working.
+    ap.add_argument("--drop-empty-staff", action="store_true", help=argparse.SUPPRESS)
     args = ap.parse_args()
+
+    if args.all:
+        if args.ror:
+            ap.error("--ror applies to one university; each adapter supplies its own ROR under --all")
+        return run_all(args)
+
+    if args.uni is None:
+        args.uni = "uq"
 
     if args.refresh:
         http.FORCE_REFRESH = True
@@ -108,7 +171,7 @@ def main():
 
     step(12, "export")
     export(records, pubs, out_dir=out,
-           drop_staff_without_pubs=args.drop_empty_staff)
+           drop_staff_without_pubs=not args.keep_empty_staff)
     quality_writer = getattr(adapter, "write_quality_report", None)
     if callable(quality_writer):
         quality_writer(out)
@@ -119,4 +182,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

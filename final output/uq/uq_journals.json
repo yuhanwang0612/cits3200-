@@ -707,7 +707,7 @@
     "journal_name": "Materiały i Studia",
     "journal_raw": "Materiały i Studia",
     "publisher": null,
-    "issn": "2084-6258; 2084-6258",
+    "issn": "2084-6258",
     "quality_rank": null,
     "abdc_edition": null,
     "impact_factor": null,
@@ -1706,7 +1706,7 @@
     "impact_factor_5yr": null,
     "jcr_year": null,
     "sjr": NaN,
-    "sjr_quartile": "-",
+    "sjr_quartile": null,
     "h_index": 55,
     "cites_per_doc_2y": 1.11,
     "scimago_year": "2025"
@@ -2394,7 +2394,7 @@
     "impact_factor_5yr": null,
     "jcr_year": null,
     "sjr": NaN,
-    "sjr_quartile": "-",
+    "sjr_quartile": null,
     "h_index": 20,
     "cites_per_doc_2y": 1.22,
     "scimago_year": "2025"
@@ -2458,7 +2458,7 @@
     "impact_factor_5yr": null,
     "jcr_year": null,
     "sjr": NaN,
-    "sjr_quartile": "-",
+    "sjr_quartile": null,
     "h_index": 15,
     "cites_per_doc_2y": 0.44,
     "scimago_year": "2025"
@@ -3066,7 +3066,7 @@
     "impact_factor_5yr": null,
     "jcr_year": null,
     "sjr": NaN,
-    "sjr_quartile": "-",
+    "sjr_quartile": null,
     "h_index": 2,
     "cites_per_doc_2y": 0.0,
     "scimago_year": "2025"
