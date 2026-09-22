@@ -250,26 +250,6 @@
     "profile_url": "https://www.unsw.edu.au/staff/luis-filipe-goncalves-pinto"
   },
   {
-    "name": "Jennie Granger",
-    "job_title": "Professor",
-    "academic_level": "E",
-    "university": "UNSW Sydney",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/jennie-granger"
-  },
-  {
-    "name": "Ed Harbor",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "UNSW Sydney",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/ed-harbor"
-  },
-  {
     "name": "Noel Harding",
     "job_title": "Head of School",
     "academic_level": "E",
@@ -410,16 +390,6 @@
     "profile_url": "https://www.unsw.edu.au/staff/rachael-lewis"
   },
   {
-    "name": "Gen Li",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "UNSW Sydney",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": "0009-0006-8140-0250",
-    "profile_url": "https://www.unsw.edu.au/staff/gen-li"
-  },
-  {
     "name": "Leonard Leye Li",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -460,16 +430,6 @@
     "profile_url": "https://www.unsw.edu.au/staff/benjamin-loos"
   },
   {
-    "name": "Jing Lu",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "UNSW Sydney",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/jing-lu"
-  },
-  {
     "name": "Gordon Mackenzie",
     "job_title": "Adjunct Senior Lecturer",
     "academic_level": "C",
@@ -478,16 +438,6 @@
     "source_id": null,
     "orcid": null,
     "profile_url": "https://www.unsw.edu.au/staff/gordon-mackenzie"
-  },
-  {
-    "name": "Faiza Majid",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "UNSW Sydney",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/faiza-majid"
   },
   {
     "name": "Fiona Martin",
@@ -710,16 +660,6 @@
     "profile_url": "https://www.unsw.edu.au/staff/janghoon-shon"
   },
   {
-    "name": "Edward Shore",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "UNSW Sydney",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/edward-shore"
-  },
-  {
     "name": "Roger Simnett",
     "job_title": "Emeritus Professor",
     "academic_level": "E",
@@ -790,16 +730,6 @@
     "profile_url": "https://www.unsw.edu.au/staff/binh-tran-nam"
   },
   {
-    "name": "Michael Triguboff",
-    "job_title": "Adjunct Professor",
-    "academic_level": "E",
-    "university": "UNSW Sydney",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/michael-triguboff"
-  },
-  {
     "name": "Ken Trotman",
     "job_title": "Professor",
     "academic_level": "E",
@@ -848,16 +778,6 @@
     "source_id": null,
     "orcid": null,
     "profile_url": "https://www.unsw.edu.au/staff/neil-warren"
-  },
-  {
-    "name": "Su-Ming Wong",
-    "job_title": "Professor",
-    "academic_level": "E",
-    "university": "UNSW Sydney",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/su-ming-wong"
   },
   {
     "name": "Yan Xu",
@@ -918,25 +838,5 @@
     "source_id": null,
     "orcid": "0000-0001-7701-3721",
     "profile_url": "https://www.unsw.edu.au/staff/jason-zein"
-  },
-  {
-    "name": "Sherry Zhang",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "UNSW Sydney",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/sherry-zhang"
-  },
-  {
-    "name": "Fahim Khondaker",
-    "job_title": "Professor",
-    "academic_level": "E",
-    "university": "UNSW Sydney",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://www.unsw.edu.au/staff/fahim-khondaker"
   }
 ]

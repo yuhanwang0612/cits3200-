@@ -44,7 +44,8 @@ set `review_decision` to `approved`, and record an evidence URL. The next normal
 explicitly approved are ignored, so merely listing a candidate cannot change
 the production dataset.
 
-Official staff without a verified publication are retained by default, as the
-staff directory defines who is in scope. Use `--drop-empty-staff` only when an
-explicit downstream export requires it. Generated files are written under
-`final output/<uni>/`.
+Staff without a publication are dropped from the export by default. Use
+`--keep-empty-staff` to retain every official staff member. To apply the same
+rule to existing outputs without re-running the pipeline, use
+`python drop_empty_staff.py` (add `--dry-run` to preview). Generated files are
+written under `final output/<uni>/`.

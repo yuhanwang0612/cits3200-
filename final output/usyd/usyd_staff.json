@@ -190,16 +190,6 @@
     "profile_url": "https://profiles.sydney.edu.au/fei.gao"
   },
   {
-    "name": "Olga Gouveros",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "olga.gouveros",
-    "orcid": "0009-0001-1830-2651",
-    "profile_url": "https://profiles.sydney.edu.au/olga.gouveros"
-  },
-  {
     "name": "Wes Hamilton-Jessop",
     "job_title": "Lecturer (Education Focused)",
     "academic_level": "B",
@@ -258,16 +248,6 @@
     "source_id": "stewart.jones",
     "orcid": "0000-0003-1600-3030",
     "profile_url": "https://profiles.sydney.edu.au/stewart.jones"
-  },
-  {
-    "name": "Tai-Joo Koh",
-    "job_title": "Lecturer (Education Focused)",
-    "academic_level": "B",
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "tai-joo.koh",
-    "orcid": "0009-0004-9388-8236",
-    "profile_url": "https://profiles.sydney.edu.au/tai-joo.koh"
   },
   {
     "name": "Benjamin Lay",
@@ -398,16 +378,6 @@
     "source_id": "sandra.vanderlaan",
     "orcid": "0000-0002-7773-8447",
     "profile_url": "https://profiles.sydney.edu.au/sandra.vanderlaan"
-  },
-  {
-    "name": "Mark Waddington",
-    "job_title": "Lecturer (Education Focused)",
-    "academic_level": "B",
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "mark.waddington",
-    "orcid": "0009-0004-2947-0441",
-    "profile_url": "https://profiles.sydney.edu.au/mark.waddington"
   },
   {
     "name": "Jo Wang",
@@ -550,16 +520,6 @@
     "profile_url": "https://profiles.sydney.edu.au/d.cho"
   },
   {
-    "name": "Hedda Cui",
-    "job_title": "Associate Lecturer in Finance",
-    "academic_level": "A",
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "hedda.cui",
-    "orcid": null,
-    "profile_url": "https://profiles.sydney.edu.au/hedda.cui"
-  },
-  {
     "name": "Wei Cui",
     "job_title": "Lecturer",
     "academic_level": "B",
@@ -660,16 +620,6 @@
     "profile_url": "https://profiles.sydney.edu.au/sukjoong.kim"
   },
   {
-    "name": "Tro Kortian",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "tro.kortian",
-    "orcid": null,
-    "profile_url": "https://profiles.sydney.edu.au/tro.kortian"
-  },
-  {
     "name": "Doowon Lee",
     "job_title": "Associate Professor of Finance (Education Focused)",
     "academic_level": "D",
@@ -740,16 +690,6 @@
     "profile_url": "https://profiles.sydney.edu.au/andre.lot"
   },
   {
-    "name": "Duc Huy Truong Mai",
-    "job_title": "Associate Lecturer in Finance (Education Focused)",
-    "academic_level": "A",
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "duc.mai",
-    "orcid": "0009-0000-5250-206X",
-    "profile_url": "https://profiles.sydney.edu.au/duc.mai"
-  },
-  {
     "name": "Hamish Malloch",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -758,16 +698,6 @@
     "source_id": "hamish.malloch",
     "orcid": "0009-0001-7403-8955",
     "profile_url": "https://profiles.sydney.edu.au/hamish.malloch"
-  },
-  {
-    "name": "Yingdong Mao",
-    "job_title": "Lecturer in Finance",
-    "academic_level": "B",
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "yingdong.mao",
-    "orcid": "0009-0003-6163-1527",
-    "profile_url": "https://profiles.sydney.edu.au/yingdong.mao"
   },
   {
     "name": "Craig Mellare",
@@ -888,16 +818,6 @@
     "source_id": "cara.vansteenkiste",
     "orcid": "0000-0001-6990-1235",
     "profile_url": "https://profiles.sydney.edu.au/cara.vansteenkiste"
-  },
-  {
-    "name": "Zeyu Wang",
-    "job_title": "Associate Lecturer (PhD Teaching Fellow) - School of Finance",
-    "academic_level": "A",
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "zeyu.wang",
-    "orcid": null,
-    "profile_url": "https://profiles.sydney.edu.au/zeyu.wang"
   },
   {
     "name": "Joakim Westerholm",

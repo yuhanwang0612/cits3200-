@@ -1,8 +1,5 @@
 name,job_title,academic_level,university,field_of_research,source_id,orcid,profile_url
 Sarah Adams,Senior Lecturer,C,Australian National University,Accounting,,0000-0002-4737-4507,https://rsa.anu.edu.au/people/sarah-adams
-Bonnie Allan,Casual Lecturer,B,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/bonnie-allan
-Pat Barrett,Distinguished Honorary Professor & Senior Fellow - ANCAAR,E,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/pat-barrett
-Yue Cai,Lecturer,B,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/yue-cai
 Lily Chen,Associate Professor,D,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/lily-chen
 Sorin Daniliuc,Lecturer,B,Australian National University,Accounting,,0000-0001-9541-5652,https://rsa.anu.edu.au/people/sorin-daniliuc
 Neil Fargher,Emeritus Professor,E,Australian National University,Accounting,,0000-0003-2604-109X,https://rsa.anu.edu.au/people/neil-fargher
@@ -13,7 +10,6 @@ Janet Lee,Honorary Associate Professor,D,Australian National University,Accounti
 Lingwei Li,Senior Lecturer,C,Australian National University,Accounting,,0000-0002-9855-8082,https://rsa.anu.edu.au/people/lingwei-li
 Louise Lu,"Professor & Convenor of HDR, Co-Director of ANCAAR",E,Australian National University,Accounting,,0000-0002-5383-4303,https://rsa.anu.edu.au/people/louise-lu
 Scarlett Luo,Lecturer,B,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/scarlett-luo
-Ian McPhee,Distinguished Honorary Professor,E,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/ian-mcphee
 Juliana Ng,"Director, Research School of Accounting",E,Australian National University,Accounting,,0000-0002-1629-4731,https://rsa.anu.edu.au/people/juliana-ng
 Greg Shailer,"Professor, Director of ANCAAR",E,Australian National University,Accounting,,0000-0002-4896-4197,https://rsa.anu.edu.au/people/greg-shailer
 Madhukar Singh,Lecturer and Undergraduate Program Convenor,B,Australian National University,Accounting,,0000-0002-8369-863X,https://rsa.anu.edu.au/people/madhukar-singh
@@ -24,10 +20,8 @@ Isabel Wang,Senior Lecturer,C,Australian National University,Accounting,,0000-00
 Kathy Wang,Lecturer and course convenor,B,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/kathy-wang
 Tracy (Kun) Wang,Professor,E,Australian National University,Accounting,,0000-0003-2752-3891,https://rsa.anu.edu.au/people/tracy-kun-wang
 Marvin Wee,Professor and Deputy Director Education,E,Australian National University,Accounting,,0000-0002-3097-9091,https://rsa.anu.edu.au/people/marvin-wee
-Keturah Whitford,Reader,D,Australian National University,Accounting,,0000-0001-5975-7794,https://rsa.anu.edu.au/people/keturah-whitford
 Mark Wilson,Professor & Deputy Director (Research),E,Australian National University,Accounting,,0000-0003-4170-6969,https://rsa.anu.edu.au/people/mark-wilson
 Steven Wu,"Associate Professor, Director of HDR",D,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/steven-wu
-Jean You,Lecturer,B,Australian National University,Accounting,,,https://rsa.anu.edu.au/people/jean-you
 Wei Zeng,Lecturer,B,Australian National University,Accounting,,0000-0003-0576-2218,https://rsa.anu.edu.au/people/wei-zeng
 Lijuan Zhang,Senior Lecturer,C,Australian National University,Accounting,,0000-0001-8213-6806,https://rsa.anu.edu.au/people/lijuan-zhang
 Xiu-Ye Zhang,Senior Lecturer,C,Australian National University,Accounting,,0000-0002-5354-0655,https://rsa.anu.edu.au/people/xiu-ye-zhang
