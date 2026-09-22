@@ -301,6 +301,14 @@ def get(url: str) -> requests.Response | None:
     if r.status_code != 200:
         print(f"  [http {r.status_code}] {url}", file=sys.stderr)
         return None
+    # Every RSA/RSFAS page is served as UTF-8. Pin r.encoding explicitly
+    # rather than let requests' .text property fall back to a guess
+    # (header-absent charset, or a mis-negotiated response from a proxy
+    # or edge cache) — a wrong guess doesn't error, it just silently
+    # decodes multi-byte UTF-8 punctuation (curly quotes, en-dashes) as
+    # cp1252/latin-1, producing mojibake like "auditorsâ€™" for
+    # "auditors'" that survives all the way into the exported CSV.
+    r.encoding = "utf-8"
     return r
 
 

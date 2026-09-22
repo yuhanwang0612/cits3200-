@@ -2,17 +2,16 @@
 
 Phase 1: Selenium scrapes JS-rendered staff directories (Banking & Finance + Accounting).
 Phase 2: parallel requests visit each research.monash.edu profile for ORCID + pub_count.
-Phase 3: parallel OpenAlex fetches for publications, with pub_count sanity check.
-
-Manual identity corrections in data/monash_identity_overrides.csv are applied
-after Phase 2, so a verified ORCID replaces whatever the profile page offered.
+Phase 3: use each researcher's official Monash Pure RSS list for attribution,
+then attach OpenAlex metadata only when the publication title matches.
 """
 
-import csv
+import html as html_module
+import math
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from pathlib import Path
+from xml.etree import ElementTree
 
 import requests
 from bs4 import BeautifulSoup
@@ -58,6 +57,30 @@ _PROFILE_KEYS = ("/profile/", "/people/", "/persons/", "/staff/", "/our-people/"
 
 def _name_to_slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def _clean_text(value):
+    if not value:
+        return ""
+    return re.sub(r"\s+", " ", html_module.unescape(str(value))).strip()
+
+
+def _title_key(value):
+    """Stable comparison key for matching a Pure item to OpenAlex metadata."""
+    return re.sub(r"[^a-z0-9]+", " ", _clean_text(value).casefold()).strip()
+
+
+def _academic_title(value):
+    """Return only an academic position, never a whole profile section.
+
+    Pure's generic ``title`` selectors can point at blocks headed "External
+    positions".  Those blocks used to become job titles in the staff CSV.
+    """
+    text = _clean_text(value)
+    if "external positions" in text.casefold():
+        return None
+    match = _POSITION_RE.search(text)
+    return _clean_text(match.group(0)) if match else None
 
 
 def _is_real_person(name):
@@ -130,9 +153,8 @@ def _fetch_research_profile(research_url):
             for sel in _RANK_SELECTORS:
                 el = soup.select_one(sel)
                 if el:
-                    text = el.get_text(strip=True)
-                    if text:
-                        title_raw = text
+                    title_raw = _academic_title(el.get_text(" ", strip=True))
+                    if title_raw:
                         break
 
             pub_count = 0
@@ -155,6 +177,132 @@ def _fetch_research_profile(research_url):
         except Exception:
             time.sleep(2)
     return None, 0, None
+
+
+def _request_text(url):
+    """Fetch text with the same bounded retry policy as the JSON requests."""
+    for attempt in range(3):
+        try:
+            resp = requests.get(url, headers=_HEADERS, timeout=20)
+            if resp.status_code == 429 or resp.status_code >= 500:
+                time.sleep(2 * (attempt + 1))
+                continue
+            resp.raise_for_status()
+            return resp.text
+        except requests.RequestException:
+            if attempt == 2:
+                raise
+            time.sleep(2 * (attempt + 1))
+    raise RuntimeError(f"failed to fetch {url}")
+
+
+def _pure_type(raw_type):
+    text = _clean_text(raw_type).lower()
+    if "contribution to journal" in text:
+        return "Journal Article"
+    if "conference" in text:
+        return "Conference Paper"
+    if "chapter" in text:
+        return "Book Chapter"
+    if "book" in text:
+        return "Book"
+    if "working paper" in text:
+        return "Working Paper"
+    if "report" in text:
+        return "Research Report"
+    if "thesis" in text:
+        return "Thesis"
+    return "Other"
+
+
+def _parse_pure_rss(xml_text, name, source_id=None):
+    """Parse one Monash Pure RSS page into shared publication records.
+
+    The personal RSS feed is the attribution evidence.  It is safer than
+    treating every work on an OpenAlex author entity as belonging to the
+    current Monash staff member, because OpenAlex can merge namesakes.
+    """
+    root = ElementTree.fromstring(xml_text)
+    rows = []
+    for element in root.iter():
+        if element.tag.rsplit("}", 1)[-1].lower() != "item":
+            continue
+        values = {
+            child.tag.rsplit("}", 1)[-1].lower(): child.text or ""
+            for child in element
+        }
+        title = _clean_text(values.get("title"))
+        link = _clean_text(values.get("link")) or None
+        if not title:
+            continue
+
+        description = BeautifulSoup(values.get("description", ""), "html.parser")
+        date_node = description.select_one(".date")
+        date_text = _clean_text(date_node.get_text(" ", strip=True) if date_node else "")
+        year_match = re.search(r"\b(?:18|19|20)\d{2}\b", date_text)
+
+        journal_node = description.select_one(".journal")
+        journal = _clean_text(
+            journal_node.get_text(" ", strip=True) if journal_node else ""
+        )
+        journal = re.sub(r"^In:\s*", "", journal, flags=re.I).rstrip(". ") or None
+
+        type_node = description.select_one(".type")
+        raw_type = _clean_text(type_node.get_text(" ", strip=True) if type_node else "")
+
+        # The short Pure rendering contains the complete byline as plain text,
+        # including external co-authors.  Preserve it for auditability.  When
+        # OpenAlex has the same title below, its structured author list wins.
+        all_text = _clean_text(description.get_text(" ", strip=True))
+        author_text = None
+        if all_text.startswith(title) and date_text and date_text in all_text:
+            author_text = all_text[len(title):all_text.index(date_text)].strip(" ,") or None
+        author_count = None
+        if author_text:
+            initials = re.findall(
+                r",\s*(?:[A-Z]\.\s*)+(?=,|\s*&|$)", author_text
+            )
+            author_count = len(initials) or None
+
+        rows.append({
+            "name": name,
+            "source_id": source_id,
+            "title": title,
+            "year": year_match.group(0) if year_match else None,
+            "type": _pure_type(raw_type),
+            "n_authors": author_count,
+            "authors": author_text,
+            "issns": [],
+            "journal": journal,
+            "journal_canonical": None,
+            "publisher": None,
+            "doi": None,
+            "link": link,
+            "source": "Monash Pure",
+            "raw_type": raw_type or None,
+        })
+    return rows
+
+
+def _fetch_pure_publications(record):
+    base = f"{record['profile_url'].rstrip('/')}/publications/"
+    expected = record.get("_pub_count") or 0
+    max_pages = math.ceil(expected / 50) + 2 if expected else 100
+    rows_by_url = {}
+    for page in range(max_pages):
+        # Monash Pure accepts ``?format=rss`` for the first page, but its
+        # security layer rejects ``?format=rss&page=1``.  Putting ``page``
+        # first is both accepted and returns the next, non-overlapping page.
+        url = f"{base}?format=rss" if page == 0 else f"{base}?page={page}&format=rss"
+        batch = _parse_pure_rss(
+            _request_text(url), record["name_clean"], record.get("source_id")
+        )
+        before = len(rows_by_url)
+        for row in batch:
+            rows_by_url[row.get("link") or _title_key(row.get("title"))] = row
+        if not batch or len(rows_by_url) == before or (expected and len(rows_by_url) >= expected):
+            break
+    return list(rows_by_url.values())
 
 
 def _process_phase2(record):
@@ -306,7 +454,11 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
                 "title": title,
                 "year": year,
                 "type": pub_type,
-                "source": journal_name or "",
+                # ``source`` is provenance, not the venue.  Storing the
+                # journal here caused screen.py to treat every Monash row as
+                # an official/listed record, so namesake OpenAlex rows were
+                # never screened.
+                "source": "OpenAlex",
                 "doi": doi or None,
                 "issns": [issn] if issn else [],
                 "journal": journal_name,
@@ -328,18 +480,47 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
     return pubs
 
 
+def _merge_pure_with_openalex(pure_pubs, openalex_pubs):
+    """Attach OpenAlex metadata only to works present in the Pure feed.
+
+    Pure decides attribution; OpenAlex supplies identifiers and structured
+    metadata.  Extra OpenAlex works are deliberately not admitted here.
+    """
+    candidates = {}
+    for row in openalex_pubs:
+        candidates.setdefault(_title_key(row.get("title")), []).append(row)
+
+    merged = []
+    for pure in pure_pubs:
+        choices = candidates.get(_title_key(pure.get("title")), [])
+        if choices:
+            year = str(pure.get("year") or "")
+            match = next(
+                (row for row in choices if str(row.get("year") or "") == year),
+                choices[0],
+            )
+            for field in ("doi", "issns", "n_authors", "authors", "publisher"):
+                if match.get(field):
+                    pure[field] = match[field]
+            if not pure.get("journal") and match.get("journal"):
+                pure["journal"] = match["journal"]
+            pure["metadata_source"] = "OpenAlex exact-title match"
+        merged.append(pure)
+    return merged
+
+
 def _process_phase3(record):
-    """Phase 3 worker: fetch pubs from OpenAlex. Returns (record, pubs)."""
+    """Fetch the official Pure list, then attach matching OpenAlex metadata."""
     name = record["name_clean"]
     pub_count = record.get("_pub_count", 0) or 0
     if len(name.split()) < 2 or len(name) > 60:
         return record, []
+    pure_pubs = _fetch_pure_publications(record)
     orcid = record.get("orcid")
-    if not orcid and record.get("_publication_name"):
-        # e.g. John Chu publishes as "Zhu, Z."; a name search returns someone else.
-        return record, []
-    person_pubs = _fetch_pubs_openalex(name, orcid=orcid, profile_pub_count=pub_count)
-    return record, person_pubs
+    openalex_pubs = _fetch_pubs_openalex(
+        name, orcid=orcid, profile_pub_count=pub_count
+    )
+    return record, _merge_pure_with_openalex(pure_pubs, openalex_pubs)
 
 
 # ── public API ────────────────────────────────────────────────────────
@@ -405,6 +586,7 @@ def scrape_staff(verbose=True):
                     "title": None,
                     "title_clean": rank(None, prefix),
                     "profile_url": profile_url,
+                    "source_id": profile_url.rstrip("/").split("/")[-1],
                     "orcid": None,
                     "_pub_count": 0,
                 })
@@ -440,7 +622,7 @@ def collect(verbose=True):
     records = scrape_staff(verbose)
 
     if verbose:
-        print("  Phase 3: fetching publications via OpenAlex (3 parallel workers) ...")
+        print("  Phase 3: Monash Pure publications + OpenAlex metadata (3 parallel workers) ...")
 
     pubs = []
     # 3 workers — conservative to respect OpenAlex rate limits
@@ -451,7 +633,7 @@ def collect(verbose=True):
             r.pop("_pub_count", None)
             r.pop("_publication_name", None)
             pubs.extend(person_pubs)
-            tag = "[ORCID]" if r.get("orcid") else "[name->Monash]"
+            tag = "[Pure + ORCID]" if r.get("orcid") else "[Pure + name->Monash]"
             if verbose:
                 print(f"    {r['name_clean']:40s}  {len(person_pubs)} pubs  {tag}")
 

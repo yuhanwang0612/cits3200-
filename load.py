@@ -207,6 +207,54 @@ def main():
 
         staff_rows = read_csv(staff_path)
 
+        # ORCID is useful for linking publications, but scraped directories can
+        # occasionally attach the same ORCID to two different people.  Work out
+        # which values are ambiguous before creating identity aliases so a bad
+        # ORCID cannot collapse one staff member into another.
+        orcid_identities = {}
+        for row in staff_rows:
+            row_name = first(
+                row,
+                "name",
+                "researcher",
+                "researcher_name"
+            )
+            row_orcid = first(
+                row,
+                "orcid",
+                "ORCID",
+                "orcid_id"
+            )
+            if not row_name or not row_orcid:
+                continue
+
+            row_source_id = first(
+                row,
+                "source_id",
+                "id",
+                "researcher_id"
+            )
+            identity = (
+                row_source_id.lower()
+                if row_source_id
+                else row_name.lower()
+            )
+            orcid_identities.setdefault(
+                row_orcid.lower(), set()
+            ).add(identity)
+
+        ambiguous_orcids = {
+            orcid_value
+            for orcid_value, identities in orcid_identities.items()
+            if len(identities) > 1
+        }
+        for ambiguous_orcid in sorted(ambiguous_orcids):
+            print(
+                f"WARNING [{university_code}]: shared ORCID "
+                f"{ambiguous_orcid}; matching these researchers by "
+                "source_id/name instead."
+            )
+
         for row in staff_rows:
 
             name = first(
@@ -240,16 +288,14 @@ def main():
                 "orcid_id"
             )
 
-            # Avoid duplicate researchers
+            # The official profile identifier is the strongest staff identity
+            # key.  Fall back to the directory name, never ORCID: a duplicated
+            # scraped ORCID must not delete a different staff member.
             key = (
                 match_university,
                 source_id
-                or orcid
                 or name.lower()
             )
-
-            if key in researcher_map:
-                continue
 
             if key in researcher_map:
                 continue
@@ -300,7 +346,7 @@ def main():
                     (match_university, source_id)
                 ] = researcher
 
-            if orcid:
+            if orcid and orcid.lower() not in ambiguous_orcids:
                 researcher_map[
                     (match_university, orcid.lower())
                 ] = researcher

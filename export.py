@@ -229,6 +229,8 @@ def _is_exact_title_year_journal_dup(a, b):
         return False
     if not a.get("title") or not b.get("title"):
         return False
+    if _is_correction_notice(a.get("title")) or _is_correction_notice(b.get("title")):
+        return False
     if _normalise_title(a["title"]) != _normalise_title(b["title"]):
         return False
     # A generic one-word heading ("Discussion", "Editorial", "Book Review")
@@ -291,6 +293,33 @@ def _prefer_exact_dup(e, c):
 # same as they already fail FIX K's.
 _PREFIX_DUP_MIN_TITLE_LEN = 20
 
+# --- FIX L bug: a correction notice is not a subtitle ----------------------
+#
+# Web of Science indexes a PUBLISHED CORRECTION under the original article's
+# own title plus a trailing "(vol N, pg N, YYYY)" locator pointing back at
+# it — e.g. "In our ivory towers? ... (vol 44, pg 104, 2014)". That suffix
+# makes the correction's title a textbook case of FIX L's own
+# shorter-is-a-strict-prefix-of-longer shape, so without a guard it reads as
+# "the same paper, one copy with a subtitle" and either merges into the
+# prefix-dup rule or the exact-title-year-journal rule — either way risking
+# the genuine article ending up dropped in favour of a row that is not a
+# second, independent publication at all. Two confirmed cases: Adelaide's
+# Basil Tucker (10.1080/00014788.2013.798234 vs .877214) and UNSW's
+# Fariborz Moshirian (10.1016/s0378-4266(02)00467-3 vs (03)00049-9).
+#
+# The client's 9 Sep rule already excludes corrigenda/errata outright, so
+# the correct treatment is not "merge" but "drop the correction row" — see
+# the exclusion applied in build_publications() below.
+_CORRECTION_NOTICE_RE = re.compile(
+    r"\(\s*vol\.?\s*\d+\s*,?\s*p[pg]\.?\s*\d+\s*(?:,\s*\d{4}\s*)?\)\s*$",
+    re.IGNORECASE,
+)
+
+
+def _is_correction_notice(title):
+    return bool(title and _CORRECTION_NOTICE_RE.search(title))
+
+
 # Pairs the rule below intentionally does NOT merge, kept here for the
 # report rather than silently dropped: same researcher/journal, title is a
 # strict prefix relationship, but doi is on neither row or both rows (no
@@ -313,6 +342,8 @@ def _is_prefix_duplicate(a, b):
     # dois and must not claim the identical-doi case.
     doi_a, doi_b = _dedup_doi(a.get("doi")), _dedup_doi(b.get("doi"))
     if doi_a and doi_a == doi_b:
+        return False
+    if _is_correction_notice(a.get("title")) or _is_correction_notice(b.get("title")):
         return False
     ta, tb = _normalise_title(a.get("title")), _normalise_title(b.get("title"))
     if not ta or not tb or ta == tb:
@@ -563,10 +594,19 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     out = []
     kept_dois_by_key = {}
     excluded_ssrn_preprints = 0
+    excluded_correction_notices = 0
     anu_title_repairs = 0
     missing_journal = 0
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x.get("type") != keep_type or not x.get("title"):
+            continue
+        # The client's 9 Sep rule excludes corrigenda/errata. A Web of
+        # Science "(vol N, pg N, YYYY)" locator is that same kind of
+        # correction notice, just pointing back at the original article by
+        # citation rather than by the word "erratum" — see FIX L bug above
+        # _is_prefix_duplicate. Applies to every university, not just ANU.
+        if _is_correction_notice(x.get("title")):
+            excluded_correction_notices += 1
             continue
         # Title repair runs before anything reads the title: the dedup key
         # below is computed from it, so repairing afterwards would key the
@@ -637,6 +677,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
                 print(f"    {n:4}  {s or '?':10} {t}")
         if missing_journal:
             print(f"  excluded {missing_journal} journal-article row(s) with no verified journal name")
+        if excluded_correction_notices:
+            print(f"  excluded {excluded_correction_notices} published-correction "
+                  f"row(s) carrying a '(vol N, pg N, YYYY)' locator")
         near_dup_removed = before_near_dup - len(out)
         if near_dup_removed:
             print(f"  removed {near_dup_removed} near-duplicate row(s) (FIX G)")
