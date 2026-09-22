@@ -3,11 +3,16 @@
 Phase 1: Selenium scrapes JS-rendered staff directories (Banking & Finance + Accounting).
 Phase 2: parallel requests visit each research.monash.edu profile for ORCID + pub_count.
 Phase 3: parallel OpenAlex fetches for publications, with pub_count sanity check.
+
+Manual identity corrections in data/monash_identity_overrides.csv are applied
+after Phase 2, so a verified ORCID replaces whatever the profile page offered.
 """
 
+import csv
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
@@ -20,6 +25,7 @@ from core.titles import rank, split_prefix
 
 UNIVERSITY = "Monash University"
 ROR = "02bfwt286"
+IDENTITY_OVERRIDES_FILE = Path(__file__).resolve().parents[1] / "data" / "monash_identity_overrides.csv"
 
 _HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
 _OA_HEADERS = {"User-Agent": "monash-scraper/1.0 (mailto:wyuhan577@gmail.com)"}
@@ -163,6 +169,55 @@ def _process_phase2(record):
     return record
 
 
+# ── Identity overrides ────────────────────────────────────────────────
+
+
+def _url_key(url):
+    return (url or "").strip().rstrip("/").lower()
+
+
+def load_identity_overrides(path=IDENTITY_OVERRIDES_FILE):
+    """Read the manual corrections file. A missing file means no overrides."""
+    if not Path(path).exists():
+        return []
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        return [
+            {
+                "name": (row.get("name") or "").strip(),
+                "profile_url": (row.get("profile_url") or "").strip(),
+                "orcid": (row.get("orcid") or "").strip(),
+                "publication_name": (row.get("publication_name") or "").strip(),
+            }
+            for row in csv.DictReader(f)
+            if (row.get("name") or "").strip()
+        ]
+
+
+def apply_identity_overrides(records, overrides):
+    """Apply verified corrections to scraped staff records. Returns how many matched.
+
+    The profile page's first ORCID link is not always the person's own (Kym
+    Brown's page yielded Christine Brown's), so a reviewed ORCID wins. A
+    publication_name marks someone whose name search finds the wrong person;
+    without a verified ORCID, Phase 3 skips them rather than guess.
+
+    Matched on profile URL first, because it is stable, then on the clean name.
+    """
+    by_url = {_url_key(o["profile_url"]): o for o in overrides if o["profile_url"]}
+    by_name = {o["name"]: o for o in overrides}
+    applied = 0
+    for record in records:
+        override = by_url.get(_url_key(record.get("profile_url"))) or by_name.get(record.get("name_clean"))
+        if not override:
+            continue
+        applied += 1
+        if override["orcid"]:
+            record["orcid"] = override["orcid"]
+        if override["publication_name"]:
+            record["_publication_name"] = override["publication_name"]
+    return applied
+
+
 # ── OpenAlex ──────────────────────────────────────────────────────────
 
 
@@ -280,6 +335,9 @@ def _process_phase3(record):
     if len(name.split()) < 2 or len(name) > 60:
         return record, []
     orcid = record.get("orcid")
+    if not orcid and record.get("_publication_name"):
+        # e.g. John Chu publishes as "Zhu, Z."; a name search returns someone else.
+        return record, []
     person_pubs = _fetch_pubs_openalex(name, orcid=orcid, profile_pub_count=pub_count)
     return record, person_pubs
 
@@ -368,7 +426,11 @@ def scrape_staff(verbose=True):
                 tag = f"[orcid={r['orcid']}]" if r["orcid"] else "[no orcid]"
                 print(f"  + {r['name_clean']:40s}  pubs={r['_pub_count']}  {tag}")
 
+    overrides = load_identity_overrides()
+    applied = apply_identity_overrides(records, overrides)
     if verbose:
+        print(f"  applied {applied} of {len(overrides)} identity overrides "
+              f"from {IDENTITY_OVERRIDES_FILE.name}")
         print(f"  {len(records)} Monash A&F staff")
     return records
 
@@ -387,6 +449,7 @@ def collect(verbose=True):
         for future in as_completed(futures):
             r, person_pubs = future.result()
             r.pop("_pub_count", None)
+            r.pop("_publication_name", None)
             pubs.extend(person_pubs)
             tag = "[ORCID]" if r.get("orcid") else "[name->Monash]"
             if verbose:
