@@ -4,13 +4,18 @@ Phase 1: Selenium scrapes JS-rendered staff directories (Banking & Finance + Acc
 Phase 2: parallel requests visit each research.monash.edu profile for ORCID + pub_count.
 Phase 3: use each researcher's official Monash Pure RSS list for attribution,
 then attach OpenAlex metadata only when the publication title matches.
+
+Manual identity corrections in data/monash_identity_overrides.csv are applied
+after Phase 2, so a verified ORCID replaces whatever the profile page offered.
 """
 
+import csv
 import html as html_module
 import math
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 from xml.etree import ElementTree
 
 import requests
@@ -20,6 +25,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+from core.config import OA_HEADERS
 from core.titles import rank, split_prefix
 
 UNIVERSITY = "Monash University"
@@ -27,7 +33,10 @@ ROR = "02bfwt286"
 IDENTITY_OVERRIDES_FILE = Path(__file__).resolve().parents[1] / "data" / "monash_identity_overrides.csv"
 
 _HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
-_OA_HEADERS = {"User-Agent": "monash-scraper/1.0 (mailto:wyuhan577@gmail.com)"}
+# The shared headers carry OPENALEX_API_KEY from .env when set. Without it these
+# calls draw on OpenAlex's small keyless daily budget, and once that is spent
+# every lookup is refused and the person silently gets no OpenAlex metadata.
+_OA_HEADERS = OA_HEADERS
 
 TARGETS = [
     ("https://www.monash.edu/business/banking-and-finance/our-people/staff-directory", "Finance"),
@@ -369,6 +378,11 @@ def apply_identity_overrides(records, overrides):
 # ── OpenAlex ──────────────────────────────────────────────────────────
 
 
+def _orcid_key(value):
+    """'https://orcid.org/0000-0002-1825-009x' and '0000-0002-1825-009X' compare equal."""
+    return (value or "").strip().rstrip("/").rsplit("/", 1)[-1].upper()
+
+
 def _oa_get(url, params):
     for attempt in range(3):
         try:
@@ -387,17 +401,25 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
     Fetch all publications for one researcher from OpenAlex.
     Uses ORCID when available; falls back to name + Monash affiliation check.
     """
-    author_id = None
+    author_ids = []
 
     if orcid:
         resp = _oa_get("https://api.openalex.org/authors",
-                       {"filter": f"orcid:{orcid}", "per-page": 1})
+                       {"filter": f"orcid:{orcid}", "per-page": 25})
         if resp and resp.status_code == 200:
-            results = resp.json().get("results", [])
-            if results:
-                author_id = results[0]["id"]
+            # OpenAlex's orcid filter also returns records that carry a
+            # different ORCID, and not last: for Chen Chen the first result was
+            # a biomedical researcher's 3836-work record. Keep only records
+            # whose own ORCID matches, and every one of them, since one person
+            # can be split across several records (Li Ge has two).
+            wanted = _orcid_key(orcid)
+            author_ids = [
+                r["id"].rsplit("/", 1)[-1]
+                for r in resp.json().get("results", [])
+                if _orcid_key(r.get("orcid")) == wanted
+            ]
         time.sleep(0.2)
-        if not author_id:
+        if not author_ids:
             return []
     else:
         resp = _oa_get("https://api.openalex.org/authors",
@@ -413,14 +435,14 @@ def _fetch_pubs_openalex(name, orcid=None, profile_pub_count=0):
         )
         if not match:
             return []
-        author_id = match["id"]
+        author_ids = [match["id"].rsplit("/", 1)[-1]]
         time.sleep(0.2)
 
     pubs = []
     cursor = "*"
     while True:
         resp = _oa_get("https://api.openalex.org/works", {
-            "filter": f"authorships.author.id:{author_id}",
+            "filter": f"authorships.author.id:{'|'.join(author_ids)}",
             "per-page": 200,
             "cursor": cursor,
             "select": "title,publication_year,doi,type,primary_location,authorships",
@@ -509,18 +531,34 @@ def _merge_pure_with_openalex(pure_pubs, openalex_pubs):
     return merged
 
 
-def _process_phase3(record):
-    """Fetch the official Pure list, then attach matching OpenAlex metadata."""
-    name = record["name_clean"]
-    pub_count = record.get("_pub_count", 0) or 0
-    if len(name.split()) < 2 or len(name) > 60:
-        return record, []
-    pure_pubs = _fetch_pure_publications(record)
+def _openalex_pubs(record):
+    """OpenAlex candidates used only to add DOIs/ISSNs to the person's Pure papers."""
     orcid = record.get("orcid")
-    openalex_pubs = _fetch_pubs_openalex(
-        name, orcid=orcid, profile_pub_count=pub_count
+    if not orcid and record.get("_publication_name"):
+        # e.g. John Chu publishes as "Zhu, Z."; a name search finds someone
+        # else, and a search costs ten times a filter call.
+        return []
+    return _fetch_pubs_openalex(
+        record["name_clean"], orcid=orcid,
+        profile_pub_count=record.get("_pub_count", 0) or 0,
     )
-    return record, _merge_pure_with_openalex(pure_pubs, openalex_pubs)
+
+
+def _process_phase3(record):
+    """Fetch the official Pure list, then attach matching OpenAlex metadata.
+
+    Returns (record, pubs, error). A person whose Pure feed cannot be read gets
+    no publications this run and `error` says why, rather than the exception
+    escaping collect() and aborting every other Monash researcher.
+    """
+    name = record["name_clean"]
+    if len(name.split()) < 2 or len(name) > 60:
+        return record, [], None
+    try:
+        pure_pubs = _fetch_pure_publications(record)
+    except Exception as error:
+        return record, [], f"{type(error).__name__}: {error}"
+    return record, _merge_pure_with_openalex(pure_pubs, _openalex_pubs(record)), None
 
 
 # ── public API ────────────────────────────────────────────────────────
@@ -625,18 +663,27 @@ def collect(verbose=True):
         print("  Phase 3: Monash Pure publications + OpenAlex metadata (3 parallel workers) ...")
 
     pubs = []
+    failed = []
     # 3 workers — conservative to respect OpenAlex rate limits
     with ThreadPoolExecutor(max_workers=3) as pool:
         futures = {pool.submit(_process_phase3, r): r for r in records}
         for future in as_completed(futures):
-            r, person_pubs = future.result()
+            r, person_pubs, error = future.result()
             r.pop("_pub_count", None)
             r.pop("_publication_name", None)
             pubs.extend(person_pubs)
-            tag = "[Pure + ORCID]" if r.get("orcid") else "[Pure + name->Monash]"
+            if error:
+                failed.append((r["name_clean"], error))
+                tag = f"[Pure feed failed: {error}]"
+            else:
+                tag = "[Pure + ORCID]" if r.get("orcid") else "[Pure + name->Monash]"
             if verbose:
                 print(f"    {r['name_clean']:40s}  {len(person_pubs)} pubs  {tag}")
 
     if verbose:
         print(f"  {len(pubs)} total publications")
+        if failed:
+            print(f"  Pure feed failed for {len(failed)} staff; they have no publications this run:")
+            for name, error in sorted(failed):
+                print(f"    - {name}: {error}")
     return records, pubs

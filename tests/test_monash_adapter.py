@@ -122,7 +122,8 @@ def test_openalex_provenance_is_not_the_journal_name():
     ])
 
     author_response = Response()
-    author_response.json = lambda: {"results": [{"id": "https://openalex.org/A1"}]}
+    author_response.json = lambda: {"results": [{"id": "https://openalex.org/A1",
+                                                 "orcid": "https://orcid.org/0000-0000-0000-0000"}]}
     calls = iter([author_response, Response()])
     original = monash._oa_get
     monash._oa_get = lambda *args, **kwargs: next(calls)
