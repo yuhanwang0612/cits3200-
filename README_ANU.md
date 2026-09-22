@@ -30,26 +30,62 @@ The shared pipeline is the current way to produce `final output/anu/`:
 python run.py --uni anu --ror 019wvm592
 ```
 
-`anu_scraper.py` itself can still be run standalone for just the staff/
-publication scrape (no ORCID/Crossref/OpenAlex retrieval, no ABDC/Scimago/
-Clarivate enrichment):
+This is the current, authoritative source for ANU's slice of the data —
+`final output/anu/anu_staff.csv`, `anu_publications.csv`, `anu_journals.csv`
+and `anu_harvest.csv` (each with a matching `.json`), produced by
+`export.py` from the raw scrape plus ORCID/Crossref/OpenAlex retrieval and
+ABDC/Scimago/Clarivate enrichment. Actual current column headers, read
+directly from the files (updated 22 Sep 2026 — verify again after any
+future pipeline change rather than trusting this table blind):
+
+| File | Columns |
+|---|---|
+| `anu_staff.csv` | `name, job_title, academic_level, university, field_of_research, source_id, orcid, profile_url` |
+| `anu_publications.csv` | `name, orcid, source_id, journal_name, title, year, author_count, authors, doi, article_url, link, quality_rank, sjr_quartile, citation_percentile, cited_by_count, fwci, oa_status, oa_url, publication_status, source` |
+
+`quality_rank`/`sjr_quartile` are the authoritative ABDC/Scimago join,
+computed once in the shared pipeline — not the self-reported hint the
+standalone scraper captures (see below). There is no
+`research_portal_url`, `abdc_self_reported` or `coauthors` column in this
+file — those are standalone-scraper-only fields (`coauthors` is exported
+here as `authors` instead); see the next section for where they still
+exist.
+
+## `anu_scraper.py` run standalone
+
+`anu_scraper.py` can still be run on its own for just the staff/publication
+scrape — no ORCID/Crossref/OpenAlex retrieval, no ABDC/Scimago/Clarivate
+enrichment:
 
 ```bash
 pip install requests beautifulsoup4
 python anu_scraper.py
 ```
 
-Writes to `./output/`:
+This is a **separate, secondary output path** from the shared pipeline
+above — a different directory, a different (older) schema, useful mainly
+for debugging the scraper itself in isolation. Writes to `./output/`:
 
 | File | Contents |
 |---|---|
-| `anu_staff.csv` / `.json` | One row per academic — name, job_title, academic_level (A–E), field_of_research, profile_url, university, research_portal_url |
-| `anu_publications.csv` / `.json` | One row per parsed publication — title, journal_name, year, doi, article_url, abdc_self_reported, coauthors, source, citation_percentile (blank, filled later) |
+| `anu_staff.csv` / `.json` | One row per academic — `name, job_title, academic_level, field_of_research, profile_url, university, research_portal_url, less_research_intensive` |
+| `anu_publications.csv` / `.json` | One row per parsed publication — `researcher_name, researcher_profile_url, title, journal_name, year, doi, issn, article_url, abdc_self_reported, coauthors, author_count, author_count_confidence, publication_type, forthcoming, university, field_of_research, source, citation_percentile, raw` |
 | `anu_unparsed_publications.csv` | Publications the parser wasn't confident about — reviewed by hand rather than trusted |
 | `anu_no_publications.csv` | Academics with no inline Publications section — a known coverage gap, logged not dropped |
+| `anu_review_emeritus_no_output.csv` | Emeritus staff with zero output — a review list, not an auto-exclusion |
 
-Field names match the **Scope of Work data dictionary (section 3.5.4)** on purpose,
-so this output loads into the shared database with no reshaping.
+As of 22 Sep 2026, `./output/` holds none of these files — the copies that
+were there were a stale run from an earlier schema (296 publication rows,
+against the shared pipeline's current 520) and were deleted as dead weight
+rather than left as a trap for anyone who opened them expecting current
+data. Running `anu_scraper.py` again writes fresh copies here; it does not
+touch `final output/anu/` at all, which only `export.py` (via `run.py`)
+writes.
+
+Field names in this standalone output match the **Scope of Work data
+dictionary (section 3.5.4)** on purpose, so — if fed through the rest of
+the pipeline rather than read on its own — it loads into the shared
+database with no reshaping.
 
 ## Approach to parsing
 

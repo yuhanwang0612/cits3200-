@@ -379,6 +379,48 @@ def test_correction_notice_pair_is_not_treated_as_a_prefix_duplicate():
     assert exp._is_exact_title_year_journal_dup(original, correction) is False
 
 
+def test_anu_off_field_clinical_journal_is_excluded():
+    """Wai-Man (Raymond) Liu shape: a fresh scrape found 10 more of his
+    genuinely-authored clinical medicine rows on 22 Sep 2026, none of them
+    among the 40 already excluded by name+DOI/title in
+    data/publication_exclusions.csv — a reviewed list of specific rows
+    cannot catch a row it has never seen. The rule (screened on journal
+    name, not DOI or ABDC rank) must catch this one too."""
+    row = _pub(name="Wai-Man (Raymond) Liu",
+                title="A prospective randomized study to evaluate a new learning tool",
+                doi=None, year="2015", journal="Pain Medicine")
+    records = [{"name_clean": "Wai-Man (Raymond) Liu",
+                "university": "Australian National University"}]
+    out = build_publications([row], records=records, verbose=False)
+    assert out == []
+
+
+def test_anu_health_economics_row_is_not_excluded():
+    """European Journal of Health Economics — Liu's own genuinely in-scope,
+    ABDC A-rated paper — must survive the same screen. A rule that drops
+    this one is wrong; this is the required negative case."""
+    row = _pub(name="Wai-Man (Raymond) Liu",
+                title="Are there longer-term costs of informal care?",
+                doi="10.1007/s10198-025-01850-y", year="2025",
+                journal="European Journal of Health Economics")
+    records = [{"name_clean": "Wai-Man (Raymond) Liu",
+                "university": "Australian National University"}]
+    out = build_publications([row], records=records, verbose=False)
+    assert len(out) == 1
+    assert out[0]["journal_name"] == "European Journal of Health Economics"
+
+
+def test_anu_off_field_screen_does_not_touch_a_non_anu_researcher():
+    """A different university's row in a clinical-sounding journal must
+    survive — the screen is scoped to ANU staff via `records`, the same
+    mechanism as the existing SSRN-preprint exclusion."""
+    row = _pub(name="Someone Else", title="A study in perioperative pain medicine",
+                doi=None, year="2020", journal="Pain Medicine")
+    records = [{"name_clean": "Someone Else", "university": "Some Other University"}]
+    out = build_publications([row], records=records, verbose=False)
+    assert len(out) == 1
+
+
 def test_correction_notice_row_is_excluded_from_export():
     """Fariborz Moshirian shape: the correction row must not survive into
     the exported table at all — the client's 9 Sep corrigenda/errata rule

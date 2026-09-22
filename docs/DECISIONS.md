@@ -902,3 +902,828 @@ citation"-adjacent heuristics are simply gone now, not fixed-in-place).
 - Re-running UNSW/UQ/UWA, or applying FIX G/H's shared-file half
   (`export.py`'s `merge_near_duplicates`) to their committed data — out of
   scope this pass.
+
+## 18 Sep 2026 — residual cleanup: whole-number columns, seven title repairs, SSRN exclusion, FIX K, FIX L
+
+Three passes the same day, same branch (`jamie-anu-residuals`, off `main` @
+`1b9aac1`), each layered on the last, working tree only. Full detail:
+`scratch/_anu17/`, `_anu18/`, `_anu19/` (REPORT.md + EXPLAINED.md each).
+Headline: ANU publications 574 → 588 (live re-scrape drift, not a fix) →
+587 (FIX K, −1) → 565 (FIX L, −22).
+
+### Whole-number export columns (`_whole_numbers()`, `export.py`)
+
+**What:** `author_count`, `year` and `cited_by_count` were exporting to CSV
+as `"2.0"`, `"3.0"` instead of `"2"`, `"3"` whenever the column had even one
+missing value elsewhere. A new `_whole_numbers(df)`, called inside
+`write()` right before `to_csv`, casts any numeric column whose non-null
+values are all mathematically whole to pandas' nullable `Int64` type. JSON
+output is untouched (it's written from the raw row list before the
+DataFrame exists, so it never had this bug).
+
+**Why:** pandas promotes an integer column with any missing value to
+`float64` on construction — there's no nullable-integer-by-default option —
+so every one of those three columns rendered with a trailing `.0` on every
+row the moment a single row anywhere in the file had a gap. `author_count`
+is a client-facing count; `"2.0"` reads as a data-quality problem even
+though the underlying number was always right.
+
+**Alternative considered:** post-process the CSV text after writing (a
+string replace on `r"\.0$"`). Rejected — fragile against any column whose
+name or content coincidentally ends the same way, and it doesn't fix the
+same bug in-memory before any other code (tests, downstream scripts) reads
+the DataFrame.
+
+**What could go wrong:** a column that's genuinely fractional (`sjr`,
+`fwci`) must never be coerced — checked explicitly with a test fixture
+where one value is whole (`1.0`) and another isn't (`2.5`): the whole check
+is "all non-null values are whole", so a single fractional value anywhere
+in the column keeps the whole column as `float64`, correctly.
+
+**Result:** `tests/test_export_number_format.py`, 7/7 pass. Confirmed on
+the real file: 0 `author_count` values containing a `.` in
+`final output/anu/anu_publications.csv` (checked by reading the file with
+Python's own `csv` module directly — pandas' `read_csv` re-promotes a
+nullable-Int64 column with any gap back to `float64` on *read*, regardless
+of how it was written, so checking via pandas gives a misleadingly wrong
+answer here).
+
+### Seven title repairs (`base_scrapers/anu.py` FIX I; `export.py` FIX 1)
+
+**What:** four regex-based repair rules for titles mangled by how ANU's own
+page text or ORCID's indexed metadata concatenates a title with trailing
+citation noise, applied in `base_scrapers/anu.py`'s `_map_publication()`
+(`_repair_title()`), plus the same function imported into `export.py` and
+applied to any ANU row regardless of source. Fired 7 times in total this
+pass: 4 rows with a trailing "...Award" clause glued onto the real title
+(Lily Chen), 1 with a trailing "with D. Duffie and Y. Zhu"-style co-author
+clause (Antje Berndt), 1 where the real title was recoverable from inside
+quote marks in a citation-shaped string (Susanna Ho), and 1 mangled
+book-review citation recovered at export time, not at scrape time (Greg
+Shailer — see "why a second call site was needed" below).
+
+**Why:** these are systematic shapes, not one-off typos — the same "trailing
+clause glued onto a real title" pattern recurs across different staff pages
+and different citation styles, so a shared, tested regex is more reliable
+than a per-row manual edit and, unlike a manual edit, survives the next
+live re-scrape.
+
+**Why a second call site was needed:** the fourth repair (mangled
+book-review citation) only ever ran inside `base_scrapers/anu.py`'s own
+page-scrape mapping — but the surviving corrupted row (Greg Shailer,
+`10.1108/18325911111182330`) has `source == "ORCID"`, meaning it was
+retrieved by `info/orcid.py`, carrying whatever text ORCID's own indexed
+metadata has for that citation, and `_repair_title()` was never called on
+it at all. Root cause was a call-site gap, not a regex failure. Fixed by
+importing `_repair_title` into `export.py` (no duplicated regex logic — one
+rule set, two call sites) and applying it inside `build_publications()` to
+any row belonging to an ANU staff member, scoped via `records` the same
+way the SSRN exclusion below is scoped, so it also covers a future
+Crossref- or OpenAlex-retrieved copy of the same shape, not just this one
+row.
+
+**Alternative considered:** hand-edit the one known corrupted row directly
+in the exported CSV. Rejected — the same corruption reappears verbatim on
+every re-run, since it lives in ORCID's own metadata, not in this
+pipeline's output; a hand-edit doesn't survive a re-export.
+
+**What could go wrong:** an aggressive "strip trailing clause" regex can
+eat a real title that happens to end the same way. Each regex is anchored
+to a real sentence boundary (`\.\s+`) or an unambiguous structural marker
+(quote marks, a name-and-initials pattern) specifically so it can't fire on
+an ordinary title — checked directly against Louise Lu's and Kathy Wang's
+genuine "...award-winning events" titles (byte-identical before and after)
+and against the whole ANU corpus, not just the target rows.
+
+**What was NOT reproduced:** the fourth repair rule (mangled book-review
+citation) is implemented and unit-tested against the exact corrupted string
+from the original task brief, but by the time of this run Greg Shailer's
+live ANU page had already been updated to a clean 10th-edition citation —
+a genuine upstream page change since the brief was written, not a bug in
+the fix. The rule stays in place for if the same shape recurs.
+
+### Four SSRN working-paper exclusions (`export.py`)
+
+**What:** `_is_anu_unranked_ssrn_preprint()` excludes an ANU row when its
+DOI starts with `10.2139/ssrn.` AND it has no journal name AND no ABDC
+rank — a working paper that was never actually published anywhere ranked.
+4 Greg Shailer rows excluded.
+
+**Why:** an SSRN preprint with no journal and no rating is not a completed,
+ranked publication — carrying it in the export alongside real journal
+articles overstates his ranked output and understates nothing (it's simply
+not a journal article).
+
+**Alternative considered:** exclude every row with an SSRN DOI outright,
+regardless of journal/rank. Rejected once checked against the live data:
+this dataset also has confirmed cases (Kathy Wang, Chao Gao — see below) of
+a row whose DOI happens to be the SSRN preprint copy for a paper that
+*is* genuinely published in a real, ranked journal — a blanket SSRN-DOI
+exclusion would have wrongly dropped those too.
+
+**What could go wrong, and what did:** the first version of this rule
+gated on `x.get("source") == "ANU staff profile"` and matched zero rows —
+all four target Greg Shailer rows are actually `source == "ORCID"` (ORCID's
+own copy of his page-scraped entries). Re-scoped to check ANU staff
+membership via `records` (which carries a real `university` field) instead
+of the row's own `source` string, so it's exact regardless of which
+retrieval system produced a given row.
+
+**Discrepancy flagged, not forced to match:** the task brief this rule was
+built from said 12 other ANU rows carry an SSRN preprint DOI for a paper
+published in a real ranked journal. The actual data has exactly **2**
+(Kathy Wang, "The opioid crisis, employee health capital, and corporate
+information production", *European Accounting Review*, A\*; Chao Gao,
+"Investment Performance of Credit Risk Transfer Securities (CRTs)...",
+*Journal of Fixed Income*, A) — checked exhaustively, every SSRN-DOI row in
+the export is one of these 2 kept or the 4 excluded, no others exist.
+Reported per the brief's own framing that this is a client decision, not a
+code decision; both kept rows are unchanged.
+
+### FIX K — exact title/year/journal duplicate merge (`export.py`, shared)
+
+**What:** `_is_exact_title_year_journal_dup(a, b)` — true when `name`,
+normalised `title`, `year` and `journal_name` are all identical. Checked
+first, before the existing fuzzy `is_near_duplicate()`, whose own
+different-real-DOI guard is otherwise unchanged. Requires the normalised
+title to be at least `_PREFIX_DUP_MIN_TITLE_LEN` (20) characters AND at
+least `MIN_PREFIX_WORDS` (3) words.
+
+**Why:** `is_near_duplicate()`'s guard that "two rows each carrying their
+own distinct real DOI never merge" is correct in general (it's what keeps
+the two genuinely different "Busy directors and firm performance" papers
+apart) but wrongly protects the one case where the SAME paper is indexed
+twice under two different real DOIs — confirmed on Susanna Ho's "Partial
+Least Squares Structural Equation Modeling Approach..." under both
+`10.17705/1cais.03823` and `10.17705/1cais.038123` (the second is the first
+with an extra digit spliced in; both resolve, at doi.org, to the exact same
+page). An identical title AND year AND journal is strong enough evidence to
+merge past that guard specifically for this shape.
+
+**Why the minimum length and word count:** without it, the rule also
+merged a confirmed real UNSW pair — two separate articles both simply
+titled "Discussion" in the same journal and same year. A short, generic
+heading repeats legitimately across issues of the same journal; only a
+long, specific shared title is real evidence of the same paper. Caught by
+`tests/test_export_dedup.py::test_different_dois_are_both_kept` failing
+once its fixture's two rows coincidentally shared a placeholder journal
+name — a fixture-realism gap, not evidence the rule itself was too broad.
+
+**Alternative considered:** merge on title+year alone, without requiring
+the same journal. Rejected — two different papers can genuinely share a
+title and year in different journals (e.g. a working paper published twice
+in different venues under editorial license, or simple coincidence); the
+journal match is what makes this rule safe to apply automatically rather
+than only report.
+
+**What could go wrong:** merging a pair where both copies were already
+ABDC-ranked mechanically nudges the ranked-percentage figure down by a
+rounding-level amount (removing a counted "yes" from both numerator and
+denominator of a sub-100% rate always does this) — flagged explicitly
+against this task's own "must not fall" condition before applying; user
+chose to proceed rather than leave a confirmed duplicate double-counted.
+Full precision: `quality_rank` 87.2449% (513/588) → 87.2232% (512/587).
+
+**Result:** 1 pair merged (Susanna Ho's), kept the shorter/canonical DOI
+(`10.17705/1cais.03823`) per the task's own instruction for this exact
+case. 588 → 587 rows.
+
+### FIX L — prefix-containment duplicate merge (`export.py`, shared)
+
+**What:** `_is_prefix_duplicate(a, b)` — true when: same `name`; the
+shorter normalised title is at least 20 characters; the longer normalised
+title is a STRICT prefix of the shorter one at a real word boundary (a
+trailing space, not a mid-word cut); `journal_name` matches
+case-insensitively; `year` matches exactly. `_prefix_dup_winner()` keeps
+whichever row has a DOI; if both have one or neither does, the pair is
+**not** merged — logged to `SKIPPED_PREFIX_DUPS` and reported instead, on
+the reasoning that DOI presence is the only signal available to tell which
+copy is the truncated one, and guessing without that signal is worse than
+leaving both rows in and flagging them.
+
+**Why:** ORCID sometimes returns a truncated, main-title-only version of a
+paper where the ANU staff page (or a different retrieval source) has the
+full title including its subtitle — same paper, but the title-similarity
+ratio between the two is far below the fuzzy-match threshold (confirmed as
+low as ~0.61 on Tracy (Kun) Wang's "Analyst Coverage and Corporate
+Innovation" vs the same title plus "...Evidence from Exogenous Changes in
+Analyst Coverage" — a short prefix against a much longer string scores low
+on a whole-string ratio even though it is an exact textual prefix), and
+FIX K needs an identical title, so neither existing rule could see this
+shape at all.
+
+**Why the correctness normalises on NFKC (correcting an error in how this
+was described elsewhere):** the title-matching relies on
+`_normalise_title()`'s existing `unicodedata.normalize("NFKC", ...)` call.
+This specific normalisation form is what let Dean Katselas's
+"Certiﬁed"/"speciﬁc" (typeset with an "ﬁ" ligature glyph, one Unicode code
+point) line up cleanly against the plain "fi" spelling on his other copy —
+NFKC's compatibility decomposition maps the ligature to the two ordinary
+letters. (Some circulated notes about this fix refer to "NFKD" — the code
+uses NFKC; NFKD would additionally decompose accented characters into a
+base letter plus a combining mark, which is not what this fix needs or
+does. Corrected here for the record.)
+
+**Alternative considered:** a fuzzy-ratio threshold instead of an exact
+strict-prefix rule. Rejected — deliberately narrower on purpose, so a short
+common opening phrase on two otherwise-different papers can't match (a
+20-character floor on the shorter title exists specifically for this), and
+so the rule can't be fooled by two titles that are merely similar rather
+than one being a literal textual prefix of the other.
+
+**STOP raised and resolved before writing any file:** implementing the
+rule exactly as specified and checking it against the real 587-row export
+found **22 valid pairs, not 21** — every researcher's count matched the
+brief except Dean Katselas, who has 2 genuine pairs, not 1. The second pair
+("Independently Certified Industry-specific Disclosures..." / Abacus,
+2019) satisfies every clause of the rule exactly the same way the other 21
+do; this reads as a genuine oversight in the brief's own prior count, not
+over-matching by the implementation. Surfaced to the user with both options
+(merge both pairs, or hold the second back with a hardcoded exception) —
+user chose to merge both, on the reasoning that a rule-satisfying genuine
+duplicate should not be kept in the data just to hit a target number.
+
+**What could go wrong:** same rounding-level ranked-percentage dip as
+FIX K, larger here because 22 rows moved instead of 1 — `quality_rank`
+87.2232% (512/587) → 86.9027% (491/565); `sjr_quartile` 90.2896% (530/587)
+→ 90.0885% (509/565). Not treated as a stop condition — removing confirmed
+duplicate rows is the correct outcome, and a coverage percentage moving
+because the denominator shrank is not the same thing as underlying journal
+ranking coverage getting worse.
+
+**Result:** 22 pairs merged, 587 → 565 rows. 6 further pairs matched on
+title/journal but differ by exactly 1 year (the rule requires an exact
+match) — left unmerged and reported, exactly as specified. 0 pairs skipped
+for lacking a DOI-presence signal. The 4 genuine "Busy directors and firm
+performance" rows (Daniliuc ×2, Wee ×2 — different year AND different
+journal in each pair) checked explicitly and confirmed untouched.
+
+## 21 Sep 2026 — PR #44 merge reconciliation with main
+
+Full detail: `scratch/_anu20/EXPLAINED.md`. `main` had, independently and
+on a different branch, added its own missing-journal export filter and
+regenerated ANU's output files on 19 Sep under its own (older, pre-FIX
+K/L) rules; this branch (`jamie-anu-residuals`) had the FIX K/L work above.
+Merging produced 10 conflicts: `export.py`, one test file, and all eight
+ANU output files. Working-tree only — the resolved files were deliberately
+left unstaged (`git add` was not run), since staging wasn't asked for and
+this task's own hard rule was never to stage anything; anyone continuing
+this needs a plain `git add` on the ten resolved files (not `git add -A`)
+before it can be committed.
+
+### `export.py` conflict — ordering, not either/or
+
+**What:** kept both sides' logic, in a specific order: title repair runs
+first (the dedup key is computed from the title, so repairing after
+computing the key would key a row on the mangled form); main's
+missing-journal filter runs next (a row with no journal name at all is
+dropped before anything else looks at it); the SSRN-preprint exclusion
+above runs last.
+
+**Why:** the order changes the result. Running the SSRN filter before the
+missing-journal filter, for example, would let a genuinely-missing-journal
+row survive if it happened to also look SSRN-shaped.
+
+**Alternative considered:** none seriously — both rules are independently
+correct and address different problems (main's: no journal named at all;
+this branch's: a working paper with a journal deliberately never named
+because it was never published anywhere ranked), so keeping both was never
+in question. The only real decision was the order.
+
+**What could go wrong:** none identified — the three filters check
+different, non-overlapping conditions, and the ordering rationale is
+purely about which check should see a row first, not about correctness of
+any individual check.
+
+### Two duplicate-detection edge cases found by conflicting tests
+
+**What:** two small logic gaps, found because three existing tests failed
+after the merge rather than by inspection.
+
+1. `_is_prefix_duplicate` now returns `False` immediately when both rows
+   carry the identical DOI (`doi_a and doi_a == doi_b`), instead of falling
+   through to "can't tell which copy to keep, report instead." Two rows
+   with the same DOI are the same paper by definition — there is nothing
+   ambiguous to report. The pair is now handed to
+   `_same_doi_subtitle_dropped` (inside `is_near_duplicate`), which merges
+   it directly. Confirmed real cases: two UNSW papers (one on professional
+   scepticism in auditing, one on ambiguity tolerance in accounting), each
+   appearing once with a short title and once with the title plus a
+   descriptive subtitle, both copies of each sharing one DOI.
+2. `_is_exact_title_year_journal_dup` (FIX K) gained the minimum-length/
+   word-count guard described above — surfaced by a UNSW "Discussion" pair
+   that would otherwise have wrongly merged.
+
+**Why:** both are things the FIX K/L rules got right in general but had
+missed a specific case of — the identical-DOI case is not "ambiguous",
+it's certain; the generic-heading case needs a length floor the original
+rule didn't have.
+
+**Alternative considered:** leave the identical-DOI pair in
+`SKIPPED_PREFIX_DUPS` for manual review, since it's technically still "a
+pair FIX L's own doi-presence check matched." Rejected — reporting a pair
+as ambiguous when it demonstrably is not (same DOI = same paper, full
+stop) is misleading noise in that report, and manual review adds nothing a
+human could resolve any better than the code already can.
+
+**What could go wrong:** none identified — an identical DOI is the
+strongest possible identity signal available in this dataset; there is no
+plausible scenario where two rows with the same DOI are genuinely
+different papers.
+
+### Which side of each conflicted output file was kept, and why
+
+**What:** publications, journals and harvest (CSV + JSON, six files) were
+kept from this branch, not `main`; staff (CSV + JSON, two files) were kept
+from `main`, not this branch.
+
+**Why:** `main`'s copy of the publications/journals/harvest files was
+regenerated on 19 Sep without this branch's title-repair and prefix-
+duplicate rules applied — checked directly: `main`'s publications file has
+592 rows against this branch's 565, and 590 of those 592 rows carry a
+fractional author count (`"2.0"` not `"2"` — the exact bug `_whole_numbers`
+above exists to fix). The bulk of `main`'s extra ~27 rows are the same
+paper counted twice (a short title and a longer title-with-subtitle for
+the same article) — exactly what FIX L exists to merge. `main`'s staff
+file, on the other hand, is built from a maintained override list
+(`data/staff_overrides.csv`) with specific, correct job titles (e.g.
+Keturah Whitford as "Reader", Bonnie Allan as "Casual Lecturer") that this
+branch's copy of the staff file predates and does not have. The
+publications and staff tables join by name only, so taking staff from
+`main` and everything else from this branch does not mix in any of
+`main`'s publications-side problems.
+
+**Alternative considered:** take every file from one side wholesale (either
+all-`main` or all-this-branch), for simplicity. Rejected — each side is
+better on different tables for a specific, checkable reason (data quality
+on publications/journals/harvest; a maintained override list on staff);
+picking a single side wholesale would have thrown away a real improvement
+on one side or the other.
+
+**What could go wrong / what was accepted as a real loss:** taking this
+branch's publications file over `main`'s drops one genuinely new, real
+paper that only `main`'s 19 Sep regeneration had picked up — Xiu-Ye
+Zhang's "..." in *European Financial Management*
+(`10.1111/eufm.70096`), about the effect of major US hurricanes on
+management forecasts. Not lost permanently: it reappears automatically the
+next time ANU is re-exported, since the underlying source data already has
+it. Not manually re-added here, since hand-editing a file that's supposed
+to be machine-generated risks being wrong in a way that's hard to catch
+later.
+
+**Result:** `final output/anu/anu_publications.csv` — 565 rows (this
+branch's version, kept). `anu_staff.csv` — 46 rows (`main`'s version,
+kept). `python load.py`: all 8 universities 100% matched, ANU 565/565.
+`pytest tests/` (scoped, per the pytest-collision note in the 22 Sep entry
+below): 368 collected, 362 passed, 6 failed — the known Windows
+cp1252-console failures in `test_merge_publications.py`, unrelated to this
+merge.
+
+## 21 Sep 2026 — Wai-Man (Raymond) Liu: 40-row off-field exclusion
+
+Full detail: `scratch/_anu21/EXPLAINED.md`. This resolves the open finding
+from `docs/DECISIONS.md`'s own 15 Sep entry (his ORCID record's discipline
+share sat inside `screen.py`'s known 0%–60% calibration gap) and from
+`scratch/_anu15/raymond_liu_analysis.txt` — this is that team/client call,
+made and recorded.
+
+**What:** 40 rows excluded, all genuinely authored by Wai-Man (Raymond)
+Liu — an ANU accounting/finance academic who also holds an MChD and
+genuinely co-authors clinical medicine and health-policy papers (airway
+management, palliative care, psychiatry, surgery, nursing, and similar).
+One further row, in health economics with an ABDC rating (A), was
+deliberately kept: "Are there longer-term costs of informal care?..."
+(`10.1007/s10198-025-01850-y`, *European Journal of Health Economics*) —
+health economics is treated as inside scope (it's an economics field, ABDC
+rates the journal, and it fits the same research area as his other work).
+Applied via the existing `data/publication_exclusions.csv` mechanism — no
+new mechanism — with `reason` text saying "off-field", explicitly not
+"namesake", for every row.
+
+**Why:** this dataset tracks accounting/finance research output. A genuine
+paper on sedation during an endoscopic procedure is outside that scope no
+matter how certainly it belongs to this researcher — this is a scope
+decision, not a data-quality fix, and the audit trail says so explicitly
+so nobody mistakes it for a namesake-collision removal later.
+
+**Evidence:** each of the 40 rows checked against Liu's own ANU staff
+profile (`rsfas.anu.edu.au/people/wai-man-raymond-liu`, which states his
+MChD and confirms the health-science stream is genuinely his) and against
+the author initials on the papers themselves (W-M Liu / Wai-Man Liu,
+consistent with his usual authorship pattern) — recorded per-row in
+`publication_exclusions.csv`'s `reason` and `evidence_url` fields.
+
+**Alternative considered:** exclude by journal-name keyword alone
+("health", "medic-", "clinical", etc.) with no per-row evidence recorded.
+Rejected — a keyword screen alone is how the health-economics row above
+was *found* as a candidate, not how it was decided; it would have wrongly
+excluded a genuinely in-scope paper if the decision stopped at the
+keyword. Each row needed its own authorship confirmation, recorded, not
+just a pattern match.
+
+**What could go wrong:** the client has not yet confirmed this scope
+decision — it is the team's judgement call, recorded and applied, not a
+signed-off client instruction. If the client later decides differently
+(e.g. that health economics should also be excluded, or that clinical
+papers should be kept and merely tagged out-of-scope rather than removed),
+every one of the 40 rows is individually reversible from
+`publication_exclusions.csv` alone, and the one kept row is individually
+identifiable too.
+
+**Discrepancy flagged, not forced to match:** the task brief this
+exclusion was built from stated the 40-row set would split 35 rows with a
+DOI and 5 without. Measured directly: the real split is 34 with a DOI and
+6 without. Work was stopped and the mismatch reported rather than adjusting
+the selection rule to force 35/5 — the person who wrote the brief
+confirmed afterwards it was an arithmetic slip in the brief itself, not a
+problem with the selection logic.
+
+**A related correction, same pass, not part of the 40-row exclusion:**
+Lily Chen's row was checked again against her live ANU page after an
+earlier note in this project's history recorded her as a probable
+namesake. She is a genuine accounting academic who also publishes in
+machine learning — both her flagged rows are hers. Nothing of hers was
+touched; her earlier "namesake" characterisation should be treated as
+incorrect going forward.
+
+**Result:** ANU publications 565 → 525 (40 rows excluded). Wai-Man
+(Raymond) Liu rows remaining: 20. ABDC-ranked 491/525 (93.5%). Journals
+table 184 → 158 rows (journals with no remaining ANU publication
+referencing them were dropped). `python load.py`: all 8 universities 100%
+matched, ANU 525/525. No university other than ANU touched.
+
+## 22 Sep 2026 — v22: encoding pin, Third Sector Review, five book chapters, three title repairs, published-correction guard
+
+Full detail: `scratch/_anu22/REPORT.md` and `EXPLAINED.md`. This pass is
+committed (`jamie-anu-v22`, commit `7c4b863`) — everything before it in
+this log was working-tree-only at the time it was written; this is the
+first ANU pass in this log to actually land.
+
+### Encoding pin (`anu_scraper.py`)
+
+**What:** `get()` now sets `r.encoding = "utf-8"` explicitly on every
+response before returning it, instead of leaving `resp.text` to rely on
+`requests`' own guessed charset.
+
+**Why:** Neil Fargher's row ("...auditorsâ€™ evaluation...") showed the
+exact signature of UTF-8 text decoded as cp1252/latin-1 — a curly
+apostrophe's three UTF-8 bytes read back as three wrong single-byte
+characters. Live-testing every URL this scraper touches shows ANU's server
+currently declares `charset=utf-8` correctly, so a fresh scrape would not
+reproduce this today — but the code was still trusting a guess it didn't
+need to make.
+
+**Alternative considered:** patch only the one known-bad row in the
+exported CSV. Rejected — doesn't address the code path that produced it,
+so the same corruption class could reappear silently on any future
+request where a proxy, edge cache, or transient server response omits or
+mis-states the charset header.
+
+**What could go wrong:** none identified — every RSA/RSFAS page this
+scraper touches is confirmed UTF-8; pinning it removes a dependency on a
+guess without changing what's actually being read.
+
+**Result:** 1 row repaired (Neil Fargher). All eight universities scanned
+for the same mojibake class in `title`/`journal_name` — only ANU had any,
+now 0 everywhere.
+
+### Third Sector Review (journal-name resolution)
+
+**What:** Sarah Adams's row had `journal_name` set to a UWA repository
+website's own name, not a journal. Resolved via OpenAlex (whose own record
+carries the original citation string verbatim, naming "Third Sector
+Review, vol. 26, no. 1, pp. 108-138") to the real journal, independently
+corroborated by the same journal/ISSN already appearing correctly for two
+other universities' researchers elsewhere in this project's own data.
+`journal_name` updated, ABDC rating "C" applied (exact ABDC-sheet title
+match), no Scimago match (the ISSN genuinely isn't in the Scimago file).
+
+**Why:** a repository landing-page name is not a journal name — leaving it
+would misrepresent where the paper was actually published and would never
+pick up a quality rating it's genuinely entitled to.
+
+**Alternative considered:** none — a DOI that doesn't resolve at Crossref
+(this one is an Informit-registered DOI, a different registration agency)
+still has exactly one correct answer once looked up properly; there was no
+plausible second candidate journal to weigh against this one.
+
+**What could go wrong:** none identified — the resolution is corroborated
+by two independent, already-correct rows elsewhere in this project's own
+data, not resting on a single source alone.
+
+### Five book chapters excluded (`data/publication_exclusions.csv`)
+
+**What:** four Greg Shailer rows and one Tracy (Kun) Wang row, all book
+chapters (encyclopedia entries, a handbook chapter, and a chapter in an
+edited volume) wrongly present in a journals-only dataset. Each confirmed
+live against Crossref as `type: book-chapter` before exclusion. Excluded
+via the same `publication_exclusions.csv` mechanism used throughout this
+log — no new mechanism.
+
+**Why:** the client's 12 Aug rule is journals only. A book-chapter DOI with
+a blank `quality_rank` is exactly the shape that silently inflates a
+researcher's counted output with something the client explicitly asked to
+exclude.
+
+**Alternative considered:** leave the Tracy Wang row's `journal_name` as
+whatever the true publisher/venue string should be, since Task 2 of that
+day's brief was framed as "resolve the journal name." Rejected once
+Crossref confirmed it's a book chapter, not a journal article at all —
+giving it a correct-looking journal name would still misrepresent it as a
+journal article. Routed to this exclusion instead, per that day's own
+instruction to do so if this turned out to be the case.
+
+**What could go wrong:** the fifth exclusion (Tracy Wang's) means the row
+count landed one lower than the brief's own stated expectation (520, not
+521) — reported explicitly rather than left at 521 by keeping a confirmed
+book chapter in the data. See `scratch/_anu22/REPORT.md` for the full
+reconciliation.
+
+**Result:** ANU publications 525 → 520. Journals table 158 → 154 (four
+now-orphaned book/publisher pseudo-journal entries removed, checked first
+that no other row still referenced any of them).
+
+### Three title-casing repairs, one refused (Crossref-authoritative titles)
+
+**What:** four Greg Shailer titles stored either entirely lower-case or
+entirely upper-case, all with DOIs. Three replaced with the exact title
+Crossref has on record for that DOI — no algorithmic title-casing applied
+anywhere. The fourth (`10.1142/s0218495894000240`, 1994, *Journal of
+Enterprising Culture*) was left unchanged: Crossref's own registered title
+for this DOI is itself entirely upper-case — confirmed correct, not a
+casing bug.
+
+**Why:** an algorithmic "title case" transform reliably breaks acronyms
+and proper nouns (would have mangled "Chinese" or turned a real acronym
+into "Firms" — style guesswork); a DOI has exactly one authoritative
+answer for what its own title is, so looking it up beats guessing.
+
+**Alternative considered:** apply a title-casing library/heuristic across
+every all-caps/all-lowercase title found. Rejected outright by the task's
+own instruction, and confirmed why by the fourth row: an automatic
+transform would have "corrected" a title that was already correct.
+
+**What could go wrong:** none identified for the three actually changed —
+each is a direct, verified copy of Crossref's own field, not a guess.
+
+**Result:** 4 rows matched the all-caps/all-lowercase test across the
+whole ANU corpus (not just Greg Shailer's rows — checked directly), 3
+fixed, 1 confirmed correct and left alone.
+
+### Published-correction guard (`export.py`, shared — affects every university's next export)
+
+**What:** a new `_is_correction_notice()` check recognises a title ending
+in a Web of Science-style `(vol N, pg N[, YYYY])` locator (`vol.`/`pp`
+variants allowed, case-insensitive, year optional) and (a) guards both
+`_is_prefix_duplicate` and `_is_exact_title_year_journal_dup` so such a
+title is never treated as a dropped subtitle, and (b) excludes any row
+matching it outright in `build_publications()`, for every university, not
+just ANU.
+
+**Why:** a journal's PUBLISHED CORRECTION notice is indexed under the
+original article's own title plus that trailing locator — textually a
+perfect strict-prefix "subtitle" match, exactly the shape FIX L exists to
+merge. But a correction notice is not an independent second publication;
+the client's 9 Sep rule already excludes corrigenda/errata outright, so
+the correct treatment is exclusion, not a smarter merge. Two confirmed
+real cases: Adelaide's Basil Tucker
+(`10.1080/00014788.2013.798234`/`.877214`) and UNSW's Fariborz Moshirian
+(`10.1016/s0378-4266(02)00467-3`/`(03)00049-9`).
+
+**Alternative considered:** teach `_prefix_dup_winner` to prefer the
+non-correction row when merging such a pair, rather than exclude the
+correction row outright. Rejected — a merge still leaves the correction
+notice's own existence unaccounted for in the export (it just picks a
+winner), and the 9 Sep rule is explicit that a correction/erratum should
+not be counted as a publication at all, merged or not.
+
+**What could go wrong:** in both of the two confirmed real cases, both
+rows already carry their own real DOI, so under the pre-existing
+`_prefix_dup_winner` logic neither pair was actually being silently merged
+today (both already fell into "no doi-presence signal, skip and report").
+The risk this guard closes is the case where only one side of such a pair
+carries a DOI — there the old logic would have picked whichever side *has*
+a DOI as the winner, which for a correction notice is not necessarily the
+original article. Confirmed via two new regression tests in
+`tests/test_export_neardup.py` (26 tests total now, all pass, no existing
+test's assertion changed).
+
+**What was deliberately not done:** Adelaide's and UNSW's own
+already-committed CSVs were not regenerated — that's each team's own
+re-export to run on their own schedule, not something to do for them.
+Scanned read-only across all eight universities' currently-committed files
+for this pattern: adelaide 1, unimelb 1 (a third example beyond the two
+named above — Jun Yu, `10.1111/j.1368-423x.2010.00326.x`), unsw 1, ANU 0,
+total 3 — matching the brief's own count. These three rows remain
+uncorrected in their universities' committed files until each team's next
+export.
+
+**Result:** no ANU row count change from this fix specifically (ANU has 0
+rows matching the pattern). Fixed in shared code for every university's
+next export.
+
+## 24 Sep 2026 — off-field screen becomes a rule; two rows traced through a merge; one title resolved against ANU's own repository
+
+Full detail: `scratch/_anu24/REPORT.md` and `EXPLAINED.md`. Context: `main`
+was regenerated by a parallel fresh pipeline run after this branch's 22 Sep
+work merged in — ANU went 520 → 532 rows. All 14 newly-returned rows carry
+no DOI; 10 are further Wai-Man (Raymond) Liu clinical rows not among the 40
+already excluded by name+DOI/title on 21 Sep (that list is a set of
+specific rows — it cannot catch a row it has never seen), and 4 are
+unrelated genuine Susanna Ho rows (real, ABDC A\*-rated, in scope). Two
+rows present in this branch's own 520-row export are absent from the
+532-row merge result.
+
+### The off-field screen: a list turned into a rule
+
+**What:** `ANU_OFF_FIELD_JOURNAL_KEYWORDS` (`export.py`) — a visible,
+top-level, editable list of 7 keyword stems (`anaesth`, `anesth`,
+`palliative`, `rural health`, `nurse practitioner`, `pain medicine`,
+`arthroplasty`), checked as a case-insensitive substring of the journal
+name only, applied at export to any ANU row via `_is_anu_off_field_journal()`
+(scoped through `records`, the same mechanism as the existing SSRN-preprint
+exclusion). Excludes exactly the 10 clinical rows the fresh scrape
+returned; the original 40-row `publication_exclusions.csv` list is
+unchanged and still applies alongside it.
+
+**Why:** the 21 Sep exclusion is a list of specific (name, doi-or-title)
+rows — correct for the 40 rows it was built against, but structurally
+unable to catch a row it has never seen. A fresh scrape finding more of
+Liu's genuinely-authored clinical output was not a hypothetical risk; it
+happened, the same week the list was written. A rule that recognises the
+*shape* of an off-field row (a clinical journal name) closes this gap for
+any future scrape, not just this one.
+
+**Why journal name, not DOI presence or ABDC rank:** checked directly
+against Liu's current 30 ANU rows — 2 of his legitimate finance/economics
+rows also have no DOI (`"Journal of Money"` / `"Annals of Operations"`,
+both real papers with truncated journal names from an unrelated parsing
+gap, verified by title). A DOI-presence rule would have wrongly dropped
+both. Similarly, several of his clinical rows are unranked, but so are
+some of his real finance rows with no ABDC match — rank is not a safe
+signal either. Journal name, and only journal name, cleanly separates the
+two groups. (The task this rule was built from estimated 3 no-DOI
+legitimate finance rows; the real count, measured directly, is 2 — reported
+here rather than adjusted to match.)
+
+**Why these specific keywords, and not a broader "clinical" wordlist:**
+derived directly from the 10 confirmed clinical journal names in the
+current export, not written from a general medical-terminology list. Two
+spelling variants were needed for the same specialty — `anaesth` (British:
+*Anaesthesia*, *Anaesthesia and Intensive Care*, *Journal of
+Anaesthesiology, Clinical Pharmacology* — the stem also covers
+"anaesthesiology") and `anesth` (American: *Anesthesia & Analgesia*).
+Checked against every other ANU row's journal name: nothing else matches.
+Checked explicitly, with a test, that *European Journal of Health
+Economics* (Liu's own genuinely in-scope, ABDC A-rated paper) matches
+none of the 7 keywords — "Health Economics" does not contain "rural
+health" or "pain medicine" as a substring, the two keywords closest to
+colliding with it.
+
+**Alternative considered:** exclude any ANU row with no DOI and no ABDC
+rank, on the reasoning that a genuinely off-field clinical paper is
+unlikely to be ABDC-rated. Rejected outright, and quickly — checked first
+and confirmed it would have dropped real accounting/finance work (the two
+no-DOI finance rows above), which is a worse failure mode than under-
+catching: a visibly-missing rating is reviewable, a silently-dropped real
+publication is not.
+
+**What could go wrong:** the keyword list is scoped to ANU only and
+derived from one researcher's current clinical output — if a different
+ANU researcher (now or in the future) has a legitimate finance/economics
+paper in a journal whose name happens to contain one of these 7 stems,
+it would be wrongly dropped. Checked against the full current ANU corpus
+and found no such collision today; kept visible and editable (a top-level
+list with its own comment block, not buried inside a function) specifically
+so a future reviewer can extend or narrow it without re-deriving the whole
+mechanism.
+
+**Result:** 532 → **522** publications (10 rows). Matches the task's own
+expectation exactly. Regression tests added to `tests/test_export_neardup.py`:
+a clinical-journal row for an ANU researcher is excluded; the health-economics
+row is not; a non-ANU researcher's row in a clinical-sounding journal
+survives untouched (confirming the `records`-based scoping).
+
+### Two rows traced through the merge — one recovered, one not
+
+**What happened, traced separately for each:**
+
+1. **Tracy (Kun) Wang, "Corporate Social Responsibility Reporting Reforms
+   around the World: Evidence on Firm Value and Externalities"**
+   (`10.1086/742862`, *The Journal of Law and Economics*, ABDC A\*, source
+   OpenAlex). Checked both committed files directly: present in
+   `anu_publications.json` with full enrichment data, absent from
+   `anu_publications.csv`. Not an exclusion (`data/publication_exclusions.csv`
+   has no matching row) and not a scraper miss — this is a CSV/JSON
+   desync, almost certainly introduced when the "Csv fixes" merge
+   reconciled this branch's and the parallel fresh-run branch's versions
+   of the two files independently rather than regenerating both from one
+   source, the way `export.py`'s own `write()` normally guarantees them to
+   agree (it writes both from the same in-memory row list). **Recovered**:
+   copied the row from the JSON's own data straight into the CSV, in the
+   CSV's column order and blank-vs-empty-string convention — not
+   hand-authored, reconciling this repo's own already-existing data. This
+   also resolves the separate "orphaned `anu_journals.csv` row" question
+   below: *The Journal of Law and Economics* was only orphaned because
+   the one publication referencing it had been dropped from the CSV.
+
+2. **Chao Gao, "Investment Performance of Credit Risk Transfer Securities
+   (CRTs): The Early Evidence"** (*Journal of Fixed Income*; carried an
+   SSRN preprint DOI, `10.2139/ssrn.3183505`, in this branch's own 22 Sep
+   export — one of the two rows the 18 Sep pass deliberately kept despite
+   an SSRN DOI, because the paper is genuinely published in a real, ranked
+   journal). Checked both committed files directly: **absent from both**.
+   Checked `data/publication_exclusions.csv`: no matching row — not a
+   reviewed exclusion. Checked his live ANU profile page directly
+   (`rsfas.anu.edu.au/people/chao-gao`): the paper is **still listed
+   there today**, word-for-word matching this title and journal. This is
+   a genuine loss, not a deliberate removal — but **not re-added by
+   hand**. The row's enrichment fields (ABDC rank, Scimago quartile,
+   citation percentile, FWCI) aren't recoverable from anything in this
+   repo as it stands; copying them from this branch's stale 22 Sep
+   snapshot risks shipping values the current pipeline would no longer
+   compute the same way (a live re-run may resolve a different, real DOI
+   for the same paper rather than the SSRN one, for instance). Recovery
+   needs a fresh `run.py --uni anu` pass, which reads and re-enriches the
+   real page content, not a manual CSV/JSON edit.
+
+**Why the asymmetry is the correct call, not an inconsistency:** the
+difference is not "one row matters more" — it's what evidence is actually
+available. Tracy Wang's full, currently-enriched row already exists,
+verified, inside this repo's own JSON; restoring it is copying, not
+authoring. Chao Gao's does not exist anywhere in this repo in its current
+enriched form; only a stale snapshot from a prior pass and a live page
+confirming the paper is real, neither of which is the same thing as "the
+row the current pipeline would produce." The task's own instruction not
+to re-add a row without evidence it belongs is satisfied differently by
+design: strong evidence the row is real is not the same as evidence for
+what its current field values should be, and only the second is enough to
+safely write into a machine-generated file by hand.
+
+### One title resolved against ANU's own institutional repository
+
+**What:** Susanna Ho's row `"THE EFFECTS OF WEB PERSONALIZATION ON
+INFLUENCING USERS' SWITCHING DECISIONS TO A NEW WEBSITE"` (no DOI, source
+OpenAlex, link to an OpenAlex work ID) — all-caps, and neither Crossref
+(no DOI to look up) nor OpenAlex's own record for the same work ID resolve
+it, because OpenAlex's title for this work is itself all-caps, apparently
+inherited from the original PACIS 2008 conference proceedings' own
+title-page typesetting (confirmed: the AISeL page hosting the proceedings
+paper itself also stores the title all-caps). Resolved instead against
+**ANU's own institutional repository**
+(`openresearch-repository.anu.edu.au`), which has this exact paper
+recorded in ordinary sentence case: "The effects of web personalization on
+influencing users' switching decisions to a new website."
+
+**Why this source and not the conference proceedings' own casing:** a
+conference proceedings PDF's title page is commonly typeset in all-caps as
+a purely visual convention, not because the authors' real title was
+shouted capitals — unlike the confirmed genuinely-all-caps case from 22
+Sep (a 1994 journal article whose *own registered Crossref metadata*,
+not a proceedings cover page, was all-caps). ANU's own repository record
+for a paper by its own staff member is a curated, institution-maintained
+record, a stronger signal of the "real" title than a conference PDF's
+cover-page typesetting.
+
+**Flagged as a judgement call, not a certainty:** both sources are
+independently real and don't agree (AISeL: all-caps; ANU repository:
+sentence case) — this is disclosed rather than silently picking one. If
+the team later gets access to the paper's own PDF or a Google
+Scholar/DOI-bearing record, worth re-checking.
+
+**What could go wrong:** none identified beyond the disclosed ambiguity
+above — the applied fix only changes casing, not any other field.
+
+### Verification
+
+- ANU publications: 532 → 522 (off-field rule) → **523** (Tracy Wang row
+  restored). ABDC-ranked: 494/532 = 92.9% before this pass's own changes (the
+  state this branch inherited) → 495/523 = 94.6% after.
+- *European Journal of Health Economics* confirmed present, 1 row, ABDC A
+  — asserted directly, and in a regression test.
+- `anu_journals.csv`: 163 → 154 (9 now-orphaned clinical journal rows
+  removed after the off-field rule ran; *The Journal of Law and Economics*
+  confirmed NOT orphaned, correctly kept, once the Tracy Wang row was
+  restored).
+- Other seven universities: untouched — confirmed via `git status
+  --porcelain`, nothing under any other university's `final output/`
+  appears.
+- `base_scrapers/monash.py` line 27 (`Path` used, never imported) —
+  someone else's one-line bug, unrelated to ANU or this pass's own work.
+  Fixed locally only, so `pytest` could even collect the test suite;
+  explicitly flagged as **not to be committed** — see the change manifest
+  in `scratch/_anu24/REPORT.md`. Fixing it also surfaced a second,
+  separate pre-existing bug in the same file (`csv` used, never imported,
+  `base_scrapers/monash.py:340`) that the first bug had been masking by
+  blocking test collection entirely — left unfixed, reported only, since
+  neither bug is this pass's to fix.
+- `pytest tests/ -q`: baseline on this newer `main`, after only the local
+  `Path` fix and before any of this pass's own ANU changes, is 8 failed /
+  380 passed — 6 known Windows cp1252 failures in `test_merge_publications.py`
+  plus 2 in `test_monash_identity_overrides.py` (the `csv`-import bug
+  above), not the 2 in `test_load_identity.py` this task's own brief
+  expected (that file no longer fails on this `main` — a Monash identity
+  fix landed since). Reported as a baseline discrepancy rather than
+  silently assumed; after this pass's own changes, the same 8 fail, plus 3
+  new regression tests for the off-field screen pass. No other failures.
+- `python load.py`: all eight universities 100% matched, ANU 523/523.
