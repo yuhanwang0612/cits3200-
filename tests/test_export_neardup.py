@@ -346,5 +346,60 @@ def test_exact_same_journal_doi_aliases_are_merged():
     assert len(build_publications([legacy, publisher], verbose=False)) == 1
 
 
+# --------------------------------------------------------- FIX L bug: a
+# correction notice is not a subtitle. Web of Science titles a PUBLISHED
+# CORRECTION as the original article's own title plus a trailing
+# "(vol N, pg N, YYYY)" locator — textually a strict prefix relationship,
+# the exact shape FIX L/FIX K are built to merge, but the two rows are not
+# the same independent publication: one of them is a correction notice for
+# the other. Two confirmed real cases: Adelaide's Basil Tucker
+# (10.1080/00014788.2013.798234 / .877214) and UNSW's Fariborz Moshirian
+# (10.1016/s0378-4266(02)00467-3 / (03)00049-9).
+
+def test_correction_notice_pair_is_not_treated_as_a_prefix_duplicate():
+    """Basil Tucker shape: without the FIX L bug guard, the correction
+    row's title is a textbook strict-prefix 'subtitle' of the original's,
+    same year, same journal — _is_prefix_duplicate must refuse the pair
+    outright rather than let the two get merged/preferred against each
+    other."""
+    original = _pub(
+        name="Basil Tucker",
+        title="In our ivory towers? The research-practice gap in management accounting",
+        doi="10.1080/00014788.2013.798234", year="2014",
+        journal="Accounting and Business Research",
+    )
+    correction = _pub(
+        name="Basil Tucker",
+        title=("In our ivory towers? The research-practice gap in management "
+               "accounting (vol 44, pg 104, 2014)"),
+        doi="10.1080/00014788.2013.877214", year="2014",
+        journal="Accounting and Business Research",
+    )
+    assert exp._is_prefix_duplicate(original, correction) is False
+    assert exp._is_exact_title_year_journal_dup(original, correction) is False
+
+
+def test_correction_notice_row_is_excluded_from_export():
+    """Fariborz Moshirian shape: the correction row must not survive into
+    the exported table at all — the client's 9 Sep corrigenda/errata rule
+    means it is dropped outright, not merged into (and definitely not
+    preferred over) the genuine article's own row."""
+    original = _pub(
+        name="Fariborz Moshirian",
+        title="Markets and institutions:: Global perspectives",
+        doi="10.1016/s0378-4266(02)00467-3", year="2003",
+        journal="Journal of Banking & Finance",
+    )
+    correction = _pub(
+        name="Fariborz Moshirian",
+        title="Markets and institutions:: Global perspectives (vol 27, pg 377, 2003)",
+        doi="10.1016/s0378-4266(03)00049-9", year="2003",
+        journal="Journal of Banking & Finance",
+    )
+    out = build_publications([original, correction], verbose=False)
+    assert len(out) == 1
+    assert out[0]["doi"] == "10.1016/s0378-4266(02)00467-3"
+
+
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q"]))
