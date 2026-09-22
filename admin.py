@@ -373,7 +373,12 @@ def make_admin_bp(Session, refresh_manager=None):
     @bp.post("/api/admin/refresh")
     @login_required
     def refresh_start():
-        started, state = refresh_manager.start()
+        # Optional {"source": "monash"} refreshes one university; omitted means all.
+        source = (request.get_json(silent=True) or {}).get("source") or None
+        try:
+            started, state = refresh_manager.start(source)
+        except ValueError as exc:
+            return jsonify({"error": str(exc)}), 400
         if started:
             return jsonify(state), 202
         if state.get("state") in {"queued", "running"}:
