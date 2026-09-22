@@ -73,12 +73,15 @@ def test_staff_mapping_uses_core_titles_when_available():
 
 def test_staff_mapping_falls_back_to_anu_scraper_level():
     """'Director, Research School of Accounting' carries no rank word core.titles
-    knows, so title_clean/level_code come back None and the adapter must fall
-    back to the level anu_scraper's own ladder already worked out."""
+    knows, so level_code comes back None from core.titles and the adapter must
+    fall back to the level anu_scraper's own ladder already worked out from the
+    name-prefix heading line. title_clean is then filled in generically from
+    that level (scratch/_anu17/REPORT.md task 5 — 'the rank from the heading
+    line when the subtitle is a role rather than a rank'), not left blank."""
     r = researcher(job_title="Director, Research School of Accounting",
                    academic_level="E")
     rec = anu._staff_record(r, {})
-    assert rec["title_clean"] is None
+    assert rec["title_clean"] == "Professor"
     assert rec["level_code"] == "E"
     assert rec["level_source"] == "anu_scraper fallback"
 

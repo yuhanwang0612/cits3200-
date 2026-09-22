@@ -88,3 +88,25 @@ def rank(title, prefix=None):
 def level(rank_label):
     """Academic level A–E, or None for roles outside the ladder."""
     return LEVEL.get(rank_label)
+
+
+# Reverse of the common case in LEVEL: the plain rank word a level code
+# most often stands for. Not a full inverse of LEVEL (several labels share
+# one level, e.g. "Reader" and "Associate Professor" are both D) — this
+# picks the generic ladder rank, which is what a job title reads as when
+# the only thing known is the level itself, not the exact word used on the
+# source page.
+_RANK_OF_LEVEL = {
+    "A": "Associate Lecturer",
+    "B": "Lecturer",
+    "C": "Senior Lecturer",
+    "D": "Associate Professor",
+    "E": "Professor",
+}
+
+
+def rank_from_level(level_code):
+    """Canonical rank label for a bare level code, for when a caller has
+    already resolved A-E some other way (e.g. from a name-prefix fallback)
+    but has no literal rank text left to normalise with `rank()` itself."""
+    return _RANK_OF_LEVEL.get(level_code)

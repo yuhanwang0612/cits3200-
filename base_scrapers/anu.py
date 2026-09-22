@@ -78,7 +78,7 @@ import anu_scraper  # noqa: E402  (needs the sys.path fix-up above)
 from core.config import DATA_DIR, ORCID_BASE, ORCID_HEADERS  # noqa: E402
 from core.http import cached_get  # noqa: E402
 from core.schema import blank_pub  # noqa: E402
-from core.titles import level, rank, split_prefix  # noqa: E402
+from core.titles import level, rank, rank_from_level, split_prefix  # noqa: E402
 
 ORCID_DECISIONS_LOG = _REPO_ROOT / "scratch" / "_anu15" / "orcid_decisions.csv"
 
@@ -175,6 +175,20 @@ def _staff_record(researcher, identity_by_name):
     if level_code is None and researcher.academic_level:
         level_code = researcher.academic_level
         level_source = "anu_scraper fallback"
+        if title_clean is None:
+            # scratch/_anu17/REPORT.md task 5. researcher.job_title here is
+            # a role subtitle, not a rank ("Reader", "Director, Research
+            # School of Accounting", "Deputy Director (Education)") — the
+            # rank itself lives in the heading line above it on the staff
+            # card ("Associate Professor Keturah Whitford"), which
+            # anu_scraper.scrape_directory already reads (that's exactly
+            # how `researcher.academic_level` got set here, via its own
+            # name-prefix fallback) but doesn't carry through as text. The
+            # generic rank word for that level is the best available
+            # substitute for the literal heading text. Applies to every ANU
+            # staff member in this situation, not just the three it was
+            # found on.
+            title_clean = rank_from_level(level_code)
 
     orcid, openalex_author_ids = identity_by_name.get(researcher.name, (None, []))
 
@@ -347,6 +361,129 @@ def _apply_page_orcid_fallback(researchers, records, log_path=ORCID_DECISIONS_LO
 
 
 # ---------------------------------------------------------------------------
+# FIX I — known title-corruption patterns (scratch/_anu17, task 2)
+# ---------------------------------------------------------------------------
+#
+# Four shapes of corrupted `pub.title` text, each confirmed against the
+# current `final output/anu/anu_publications.csv` and checked against every
+# other ANU title before being coded as a rule (never patched by hand-
+# editing a CSV — see scratch/_anu17/REPORT.md for the full check). Each
+# rule is deliberately narrow — anchored to the exact shape observed —
+# rather than a general "strip anything that looks like X" heuristic.
+
+# (a) A trailing conference-award sentence the source page appends straight
+# onto the citation, e.g. "...CSR performance. Best Paper Award at the 2021
+# AFAANZ annual conference" (4 Lily Chen rows). Anchored to a sentence
+# boundary ("\.\s+") so it can never match "award-winning" used as a live
+# adjective mid-title with no preceding full stop — which is how Louise
+# Lu's and Kathy Wang's own genuine titles use the word ("...competitor
+# CEOs' award-winning events"); neither matches this rule.
+_AWARD_SUFFIX_RE = re.compile(
+    r"\.\s+(?:Best Paper Award\b.*|(?:\d{4}\s+)?[A-Z][\w' -]*\bManuscript Award\b.*)$"
+)
+
+# (b) A trailing "with X. Surname and Y. Surname" co-author clause the page
+# appends after the real title, e.g. Antje Berndt's "The Decline of Too Big
+# To Fail with D. Duffie and Y. Zhu" — those coauthors are already carried
+# separately in `pub.coauthors`; the clause is corrupted title text.
+_TRAILING_COAUTHOR_CLAUSE_RE = re.compile(
+    r"\s+with\s+[A-Z]\.\s?[\w'-]+(?:(?:,\s*|\s+and\s+)[A-Z]\.\s?[\w'-]+)*$"
+)
+
+# (c) The title field is actually a citation string — "Surname, I., Surname,
+# I., and Surname, I. (forthcoming) 'Real Title...'" — with the real title
+# inside the quote marks (Susanna Ho). Recovers everything after the
+# opening quote; a missing closing quote (the source text was itself
+# truncated) is left as-is rather than guessed at.
+_CITATION_TITLE_RE = re.compile(
+    r"^[A-Z][A-Za-z'-]+,\s*[A-Z][.,].*?\((?:forthcoming|\d{4})\)\s*[‘’']"
+    r"(?P<title>.+)$"
+)
+
+# (d) A mangled book-review citation: the review's own title, immediately
+# followed (no space) by a run of digits, then the book's author list —
+# "...An Integrated Approach20111Alvin A. Arens, Peter Best, ..." (Greg
+# Shailer). Only applied when the recovered prefix reappears verbatim later
+# in the same string — the book title is cited a second time in the same
+# mangled paragraph — so this can't fire on an unrelated title that happens
+# to butt up against a number; the digit-run shape alone is not enough.
+_DIGIT_RUN_RE = re.compile(r"\d{4,}(?=[A-Z])")
+
+TITLE_REPAIR_COUNTS = Counter()
+
+
+def _repair_title(title):
+    """Undo one of the four known title-corruption shapes above, if any
+    applies. Returns `title` unchanged otherwise."""
+    if not title:
+        return title
+
+    m = _AWARD_SUFFIX_RE.search(title)
+    if m:
+        TITLE_REPAIR_COUNTS["trailing_award_clause"] += 1
+        return title[:m.start()].strip()
+
+    m = _TRAILING_COAUTHOR_CLAUSE_RE.search(title)
+    if m:
+        TITLE_REPAIR_COUNTS["trailing_coauthor_clause"] += 1
+        return title[:m.start()].strip()
+
+    m = _CITATION_TITLE_RE.match(title)
+    if m:
+        TITLE_REPAIR_COUNTS["citation_string_title"] += 1
+        return m.group("title").strip()
+
+    m = _DIGIT_RUN_RE.search(title)
+    if m:
+        prefix = title[:m.start()].rstrip()
+        if len(prefix) >= 15 and prefix[:1].isupper() and prefix in title[m.end():]:
+            TITLE_REPAIR_COUNTS["mangled_review_citation"] += 1
+            return prefix
+
+    return title
+
+
+# ---------------------------------------------------------------------------
+# FIX J — prose mistaken for a title (scratch/_anu17, task 2e)
+# ---------------------------------------------------------------------------
+#
+# One ANU row (a Wai-Man (Raymond) Liu monograph description) has abstract
+# prose in `title` and the next sentence of that same prose in `journal` —
+# the source page's structure defeated the citation parser entirely, so
+# there is no real title anywhere in the text to recover. Excluded rather
+# than guessed at.
+#
+# Word count alone is NOT enough: a live re-scrape turned up Alex Wang's
+# real "Strategizing in the Midst of Management Controls: A Longitudinal
+# Case Study..." (24 words) paired with the real special-issue journal name
+# "Accounting and Finance, A Special Issue for Qualitative Accounting
+# Research" (10 words) — a genuine title/journal pair that happens to be
+# long, not prose, and it was wrongly caught by a word-count-only version
+# of this rule during the scratch/_anu17 pipeline run (see
+# scratch/_anu17/REPORT.md). The word-count thresholds below stay (a real
+# journal name is essentially never this long, and Greg Shailer's mangled
+# book-review citation — repaired by FIX I(d) above, not excluded here — is
+# the only other title this long), but the rule additionally requires both
+# doi and year to be blank: every real citation on this page-scraped corpus
+# carries at least one of the two, including Alex Wang's row (year 2019).
+# Raymond Liu's prose row has neither.
+_PROSE_TITLE_MIN_WORDS = 20
+_PROSE_JOURNAL_MIN_WORDS = 10
+
+EXCLUDED_PROSE_TITLES = []
+
+
+def _is_prose_not_title(pub):
+    if pub.get("doi") or pub.get("year"):
+        return False
+    title, journal = pub.get("title"), pub.get("journal")
+    if not title or not journal:
+        return False
+    return (len(title.split()) >= _PROSE_TITLE_MIN_WORDS
+            and len(journal.split()) >= _PROSE_JOURNAL_MIN_WORDS)
+
+
+# ---------------------------------------------------------------------------
 # Publications
 # ---------------------------------------------------------------------------
 
@@ -355,6 +492,9 @@ def _map_publication(pub, name_clean, backfill_by_key, doi_stats):
     doi = pub.doi
     doi_from_page = bool(doi)
     year = str(pub.year) if pub.year is not None else None
+    # Backfill is keyed on the title as originally scraped, not the
+    # repaired one — data/anu_doi_backfill.csv was generated against the
+    # page text before FIX I existed.
     title_key = (pub.researcher_name, _normalise_title(pub.title))
     candidates = backfill_by_key.get(title_key, [])
 
@@ -377,7 +517,7 @@ def _map_publication(pub, name_clean, backfill_by_key, doi_stats):
     return blank_pub(
         name=name_clean,
         source_id=None,
-        title=pub.title,
+        title=_repair_title(pub.title),
         year=year,
         type=_type(pub.publication_type),
         n_authors=pub.author_count,
@@ -433,6 +573,11 @@ def collect(verbose=True, refresh=False):
         for pub in confident:
             mapped, had_page_doi = _map_publication(
                 pub, rec["name_clean"], backfill_by_key, doi_stats)
+            if _is_prose_not_title(mapped):
+                EXCLUDED_PROSE_TITLES.append({
+                    "name": r.name, "title": mapped["title"], "journal": mapped["journal"],
+                })
+                continue
             pubs.append(mapped)
             pubs_by_name[r.name] += 1
             if had_page_doi:
@@ -469,6 +614,13 @@ def collect(verbose=True, refresh=False):
         for name in emeritus_no_pubs:
             print(f"      {name!r}")
 
+    if EXCLUDED_PROSE_TITLES:
+        print(f"\n  {len(EXCLUDED_PROSE_TITLES)} row(s) excluded — title is "
+              f"prose, not a citation, and journal is the next sentence of "
+              f"the same prose (FIX J, no real title to recover):")
+        for row in EXCLUDED_PROSE_TITLES:
+            print(f"      {row['name']!r}: {row['title'][:70]!r}...")
+
     if verbose:
         print(f"\n  {len(records)} staff, {len(pubs)} publications")
         print(f"  {unparsed_total} publication entries were low-confidence "
@@ -478,5 +630,8 @@ def collect(verbose=True, refresh=False):
               f"({doi_stats['ambiguous']} ambiguous, not carried; "
               f"{doi_stats['conflicts']} page/seed conflicts, page kept)")
         print(f"  {len(staff_no_pubs)} staff with no publications")
+        if TITLE_REPAIR_COUNTS:
+            print(f"  title repairs (FIX I): "
+                  + ", ".join(f"{k}={v}" for k, v in TITLE_REPAIR_COUNTS.items()))
 
     return records, pubs

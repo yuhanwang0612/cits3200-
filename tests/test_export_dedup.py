@@ -61,10 +61,14 @@ def test_same_doi_case_insensitive_is_dropped():
 
 
 def test_different_dois_are_both_kept():
-    """Same (name, normalised title) but two REAL, different DOIs — a
-    namesake collision or a reprint, not a duplicate — both survive."""
-    a = _pub(title="Common Title", doi="10.1/first")
-    b = _pub(title="Common Title", doi="10.1/second")
+    """Same (name, normalised title) but two REAL, different DOIs in two
+    different journals — a namesake collision or a reprint, not a
+    duplicate — both survive. Journals differ deliberately: same title +
+    same year + same journal is exactly what FIX K (scratch/_anu18,
+    export.py) now merges even across distinct DOIs — see
+    tests/test_export_neardup.py for that case and its own guard test."""
+    a = _pub(title="Common Title", doi="10.1/first", journal="Journal One")
+    b = _pub(title="Common Title", doi="10.1/second", journal="Journal Two")
     out = build_publications([a, b], verbose=False)
     assert len(out) == 2
     assert {r["doi"] for r in out} == {"10.1/first", "10.1/second"}
