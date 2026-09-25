@@ -24,6 +24,39 @@ def test_profile_section_is_not_used_as_job_title():
     assert monash._academic_title("Associate Professor") == "Associate Professor"
 
 
+def test_profile_prefers_exact_job_title_over_broad_details_container(monkeypatch):
+    class Response:
+        status_code = 200
+        text = """
+        <div class="person-details-info">
+          <span class="job-title">Senior Lecturer</span>
+          <section>External positions: Emeritus Professor</section>
+        </div>
+        """
+
+    monkeypatch.setattr(monash.requests, "get", lambda *args, **kwargs: Response())
+    title, _, _ = monash._fetch_research_profile("https://example.test/person")
+    assert title == "Senior Lecturer"
+
+
+def test_research_url_does_not_select_a_surname_namesake(monkeypatch):
+    class Response:
+        status_code = 200
+        text = """
+        <a href="https://research.monash.edu/en/persons/christine-brown">Wrong Brown</a>
+        <a href="https://research.monash.edu/en/persons/kym-brown">Kym Brown</a>
+        """
+
+    monkeypatch.setattr(monash.requests, "get", lambda *args, **kwargs: Response())
+    assert monash._find_research_url("https://www.monash.edu/kym", "Kym Brown") == \
+        "https://research.monash.edu/en/persons/kym-brown/"
+
+
+def test_pure_short_review_is_not_a_journal_article():
+    raw = "Research output: Contribution to journal › Short Review › Other › peer-review"
+    assert monash._pure_type(raw) == "Other"
+
+
 def test_personal_pure_feed_supplies_attribution():
     rows = monash._parse_pure_rss(RSS, "Jane Example", "jane-example")
     assert len(rows) == 1

@@ -36,6 +36,13 @@ from base_scrapers.anu import _repair_title as _anu_repair_title
 
 TABLES = ("staff", "journals", "publications", "harvest")
 
+# Verified publisher DOI corrections.  Keep these in the repeatable export
+# path so every fresh pipeline run repairs the source typo rather than relying
+# on a hand-edited output CSV.
+DOI_CORRECTIONS = {
+    "10.1111/j.1468-2443.2006.00055x": "10.1111/j.1468-2443.2006.00055.x",
+}
+
 _NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
 
 
@@ -88,6 +95,73 @@ def _dedup_doi(doi):
     gets its own, different DOI, so an SSRN DOI here counts as no DOI."""
     d = (doi or "").strip().lower()
     return "" if d.startswith(SSRN_DOI_PREFIX) else d
+
+
+def _correct_doi(doi):
+    value = (doi or "").strip()
+    return DOI_CORRECTIONS.get(value.lower(), value) or None
+
+
+def _harmonise_doi_metadata(rows):
+    """Make co-author copies of the same DOI use one title/year/journal.
+
+    A DOI occasionally gets reused for unrelated book-review records in
+    upstream indexes, so harmonisation is deliberately limited to groups
+    whose titles are clearly the same work (normalised equality, one title
+    being a subtitle-truncated prefix, or strong fuzzy similarity).
+    """
+    groups = {}
+    for row in rows:
+        doi = _dedup_doi(row.get("doi"))
+        if doi:
+            groups.setdefault(doi, []).append(row)
+
+    for group in groups.values():
+        if len(group) < 2:
+            continue
+        title_keys = [_normalise_title(row.get("title")) for row in group]
+        nonempty = [title for title in title_keys if title]
+        if not nonempty:
+            continue
+        shortest, longest = min(nonempty, key=len), max(nonempty, key=len)
+        years = {str(row.get("year")) for row in group if row.get("year") not in (None, "")}
+        journals = {
+            _normalise_title(row.get("journal_name"))
+            for row in group if row.get("journal_name")
+        }
+        min_similarity = min(
+            difflib.SequenceMatcher(None, a, b).ratio()
+            for a in nonempty for b in nonempty
+        )
+        same_bibliographic_context = len(years) <= 1 and len(journals) <= 1
+        same_work = (
+            len(set(nonempty)) == 1
+            or longest.startswith(shortest + " ")
+            or min_similarity >= NEAR_DUP_TITLE_RATIO
+            # A source may both truncate the subtitle and introduce a small
+            # typo ("accountingy-related" in the verified Monash example).
+            # The lower threshold is safe only when year and journal agree.
+            or (same_bibliographic_context and min_similarity >= 0.70)
+        )
+        if not same_work:
+            continue
+
+        # Prefer the fullest title. For year/journal use the majority value;
+        # ties preserve the first populated value, keeping the policy stable.
+        canonical_title = max(
+            (row.get("title") for row in group if row.get("title")),
+            key=lambda value: len(_normalise_title(value)),
+        )
+        canonical = {"title": canonical_title}
+        for field in ("year", "journal_name"):
+            values = [row.get(field) for row in group if row.get(field) not in (None, "")]
+            if values:
+                counts = Counter(values)
+                canonical[field] = max(values, key=lambda value: counts[value])
+        for row in group:
+            row.update(canonical)
+
+    return rows
 
 
 def _differing_part_marker(title_a, title_b):
@@ -680,6 +754,11 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         if _is_anu_unranked_ssrn_preprint(x, anu_names):
             excluded_ssrn_preprints += 1
             continue
+        corrected_doi = _correct_doi(x.get("doi"))
+        if corrected_doi != x.get("doi"):
+            x["doi"] = corrected_doi
+            if x.get("link", "").lower().startswith("https://doi.org/"):
+                x["link"] = f"https://doi.org/{corrected_doi}"
         k = (x["name"], _normalise_title(x["title"]))
         doi = (x.get("doi") or "").strip().lower()
         if k not in kept_dois_by_key:
@@ -721,6 +800,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
 
     before_near_dup = len(out)
     out = merge_near_duplicates(out)
+    out = _harmonise_doi_metadata(out)
 
     if verbose:
         dropped = Counter((x.get("source"), x.get("type"))
