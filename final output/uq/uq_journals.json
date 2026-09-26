@@ -1696,22 +1696,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Research in the Sociology of Organizations",
-    "journal_raw": "Research in the Sociology of Organizations",
-    "publisher": "Emerald Publishing Limited",
-    "issn": "0733-558X",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": NaN,
-    "sjr_quartile": null,
-    "h_index": 55,
-    "cites_per_doc_2y": 1.11,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "IMA Educational Case Journal",
     "journal_raw": "IMA Educational Case Journal",
     "publisher": "Institute of Management Accountants",
@@ -2320,22 +2304,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Advances in Accounting Education: teaching and curriculum innovations",
-    "journal_raw": "Advances in accounting education: teaching and curriculum innovations",
-    "publisher": "Emerald Publishing Limited",
-    "issn": "1085-4622",
-    "quality_rank": "C",
-    "abdc_edition": "2025",
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": 0.175,
-    "sjr_quartile": "Q4",
-    "h_index": 13,
-    "cites_per_doc_2y": 0.55,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Strategic Finance",
     "journal_raw": "Strategic Finance",
     "publisher": "Institute of Management Accountants",
@@ -2384,22 +2352,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Advances in Management Accounting",
-    "journal_raw": "Advances in Management Accounting",
-    "publisher": "Emerald Publishing Limited",
-    "issn": "1474-7871",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": NaN,
-    "sjr_quartile": null,
-    "h_index": 20,
-    "cites_per_doc_2y": 1.22,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "International Journal of Hospitality and Tourism Administration",
     "journal_raw": "International Journal of Hospitality and Tourism Administration",
     "publisher": "Routledge",
@@ -2445,22 +2397,6 @@
     "sjr_quartile": "Q1",
     "h_index": 93,
     "cites_per_doc_2y": 5.93,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Advances in Accounting Behavioral Research",
-    "journal_raw": "Advances in Accounting Behavioral Research",
-    "publisher": "Emerald Publishing Limited",
-    "issn": "1475-1488",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": NaN,
-    "sjr_quartile": null,
-    "h_index": 15,
-    "cites_per_doc_2y": 0.44,
     "scimago_year": "2025"
   },
   {
@@ -3230,37 +3166,5 @@
     "h_index": 58,
     "cites_per_doc_2y": 4.68,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "IFAC Proceedings Volumes",
-    "journal_raw": "IFAC Proceedings Volumes",
-    "publisher": "Elsevier BV",
-    "issn": "1474-6670; 2589-3653",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "QUT ePrints (Queensland University of Technology)",
-    "journal_raw": "QUT ePrints (Queensland University of Technology)",
-    "publisher": "Queensland University of Technology",
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   }
 ]
