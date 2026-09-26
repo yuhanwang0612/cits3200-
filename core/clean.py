@@ -20,12 +20,38 @@ from core.schema import clean_journal, norm_type
 import csv
 from pathlib import Path
 
-_OVERRIDES = {}   # doi -> {field: correct_value}
+def _title_key(title):
+    """The normalised form both override and exclusion title keys use."""
+    return re.sub(r"[^a-z0-9]+", " ", (title or "").casefold()).strip()
+
+
+_OVERRIDES = {}         # doi -> {field: correct_value}
+_TITLE_OVERRIDES = {}   # (name, normalised title) -> {field: correct_value}
+# columns: doi,field,value,name,title
+#
+# A DOI is the stable key and stays the default. Some rows have no DOI at all
+# (a magazine item off a university profile page), and those cannot be
+# corrected by DOI without keying on the empty string, which would match every
+# DOI-less publication in the dataset at once. Such a row is keyed on
+# researcher name plus normalised title instead, exactly as _exclusion_key
+# does, so the correction is scoped to one person's copy of one paper.
 _ov_path = Path(__file__).resolve().parents[1] / "data" / "overrides.csv"
 if _ov_path.exists():
     with open(_ov_path, encoding="utf-8") as f:
-        for row in csv.DictReader(f):          # columns: doi,field,value
-            _OVERRIDES.setdefault(row["doi"].lower(), {})[row["field"]] = row["value"]
+        for row in csv.DictReader(f):
+            field = (row.get("field") or "").strip()
+            if not field:
+                continue
+            value = row.get("value")
+            value = None if value in (None, "") else value
+            doi = (row.get("doi") or "").strip().lower()
+            if doi:
+                _OVERRIDES.setdefault(doi, {})[field] = value
+                continue
+            name = (row.get("name") or "").strip().casefold()
+            title = _title_key(row.get("title"))
+            if name and title:
+                _TITLE_OVERRIDES.setdefault((name, title), {})[field] = value
 
 # Confirmed author-identity collisions.  These are deliberately keyed by both
 # researcher name and DOI: a paper can be a valid record for one staff member
@@ -57,11 +83,56 @@ if _ex_path.exists():
             if key:
                 _PUBLICATION_EXCLUSIONS[key] = row
 
+def override_fields(pub, doi=None):
+    """Every reviewed correction that applies to this publication.
+
+    DOI first, then the name+title key, so a title-keyed entry can still
+    correct a row whose DOI arrived later in the run.
+
+    `doi` overrides the value on the row. clean_pub must pass the RAW doi it
+    captured before clean_doi ran: one override exists precisely to repair a
+    malformed DOI ("s1474667017471096"), and clean_doi nulls that value, so
+    reading it off the row after cleaning would never match it again.
+    """
+    out = {}
+    doi = ((pub.get("doi") if doi is None else doi) or "").strip().lower()
+    if doi:
+        out.update(_OVERRIDES.get(doi, {}))
+    key = ((pub.get("name") or "").strip().casefold(), _title_key(pub.get("title")))
+    if key[0] and key[1]:
+        out.update(_TITLE_OVERRIDES.get(key, {}))
+    return out
+
+
 def _apply_overrides(pub):
-    doi = (pub.get("doi") or "").lower()
-    for field, value in _OVERRIDES.get(doi, {}).items():
+    for field, value in override_fields(pub).items():
         pub[field] = value
     return pub
+
+
+def apply_overrides(pubs, verbose=False):
+    """Re-apply reviewed corrections AFTER enrichment.
+
+    clean_pub applies them early so the rest of cleaning sees the corrected
+    value, but abdc/clarivate/scimago run later and assign their own fields
+    unconditionally. Without this second pass a correction to `abdc` is
+    silently undone by abdc.enrich a few steps later. An override is meant to
+    be the last word, so it is applied last as well as first.
+    """
+    n = 0
+    for pub in pubs:
+        fields = override_fields(pub)
+        changed = {f: v for f, v in fields.items() if pub.get(f) != v}
+        if changed:
+            n += 1
+            if verbose:
+                who = (pub.get("name") or "?")
+                print(f"  override {who}: "
+                      + ", ".join(f"{f}={v!r}" for f, v in changed.items()))
+        pub.update(fields)
+    if verbose:
+        print(f"overrides: {n} rows corrected after enrichment")
+    return pubs
 
 
 # A DOI is "10." + registrant + "/" + suffix. The "s1474667017471096" that
@@ -228,7 +299,7 @@ def clean_pub(pub, log=None):
             note(f"    type    {who}: {pub.get('type')!r} -> 'Preprint'  (SSRN DOI)")
         pub["type"] = "Preprint"
 
-    for field, value in _OVERRIDES.get(raw_doi, {}).items():
+    for field, value in override_fields(pub, raw_doi).items():
         pub[field] = value
     if pub.get("doi") and not pub.get("link"):
         pub["link"] = f"https://doi.org/{pub['doi']}"

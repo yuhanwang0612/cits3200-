@@ -13,7 +13,7 @@ import inspect
 import subprocess
 import sys
 import time
-from core.clean import clean_pubs                        # noqa: E402
+from core.clean import apply_overrides, clean_pubs        # noqa: E402
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -166,10 +166,13 @@ def main():
     step(10, "scimago (issn)")
     scimago.enrich(pubs)
 
-    step(11, "contract check")
+    step(11, "reviewed overrides")
+    apply_overrides(pubs, verbose=True)
+
+    step(12, "contract check")
     validate(records, pubs)
 
-    step(12, "export")
+    step(13, "export")
     export(records, pubs, out_dir=out,
            drop_staff_without_pubs=not args.keep_empty_staff)
     quality_writer = getattr(adapter, "write_quality_report", None)
