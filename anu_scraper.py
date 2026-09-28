@@ -739,6 +739,13 @@ _JOURNAL_TAIL_PATTERNS = [
     re.compile(r",?\s*forthcoming\b\.?\s*$", re.IGNORECASE),
     re.compile(r",?\s*in press\b\.?\s*$", re.IGNORECASE),
     re.compile(r"\s+\d+\s*[:,]?\s*[\d\-–,\s]*\.?\s*$"),
+    # v25: a special-issue label glued onto the journal name ("Accounting
+    # and Finance, A Special Issue for Qualitative Accounting Research" on
+    # Alex Wang's profile, all inside one italic run). The issue is part of
+    # the journal, not a different venue, so only the label is dropped.
+    # Needs a separating comma/dash first, so a name that merely starts
+    # with the words can never be emptied.
+    re.compile(r"\s*(?:,|\s[-–—:])\s*(?:an?\s+)?special\s+issue\b.*$", re.IGNORECASE),
 ]
 
 
@@ -977,6 +984,51 @@ CONFERENCE_LOCATION_NAMES = {
 
 def _looks_like_conference_location(journal: str | None) -> bool:
     return bool(journal) and journal.strip().lower() in CONFERENCE_LOCATION_NAMES
+
+
+# v25: a journal name cut short. Two different causes, one fix:
+# - the ". "-splitter fallback takes the first comma segment, so a journal
+#   whose real name contains a comma loses the rest ("Journal of Money,
+#   Credit & Banking" -> "Journal of Money", Raymond Liu's profile);
+# - the profile's own HTML italicises only part of the name, and the italic
+#   run is trusted as the whole journal ("<i>Annals of Operations</i>
+#   Research", same profile).
+# Either way the missing words sit in the citation text right after the
+# parsed name. When the parsed name is NOT itself an ABDC title (and occurs
+# exactly once in the citation text), extend it
+# word by word through that text (up to the next full stop, semicolon or
+# bracket, at most _JOURNAL_CONTINUATION_MAX_WORDS words) and take the
+# longest extension that IS an exact normalised ABDC title. A name that is
+# already a known title is never touched, and nothing is ever guessed: no
+# exact ABDC hit, no change.
+_JOURNAL_CONTINUATION_MAX_WORDS = 6
+_JOURNAL_CONTINUATION_STOP_RE = re.compile(r"[^.;()\[\]]*")
+
+
+def _complete_journal_name(journal: str | None, text: str) -> str | None:
+    if not journal:
+        return journal
+    titles = _abdc_titles()
+    if _normalise_abdc_title(journal) in titles:
+        return journal
+    # The parsed name must occur exactly once, so "the text right after it"
+    # is unambiguous. A fragment that also appears inside the title (Greg
+    # Shailer's "Review of Post-CLERP 9 Australian Auditor Independence
+    # Research . Australian Accounting Review" parses to journal
+    # "Australian") is a title/journal mis-split, not a truncated name, and
+    # is left exactly as it was.
+    if text.count(journal) != 1:
+        return journal
+    at = text.find(journal)
+    following = _JOURNAL_CONTINUATION_STOP_RE.match(text, at + len(journal)).group(0)
+    best = None
+    for i, word in enumerate(re.finditer(r"\S+", following)):
+        if i >= _JOURNAL_CONTINUATION_MAX_WORDS:
+            break
+        candidate = (journal + following[:word.end()]).strip(" ,")
+        if _normalise_abdc_title(candidate) in titles:
+            best = candidate
+    return best or journal
 
 
 def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication | None, bool]:
@@ -1303,6 +1355,7 @@ def parse_publication(block: dict, researcher: Researcher) -> tuple[Publication 
     if journal:
         journal = _strip_trailing_numeric_segments(journal)
         journal = _strip_journal_junk(journal)
+        journal = _complete_journal_name(journal, text)
 
     title = _tidy(title)
     journal = _tidy(journal)

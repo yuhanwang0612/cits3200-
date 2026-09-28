@@ -22,6 +22,9 @@ requests anything from that host.
 
 THE TWO SEED FILES
 -------------------
+`data/anu_doi_backfill.csv` has since been edited by hand, one verified row
+at a time (see docs/DECISIONS.md, 28 Sep 2026): 126 rows now.
+
 `data/anu_identity.csv` (23 rows) and `data/anu_doi_backfill.csv` (123 rows)
 were generated once, by a throwaway script, from two files that were already
 hand-verified in earlier work: the root `anu_staff.csv` (ORCID and OpenAlex

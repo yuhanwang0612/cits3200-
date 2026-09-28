@@ -1727,3 +1727,210 @@ above — the applied fix only changes casing, not any other field.
   silently assumed; after this pass's own changes, the same 8 fail, plus 3
   new regression tests for the off-field screen pass. No other failures.
 - `python load.py`: all eight universities 100% matched, ANU 523/523.
+
+## 28 Sep 2026 — v25: Chao Gao recovered, SSRN backfill DOIs replaced, journal-name truncation rule, 15 non-journal rows excluded
+
+Full detail: `scratch/_anu25/REPORT.md` and `EXPLAINED.md`. Branch
+`jamie-anu-v25`, cut from `main` at `16c9f7b`. Every change below is in the
+pipeline's inputs or code (`data/anu_doi_backfill.csv`,
+`data/publication_exclusions.csv`, `anu_scraper.py`), never a hand edit to
+`final output/`.
+
+**Baseline caveat, found first:** re-running the *unchanged* `main` code
+reproduces 523 rows, but not the same 523 as the committed export (14 rows
+swapped, 105 rows with a different title, year, author or journal value,
+plus citation-metric drift on almost every row). Causes: the shared
+`_harmonise_doi_metadata()` step added to `export.py` on 23 Sep (Monash PR,
+`90bfd1b`) after the ANU export was last committed (`b7ef040`), and live
+ORCID/OpenAlex/Crossref data changing since. This drift is not part of v25
+and is listed separately, row by row, in `scratch/_anu25/row_diff.csv`.
+
+### Task 1 — Chao Gao's missing paper and the SSRN backfill DOIs
+
+**Root cause, confirmed by tracing the row stage by stage**
+(`scratch/_anu25/trace0.jsonl`): the ANU profile row has no DOI of its own;
+`data/anu_doi_backfill.csv` gave it the SSRN preprint DOI
+`10.2139/ssrn.3183505`; `core/clean.py` (the `_PREPRINT_DOI_PREFIXES` check)
+retypes every row with an SSRN DOI to "Preprint"; `export.build_publications`
+keeps only "Journal Article". No other copy of the paper (ORCID, Crossref,
+OpenAlex) reached the ANU data, so the paper vanished. The same mechanism was
+also dropping Kathy Wang's profile copy of the Opioid paper: her row in the
+committed export could not be reproduced by the current code.
+
+**Decided:** fix the input, not the shared rule. Each of the 6 SSRN rows in
+the backfill (there are no others) was checked on Crossref. A published DOI
+replaced the SSRN one only when all four checks passed: normalised title,
+same journal, year within ±1 (online-first or print), at least one author
+surname.
+
+| Row | Published DOI | Result |
+|---|---|---|
+| Chao Gao, CRTs | `10.3905/jfi.2018.28.2.006` (J. Fixed Income, 2018) | replaced |
+| Louise Lu, Opioid | `10.1080/09638180.2023.2272622` (EAR, online 2023, print 2025) | replaced |
+| Kathy Wang, Opioid | same | replaced |
+| Marvin Wee, IFRS non-GAAP | `10.1111/acfi.12204` (Accounting & Finance, 2016) | replaced |
+| Neil Fargher, Ball and Brown (1968) | `10.1016/j.pacfin.2019.01.006` | **refused** |
+| Marvin Wee, Ball and Brown (1968) | same | **refused** |
+
+**Refused, and why:** Crossref's registered title for the Ball and Brown
+paper is literally "The impact of   on generations of research". The words
+"Ball and Brown (1968)" were lost from the publisher's metadata, so the strict
+title check fails. The rows are left as they were. This costs nothing: both
+researchers already export the published DOI through their ORCID copies,
+and the SSRN rows are still retyped and dropped as before.
+
+**Not changed:** the shared SSRN rule in `core/clean.py`. See the team note in
+the report: the rule is right for a genuinely unpublished working paper, but
+it silently discards any page-scraped row whose *only* DOI is an SSRN one.
+
+### Task 2 — Susanna Ho's "Panel:" row (was ABDC A*)
+
+**Decided: excluded** (`data/publication_exclusions.csv`, title-keyed).
+Evidence: the row comes only from OpenAlex (`W1491010431`), whose landing page
+is `aisel.aisnet.org/ecis2009/178`, which the AIS eLibrary files under "ECIS 2009
+Proceedings", a conference. OpenAlex mislabels the source as *Journal of
+the Association for Information Systems*, which is where the A* came from.
+The paper is not on her live ANU profile. The only journal record of this
+panel is a different item (the ICIS 2008 panel report, *Communications of
+the AIS* 24, `10.17705/1cais.02437`), and she is not among its five authors.
+
+### Task 3 — journal names cut short by the ANU parser
+
+**Raw profile text checked for each row.** Three different causes:
+
+- Raymond Liu, 2022: the text says "Journal of Money, Credit & Banking". The
+  plain-text path splits on commas and keeps only the first piece.
+- Raymond Liu, 2019: the text says "Annals of Operations Research,
+  forthcoming". The page's own HTML italicises only "Annals of
+  Operations", and the parser trusts the italic run as the whole journal.
+- Alex Wang, 2019: the italic run itself is "Accounting and Finance, A Special
+  Issue for Qualitative Accounting Research".
+- Susanna Ho, Twitter paper: the profile literally says "Journal of the
+  Association **of** Information Systems" and marks it "forthcoming".
+
+**Decided — two general rules in `anu_scraper.py`, no row hard-coded:**
+1. `_complete_journal_name()`: if the parsed journal is not an exact
+   normalised ABDC title, occurs exactly once in the citation, and the next
+   ≤6 words of the citation (up to the next full stop, semicolon or bracket)
+   extend it into an exact ABDC title, take the longest such extension. A
+   name that is already an ABDC title is never touched. No exact hit means
+   no change.
+2. A new `_JOURNAL_TAIL_PATTERNS` entry drops a ", A Special Issue …" /
+   " – Special Issue on …" tail. It needs a separating comma or dash, so a name
+   that merely starts with those words cannot be emptied.
+
+**Checked against every ANU profile entry** (468 entries, saved pages,
+`scratch/_anu25/parser_rule_changes.csv`): 6 entries change. The 3 target
+rows, plus 3 more, each confirmed against its raw text: Janet Lee
+"Accounting, Auditing & Accountability" → "…Journal"; Tracy (Kun) Wang
+"Journal of International Financial Markets" → "…, Institutions, and Money";
+and one already-unparsed Tracy Wang entry ("European" → "European Accounting
+Review"), which never reaches the export. A first version of the rule also
+"fixed" Greg Shailer's "Australian" to "Australian Accounting Review", but
+only by jumping to a *second* occurrence of the word, after a title/journal
+mis-split. The rule was narrowed (exactly-once) until that case was
+excluded, and a test pins it.
+
+**Verification (Crossref: title + journal + author):**
+- Liu 2022: `10.1111/jmcb.12943`, all checks pass → added to the backfill.
+- Liu 2019: `10.1007/s10479-019-03384-y` (online 2019), all checks pass → added
+  to the backfill. That also merged away a pre-existing duplicate: a
+  truncated-title copy of the same paper under the same DOI.
+- Alex Wang: `10.1111/acfi.12435`. Same journal, all three co-authors
+  (Tekathen, Bui, Wang), online 2018 / print 2019. The Crossref title differs
+  only by "Strategising" (s for z) and the missing word "Longitudinal". The journal is
+  treated as verified, so the rule's "Accounting and Finance" (A) stands. The
+  **DOI is not attached**, because the strict title check fails.
+- Susanna Ho, Twitter: **not verified.** The closest Crossref record is "Harnessing
+  Aspect-Based Sentiment Analysis: How Are Tweets Associated with Forecast
+  Accuracy?" (JAIS 2019, `10.17705/1jais.00564`, the same three authors). The
+  title is materially different, so the row keeps the profile's own journal
+  text and stays **unranked**. It is a client question, not a guess.
+
+Regression tests: `tests/test_anu_journal_names.py` (9 tests).
+
+### Task 4 — unranked ANU rows that are not journal articles
+
+**Decided: 14 rows excluded**, each with a reason and evidence URL in
+`data/publication_exclusions.csv` (inserted after line 99):
+- Antje Berndt: a book chapter (Crossref: ISBN-registered chapter in Wiley's *Lessons
+  from the Financial Crisis*, ed. Kolb).
+- Neil Fargher: a CPA Australia report (professional body; no journal, volume, issue
+  or pages).
+- Tracy (Kun) Wang ×10:
+  - 1 ANU College press release;
+  - 6 newspaper articles (*China Economic Times* ×2, *Securities Times* ×4 — cited by issue date and page);
+  - 1 more newspaper article (*China Economic Herald*);
+  - 1 book chapter (*Real Estate Tax Policy in China*, Chapter Two);
+  - 1 DOI-less page copy of a Springer book chapter that line 99 already excluded by DOI (the page copy had slipped past the DOI key; found in the live re-scrape, same class).
+- Marvin Wee: an ICAS research report.
+- Dean Katselas: a CIFR grant (E213) research report. His separate 2019 *Abacus*
+  article is kept.
+- Sonali Walpola: an IBFD book chapter (Crossref `10.59403/2a7ytw1006`).
+
+**Refused (not unambiguous):**
+- Rebecca Tan, "Accounting and Finance in Transition" 4: 27-49. The only outside
+  evidence is a used-book listing (Greenwich University Press, ed. Sevic, "Volume I"),
+  and nothing confirms whether volume 4 (2008) is a book or an annual. Kept, and
+  asked of the client.
+- Sarah Adams, *Accountants Digest* (2011) and Janet Lee, *Public Fund Digest,
+  Research Supplement* (2001) are practitioner periodicals. Kept, asked of the client.
+
+**Genuine but non-ABDC journals, DOI search:**
+- Lily Chen: `10.1017/s1351324924000019` (NLE, 2024, all 8 authors match) **added**.
+  Her profile title differs from Crossref's only by two misspellings
+  ("Anistropic", "empricial"), with the same 17 words. This is the one deliberate,
+  documented relaxation of the "normalised title" check. The brief expected a
+  Crossref title-repair path to correct the typos, **but no such path exists in the
+  pipeline**: the row now has the DOI and still shows the profile's typo title.
+- Rebecca Tan, IBER: `10.19030/iber.v4i12.3644`. Title, journal and authors match,
+  and the DOI's own `v4i12` matches the profile's "4(12)". But Crossref dates it 2011
+  against 2005, so the year check fails: **not added**.
+- Mark Wilson (JAMAR 2004), Rebecca Tan (APCEA 2008): no Crossref record.
+
+### Task 5 — stale unparsed file
+
+`output/anu_unparsed_publications.csv` (committed 23 Aug, 23 rows) is deleted.
+Correction to the brief: `run.py` never writes it, but the standalone
+entry point `python anu_scraper.py` still does (`main()`). That path was left
+alone. The current run has **42** low-confidence profile entries
+(`scratch/_anu25/unparsed_entries.csv`). **6** look like genuine journal
+articles. 2 of those already reach the export via ORCID. The real collection
+gap is **4**:
+- Lily Chen, IEEE TKDE 2022;
+- Neil Fargher, *Accounting and Finance* 53(1);
+- Kathy Wang ×2, 2025, *Accounting & Finance* and *JBFA*.
+
+These were not added in this pass.
+
+### Task 6 — DOI rows with blank author data
+
+No code change. Three of the four rows (Rebecca Tan `10.1108/eb060769`, and
+Mark Wilson and Lijuan Zhang `10.1111/1911-3846.13067`) are filled by the
+existing OpenAlex enrichment on today's run. No enrichment code changed
+between `b7ef040` and `16c9f7b`, so the blanks came from OpenAlex not
+returning authors for those DOIs on 22 Sep. Greg Shailer's
+`10.1108/18325911111182330` is a book review: neither Crossref nor OpenAlex
+registers **any** author for that DOI. It is left blank rather than
+guessed, because the page citation's names are the reviewed *book's* authors.
+
+### Verification
+
+- ANU publications: 523 (committed) → **508**. ABDC-ranked 495/523 (94.6%) →
+  **496/508 (97.6%)**. Staff 40 → 40.
+- The brief expected ~499–500 ranked. The difference, measured:
+  - the Twitter paper is not verified (so not ranked);
+  - Sarah Adams's *Third Sector Review* row (C) is now named after a UWA repository by live OpenAlex data, which is drift reproduced by unchanged code;
+  - the Panel (A*) is removed;
+  - the Liu duplicate (A) is merged.
+- CSV and JSON agree (508 rows, same (name, title) set). 0 exact duplicates. 0 SSRN
+  DOIs in the export. The off-field rule still holds (0 rows) and Liu's *European
+  Journal of Health Economics* row is present. Greg Shailer's all-caps 1994 title is
+  unchanged. Both "Busy directors" DOI pairs are present for Marvin Wee and Sorin
+  Daniliuc; Sorin's third, DOI-less copy was already in the committed baseline.
+- `python -m pytest -q tests`: 430 passed, 6 failed. The 6 are the known cp1252
+  failures in `test_merge_publications.py`, which pass with
+  `PYTHONIOENCODING=utf-8`. A bare `python -m pytest -q` stops at collection
+  because it picks up the gitignored `scratch/pr44-resolved/export.py`, a local
+  leftover unrelated to this pass.
+- `python load.py`: all eight universities 100% matched, ANU 508/508.
