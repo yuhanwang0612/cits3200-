@@ -33,6 +33,7 @@ from functools import wraps
 import pandas as pd
 from flask import (Blueprint, abort, jsonify, redirect, request, send_file,
                    send_from_directory, session)
+from sqlalchemy.orm import joinedload
 
 from models import Publication, Researcher, Journal
 from refresh_manager import RefreshManager
@@ -55,6 +56,19 @@ ENTITIES = {
         "int": {"researcher_id", "journal_id", "year", "author_count",
                 "cited_by_count"},
         "float": {"citation_percentile", "fwci"},
+        # Context looked up through the foreign keys, so a publication row can
+        # be read, and joined to other spreadsheets, without a VLOOKUP back to
+        # researchers.xlsx / journals.xlsx: a bare researcher_id of 1 means
+        # nothing outside this database. Export-only. upsert_from_dataframe
+        # reads `editable` and nothing else, so these are ignored on upload
+        # and can never overwrite the researcher or journal they came from.
+        # (column, relationship, attribute, placed after)
+        "readonly": [
+            ("name",         "researcher", "name",         "researcher_id"),
+            ("university",   "researcher", "university",   "name"),
+            ("orcid",        "researcher", "orcid",        "university"),
+            ("journal_name", "journal",    "journal_name", "journal_id"),
+        ],
         "download": "publications.xlsx",
     },
     "journals": {
@@ -148,12 +162,57 @@ def login_required(view):
 # export
 # --------------------------------------------------------------------------
 
+def _export_columns(cfg):
+    """Key, editable columns, then each read-only column beside its anchor."""
+    cols = [cfg["key"]] + cfg["editable"]
+    for col, _rel, _attr, after in cfg.get("readonly", []):
+        cols.insert(cols.index(after) + 1, col)
+    return cols
+
+
 def _export_df(session_, entity):
     cfg = ENTITIES[entity]
-    cols = [cfg["key"]] + cfg["editable"]
-    q = session_.query(cfg["model"]).order_by(getattr(cfg["model"], cfg["key"]))
-    rows = [{c: getattr(obj, c) for c in cols} for obj in q]
+    model = cfg["model"]
+    readonly = {col: (rel, attr) for col, rel, attr, _ in cfg.get("readonly", [])}
+    cols = _export_columns(cfg)
+
+    q = session_.query(model)
+    # One joined query rather than two lazy loads per row: publications run
+    # to five figures.
+    for rel in {rel for rel, _ in readonly.values()}:
+        q = q.options(joinedload(getattr(model, rel)))
+    q = q.order_by(getattr(model, cfg["key"]))
+
+    def value(obj, col):
+        if col in readonly:
+            rel, attr = readonly[col]
+            target = getattr(obj, rel)
+            return getattr(target, attr) if target is not None else None
+        return getattr(obj, col)
+
+    rows = [{c: value(obj, c) for c in cols} for obj in q]
     return pd.DataFrame(rows, columns=cols)
+
+
+def _mark_readonly(ws, columns, cfg):
+    """Grey each read-only header and say why, so nobody edits a looked-up
+    name in this sheet expecting the change to stick."""
+    readonly = {col for col, *_ in cfg.get("readonly", [])}
+    if not readonly:
+        return
+    # Imported here, not at module level: openpyxl is only needed inside the
+    # ExcelWriter block that calls this, and the app must still start without it.
+    from openpyxl.comments import Comment
+    from openpyxl.styles import PatternFill
+    grey = PatternFill("solid", fgColor="D9D9D9")
+    note = ("Read-only: looked up from the linked researcher or journal. "
+            "Edits in this column are ignored on upload; change it in "
+            "researchers.xlsx or journals.xlsx instead.")
+    for idx, col in enumerate(columns, start=1):
+        if col in readonly:
+            cell = ws.cell(row=1, column=idx)
+            cell.fill = grey
+            cell.comment = Comment(note, "admin export")
 
 
 # --------------------------------------------------------------------------
@@ -334,6 +393,7 @@ def make_admin_bp(Session, refresh_manager=None):
         buf = io.BytesIO()
         with pd.ExcelWriter(buf, engine="openpyxl") as w:
             df.to_excel(w, index=False, sheet_name=entity)
+            _mark_readonly(w.sheets[entity], df.columns, ENTITIES[entity])
         buf.seek(0)
         return send_file(
             buf, as_attachment=True, download_name=ENTITIES[entity]["download"],
