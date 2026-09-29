@@ -928,6 +928,28 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
         if verbose and _applied:
             print(f"  applied {_applied} staff title override(s) from staff_overrides.csv")
 
+    # Normalise job titles: strip discipline qualifiers so titles are consistent
+    # across universities (e.g. "Professor of Finance" -> "Professor").
+    def _normalize_job_title(title):
+        if not title:
+            return title
+        t = title.strip()
+        for prefix in ["Senior Lecturer", "Associate Professor", "Professor", "Lecturer"]:
+            if t.startswith(prefix) and t != prefix:
+                return prefix
+        return t
+
+    _norm_count = 0
+    for _s in staff:
+        if _s.get("job_title"):
+            _orig = _s["job_title"]
+            _s["job_title"] = _normalize_job_title(_s["job_title"])
+            if _s["job_title"] != _orig:
+                _norm_count += 1
+    if verbose and _norm_count:
+        print(f"  normalised {_norm_count} job title(s)")
+
+
     if drop_staff_without_pubs:
         have = {p["name"] for p in publications}
         before = len(staff)
