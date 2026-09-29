@@ -193,7 +193,16 @@ def enrich(pubs, verbose=True):
 
         if hit.get("authors") and not x.get("authors"):        
             x["authors"] = hit["authors"]
-        if hit.get("n_authors") and not x.get("n_authors"):    
+        # 1 is ANU's placeholder when a profile page lists no co-authors
+        # (anu_scraper.py:1433 sets it alongside author_count_confidence
+        # "low - no coauthor text found"), not a real count — and it is
+        # truthy, so a plain "not set" guard leaves it in place while the
+        # line above replaces the empty author list with the real one. That
+        # is how 26 ANU rows ended up claiming one author against three or
+        # four names. A count of 1 beside a multi-name list is never right,
+        # so treat it as unset. A genuine single-author paper is unaffected:
+        # OpenAlex returns 1 for it too, so the value does not change.
+        if hit.get("n_authors") and (x.get("n_authors") or 0) <= 1:
             x["n_authors"] = hit["n_authors"]
         if hit.get("publication_year") and not x.get("year"):
             x["year"] = str(hit["publication_year"])
