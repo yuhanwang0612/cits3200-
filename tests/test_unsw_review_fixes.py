@@ -156,3 +156,44 @@ def test_export_runs_end_to_end(tmp_path):
     tables = export(records, [pub(doi="10.1/a")], out_dir=tmp_path / "unsw",
                     verbose=False)
     assert len(tables["publications"]) == 1
+
+
+# ------------------------------------------------ second review pass
+
+def test_amy_kwans_knee_surgery_paper_is_dropped():
+    """Her other nine papers are JF, JFE, Management Science and JFQA. This
+    one is a physiotherapy Cochrane review by a different Amy Kwan. The
+    discipline screen could not catch it: it needs at least 5 retrieved rows
+    to judge a researcher and she had 1."""
+    wrong = pub(name="Amy Kwan", year="2012",
+                title="Cryotherapy following total knee replacement",
+                journal="Cochrane Database of Systematic Reviews",
+                doi="10.1002/14651858.cd007911.pub2", source="OpenAlex")
+    assert clean_pubs([wrong]) == []
+
+
+def test_her_real_papers_are_untouched():
+    real = pub(name="Amy Kwan", year="2023",
+               title="High-Frequency Trading Strategies",
+               journal="Management Science", doi="10.1287/mnsc.2022.4539")
+    assert len(clean_pubs([real])) == 1
+
+
+def test_li_yangs_paper_stays_out_when_it_comes_back_with_a_doi():
+    """It was excluded by title while it had no DOI. A later run found the
+    same paper with one, so the title key stopped matching."""
+    wrong = pub(name="Li Yang", year="2000",
+                title="Mechanisms underlying the formation and enlargement of "
+                      "noncommunicating syringomyelia: experimental studies.",
+                journal="Neurosurg Focus", doi="10.3171/foc.2000.8.3.2")
+    assert clean_pubs([wrong]) == []
+
+
+def test_andrew_jacksons_clinical_papers_are_dropped():
+    """Same namesake as the tungsten chemistry papers: a BMJ case report and
+    a PET imaging paper, both listed on UNSW's own profile page."""
+    for doi, journal in [("10.1136/bcr-2018-227621", "BMJ CASE REPORTS"),
+                         ("10.1016/j.nucmedbio.2011.10.004",
+                          "NUCLEAR MEDICINE AND BIOLOGY")]:
+        assert clean_pubs([pub(name="Andrew Jackson", doi=doi,
+                               journal=journal, title="A clinical paper")]) == []
