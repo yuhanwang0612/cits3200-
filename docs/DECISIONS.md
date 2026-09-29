@@ -1934,3 +1934,169 @@ guessed, because the page citation's names are the reviewed *book's* authors.
   because it picks up the gitignored `scratch/pr44-resolved/export.py`, a local
   leftover unrelated to this pass.
 - `python load.py`: all eight universities 100% matched, ANU 508/508.
+
+## 28 Sep 2026 (v26) — author counts from the DOI record, three duplicate profile copies, durable Third Sector Review, title-text guards
+
+Full detail: `scratch/_anu26/REPORT.md`. Branch `jamie-anu-v25`, after the v25
+checkpoint commit `7f4789b`. ANU 508 → **505** rows. ABDC-ranked
+496 → **495 (98.0%)**. Every change is in the pipeline (`base_scrapers/anu.py`,
+`anu_scraper.py`, ANU-gated `export.py`, `data/publication_exclusions.csv`).
+Nothing in `final output/` was edited by hand.
+
+### Task A — author_count / authors on ANU profile rows
+
+**Root cause:**
+- `base_scrapers/anu.py` passed the profile citation's parsed count and
+  co-author text straight into the row.
+- `enrichment/openalex.py` fills `n_authors`/`authors` only when they are
+  blank, so the DOI-registered author list could never replace the profile's
+  value.
+- The profile value was often wrong:
+  - it left out the profile owner ("Kathy Wang, Leye Li and Mark Wilson" on
+    Louise Lu's page);
+  - it defaulted to 1 when there was no co-author text (Janet Lee's rows showed
+    1 next to a four-name OpenAlex list);
+  - it kept the page's list number ("19. Liu, W.-M. , …");
+  - it counted hyphenated initials ("W.-M.") and footnote asterisks ("Wu,
+    Y.**") as extra authors.
+
+**Decided:**
+- A profile row **with a DOI** leaves `n_authors`/`authors` blank for the
+  existing OpenAlex enrichment to fill. The profile's values ride along in
+  `_anu_profile_*` keys, and `export._anu_author_fallback` uses them only if
+  enrichment returned nothing. They are only set when real co-author text
+  exists, and they always count the owner. The parser's default guess of 1 is
+  never used as a fallback: blank is preferred.
+- A row **without a DOI** keeps the profile values, with the list number
+  stripped, the owner counted, and the initials and asterisk counting fixed in
+  `anu_scraper.count_named_authors`. The count is therefore never below the
+  number of names in `authors`.
+
+| measure | before | after |
+|---|---|---|
+| rows whose `authors` omits the profile owner | 68 | 13 (all DOI-less; their count now includes the owner, the author text is left as the profile wrote it) |
+| DOIs whose rows disagree on author_count | 27 | 0 |
+| blank author_count | 1 | 1 (Greg Shailer's book review; its DOI registers no author) |
+| author strings with list numbering | 2 | 0 |
+
+101 rows changed author_count: 87 from the DOI record, 14 no-DOI rows from
+the cleaned profile text. The list is in `scratch/_anu26/task_a_author_count_changes.csv`.
+
+### Task B — duplicate profile copies of published rows
+
+**Excluded**, keyed by title in `data/publication_exclusions.csv` (inside the
+ANU block):
+- **Sorin Daniliuc**, "Busy Directors and Firm Performance: a Replication and
+  Extension of Hauser" (2020, profile, no DOI). It duplicates his row
+  `10.1111/acfi.12631`: Crossref has the same three authors (Daniliuc, Li,
+  Wee), the same journal, online 2020, and the same title plus "(2018)".
+- **Susanna Ho**, "Harnessing the Power of Twitter: How are Tweets Associated
+  with Forecast Accuracy?" (profile, forthcoming). This is the pre-publication
+  title of her row `10.17705/1jais.00564`, "Harnessing Aspect-Based Sentiment
+  Analysis: How Are Tweets Associated with Forecast Accuracy?" (JAIS 2019).
+  It has the same three authors (Ho, Choi, Yang) and the same subtitle. This
+  answers v25's client question 3.
+- **Neil Fargher**, "The effect of prior commitment and type of accountability
+  on auditors' evaluation of subsequent events" (profile, 2019, no DOI).
+  - The scan's similarity/subtitle criteria missed it, because the published
+    title reorders the words. It was found while tracing Task E.
+  - Crossref has exactly one Fargher/Phang paper on this topic,
+    `10.2308/ajpt-52334` (AJPT, online 2018 / print 2019, "Auditors'
+    Evaluation of Subsequent Events: The Effects of Prior Commitment and Type
+    of Accountability"). That paper is already in the export.
+
+**Scan** (same researcher, DOI-less profile row versus DOI row, same journal,
+title similarity ≥ 0.85 or identical subtitle): 1 pair before this pass
+(Sorin), **0 after**.
+
+### Task C — Sarah Adams, *Third Sector Review* (durable)
+
+**Cause:** OpenAlex's primary location for `10.3316/informit.446762770484313`
+is the UWA repository. The v22 fix lived only in that run's data.
+Informit DOIs don't resolve at Crossref.
+
+**Decided:** a general ANU rule, `export._anu_repository_journal_repair`. For
+an ANU row whose journal is repository-like (`_repository_like_journal`) and
+which has a DOI, it reads OpenAlex's own `raw_source_name` citation for that
+DOI, and takes the journal only if:
+- the citation is for this title;
+- the citation names exactly one exact ABDC title.
+
+The ABDC rating and ISSNs then follow from that exact title, as in
+`enrichment/abdc.py`'s title fallback. Result: *Third Sector Review*, C. No
+other ANU row has a repository-like journal name (0 after).
+
+### Task D — Tracy (Kun) Wang, *Journal of Law and Economics*: DOI not restored
+
+**Why the DOI went:**
+- The 22 Sep row came from OpenAlex. OpenAlex has since re-issued the paper as
+  work `W7213271925` (DOI `10.1086/742862`, year 2026).
+- This machine's HTTP cache holds Tracy Wang's OpenAlex author query from
+  **15 Sep**: 60 works, without the new one. The live query includes it.
+- So only the profile copy (no DOI, "In press", 2025) is exported.
+
+**Refused:** a backfill row. The profile's pre-publication title ("…: The
+impact on firm value and social externalities") fails the strict title check
+against Crossref ("…: Evidence on Firm Value and Externalities"). Journal,
+authors and year ±1 all pass.
+
+**Year:** Crossref registers only the issue date, **1 Aug 2026** (vol 69(3)),
+with no online date. OpenAlex says 2026. The pipeline exports **2025**, from
+the profile. A `--refresh` run should restore the DOI, and with it the
+DOI-registered year. That is a team decision.
+
+### Task E — title text on ANU rows, after `_harmonise_doi_metadata`
+
+**Decided:** `export._anu_repair_title_text` runs after the shared step, on
+ANU rows only. It does two things:
+- It undoes cp1252-decoded UTF-8 in the title and journal name, only when the
+  repair round-trips exactly.
+- It replaces an entirely lower- or upper-case title with a properly cased
+  copy of the **same** normalised title. The copy comes from the pipeline's
+  other copies of that DOI, or else from the Crossref record for the DOI, used
+  only if it passes the v25 strict check (title, journal, year ±1, owner
+  surname). If neither exists, the title is left alone.
+
+**Result:**
+- Greg Shailer ×3 and Tracy (Kun) Wang ×1 were repaired: "Government ownership
+  and the cost of debt for Chinese listed corporations" (from the other copy
+  of the DOI), and "Discretionary Pricing in a Monopolistic Audit Market" and
+  "The relevance of owner-manager signals…" (from verified Crossref records).
+- Greg Shailer's 1994 "ASSET SPECIFICITY…" title is unchanged, because
+  Crossref's own title is all caps.
+
+**Not repaired:**
+- Susanna Ho's "THE EFFECTS OF WEB PERSONALIZATION…" has no DOI and no cased
+  copy anywhere in the pipeline.
+- The row is itself doubtful. OpenAlex `W197487930` lands on
+  `aisel.aisnet.org/…context=pacis2008`, a **PACIS 2008 conference paper**
+  whose source OpenAlex mislabels as JAIS (A\*). That is the same pattern as
+  v25's "Panel:" row. It is reported for a decision, not excluded, because it
+  is outside this brief.
+
+**Correction to the brief:** Neil Fargher's mojibake was in the **ANU profile
+page itself**: the saved page contains the bytes of "â€™". It did not come
+from `_harmonise_doi_metadata`. The row is now excluded as a duplicate (Task
+B). The guard stays in place for the next time.
+
+**Team note:** the root causes are shared:
+- `_harmonise_doi_metadata` breaks length ties by first-seen, which can pick
+  an all-lowercase ORCID copy;
+- upstream ORCID/OpenAlex text is taken as-is.
+
+The ANU code is a guard, not the fix.
+
+### Verification
+
+- `python -m pytest -q tests`: 447 passed, 6 failed. The 6 are only the known
+  cp1252 failures in `test_merge_publications.py`. 17 new tests are in
+  `tests/test_anu_export_guards.py`; each export guard is also run on a non-ANU
+  row and asserted unchanged. `tests/test_anu_adapter.py` was updated for the
+  new DOI-row contract.
+- `python load.py`: ANU 505/505, all universities 100%.
+- CSV/JSON agree. 0 duplicates. 0 mojibake. 0 all-lowercase titles. 0
+  repository-like journals. 0 SSRN DOIs. All v25 results hold.
+- **One check fails, as reported:** the all-caps titles are Greg Shailer's 1994
+  title (allowed) **and** Susanna Ho's PACIS 2008 row (see Task E).
+- The row diff against the v25 export has 208 changes (A 200, B 3, C 1, E 4).
+  There is no live drift and nothing unexplained.

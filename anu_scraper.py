@@ -906,7 +906,10 @@ TEXTBOOK_EDITION_RE = re.compile(r"\b\d+(?:st|nd|rd|th)\s+Edition\b", re.IGNOREC
 # it must NOT be counted as its own author. Deliberately allows a missing
 # trailing period (some profiles write "Tam, K" with no period at all) and
 # an optional space between multiple initials ("S. F." / "A.M.").
-INITIALS_ONLY_RE = re.compile(r"^[A-Z]\.?(?:\s?[A-Z]\.?)*$")
+# Hyphenated initials ("W.-M.", "T.-H.") are initials too: before v26 they
+# counted as extra authors (Raymond Liu's "Liu, W.-M. , Yu, J. & Zhang, B"
+# came out as 4 authors, not 3).
+INITIALS_ONLY_RE = re.compile(r"^[A-Z]\.?(?:[\s-]?[A-Z]\.?)*$")
 
 
 def count_named_authors(coauthors: str | None) -> int:
@@ -931,7 +934,11 @@ def count_named_authors(coauthors: str | None) -> int:
     """
     if not coauthors or not coauthors.strip():
         return 0
-    text = re.sub(r"\s*&\s*", " and ", coauthors.strip())
+    # Footnote markers after a name ("Wu, Y.**" = a PhD student on Tracy
+    # (Kun) Wang's page) are not part of the name: without this, "Y.**"
+    # failed the initials check and counted as an extra author (v26).
+    text = re.sub(r"\*+", "", coauthors.strip())
+    text = re.sub(r"\s*&\s*", " and ", text)
     text = re.sub(r"\bet\s+al\.?\b", "", text, flags=re.IGNORECASE)
     count = 0
     for group in re.split(r"\s+and\s+", text, flags=re.IGNORECASE):

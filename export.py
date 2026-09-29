@@ -704,6 +704,213 @@ def _is_anu_off_field_journal(x, anu_names):
     return any(kw in journal for kw in ANU_OFF_FIELD_JOURNAL_KEYWORDS)
 
 
+# --- ANU-only (v26, docs/DECISIONS.md 28 Sep): author fallback, repository
+# journal names, and title text guards ---------------------------------------
+#
+# Every function below returns immediately for a row whose `name` is not an
+# ANU staff member (`anu_names`, built from `records` as above), so no other
+# university's rows can be changed — tests/test_anu_export_guards.py checks
+# that on a non-ANU row for each one.
+
+
+def _anu_author_fallback(x, anu_names):
+    """base_scrapers/anu.py leaves n_authors/authors blank on an ANU profile
+    row that has a DOI, so OpenAlex enrichment fills them from the DOI
+    record. Only if enrichment found nothing is the profile's own count used
+    (already owner-inclusive, and only set when real co-author text exists).
+    Returns True when the fallback was applied."""
+    if x.get("name") not in anu_names:
+        return False
+    if x.get("n_authors") or not x.get("_anu_profile_n_authors"):
+        return False
+    x["n_authors"] = x["_anu_profile_n_authors"]
+    if not x.get("authors"):
+        x["authors"] = x.get("_anu_profile_authors")
+    return True
+
+
+def _anu_citation_journal(citation, title):
+    """The one exact-ABDC journal title named in `citation`, a full citation
+    string, provided the citation is for `title`. None if there is no such
+    journal, or more than one."""
+    from enrichment.abdc import known_titles, normalise_title
+
+    if not citation or not title:
+        return None
+    if _normalise_title(title) not in _normalise_title(citation):
+        return None
+    titles = known_titles()
+    hits = {seg.strip(" .'\"‘’“”") for seg in re.split(r"[,.]\s", citation)}
+    hits = {seg for seg in hits if seg and normalise_title(seg) in titles}
+    return hits.pop() if len(hits) == 1 else None
+
+
+def _anu_repository_journal_repair(x, anu_names, fetch=None):
+    """An ANU row whose journal is a repository's name (OpenAlex sometimes
+    reports a university repository as the primary location) gets the
+    journal named in OpenAlex's own `raw_source_name` citation for that DOI —
+    only when that name is an exact ABDC title and the citation is for this
+    paper. The ABDC rating and ISSNs follow from that exact title, the same
+    way enrichment/abdc.py's title fallback sets them. Returns the journal
+    applied, or None."""
+    if x.get("name") not in anu_names:
+        return None
+    if not _repository_like_journal(x.get("journal")) or not x.get("doi"):
+        return None
+    from enrichment.abdc import normalise_title, title_issns, title_rating
+
+    if fetch is None:
+        from core.config import OA_HEADERS, OPENALEX_BASE
+        from core.http import cached_get
+
+        def fetch(doi):
+            return cached_get(f"{OPENALEX_BASE}/doi:{doi}", headers=OA_HEADERS,
+                              sleep=0.5, allow_404=True)
+    try:
+        work = fetch(x["doi"])
+    except Exception as e:
+        print(f"    ANU repository-journal repair: OpenAlex lookup failed for "
+              f"{x['doi']}: {type(e).__name__} {e}")
+        return None
+    citations = {loc.get("raw_source_name") for loc in
+                 [(work or {}).get("primary_location") or {}] + ((work or {}).get("locations") or [])}
+    found = {_anu_citation_journal(c, x.get("title")) for c in citations if c}
+    found.discard(None)
+    if len(found) != 1:
+        return None
+    journal = found.pop()
+    x["journal"] = journal
+    x["abdc"] = title_rating(normalise_title(journal))
+    x["abdc_title"] = journal
+    x["abdc_match"] = "title (ANU repository-journal repair)"
+    if not x.get("issns"):
+        x["issns"] = list(title_issns(normalise_title(journal)) or [])
+    return journal
+
+
+_MOJIBAKE_MARKERS = ("â€", "Ã", "Â")
+
+
+def _anu_fix_mojibake(text):
+    """Undo UTF-8 text that was decoded as cp1252 ("auditorsâ€™" ->
+    "auditors’"), only when the repair is exact: the repaired string must
+    encode back to the original bytes and carry no marker itself."""
+    if not text or not any(m in text for m in _MOJIBAKE_MARKERS):
+        return text
+    try:
+        fixed = text.encode("cp1252").decode("utf-8")
+        if fixed.encode("utf-8").decode("cp1252") != text:
+            return text
+    except UnicodeError:
+        return text
+    if any(m in fixed for m in _MOJIBAKE_MARKERS):
+        return text
+    return fixed
+
+
+def _single_case(title):
+    letters = [c for c in title or "" if c.isalpha()]
+    return len(letters) >= 3 and (all(c.islower() for c in letters)
+                                  or all(c.isupper() for c in letters))
+
+
+def _anu_cased_title(title, candidates):
+    """Among `candidates` (other titles for the same DOI), the most common
+    one that is the SAME title after normalisation, not itself single-case,
+    and free of mojibake. Ties keep the first seen. None if there is none."""
+    wanted = _normalise_title(title)
+    ok = [c for c in candidates
+          if c and _normalise_title(c) == wanted and not _single_case(c)
+          and not any(m in c for m in _MOJIBAKE_MARKERS)]
+    if not ok:
+        return None
+    counts = Counter(ok)
+    return max(ok, key=lambda c: counts[c])
+
+
+def _anu_crossref_title(x, fetch=None):
+    """Crossref's registered title for the row's DOI, returned only if the
+    record passes the v25 strict check against the row: same normalised
+    title, same journal, year within one, and the ANU owner's surname among
+    the authors."""
+    from enrichment.abdc import normalise_title
+
+    if fetch is None:
+        from core.config import CR_HEADERS, CROSSREF_BASE
+        from core.http import cached_get
+
+        def fetch(doi):
+            data = cached_get(f"{CROSSREF_BASE}/{doi}", headers=CR_HEADERS,
+                              sleep=0.5, allow_404=True)
+            return (data or {}).get("message")
+    try:
+        msg = fetch(x["doi"]) or {}
+    except Exception as e:
+        print(f"    ANU title-case repair: Crossref lookup failed for "
+              f"{x['doi']}: {type(e).__name__} {e}")
+        return None
+    cr_title = re.sub(r"\s+", " ", ((msg.get("title") or [""])[0] or "")).strip()
+    if not cr_title or _normalise_title(cr_title) != _normalise_title(x.get("title")):
+        return None
+    import html as _html
+    journals = {normalise_title(_html.unescape(j)) for j in msg.get("container-title") or []}
+    if normalise_title(x.get("journal_name") or x.get("journal")) not in journals:
+        return None
+    years = [(msg.get(k) or {}).get("date-parts", [[None]])[0][0]
+             for k in ("published-online", "published-print", "issued")]
+    try:
+        row_year = int(x.get("year"))
+    except (TypeError, ValueError):
+        return None
+    if not any(y and abs(int(y) - row_year) <= 1 for y in years):
+        return None
+    surname = (x.get("name") or "").split()[-1:]
+    families = {(a.get("family") or "").lower() for a in msg.get("author") or []}
+    if not surname or surname[0].lower() not in families:
+        return None
+    return cr_title
+
+
+def _anu_repair_title_text(rows, pubs, anu_names, crossref_fetch=None):
+    """Runs AFTER _harmonise_doi_metadata, on ANU rows only. That shared step
+    picks one title per DOI across co-author copies, and for some ANU papers
+    the one it picks is mis-encoded or entirely lower/upper case. This is a
+    guard on the ANU side, not a fix to that step:
+      1. mojibake in title/journal_name is undone when the repair is exact;
+      2. an entirely lower- or upper-case title is replaced by a properly
+         cased copy of the SAME title — from the pipeline's own other copies
+         of that DOI, else from a strictly-verified Crossref record. If
+         neither exists the title is left alone (Greg Shailer's 1994
+         all-caps title is Crossref's own registered form, so it stays).
+    Returns a list of (name, field, before, after) changes."""
+    by_doi = {}
+    for p in pubs:
+        doi = (p.get("doi") or "").strip().lower()
+        if doi and p.get("title"):
+            by_doi.setdefault(doi, []).append(p["title"])
+    changes = []
+    for row in rows:
+        if row.get("name") not in anu_names:
+            continue
+        for field in ("title", "journal_name"):
+            fixed = _anu_fix_mojibake(row.get(field))
+            if fixed != row.get(field):
+                changes.append((row["name"], field, row[field], fixed))
+                row[field] = fixed
+        title = row.get("title")
+        if not _single_case(title) or not row.get("doi"):
+            continue
+        cased = _anu_cased_title(title, [_anu_fix_mojibake(t) for t in
+                                         by_doi.get(row["doi"].strip().lower(), [])])
+        if cased is None:
+            cr = _anu_crossref_title(row, crossref_fetch)
+            cased = cr if cr and not _single_case(cr) else None
+        if cased and cased != title:
+            changes.append((row["name"], "title", title, cased))
+            row["title"] = cased
+    return changes
+
+
 def build_publications(pubs, records=None, keep_type="Journal Article",
                        verbose=True):
     """Records sort DOI-first so the better-catalogued copy survives dedup.
@@ -721,6 +928,8 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     excluded_correction_notices = 0
     excluded_off_field_journals = 0
     anu_title_repairs = 0
+    anu_repository_repairs = []
+    anu_author_fallbacks = 0
     missing_journal = 0
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x.get("type") != keep_type or not x.get("title"):
@@ -741,6 +950,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             if repaired != x["title"]:
                 anu_title_repairs += 1
                 x["title"] = repaired
+        repaired_journal = _anu_repository_journal_repair(x, anu_names)
+        if repaired_journal:
+            anu_repository_repairs.append((x["name"], x["title"], repaired_journal))
         journal_name = x.get("abdc_title") or x.get("journal")
         # A row cannot be delivered as a verified journal article when no
         # journal can be named. Keep such records upstream for review, but do
@@ -774,6 +986,8 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             if not doi or doi in kept_dois_by_key[k]:
                 continue
             kept_dois_by_key[k].add(doi)
+        if _anu_author_fallback(x, anu_names):
+            anu_author_fallbacks += 1
         out.append({
             "name": x["name"],
             "orcid": orcid_by_name.get(x["name"]),
@@ -801,6 +1015,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     before_near_dup = len(out)
     out = merge_near_duplicates(out)
     out = _harmonise_doi_metadata(out)
+    anu_text_changes = _anu_repair_title_text(out, pubs, anu_names)
 
     if verbose:
         dropped = Counter((x.get("source"), x.get("type"))
@@ -823,6 +1038,13 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         if excluded_ssrn_preprints:
             print(f"  excluded {excluded_ssrn_preprints} ANU SSRN working "
                   f"paper row(s) with no journal and no ABDC rank")
+        for name, title, journal in anu_repository_repairs:
+            print(f"  ANU repository-journal repair: {name}: {title[:60]!r} -> {journal!r}")
+        if anu_author_fallbacks:
+            print(f"  {anu_author_fallbacks} ANU profile row(s) kept the profile's own "
+                  f"author count (DOI enrichment returned no authors)")
+        for name, field, before, after in anu_text_changes:
+            print(f"  ANU {field} text repair: {name}: {before[:60]!r} -> {after[:60]!r}")
         if anu_title_repairs:
             print(f"  repaired {anu_title_repairs} ANU title(s) at export "
                   f"time (FIX I, applied here for a row from a non-page source)")
