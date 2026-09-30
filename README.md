@@ -10,6 +10,77 @@ Install the Python dependencies:
 python -m pip install -r requirements.txt
 ```
 
+## Architecture
+
+The project has two halves: a **data pipeline** that builds CSVs for each
+university, and a **website** that serves those CSVs from a SQLite database.
+
+```
+base_scrapers/<uni>.py      staff + publications from the university's own site
+        │                   (returns the core/schema.py contract)
+info/                       extra publications by ORCID: orcid, crossref, openalex
+        │
+core/clean.py               one shared clean + exclusion pass for every source
+        │
+enrichment/                 per-publication data joined by DOI / ISSN:
+        │                   openalex, crossref, abdc, clarivate (JIF), scimago
+screen.py                   drop papers outside the researcher's discipline
+        │
+core/schema.py validate     contract check
+        │
+export.py                   dedupe + write  final output/<uni>/*.csv
+        │
+load.py                     all final output CSVs  ->  site/research.db
+        │
+app.py  (+ admin.py)        Flask site and JSON API; admin login, edit, refresh
+```
+
+`run.py --uni <name>` runs everything from the adapter through `export.py` for
+one university. `load.py` then rebuilds the database from every university's
+output.
+
+### Where things live
+
+| Path | What it is |
+| --- | --- |
+| `base_scrapers/` | One adapter per G8 university. The only university-specific code. |
+| `core/` | Shared config, cached HTTP (`cache/http/`), cleaning, the adapter contract, title normalisation. |
+| `info/` | Retrieval of *extra* publications linked to a researcher's ORCID. |
+| `enrichment/` | Journal and citation fields added to publications that already exist. |
+| `screen.py`, `export.py` | Discipline screening, then dedupe and CSV export. The same for every university. |
+| `data/` | Reference lists (ABDC, Scimago) and human-reviewed overrides and exclusions. |
+| `final output/<uni>/` | Pipeline output: `*_staff.csv`, `*_publications.csv`, `*_journals.csv`, `*_harvest.csv`. |
+| `load.py`, `models.py` | CSV to SQLite loader and the table definitions (researcher, journal, publication, harvest). |
+| `app.py`, `admin.py`, `site/` | Web server, admin blueprint and the static front end. |
+| `refresh_manager.py` | The admin "refresh" button: runs every adapter, then `load.py` into a staging DB, then swaps it in. The old DB is kept in `backups/`. |
+| `tests/` | `python -m pytest`. See `docs/TEST_PLAN.md`. |
+
+### Adding a university
+
+Create `base_scrapers/<uni>.py` that defines `ROR` and a
+`collect(verbose=True, refresh=False)` function returning `(records, pubs)` in
+the shape described in `core/schema.py`. Nothing else in the pipeline needs to
+change. Then run `python run.py --uni <uni>` and `python load.py`.
+
+### Fixing bad data
+
+Fix errors in the pipeline, or in the review files in `data/` (overrides and
+exclusions), and rerun. Never edit files in `final output/` by hand, because
+the next run overwrites them.
+
+### Refreshing data
+
+The admin refresh button calls `run.py --refresh` for each university. This
+bypasses the HTTP cache on purpose so the data is current, which is why it is
+much slower than a normal `run.py`, which reuses cached responses.
+
+### Configuration
+
+Copy `.env.example` to `.env` and set `OPENALEX_API_KEY`,
+`CLARIVATE_API_KEY`, `SECRET_KEY` and `ADMIN_PASSWORD`. On a hosted server,
+`SECRET_KEY` must be set. Without it the admin session falls back to an
+insecure development key.
+
 ## University adapters
 
 Run one university through the shared retrieval, enrichment, screening and
