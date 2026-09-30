@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, send_from_directory
-from sqlalchemy import create_engine, func
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, joinedload
 
 from models import Researcher, Publication, Journal

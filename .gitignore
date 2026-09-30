@@ -42,3 +42,8 @@ cache/
 backups/
 logs/
 site/research.refresh-*.db
+
+# Test coverage and editor backups
+.coverage
+.coverage.*
+*.bak
