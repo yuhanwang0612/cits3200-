@@ -19,6 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from core import http                                   # noqa: E402
+from core.clean import clean_pubs                        # noqa: E402
 from core.config import OUTPUT_DIR                      # noqa: E402
 from core.schema import validate                        # noqa: E402
 from enrichment import abdc, clarivate, crossref as cr_enrich, openalex as oa_enrich, scimago  # noqa: E402

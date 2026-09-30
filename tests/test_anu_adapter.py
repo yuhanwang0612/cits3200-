@@ -261,5 +261,4 @@ def test_mapped_records_satisfy_the_schema_contract():
 
 
 if __name__ == "__main__":
-    import unittest
     sys.exit(pytest.main([__file__, "-q"]))
