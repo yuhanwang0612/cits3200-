@@ -74,11 +74,12 @@ for debugging the scraper itself in isolation. Writes to `./output/`:
 | `anu_no_publications.csv` | Academics with no inline Publications section — a known coverage gap, logged not dropped |
 | `anu_review_emeritus_no_output.csv` | Emeritus staff with zero output — a review list, not an auto-exclusion |
 
-As of 22 Sep 2026, `./output/` holds none of these files — the copies that
+As of 28 Sep 2026, `./output/` holds none of these files — the copies that
 were there were a stale run from an earlier schema (296 publication rows,
-against the shared pipeline's current 520) and were deleted as dead weight
+against the shared pipeline's current 508) and were deleted as dead weight
 rather than left as a trap for anyone who opened them expecting current
-data. Running `anu_scraper.py` again writes fresh copies here; it does not
+data. (One of them, a 23 Aug `anu_unparsed_publications.csv`, survived the
+22 Sep clean-up and was deleted on 28 Sep.) Running `anu_scraper.py` again writes fresh copies here; it does not
 touch `final output/anu/` at all, which only `export.py` (via `run.py`)
 writes.
 
@@ -108,8 +109,10 @@ and combinations of these) and extracts title / journal / year / DOI / article
 URL / co-authors / ABDC rating from each.
 
 Where a citation doesn't cleanly match a known shape, the parser does not
-guess — it logs the entry to `anu_unparsed_publications.csv` for manual
-review instead. A general safety net also catches entries that technically
+guess — the entry is marked low-confidence and left out. The shared
+pipeline (`run.py`) counts these and excludes them; only the standalone
+`python anu_scraper.py` run writes them to `anu_unparsed_publications.csv`
+for manual review. A general safety net also catches entries that technically
 "parsed" but produced a suspicious result (a title that's really just an
 author list, unbalanced parentheses, or a title under 15 characters) and
 demotes those to the review file too, rather than asserting a wrong answer
@@ -134,9 +137,11 @@ titles are frequently hyperlinked with no visible URL shown at all.
   Professional staff, Research student, Visitor/Honorary) — on the view that
   the Scope of Work's FR1 targets "academics" specifically, not students.
   Worth confirming with the team if students should be included.
-- The remaining unparsed entries are, on inspection, mostly genuine —
-  working papers and conference talks with no journal or year to extract —
-  rather than parser failures.
+- The remaining unparsed entries (42 on 28 Sep 2026) are, on inspection,
+  mostly not publications at all — sub-headings, award notes, footnote
+  keys, textbooks and working papers. 6 look like genuine journal
+  articles, of which 2 already reach the data through ORCID; the other 4
+  are a known, listed collection gap (see docs/DECISIONS.md, 28 Sep).
 
 ## Politeness / compliance
 

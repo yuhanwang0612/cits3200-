@@ -22,6 +22,9 @@ requests anything from that host.
 
 THE TWO SEED FILES
 -------------------
+`data/anu_doi_backfill.csv` has since been edited by hand, one verified row
+at a time (see docs/DECISIONS.md, 28 Sep 2026): 126 rows now.
+
 `data/anu_identity.csv` (23 rows) and `data/anu_doi_backfill.csv` (123 rows)
 were generated once, by a throwaway script, from two files that were already
 hand-verified in earlier work: the root `anu_staff.csv` (ORCID and OpenAlex
@@ -484,6 +487,57 @@ def _is_prose_not_title(pub):
 
 
 # ---------------------------------------------------------------------------
+# Author data from the profile citation (v26, docs/DECISIONS.md 28 Sep)
+# ---------------------------------------------------------------------------
+#
+# The profile's co-author text is free prose: it often leaves out the
+# profile owner ("Kathy Wang, Leye Li and Mark Wilson" on Louise Lu's page),
+# sometimes starts with the page's own list number ("19. Liu, W.-M. , ..."),
+# and where there is no co-author text at all anu_scraper defaults the count
+# to 1 as a guess. That value used to go straight into the row, and
+# enrichment/openalex.py only fills n_authors/authors when they are blank,
+# so the DOI-registered author list could never replace it.
+#
+# Now: a row WITH a DOI leaves n_authors/authors blank so the existing
+# OpenAlex enrichment fills them from the DOI record. The profile values
+# ride along in `_anu_profile_*` keys and are used by export.py only if
+# enrichment finds nothing — and only when real co-author text exists, with
+# the owner counted. A row WITHOUT a DOI keeps the profile values, with the
+# list number stripped and the owner counted.
+_LIST_NUMBER_RE = re.compile(r"^\s*\d{1,3}\.\s+")
+
+
+def _strip_list_numbering(authors):
+    if not authors:
+        return authors
+    return _LIST_NUMBER_RE.sub("", authors).strip() or None
+
+
+def _owner_named(researcher_name, authors):
+    """True if the profile owner's surname appears as a word in `authors`
+    (accent- and case-insensitive)."""
+    _, _, surname = _split_name(researcher_name)
+    if not surname or not authors:
+        return False
+    return re.search(r"(?<![a-z])" + re.escape(_fold_name(surname)) + r"(?![a-z])",
+                     _fold_name_keep_spaces(authors)) is not None
+
+
+def _fold_name_keep_spaces(s):
+    s = unicodedata.normalize("NFKD", s or "")
+    return "".join(c for c in s if not unicodedata.combining(c)).lower()
+
+
+def _profile_author_count(researcher_name, authors):
+    """Named authors in the profile's co-author text, plus the owner when the
+    text leaves them out. None when there is no co-author text to count."""
+    named = anu_scraper.count_named_authors(authors)
+    if named == 0:
+        return None
+    return named + (0 if _owner_named(researcher_name, authors) else 1)
+
+
+# ---------------------------------------------------------------------------
 # Publications
 # ---------------------------------------------------------------------------
 
@@ -514,20 +568,33 @@ def _map_publication(pub, name_clean, backfill_by_key, doi_stats):
         else:
             doi_stats["not_matched"] += 1
 
-    return blank_pub(
+    profile_authors = _strip_list_numbering(pub.coauthors)
+    profile_count = _profile_author_count(pub.researcher_name, profile_authors)
+    if doi:
+        n_authors, authors = None, None
+    else:
+        # No co-author text: keep anu_scraper's own default (1), as before.
+        n_authors = profile_count if profile_count is not None else pub.author_count
+        authors = profile_authors
+
+    row = blank_pub(
         name=name_clean,
         source_id=None,
         title=_repair_title(pub.title),
         year=year,
         type=_type(pub.publication_type),
-        n_authors=pub.author_count,
-        authors=pub.coauthors,
+        n_authors=n_authors,
+        authors=authors,
         issns=[pub.issn] if pub.issn else [],
         journal=pub.journal_name,
         doi=doi,
         link=pub.article_url,
         source=SOURCE_NAME,
-    ), doi_from_page
+    )
+    if doi and profile_count is not None:
+        row["_anu_profile_n_authors"] = profile_count
+        row["_anu_profile_authors"] = profile_authors
+    return row, doi_from_page
 
 
 # ---------------------------------------------------------------------------
