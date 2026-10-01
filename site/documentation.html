@@ -143,6 +143,7 @@ code.field {
       <a href="researchers.html">Researchers</a>
       <a href="universities.html">Universities</a>
       <a href="documentation.html" aria-current="page">Documentation</a>
+      <a href="/admin">Admin</a>
     </nav>
   </div>
 </header>
@@ -166,6 +167,7 @@ code.field {
           <li><a href="#schema">Database Schema</a></li>
           <li><a href="#rankings">Ranking Metrics</a></li>
           <li><a href="#columns">Column Guide</a></li>
+          <li><a href="#download-data">Download the Data</a></li>
           <li><a href="#limitations">Limitations</a></li>
           <li><a href="#example">Worked Example</a></li>
           <li><a href="#universities">Universities</a></li>
@@ -392,6 +394,18 @@ code.field {
             where each value comes from, and how to read the metrics.</p>
           <a class="btn" href="/downloads/data-dictionary.md" download>Download the full data dictionary</a>
           <p class="muted small" style="margin-top:8px;">A Markdown text file; it opens in any text editor.</p>
+
+          <h3 id="download-data" style="margin-top:24px;">Download the full dataset</h3>
+          <p>Every university in one file per table. Each publication row carries the
+            researcher's name, university and ORCID and the journal's name and ISSN, so it can be
+            filtered or joined to another spreadsheet on its own. <code class="field">researcher_id</code>
+            and <code class="field">journal_id</code> link the three files together; ORCID is the
+            safest key for matching researchers to your own records, because names can collide
+            and vary in spelling.</p>
+          <a class="btn" href="/downloads/publications.csv" download>Publications</a>
+          <a class="btn" href="/downloads/researchers.csv" download>Researchers</a>
+          <a class="btn" href="/downloads/journals.csv" download>Journals</a>
+          <p class="muted small" style="margin-top:8px;">CSV files; they open directly in Excel.</p>
         </section>
 
         <!-- 6. Limitations -->

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, Response, abort, jsonify, request, send_from_directory
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, joinedload
 
@@ -42,7 +42,7 @@ UNIVERSITY_CODES = {
     "University of Western Australia": "UWA",
 }
 
-from admin import make_admin_bp
+from admin import ENTITIES, _export_df, make_admin_bp
 app.register_blueprint(make_admin_bp(Session))
 
 
@@ -79,6 +79,48 @@ def data_dictionary_download():
         os.path.join(BASE_DIR, "docs"), "DATA_DICTIONARY.md",
         as_attachment=True, download_name="G8-research-data-dictionary.md",
         mimetype="text/markdown",
+    )
+
+
+# Public bulk export: the same three datasets, with the same columns, as the
+# admin Excel download, built by the same _export_df so the two cannot drift
+# apart. Read-only (there is no upload here) and CSV, like every other public
+# download: Excel opens it natively and the server needs no openpyxl.
+PUBLIC_EXPORTS = ("publications", "researchers", "journals")
+
+
+def _csv_safe(value):
+    """Stop Excel running a text cell as a formula. The data is scraped from
+    third-party pages, so a title that happened to begin with = or + would
+    otherwise execute when someone opened the file. Numbers pass untouched."""
+    if isinstance(value, str) and value[:1] in ("=", "+", "-", "@", "\t", "\r"):
+        return "'" + value
+    return value
+
+
+@app.route("/downloads/<entity>.csv")
+def dataset_download(entity):
+    if entity not in PUBLIC_EXPORTS:
+        abort(404)
+    session = Session()
+    try:
+        df = _export_df(session, entity)
+    finally:
+        session.close()
+    df = df.map(_csv_safe)
+    # A whole-number column with any blank becomes float in pandas and would
+    # print as "2014.0"; the nullable integer type keeps it "2014". Must come
+    # after the map above, which infers dtypes afresh and turns Int64 back
+    # into float.
+    for col in ENTITIES[entity]["int"]:
+        df[col] = df[col].astype("Int64")
+    # BOM so Excel reads the file as UTF-8 (Slapničar, Aldónio), as the
+    # client-side exports in app.js already do.
+    body = "﻿" + df.to_csv(index=False, lineterminator="\r\n")
+    return Response(
+        body, mimetype="text/csv",
+        headers={"Content-Disposition":
+                 f'attachment; filename="g8-{entity}.csv"'},
     )
 
 
