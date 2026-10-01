@@ -1,7 +1,7 @@
 [
   {
     "name": "Nurul Alam",
-    "job_title": "Lecturer (Teaching and Research) in Accounting",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -11,7 +11,7 @@
   },
   {
     "name": "Eddie Anderson",
-    "job_title": "Professor Emeritus",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -21,8 +21,8 @@
   },
   {
     "name": "Jane Andrew",
-    "job_title": "Interim Head of School, School of Accounting, Governance and Regulation",
-    "academic_level": null,
+    "job_title": "Professor",
+    "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
     "source_id": "jane.andrew",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Paul Blayney",
-    "job_title": "Lecturer (Education Focused)",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -51,7 +51,7 @@
   },
   {
     "name": "Roel Boomsma",
-    "job_title": "Senior Lecturer in Accounting",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -91,7 +91,7 @@
   },
   {
     "name": "Wai-Fong Chua",
-    "job_title": "Professor of Accounting",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -141,7 +141,7 @@
   },
   {
     "name": "Maria Dyball",
-    "job_title": "Associate Professor in Accounting",
+    "job_title": "Associate Professor",
     "academic_level": "D",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -181,7 +181,7 @@
   },
   {
     "name": "Fei Gao",
-    "job_title": "Lecturer in Business Law (Education Focused)",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -191,7 +191,7 @@
   },
   {
     "name": "Wes Hamilton-Jessop",
-    "job_title": "Lecturer (Education Focused)",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -221,7 +221,7 @@
   },
   {
     "name": "Tina Huynh",
-    "job_title": "Lecturer (Education Focused)",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -231,7 +231,7 @@
   },
   {
     "name": "Kaiying Ji",
-    "job_title": "Lecturer in Business",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -251,7 +251,7 @@
   },
   {
     "name": "Benjamin Lay",
-    "job_title": "Lecturer in International Accounting (Education Focused)",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -268,16 +268,6 @@
     "source_id": "chang.loh",
     "orcid": "0000-0002-6585-6032",
     "profile_url": "https://profiles.sydney.edu.au/chang.loh"
-  },
-  {
-    "name": "Louise Luff",
-    "job_title": "Senior Lecturer (Education Focussed)",
-    "academic_level": "C",
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "louise.luff",
-    "orcid": "0009-0009-6959-9430",
-    "profile_url": "https://profiles.sydney.edu.au/louise.luff"
   },
   {
     "name": "Vijaya Murthy",
@@ -331,7 +321,7 @@
   },
   {
     "name": "Baljit Sidhu",
-    "job_title": "Professor, Discipline of Accounting",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -351,7 +341,7 @@
   },
   {
     "name": "Farzana Tanima",
-    "job_title": "Senior Lecturer (Teaching and Research)",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -361,7 +351,7 @@
   },
   {
     "name": "Andrew Terry",
-    "job_title": "Professor of Business Regulation",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -371,7 +361,7 @@
   },
   {
     "name": "Sandra Van Der Laan",
-    "job_title": "Professor in Accounting",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -451,7 +441,7 @@
   },
   {
     "name": "Eagle Zhang",
-    "job_title": "Senior Lecturer in Accounting",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
@@ -511,7 +501,7 @@
   },
   {
     "name": "DuckKi Cho",
-    "job_title": "Lecturer in Finance",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -531,7 +521,7 @@
   },
   {
     "name": "Quan Gan",
-    "job_title": "Associate Professor in Finance",
+    "job_title": "Associate Professor",
     "academic_level": "D",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -551,7 +541,7 @@
   },
   {
     "name": "Iftekhar Hasan",
-    "job_title": "Professor of Finance",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -571,7 +561,7 @@
   },
   {
     "name": "He Huang",
-    "job_title": "Lecturer in Finance (Education focused)",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -581,7 +571,7 @@
   },
   {
     "name": "George Issa",
-    "job_title": "Lecturer (Education Focused)",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -611,7 +601,7 @@
   },
   {
     "name": "Suk-Joong Kim",
-    "job_title": "Professor of International Finance and Banking",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -621,7 +611,7 @@
   },
   {
     "name": "Doowon Lee",
-    "job_title": "Associate Professor of Finance (Education Focused)",
+    "job_title": "Associate Professor",
     "academic_level": "D",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -631,7 +621,7 @@
   },
   {
     "name": "Haekwon Lee",
-    "job_title": "Senior Lecturer in Finance",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -651,7 +641,7 @@
   },
   {
     "name": "Lantian Liang",
-    "job_title": "Lecturer in Banking",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -721,7 +711,7 @@
   },
   {
     "name": "Peter Pham",
-    "job_title": "Professor of Finance",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -751,7 +741,7 @@
   },
   {
     "name": "Yancheng Qiu",
-    "job_title": "Lecturer in Finance",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -771,7 +761,7 @@
   },
   {
     "name": "Mandeep Singh",
-    "job_title": "Lecturer in Finance, Discipline of Finance",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -801,7 +791,7 @@
   },
   {
     "name": "Thomas To",
-    "job_title": "Lecturer in Finance, Discipline of Finance",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -831,7 +821,7 @@
   },
   {
     "name": "Vycke Wu",
-    "job_title": "Lecturer (Education Focused)",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -841,7 +831,7 @@
   },
   {
     "name": "Pramod Kumar Yadav",
-    "job_title": "Lecturer in Finance",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -871,7 +861,7 @@
   },
   {
     "name": "Fan Zhang",
-    "job_title": "Lecturer in Finance",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",
@@ -881,7 +871,7 @@
   },
   {
     "name": "Yuyang Zhang",
-    "job_title": "Lecturer in Finance",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Sydney",
     "field_of_research": "Finance",

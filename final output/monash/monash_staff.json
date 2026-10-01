@@ -241,18 +241,18 @@
   },
   {
     "name": "Zhenyang (Leo) Bao",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
+    "job_title": null,
+    "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Finance",
     "source_id": "leo-bao",
-    "orcid": "0000-0002-4337-6919",
+    "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/leo-bao/"
   },
   {
     "name": "Kym Brown",
-    "job_title": "Emeritus Professor",
-    "academic_level": "E",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
     "source_id": "kym-brown",
@@ -681,12 +681,12 @@
   },
   {
     "name": "Roger Simnett AO",
-    "job_title": "Professor",
-    "academic_level": "E",
+    "job_title": null,
+    "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "roger-simnett",
-    "orcid": "0000-0001-9881-8553",
+    "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/roger-simnett/"
   },
   {
@@ -731,12 +731,12 @@
   },
   {
     "name": "Aldónio Ferreira",
-    "job_title": "Associate Professor",
-    "academic_level": "D",
+    "job_title": null,
+    "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "aldonio-fernandes-ferreira",
-    "orcid": "0000-0003-1405-3704",
+    "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/aldonio-fernandes-ferreira/"
   },
   {
@@ -751,12 +751,12 @@
   },
   {
     "name": "Ting-Chiao (Joey) Huang",
-    "job_title": "Associate Professor",
-    "academic_level": "D",
+    "job_title": null,
+    "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "joey-huang",
-    "orcid": "0000-0001-9709-002X",
+    "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/joey-huang/"
   },
   {
@@ -851,12 +851,12 @@
   },
   {
     "name": "Christofer Adrian",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
+    "job_title": null,
+    "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "chris-adrian",
-    "orcid": "0000-0002-9366-3473",
+    "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/chris-adrian/"
   },
   {
@@ -881,12 +881,12 @@
   },
   {
     "name": "Maleen Gong",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
+    "job_title": null,
+    "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "zhiyun-gong",
-    "orcid": "0000-0003-0889-6297",
+    "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/zhiyun-gong/"
   },
   {
@@ -921,12 +921,12 @@
   },
   {
     "name": "Yi-Hung (Jerry) Lin",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
+    "job_title": null,
+    "academic_level": null,
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "jerry-lin",
-    "orcid": "0000-0001-7114-2098",
+    "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/jerry-lin/"
   },
   {
@@ -1058,16 +1058,6 @@
     "source_id": "brett-lombardi",
     "orcid": null,
     "profile_url": "https://research.monash.edu/en/persons/brett-lombardi/"
-  },
-  {
-    "name": "Lan Nguyen",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "Monash University",
-    "field_of_research": "Accounting",
-    "source_id": "lan-nguyen-2",
-    "orcid": "0009-0004-9947-7665",
-    "profile_url": "https://research.monash.edu/en/persons/lan-nguyen-2/"
   },
   {
     "name": "Anna Stamatelatos",

@@ -2,29 +2,29 @@
   {
     "university": "Australian National University",
     "source": "ANU staff profile",
-    "last_run": "2026-09-28T15:05:21.889162+00:00",
+    "last_run": "2026-10-01T02:33:10.296416+00:00",
     "latest_year": 2026,
     "record_count": 393
   },
   {
     "university": "Australian National University",
     "source": "Crossref",
-    "last_run": "2026-09-28T15:05:21.889162+00:00",
+    "last_run": "2026-10-01T02:33:10.296416+00:00",
     "latest_year": 2026,
-    "record_count": 32
+    "record_count": 33
   },
   {
     "university": "Australian National University",
     "source": "ORCID",
-    "last_run": "2026-09-28T15:05:21.889162+00:00",
+    "last_run": "2026-10-01T02:33:10.296416+00:00",
     "latest_year": 2026,
-    "record_count": 268
+    "record_count": 269
   },
   {
     "university": "Australian National University",
     "source": "OpenAlex",
-    "last_run": "2026-09-28T15:05:21.889162+00:00",
+    "last_run": "2026-10-01T02:33:10.296416+00:00",
     "latest_year": 2026,
-    "record_count": 183
+    "record_count": 184
   }
 ]

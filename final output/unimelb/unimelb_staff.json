@@ -81,7 +81,7 @@
   },
   {
     "name": "Michael Davern",
-    "job_title": "Professor of Accounting & Business Information Systems",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -91,7 +91,7 @@
   },
   {
     "name": "Tongqing (Tony) Ding",
-    "job_title": "Senior Lecturer (Engagement/Research)",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -226,7 +226,7 @@
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
     "source_id": null,
-    "orcid": null,
+    "orcid": "0009-0007-8558-527X",
     "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/rebecca-mattocks"
   },
   {
@@ -451,7 +451,7 @@
   },
   {
     "name": "John Handley",
-    "job_title": "Professor of Finance",
+    "job_title": "Professor",
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -481,7 +481,7 @@
   },
   {
     "name": "Hae Won (Henny) Jung",
-    "job_title": "Associate Professor of Finance & Deputy Program Director (Master of Finance)",
+    "job_title": "Associate Professor",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -491,23 +491,13 @@
   },
   {
     "name": "Patrick J. Kelly",
-    "job_title": "Associate Professor of Finance & Joint PhD Program Director (Finance)",
+    "job_title": "Associate Professor",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
     "source_id": null,
     "orcid": "0000-0002-8540-7488",
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/437404"
-  },
-  {
-    "name": "Minsoo Kim",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": "0000-0001-6263-6360",
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/minsoo-kim"
   },
   {
     "name": "Paul Kofman",
@@ -541,7 +531,7 @@
   },
   {
     "name": "Bryan Lim",
-    "job_title": "Associate Professor of Finance",
+    "job_title": "Associate Professor",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -571,7 +561,7 @@
   },
   {
     "name": "Maurice McCourt",
-    "job_title": "Senior Lecturer - Education Focussed & Deputy Program Director (Master of Management (Finance))",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -611,7 +601,7 @@
   },
   {
     "name": "Anthony Ng",
-    "job_title": "Senior Lecturer - Education Focussed",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -651,7 +641,7 @@
   },
   {
     "name": "Chander Shekhar",
-    "job_title": "Senior Lecturer Program Director (Master of Management (Finance))",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -661,7 +651,7 @@
   },
   {
     "name": "Zhen Shi",
-    "job_title": "Senior Lecturer Program Director (Graduate Certificate in Business and Master of Business)",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -681,7 +671,7 @@
   },
   {
     "name": "Xiaoting Wei",
-    "job_title": "Lecturer - Education Focussed",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -691,7 +681,7 @@
   },
   {
     "name": "Nitin Yadav",
-    "job_title": "Senior Lecturer PhD Coordinator (Centre for Brain, Mind and Markets)",
+    "job_title": "Senior Lecturer",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -721,7 +711,7 @@
   },
   {
     "name": "Zhuo Zhong",
-    "job_title": "Associate Professor of Finance",
+    "job_title": "Associate Professor",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -741,7 +731,7 @@
   },
   {
     "name": "Silvia Zia",
-    "job_title": "Lecturer - Education Focussed",
+    "job_title": "Lecturer",
     "academic_level": "B",
     "university": "University of Melbourne",
     "field_of_research": "Finance",

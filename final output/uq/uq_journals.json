@@ -3166,5 +3166,21 @@
     "h_index": 58,
     "cites_per_doc_2y": 4.68,
     "scimago_year": "2025"
+  },
+  {
+    "journal_name": "QUT Business School",
+    "journal_raw": "QUT Business School",
+    "publisher": "Queensland University of Technology",
+    "issn": null,
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
   }
 ]

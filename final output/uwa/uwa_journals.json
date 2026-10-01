@@ -1,5 +1,21 @@
 [
   {
+    "journal_name": "Pacific Accounting Review",
+    "journal_raw": "Pacific Accounting Review",
+    "publisher": "Emerald Group Publishing Limited",
+    "issn": "0114-0582; 2041-5494",
+    "quality_rank": "B",
+    "abdc_edition": "2025",
+    "impact_factor": 2.1,
+    "impact_factor_5yr": 2.3,
+    "jcr_year": 2025,
+    "sjr": 0.521,
+    "sjr_quartile": "Q2",
+    "h_index": 40,
+    "cites_per_doc_2y": 2.84,
+    "scimago_year": "2025"
+  },
+  {
     "journal_name": "Accounting and Business Research",
     "journal_raw": "Accounting and Business Research",
     "publisher": "Routledge",
@@ -512,22 +528,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Labour History: a journal of labour and social history",
-    "journal_raw": "Labour History",
-    "publisher": "Liverpool University Press",
-    "issn": "0023-6942; 1839-3039",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 0.1,
-    "impact_factor_5yr": 0.5,
-    "jcr_year": 2025,
-    "sjr": 0.117,
-    "sjr_quartile": "Q3",
-    "h_index": 18,
-    "cites_per_doc_2y": 0.16,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Australian Accounting Review",
     "journal_raw": "Australian Accounting Review",
     "publisher": "Wiley-Blackwell",
@@ -830,22 +830,6 @@
     "h_index": null,
     "cites_per_doc_2y": null,
     "scimago_year": null
-  },
-  {
-    "journal_name": "French Review",
-    "journal_raw": "French Review",
-    "publisher": "American Association of Teachers of French",
-    "issn": "0016-111X; 2329-7131",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 0.1,
-    "impact_factor_5yr": 0.1,
-    "jcr_year": 2025,
-    "sjr": 0.115,
-    "sjr_quartile": "Q3",
-    "h_index": 13,
-    "cites_per_doc_2y": 0.07,
-    "scimago_year": "2025"
   },
   {
     "journal_name": "Journal of Commodity Markets",
@@ -2542,22 +2526,6 @@
     "h_index": null,
     "cites_per_doc_2y": null,
     "scimago_year": null
-  },
-  {
-    "journal_name": "Pacific Accounting Review",
-    "journal_raw": "Pacific Accounting Review",
-    "publisher": "Emerald Group Publishing Limited",
-    "issn": "0114-0582; 2041-5494",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": 2.1,
-    "impact_factor_5yr": 2.3,
-    "jcr_year": 2025,
-    "sjr": 0.521,
-    "sjr_quartile": "Q2",
-    "h_index": 40,
-    "cites_per_doc_2y": 2.84,
-    "scimago_year": "2025"
   },
   {
     "journal_name": "International Journal of Forecasting",

@@ -40,16 +40,6 @@
     "profile_url": "https://research-repository.uwa.edu.au/en/persons/david-gilchrist/"
   },
   {
-    "name": "Dhammi Azariadis",
-    "job_title": "Lecturer",
-    "academic_level": "B",
-    "university": "University of Western Australia",
-    "field_of_research": "Accounting",
-    "source_id": "dr-dhammi-azariadis",
-    "orcid": "0009-0003-8724-2749",
-    "profile_url": "https://research-repository.uwa.edu.au/en/persons/dr-dhammi-azariadis/"
-  },
-  {
     "name": "Fangbin Lin",
     "job_title": "Lecturer",
     "academic_level": "B",
@@ -131,8 +121,8 @@
   },
   {
     "name": "Prerana Agrawal",
-    "job_title": "Lecturer",
-    "academic_level": "B",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
     "source_id": "prerana-agrawal",
@@ -301,8 +291,8 @@
   },
   {
     "name": "Lai Hoang",
-    "job_title": "Lecturer",
-    "academic_level": "B",
+    "job_title": "Senior Lecturer",
+    "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
     "source_id": "lai-hoang",
