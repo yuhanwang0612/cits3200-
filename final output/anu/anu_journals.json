@@ -400,22 +400,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of the Association of Information Systems",
-    "journal_raw": "Journal of the Association of Information Systems",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "MIS Quarterly",
     "journal_raw": "MIS Quarterly",
     "publisher": "MIS Quarterly",
@@ -1888,22 +1872,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of Money",
-    "journal_raw": "Journal of Money",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "Annals of Operations Research",
     "journal_raw": "Annals of Operations Research",
     "publisher": "Springer Science+Business Media",
@@ -2288,6 +2256,22 @@
     "scimago_year": "2025"
   },
   {
+    "journal_name": "Third Sector Review",
+    "journal_raw": "Third Sector Review",
+    "publisher": "The University of Western Australia",
+    "issn": "1323-9163; 1839-5937",
+    "quality_rank": "C",
+    "abdc_edition": "2025",
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
     "journal_name": "Information & Management",
     "journal_raw": "Information & Management",
     "publisher": "Elsevier BV",
@@ -2448,19 +2432,19 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Third Sector Review",
-    "journal_raw": "Third Sector Review",
-    "publisher": null,
-    "issn": "1323-9163; 1839-5937",
-    "quality_rank": "C",
+    "journal_name": "Journal of Money, Credit and Banking",
+    "journal_raw": "Journal of money credit and banking",
+    "publisher": "Wiley",
+    "issn": "0022-2879; 1538-4616",
+    "quality_rank": "A*",
     "abdc_edition": "2025",
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
+    "impact_factor": 1.9,
+    "impact_factor_5yr": 2.2,
+    "jcr_year": 2025,
+    "sjr": 1.999,
+    "sjr_quartile": "Q1",
+    "h_index": 133,
+    "cites_per_doc_2y": 2.36,
+    "scimago_year": "2025"
   }
 ]
