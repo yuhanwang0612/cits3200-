@@ -309,6 +309,8 @@ def main():
                     "position"
                 ),
 
+                admin_title=first(row, "admin_title"),
+
                 academic_level=first(
                     row,
                     "academic_level",
