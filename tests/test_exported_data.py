@@ -32,7 +32,7 @@ PUBLICATION_COLUMNS = [
     "oa_status", "oa_url", "publication_status", "source",
 ]
 STAFF_COLUMNS = [
-    "name", "job_title", "academic_level", "university", "field_of_research",
+    "name", "job_title", "admin_title", "academic_level", "university", "field_of_research",
     "source_id", "orcid", "profile_url",
 ]
 

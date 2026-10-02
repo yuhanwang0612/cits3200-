@@ -16,7 +16,7 @@ from pathlib import Path
 import pandas as pd
 
 from core.config import OUTPUT_DIR
-from core.titles import level
+from core.titles import level, split_job_title
 
 # scratch/_anu18/REPORT.md FIX 1. base_scrapers.anu's own FIX I title-repair
 # rules only ever ran on a title scraped directly off the ANU page
@@ -525,6 +525,9 @@ def build_staff(records):
         # title_clean is only the derived academic-rank label and previously
         # erased valid roles such as teaching-focused appointments.
         "job_title": p.get("title") or p.get("title_clean"),
+        # Filled by the title split in export(): the administrative role
+        # (Dean, Head of School, ...) moved out of job_title.
+        "admin_title": None,
         "academic_level": p.get("level_code") or level(p.get("title_clean")),
         "university": p["university"],
         "field_of_research": p["discipline"],
@@ -1143,29 +1146,30 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
             }
         _applied = 0
         for _s in staff:
-            _key = (_s.get("university", "").strip().lower(), (_s.get("name") or "").strip())
-            if _key in _overrides and not _s.get("job_title"):
-                _s["job_title"] = _overrides[_key]
+            # The file names a university by its short key ("adelaide",
+            # "monash"); the record carries the full name ("Adelaide
+            # University"). An exact match never fired, so accept the key
+            # appearing anywhere in the full name.
+            _uni = _s.get("university", "").strip().lower()
+            _name = (_s.get("name") or "").strip()
+            _title = next((v for (u, n), v in _overrides.items()
+                           if n == _name and u and u in _uni), None)
+            if _title and not _s.get("job_title"):
+                _s["job_title"] = _title
                 _applied += 1
         if verbose and _applied:
             print(f"  applied {_applied} staff title override(s) from staff_overrides.csv")
 
-    # Normalise job titles: strip discipline qualifiers so titles are consistent
-    # across universities (e.g. "Professor of Finance" -> "Professor").
-    def _normalize_job_title(title):
-        if not title:
-            return title
-        t = title.strip()
-        for prefix in ["Senior Lecturer", "Associate Professor", "Professor", "Lecturer"]:
-            if t.startswith(prefix) and t != prefix:
-                return prefix
-        return t
-
+    # Split each listed title into the academic rank (job_title) and the
+    # administrative role (admin_title), consistently across universities, e.g.
+    # "Dean, School of Accounting and Finance" (Level E) -> "Professor" + "Dean".
+    # The rules live in core.titles.split_job_title.
     _norm_count = 0
     for _s in staff:
         if _s.get("job_title"):
             _orig = _s["job_title"]
-            _s["job_title"] = _normalize_job_title(_s["job_title"])
+            _s["job_title"], _s["admin_title"] = split_job_title(
+                _orig, _s.get("academic_level"))
             if _s["job_title"] != _orig:
                 _norm_count += 1
     if verbose and _norm_count:

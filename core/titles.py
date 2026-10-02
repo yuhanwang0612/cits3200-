@@ -108,6 +108,86 @@ _RANK_OF_LEVEL = {
 }
 
 
+# Administrative roles, moved out of job_title into admin_title with the
+# detail around them dropped: "Head of School, School of Finance" ->
+# "Head of School". Searched in this order, so the deputy / associate /
+# program form of a role is found before the plain role it contains.
+_ROLES = [
+    ("Deputy Head of School",     r"deputy head of school"),
+    ("Head of School",            r"\bhead of school"),
+    ("Deputy Head of Department", r"deputy head of department"),
+    ("Head of Department",        r"\bhead of department"),
+    ("Associate Dean",            r"associate dean"),
+    ("Assistant Dean",            r"assistant dean"),
+    ("Deputy Dean",               r"deputy dean"),
+    ("Dean",                      r"\bdean\b"),
+    ("Deputy Director",           r"^deputy director\b"),
+    ("Director",                  r"^director\b"),
+    ("PhD Program Director",      r"phd program director"),
+    ("Program Director",          r"program director"),
+    ("Program Convenor",          r"program convenor"),
+    ("Discipline Convenor",       r"discipline convenor"),
+    ("Major Convenor",            r"major convenor"),
+    ("Deputy Honours Coordinator", r"deputy honours coordinator"),
+    ("Honours Coordinator",       r"honours coordinator"),
+    ("Program Coordinator",       r"program coordinator"),
+    ("Research Hub Co-Leader",    r"research hub co.?leader"),
+]
+
+# Appointment types that change what a rank means. "Adjunct Professor" is an
+# unpaid affiliate, not a professor on staff, so the qualifier is kept.
+_QUALIFIERS = ("Adjunct", "Honorary")
+
+# Values a scraper has put in the title field that are not titles at all.
+_NOT_A_TITLE = {"research and executive education"}
+
+
+def split_job_title(title, level_code=None):
+    """Split a listed title into (job_title, admin_title) for the staff export.
+
+    job_title is the academic rank only: Emeritus Professor, an Adjunct or
+    Honorary rank with its qualifier, the rank word found anywhere in the
+    title (any case), else the rank implied by the academic level. A teaching
+    role such as "Teaching Fellow" with no rank and no level is kept as is.
+
+    admin_title is the administrative role, if any, e.g. "Dean".
+
+    A pure admin title with no level ("Deputy Head of School" at USyd) gives
+    job_title None: the academic rank is genuinely unknown, and the role must
+    not be passed off as one.
+    """
+    if not title or not title.strip():
+        return title, None
+    t = " ".join(title.split())
+    if t.lower() in _NOT_A_TITLE:
+        return (rank_from_level(level_code) if level_code else None), None
+
+    admin, rest = None, t
+    for role, pattern in _ROLES:
+        m = re.search(pattern, t, re.I)
+        if m:
+            admin = role
+            # Look for a rank only in what is left, so the role's own words
+            # ("dean") are not read as one.
+            rest = (t[:m.start()] + " " + t[m.end():]).strip(" ,-()")
+            break
+
+    r = rank(rest) if rest else None
+    if r == "Emeritus Professor":
+        return r, admin
+    for q in _QUALIFIERS:
+        if re.search(rf"\b{q}\b", rest, re.I):
+            if r:
+                return f"{q} {r}", admin
+            other = re.sub(rf"\s*\b{q}\b\s*", " ", rest, flags=re.I).strip()
+            return f"{q} {other}", admin
+    if r:
+        return r, admin
+    if level_code:
+        return (rank_from_level(level_code) or (None if admin else t)), admin
+    return (None if admin else t), admin
+
+
 def rank_from_level(level_code):
     """Canonical rank label for a bare level code, for when a caller has
     already resolved A-E some other way (e.g. from a name-prefix fallback)
