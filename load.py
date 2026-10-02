@@ -1,5 +1,4 @@
 import csv
-import math
 from pathlib import Path
 
 from sqlalchemy import create_engine

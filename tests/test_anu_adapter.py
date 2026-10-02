@@ -146,8 +146,13 @@ def test_publication_mapping_shape():
     assert mapped["year"] == "2022"
     assert mapped["doi"] == "10.1/abc"
     assert mapped["link"] == "https://rsa.anu.edu.au/x"
-    assert mapped["n_authors"] == 2
-    assert mapped["authors"] == "Bond, D"
+    # v26: a row with a DOI leaves author data to the DOI record (OpenAlex
+    # enrichment); the profile's own owner-inclusive count ("Bond, D" plus
+    # Sarah Adams herself) is kept only as a fallback.
+    assert mapped["n_authors"] is None
+    assert mapped["authors"] is None
+    assert mapped["_anu_profile_n_authors"] == 2
+    assert mapped["_anu_profile_authors"] == "Bond, D"
     assert mapped["issns"] == ["1234-5678"]
     assert mapped["source"] == "ANU staff profile"
     assert had_page_doi is True
@@ -256,5 +261,4 @@ def test_mapped_records_satisfy_the_schema_contract():
 
 
 if __name__ == "__main__":
-    import unittest
     sys.exit(pytest.main([__file__, "-q"]))

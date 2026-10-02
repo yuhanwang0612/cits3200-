@@ -5,7 +5,7 @@ Research School of Finance, Actuarial Studies & Statistics (RSFAS) — the two
 ANU schools within scope. Every number below was computed directly from the
 current data files; the command is shown so it can be re-run.
 
-**Updated 24 Sep 2026.** Numbers below are from `final output/anu/`,
+**Updated 28 Sep 2026.** Numbers below are from `final output/anu/`,
 written by the shared `run.py`/`export.py` pipeline. This replaces the
 standalone `anu_scraper.py` output path (`output/anu_*.csv`) this page
 originally referenced — see README_ANU.md for where that standalone output
@@ -58,17 +58,23 @@ still have a validated ORCID on record.
 python -c "import csv; print(sum(1 for _ in csv.DictReader(open('final output/anu/anu_publications.csv', encoding='utf-8'))))"
 ```
 
-- **523 publications**, all journal articles. Non-journal-article types are
+- **505 publications**, all journal articles. Non-journal-article types are
   handled two different ways, not one — worth stating precisely rather
   than glossing over:
-  - Conference papers, research reports, textbooks and similar are never
-    classified as journal articles in the first place, so they never reach
-    the export filter.
-  - **Book chapters, specifically, are not filtered out automatically at
-    all.** They are excluded one confirmed row at a time via
-    `data/publication_exclusions.csv` — the same reviewed-evidence
-    mechanism used for namesake and off-field exclusions, with a DOI,
-    reason and evidence URL recorded per row.
+  - Items the profile parser can recognise as non-journal (a conference
+    location in place of a journal, a "Book chapter of …" venue, a textbook
+    edition, a citation with no journal at all) are classified as such and
+    never reach the export filter. **This does not catch everything:** a
+    citation that names a venue in the journal position is taken as a
+    journal article whatever the venue is. On 28 Sep, 14 such rows were
+    found and excluded — newspaper articles, a press release, research
+    reports and book chapters (see docs/DECISIONS.md, 28 Sep).
+  - **Book chapters, and any other non-journal item the parser cannot
+    recognise, are not filtered out automatically.** They are excluded one
+    confirmed row at a time via `data/publication_exclusions.csv` — the
+    same reviewed-evidence mechanism used for namesake and off-field
+    exclusions, with a DOI or title, reason and evidence URL recorded per
+    row.
   - **Off-field clinical papers are now a rule, not a list.** Wai-Man
     (Raymond) Liu is a genuine ANU accounting/finance academic who also,
     genuinely, co-authors clinical medicine papers. 40 of his rows were
@@ -80,9 +86,10 @@ python -c "import csv; print(sum(1 for _ in csv.DictReader(open('final output/an
     every ANU row) so a future fresh scrape can't reintroduce the same
     class of row again. The original 40-row list is unchanged and still
     applied alongside the new rule — see docs/DECISIONS.md's 24 Sep entry.
-- **495 of those 523 (94.6%) carry a real ABDC rating** — 182 A\*, 267 A,
-  39 B, 7 C, and 28 with no ABDC match (either genuinely not on the ABDC
-  list, or no journal name to match against).
+- **495 of those 505 (98.0%) carry a real ABDC rating** — 181 A\*, 268 A,
+  39 B, 7 C, and 10 with no ABDC match (genuinely not on the ABDC list, a
+  practitioner periodical awaiting a client decision, or a journal name
+  that could not be verified — see docs/DECISIONS.md, 28 Sep).
 
 ```
 python -c "import csv; from collections import Counter; print(Counter(r['quality_rank'] for r in csv.DictReader(open('final output/anu/anu_publications.csv', encoding='utf-8'))))"
@@ -92,14 +99,15 @@ python -c "import csv; from collections import Counter; print(Counter(r['quality
 
 | Field | Coverage | Note |
 |---|---|---|
-| year | 520/523 (99.4%) | the blanks are cases where no 4-digit year could be confirmed outside the title itself, or an implausible year (<1950 or >current+1) — left blank rather than guessed |
-| ABDC quality_rank | 495/523 (94.6%) | ISSN-first, exact normalised-title fallback where there's no ISSN |
-| Scimago quartile (`sjr_quartile`) | 475/523 (90.8%) | |
-| citation percentile (OpenAlex) | 443/523 (84.7%) | tracks DOI coverage — OpenAlex needs a DOI to look a paper up |
-| DOI | 450/523 (86.0%) | |
-| distinct journals (`anu_journals.csv` rows) | 154 | |
-| `anu_journals.csv` rows with an ISSN | 133/154 (86.4%) | |
-| `anu_journals.csv` rows with an `impact_factor` (Clarivate JIF) | 116/154 (75.3%) | |
+| year | 503/505 (99.6%) | the blanks are cases where no 4-digit year could be confirmed outside the title itself, or an implausible year (<1950 or >current+1) — left blank rather than guessed |
+| ABDC quality_rank | 495/505 (98.0%) | ISSN-first, exact normalised-title fallback where there's no ISSN |
+| Scimago quartile (`sjr_quartile`) | 475/505 (94.1%) | |
+| citation percentile (OpenAlex) | 449/505 (88.9%) | tracks DOI coverage — OpenAlex needs a DOI to look a paper up |
+| DOI | 451/505 (89.3%) | |
+| author_count | 504/505 (99.8%) | from the DOI record (OpenAlex) wherever the row has a DOI — the profile's own parse is only a fallback, owner-inclusive; the 1 blank is a book review whose DOI registers no author at all |
+| distinct journals (`anu_journals.csv` rows) | 141 | |
+| `anu_journals.csv` rows with an ISSN | 135/141 (95.7%) | |
+| `anu_journals.csv` rows with an `impact_factor` (Clarivate JIF) | 118/141 (83.7%) | |
 | staff with a validated ORCID | 33/46 (71.7%) | against the full roster, not the 40-row export — see above |
 
 ```
@@ -137,21 +145,37 @@ for field in ('year','quality_rank','sjr_quartile','citation_percentile','doi'):
   yet confirmed this scope decision** — it is the team's own judgement
   call, applied and fully reversible if the client decides differently.
   Full detail: docs/DECISIONS.md's 21 Sep and 24 Sep entries.
-- **One row lost in a merge, recovered; one still missing.** A git merge
-  between this branch's work and a parallel fresh pipeline run left
-  `anu_publications.csv` and `anu_publications.json` briefly out of sync —
-  one Tracy (Kun) Wang row (`10.1086/742862`, *The Journal of Law and
-  Economics*) existed in the JSON but had been dropped from the CSV;
-  restored from the JSON's own data on 24 Sep, which also resolved an
-  orphaned journal-table row for the same journal. A second row, Chao
-  Gao's "Investment Performance of Credit Risk Transfer Securities
-  (CRTs): The Early Evidence" (*Journal of Fixed Income*), is genuinely
-  absent from both files despite still being listed on his live ANU
-  profile page — not re-added by hand, since the pipeline's own current
-  enrichment values for it (ABDC rank, Scimago, citation data) aren't
-  recoverable from anywhere in this repo; recovering it needs a fresh
-  pipeline run for ANU, not a manual edit. Full detail: docs/DECISIONS.md's
-  24 Sep entry.
+- **Chao Gao's missing paper is back** ("Investment Performance of Credit
+  Risk Transfer Securities (CRTs): The Early Evidence", *Journal of Fixed
+  Income*, A). Cause: its DOI in `data/anu_doi_backfill.csv` was an SSRN
+  preprint DOI, which the shared clean step retypes as "Preprint" and the
+  export then drops. Fixed at the input — the backfill now carries the
+  Crossref-verified published DOI (as do three other SSRN rows); see
+  docs/DECISIONS.md, 28 Sep.
+- **4 genuine journal articles are still missing** because their profile
+  citations are too irregular for the parser (Lily Chen, IEEE TKDE 2022;
+  Neil Fargher, *Accounting and Finance* 53(1); Kathy Wang ×2, 2025). Listed
+  in `scratch/_anu25/REPORT.md`, not added by hand.
+- **Unchanged-code drift.** Re-running the current `main` code without any
+  ANU change does not reproduce the 24 Sep export exactly — a shared
+  `export.py` step added on 23 Sep rewrites titles/years across co-author
+  copies of the same DOI, and live ORCID/OpenAlex/Crossref data has moved
+  (e.g. Tracy (Kun) Wang's *Journal of Law and Economics* row lost its
+  DOI). Sarah Adams's *Third Sector Review* row and five single-case or
+  mis-encoded ANU titles are now guarded on the ANU side (v26); the shared
+  causes are reported for the team, not fixed here — see
+  docs/DECISIONS.md, 28 Sep (v25 and v26).
+- **Tracy (Kun) Wang's *Journal of Law and Economics* paper has no DOI.**
+  This machine's HTTP cache holds her OpenAlex query from 15 Sep, before
+  OpenAlex re-issued the paper under a new work id carrying DOI
+  10.1086/742862 (the live query has it). The profile copy's pre-publication
+  title fails the strict Crossref title check, so no DOI is backfilled.
+  A `--refresh` run would restore it (team decision).
+- **One row is probably a conference paper rated A\*.** Susanna Ho's
+  "THE EFFECTS OF WEB PERSONALIZATION…" (2008, OpenAlex) is a PACIS 2008
+  proceedings paper whose OpenAlex source is mislabelled *Journal of the
+  Association for Information Systems* — the same pattern as the v25
+  "Panel:" row. Flagged, not excluded (outside the v26 brief).
 - **3 near-duplicate candidates in UNSW's own committed data remain
   ambiguous** rather than clearly resolved — not applied to UNSW's files
   either way; see docs/DECISIONS.md.
@@ -184,6 +208,21 @@ for field in ('year','quality_rank','sjr_quartile','citation_percentile','doi'):
   confirmed genuinely missing and left for a fresh pipeline run rather
   than hand-added; one further Crossref/OpenAlex-unresolvable all-caps
   title resolved against ANU's own institutional repository instead.
+- **28 Sep 2026**: Chao Gao's lost paper recovered by replacing SSRN
+  backfill DOIs with Crossref-verified published DOIs (4 rows; the 2 Ball
+  and Brown rows refused); Susanna Ho's ECIS 2009 "Panel:" row excluded; a
+  journal-name completion rule for names cut at a comma or a partial
+  italic run, plus a special-issue tail strip (3 rows ranked, 2 verified
+  DOIs added); 14 newspaper/press-release/report/book-chapter rows
+  excluded; one verified DOI added for Lily Chen; the stale 23 Aug
+  unparsed file deleted.
+- **28 Sep 2026 (v26)**: author counts on ANU profile rows now come from
+  the DOI record (27 → 0 DOIs with disagreeing counts across co-author
+  rows); three duplicate profile copies of published rows excluded (Sorin
+  Daniliuc, Susanna Ho, Neil Fargher); Sarah Adams's *Third Sector Review*
+  row made durable by an ANU repository-journal rule; four single-case
+  titles given their proper casing by an ANU guard after the shared DOI
+  harmonisation step.
 
 Publication count across this history: 574 (15 Sep) → 588 (18 Sep, live
 re-scrape) → 587 (FIX K) → 565 (FIX L) → 565 (PR #44 merge, unchanged) →
@@ -191,4 +230,6 @@ re-scrape) → 587 (FIX K) → 565 (FIX L) → 565 (PR #44 merge, unchanged) →
 work) → 532 (22 Sep, merged with a parallel fresh pipeline run that added
 10 more Liu clinical rows + 4 unrelated Susanna Ho rows, and lost 2 rows —
 see docs/DECISIONS.md) → 522 (24 Sep, the 10 Liu rows excluded by rule) →
-**523 (24 Sep, current — the 1 recoverable lost row restored)**.
+523 (24 Sep, the 1 recoverable lost row restored) → 508 (28 Sep, v25 — +1 Chao Gao, −1 Panel, −14 non-journal items, −1
+duplicate merged by a verified DOI) → **505 (28 Sep, v26, current — −3
+duplicate profile copies of published rows)**.
