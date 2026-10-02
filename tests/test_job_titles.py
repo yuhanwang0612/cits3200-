@@ -36,14 +36,39 @@ from core.titles import rank, level, split_job_title
     # a role with no level: the rank is unknown, not the role
     ("Deputy Head of School (Education)", None, None, "Deputy Head of School"),
     ("Program Director", None, None, "Program Director"),
-    # affiliate appointments keep their qualifier
-    ("ADJUNCT PROFESSOR", "E", "Adjunct Professor", None),
-    ("Adjunct Senior Lecturer", "C", "Adjunct Senior Lecturer", None),
-    ("Honorary Associate Professor", "D", "Honorary Associate Professor", None),
-    ("Principal Fellow Honorary", None, "Honorary Principal Fellow", None),
+    # appointment-type words are dropped: job_title is the rank alone
+    ("ADJUNCT PROFESSOR", "E", "Professor", None),
+    ("Adjunct Research Professor", "E", "Professor", None),
+    ("Adjunct Research Fellow", "B", "Research Fellow", None),
+    ("Adjunct Senior Lecturer", "C", "Senior Lecturer", None),
+    ("Honorary Associate Professor", "D", "Associate Professor", None),
+    ("Principal Fellow Honorary", None, "Principal Fellow", None),
     # teaching roles with no rank and no level stay as listed
     ("Teaching Fellow", None, "Teaching Fellow", None),
-    ("Tutor - Education Focussed", None, "Tutor - Education Focussed", None),
+    ("Tutor - Education Focussed", None, "Tutor", None),
+    ("Enterprise Fellow in data, analytics, disruption and innovation", None, "Enterprise Fellow", None),
+    ("Casual Researcher", None, "Researcher", None),
+    # found in the full review: rank first, role after it
+    ("Professor Emeritus", "E", "Emeritus Professor", None),
+    ("Professor, Director of ANCAAR", "E", "Professor", "Director"),
+    ("Professor and Deputy Director Education", "E", "Professor", "Deputy Director"),
+    ("Professor & Deputy Director (Research)", "E", "Professor", "Deputy Director"),
+    ("Associate Professor, Director of HDR", "D", "Associate Professor", "HDR Director"),
+    ("Professor & Convenor of HDR, Co-Director of ANCAAR", "E", "Professor", "HDR Convenor; Co-Director"),
+    ("Senior Lecturer & Masters Course Work Convenor", "C", "Senior Lecturer", "Course Convenor"),
+    ("Lecturer and course convenor", "B", "Lecturer", "Course Convenor"),
+    ("Senior Lecturer, CPA Liaison Officer at Research School of Accounting", "C", "Senior Lecturer", "CPA Liaison Officer"),
+    ("Senior Lecturer PhD Coordinator (Centre for Brain, Mind and Markets)", "C", "Senior Lecturer", "PhD Coordinator"),
+    ("Senior Lecturer and Online Course Facilitator", "C", "Senior Lecturer", "Online Course Facilitator"),
+    # deputy program director is not program director
+    ("Associate Professor of Finance & Deputy Program Director (Master of Finance)", "D", "Associate Professor", "Deputy Program Director"),
+    # several roles in one title are all kept
+    ("Joint Deputy Head of Department (Teaching and Learning), Finance Major Coordinator", "D", "Associate Professor", "Deputy Head of Department; Major Coordinator"),
+    ("Deputy Honours Coordinator (Finance), Working Paper Series Coordinator", "D", "Associate Professor", "Deputy Honours Coordinator; Working Paper Series Coordinator"),
+    # casual / part-time dropped too
+    ("Casual Teaching Lecturer", None, "Lecturer", None),
+    ("Casual Employee (Prof Staff)", None, "Professional Staff", None),
+    ("P/T Tchg Lecturer", None, "Lecturer", None),
     # a department name scraped into the title field falls back to the level
     ("Research and Executive Education", "E", "Professor", None),
     # already standard, and empty

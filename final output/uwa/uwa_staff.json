@@ -2,6 +2,7 @@
   {
     "name": "Alex Yang",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -12,6 +13,7 @@
   {
     "name": "Alex Zhang",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -22,6 +24,7 @@
   {
     "name": "Collette Chesters",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -32,6 +35,7 @@
   {
     "name": "David Gilchrist",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -42,6 +46,7 @@
   {
     "name": "Fangbin Lin",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -52,6 +57,7 @@
   {
     "name": "George Shan",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -62,6 +68,7 @@
   {
     "name": "Glen Hutchings",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -71,8 +78,9 @@
   },
   {
     "name": "Leo Langa",
-    "job_title": "Assistant Professor",
-    "academic_level": "E",
+    "job_title": "Lecturer",
+    "admin_title": null,
+    "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
     "source_id": "leo-langa",
@@ -82,6 +90,7 @@
   {
     "name": "Lyndie Bayne",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -92,6 +101,7 @@
   {
     "name": "Mark Holub",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -102,6 +112,7 @@
   {
     "name": "Nikki Schonfeldt",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -112,6 +123,7 @@
   {
     "name": "Phil Hancock",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -122,6 +134,7 @@
   {
     "name": "Prerana Agrawal",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -132,6 +145,7 @@
   {
     "name": "Ricky Chung",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -142,6 +156,7 @@
   {
     "name": "Simeng Liu",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -152,6 +167,7 @@
   {
     "name": "Stijn Masschelein",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -162,6 +178,7 @@
   {
     "name": "Thanesvary Subraamanniam",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -172,6 +189,7 @@
   {
     "name": "Vincent Chong",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -182,6 +200,7 @@
   {
     "name": "Warrick Van Zyl",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Western Australia",
     "field_of_research": "Accounting",
@@ -192,6 +211,7 @@
   {
     "name": "Chloe Ho",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -202,6 +222,7 @@
   {
     "name": "Daniel Cahill",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -212,6 +233,7 @@
   {
     "name": "Dirk Baur",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -222,6 +244,7 @@
   {
     "name": "Duc Vo",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -232,6 +255,7 @@
   {
     "name": "Elizabeth Ooi",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -242,6 +266,7 @@
   {
     "name": "Farhan Shazia",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -252,6 +277,7 @@
   {
     "name": "Frank Liu",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -262,6 +288,7 @@
   {
     "name": "Gary Smith",
     "job_title": "Associate Lecturer",
+    "admin_title": null,
     "academic_level": "A",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -272,6 +299,7 @@
   {
     "name": "Joey Yang",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -282,6 +310,7 @@
   {
     "name": "Kam Chan",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -292,6 +321,7 @@
   {
     "name": "Lai Hoang",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -302,6 +332,7 @@
   {
     "name": "Lee Smales",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -312,6 +343,7 @@
   {
     "name": "Mosharraf Hossain",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -322,6 +354,7 @@
   {
     "name": "Paul Gerrans",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -331,7 +364,8 @@
   },
   {
     "name": "Raymond Da Silva Rosa",
-    "job_title": "Winthrop Professor",
+    "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -342,6 +376,7 @@
   {
     "name": "Rui Zhong",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -352,6 +387,7 @@
   {
     "name": "Russell Poskitt",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -362,6 +398,7 @@
   {
     "name": "Thao Hoang",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -372,6 +409,7 @@
   {
     "name": "Yihui Lan",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Finance",
@@ -382,6 +420,7 @@
   {
     "name": "Yuanji Wen",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Western Australia",
     "field_of_research": "Finance",

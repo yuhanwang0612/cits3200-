@@ -1,7 +1,8 @@
 [
   {
     "name": "Margaret Abernethy",
-    "job_title": "Sir Douglas Copland Chair of Commerce",
+    "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -12,6 +13,7 @@
   {
     "name": "Gary Biddle",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -21,7 +23,8 @@
   },
   {
     "name": "Stuart Black",
-    "job_title": "Enterprise Fellow in data, analytics, disruption and innovation",
+    "job_title": "Enterprise Fellow",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -32,6 +35,7 @@
   {
     "name": "Jonathan Black",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -42,6 +46,7 @@
   {
     "name": "Noel Boys",
     "job_title": "Teaching Fellow",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -52,6 +57,7 @@
   {
     "name": "Albie Brooks",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -62,6 +68,7 @@
   {
     "name": "Geoffrey Burrows",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -71,7 +78,8 @@
   },
   {
     "name": "Phill Cobbin",
-    "job_title": "Principal Fellow Honorary",
+    "job_title": "Principal Fellow",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -82,6 +90,7 @@
   {
     "name": "Michael Davern",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -92,6 +101,7 @@
   {
     "name": "Tongqing (Tony) Ding",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -102,6 +112,7 @@
   {
     "name": "Matt Dyki",
     "job_title": "Teaching Fellow",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -112,6 +123,7 @@
   {
     "name": "Patrick Ferguson",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -121,7 +133,8 @@
   },
   {
     "name": "Jennifer Grafton",
-    "job_title": "Associate Dean (Global Engagement)",
+    "job_title": "Professor",
+    "admin_title": "Associate Dean",
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -132,6 +145,7 @@
   {
     "name": "Jane Hronsky",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -141,7 +155,8 @@
   },
   {
     "name": "Chung-Yu Hung",
-    "job_title": "Deputy Head of Department",
+    "job_title": "Associate Professor",
+    "admin_title": "Deputy Head of Department",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -152,6 +167,7 @@
   {
     "name": "Xue Jia",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -162,6 +178,7 @@
   {
     "name": "Like Jiang",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -172,6 +189,7 @@
   {
     "name": "Flora Kuang",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -182,6 +200,7 @@
   {
     "name": "Stewart Leech",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -191,7 +210,8 @@
   },
   {
     "name": "Anne Lillis",
-    "job_title": "Emeritus Professor Honorary",
+    "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -202,6 +222,7 @@
   {
     "name": "Junhao Liu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -212,6 +233,7 @@
   {
     "name": "Derick Lyle",
     "job_title": "Teaching Fellow",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -222,6 +244,7 @@
   {
     "name": "Rebecca Mattocks",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -232,6 +255,7 @@
   {
     "name": "Warren McKeown",
     "job_title": "Teaching Fellow",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -241,7 +265,8 @@
   },
   {
     "name": "Vic Naiker",
-    "job_title": "Deputy Head of Department",
+    "job_title": "Professor",
+    "admin_title": "Deputy Head of Department",
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -252,6 +277,7 @@
   {
     "name": "Sujay Nair",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -262,6 +288,7 @@
   {
     "name": "Matthew Pinnuck",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -271,7 +298,8 @@
   },
   {
     "name": "Brad Potter",
-    "job_title": "Head of Department",
+    "job_title": "Professor",
+    "admin_title": "Head of Department",
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -282,6 +310,7 @@
   {
     "name": "Bo Qin",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -292,6 +321,7 @@
   {
     "name": "Stefan Schantl",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -302,6 +332,7 @@
   {
     "name": "Maggie Singorahardjo",
     "job_title": null,
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -312,6 +343,7 @@
   {
     "name": "Naomi Soderstrom",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -321,7 +353,8 @@
   },
   {
     "name": "Nasser Spear",
-    "job_title": "GL Wood Chair of Accounting",
+    "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -332,6 +365,7 @@
   {
     "name": "Maiying Sui",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -342,6 +376,7 @@
   {
     "name": "Eu-Jin Teo",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -352,6 +387,7 @@
   {
     "name": "Martin Weisner",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -362,6 +398,7 @@
   {
     "name": "Qingbo Yuan",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Accounting",
@@ -372,6 +409,7 @@
   {
     "name": "Gil Aharoni",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -382,6 +420,7 @@
   {
     "name": "Attila Balogh",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -391,7 +430,8 @@
   },
   {
     "name": "James Brugler",
-    "job_title": "Practitioner-in-Residence Program Coordinator",
+    "job_title": "Associate Professor",
+    "admin_title": "Program Coordinator",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -401,7 +441,8 @@
   },
   {
     "name": "Carole Comerton-Forde",
-    "job_title": "Research and Executive Education",
+    "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -411,7 +452,8 @@
   },
   {
     "name": "Jonathan Dark",
-    "job_title": "Honours Coordinator Associate Professor",
+    "job_title": "Associate Professor",
+    "admin_title": "Honours Coordinator",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -421,7 +463,8 @@
   },
   {
     "name": "Jon Gauntlett",
-    "job_title": "Tutor - Education Focussed",
+    "job_title": "Tutor",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -432,6 +475,7 @@
   {
     "name": "Marina Gertsberg",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -441,7 +485,8 @@
   },
   {
     "name": "André Gygax",
-    "job_title": "Program Director Senior Lecturer",
+    "job_title": "Senior Lecturer",
+    "admin_title": "Program Director",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -452,6 +497,7 @@
   {
     "name": "John Handley",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -461,7 +507,8 @@
   },
   {
     "name": "Joachim Inkmann",
-    "job_title": "Deputy Honours Coordinator (Finance), Working Paper Series Coordinator",
+    "job_title": "Associate Professor",
+    "admin_title": "Deputy Honours Coordinator; Working Paper Series Coordinator",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -472,6 +519,7 @@
   {
     "name": "Eduard Inozemtsev",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -482,6 +530,7 @@
   {
     "name": "Hae Won (Henny) Jung",
     "job_title": "Associate Professor",
+    "admin_title": "Deputy Program Director",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -492,6 +541,7 @@
   {
     "name": "Patrick J. Kelly",
     "job_title": "Associate Professor",
+    "admin_title": "PhD Program Director",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -502,6 +552,7 @@
   {
     "name": "Paul Kofman",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -511,7 +562,8 @@
   },
   {
     "name": "Asjeet Lamba",
-    "job_title": "Head of Department",
+    "job_title": "Associate Professor",
+    "admin_title": "Head of Department",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -520,18 +572,9 @@
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/14988"
   },
   {
-    "name": "Gabriele Lattanzio",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": "182846",
-    "orcid": "0000-0003-1592-433X",
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/gabriele-lattanzio"
-  },
-  {
     "name": "Bryan Lim",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -541,7 +584,8 @@
   },
   {
     "name": "Andrea Lu",
-    "job_title": "Associate Dean (International)",
+    "job_title": "Associate Professor",
+    "admin_title": "Associate Dean",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -552,6 +596,7 @@
   {
     "name": "Lucie Lu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -562,6 +607,7 @@
   {
     "name": "Maurice McCourt",
     "job_title": "Senior Lecturer",
+    "admin_title": "Deputy Program Director",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -572,6 +618,7 @@
   {
     "name": "Mrinal Mishra",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -582,6 +629,7 @@
   {
     "name": "Carsten Murawski",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -591,7 +639,8 @@
   },
   {
     "name": "Federico Nardari",
-    "job_title": "Joint Deputy Head of Department (Research and Engagement)",
+    "job_title": "Professor",
+    "admin_title": "Deputy Head of Department",
     "academic_level": "E",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -602,6 +651,7 @@
   {
     "name": "Anthony Ng",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -612,6 +662,7 @@
   {
     "name": "Hoonsuk Park",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -621,7 +672,8 @@
   },
   {
     "name": "Hung (Harry) Viet Pham",
-    "job_title": "Tutor - Education Focussed",
+    "job_title": "Tutor",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -631,7 +683,8 @@
   },
   {
     "name": "Sean Pinder",
-    "job_title": "Joint Deputy Head of Department (Teaching and Learning), Finance Major Coordinator",
+    "job_title": "Associate Professor",
+    "admin_title": "Deputy Head of Department; Major Coordinator",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -642,6 +695,7 @@
   {
     "name": "Chander Shekhar",
     "job_title": "Senior Lecturer",
+    "admin_title": "Program Director",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -652,6 +706,7 @@
   {
     "name": "Zhen Shi",
     "job_title": "Senior Lecturer",
+    "admin_title": "Program Director",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -661,7 +716,8 @@
   },
   {
     "name": "Ekaterina Volkova",
-    "job_title": "Assistant Dean (Graduate Research)",
+    "job_title": "Associate Professor",
+    "admin_title": "Assistant Dean",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -672,6 +728,7 @@
   {
     "name": "Xiaoting Wei",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -682,6 +739,7 @@
   {
     "name": "Nitin Yadav",
     "job_title": "Senior Lecturer",
+    "admin_title": "PhD Coordinator",
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -692,6 +750,7 @@
   {
     "name": "Jun Yu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -701,7 +760,8 @@
   },
   {
     "name": "Qi Zeng",
-    "job_title": "Joint PhD Program Director (Finance)",
+    "job_title": "Associate Professor",
+    "admin_title": "PhD Program Director",
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -712,6 +772,7 @@
   {
     "name": "Zhuo Zhong",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -721,7 +782,8 @@
   },
   {
     "name": "Yun (Tracy) Zhou",
-    "job_title": "Tutor - Education Focussed",
+    "job_title": "Tutor",
+    "admin_title": null,
     "academic_level": null,
     "university": "University of Melbourne",
     "field_of_research": "Finance",
@@ -732,6 +794,7 @@
   {
     "name": "Silvia Zia",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "University of Melbourne",
     "field_of_research": "Finance",

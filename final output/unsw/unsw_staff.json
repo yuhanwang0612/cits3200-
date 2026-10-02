@@ -2,6 +2,7 @@
   {
     "name": "Nicole Ang",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -12,6 +13,7 @@
   {
     "name": "Maria Balatbat",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -21,7 +23,8 @@
   },
   {
     "name": "Francisco Barillas Bedoya",
-    "job_title": "Head of School",
+    "job_title": "Professor",
+    "admin_title": "Head of School",
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -32,6 +35,7 @@
   {
     "name": "Dale Boccabella",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -42,6 +46,7 @@
   {
     "name": "Rodney Brown",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -52,6 +57,7 @@
   {
     "name": "Elizabeth Carson",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -62,6 +68,7 @@
   {
     "name": "Linda Chang",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -72,6 +79,7 @@
   {
     "name": "Wei Chen",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -82,6 +90,7 @@
   {
     "name": "Zongxi Chen",
     "job_title": "Associate Lecturer",
+    "admin_title": null,
     "academic_level": "A",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -92,6 +101,7 @@
   {
     "name": "Mandy Cheng",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -101,7 +111,8 @@
   },
   {
     "name": "Demi Chung",
-    "job_title": "Adjunct Senior Lecturer",
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -112,6 +123,7 @@
   {
     "name": "Oleg Chuprinin",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -122,6 +134,7 @@
   {
     "name": "Victoria Clout",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -132,6 +145,7 @@
   {
     "name": "Conor Clune",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -142,6 +156,7 @@
   {
     "name": "David Colwell",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -152,6 +167,7 @@
   {
     "name": "Jeff Coulton",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -162,6 +178,7 @@
   {
     "name": "Lili Dai",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -172,6 +189,7 @@
   {
     "name": "Sander De Groote",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -182,6 +200,7 @@
   {
     "name": "Wesley Deng",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -192,6 +211,7 @@
   {
     "name": "Alexander Dickerson",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -202,6 +222,7 @@
   {
     "name": "David Feldman",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -212,6 +233,7 @@
   {
     "name": "Tanya Fiedler",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -222,6 +244,7 @@
   {
     "name": "Kingsley Fong",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -232,6 +255,7 @@
   {
     "name": "Mathieu Fournier",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -242,6 +266,7 @@
   {
     "name": "Luis Filipe Goncalves-Pinto",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -251,7 +276,8 @@
   },
   {
     "name": "Noel Harding",
-    "job_title": "Head of School",
+    "job_title": "Professor",
+    "admin_title": "Head of School",
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -262,6 +288,7 @@
   {
     "name": "Hien Hoang",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -272,6 +299,7 @@
   {
     "name": "Sarowar Hossain",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -282,6 +310,7 @@
   {
     "name": "Mark Humphery-Jenner",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -292,6 +321,7 @@
   {
     "name": "Kerry Humphreys",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -302,6 +332,7 @@
   {
     "name": "Andrew Jackson",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -312,6 +343,7 @@
   {
     "name": "Yeejin Jang",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -321,7 +353,8 @@
   },
   {
     "name": "Alexandre Jeanneret",
-    "job_title": "Deputy Head of School - Research",
+    "job_title": "Professor",
+    "admin_title": "Deputy Head of School",
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -332,6 +365,7 @@
   {
     "name": "Helen Kang",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -342,6 +376,7 @@
   {
     "name": "Ann Kayis-Kumar",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -352,6 +387,7 @@
   {
     "name": "Amy Kwan",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -362,6 +398,7 @@
   {
     "name": "Evelyn Lai",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -372,6 +409,7 @@
   {
     "name": "Suk Lee",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -382,6 +420,7 @@
   {
     "name": "Rachael Lewis",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -392,6 +431,7 @@
   {
     "name": "Leonard Leye Li",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -402,6 +442,7 @@
   {
     "name": "Youngdeok Lim",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -412,6 +453,7 @@
   {
     "name": "Yiping Lin",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -422,6 +464,7 @@
   {
     "name": "Benjamin Loos",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -431,7 +474,8 @@
   },
   {
     "name": "Gordon Mackenzie",
-    "job_title": "Adjunct Senior Lecturer",
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -442,6 +486,7 @@
   {
     "name": "Fiona Martin",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -452,6 +497,7 @@
   {
     "name": "Ronald Masulis",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -462,6 +508,7 @@
   {
     "name": "Edouard Mattille",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -471,7 +518,8 @@
   },
   {
     "name": "Malcolm Miller",
-    "job_title": "Honorary Associate Professor",
+    "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -482,6 +530,7 @@
   {
     "name": "Gary Monroe",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -492,6 +541,7 @@
   {
     "name": "Kate Morgan",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -502,6 +552,7 @@
   {
     "name": "Richard Morris",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -512,6 +563,7 @@
   {
     "name": "Fariborz Moshirian",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -522,6 +574,7 @@
   {
     "name": "Peter O'Neill",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -532,6 +585,7 @@
   {
     "name": "Natalie Oh",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -542,6 +596,7 @@
   {
     "name": "Jerry Parwada",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -552,6 +607,7 @@
   {
     "name": "Elise Payzan",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -562,6 +618,7 @@
   {
     "name": "Zihang Peng",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -572,6 +629,7 @@
   {
     "name": "Gordon Phillips",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -582,6 +640,7 @@
   {
     "name": "Yee Shih Phua",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -592,6 +651,7 @@
   {
     "name": "Jonathan Reeves",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -602,6 +662,7 @@
   {
     "name": "Greg Richins",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -612,6 +673,7 @@
   {
     "name": "Kristle Romero Cortes",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -622,6 +684,7 @@
   {
     "name": "Breno Schmidt",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -632,6 +695,7 @@
   {
     "name": "Rik Sen",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -642,6 +706,7 @@
   {
     "name": "Jianfeng Shen",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -652,6 +717,7 @@
   {
     "name": "Janghoon Shon",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -662,6 +728,7 @@
   {
     "name": "Roger Simnett",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -672,6 +739,7 @@
   {
     "name": "Elvira Sojli",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -682,6 +750,7 @@
   {
     "name": "Peter Swan",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -692,6 +761,7 @@
   {
     "name": "Stuart Taylor",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -702,6 +772,7 @@
   {
     "name": "Andrew Terry",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -711,7 +782,8 @@
   },
   {
     "name": "Thuy Duong To",
-    "job_title": "Deputy Head of School - Education",
+    "job_title": "Associate Professor",
+    "admin_title": "Deputy Head of School",
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -722,6 +794,7 @@
   {
     "name": "Binh Tran-Nam",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -732,6 +805,7 @@
   {
     "name": "Ken Trotman",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -742,6 +816,7 @@
   {
     "name": "Robert Tumarkin",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -752,6 +827,7 @@
   {
     "name": "Kristina Vojvoda",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -762,6 +838,7 @@
   {
     "name": "Michael Walpole",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -772,6 +849,7 @@
   {
     "name": "Neil Warren",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -781,7 +859,8 @@
   },
   {
     "name": "Yan Xu",
-    "job_title": "Scientia Professor",
+    "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Accounting",
@@ -792,6 +871,7 @@
   {
     "name": "Yuchen Xu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -802,6 +882,7 @@
   {
     "name": "Zhaoxia Xu",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -812,6 +893,7 @@
   {
     "name": "Li Yang",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -822,6 +904,7 @@
   {
     "name": "Henry Yip",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",
@@ -832,6 +915,7 @@
   {
     "name": "Jason Zein",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "UNSW Sydney",
     "field_of_research": "Finance",

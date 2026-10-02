@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-10-01T02:55:19.943688+00:00",
+  "generated_at": "2026-10-02T13:16:42.562264+00:00",
   "mode": "live",
   "roster_sources": {
     "Accounting": "live",
     "Finance": "live"
   },
-  "staff_records": 99,
-  "staff_with_high_confidence_minerva_identity": 57,
-  "staff_without_high_confidence_identity": 42,
+  "staff_records": 97,
+  "staff_with_high_confidence_minerva_identity": 56,
+  "staff_without_high_confidence_identity": 41,
   "minerva_identity_discovery": {
-    "attempted": 45,
+    "attempted": 44,
     "resolved": 3,
     "ambiguous": 2,
-    "not_found": 40,
-    "queries": 98,
+    "not_found": 39,
+    "queries": 96,
     "errors": []
   },
   "orcid_identity_resolution": {
-    "queries": 68,
-    "resolved": 17,
+    "queries": 67,
+    "resolved": 16,
     "ambiguous": 1,
     "not_found": 23,
     "errors": [],
-    "skipped_existing_orcid": 58,
+    "skipped_existing_orcid": 57,
     "aborted_after_repeated_errors": 0
   },
   "openalex_identity_resolution": {
@@ -31,11 +31,11 @@
     "ambiguous": 0,
     "not_found": 9,
     "errors": [],
-    "skipped_existing_orcid": 75,
-    "skipped_existing_identifier": 79,
+    "skipped_existing_orcid": 73,
+    "skipped_existing_identifier": 77,
     "aborted_after_repeated_errors": 0
   },
-  "staff_reachable_by_supplementary_orcid_or_openalex_author_id": 90,
+  "staff_reachable_by_supplementary_orcid_or_openalex_author_id": 88,
   "staff_without_any_verified_retrieval_identity": 9,
   "departmental_seed_publications": {
     "Accounting": 168,
@@ -53,9 +53,9 @@
       "count_reconciles": true
     }
   },
-  "exact_seed_relationships": 261,
-  "researcher_publication_links": 273,
-  "live_researcher_searches": 57,
+  "exact_seed_relationships": 260,
+  "researcher_publication_links": 272,
+  "live_researcher_searches": 56,
   "manual_identity_overrides_applied": 0,
   "manual_retrieval_overrides_applied": 7,
   "search_failures": [],
@@ -1744,43 +1744,6 @@
           "has_unimelb_affiliation": false
         }
       ]
-    },
-    {
-      "name": "Juan Pablo Franco",
-      "discipline": "Finance",
-      "profile_url": "https://findanexpert.unimelb.edu.au/profile/803361",
-      "minerva_identity_confidence": "none",
-      "minerva_candidate_count": 0,
-      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
-      "orcid_candidate_count": 1,
-      "orcid_review_candidates": [
-        {
-          "orcid": "0009-0007-8625-3357",
-          "credit_name": null,
-          "given_names": "Juan Pablo",
-          "family_names": "Franco",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-2608-2035",
-          "credit_name": "Juan Pablo Franco",
-          "given_names": "Juan Pablo",
-          "family_names": "Franco",
-          "institutions": [
-            "Banco de la República de Colombia",
-            "California Institute of Technology",
-            "JPMorgan",
-            "Maastricht University",
-            "Universidad de los Andes",
-            "University of Melbourne"
-          ],
-          "has_unimelb_affiliation": true
-        }
-      ],
-      "openalex_identity_status": "not_needed_verified_identifier",
-      "openalex_candidate_count": 0,
-      "openalex_review_candidates": []
     },
     {
       "name": "Jon Gauntlett",

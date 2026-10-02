@@ -2,6 +2,7 @@
   {
     "name": "Chris Kandunias",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -11,8 +12,9 @@
   },
   {
     "name": "Youngnae Jun",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Lecturer",
+    "admin_title": null,
+    "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
     "source_id": "youngnae.jun",
@@ -21,8 +23,9 @@
   },
   {
     "name": "Scott Copeland",
-    "job_title": "Program Director",
-    "academic_level": null,
+    "job_title": "Professor",
+    "admin_title": "Program Director",
+    "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
     "source_id": "scott.copeland",
@@ -30,18 +33,9 @@
     "profile_url": "https://adelaide.edu.au/people/scott.copeland"
   },
   {
-    "name": "Hasni Gunasekara",
-    "job_title": null,
-    "academic_level": null,
-    "university": "Adelaide University",
-    "field_of_research": "Accounting",
-    "source_id": "hasni.gunasekara",
-    "orcid": "0000-0002-1894-3555",
-    "profile_url": "https://adelaide.edu.au/people/hasni.gunasekara"
-  },
-  {
     "name": "John Christie",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -50,8 +44,20 @@
     "profile_url": "https://adelaide.edu.au/people/john.christie"
   },
   {
+    "name": "Hasni Gunasekara",
+    "job_title": "Lecturer",
+    "admin_title": null,
+    "academic_level": "B",
+    "university": "Adelaide University",
+    "field_of_research": "Accounting",
+    "source_id": "hasni.gunasekara",
+    "orcid": "0000-0002-1894-3555",
+    "profile_url": "https://adelaide.edu.au/people/hasni.gunasekara"
+  },
+  {
     "name": "Rob Whait",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -60,18 +66,9 @@
     "profile_url": "https://adelaide.edu.au/people/rob.whait"
   },
   {
-    "name": "Peter Rossini",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "peter.rossini",
-    "orcid": null,
-    "profile_url": "https://adelaide.edu.au/people/peter.rossini"
-  },
-  {
     "name": "Amanpreet Kaur",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -80,28 +77,20 @@
     "profile_url": "https://adelaide.edu.au/people/amanpreet.kaur01"
   },
   {
-    "name": "Upekha Atupola",
-    "job_title": null,
-    "academic_level": null,
+    "name": "Peter Rossini",
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
     "university": "Adelaide University",
-    "field_of_research": "Accounting",
-    "source_id": "upekha.atupola",
+    "field_of_research": "Finance",
+    "source_id": "peter.rossini",
     "orcid": null,
-    "profile_url": "https://adelaide.edu.au/people/upekha.atupola"
-  },
-  {
-    "name": "Sumit Lodhia",
-    "job_title": "Professor",
-    "academic_level": "E",
-    "university": "Adelaide University",
-    "field_of_research": "Accounting",
-    "source_id": "sumit.lodhia",
-    "orcid": "0000-0002-4459-2621",
-    "profile_url": "https://adelaide.edu.au/people/sumit.lodhia"
+    "profile_url": "https://adelaide.edu.au/people/peter.rossini"
   },
   {
     "name": "John Pisaniello",
-    "job_title": "Research Professor",
+    "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -110,8 +99,20 @@
     "profile_url": "https://adelaide.edu.au/people/john.pisaniello"
   },
   {
+    "name": "Upekha Atupola",
+    "job_title": "Researcher",
+    "admin_title": null,
+    "academic_level": null,
+    "university": "Adelaide University",
+    "field_of_research": "Accounting",
+    "source_id": "upekha.atupola",
+    "orcid": null,
+    "profile_url": "https://adelaide.edu.au/people/upekha.atupola"
+  },
+  {
     "name": "Sanjaya Kuruppu",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -122,6 +123,7 @@
   {
     "name": "Dinithi Dissanayake",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -130,28 +132,20 @@
     "profile_url": "https://adelaide.edu.au/people/dinithi.dissanayake"
   },
   {
-    "name": "Niro Wellalage",
-    "job_title": "Associate Professor",
-    "academic_level": "D",
-    "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "niro.wellalage",
-    "orcid": "0000-0002-3316-3813",
-    "profile_url": "https://adelaide.edu.au/people/niro.wellalage"
-  },
-  {
-    "name": "Chandra Krishnamurti",
+    "name": "Sumit Lodhia",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "chandra.krishnamurti",
-    "orcid": "0000-0001-6726-8018",
-    "profile_url": "https://adelaide.edu.au/people/chandra.krishnamurti"
+    "field_of_research": "Accounting",
+    "source_id": "sumit.lodhia",
+    "orcid": "0000-0002-4459-2621",
+    "profile_url": "https://adelaide.edu.au/people/sumit.lodhia"
   },
   {
     "name": "Reza Bradrania",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -160,18 +154,31 @@
     "profile_url": "https://adelaide.edu.au/people/reza.bradrania"
   },
   {
-    "name": "Katherine Christ",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
+    "name": "Chandra Krishnamurti",
+    "job_title": "Professor",
+    "admin_title": null,
+    "academic_level": "E",
     "university": "Adelaide University",
-    "field_of_research": "Accounting",
-    "source_id": "katherine.christ",
-    "orcid": null,
-    "profile_url": "https://adelaide.edu.au/people/katherine.christ"
+    "field_of_research": "Finance",
+    "source_id": "chandra.krishnamurti",
+    "orcid": "0000-0001-6726-8018",
+    "profile_url": "https://adelaide.edu.au/people/chandra.krishnamurti"
+  },
+  {
+    "name": "Niro Wellalage",
+    "job_title": "Associate Professor",
+    "admin_title": null,
+    "academic_level": "D",
+    "university": "Adelaide University",
+    "field_of_research": "Finance",
+    "source_id": "niro.wellalage",
+    "orcid": "0000-0002-3316-3813",
+    "profile_url": "https://adelaide.edu.au/people/niro.wellalage"
   },
   {
     "name": "Belinda Harrison",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -180,18 +187,20 @@
     "profile_url": "https://adelaide.edu.au/people/belinda.harrison"
   },
   {
-    "name": "Mishkatur Rahman",
-    "job_title": null,
-    "academic_level": null,
+    "name": "Katherine Christ",
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
     "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "mishkatur.rahman",
-    "orcid": "0000-0002-1690-8246",
-    "profile_url": "https://adelaide.edu.au/people/mishkatur.rahman"
+    "field_of_research": "Accounting",
+    "source_id": "katherine.christ",
+    "orcid": null,
+    "profile_url": "https://adelaide.edu.au/people/katherine.christ"
   },
   {
     "name": "Hao Zhou",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -200,8 +209,20 @@
     "profile_url": "https://adelaide.edu.au/people/hao.zhou"
   },
   {
+    "name": "Mishkatur Rahman",
+    "job_title": "Lecturer",
+    "admin_title": null,
+    "academic_level": "B",
+    "university": "Adelaide University",
+    "field_of_research": "Finance",
+    "source_id": "mishkatur.rahman",
+    "orcid": "0000-0002-1690-8246",
+    "profile_url": "https://adelaide.edu.au/people/mishkatur.rahman"
+  },
+  {
     "name": "Amanda Carter",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -212,6 +233,7 @@
   {
     "name": "Mansoor Khan",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -222,6 +244,7 @@
   {
     "name": "Kartick Gupta",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -232,6 +255,7 @@
   {
     "name": "Joanne Tingey-Holyoak",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -241,7 +265,8 @@
   },
   {
     "name": "Lin Crase",
-    "job_title": "Dean, School of Accounting and Finance",
+    "job_title": "Professor",
+    "admin_title": "Dean",
     "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -252,6 +277,7 @@
   {
     "name": "Mingwei Sun",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -262,6 +288,7 @@
   {
     "name": "Sumin Kim",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -272,6 +299,7 @@
   {
     "name": "Winston Wu",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -281,8 +309,9 @@
   },
   {
     "name": "Aise Kim",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
     "source_id": "aise.kim",
@@ -290,18 +319,9 @@
     "profile_url": "https://adelaide.edu.au/people/aise.kim"
   },
   {
-    "name": "Kathy Rao",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "Adelaide University",
-    "field_of_research": "Accounting",
-    "source_id": "kathy.rao",
-    "orcid": "0000-0002-3924-6361",
-    "profile_url": "https://adelaide.edu.au/people/kathy.rao"
-  },
-  {
     "name": "Subha Parida",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -310,8 +330,20 @@
     "profile_url": "https://adelaide.edu.au/people/subha.parida"
   },
   {
+    "name": "Kathy Rao",
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
+    "university": "Adelaide University",
+    "field_of_research": "Accounting",
+    "source_id": "kathy.rao",
+    "orcid": "0000-0002-3924-6361",
+    "profile_url": "https://adelaide.edu.au/people/kathy.rao"
+  },
+  {
     "name": "Carol Tilt",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -322,6 +354,7 @@
   {
     "name": "Glen Lehman",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -332,6 +365,7 @@
   {
     "name": "Guodong Yuan",
     "job_title": "Senior Lecturer",
+    "admin_title": "Online Course Facilitator",
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -342,6 +376,7 @@
   {
     "name": "Braam Lowies",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -352,6 +387,7 @@
   {
     "name": "Lei Xu",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -362,6 +398,7 @@
   {
     "name": "Howard Harris",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -370,18 +407,9 @@
     "profile_url": "https://adelaide.edu.au/people/howard.harris"
   },
   {
-    "name": "Basil Tucker",
-    "job_title": null,
-    "academic_level": null,
-    "university": "Adelaide University",
-    "field_of_research": "Accounting",
-    "source_id": "basil.tucker",
-    "orcid": "0000-0002-1858-1590",
-    "profile_url": "https://adelaide.edu.au/people/basil.tucker"
-  },
-  {
     "name": "Shiao-Lan Chou",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -390,8 +418,20 @@
     "profile_url": "https://adelaide.edu.au/people/shiao-lan.chou"
   },
   {
+    "name": "Basil Tucker",
+    "job_title": "Associate Professor",
+    "admin_title": null,
+    "academic_level": "D",
+    "university": "Adelaide University",
+    "field_of_research": "Accounting",
+    "source_id": "basil.tucker",
+    "orcid": "0000-0002-1858-1590",
+    "profile_url": "https://adelaide.edu.au/people/basil.tucker"
+  },
+  {
     "name": "Agus Wicaksana",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -401,8 +441,9 @@
   },
   {
     "name": "Christa Viljoen",
-    "job_title": "Program Director",
-    "academic_level": null,
+    "job_title": "Lecturer",
+    "admin_title": "Program Director",
+    "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
     "source_id": "christa.viljoen",
@@ -412,6 +453,7 @@
   {
     "name": "Mei Lim",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -421,8 +463,9 @@
   },
   {
     "name": "Ron McIver",
-    "job_title": "Program Director",
-    "academic_level": null,
+    "job_title": "Lecturer",
+    "admin_title": "Program Director",
+    "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
     "source_id": "ron.mciver",
@@ -432,6 +475,7 @@
   {
     "name": "Simon Cottrell",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -441,8 +485,9 @@
   },
   {
     "name": "Courtney Regan",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Research Fellow",
+    "admin_title": null,
+    "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
     "source_id": "courtney.regan",
@@ -452,6 +497,7 @@
   {
     "name": "Wei Qian",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -462,6 +508,7 @@
   {
     "name": "Kesten Green",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -471,8 +518,9 @@
   },
   {
     "name": "Ali Fereydooni",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Lecturer",
+    "admin_title": null,
+    "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
     "source_id": "ali.fereydooni",
@@ -482,6 +530,7 @@
   {
     "name": "Shunji Mei",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -492,6 +541,7 @@
   {
     "name": "Kevin Li",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -502,6 +552,7 @@
   {
     "name": "Ilker Cingillioglu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -512,6 +563,7 @@
   {
     "name": "Daniel Orlovsky",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -522,6 +574,7 @@
   {
     "name": "Md Afnan Hossain",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -532,6 +585,7 @@
   {
     "name": "Xiaopeng Wei",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -540,9 +594,21 @@
     "profile_url": "https://adelaide.edu.au/people/xiaopeng.wei"
   },
   {
+    "name": "Marta Khomyn",
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
+    "university": "Adelaide University",
+    "field_of_research": "Finance",
+    "source_id": "marta.khomyn",
+    "orcid": "0000-0002-4244-6663",
+    "profile_url": "https://adelaide.edu.au/people/marta.khomyn"
+  },
+  {
     "name": "Nicholas Marzohl",
-    "job_title": "Lecturer",
-    "academic_level": "B",
+    "job_title": "Professional Staff",
+    "admin_title": null,
+    "academic_level": null,
     "university": "Adelaide University",
     "field_of_research": "Accounting",
     "source_id": "nicholas.marzohl",
@@ -552,6 +618,7 @@
   {
     "name": "Pide Lun",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -560,18 +627,9 @@
     "profile_url": "https://adelaide.edu.au/people/pide.lun"
   },
   {
-    "name": "Marta Khomyn",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "marta.khomyn",
-    "orcid": "0000-0002-4244-6663",
-    "profile_url": "https://adelaide.edu.au/people/marta.khomyn"
-  },
-  {
     "name": "Lan Phuong Nguyen",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -580,38 +638,9 @@
     "profile_url": "https://adelaide.edu.au/people/lanphuong.nguyen"
   },
   {
-    "name": "Sunze Yu",
-    "job_title": null,
-    "academic_level": null,
-    "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "sunze.yu",
-    "orcid": "0000-0003-4990-3158",
-    "profile_url": "https://adelaide.edu.au/people/sunze.yu"
-  },
-  {
-    "name": "George Mihaylov",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "george.mihaylov",
-    "orcid": "0000-0001-8146-7881",
-    "profile_url": "https://adelaide.edu.au/people/george.mihaylov"
-  },
-  {
-    "name": "Ivan Indriawan",
-    "job_title": "Senior Lecturer",
-    "academic_level": "C",
-    "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "ivan.indriawan",
-    "orcid": "0000-0002-6558-5551",
-    "profile_url": "https://adelaide.edu.au/people/ivan.indriawan"
-  },
-  {
     "name": "Yunyan Zhang",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -620,9 +649,43 @@
     "profile_url": "https://adelaide.edu.au/people/yunyan.zhang"
   },
   {
-    "name": "Mahmud Masum",
-    "job_title": "Program Director",
+    "name": "Sunze Yu",
+    "job_title": null,
+    "admin_title": null,
     "academic_level": null,
+    "university": "Adelaide University",
+    "field_of_research": "Finance",
+    "source_id": "sunze.yu",
+    "orcid": "0000-0003-4990-3158",
+    "profile_url": "https://adelaide.edu.au/people/sunze.yu"
+  },
+  {
+    "name": "Ivan Indriawan",
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
+    "university": "Adelaide University",
+    "field_of_research": "Finance",
+    "source_id": "ivan.indriawan",
+    "orcid": "0000-0002-6558-5551",
+    "profile_url": "https://adelaide.edu.au/people/ivan.indriawan"
+  },
+  {
+    "name": "George Mihaylov",
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
+    "university": "Adelaide University",
+    "field_of_research": "Finance",
+    "source_id": "george.mihaylov",
+    "orcid": "0000-0001-8146-7881",
+    "profile_url": "https://adelaide.edu.au/people/george.mihaylov"
+  },
+  {
+    "name": "Mahmud Masum",
+    "job_title": "Senior Lecturer",
+    "admin_title": "Program Director",
+    "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
     "source_id": "mahmud.masum",
@@ -632,6 +695,7 @@
   {
     "name": "Chelsea Liu",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -642,6 +706,7 @@
   {
     "name": "Lisa Powell",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -652,6 +717,7 @@
   {
     "name": "Su Kim",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -660,18 +726,9 @@
     "profile_url": "https://adelaide.edu.au/people/su.kim"
   },
   {
-    "name": "Chee Cheong",
-    "job_title": "Associate Professor",
-    "academic_level": "D",
-    "university": "Adelaide University",
-    "field_of_research": "Finance",
-    "source_id": "chee.cheong",
-    "orcid": "0000-0001-8120-0167",
-    "profile_url": "https://adelaide.edu.au/people/chee.cheong"
-  },
-  {
     "name": "Gary Tan",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -680,8 +737,20 @@
     "profile_url": "https://adelaide.edu.au/people/gary.tan"
   },
   {
+    "name": "Chee Cheong",
+    "job_title": "Associate Professor",
+    "admin_title": null,
+    "academic_level": "D",
+    "university": "Adelaide University",
+    "field_of_research": "Finance",
+    "source_id": "chee.cheong",
+    "orcid": "0000-0001-8120-0167",
+    "profile_url": "https://adelaide.edu.au/people/chee.cheong"
+  },
+  {
     "name": "Paul Coram",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -692,6 +761,7 @@
   {
     "name": "Ralf Zurbrugg",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -702,6 +772,7 @@
   {
     "name": "Limin Xu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -711,8 +782,9 @@
   },
   {
     "name": "Jane Luo",
-    "job_title": "Program Director",
-    "academic_level": null,
+    "job_title": "Senior Lecturer",
+    "admin_title": "Program Director",
+    "academic_level": "C",
     "university": "Adelaide University",
     "field_of_research": "Finance",
     "source_id": "jane.luo",
@@ -722,6 +794,7 @@
   {
     "name": "Chris Leishman",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -732,6 +805,7 @@
   {
     "name": "Indrit Troshani",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Accounting",
@@ -742,6 +816,7 @@
   {
     "name": "Alfred Yawson",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Adelaide University",
     "field_of_research": "Finance",
@@ -751,7 +826,8 @@
   },
   {
     "name": "Sigitas Karpavicius",
-    "job_title": "Program Director",
+    "job_title": "Associate Professor",
+    "admin_title": "Program Director",
     "academic_level": "D",
     "university": "Adelaide University",
     "field_of_research": "Finance",

@@ -2,6 +2,7 @@
   {
     "name": "Susan Thorp",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -12,6 +13,7 @@
   {
     "name": "Huu Duong",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -22,6 +24,7 @@
   {
     "name": "John Watson",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -32,6 +35,7 @@
   {
     "name": "Christine Brown",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -42,6 +46,7 @@
   {
     "name": "Stephen Brown",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -51,7 +56,8 @@
   },
   {
     "name": "Michael Skully",
-    "job_title": "ADJUNCT PROFESSOR",
+    "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -62,6 +68,7 @@
   {
     "name": "Abe de Jong",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -72,6 +79,7 @@
   {
     "name": "Neal Galpin",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -82,6 +90,7 @@
   {
     "name": "Yulia Merkoulova",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -92,6 +101,7 @@
   {
     "name": "Lyndon Moore",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -102,6 +112,7 @@
   {
     "name": "Chris Veld",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -112,6 +123,7 @@
   {
     "name": "Ying Xia",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -122,6 +134,7 @@
   {
     "name": "John Chu",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -132,6 +145,7 @@
   {
     "name": "Silvio Contessi",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -142,6 +156,7 @@
   {
     "name": "Ying Dou",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -152,6 +167,7 @@
   {
     "name": "Philip Gharghori",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -162,6 +178,7 @@
   {
     "name": "Thanh Huynh",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -172,6 +189,7 @@
   {
     "name": "Paul Lajbcygier",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -182,6 +200,7 @@
   {
     "name": "Hassan Naqvi",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -192,6 +211,7 @@
   {
     "name": "Abu Zafar Shahriar",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -202,6 +222,7 @@
   {
     "name": "Barry Williams",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -212,6 +233,7 @@
   {
     "name": "Jin Yu",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -222,6 +244,7 @@
   {
     "name": "Zhe An",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -232,6 +255,7 @@
   {
     "name": "Hue Hwa Au Yong",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -241,17 +265,19 @@
   },
   {
     "name": "Zhenyang (Leo) Bao",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
     "source_id": "leo-bao",
-    "orcid": null,
+    "orcid": "0000-0002-4337-6919",
     "profile_url": "https://research.monash.edu/en/persons/leo-bao/"
   },
   {
     "name": "Kym Brown",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -262,6 +288,7 @@
   {
     "name": "Binh Do",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -272,6 +299,7 @@
   {
     "name": "Minh Viet Do",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -282,6 +310,7 @@
   {
     "name": "Özlem Dursun-de Neef",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -292,6 +321,7 @@
   {
     "name": "Jean-Pierre Fenech",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -302,6 +332,7 @@
   {
     "name": "Li Ge",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -312,6 +343,7 @@
   {
     "name": "Abey Gunasekarage",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -322,6 +354,7 @@
   {
     "name": "Idan Hodor",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -332,6 +365,7 @@
   {
     "name": "Emdad Islam",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -342,6 +376,7 @@
   {
     "name": "Hannah Nguyen",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -352,6 +387,7 @@
   {
     "name": "Lubna Rahman",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -362,6 +398,7 @@
   {
     "name": "Joshua Shemesh",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -372,6 +409,7 @@
   {
     "name": "Yushui Shi",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -382,6 +420,7 @@
   {
     "name": "Tram Vu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -392,6 +431,7 @@
   {
     "name": "Yongxin Xu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -402,6 +442,7 @@
   {
     "name": "Wayne Xinwei Wan",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -412,6 +453,7 @@
   {
     "name": "Eden Zhang",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -422,6 +464,7 @@
   {
     "name": "Emma Zhang",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -432,6 +475,7 @@
   {
     "name": "Viet Nga Cao",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -442,6 +486,7 @@
   {
     "name": "Arseny Gorbenko",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -452,6 +497,7 @@
   {
     "name": "Sergio de Holanda Rocha",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -462,6 +508,7 @@
   {
     "name": "Manapon Limkriangkrai",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -472,6 +519,7 @@
   {
     "name": "Zoltan Murgulov",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -482,6 +530,7 @@
   {
     "name": "Raj (Bharat) Parajuli",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -492,6 +541,7 @@
   {
     "name": "Amale Scally",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -502,6 +552,7 @@
   {
     "name": "Ali Sheikhbahaei",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -512,6 +563,7 @@
   {
     "name": "Simon Yap",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -522,6 +574,7 @@
   {
     "name": "Nafisa Ovi",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -532,6 +585,7 @@
   {
     "name": "Giang Hoang",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -542,6 +596,7 @@
   {
     "name": "Hassan Shahzad",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Finance",
@@ -552,6 +607,7 @@
   {
     "name": "Michaela Rankin",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -562,6 +618,7 @@
   {
     "name": "Chen Chen",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -572,6 +629,7 @@
   {
     "name": "Carly Moulang",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -582,6 +640,7 @@
   {
     "name": "Gladys Lee",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -592,6 +651,7 @@
   {
     "name": "Christo Karuna",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -602,6 +662,7 @@
   {
     "name": "Lorena Mitrione",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -612,6 +673,7 @@
   {
     "name": "John Campbell",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -622,6 +684,7 @@
   {
     "name": "Matthew Hall",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -632,6 +695,7 @@
   {
     "name": "Wen He",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -642,6 +706,7 @@
   {
     "name": "Ralph Kober",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -652,6 +717,7 @@
   {
     "name": "Kalle Kraus",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -662,6 +728,7 @@
   {
     "name": "Nicholas McGuigan",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -672,6 +739,7 @@
   {
     "name": "Kristian Rotaru",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -681,17 +749,19 @@
   },
   {
     "name": "Roger Simnett AO",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Professor",
+    "admin_title": null,
+    "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "roger-simnett",
-    "orcid": null,
+    "orcid": "0000-0001-9881-8553",
     "profile_url": "https://research.monash.edu/en/persons/roger-simnett/"
   },
   {
     "name": "Cameron Truong",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -702,6 +772,7 @@
   {
     "name": "Carla Wilkin",
     "job_title": "Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -712,6 +783,7 @@
   {
     "name": "Robert Chenhall",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -722,6 +794,7 @@
   {
     "name": "Kim Langfield-Smith",
     "job_title": "Emeritus Professor",
+    "admin_title": null,
     "academic_level": "E",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -731,17 +804,19 @@
   },
   {
     "name": "Aldónio Ferreira",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Associate Professor",
+    "admin_title": null,
+    "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "aldonio-fernandes-ferreira",
-    "orcid": null,
+    "orcid": "0000-0003-1405-3704",
     "profile_url": "https://research.monash.edu/en/persons/aldonio-fernandes-ferreira/"
   },
   {
     "name": "Mukesh Garg",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -751,17 +826,19 @@
   },
   {
     "name": "Ting-Chiao (Joey) Huang",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Associate Professor",
+    "admin_title": null,
+    "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "joey-huang",
-    "orcid": null,
+    "orcid": "0000-0001-9709-002X",
     "profile_url": "https://research.monash.edu/en/persons/joey-huang/"
   },
   {
     "name": "Mehdi Khedmati",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -772,6 +849,7 @@
   {
     "name": "Sunyoung Kim",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -782,6 +860,7 @@
   {
     "name": "Soon-Yeow Phang",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -792,6 +871,7 @@
   {
     "name": "Lisa Powell",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -802,6 +882,7 @@
   {
     "name": "Paul Thambar",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -812,6 +893,7 @@
   {
     "name": "Xinning Xiao",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -822,6 +904,7 @@
   {
     "name": "John Webster",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -832,6 +915,7 @@
   {
     "name": "Jin Zhang",
     "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -842,6 +926,7 @@
   {
     "name": "Ahmed Abdalla",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -851,18 +936,20 @@
   },
   {
     "name": "Christofer Adrian",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "chris-adrian",
-    "orcid": null,
+    "orcid": "0000-0002-9366-3473",
     "profile_url": "https://research.monash.edu/en/persons/chris-adrian/"
   },
   {
     "name": "Annemarie Conrath-Hargreaves",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "annemarie-conrath-hargreaves",
@@ -872,6 +959,7 @@
   {
     "name": "Sandip Dhole",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -881,17 +969,19 @@
   },
   {
     "name": "Maleen Gong",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "zhiyun-gong",
-    "orcid": null,
+    "orcid": "0000-0003-0889-6297",
     "profile_url": "https://research.monash.edu/en/persons/zhiyun-gong/"
   },
   {
     "name": "Jenny Guan",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -902,6 +992,7 @@
   {
     "name": "Janto Haman",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -912,6 +1003,7 @@
   {
     "name": "John Ko",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -921,17 +1013,19 @@
   },
   {
     "name": "Yi-Hung (Jerry) Lin",
-    "job_title": null,
-    "academic_level": null,
+    "job_title": "Senior Lecturer",
+    "admin_title": null,
+    "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
     "source_id": "jerry-lin",
-    "orcid": null,
+    "orcid": "0000-0001-7114-2098",
     "profile_url": "https://research.monash.edu/en/persons/jerry-lin/"
   },
   {
     "name": "Wei Lu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -942,6 +1036,7 @@
   {
     "name": "Dharmendra Naidu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -952,6 +1047,7 @@
   {
     "name": "Richard Pucci",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -962,6 +1058,7 @@
   {
     "name": "Jacob Raleigh",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -972,6 +1069,7 @@
   {
     "name": "Mario Schabus",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -982,6 +1080,7 @@
   {
     "name": "Edward Tello",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -992,6 +1091,7 @@
   {
     "name": "Prabanga Thoradeniya",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1002,6 +1102,7 @@
   {
     "name": "Lu Yang",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1012,6 +1113,7 @@
   {
     "name": "Xiaoxiao Yu",
     "job_title": "Senior Lecturer",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1022,6 +1124,7 @@
   {
     "name": "Brett Considine",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1032,6 +1135,7 @@
   {
     "name": "Daniela Juric",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1042,6 +1146,7 @@
   {
     "name": "Dhayani Kirubaharan",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1052,6 +1157,7 @@
   {
     "name": "Brett Lombardi",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1062,6 +1168,7 @@
   {
     "name": "Anna Stamatelatos",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1072,6 +1179,7 @@
   {
     "name": "Tirukumar Thiagarajah",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1082,6 +1190,7 @@
   {
     "name": "Mengjie Yang",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1092,6 +1201,7 @@
   {
     "name": "Wanjia Zhao",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1102,6 +1212,7 @@
   {
     "name": "Thomas Kern",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1112,6 +1223,7 @@
   {
     "name": "James Sewell",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1122,6 +1234,7 @@
   {
     "name": "Joyce Zhang",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1132,6 +1245,7 @@
   {
     "name": "Chenlan (Michelle) Song",
     "job_title": "Lecturer",
+    "admin_title": null,
     "academic_level": "B",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1141,7 +1255,8 @@
   },
   {
     "name": "Ashna Prasad",
-    "job_title": "SENIOR RESEARCH FELLOW",
+    "job_title": "Senior Research Fellow",
+    "admin_title": null,
     "academic_level": "C",
     "university": "Monash University",
     "field_of_research": "Accounting",
@@ -1151,7 +1266,8 @@
   },
   {
     "name": "Dennis Fehrenbacher",
-    "job_title": "ASSOCIATE PROFESSOR",
+    "job_title": "Associate Professor",
+    "admin_title": null,
     "academic_level": "D",
     "university": "Monash University",
     "field_of_research": "Accounting",
