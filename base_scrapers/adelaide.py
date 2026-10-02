@@ -150,6 +150,34 @@ def _profile_position(soup):
     return text or None
 
 
+def _directory_position(session, username):
+    """The position from the public People Directory, for a Researcher
+    Profiles page whose position line is empty.
+
+    13 of 76 A&F profiles leave it empty, and the page-text scan that used to
+    fill the gap read titles out of bios: a casual professional-staff member
+    became "Lecturer with experience facilitating seminars in:", and three
+    adjuncts lost "Adjunct" and were ranked as full staff. The directory page's
+    <title> states the position reliably:
+        "Prof Carol Tilt,  Adjunct Research Professor  | Adelaide University
+         People Directory"
+    Everything after the first comma (where the name ends) and before " | " is
+    the position. A missing page or an empty position gives None.
+    """
+    try:
+        resp = session.get(f"https://adelaide.edu.au/people/{username}",
+                           headers=_HEADERS, timeout=15)
+    except Exception:
+        return None
+    if resp.status_code != 200:
+        return None
+    head = BeautifulSoup(resp.text, "html.parser").title
+    head = re.sub(r"\s*\|.*$", "", head.get_text(" ", strip=True)) if head else ""
+    if "," not in head:
+        return None
+    return re.sub(r"\s+", " ", head.split(",", 1)[1]).strip() or None
+
+
 def _discipline(title_raw, soup):
     """Determine discipline.
 
@@ -296,7 +324,7 @@ def _visit_profile(username):
 
         # The stated position first. Scanning the page for title words below
         # produced titles such as "AppointmentsDatePositionInstitution na".
-        title_raw = _profile_position(soup)
+        title_raw = _profile_position(soup) or _directory_position(session, username)
         _TITLE_WORDS = [
             "professor", "lecturer", "researcher", "fellow", "associate",
             "adjunct", "honorary", "visiting", "emeritus", "dean",
