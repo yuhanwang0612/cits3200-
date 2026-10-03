@@ -112,6 +112,57 @@ def keep_issns(issns, row_journal, source_name):
     return issns
 
 
+
+# --------------------------------------------------------------- author names
+#
+# Every adapter scrapes an author list in its own shape, and most carry
+# initials rather than names:
+#
+#     adelaide   Stone, G.; Fiedler, B.; Kandunias, C.
+#     unsw       Ang NP; Trotman KT
+#     uq         Nouyrigat, Genevieve; Humphrey, Jacquelyn E.
+#     uwa        Bin Li; Xinze Xu; Bo Qin
+#
+# Eight universities, eight formats, and 2,696 rows with no given names at
+# all. The client's words on 2 October: "not full name being recorded, and
+# thus the information is insufficient for me to process and link to other
+# EXCEL", and separately that the data "has not been uniformed/standardized".
+# Both are this. OpenAlex returns the full display name for every author of a
+# matched DOI in one shape, and enrich() below was fetching it and dropping it
+# because the column was already non-empty.
+#
+# `author_position` is "first"/"middle"/"last", not an index, so the order the
+# authorships arrive in is the author order and is kept as it comes.
+
+_GIVEN_NAME_RE = re.compile(r"[A-Z][a-z]+")
+
+
+def name_fullness(authors):
+    """How many capitalised words in the string are words, not initials.
+
+    'Ang NP; Trotman KT' scores 2, one per surname. 'Nicole Ang; Ken T.
+    Trotman' scores 4. A list OpenAlex truncated therefore scores lower than
+    the fuller scraped one and loses, which is the guard against trading ten
+    scraped authors for three.
+    """
+    return len(_GIVEN_NAME_RE.findall(authors or ""))
+
+
+def prefer_fuller_authors(scraped, incoming):
+    """Pick the better of the two author strings, OpenAlex winning a tie.
+
+    A tie means the same number of real names, and then OpenAlex wins on
+    shape alone, because it is the one format shared by all eight
+    universities: UQ's 'Nouyrigat, Genevieve' becomes 'Genevieve Nouyrigat'
+    and matches UWA's rows.
+    """
+    if not incoming:
+        return scraped
+    if not scraped:
+        return incoming
+    return incoming if name_fullness(incoming) >= name_fullness(scraped) else scraped
+
+
 def extract(work):
     cnp = work.get("citation_normalized_percentile") or {}
     oa = work.get("open_access") or {}
@@ -165,7 +216,7 @@ def enrich(pubs, verbose=True):
         if verbose:
             print(f"  {min(i + CHUNK, len(dois))}/{len(dois)} — {len(found)} matched")
 
-    gained = 0
+    gained = names_filled = 0
     for x in pubs:
         hit = found.get(bare_doi(x.get("doi"))) or {}
 
@@ -191,8 +242,15 @@ def enrich(pubs, verbose=True):
         if hit.get("publisher") and not x.get("publisher"):
             x["publisher"] = hit["publisher"]
 
-        if hit.get("authors") and not x.get("authors"):        
-            x["authors"] = hit["authors"]
+        chosen = prefer_fuller_authors(x.get("authors"), hit.get("authors"))
+        if chosen and chosen != x.get("authors"):
+            if x.get("authors"):
+                names_filled += 1
+            x["authors"] = chosen
+            # The count has to describe the list we just took, or the two
+            # columns contradict each other on the same row.
+            if hit.get("n_authors"):
+                x["n_authors"] = hit["n_authors"]
         # 1 is ANU's placeholder when a profile page lists no co-authors
         # (anu_scraper.py:1433 sets it alongside author_count_confidence
         # "low - no coauthor text found"), not a real count — and it is
@@ -213,6 +271,9 @@ def enrich(pubs, verbose=True):
         oa = sum(1 for x in arts if x.get("oa_url"))
         rated = sum(1 for x in arts if x.get("issns"))
         print(f"openalex: {n} of {len(arts)} enriched · {oa} have a free full text")
+        if names_filled:
+            print(f"          {names_filled} row(s) took OpenAlex's full author "
+                  f"names over a shorter or differently shaped scraped list")
         print(f"          {rated} of {len(arts)} journal articles carry an ISSN "
               f"({gained} gained one here)")
         if arts and not rated:

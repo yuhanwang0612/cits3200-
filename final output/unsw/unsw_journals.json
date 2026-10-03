@@ -5922,7 +5922,7 @@
   {
     "journal_name": "Foreign Trade Review",
     "journal_raw": "Foreign Trade Review",
-    "publisher": null,
+    "publisher": "SAGE Publications",
     "issn": "0015-7325; 0971-7625",
     "quality_rank": "B",
     "abdc_edition": "2025",
@@ -7726,22 +7726,6 @@
     "h_index": null,
     "cites_per_doc_2y": null,
     "scimago_year": null
-  },
-  {
-    "journal_name": "European Journal of Dental Education",
-    "journal_raw": "European Journal of Dental Education",
-    "publisher": "Wiley",
-    "issn": "1396-5883; 1600-0579",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.9,
-    "impact_factor_5yr": 3.0,
-    "jcr_year": 2025,
-    "sjr": 0.648,
-    "sjr_quartile": "Q1",
-    "h_index": 61,
-    "cites_per_doc_2y": 2.9,
-    "scimago_year": "2025"
   },
   {
     "journal_name": "Physica A Statistical Mechanics and its Applications",
