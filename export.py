@@ -534,6 +534,91 @@ def build_staff(records):
     } for p in records]
 
 
+_STANDARD_JOB_TITLES = (
+    (r"\b(?:emeritus professor|professor emeritus)\b", "Emeritus Professor"),
+    (r"\bassociate professor\b", "Associate Professor"),
+    (r"\bprofessorial fellow\b", "Professorial Fellow"),
+    (r"\bprofessor\b", "Professor"),
+    (r"\bsenior research fellow\b", "Senior Research Fellow"),
+    (r"\bresearch fellow\b", "Research Fellow"),
+    (r"\bsenior fellow\b", "Senior Fellow"),
+    (r"\breader\b", "Reader"),
+    (r"\bsenior lecturer\b", "Senior Lecturer"),
+    (r"\bassociate lecturer\b", "Associate Lecturer"),
+    (r"\blecturer\b", "Lecturer"),
+    (r"\bteaching associate\b", "Teaching Associate"),
+)
+
+
+def normalize_job_title(title):
+    """Return the shared rank label while preserving unmatched roles.
+
+    This extends the existing export filter without changing staff inclusion:
+    combined titles such as ``Head of School and Associate Professor`` map to
+    the same value as their equivalents at other universities, while a purely
+    administrative title such as ``Program Director`` is retained verbatim.
+    """
+    if not title:
+        return title
+    value = title.strip()
+    for pattern, canonical in _STANDARD_JOB_TITLES:
+        if re.search(pattern, value, re.IGNORECASE):
+            return canonical
+    return value
+
+
+_UNIVERSITY_ALIASES = {
+    "adelaide": "adelaide university",
+    "anu": "australian national university",
+    "monash": "monash university",
+    "unimelb": "university of melbourne",
+    "unsw": "unsw sydney",
+    "uq": "university of queensland",
+    "usyd": "university of sydney",
+    "uwa": "university of western australia",
+}
+
+
+def university_key(value):
+    """Return one stable key for university codes and official names."""
+    key = re.sub(r"\s+", " ", (value or "").strip().lower())
+    return _UNIVERSITY_ALIASES.get(key, key)
+
+
+def normalize_publication_status(value):
+    """Map source-specific status text to the agreed controlled vocabulary.
+
+    Pure appends dates to statuses (for example ``Published - Jun 2026``).
+    The original value remains in the retrieved/cache record; only the
+    client-facing export is normalised here.
+    """
+    status = (value or "").strip().lower().replace("-", " ").replace("_", " ")
+    status = re.sub(r"\s+", " ", status)
+    if any(marker in status for marker in ("working paper", "preprint", "ssrn")):
+        return "working_paper"
+    if any(marker in status for marker in ("accepted", "in press", "forthcoming")):
+        return "forthcoming"
+    # Online-first/e-pub items have already been published electronically.
+    if status.startswith(("published", "e pub", "epub", "online first", "early view")):
+        return "published"
+    return "published"
+
+
+def fill_missing_publication_ratings(publications, journals):
+    """Fill blank publication ratings from its journal without overwriting."""
+    by_name = {row.get("journal_name"): row for row in journals}
+    filled = 0
+    for publication in publications:
+        journal = by_name.get(publication.get("journal_name"))
+        if not journal:
+            continue
+        for field in ("quality_rank", "sjr_quartile"):
+            if not publication.get(field) and journal.get(field):
+                publication[field] = journal[field]
+                filled += 1
+    return filled
+
+
 _REPOSITORY_ISSNS = {"1556-5068"}   # SSRN Electronic Journal
 _ISSN_RE = re.compile(r"\b(\d{4})-?(\d{3}[\dXx])\b")
 
@@ -1008,7 +1093,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "fwci": x.get("fwci"),
             "oa_status": x.get("oa_status"),
             "oa_url": x.get("oa_url"),
-            "publication_status": x.get("publication_status") or "published",
+            "publication_status": normalize_publication_status(
+                x.get("publication_status")
+            ),
             "source": x.get("source"),
         })
 
@@ -1138,12 +1225,12 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
         import csv as _csv
         with _overrides_path.open(encoding="utf-8") as _f:
             _overrides = {
-                (row["university"].strip().lower(), row["name"].strip()): row["job_title"].strip()
+                (university_key(row["university"]), row["name"].strip()): row["job_title"].strip()
                 for row in _csv.DictReader(_f)
             }
         _applied = 0
         for _s in staff:
-            _key = (_s.get("university", "").strip().lower(), (_s.get("name") or "").strip())
+            _key = (university_key(_s.get("university")), (_s.get("name") or "").strip())
             if _key in _overrides and not _s.get("job_title"):
                 _s["job_title"] = _overrides[_key]
                 _applied += 1
@@ -1152,20 +1239,11 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
 
     # Normalise job titles: strip discipline qualifiers so titles are consistent
     # across universities (e.g. "Professor of Finance" -> "Professor").
-    def _normalize_job_title(title):
-        if not title:
-            return title
-        t = title.strip()
-        for prefix in ["Senior Lecturer", "Associate Professor", "Professor", "Lecturer"]:
-            if t.startswith(prefix) and t != prefix:
-                return prefix
-        return t
-
     _norm_count = 0
     for _s in staff:
         if _s.get("job_title"):
             _orig = _s["job_title"]
-            _s["job_title"] = _normalize_job_title(_s["job_title"])
+            _s["job_title"] = normalize_job_title(_s["job_title"])
             if _s["job_title"] != _orig:
                 _norm_count += 1
     if verbose and _norm_count:
@@ -1179,11 +1257,16 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
         if verbose and before != len(staff):
             print(f"  dropped {before - len(staff)} staff with no publications")
 
+    journals = build_journals(
+        pubs, used_names={p["journal_name"] for p in publications}
+    )
+    filled_ratings = fill_missing_publication_ratings(publications, journals)
+    if verbose and filled_ratings:
+        print(f"  filled {filled_ratings} blank publication rating(s) from journals")
+
     tables = {
         "staff": staff,
-        "journals": build_journals(
-            pubs, used_names={p["journal_name"] for p in publications}
-        ),
+        "journals": journals,
         "publications": publications,
         "harvest": build_harvest(records, pubs, publications),
     }

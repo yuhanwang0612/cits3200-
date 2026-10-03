@@ -62,14 +62,13 @@ ENTITIES = {
         # nothing outside this database. Export-only. upsert_from_dataframe
         # reads `editable` and nothing else, so these are ignored on upload
         # and can never overwrite the researcher or journal they came from.
-        # researcher_name/university/journal_name/issn are the names the
-        # original export used and admin.html still documents; the generic
-        # _export_df refactor dropped them. orcid is added as the stable key
+        # name/university/journal_name/issn follow the same field names as the
+        # agreed client CSV contract. orcid is added as the stable key
         # for joining to other spreadsheets, since names collide and drift.
         # (column, relationship, attribute, placed after)
         "readonly": [
-            ("researcher_name", "researcher", "name",         "researcher_id"),
-            ("university",      "researcher", "university",   "researcher_name"),
+            ("name",            "researcher", "name",         "researcher_id"),
+            ("university",      "researcher", "university",   "name"),
             ("orcid",           "researcher", "orcid",        "university"),
             ("journal_name",    "journal",    "journal_name", "journal_id"),
             ("issn",            "journal",    "issn",         "journal_name"),

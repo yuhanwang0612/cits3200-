@@ -37,7 +37,7 @@ def test_client_publications_require_a_verified_journal_name():
     assert build_publications([row], verbose=False) == []
 
 
-def test_publication_export_preserves_source_status_without_extra_schema_fields():
+def test_publication_export_normalises_source_status_without_extra_schema_fields():
     row = {
         "name": "Example Researcher",
         "title": "Accepted paper",
@@ -48,8 +48,21 @@ def test_publication_export_preserves_source_status_without_extra_schema_fields(
         "source": "UWA Pure",
     }
     exported = build_publications([row], verbose=False)[0]
-    assert exported["publication_status"] == "Accepted/In press"
+    assert exported["publication_status"] == "forthcoming"
     assert "publication_type" not in exported
+
+
+def test_pure_published_date_is_normalised_at_export():
+    row = {
+        "name": "Example Researcher",
+        "title": "Published paper",
+        "year": "2024",
+        "type": "Journal Article",
+        "journal": "Accounting Review",
+        "publication_status": "Published - 19 Mar 2024",
+        "source": "UWA Pure",
+    }
+    assert build_publications([row], verbose=False)[0]["publication_status"] == "published"
 
 
 def test_staff_export_keeps_official_raw_job_title():

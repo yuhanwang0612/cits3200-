@@ -122,7 +122,7 @@ rankings table. `<university_code>-<name slugified>` works and is what the sampl
       "issn": "0810-5391",
       "year": 2017,
       "quality_rank": "A",
-      "scimago_quartile": "Q2",
+      "sjr_quartile": "Q2",
       "impact_factor": 2.7,
       "cited_by_count": 41,
       "doi": "10.1111/acfi.12280",
@@ -143,7 +143,7 @@ re-exported doesn't invalidate everyone else's.
 - **Every field maps 1:1 onto a column that already exists in `combined_publications.csv`.**
   No new columns are being asked for. `researcher`, `university`, `field_of_research`,
   `academic_level`, `level_code`, `title`, `year`, `doi`, `article_url`, `journal_name`, `issn`,
-  `quality_rank`, `scimago_quartile`, `impact_factor`, `cited_by_count`, `publication_type` all
+  `quality_rank`, `sjr_quartile`, `impact_factor`, `cited_by_count`, `publication_type` all
   exist today.
 - **`quality_rank`** is one of `"A*"`, `"A"`, `"B"`, `"C"`, `"none"`, or `null`.
   `"none"` means we checked and the journal is unranked. `null` means we have not checked.
@@ -151,7 +151,7 @@ re-exported doesn't invalidate everyone else's.
 - **Missing is `null`, never `""`, never `"N/A"`, never `0`.** The front end renders `null` as an
   em-dash and sorts it to the bottom. A `0` in `impact_factor` is a claim that the journal has an
   impact factor of zero.
-- **`impact_factor` and `scimago_quartile` are expected to be `null` for most rows today.**
+- **`impact_factor` and `sjr_quartile` are expected to be `null` for most rows today.**
   As of 3 Sep, `impact_factor` is empty on all 13,527 rows of `combined_publications.csv`. The
   columns are here so that nothing needs rebuilding when the join lands.
 - **`publication_type`**: only journal articles should reach the site (client rule, 12 Aug).

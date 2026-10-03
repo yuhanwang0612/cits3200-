@@ -85,7 +85,7 @@
             <th class="sortable" data-key="journal_name"     data-type="text">Journal <span class="arrow">&#8597;</span></th>
             <th class="sortable num" data-key="year"         data-type="num">Year <span class="arrow">&#8597;</span></th>
             <th class="sortable" data-key="quality_rank"     data-type="abdc">ABDC <span class="arrow">&#8597;</span></th>
-            <th class="sortable" data-key="scimago_quartile" data-type="text">Scimago <span class="arrow">&#8597;</span></th>
+            <th class="sortable" data-key="sjr_quartile" data-type="text">Scimago <span class="arrow">&#8597;</span></th>
             <th class="sortable num" data-key="impact_factor" data-type="num">JIF <span class="arrow">&#8597;</span></th>
             <th class="sortable num" data-key="cited_by_count" data-type="num">Cited by <span class="arrow">&#8597;</span></th>
           </tr>
@@ -249,7 +249,7 @@
         '<td>' + val(p.journal_name) + '</td>' +
         '<td class="num">' + val(p.year) + '</td>' +
         '<td>' + abdcPill(p.quality_rank) + '</td>' +
-        '<td>' + val(p.scimago_quartile) + '</td>' +
+        '<td>' + val(p.sjr_quartile) + '</td>' +
         '<td class="num">' + num(p.impact_factor, 1) + '</td>' +
         '<td class="num">' + num(p.cited_by_count) + '</td>' +
       '</tr>';
@@ -293,7 +293,7 @@
       { key: 'author_count',          label: 'Author count' },
 
       { key: 'quality_rank',          label: 'ABDC' },
-      { key: 'scimago_quartile',      label: 'Scimago quartile' },
+      { key: 'sjr_quartile',           label: 'Scimago quartile' },
       { key: 'impact_factor',         label: 'Impact factor' },
       { key: 'impact_factor_5yr',     label: 'Impact factor (5 year)' },
       { key: 'cited_by_count',        label: 'Cited by' },

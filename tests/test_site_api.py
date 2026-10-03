@@ -123,6 +123,33 @@ def test_publication_counts_match_the_database(client, db):
         assert detail["publication_count"] == in_db == len(rows), r["name"]
 
 
+def test_publication_api_uses_the_shared_sjr_field_name(client):
+    researcher = max(
+        get(client, "/api/researchers")["researchers"],
+        key=lambda row: row["publication_count"],
+    )
+    payload = get(client, f"/api/researchers/{researcher['id']}/publications")
+    rows = payload["publications"] if isinstance(payload, dict) else payload
+    assert rows
+    assert "sjr_quartile" in rows[0]
+    assert "scimago_quartile" not in rows[0]
+
+
+def test_public_downloads_use_the_agreed_field_names(client):
+    required = {
+        "researchers": {"name", "job_title", "academic_level", "field_of_research",
+                        "university", "profile_url"},
+        "publications": {"name", "title", "year", "doi", "article_url",
+                         "author_count", "source"},
+        "journals": {"journal_name", "issn", "quality_rank", "impact_factor"},
+    }
+    for entity, expected in required.items():
+        response = client.get(f"/downloads/{entity}.csv")
+        assert response.status_code == 200
+        header = set(response.data.decode("utf-8-sig").splitlines()[0].split(","))
+        assert expected <= header, f"{entity}: missing {sorted(expected - header)}"
+
+
 def test_no_duplicate_publications_for_a_researcher(client, db):
     """Acceptance Test D: zero duplicate (researcher, title, year) rows."""
     duplicates = db.execute("""

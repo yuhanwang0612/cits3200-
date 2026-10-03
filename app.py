@@ -442,7 +442,7 @@ def get_publications(researcher_id):
             "link": p.link,
 
             "quality_rank": p.quality_rank,
-            "scimago_quartile": p.sjr_quartile,
+            "sjr_quartile": p.sjr_quartile,
 
             "impact_factor": (
                 journal.impact_factor
