@@ -41,6 +41,9 @@ def _build():
             "sjr_quartile": _quartile(row["SJR Best Quartile"]),
             "h_index": row["H index"],
             "cites_per_doc_2y": _num(row["Citations / Doc. (2years)"]),
+            # Carried so export can standardise a journal's spelling; it is
+            # never used to rename a journal (see export.canonical_journal_name).
+            "title": str(row["Title"]).strip() or None,
         }
         for i in str(row["Issn"]).split(","):
             i = i.strip()
@@ -63,6 +66,7 @@ def enrich(pubs, verbose=True):
         x["h_index"] = hit["h_index"] if hit else None
         x["cites_per_doc_2y"] = hit["cites_per_doc_2y"] if hit else None
         x["scimago_year"] = SCIMAGO_YEAR if hit else None
+        x["scimago_title"] = hit["title"] if hit else None
 
     if verbose:
         arts = [x for x in pubs if x.get("type") == "Journal Article"]

@@ -167,7 +167,7 @@ def test_mangled_review_title_is_repaired_even_from_an_orcid_sourced_row():
     # everything else about the row is untouched
     assert out[0]["doi"] == "10.1108/18325911111182330"
     assert out[0]["year"] == "2011"
-    assert out[0]["journal_name"] == "Journal of Accounting & Organizational Change"
+    assert out[0]["journal_name"] == "Journal of Accounting and Organizational Change"
 
 
 def test_export_time_repair_never_touches_a_non_anu_researchers_title():

@@ -627,6 +627,66 @@ def _clean_issns(values):
     return out
 
 
+# ------------------------------------------------------- journal spelling
+#
+# The same journal reached the exports spelled several ways ("PLoS ONE",
+# "Plos One", "PLOS ONE"; "The Journal of Business", "JOURNAL OF BUSINESS"),
+# and journal_name is the key the publications and journals tables join on,
+# so each spelling became a separate journal. One spelling per journal, chosen
+# by a rule that gives the same answer in every university's export:
+#   1. the ABDC title, where the journal is on the ABDC list (as before);
+#   2. otherwise Scimago's title for the row's ISSN - but only when it is the
+#      same name spelled differently, never a rename: a wrong ISSN (an SSRN
+#      copy, the CIMA magazine sharing "Financial Management") must not turn
+#      a journal into another one;
+#   3. otherwise a fixed tidy: "&" -> "and", no leading "The", title case.
+
+_SMALL_WORDS = {"a", "an", "and", "as", "at", "by", "for", "from", "in", "into",
+                "of", "on", "or", "the", "to", "with", "o"}
+
+
+def _journal_key(name):
+    """Same journal -> same key: case, "&"/"and", a leading "The" and
+    punctuation are ignored."""
+    k = re.sub(r"[^a-z0-9]+", " ", (name or "").lower().replace("&", " and ")).strip()
+    return re.sub(r"^the\s+", "", k)
+
+
+def _tidy_journal_name(name):
+    t = " ".join((name or "").split())
+    t = re.sub(r"\s*&\s*", " and ", t)
+    t = re.sub(r"^the\s+", "", t, flags=re.I)
+    shouting = t.isupper()
+    words, out, start = t.split(" "), [], True
+    for w in words:
+        core = re.sub(r"[^A-Za-z]", "", w)
+        if not core:
+            out.append(w)
+        elif not shouting and (core[1:] != core[1:].lower()):
+            out.append(w)                       # acronym or camel case: PLoS, ISACA, eJournal
+        elif not start and core.lower() in _SMALL_WORDS:
+            out.append(w.lower())
+        else:
+            low = w.lower()
+            i = next((j for j, ch in enumerate(low) if ch.isalpha()), 0)
+            out.append(low[:i] + low[i].upper() + low[i + 1:])
+        start = w.endswith(":")
+    return " ".join(out)
+
+
+def canonical_journal_name(x):
+    """The one spelling of this publication's journal; see the note above."""
+    if x.get("abdc_title"):
+        return x["abdc_title"]
+    name = x.get("journal")
+    if not name:
+        return name
+    scimago = x.get("scimago_title")
+    if scimago and _journal_key(scimago) == _journal_key(name):
+        return scimago
+    return _tidy_journal_name(name)
+
+
 def build_journals(pubs, used_names=None):
     """One row per journal, keyed on the ABDC canonical title where we have
     one. Keying on ISSN splits print from online; keying on the raw name
@@ -638,7 +698,7 @@ def build_journals(pubs, used_names=None):
         # journal name and must be enough to create the referenced journal row.
         if not (x.get("abdc_title") or x.get("journal")):
             continue
-        key = x.get("abdc_title") or x.get("journal")
+        key = canonical_journal_name(x)
         if used_names is not None and key not in used_names:
             continue
         candidate = {
@@ -1069,7 +1129,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         repaired_journal = _anu_repository_journal_repair(x, anu_names)
         if repaired_journal:
             anu_repository_repairs.append((x["name"], x["title"], repaired_journal))
-        journal_name = x.get("abdc_title") or x.get("journal")
+        journal_name = canonical_journal_name(x)
         # A row cannot be delivered as a verified journal article when no
         # journal can be named. Keep such records upstream for review, but do
         # not let them into the client-facing publication table.
