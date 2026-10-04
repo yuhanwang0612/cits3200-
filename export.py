@@ -1096,15 +1096,16 @@ def normalize_authors(text):
 # research article; a retracted or withdrawn article is dropped too. Book
 # chapters, books, reports, preprints and "paratext" are only listed for
 # review: OpenAlex calls some real articles in book-series journals
-# chapters, and has typed A* papers as paratext. Every row dropped or flagged is written to
-# <uni>_type_review.csv. A DOI in data/publication_keep.csv is never dropped
+# chapters, and has typed A* papers as paratext. Every row dropped or
+# flagged is written to <uni>_type_review.csv. A DOI in data/publication_keep.csv is never dropped
 # (for OpenAlex mistakes).
 NON_ARTICLE_TYPES = {"editorial", "book-review", "retraction", "erratum",
                      "letter", "conference-abstract"}
 REVIEW_TYPES = {"Book Chapter", "Book", "Research Report", "Preprint", "paratext"}
 _NON_ARTICLE_TITLE = re.compile(
     r"^\W*(foreword|preface|prelims|front matter|back matter|in memoriam|"
-    r"obituary|editorial board|contents|index|errata)\W*$"
+    r"obituary|editorial board|contents|index|errata|introduction|editorial|"
+    r"guest editorial|editorial introduction|editor'?s'? note)\W*$"
     r"|^\W*(retraction|withdrawal) (note|notice)\b|^\W*(retracted|withdrawn)( article)?\s*:", re.I)
 TYPE_REVIEW_LOG = []
 
@@ -1124,6 +1125,10 @@ def non_article_reason(x):
     t = x.get("oa_type")
     if t in NON_ARTICLE_TYPES:
         return ("drop", f"OpenAlex type: {t}")
+    # Frontiers registers its conference abstracts as 10.3389/conf.*, and
+    # OpenAlex types them as articles.
+    if doi.startswith("10.3389/conf."):
+        return ("drop", "conference abstract (Frontiers)")
     if x.get("oa_retracted"):
         return ("drop", "retracted or withdrawn (OpenAlex)")
     if _NON_ARTICLE_TITLE.match(x.get("title") or ""):
@@ -1131,6 +1136,14 @@ def non_article_reason(x):
     if t in REVIEW_TYPES:
         return ("review", f"OpenAlex type: {t}")
     return None
+
+
+def _log_non_article(x, action, why):
+    TYPE_REVIEW_LOG.append({
+        "action": action, "reason": why, "name": x.get("name"),
+        "title": x.get("title"), "year": x.get("year"),
+        "journal": x.get("journal"), "doi": x.get("doi"),
+        "source": x.get("source")})
 
 
 def build_publications(pubs, records=None, keep_type="Journal Article",
@@ -1154,6 +1167,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     anu_repository_repairs = []
     anu_author_fallbacks = 0
     missing_journal = 0
+    # (name, title) of every dropped non-article, so a DOI-less copy of the
+    # same item (a profile page listing the editorial) cannot slip through.
+    dropped_non_articles = set()
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x.get("type") != keep_type or not x.get("title"):
             continue
@@ -1166,15 +1182,14 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             excluded_correction_notices += 1
             continue
         flag = non_article_reason(x)
-        if flag:
-            action, why = flag
-            TYPE_REVIEW_LOG.append({
-                "action": "dropped" if action == "drop" else "review",
-                "reason": why, "name": x.get("name"), "title": x.get("title"),
-                "year": x.get("year"), "journal": x.get("journal"),
-                "doi": x.get("doi"), "source": x.get("source")})
-            if action == "drop":
-                continue
+        title_key = (x.get("name"), _normalise_title(x["title"]))
+        if flag and flag[0] == "drop":
+            _log_non_article(x, "dropped", flag[1])
+            dropped_non_articles.add(title_key)
+            continue
+        if not x.get("doi") and title_key in dropped_non_articles:
+            _log_non_article(x, "dropped", "copy of a dropped non-article")
+            continue
         # Title repair runs before anything reads the title: the dedup key
         # below is computed from it, so repairing afterwards would key the
         # row on the mangled form and defeat FIX K / FIX L.
@@ -1221,6 +1236,8 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             kept_dois_by_key[k].add(doi)
         if _anu_author_fallback(x, anu_names):
             anu_author_fallbacks += 1
+        if flag:
+            _log_non_article(x, "review", flag[1])
         out.append({
             "name": x["name"],
             "orcid": orcid_by_name.get(x["name"]),
@@ -1458,9 +1475,9 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
         "harvest": build_harvest(records, pubs, publications),
     }
     write(tables, out_dir, verbose)
-    _review_path = (out_dir or OUTPUT_DIR)
-    _review_file = _review_path / (f"{_review_path.name}_type_review.csv"
-                                   if out_dir else "type_review.csv")
+    _review_dir = out_dir or OUTPUT_DIR
+    _prefix = f"{_review_dir.name}_" if _review_dir != OUTPUT_DIR else ""
+    _review_file = _review_dir / f"{_prefix}type_review.csv"
     if TYPE_REVIEW_LOG:
         pd.DataFrame(TYPE_REVIEW_LOG).to_csv(_review_file, index=False)
     elif _review_file.exists():

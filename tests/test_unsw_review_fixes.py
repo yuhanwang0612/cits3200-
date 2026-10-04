@@ -103,8 +103,8 @@ def test_different_titles_under_one_doi_stay_separate():
 
 
 def test_a_short_prefix_is_not_enough():
-    a = pub(doi="10.1/x", title="Editorial")
-    b = pub(doi="10.1/x", title="Editorial note on audit quality research")
+    a = pub(doi="10.1/x", title="Governance")
+    b = pub(doi="10.1/x", title="Governance note on audit quality research")
     assert len(build_publications([a, b], verbose=False)) == 2
 
 

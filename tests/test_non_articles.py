@@ -101,3 +101,37 @@ def test_a_research_title_about_retractions_is_kept(title):
 
 def test_the_reprint_wrongly_flagged_retracted_is_on_the_keep_list():
     assert "10.1016/j.bar.2025.101559" in export._KEEP_DOIS
+
+
+def test_a_frontiers_conference_abstract_is_dropped():
+    row = _pub(doi="10.3389/conf.neuro.08.2009.01.011", oa_type="Journal Article")
+    assert build_publications([row], verbose=False) == []
+
+
+def test_a_doi_less_copy_of_a_dropped_item_is_dropped_too():
+    rows = [_pub(title="Guest editorial: special issue", doi="10.1/ed", oa_type="editorial"),
+            _pub(title="Guest Editorial - Special Issue", doi=None, oa_type=None)]
+    assert build_publications(rows, verbose=False) == []
+
+
+def test_a_flagged_row_is_only_logged_if_it_reaches_the_output():
+    rows = [_pub(oa_type="Book Chapter", journal=None)]
+    assert build_publications(rows, verbose=False) == []
+    assert export.TYPE_REVIEW_LOG == []
+
+
+@pytest.mark.parametrize("title", ["Introduction", "INTRODUCTION", "Editorial", "Guest Editorial",
+                                   "Editor's note"])
+def test_a_bare_introduction_or_editorial_title_is_dropped(title):
+    assert build_publications([_pub(title=title, oa_type=None)], verbose=False) == []
+
+
+def test_the_review_file_is_named_like_the_other_tables(tmp_path, monkeypatch):
+    monkeypatch.setattr(export, "write", lambda *a, **k: None)
+    for fn in ("build_staff", "build_journals", "build_harvest"):
+        if hasattr(export, fn):
+            monkeypatch.setattr(export, fn, lambda *a, **k: [])
+    out = tmp_path / "uq"
+    out.mkdir()
+    export.export([], [_pub(oa_type="editorial")], out_dir=out, verbose=False)
+    assert (out / "uq_type_review.csv").exists()
