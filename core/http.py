@@ -4,8 +4,8 @@ A full run is roughly 800 requests and fifteen minutes. Caching each
 response means re-running to change *parsing* costs seconds instead, which
 is most of what you actually iterate on.
 
-The cache never expires. Pass force=True, set FORCE_REFRESH, or delete
-cache/http/ to get fresh data.
+The cache never expires unless a caller passes max_age_days. Pass
+force=True, set FORCE_REFRESH, or delete cache/http/ to get fresh data.
 """
 
 import hashlib
@@ -25,17 +25,21 @@ def _key(url, params):
 
 
 def cached_get(url, params=None, headers=None, timeout=30,
-               tries=3, backoff=5, sleep=0.0, force=False, allow_404=False):
+               tries=3, backoff=5, sleep=0.0, force=False, allow_404=False,
+               max_age_days=None):
     """GET returning parsed JSON, cached on disk by url + params.
 
     sleep is applied only after a real request, so a cached run does not
     spend minutes asleep. Returns None on a 404 when allow_404 is set —
-    some journals genuinely have no report for a given year.
+    some journals genuinely have no report for a given year. With
+    max_age_days, a cached response older than that is fetched again.
     """
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     path = CACHE_DIR / f"{_key(url, params)}.json"
 
-    if path.exists() and not (force or FORCE_REFRESH):
+    stale = (max_age_days is not None and path.exists()
+             and time.time() - path.stat().st_mtime > max_age_days * 86400)
+    if path.exists() and not (force or FORCE_REFRESH or stale):
         with open(path, encoding="utf-8") as f:
             return json.load(f)
 

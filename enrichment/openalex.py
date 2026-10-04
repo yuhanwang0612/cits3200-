@@ -32,6 +32,12 @@ from core.schema import norm_type
 
 CHUNK = 25          # 50 per filter times out on their side often enough to matter
 
+# A cached batch that came back without some of its DOIs is asked again once
+# it is this old. OpenAlex indexes new papers weeks after they appear, and
+# the cache never expires by itself, so without this a paper first looked up
+# too early would stay without citations or a type for good.
+INCOMPLETE_MAX_AGE_DAYS = 7
+
 # What a DOI looks like with the URL wrappers off. Both sides of the match are
 # normalised, because a record carries "10.1111/X", "https://doi.org/10.1111/x"
 # or "http://dx.doi.org/10.1111/x" depending on which source supplied it, and
@@ -206,11 +212,19 @@ def enrich(pubs, verbose=True):
     for i in range(0, len(dois), CHUNK):
         chunk = dois[i:i + CHUNK]
         calls += 1
+        params = {"filter": "doi:" + "|".join(chunk), "per-page": CHUNK}
         try:
-            data = cached_get(OPENALEX_BASE,
-                              params={"filter": "doi:" + "|".join(chunk),
-                                      "per-page": CHUNK},
+            data = cached_get(OPENALEX_BASE, params=params,
                               headers=OA_HEADERS, timeout=60, sleep=1.0)
+            returned = {bare_doi(w.get("doi")) for w in data.get("results", [])}
+            if not set(chunk) <= returned:
+                try:
+                    data = cached_get(OPENALEX_BASE, params=params,
+                                      headers=OA_HEADERS, timeout=60, sleep=1.0,
+                                      max_age_days=INCOMPLETE_MAX_AGE_DAYS)
+                except Exception as e:          # keep the partial answer
+                    print(f"  chunk {i // CHUNK + 1}: retry failed, "
+                          f"using cached copy ({type(e).__name__})")
         except Exception as e:
             print(f"  chunk {i // CHUNK + 1}: {type(e).__name__} {e}")
             continue
