@@ -2,29 +2,29 @@
   {
     "university": "University of Melbourne",
     "source": "Crossref",
-    "last_run": "2026-09-22T06:17:22.293637+00:00",
+    "last_run": "2026-10-04T07:23:27.910760+00:00",
     "latest_year": 2026,
-    "record_count": 97
+    "record_count": 99
   },
   {
     "university": "University of Melbourne",
     "source": "ORCID",
-    "last_run": "2026-09-22T06:17:22.293637+00:00",
+    "last_run": "2026-10-04T07:23:27.910760+00:00",
     "latest_year": 2026,
-    "record_count": 588
+    "record_count": 564
   },
   {
     "university": "University of Melbourne",
     "source": "OpenAlex",
-    "last_run": "2026-09-22T06:17:22.293637+00:00",
+    "last_run": "2026-10-04T07:23:27.910760+00:00",
     "latest_year": 2026,
-    "record_count": 1056
+    "record_count": 1162
   },
   {
     "university": "University of Melbourne",
     "source": "UniMelb Minerva",
-    "last_run": "2026-09-22T06:17:22.293637+00:00",
+    "last_run": "2026-10-04T07:23:27.910760+00:00",
     "latest_year": 2026,
-    "record_count": 264
+    "record_count": 263
   }
 ]

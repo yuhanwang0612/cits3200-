@@ -34,7 +34,9 @@ probably belonging to someone else; see the end of this page).
 |---|---|
 | `name` | The researcher's name with titles removed ("Dr", "Prof"). |
 | `job_title` | The position as the university lists it, e.g. "Senior Lecturer in Finance". |
-| `academic_level` | The Australian academic level derived from `job_title` (below). Blank when the title does not map to one, e.g. an administrative role such as "Deputy Head of School". |
+| `academic_title` | The academic title implied by `academic_level`: "Dr" for B and C, "Associate Professor" for D, "Professor" for E. Blank for level A or no level. |
+| `admin_title` | The administrative role, if the person holds one, with the department detail removed, e.g. "Dean", "Head of School", "Program Director". Blank for most staff. |
+| `academic_level` | The Australian academic level derived from the listed title (below). Blank when the title does not map to one, e.g. an administrative role such as "Deputy Head of School". |
 | `university` | The university's name. |
 | `field_of_research` | `Accounting` or `Finance`, from the department the university lists the person under. |
 | `source_id` | The person's ID in the university's own research system (e.g. their Pure profile slug). Blank for universities that don't publish one. |

@@ -16,7 +16,7 @@ from pathlib import Path
 import pandas as pd
 
 from core.config import OUTPUT_DIR
-from core.titles import level
+from core.titles import level, rank, split_job_title
 
 # scratch/_anu18/REPORT.md FIX 1. base_scrapers.anu's own FIX I title-repair
 # rules only ever ran on a title scraped directly off the ANU page
@@ -567,20 +567,18 @@ def academic_title_for_level(level_code):
 
 
 def admin_title_from(job_title):
-    """The administrative role inside a raw job title, in its canonical form.
+    """The administrative role(s) inside a raw job title, in canonical form.
 
     "Dean, School of Accounting and Finance" -> "Dean"
     "Joint Deputy Head of Department (Research and Engagement)"
         -> "Deputy Head of Department"
     "Senior Lecturer" -> None, that is an academic rank, not an admin role.
+
+    The rules live in core.titles (split_job_title), which also catches roles
+    written after the rank and keeps several roles: "Professor & Convenor of
+    HDR, Co-Director of ANCAAR" -> "HDR Convenor; Co-Director".
     """
-    text = (job_title or "").strip()
-    if not text:
-        return None
-    for role in _ADMIN_TITLES:
-        if re.search(r"\b" + re.escape(role) + r"\b", text, re.I):
-            return role
-    return None
+    return split_job_title(job_title)[1] if job_title and job_title.strip() else None
 
 
 def build_staff(records):
@@ -1200,45 +1198,54 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
     publications = build_publications(pubs, records, verbose=verbose)
     staff = build_staff(records)
 
-    # Apply manual staff title overrides from data/staff_overrides.csv.
-    # This ensures titles confirmed from profile screenshots survive pipeline reruns.
+    # job_title stays the university's own raw string. Where it gives no
+    # academic rank (nothing listed, or only a role such as "Program
+    # Director"), a rank confirmed by hand in data/staff_overrides.csv fills
+    # academic_level if blank, so the person is ranked; a blank job_title is
+    # filled with the override's title. A level the source supports is never
+    # overridden.
+    _overrides = {}
     _overrides_path = Path(__file__).resolve().parent / "data" / "staff_overrides.csv"
     if _overrides_path.exists():
         import csv as _csv
         with _overrides_path.open(encoding="utf-8") as _f:
             _overrides = {
                 (row["university"].strip().lower(), row["name"].strip()): row["job_title"].strip()
-                for row in _csv.DictReader(_f)
+                for row in _csv.DictReader(_f) if row.get("job_title", "").strip()
             }
-        _applied = 0
-        for _s in staff:
-            _key = (_s.get("university", "").strip().lower(), (_s.get("name") or "").strip())
-            if _key in _overrides and not _s.get("job_title"):
-                _s["job_title"] = _overrides[_key]
-                _applied += 1
-        if verbose and _applied:
-            print(f"  applied {_applied} staff title override(s) from staff_overrides.csv")
 
-    # Normalise job titles: strip discipline qualifiers so titles are consistent
-    # across universities (e.g. "Professor of Finance" -> "Professor").
-    def _normalize_job_title(title):
-        if not title:
-            return title
-        t = title.strip()
-        for prefix in ["Senior Lecturer", "Associate Professor", "Professor", "Lecturer"]:
-            if t.startswith(prefix) and t != prefix:
-                return prefix
-        return t
+    # The file names a university by its output-folder key ("uq"); the record
+    # carries the full name ("University of Queensland"), so an exact match
+    # never fired. Each key maps to a phrase found only in its own university's
+    # name ("university of sydney", not "sydney", which UNSW Sydney contains).
+    _UNI_KEYS = {
+        "adelaide": "adelaide", "anu": "australian national",
+        "monash": "monash", "unimelb": "university of melbourne",
+        "unsw": "unsw", "uq": "university of queensland",
+        "usyd": "university of sydney", "uwa": "university of western australia",
+    }
 
-    _norm_count = 0
+    def _override_for(s):
+        uni = (s.get("university") or "").strip().lower()
+        name = (s.get("name") or "").strip()
+        return next((v for (u, n), v in _overrides.items()
+                     if n == name and _UNI_KEYS.get(u, u) in uni), None)
+
+    _applied = 0
     for _s in staff:
-        if _s.get("job_title"):
-            _orig = _s["job_title"]
-            _s["job_title"] = _normalize_job_title(_s["job_title"])
-            if _s["job_title"] != _orig:
-                _norm_count += 1
-    if verbose and _norm_count:
-        print(f"  normalised {_norm_count} job title(s)")
+        _job, _ = split_job_title(_s.get("job_title"), _s.get("academic_level"))
+        if _job:
+            continue
+        _ov = _override_for(_s)
+        if not _ov:
+            continue
+        if not _s.get("job_title"):
+            _s["job_title"] = _ov
+        if not _s.get("academic_level"):
+            _s["academic_level"] = level(rank(split_job_title(_ov)[0]))
+        _applied += 1
+    if verbose and _applied:
+        print(f"  applied {_applied} staff title override(s) from staff_overrides.csv")
 
     # The client's three columns. Runs after the overrides and the
     # normalisation above, so it sees the job title the CSV will actually

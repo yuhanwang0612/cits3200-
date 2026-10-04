@@ -16,6 +16,7 @@ import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from types import SimpleNamespace
 from xml.etree import ElementTree
 
 import requests
@@ -121,11 +122,73 @@ def _make_driver():
     )
 
 
+# research.monash.edu sits behind Cloudflare. Under parallel load it throttles
+# with 403/429/503 rather than only 429, and a page that came back throttled
+# used to be read as "no title, no ORCID": one refresh lost titles for 35 staff
+# and ORCIDs for 27 whose pages load fine one at a time. Retry those with a
+# growing pause, and say so when a page still cannot be read.
+_THROTTLED = {403, 429, 503}
+
+
+# Last good copy of every page, used only when a live fetch fails. A live
+# result always wins; the cache never replaces data the run did get.
+_PAGE_CACHE = Path(__file__).resolve().parent.parent / "cache" / "monash_pages"
+
+
+def _cache_file(url):
+    import hashlib
+    return _PAGE_CACHE / (hashlib.sha256(url.encode("utf-8")).hexdigest() + ".html")
+
+
+def _save_page(url, text):
+    try:
+        _PAGE_CACHE.mkdir(parents=True, exist_ok=True)
+        _cache_file(url).write_text(text, encoding="utf-8")
+    except OSError:
+        pass
+
+
+def _cached_page(url):
+    path = _cache_file(url)
+    return path.read_text(encoding="utf-8") if path.exists() else None
+
+
+def _get_page(url, timeout=15, attempts=4):
+    for attempt in range(attempts):
+        try:
+            resp = requests.get(url, headers=_HEADERS, timeout=timeout)
+        except requests.RequestException:
+            time.sleep(5 * (attempt + 1))
+            continue
+        if resp.status_code in _THROTTLED:
+            time.sleep(15 * (attempt + 1))
+            continue
+        if resp.status_code == 200 and resp.text:
+            _save_page(url, resp.text)
+        # Any other status (404 for someone who has left) is the real answer
+        # and is returned as is: the cache must not resurrect a removed page.
+        return resp
+    cached = _cached_page(url)
+    if cached:
+        print(f"  warning: live fetch failed, using last saved copy of {url}")
+        return SimpleNamespace(status_code=200, text=cached)
+    print(f"  warning: could not read {url} after {attempts} attempts (throttled, no saved copy)")
+    return None
+
+
 def _find_research_url(profile_url, name):
+    # Already the research profile: use it. Otherwise the search below only
+    # looks at links *on* the page and falls back to a slug guessed from the
+    # name, which is wrong for a nickname, an honour or an accent
+    # ("Zhenyang (Leo) Bao" -> zhenyang-leo-bao, really leo-bao; "Roger
+    # Simnett AO" -> roger-simnett-ao), and those people came back with no
+    # title and no ORCID on every run.
+    if profile_url and profile_url.startswith("https://research.monash.edu/en/persons/"):
+        return profile_url.rstrip("/") + "/"
     if profile_url and "monash.edu" in profile_url:
         try:
-            resp = requests.get(profile_url, headers=_HEADERS, timeout=10)
-            if resp.status_code == 200 and resp.text:
+            resp = _get_page(profile_url, timeout=10)
+            if resp is not None and resp.status_code == 200 and resp.text:
                 soup = BeautifulSoup(resp.text, "html.parser")
                 name_parts = name.split()
                 expected_slug = _name_to_slug(name)
@@ -167,11 +230,8 @@ def _fetch_research_profile(research_url):
     ]
     for attempt in range(3):
         try:
-            resp = requests.get(research_url, headers=_HEADERS, timeout=15)
-            if resp.status_code == 429:
-                time.sleep(15 * (attempt + 1))
-                continue
-            if resp.status_code != 200 or not resp.text:
+            resp = _get_page(research_url, timeout=15)
+            if resp is None or resp.status_code != 200 or not resp.text:
                 return None, 0, None
             soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -206,20 +266,34 @@ def _fetch_research_profile(research_url):
 
 
 def _request_text(url):
-    """Fetch text with the same bounded retry policy as the JSON requests."""
+    """Fetch text with a bounded retry; fall back to the last saved copy only
+    if every live attempt fails."""
+    last_error = None
     for attempt in range(3):
         try:
             resp = requests.get(url, headers=_HEADERS, timeout=20)
-            if resp.status_code == 429 or resp.status_code >= 500:
-                time.sleep(2 * (attempt + 1))
+            # 403 too: Cloudflare's throttle on research.monash.edu, not a
+            # real "forbidden". Without it a throttled Pure feed lost a
+            # researcher's publications for the whole run.
+            if resp.status_code in (403, 429) or resp.status_code >= 500:
+                last_error = f"HTTP {resp.status_code}"
+                time.sleep(10 * (attempt + 1))
                 continue
+            if 400 <= resp.status_code < 500:
+                # A real "not found": the answer, not a failure to recover
+                # from with an old copy.
+                raise RuntimeError(f"failed to fetch {url}: HTTP {resp.status_code}")
             resp.raise_for_status()
+            _save_page(url, resp.text)
             return resp.text
-        except requests.RequestException:
-            if attempt == 2:
-                raise
+        except requests.RequestException as error:
+            last_error = error
             time.sleep(2 * (attempt + 1))
-    raise RuntimeError(f"failed to fetch {url}")
+    cached = _cached_page(url)
+    if cached:
+        print(f"  warning: live fetch failed ({last_error}), using last saved copy of {url}")
+        return cached
+    raise RuntimeError(f"failed to fetch {url}: {last_error}")
 
 
 def _pure_type(raw_type):
@@ -657,10 +731,11 @@ def scrape_staff(verbose=True):
             pass
 
     if verbose:
-        print(f"  Phase 1 done: {len(records)} staff. Phase 2: research profiles (5 parallel workers) ...")
+        print(f"  Phase 1 done: {len(records)} staff. Phase 2: research profiles (2 parallel workers) ...")
 
     # ── Phase 2: parallel research profile fetches ────────────────────────
-    with ThreadPoolExecutor(max_workers=5) as pool:
+    # 2, not 5: five at once is what tripped research.monash.edu's throttle.
+    with ThreadPoolExecutor(max_workers=2) as pool:
         futures = {pool.submit(_process_phase2, r): r for r in records}
         for future in as_completed(futures):
             r = future.result()

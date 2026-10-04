@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-09-22T06:12:53.748369+00:00",
+  "generated_at": "2026-10-04T07:22:08.438737+00:00",
   "mode": "live",
   "roster_sources": {
     "Accounting": "live",
     "Finance": "live"
   },
-  "staff_records": 99,
-  "staff_with_high_confidence_minerva_identity": 57,
-  "staff_without_high_confidence_identity": 42,
+  "staff_records": 97,
+  "staff_with_high_confidence_minerva_identity": 56,
+  "staff_without_high_confidence_identity": 41,
   "minerva_identity_discovery": {
-    "attempted": 45,
+    "attempted": 44,
     "resolved": 3,
     "ambiguous": 2,
-    "not_found": 40,
-    "queries": 98,
+    "not_found": 39,
+    "queries": 96,
     "errors": []
   },
   "orcid_identity_resolution": {
-    "queries": 68,
-    "resolved": 17,
+    "queries": 67,
+    "resolved": 16,
     "ambiguous": 1,
     "not_found": 23,
     "errors": [],
-    "skipped_existing_orcid": 58,
+    "skipped_existing_orcid": 57,
     "aborted_after_repeated_errors": 0
   },
   "openalex_identity_resolution": {
     "queries": 20,
-    "resolved": 10,
-    "ambiguous": 1,
+    "resolved": 11,
+    "ambiguous": 0,
     "not_found": 9,
     "errors": [],
-    "skipped_existing_orcid": 75,
-    "skipped_existing_identifier": 79,
+    "skipped_existing_orcid": 73,
+    "skipped_existing_identifier": 77,
     "aborted_after_repeated_errors": 0
   },
-  "staff_reachable_by_supplementary_orcid_or_openalex_author_id": 89,
-  "staff_without_any_verified_retrieval_identity": 10,
+  "staff_reachable_by_supplementary_orcid_or_openalex_author_id": 88,
+  "staff_without_any_verified_retrieval_identity": 9,
   "departmental_seed_publications": {
     "Accounting": 168,
     "Finance": 254
@@ -53,9 +53,9 @@
       "count_reconciles": true
     }
   },
-  "exact_seed_relationships": 261,
-  "researcher_publication_links": 273,
-  "live_researcher_searches": 57,
+  "exact_seed_relationships": 260,
+  "researcher_publication_links": 272,
+  "live_researcher_searches": 56,
   "manual_identity_overrides_applied": 0,
   "manual_retrieval_overrides_applied": 7,
   "search_failures": [],
@@ -101,7 +101,7 @@
           "openalex_author_id": "A5089570425",
           "display_name": "Noel Boys",
           "orcid": null,
-          "works_count": 5,
+          "works_count": 4,
           "has_unimelb_affiliation": true
         }
       ]
@@ -122,7 +122,7 @@
           "openalex_author_id": "A5083519194",
           "display_name": "Albie Brooks",
           "orcid": null,
-          "works_count": 31,
+          "works_count": 30,
           "has_unimelb_affiliation": true
         }
       ]
@@ -258,7 +258,7 @@
           "openalex_author_id": "A5020434662",
           "display_name": "Greg Cusack",
           "orcid": null,
-          "works_count": 11,
+          "works_count": 12,
           "has_unimelb_affiliation": false
         }
       ]
@@ -276,17 +276,10 @@
       "openalex_candidate_count": 1,
       "openalex_review_candidates": [
         {
-          "openalex_author_id": "A5031791587",
-          "display_name": "Matt Dyki",
-          "orcid": null,
-          "works_count": 2,
-          "has_unimelb_affiliation": false
-        },
-        {
           "openalex_author_id": "A5033610117",
           "display_name": "Matthew Dyki",
           "orcid": null,
-          "works_count": 3,
+          "works_count": 5,
           "has_unimelb_affiliation": true
         }
       ]
@@ -943,7 +936,7 @@
         {
           "openalex_author_id": "A5084556299",
           "display_name": "Rebecca Mattocks",
-          "orcid": null,
+          "orcid": "0009-0007-8558-527X",
           "works_count": 3,
           "has_unimelb_affiliation": true
         }
@@ -1060,18 +1053,18 @@
       "orcid_candidate_count": 0,
       "orcid_review_candidates": [],
       "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
-      "openalex_candidate_count": 2,
+      "openalex_candidate_count": 1,
       "openalex_review_candidates": [
         {
           "openalex_author_id": "A5087819053",
           "display_name": "Brad J. Potter",
           "orcid": null,
-          "works_count": 41,
-          "has_unimelb_affiliation": true
+          "works_count": 38,
+          "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5069247196",
-          "display_name": "Brad Potter",
+          "display_name": "Brad N. Potter",
           "orcid": "0000-0001-6593-7871",
           "works_count": 36,
           "has_unimelb_affiliation": true
@@ -1753,43 +1746,6 @@
       ]
     },
     {
-      "name": "Juan Pablo Franco",
-      "discipline": "Finance",
-      "profile_url": "https://findanexpert.unimelb.edu.au/profile/803361",
-      "minerva_identity_confidence": "none",
-      "minerva_candidate_count": 0,
-      "orcid_identity_status": "verified_exact_name_and_unimelb_affiliation",
-      "orcid_candidate_count": 1,
-      "orcid_review_candidates": [
-        {
-          "orcid": "0009-0007-8625-3357",
-          "credit_name": null,
-          "given_names": "Juan Pablo",
-          "family_names": "Franco",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-2608-2035",
-          "credit_name": "Juan Pablo Franco",
-          "given_names": "Juan Pablo",
-          "family_names": "Franco",
-          "institutions": [
-            "Banco de la República de Colombia",
-            "California Institute of Technology",
-            "JPMorgan",
-            "Maastricht University",
-            "Universidad de los Andes",
-            "University of Melbourne"
-          ],
-          "has_unimelb_affiliation": true
-        }
-      ],
-      "openalex_identity_status": "not_needed_verified_identifier",
-      "openalex_candidate_count": 0,
-      "openalex_review_candidates": []
-    },
-    {
       "name": "Jon Gauntlett",
       "discipline": "Finance",
       "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/jon-gauntlett",
@@ -1815,17 +1771,10 @@
       "openalex_candidate_count": 0,
       "openalex_review_candidates": [
         {
-          "openalex_author_id": "A5119611925",
-          "display_name": "Allan Horsfall",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
           "openalex_author_id": "A5119611549",
           "display_name": "Allan Horsfall",
           "orcid": null,
-          "works_count": 1,
+          "works_count": 2,
           "has_unimelb_affiliation": false
         }
       ]
@@ -2295,6 +2244,23 @@
           "has_unimelb_affiliation": false
         },
         {
+          "orcid": "0000-0003-0128-4917",
+          "credit_name": null,
+          "given_names": "Minsoo",
+          "family_names": "Kim",
+          "institutions": [
+            "CHA Bundang Medical Center",
+            "CHA University",
+            "Gangneung Asan Hospital",
+            "Incheon St. Mary's Hospital",
+            "Samsung Medical Center",
+            "University of Ulsan College of Medicine",
+            "Yonsei University",
+            "Yonsei University College of Medicine"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
           "orcid": "0009-0000-0292-6331",
           "credit_name": null,
           "given_names": "MINSOO",
@@ -2309,18 +2275,6 @@
           "family_names": "Kim",
           "institutions": [
             "Korea Advanced Institute of Science and Technology"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-2435-874X",
-          "credit_name": null,
-          "given_names": "Minsoo",
-          "family_names": "Kim",
-          "institutions": [
-            "Gyeongsang National University",
-            "Hanwha Systems",
-            "Pusan National University"
           ],
           "has_unimelb_affiliation": false
         },
@@ -2384,8 +2338,8 @@
         {
           "openalex_author_id": "A5109242023",
           "display_name": "Natalie Le",
-          "orcid": null,
-          "works_count": 10,
+          "orcid": "0000-0002-5199-2754",
+          "works_count": 7,
           "has_unimelb_affiliation": false
         },
         {
@@ -2399,13 +2353,13 @@
           "openalex_author_id": "A5077142326",
           "display_name": "Natalie Le Clue",
           "orcid": "0000-0002-3224-139X",
-          "works_count": 21,
+          "works_count": 30,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5062514560",
           "display_name": "Natalie le Roux",
-          "orcid": null,
+          "orcid": "0000-0001-5592-6669",
           "works_count": 2,
           "has_unimelb_affiliation": false
         },
@@ -2452,64 +2406,15 @@
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5125775931",
-          "display_name": "Natalie Le",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
           "openalex_author_id": "A5123750525",
           "display_name": "Natalie Le",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5149958621",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5106773710",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
+          "orcid": "0009-0004-3717-4722",
           "works_count": 2,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5127681682",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 2,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5116883975",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5131359706",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 1,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5023944113",
           "display_name": "Natalie Le Roux",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5106773698",
-          "display_name": "Natalie Le Clue",
           "orcid": null,
           "works_count": 1,
           "has_unimelb_affiliation": false
@@ -2609,12 +2514,12 @@
           "openalex_author_id": "A5042115782",
           "display_name": "Bob T. Li",
           "orcid": "0000-0001-6661-8733",
-          "works_count": 607,
+          "works_count": 583,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5108213143",
-          "display_name": "B. Li",
+          "display_name": "Baichao Li",
           "orcid": null,
           "works_count": 9,
           "has_unimelb_affiliation": false
@@ -2648,20 +2553,6 @@
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5077772142",
-          "display_name": "T Li Bob",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5015098225",
-          "display_name": "LI Jing-bob",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
           "openalex_author_id": "A5048304831",
           "display_name": "XU Li-bob",
           "orcid": null,
@@ -2671,6 +2562,20 @@
         {
           "openalex_author_id": "A5013791201",
           "display_name": "LI Guang-bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5077772142",
+          "display_name": "T Li Bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5015098225",
+          "display_name": "LI Jing-bob",
           "orcid": null,
           "works_count": 1,
           "has_unimelb_affiliation": false
@@ -2695,14 +2600,6 @@
           "has_unimelb_affiliation": false
         },
         {
-          "orcid": "0000-0002-3580-6608",
-          "credit_name": null,
-          "given_names": "Lucie",
-          "family_names": "Lu",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
           "orcid": "0009-0001-4310-0082",
           "credit_name": "Lucie Y. Lu",
           "given_names": "Lucie",
@@ -2712,6 +2609,14 @@
             "University of Melbourne"
           ],
           "has_unimelb_affiliation": true
+        },
+        {
+          "orcid": "0000-0002-3580-6608",
+          "credit_name": null,
+          "given_names": "Lucie",
+          "family_names": "Lu",
+          "institutions": [],
+          "has_unimelb_affiliation": false
         }
       ],
       "openalex_identity_status": "not_needed_verified_identifier",
@@ -2989,16 +2894,6 @@
           "has_unimelb_affiliation": false
         },
         {
-          "orcid": "0000-0002-0837-5945",
-          "credit_name": "Nguyen Tran Bao Linh",
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Hiroshima University"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
           "orcid": "0000-0002-8030-5001",
           "credit_name": null,
           "given_names": "Linh",
@@ -3241,16 +3136,6 @@
           "has_unimelb_affiliation": false
         },
         {
-          "orcid": "0009-0004-5648-4021",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Vietnam National University, Hanoi"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
           "orcid": "0000-0002-4021-8720",
           "credit_name": null,
           "given_names": "Linh",
@@ -3340,6 +3225,22 @@
           "has_unimelb_affiliation": false
         },
         {
+          "orcid": "0000-0002-2809-6986",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0000-0002-4143-5225",
+          "credit_name": null,
+          "given_names": "Linh",
+          "family_names": "Nguyen",
+          "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
           "orcid": "0009-0006-7425-6342",
           "credit_name": "Dr Linh Nguyen",
           "given_names": "Linh",
@@ -3365,99 +3266,85 @@
           "has_unimelb_affiliation": true
         }
       ],
-      "openalex_identity_status": "ambiguous",
-      "openalex_candidate_count": 2,
+      "openalex_identity_status": "verified_exact_name_and_unimelb_affiliation",
+      "openalex_candidate_count": 1,
       "openalex_review_candidates": [
         {
           "openalex_author_id": "A5015096941",
-          "display_name": "Paul L. Nguyen",
+          "display_name": "Paul Linh Nguyen",
           "orcid": "0000-0003-4268-3973",
-          "works_count": 926,
+          "works_count": 899,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5039423086",
           "display_name": "Linh T. Nguyen",
           "orcid": "0000-0003-3470-1318",
-          "works_count": 147,
+          "works_count": 129,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5101684958",
           "display_name": "Linh P. Nguyen",
           "orcid": "0000-0003-3373-0838",
-          "works_count": 55,
+          "works_count": 54,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5036310727",
           "display_name": "Nguyễn Thị Thùy Linh",
           "orcid": null,
-          "works_count": 120,
+          "works_count": 118,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5067470754",
           "display_name": "Ngoc Cuong Nguyen",
           "orcid": "0000-0001-9167-5780",
-          "works_count": 205,
+          "works_count": 185,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5101777505",
-          "display_name": "Linh Nguyen",
+          "display_name": "Linh Nhat Nguyen",
           "orcid": "0000-0003-4820-6967",
           "works_count": 78,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5046137901",
-          "display_name": "Linh V. Nguyen",
+          "display_name": "Linh Viet Nguyen",
           "orcid": "0000-0002-2543-2374",
-          "works_count": 116,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5060426055",
-          "display_name": "Linh Nhat Nguyen",
-          "orcid": "0000-0003-1967-3857",
-          "works_count": 63,
+          "works_count": 112,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5034201659",
           "display_name": "Van-Linh Nguyen",
           "orcid": "0000-0002-3472-0108",
-          "works_count": 109,
+          "works_count": 115,
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5058186317",
-          "display_name": "Linh Hồ Thùy Nguyễn",
-          "orcid": "0000-0003-3187-8310",
-          "works_count": 113,
+          "openalex_author_id": "A5060426055",
+          "display_name": "Linh Nhat Nguyen",
+          "orcid": "0000-0003-1967-3857",
+          "works_count": 61,
           "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5053404847",
-          "display_name": "Thu Anh Nguyen",
-          "orcid": "0000-0002-2089-2902",
-          "works_count": 178,
-          "has_unimelb_affiliation": true
         },
         {
           "openalex_author_id": "A5059294221",
-          "display_name": "Linda Nguyen",
+          "display_name": "Linda T. Nguyen",
           "orcid": "0000-0002-7165-6678",
-          "works_count": 108,
+          "works_count": 107,
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5106428542",
-          "display_name": "Linh T. Nguyen",
-          "orcid": "0000-0002-4143-5225",
-          "works_count": 132,
-          "has_unimelb_affiliation": true
+          "openalex_author_id": "A5087983761",
+          "display_name": "Phi‐Linh Nguyen‐Thi",
+          "orcid": "0000-0002-1369-6081",
+          "works_count": 112,
+          "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5103391433",
@@ -3467,17 +3354,17 @@
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5055424683",
-          "display_name": "Linh Anh Nguyen",
-          "orcid": "0000-0002-8109-0567",
-          "works_count": 171,
-          "has_unimelb_affiliation": false
+          "openalex_author_id": "A5053404847",
+          "display_name": "Thu Anh Nguyen",
+          "orcid": "0000-0002-2089-2902",
+          "works_count": 157,
+          "has_unimelb_affiliation": true
         },
         {
-          "openalex_author_id": "A5021335306",
-          "display_name": "Linh Nguyen",
-          "orcid": "0000-0002-6132-8312",
-          "works_count": 101,
+          "openalex_author_id": "A5106428542",
+          "display_name": "Linh Thuy Nguyen",
+          "orcid": "0000-0003-4124-3044",
+          "works_count": 119,
           "has_unimelb_affiliation": true
         },
         {
@@ -3491,7 +3378,28 @@
           "openalex_author_id": "A5101741884",
           "display_name": "Hong‐Kong T. Nguyen",
           "orcid": "0000-0003-4075-9823",
-          "works_count": 121,
+          "works_count": 118,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5058186317",
+          "display_name": "Linh Hồ Thùy Nguyễn",
+          "orcid": "0000-0003-3187-8310",
+          "works_count": 109,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5051920398",
+          "display_name": "Linh V. Nguyen",
+          "orcid": "0000-0001-5360-886X",
+          "works_count": 132,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5055424683",
+          "display_name": "Linh Anh Nguyen",
+          "orcid": "0000-0002-8109-0567",
+          "works_count": 166,
           "has_unimelb_affiliation": false
         }
       ]
@@ -3791,17 +3699,6 @@
           "has_unimelb_affiliation": false
         },
         {
-          "orcid": "0000-0002-5354-1703",
-          "credit_name": null,
-          "given_names": "Zhen",
-          "family_names": "Shi",
-          "institutions": [
-            "City University of Hong Kong",
-            "Hangzhou Dianzi University"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
           "orcid": "0009-0005-1169-4081",
           "credit_name": null,
           "given_names": "Zhen",
@@ -3872,6 +3769,17 @@
           "has_unimelb_affiliation": false
         },
         {
+          "orcid": "0000-0002-5354-1703",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "City University of Hong Kong",
+            "Hangzhou Dianzi University"
+          ],
+          "has_unimelb_affiliation": false
+        },
+        {
           "orcid": "0009-0009-7397-0757",
           "credit_name": null,
           "given_names": "Zhen",
@@ -3904,6 +3812,16 @@
           "given_names": "Zhen",
           "family_names": "Shi",
           "institutions": [],
+          "has_unimelb_affiliation": false
+        },
+        {
+          "orcid": "0009-0002-2534-6131",
+          "credit_name": null,
+          "given_names": "Zhen",
+          "family_names": "Shi",
+          "institutions": [
+            "Qinghai University"
+          ],
           "has_unimelb_affiliation": false
         },
         {
@@ -4361,23 +4279,23 @@
       "openalex_review_candidates": [
         {
           "openalex_author_id": "A5100614702",
-          "display_name": "Jun Yu",
+          "display_name": "Jun Qing Yu",
           "orcid": "0000-0001-5008-2153",
-          "works_count": 1813,
+          "works_count": 1674,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5100728445",
-          "display_name": "Jun Yu",
+          "display_name": "Jun Myoung Yu",
           "orcid": "0000-0002-2702-055X",
-          "works_count": 486,
+          "works_count": 449,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5100374639",
           "display_name": "Xianjun Yu",
           "orcid": "0000-0002-6697-7143",
-          "works_count": 923,
+          "works_count": 879,
           "has_unimelb_affiliation": false
         },
         {
@@ -4391,126 +4309,133 @@
           "openalex_author_id": "A5050817770",
           "display_name": "Jun Yu",
           "orcid": "0000-0003-1922-7283",
-          "works_count": 451,
+          "works_count": 437,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5100639000",
           "display_name": "Jianjun Yu",
           "orcid": "0000-0001-9434-088X",
-          "works_count": 116,
+          "works_count": 111,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5022118078",
           "display_name": "Haijun Yu",
           "orcid": "0000-0002-3398-0880",
-          "works_count": 430,
+          "works_count": 387,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5034667645",
+          "display_name": "Hong Jun Yu",
+          "orcid": "0000-0002-1748-8693",
+          "works_count": 216,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5033829154",
           "display_name": "Jun Yu",
           "orcid": "0000-0003-3435-6550",
-          "works_count": 257,
+          "works_count": 241,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5084275232",
           "display_name": "Jun Yu",
           "orcid": "0000-0003-2360-5873",
-          "works_count": 355,
+          "works_count": 308,
           "has_unimelb_affiliation": true
         },
         {
           "openalex_author_id": "A5064261325",
           "display_name": "Haijun Yu",
           "orcid": "0000-0003-0204-9943",
-          "works_count": 216,
+          "works_count": 219,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5063184651",
           "display_name": "Jun Yu",
           "orcid": "0000-0003-4530-2179",
-          "works_count": 172,
+          "works_count": 165,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5100375406",
           "display_name": "Jian Zhen Yu",
           "orcid": "0000-0002-6165-6500",
-          "works_count": 661,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5089977649",
-          "display_name": "Jianjun Yu",
-          "orcid": "0000-0002-2101-7018",
-          "works_count": 1106,
+          "works_count": 633,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5029633264",
           "display_name": "Junyu Dong",
           "orcid": "0000-0001-7012-2087",
-          "works_count": 847,
+          "works_count": 856,
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5066455710",
-          "display_name": "Yijun Yu",
-          "orcid": "0000-0002-4006-8072",
-          "works_count": 161,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5034667645",
-          "display_name": "Hong Yu",
-          "orcid": "0000-0002-1748-8693",
-          "works_count": 233,
+          "openalex_author_id": "A5089977649",
+          "display_name": "Jianjun Yu",
+          "orcid": "0000-0002-2101-7018",
+          "works_count": 1025,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5008960436",
           "display_name": "Dong‐Jun Yu",
           "orcid": "0000-0002-6786-8053",
-          "works_count": 215,
+          "works_count": 214,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5088630517",
           "display_name": "Young‐Jun Yu",
           "orcid": "0000-0001-9446-1526",
-          "works_count": 97,
+          "works_count": 96,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5058873525",
+          "display_name": "Shujun Yu",
+          "orcid": "0009-0008-0075-3973",
+          "works_count": 163,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5046436370",
           "display_name": "Bo Yu",
           "orcid": "0000-0002-2045-8567",
-          "works_count": 574,
+          "works_count": 528,
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5058873525",
-          "display_name": "Shujun Yu",
-          "orcid": null,
-          "works_count": 182,
+          "openalex_author_id": "A5066455710",
+          "display_name": "Yijun Yu",
+          "orcid": "0000-0002-4006-8072",
+          "works_count": 150,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5000972714",
           "display_name": "Jun Yu",
-          "orcid": null,
-          "works_count": 150,
+          "orcid": "0000-0003-0756-6333",
+          "works_count": 151,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5065929644",
           "display_name": "Huijun Yu",
           "orcid": "0000-0001-8108-4434",
-          "works_count": 263,
+          "works_count": 241,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5008771440",
+          "display_name": "Jaejun Yu",
+          "orcid": "0000-0003-0460-3565",
+          "works_count": 286,
           "has_unimelb_affiliation": false
         }
       ]
@@ -4600,7 +4525,7 @@
           "openalex_author_id": "A5020434662",
           "display_name": "Greg Cusack",
           "orcid": null,
-          "works_count": 11,
+          "works_count": 12,
           "has_unimelb_affiliation": false
         }
       ],
@@ -4680,17 +4605,10 @@
       "openalex_candidate_count": 0,
       "openalex_review_candidates": [
         {
-          "openalex_author_id": "A5119611925",
-          "display_name": "Allan Horsfall",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
           "openalex_author_id": "A5119611549",
           "display_name": "Allan Horsfall",
           "orcid": null,
-          "works_count": 1,
+          "works_count": 2,
           "has_unimelb_affiliation": false
         }
       ],
@@ -4744,8 +4662,8 @@
         {
           "openalex_author_id": "A5109242023",
           "display_name": "Natalie Le",
-          "orcid": null,
-          "works_count": 10,
+          "orcid": "0000-0002-5199-2754",
+          "works_count": 7,
           "has_unimelb_affiliation": false
         },
         {
@@ -4759,13 +4677,13 @@
           "openalex_author_id": "A5077142326",
           "display_name": "Natalie Le Clue",
           "orcid": "0000-0002-3224-139X",
-          "works_count": 21,
+          "works_count": 30,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5062514560",
           "display_name": "Natalie le Roux",
-          "orcid": null,
+          "orcid": "0000-0001-5592-6669",
           "works_count": 2,
           "has_unimelb_affiliation": false
         },
@@ -4812,64 +4730,15 @@
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5125775931",
-          "display_name": "Natalie Le",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
           "openalex_author_id": "A5123750525",
           "display_name": "Natalie Le",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5149958621",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5106773710",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
+          "orcid": "0009-0004-3717-4722",
           "works_count": 2,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5127681682",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 2,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5116883975",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5131359706",
-          "display_name": "Natalie Le Clue",
-          "orcid": null,
-          "works_count": 1,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5023944113",
           "display_name": "Natalie Le Roux",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5106773698",
-          "display_name": "Natalie Le Clue",
           "orcid": null,
           "works_count": 1,
           "has_unimelb_affiliation": false
@@ -4939,12 +4808,12 @@
           "openalex_author_id": "A5042115782",
           "display_name": "Bob T. Li",
           "orcid": "0000-0001-6661-8733",
-          "works_count": 607,
+          "works_count": 583,
           "has_unimelb_affiliation": false
         },
         {
           "openalex_author_id": "A5108213143",
-          "display_name": "B. Li",
+          "display_name": "Baichao Li",
           "orcid": null,
           "works_count": 9,
           "has_unimelb_affiliation": false
@@ -4978,20 +4847,6 @@
           "has_unimelb_affiliation": false
         },
         {
-          "openalex_author_id": "A5077772142",
-          "display_name": "T Li Bob",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5015098225",
-          "display_name": "LI Jing-bob",
-          "orcid": null,
-          "works_count": 1,
-          "has_unimelb_affiliation": false
-        },
-        {
           "openalex_author_id": "A5048304831",
           "display_name": "XU Li-bob",
           "orcid": null,
@@ -5001,6 +4856,20 @@
         {
           "openalex_author_id": "A5013791201",
           "display_name": "LI Guang-bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5077772142",
+          "display_name": "T Li Bob",
+          "orcid": null,
+          "works_count": 1,
+          "has_unimelb_affiliation": false
+        },
+        {
+          "openalex_author_id": "A5015098225",
+          "display_name": "LI Jing-bob",
           "orcid": null,
           "works_count": 1,
           "has_unimelb_affiliation": false
@@ -5027,626 +4896,6 @@
       "job_title": "Lecturer - Education Focussed",
       "review_priority": "low",
       "recommended_action": "Keep the official staff row usable for headcount. Leave publication coverage as unresolved unless a CV, ORCID, or profile supplies direct evidence."
-    },
-    {
-      "name": "Linh Nguyen",
-      "discipline": "Finance",
-      "profile_url": "https://findanexpert.unimelb.edu.au/profile/999882",
-      "minerva_identity_confidence": "ambiguous",
-      "minerva_candidate_count": 2,
-      "orcid_identity_status": "ambiguous",
-      "orcid_candidate_count": 2,
-      "orcid_review_candidates": [
-        {
-          "orcid": "0000-0001-8619-0308",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-2966-2270",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-1551-8588",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "nguyen",
-          "institutions": [
-            "Orenburg State University"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-1252-6168",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Loughborough University",
-            "University of Western Sydney School of Business"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-2624-9176",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyễn",
-          "institutions": [
-            "Foreign Trade University",
-            "University of East Anglia"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-4454-7310",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Coventry University",
-            "Vysnova"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-6681-2552",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-8732-8436",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-6101-4911",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-6423-6042",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyễn",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-2980-3248",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-0837-5945",
-          "credit_name": "Nguyen Tran Bao Linh",
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Hiroshima University"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-8030-5001",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-7029-5081",
-          "credit_name": "Linh91",
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Can Tho University",
-            "Mekong University",
-            "PCR Biotechnology Com., Ltd.",
-            "Tan Tao University",
-            "University of Tsukuba",
-            "Wellcome Trust"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-4695-5446",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-2870-4934",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-9310-0753",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-7167-8455",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-1240-6094",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-8129-0446",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-0650-6227",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-1392-3165",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-2822-9777",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Development and Policies Research Center",
-            "University of Groningen",
-            "Vietnam National University of Agriculture"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-7814-1418",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-9561-4352",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-7278-8835",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Hue University"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-8257-5902",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Tohoku University"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0009-0005-0808-0695",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-6801-1679",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Applied Molecular Transport",
-            "Stanford University"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-4916-4693",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Hue University",
-            "Quang Nam univeristy"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-2905-3291",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-4298-113X",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyễn",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-4052-0791",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-9588-0287",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-8171-1303",
-          "credit_name": "Linh Duy Nguyen",
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-3228-6520",
-          "credit_name": "Linh T. Nguyen",
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Ho Chi Minh City University of Science",
-            "Humboldt-Universität zu Berlin",
-            "Max Delbrück Center for Molecular Medicine",
-            "University of Tsukuba"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-4566-2668",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-5825-1601",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0009-0000-4734-3463",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0009-0004-5648-4021",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Vietnam National University, Hanoi"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-4021-8720",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0001-8995-2822",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyễn",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-8344-3418",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "University of Oxford"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0003-0776-9480",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0009-0006-3184-5649",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "University of Economics Ho Chi Minh City"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0009-0004-1824-4959",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "National Economics University"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-3324-9107",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-4567-5162",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0000-0002-3457-5764",
-          "credit_name": "Linh T. T. Nguyen",
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "The University of Queensland",
-            "Vietnam National University of Agriculture"
-          ],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0009-0001-2927-7295",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [],
-          "has_unimelb_affiliation": false
-        },
-        {
-          "orcid": "0009-0006-7425-6342",
-          "credit_name": "Dr Linh Nguyen",
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Monash University",
-            "University of Melbourne"
-          ],
-          "has_unimelb_affiliation": true
-        },
-        {
-          "orcid": "0009-0006-1582-8160",
-          "credit_name": null,
-          "given_names": "Linh",
-          "family_names": "Nguyen",
-          "institutions": [
-            "Australian and New Zealand Association of Clinical Anatomists",
-            "Australian and New Zealand Orthopaedic Research Society",
-            "Australian and New Zealand Society of Biomechanics",
-            "The University of Melbourne",
-            "University of Auckland"
-          ],
-          "has_unimelb_affiliation": true
-        }
-      ],
-      "openalex_identity_status": "ambiguous",
-      "openalex_candidate_count": 2,
-      "openalex_review_candidates": [
-        {
-          "openalex_author_id": "A5015096941",
-          "display_name": "Paul L. Nguyen",
-          "orcid": "0000-0003-4268-3973",
-          "works_count": 926,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5039423086",
-          "display_name": "Linh T. Nguyen",
-          "orcid": "0000-0003-3470-1318",
-          "works_count": 147,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5101684958",
-          "display_name": "Linh P. Nguyen",
-          "orcid": "0000-0003-3373-0838",
-          "works_count": 55,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5036310727",
-          "display_name": "Nguyễn Thị Thùy Linh",
-          "orcid": null,
-          "works_count": 120,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5067470754",
-          "display_name": "Ngoc Cuong Nguyen",
-          "orcid": "0000-0001-9167-5780",
-          "works_count": 205,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5101777505",
-          "display_name": "Linh Nguyen",
-          "orcid": "0000-0003-4820-6967",
-          "works_count": 78,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5046137901",
-          "display_name": "Linh V. Nguyen",
-          "orcid": "0000-0002-2543-2374",
-          "works_count": 116,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5060426055",
-          "display_name": "Linh Nhat Nguyen",
-          "orcid": "0000-0003-1967-3857",
-          "works_count": 63,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5034201659",
-          "display_name": "Van-Linh Nguyen",
-          "orcid": "0000-0002-3472-0108",
-          "works_count": 109,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5058186317",
-          "display_name": "Linh Hồ Thùy Nguyễn",
-          "orcid": "0000-0003-3187-8310",
-          "works_count": 113,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5053404847",
-          "display_name": "Thu Anh Nguyen",
-          "orcid": "0000-0002-2089-2902",
-          "works_count": 178,
-          "has_unimelb_affiliation": true
-        },
-        {
-          "openalex_author_id": "A5059294221",
-          "display_name": "Linda Nguyen",
-          "orcid": "0000-0002-7165-6678",
-          "works_count": 108,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5106428542",
-          "display_name": "Linh T. Nguyen",
-          "orcid": "0000-0002-4143-5225",
-          "works_count": 132,
-          "has_unimelb_affiliation": true
-        },
-        {
-          "openalex_author_id": "A5103391433",
-          "display_name": "Linh N Nguyen",
-          "orcid": null,
-          "works_count": 7,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5055424683",
-          "display_name": "Linh Anh Nguyen",
-          "orcid": "0000-0002-8109-0567",
-          "works_count": 171,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5021335306",
-          "display_name": "Linh Nguyen",
-          "orcid": "0000-0002-6132-8312",
-          "works_count": 101,
-          "has_unimelb_affiliation": true
-        },
-        {
-          "openalex_author_id": "A5063877992",
-          "display_name": "Nguyen Thuy Ba Linh",
-          "orcid": "0000-0002-8532-8296",
-          "works_count": 58,
-          "has_unimelb_affiliation": false
-        },
-        {
-          "openalex_author_id": "A5101741884",
-          "display_name": "Hong‐Kong T. Nguyen",
-          "orcid": "0000-0003-4075-9823",
-          "works_count": 121,
-          "has_unimelb_affiliation": false
-        }
-      ],
-      "reason": "no verified Minerva, ORCID, or OpenAlex author identity",
-      "job_title": "Lecturer - Education Focussed & Program Director (Master of Applied Finance)",
-      "review_priority": "high",
-      "recommended_action": "Compare candidate publications and identifiers with the official profile; approve only an identifier supported by direct evidence."
     }
   ]
 }

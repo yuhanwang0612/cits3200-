@@ -94,7 +94,7 @@ ENTITIES = {
         "model": Researcher,
         "key": "researcher_id",
         "editable": [
-            "name", "job_title", "academic_level", "university",
+            "name", "job_title", "academic_level", "academic_title", "admin_title", "university",
             "field_of_research", "source_id", "orcid", "profile_url",
         ],
         "int": set(),
