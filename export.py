@@ -978,6 +978,55 @@ def _anu_repair_title_text(rows, pubs, anu_names, crossref_fetch=None):
     return changes
 
 
+# Initials as a citation writes them: "G.", "C. A.", "R. C. W", "S", "J.-P.".
+# Single capitals only, so a short surname ("Ho", "Ng", "Wu") is not one.
+_INITIALS_RE = re.compile(r"^(?:[A-Z]\.?(?:\s+|-)?)+$")
+
+
+def normalize_authors(text):
+    r"""One author-list format for every university: "Given Surname; Given Surname".
+
+    Most sources already give that. Three do not:
+      Monash Pure / ANU profile citations
+          "van Mourik, G., Watson, J. & Onsman, A."  -> "G. van Mourik; J. Watson; A. Onsman"
+          "K.C. Ho, A. Karathanasopoulos, & J. Yu"   -> "K.C. Ho; A. Karathanasopoulos; J. Yu"
+      UWA Pure BibTeX, with escaped braces left behind
+          "Lyndie Bayne; Wee, \Marvin Ge Way\"       -> "Lyndie Bayne; Marvin Ge Way Wee"
+    Without semicolons a comma list cannot be split reliably, so names could
+    not be counted or searched.
+    """
+    if not text:
+        return text
+    bibtex = "\\" in text
+    t = " ".join(text.replace("\\", "").split())
+    t = re.sub(r"^with\s+", "", t, flags=re.I)
+    if ";" in t or bibtex:
+        # BibTeX names are already one per entry: "Smales, Lee Alan" is one person.
+        parts = [p.strip() for p in t.split(";") if p.strip()]
+    elif "," in t or " & " in t or " and " in t:
+        t = re.sub(r",?\s+(?:&|and)\s+", ", ", t)
+        tokens = [x.strip() for x in t.split(",") if x.strip()]
+        parts, i = [], 0
+        while i < len(tokens):
+            if i + 1 < len(tokens) and _INITIALS_RE.match(tokens[i + 1]) \
+                    and not _INITIALS_RE.match(tokens[i]):
+                parts.append(f"{tokens[i]}, {tokens[i + 1]}")
+                i += 2
+            else:
+                parts.append(tokens[i])
+                i += 1
+    else:
+        return t
+    out = []
+    for part in parts:
+        if part.count(",") == 1:
+            surname, given = (x.strip() for x in part.split(","))
+            if surname and given:
+                part = f"{given} {surname}"
+        out.append(part)
+    return "; ".join(out)
+
+
 def build_publications(pubs, records=None, keep_type="Journal Article",
                        verbose=True):
     """Records sort DOI-first so the better-catalogued copy survives dedup.
@@ -1063,7 +1112,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "title": x["title"],
             "year": x.get("year"),
             "author_count": x.get("n_authors"),
-            "authors": x.get("authors"),
+            "authors": normalize_authors(x.get("authors")),
             "doi": x.get("doi"),
             "article_url": (f"https://doi.org/{x['doi']}" if x.get("doi")
                             else x.get("link")),
