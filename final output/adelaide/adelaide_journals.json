@@ -32,86 +32,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Australasian Accounting Business and Finance Journal",
-    "journal_raw": "Australasian Accounting, Business and Finance Journal",
-    "publisher": "University of Wollongong",
-    "issn": "1834-2000; 1834-2019",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": 1.0,
-    "impact_factor_5yr": 1.8,
-    "jcr_year": 2025,
-    "sjr": 0.386,
-    "sjr_quartile": "Q2",
-    "h_index": 32,
-    "cites_per_doc_2y": 1.54,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Anziam Journal",
-    "journal_raw": "Anziam Journal",
-    "publisher": "Cambridge University Press",
-    "issn": "1446-1811; 1446-8735",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 0.8,
-    "impact_factor_5yr": 0.9,
-    "jcr_year": 2025,
-    "sjr": 0.193,
-    "sjr_quartile": "Q4",
-    "h_index": 35,
-    "cites_per_doc_2y": 0.71,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Bulletin of the Australian Mathematical Society",
-    "journal_raw": "Bulletin of the Australian Mathematical Society",
-    "publisher": "Cambridge University Press",
-    "issn": "0004-9727; 1755-1633",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 0.6,
-    "impact_factor_5yr": 0.6,
-    "jcr_year": 2025,
-    "sjr": 0.384,
-    "sjr_quartile": "Q2",
-    "h_index": 51,
-    "cites_per_doc_2y": 0.54,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Journal of the Australian Mathematical Society Series B Applied Mathematics",
-    "journal_raw": "Journal of the Australian Mathematical Society Series B Applied Mathematics",
-    "publisher": null,
-    "issn": "0334-2700; 1445-8810; 1839-4078",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Chaos Solitons and Fractals",
-    "journal_raw": "Chaos Solitons and Fractals",
-    "publisher": "Elsevier BV",
-    "issn": "0960-0779; 1873-2887",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 5.7,
-    "impact_factor_5yr": 5.1,
-    "jcr_year": 2025,
-    "sjr": 1.123,
-    "sjr_quartile": "Q1",
-    "h_index": 185,
-    "cites_per_doc_2y": 5.99,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Higher Education Quarterly",
     "journal_raw": "Higher Education Quarterly",
     "publisher": "Wiley",
@@ -176,6 +96,86 @@
     "scimago_year": null
   },
   {
+    "journal_name": "Australasian Accounting Business and Finance Journal",
+    "journal_raw": "Australasian Accounting, Business and Finance Journal",
+    "publisher": "University of Wollongong",
+    "issn": "1834-2000; 1834-2019",
+    "quality_rank": "B",
+    "abdc_edition": "2025",
+    "impact_factor": 1.0,
+    "impact_factor_5yr": 1.8,
+    "jcr_year": 2025,
+    "sjr": 0.386,
+    "sjr_quartile": "Q2",
+    "h_index": 32,
+    "cites_per_doc_2y": 1.54,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "ANZIAM Journal",
+    "journal_raw": "Anziam Journal",
+    "publisher": "Cambridge University Press",
+    "issn": "1446-1811; 1446-8735",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 0.8,
+    "impact_factor_5yr": 0.9,
+    "jcr_year": 2025,
+    "sjr": 0.193,
+    "sjr_quartile": "Q4",
+    "h_index": 35,
+    "cites_per_doc_2y": 0.71,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Bulletin of the Australian Mathematical Society",
+    "journal_raw": "Bulletin of the Australian Mathematical Society",
+    "publisher": "Cambridge University Press",
+    "issn": "0004-9727; 1755-1633",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 0.6,
+    "impact_factor_5yr": 0.6,
+    "jcr_year": 2025,
+    "sjr": 0.384,
+    "sjr_quartile": "Q2",
+    "h_index": 51,
+    "cites_per_doc_2y": 0.54,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Journal of the Australian Mathematical Society Series B Applied Mathematics",
+    "journal_raw": "Journal of the Australian Mathematical Society Series B Applied Mathematics",
+    "publisher": null,
+    "issn": "0334-2700; 1445-8810; 1839-4078",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "Chaos, Solitons and Fractals",
+    "journal_raw": "Chaos Solitons and Fractals",
+    "publisher": "Elsevier BV",
+    "issn": "0960-0779; 1873-2887",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 5.7,
+    "impact_factor_5yr": 5.1,
+    "jcr_year": 2025,
+    "sjr": 1.123,
+    "sjr_quartile": "Q1",
+    "h_index": 185,
+    "cites_per_doc_2y": 5.99,
+    "scimago_year": "2025"
+  },
+  {
     "journal_name": "Urban Science",
     "journal_raw": "Urban Science",
     "publisher": "Multidisciplinary Digital Publishing Institute",
@@ -206,6 +206,214 @@
     "h_index": 49,
     "cites_per_doc_2y": 4.89,
     "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Property Management",
+    "journal_raw": "Property Management",
+    "publisher": "Emerald Publishing Limited",
+    "issn": "0263-7472; 1758-731X",
+    "quality_rank": "B",
+    "abdc_edition": "2025",
+    "impact_factor": 1.6,
+    "impact_factor_5yr": 1.5,
+    "jcr_year": 2025,
+    "sjr": 0.346,
+    "sjr_quartile": "Q3",
+    "h_index": 37,
+    "cites_per_doc_2y": 2.48,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Environment and Planning B: Urban Analytics and City Science",
+    "journal_raw": "Environment and Planning B: Urban Analytics and City Science",
+    "publisher": "SAGE Publishing",
+    "issn": "2399-8083; 2399-8091",
+    "quality_rank": "A*",
+    "abdc_edition": "2025",
+    "impact_factor": 2.9,
+    "impact_factor_5yr": 3.8,
+    "jcr_year": 2025,
+    "sjr": 1.018,
+    "sjr_quartile": "Q1",
+    "h_index": 123,
+    "cites_per_doc_2y": 4.15,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Habitat International",
+    "journal_raw": "Habitat International",
+    "publisher": "Elsevier BV",
+    "issn": "0197-3975; 1873-5428",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 8.5,
+    "impact_factor_5yr": 9.1,
+    "jcr_year": 2025,
+    "sjr": 1.892,
+    "sjr_quartile": "Q1",
+    "h_index": 140,
+    "cites_per_doc_2y": 9.19,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Land Use Policy",
+    "journal_raw": "Land use policy",
+    "publisher": "Elsevier BV",
+    "issn": "0264-8377; 1873-5754",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 6.6,
+    "impact_factor_5yr": 7.4,
+    "jcr_year": 2025,
+    "sjr": 1.686,
+    "sjr_quartile": "Q1",
+    "h_index": 186,
+    "cites_per_doc_2y": 7.43,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Urban Studies: an international journal for research in urban studies",
+    "journal_raw": "Urban studies",
+    "publisher": "SAGE Publishing",
+    "issn": "0042-0980; 1360-063X",
+    "quality_rank": "A*",
+    "abdc_edition": "2025",
+    "impact_factor": 4.4,
+    "impact_factor_5yr": 5.8,
+    "jcr_year": 2025,
+    "sjr": 1.809,
+    "sjr_quartile": "Q1",
+    "h_index": 195,
+    "cites_per_doc_2y": 6.39,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "International Journal of Housing Markets and Analysis",
+    "journal_raw": "International journal of housing markets and analysis",
+    "publisher": "Emerald Publishing Limited",
+    "issn": "1753-8270; 1753-8289",
+    "quality_rank": "B",
+    "abdc_edition": "2025",
+    "impact_factor": 1.7,
+    "impact_factor_5yr": 1.7,
+    "jcr_year": 2025,
+    "sjr": 0.398,
+    "sjr_quartile": "Q2",
+    "h_index": 34,
+    "cites_per_doc_2y": 2.67,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Pacific Rim Property Research Journal",
+    "journal_raw": "Pacific Rim property research journal",
+    "publisher": "Taylor & Francis",
+    "issn": "1444-5921; 2201-6716",
+    "quality_rank": "C",
+    "abdc_edition": "2025",
+    "impact_factor": 0.3,
+    "impact_factor_5yr": 0.7,
+    "jcr_year": 2025,
+    "sjr": 0.154,
+    "sjr_quartile": "Q4",
+    "h_index": 24,
+    "cites_per_doc_2y": 0.43,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "International Journal of Managerial Finance",
+    "journal_raw": "International journal of managerial finance",
+    "publisher": "Emerald Publishing Limited",
+    "issn": "1743-9132; 1758-6569",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 2.7,
+    "impact_factor_5yr": 2.7,
+    "jcr_year": 2025,
+    "sjr": 0.635,
+    "sjr_quartile": "Q2",
+    "h_index": 47,
+    "cites_per_doc_2y": 3.19,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Housing Studies",
+    "journal_raw": "Housing studies",
+    "publisher": "Taylor & Francis",
+    "issn": "0267-3037; 1466-1810",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 2.7,
+    "impact_factor_5yr": 4.2,
+    "jcr_year": 2025,
+    "sjr": 1.476,
+    "sjr_quartile": "Q1",
+    "h_index": 99,
+    "cites_per_doc_2y": 4.85,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "International Journal of Water Resources Development",
+    "journal_raw": "International journal of water resources development",
+    "publisher": "Taylor & Francis",
+    "issn": "0790-0627; 1360-0648",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 2.8,
+    "impact_factor_5yr": 2.9,
+    "jcr_year": 2025,
+    "sjr": 0.641,
+    "sjr_quartile": "Q2",
+    "h_index": 74,
+    "cites_per_doc_2y": 2.61,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Australian Property Journal",
+    "journal_raw": "Australian property journal",
+    "publisher": null,
+    "issn": null,
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "Flinders Journal of Law Reform",
+    "journal_raw": "Flinders journal of law reform",
+    "publisher": null,
+    "issn": null,
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "Australian Land Economics Review",
+    "journal_raw": "Australian Land Economics Review",
+    "publisher": null,
+    "issn": null,
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
   },
   {
     "journal_name": "Managing Sport and Leisure",
@@ -352,38 +560,6 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Habitat International",
-    "journal_raw": "Habitat International",
-    "publisher": "Elsevier BV",
-    "issn": "0197-3975; 1873-5428",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 8.5,
-    "impact_factor_5yr": 9.1,
-    "jcr_year": 2025,
-    "sjr": 1.892,
-    "sjr_quartile": "Q1",
-    "h_index": 140,
-    "cites_per_doc_2y": 9.19,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Property Management",
-    "journal_raw": "Property management",
-    "publisher": "Emerald Publishing Limited",
-    "issn": "0263-7472; 1758-731X",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": 1.6,
-    "impact_factor_5yr": 1.5,
-    "jcr_year": 2025,
-    "sjr": 0.346,
-    "sjr_quartile": "Q3",
-    "h_index": 37,
-    "cites_per_doc_2y": 2.48,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Journal of Cleaner Production",
     "journal_raw": "Journal of cleaner production",
     "publisher": "Elsevier BV",
@@ -446,182 +622,6 @@
     "h_index": 759,
     "cites_per_doc_2y": 15.53,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Environment and Planning B: Urban Analytics and City Science",
-    "journal_raw": "Environment and Planning B: Urban Analytics and City Science",
-    "publisher": "SAGE Publishing",
-    "issn": "2399-8083; 2399-8091",
-    "quality_rank": "A*",
-    "abdc_edition": "2025",
-    "impact_factor": 2.9,
-    "impact_factor_5yr": 3.8,
-    "jcr_year": 2025,
-    "sjr": 1.018,
-    "sjr_quartile": "Q1",
-    "h_index": 123,
-    "cites_per_doc_2y": 4.15,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Land Use Policy",
-    "journal_raw": "Land use policy",
-    "publisher": "Elsevier BV",
-    "issn": "0264-8377; 1873-5754",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 6.6,
-    "impact_factor_5yr": 7.4,
-    "jcr_year": 2025,
-    "sjr": 1.686,
-    "sjr_quartile": "Q1",
-    "h_index": 186,
-    "cites_per_doc_2y": 7.43,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Urban Studies: an international journal for research in urban studies",
-    "journal_raw": "Urban studies",
-    "publisher": "SAGE Publishing",
-    "issn": "0042-0980; 1360-063X",
-    "quality_rank": "A*",
-    "abdc_edition": "2025",
-    "impact_factor": 4.4,
-    "impact_factor_5yr": 5.8,
-    "jcr_year": 2025,
-    "sjr": 1.809,
-    "sjr_quartile": "Q1",
-    "h_index": 195,
-    "cites_per_doc_2y": 6.39,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "International Journal of Housing Markets and Analysis",
-    "journal_raw": "International journal of housing markets and analysis",
-    "publisher": "Emerald Publishing Limited",
-    "issn": "1753-8270; 1753-8289",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": 1.7,
-    "impact_factor_5yr": 1.7,
-    "jcr_year": 2025,
-    "sjr": 0.398,
-    "sjr_quartile": "Q2",
-    "h_index": 34,
-    "cites_per_doc_2y": 2.67,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Pacific Rim Property Research Journal",
-    "journal_raw": "Pacific Rim property research journal",
-    "publisher": "Taylor & Francis",
-    "issn": "1444-5921; 2201-6716",
-    "quality_rank": "C",
-    "abdc_edition": "2025",
-    "impact_factor": 0.3,
-    "impact_factor_5yr": 0.7,
-    "jcr_year": 2025,
-    "sjr": 0.154,
-    "sjr_quartile": "Q4",
-    "h_index": 24,
-    "cites_per_doc_2y": 0.43,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "International Journal of Managerial Finance",
-    "journal_raw": "International journal of managerial finance",
-    "publisher": "Emerald Publishing Limited",
-    "issn": "1743-9132; 1758-6569",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 2.7,
-    "impact_factor_5yr": 2.7,
-    "jcr_year": 2025,
-    "sjr": 0.635,
-    "sjr_quartile": "Q2",
-    "h_index": 47,
-    "cites_per_doc_2y": 3.19,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Housing Studies",
-    "journal_raw": "Housing studies",
-    "publisher": "Taylor & Francis",
-    "issn": "0267-3037; 1466-1810",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 2.7,
-    "impact_factor_5yr": 4.2,
-    "jcr_year": 2025,
-    "sjr": 1.476,
-    "sjr_quartile": "Q1",
-    "h_index": 99,
-    "cites_per_doc_2y": 4.85,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "International journal of water resources development",
-    "journal_raw": "International journal of water resources development",
-    "publisher": "Taylor & Francis",
-    "issn": "0790-0627; 1360-0648",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.8,
-    "impact_factor_5yr": 2.9,
-    "jcr_year": 2025,
-    "sjr": 0.641,
-    "sjr_quartile": "Q2",
-    "h_index": 74,
-    "cites_per_doc_2y": 2.61,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Australian property journal",
-    "journal_raw": "Australian property journal",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Flinders journal of law reform",
-    "journal_raw": "Flinders journal of law reform",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Australian Land Economics Review",
-    "journal_raw": "Australian Land Economics Review",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   },
   {
     "journal_name": "Meditari Accountancy Research",
@@ -704,22 +704,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "International Journal Of Water Resources Development",
-    "journal_raw": "International Journal Of Water Resources Development",
-    "publisher": "Taylor & Francis",
-    "issn": "0790-0627; 1360-0648",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.8,
-    "impact_factor_5yr": 2.9,
-    "jcr_year": 2025,
-    "sjr": 0.641,
-    "sjr_quartile": "Q2",
-    "h_index": 74,
-    "cites_per_doc_2y": 2.61,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Australasian Journal of Environmental Management",
     "journal_raw": "Australasian Journal of Environmental Management",
     "publisher": "Taylor & Francis",
@@ -768,7 +752,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Outlook on agriculture",
+    "journal_name": "Outlook on Agriculture",
     "journal_raw": "Outlook on agriculture",
     "publisher": "SAGE Publishing",
     "issn": "0030-7270; 2043-6866",
@@ -800,7 +784,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of hydrology",
+    "journal_name": "Journal of Hydrology",
     "journal_raw": "Journal of hydrology",
     "publisher": "Elsevier BV",
     "issn": "0022-1694; 1879-2707",
@@ -832,7 +816,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Hydrology research",
+    "journal_name": "Hydrology Research",
     "journal_raw": "Hydrology research",
     "publisher": "IWA Publishing",
     "issn": "0029-1277; 1996-9694; 1998-9563; 2224-7955",
@@ -848,7 +832,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Water resources",
+    "journal_name": "Water Resources",
     "journal_raw": "Water resources",
     "publisher": "Pleiades Publishing",
     "issn": "0097-8078; 1608-344X",
@@ -880,7 +864,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "European journal of comparative law and governance",
+    "journal_name": "European Journal of Comparative Law and Governance",
     "journal_raw": "European journal of comparative law and governance",
     "publisher": "Brill",
     "issn": "2213-4506; 2213-4514",
@@ -928,7 +912,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Agricultural water management",
+    "journal_name": "Agricultural Water Management",
     "journal_raw": "Agricultural water management",
     "publisher": "Elsevier BV",
     "issn": "0378-3774; 1873-2283",
@@ -941,22 +925,6 @@
     "sjr_quartile": "Q1",
     "h_index": 189,
     "cites_per_doc_2y": 8.18,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Australasian journal of environmental management",
-    "journal_raw": "Australasian journal of environmental management",
-    "publisher": "Taylor & Francis",
-    "issn": "1322-1698; 1448-6563; 2159-5356",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.4,
-    "impact_factor_5yr": 2.2,
-    "jcr_year": 2025,
-    "sjr": 0.419,
-    "sjr_quartile": "Q2",
-    "h_index": 37,
-    "cites_per_doc_2y": 1.8,
     "scimago_year": "2025"
   },
   {
@@ -976,7 +944,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "International water power and dam construction",
+    "journal_name": "International Water Power and Dam Construction",
     "journal_raw": "International water power and dam construction",
     "publisher": null,
     "issn": null,
@@ -992,7 +960,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "William & Mary environmental law and policy review",
+    "journal_name": "William and Mary Environmental Law and Policy Review",
     "journal_raw": "William & Mary environmental law and policy review",
     "publisher": null,
     "issn": null,
@@ -1024,7 +992,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Australian journal of emergency management",
+    "journal_name": "Australian Journal of Emergency Management",
     "journal_raw": "The Australian journal of emergency management",
     "publisher": null,
     "issn": null,
@@ -1088,7 +1056,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Water policy",
+    "journal_name": "Water Policy",
     "journal_raw": "Water policy",
     "publisher": "UWA Publishing",
     "issn": "1366-7017; 1996-9759",
@@ -1102,54 +1070,6 @@
     "h_index": 73,
     "cites_per_doc_2y": 2.4,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "AUSTRALIAN JOURNAL OF EMERGENCY MANAGEMENT",
-    "journal_raw": "AUSTRALIAN JOURNAL OF EMERGENCY MANAGEMENT",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "International Journal of Water Resources Development",
-    "journal_raw": "International Journal of Water Resources Development",
-    "publisher": "Taylor & Francis",
-    "issn": "0790-0627; 1360-0648",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.8,
-    "impact_factor_5yr": 2.9,
-    "jcr_year": 2025,
-    "sjr": 0.641,
-    "sjr_quartile": "Q2",
-    "h_index": 74,
-    "cites_per_doc_2y": 2.61,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "The Australian Journal of Emergency Management",
-    "journal_raw": "The Australian Journal of Emergency Management",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   },
   {
     "journal_name": "Water International",
@@ -1166,22 +1086,6 @@
     "h_index": 72,
     "cites_per_doc_2y": 1.75,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Australian journal of emergency management",
-    "journal_raw": "Australian journal of emergency management",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   },
   {
     "journal_name": "Water",
@@ -1216,6 +1120,38 @@
     "scimago_year": null
   },
   {
+    "journal_name": "Business Strategy and the Environment",
+    "journal_raw": "Business Strategy and the Environment",
+    "publisher": "Wiley",
+    "issn": "0964-4733; 1099-0836",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 13.2,
+    "impact_factor_5yr": 17.5,
+    "jcr_year": 2025,
+    "sjr": 3.678,
+    "sjr_quartile": "Q1",
+    "h_index": 199,
+    "cites_per_doc_2y": 19.04,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Corporate Social Responsibility and Environmental Management",
+    "journal_raw": "Corporate Social Responsibility and Environmental Management",
+    "publisher": "Wiley",
+    "issn": "1535-3958; 1535-3966",
+    "quality_rank": "C",
+    "abdc_edition": "2025",
+    "impact_factor": 10.1,
+    "impact_factor_5yr": 11.6,
+    "jcr_year": 2025,
+    "sjr": 2.147,
+    "sjr_quartile": "Q1",
+    "h_index": 146,
+    "cites_per_doc_2y": 13.18,
+    "scimago_year": "2025"
+  },
+  {
     "journal_name": "Personal and Ubiquitous Computing",
     "journal_raw": "Personal and Ubiquitous Computing",
     "publisher": "Springer Science+Business Media",
@@ -1248,22 +1184,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Business Strategy and the Environment",
-    "journal_raw": "Business Strategy and the Environment",
-    "publisher": "Wiley",
-    "issn": "0964-4733; 1099-0836",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 13.2,
-    "impact_factor_5yr": 17.5,
-    "jcr_year": 2025,
-    "sjr": 3.678,
-    "sjr_quartile": "Q1",
-    "h_index": 199,
-    "cites_per_doc_2y": 19.04,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Accounting Forum",
     "journal_raw": "Accounting forum",
     "publisher": "Taylor & Francis",
@@ -1293,6 +1213,22 @@
     "sjr_quartile": "Q1",
     "h_index": 140,
     "cites_per_doc_2y": 4.81,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Discover Education",
+    "journal_raw": "Discover Education",
+    "publisher": "Springer Science+Business Media",
+    "issn": "2731-5525",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": 0.559,
+    "sjr_quartile": "Q2",
+    "h_index": 19,
+    "cites_per_doc_2y": 3.47,
     "scimago_year": "2025"
   },
   {
@@ -1408,22 +1344,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of environmental management",
-    "journal_raw": "Journal of environmental management",
-    "publisher": "Elsevier BV",
-    "issn": "0301-4797; 1095-8630",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 9.2,
-    "impact_factor_5yr": 9.2,
-    "jcr_year": 2025,
-    "sjr": 1.923,
-    "sjr_quartile": "Q1",
-    "h_index": 296,
-    "cites_per_doc_2y": 10.3,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Public Money & Management",
     "journal_raw": "Public money and management",
     "publisher": "Taylor & Francis",
@@ -1536,7 +1456,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International Journal of Environmental, Cultural, Economic & Social Sustainability",
+    "journal_name": "International Journal of Environmental, Cultural, Economic and Social Sustainability",
     "journal_raw": "International Journal of Environmental, Cultural, Economic & Social Sustainability",
     "publisher": null,
     "issn": null,
@@ -1630,54 +1550,6 @@
     "h_index": null,
     "cites_per_doc_2y": null,
     "scimago_year": null
-  },
-  {
-    "journal_name": "Electronic Journal of Information Systems in Developing Countries",
-    "journal_raw": "Electronic Journal of Information Systems in Developing Countries",
-    "publisher": "Wiley",
-    "issn": "1681-4835",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": 1.6,
-    "impact_factor_5yr": 2.0,
-    "jcr_year": 2025,
-    "sjr": 0.412,
-    "sjr_quartile": "Q2",
-    "h_index": 56,
-    "cites_per_doc_2y": 2.78,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Corporate Social Responsibility and Environmental Management",
-    "journal_raw": "Corporate Social Responsibility and Environmental Management",
-    "publisher": "Wiley",
-    "issn": "1535-3958; 1535-3966",
-    "quality_rank": "C",
-    "abdc_edition": "2025",
-    "impact_factor": 10.1,
-    "impact_factor_5yr": 11.6,
-    "jcr_year": 2025,
-    "sjr": 2.147,
-    "sjr_quartile": "Q1",
-    "h_index": 146,
-    "cites_per_doc_2y": 13.18,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Discover Education",
-    "journal_raw": "Discover Education",
-    "publisher": "Springer Science+Business Media",
-    "issn": "2731-5525",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": 0.559,
-    "sjr_quartile": "Q2",
-    "h_index": 19,
-    "cites_per_doc_2y": 3.47,
-    "scimago_year": "2025"
   },
   {
     "journal_name": "Journal of Hospitality and Tourism Technology",
@@ -2080,7 +1952,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Asian Journal of Finance & Accounting",
+    "journal_name": "Asian Journal of Finance and Accounting",
     "journal_raw": "Asian Journal of Finance & Accounting",
     "publisher": "Macrothink Institute",
     "issn": "1946-052X",
@@ -2288,7 +2160,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Advanced science letters",
+    "journal_name": "Advanced Science Letters",
     "journal_raw": "Advanced science letters",
     "publisher": "American Scientific Publishers",
     "issn": "1936-6612; 1936-7317",
@@ -2304,7 +2176,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International journal of rural management",
+    "journal_name": "International Journal of Rural Management",
     "journal_raw": "International journal of rural management",
     "publisher": "SAGE Publishing",
     "issn": "0973-0052; 0973-0680",
@@ -2416,7 +2288,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Investment Management A Modern Guide to Security Analysis and Stock Selection",
+    "journal_name": "Investment Management a Modern Guide to Security Analysis and Stock Selection",
     "journal_raw": "Investment Management A Modern Guide to Security Analysis and Stock Selection",
     "publisher": "Springer Berlin Heidelberg",
     "issn": null,
@@ -2528,70 +2400,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of Empirical Finance",
-    "journal_raw": "Journal of Empirical Finance",
-    "publisher": "Elsevier BV",
-    "issn": "0927-5398; 1879-1727",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 2.5,
-    "impact_factor_5yr": 2.6,
-    "jcr_year": 2025,
-    "sjr": 1.139,
-    "sjr_quartile": "Q1",
-    "h_index": 101,
-    "cites_per_doc_2y": 3.05,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Journal of Economic Criminology",
-    "journal_raw": "Journal of Economic Criminology",
-    "publisher": "Elsevier BV",
-    "issn": "2949-7914",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": 0.709,
-    "sjr_quartile": "Q1",
-    "h_index": 15,
-    "cites_per_doc_2y": 5.34,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Financial Markets and Portfolio Management",
-    "journal_raw": "Financial Markets and Portfolio Management",
-    "publisher": "Springer Science+Business Media",
-    "issn": "1555-4961; 1555-497X; 1934-4554; 2373-8529",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": 1.0,
-    "impact_factor_5yr": 1.9,
-    "jcr_year": 2025,
-    "sjr": 0.343,
-    "sjr_quartile": "Q3",
-    "h_index": 31,
-    "cites_per_doc_2y": 2.29,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Quantitative Finance",
-    "journal_raw": "Quantitative finance",
-    "publisher": "Taylor & Francis",
-    "issn": "1469-7688; 1469-7696",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 1.9,
-    "impact_factor_5yr": 1.9,
-    "jcr_year": 2025,
-    "sjr": 0.762,
-    "sjr_quartile": "Q1",
-    "h_index": 93,
-    "cites_per_doc_2y": 2.17,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Business Horizons",
     "journal_raw": "Business Horizons",
     "publisher": "Elsevier BV",
@@ -2672,22 +2480,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Business strategy and development",
-    "journal_raw": "Business strategy and development",
-    "publisher": "Wiley",
-    "issn": "2572-3170",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 5.7,
-    "impact_factor_5yr": 5.3,
-    "jcr_year": 2025,
-    "sjr": 0.831,
-    "sjr_quartile": "Q1",
-    "h_index": 39,
-    "cites_per_doc_2y": 6.96,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "British Food Journal",
     "journal_raw": "British food journal",
     "publisher": "Emerald Publishing Limited",
@@ -2720,7 +2512,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Improving collaboration between industry and business schools",
+    "journal_name": "Improving Collaboration Between Industry and Business Schools",
     "journal_raw": "Improving collaboration between industry and business schools",
     "publisher": null,
     "issn": null,
@@ -2768,7 +2560,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Academic leadership series: relevance and professional associations in 2026",
+    "journal_name": "Academic Leadership Series: Relevance and Professional Associations in 2026",
     "journal_raw": "Academic leadership series: relevance and professional associations in 2026",
     "publisher": null,
     "issn": null,
@@ -2784,7 +2576,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Asian journal of sustainability and social responsibility",
+    "journal_name": "Asian Journal of Sustainability and Social Responsibility",
     "journal_raw": "Asian journal of sustainability and social responsibility",
     "publisher": "Springer Science+Business Media",
     "issn": "2365-6417",
@@ -2798,6 +2590,70 @@
     "h_index": null,
     "cites_per_doc_2y": null,
     "scimago_year": null
+  },
+  {
+    "journal_name": "Journal of Empirical Finance",
+    "journal_raw": "Journal of Empirical Finance",
+    "publisher": "Elsevier BV",
+    "issn": "0927-5398; 1879-1727",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 2.5,
+    "impact_factor_5yr": 2.6,
+    "jcr_year": 2025,
+    "sjr": 1.139,
+    "sjr_quartile": "Q1",
+    "h_index": 101,
+    "cites_per_doc_2y": 3.05,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Journal of Economic Criminology",
+    "journal_raw": "Journal of Economic Criminology",
+    "publisher": "Elsevier BV",
+    "issn": "2949-7914",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": 0.709,
+    "sjr_quartile": "Q1",
+    "h_index": 15,
+    "cites_per_doc_2y": 5.34,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Financial Markets and Portfolio Management",
+    "journal_raw": "Financial Markets and Portfolio Management",
+    "publisher": "Springer Science+Business Media",
+    "issn": "1555-4961; 1555-497X; 1934-4554; 2373-8529",
+    "quality_rank": "B",
+    "abdc_edition": "2025",
+    "impact_factor": 1.0,
+    "impact_factor_5yr": 1.9,
+    "jcr_year": 2025,
+    "sjr": 0.343,
+    "sjr_quartile": "Q3",
+    "h_index": 31,
+    "cites_per_doc_2y": 2.29,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Quantitative Finance",
+    "journal_raw": "Quantitative finance",
+    "publisher": "Taylor & Francis",
+    "issn": "1469-7688; 1469-7696",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 1.9,
+    "impact_factor_5yr": 1.9,
+    "jcr_year": 2025,
+    "sjr": 0.762,
+    "sjr_quartile": "Q1",
+    "h_index": 93,
+    "cites_per_doc_2y": 2.17,
+    "scimago_year": "2025"
   },
   {
     "journal_name": "Economic Analysis and Policy",
@@ -2896,7 +2752,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Journal of developing areas",
+    "journal_name": "Journal of Developing Areas",
     "journal_raw": "Journal of developing areas",
     "publisher": "Western Illinois University",
     "issn": "0022-037X; 1548-2278",
@@ -3024,38 +2880,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Australasian Journal Of Environmental Management",
-    "journal_raw": "Australasian Journal Of Environmental Management",
-    "publisher": "Taylor & Francis",
-    "issn": "1322-1698; 1448-6563; 2159-5356",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.4,
-    "impact_factor_5yr": 2.2,
-    "jcr_year": 2025,
-    "sjr": 0.419,
-    "sjr_quartile": "Q2",
-    "h_index": 37,
-    "cites_per_doc_2y": 1.8,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Australasian Journal of Water Resources",
-    "journal_raw": "Australasian Journal of Water Resources",
-    "publisher": "Taylor & Francis",
-    "issn": "1324-1583; 2204-227X",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.3,
-    "impact_factor_5yr": 2.0,
-    "jcr_year": 2025,
-    "sjr": 0.545,
-    "sjr_quartile": "Q2",
-    "h_index": 25,
-    "cites_per_doc_2y": 2.16,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "One Earth",
     "journal_raw": "One Earth",
     "publisher": "Elsevier BV",
@@ -3088,7 +2912,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Campus review",
+    "journal_name": "Campus Review",
     "journal_raw": "Campus review",
     "publisher": null,
     "issn": null,
@@ -3136,7 +2960,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Frontiers In Sustainable Food Systems",
+    "journal_name": "Frontiers in Sustainable Food Systems",
     "journal_raw": "Frontiers In Sustainable Food Systems",
     "publisher": "Frontiers Media",
     "issn": "2571-581X",
@@ -3184,22 +3008,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Outlook On Agriculture",
-    "journal_raw": "Outlook On Agriculture",
-    "publisher": "SAGE Publishing",
-    "issn": "0030-7270; 2043-6866",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 3.2,
-    "impact_factor_5yr": 3.6,
-    "jcr_year": 2025,
-    "sjr": 0.759,
-    "sjr_quartile": "Q1",
-    "h_index": 44,
-    "cites_per_doc_2y": 3.71,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Scientific Data",
     "journal_raw": "Scientific Data",
     "publisher": "Nature Portfolio",
@@ -3229,22 +3037,6 @@
     "sjr_quartile": "Q1",
     "h_index": 243,
     "cites_per_doc_2y": 12.29,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Agricultural Water Management",
-    "journal_raw": "Agricultural Water Management",
-    "publisher": "Elsevier BV",
-    "issn": "0378-3774; 1873-2283",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 7.8,
-    "impact_factor_5yr": 7.9,
-    "jcr_year": 2025,
-    "sjr": 1.736,
-    "sjr_quartile": "Q1",
-    "h_index": 189,
-    "cites_per_doc_2y": 8.18,
     "scimago_year": "2025"
   },
   {
@@ -3312,7 +3104,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Marine and freshwater research",
+    "journal_name": "Marine and Freshwater Research",
     "journal_raw": "Marine and freshwater research",
     "publisher": "CSIRO Publishing",
     "issn": "1323-1650; 1448-6059",
@@ -3376,23 +3168,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of Hydrology",
-    "journal_raw": "Journal of Hydrology",
-    "publisher": "Elsevier BV",
-    "issn": "0022-1694; 1879-2707",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 7.3,
-    "impact_factor_5yr": 7.7,
-    "jcr_year": 2025,
-    "sjr": 2.051,
-    "sjr_quartile": "Q1",
-    "h_index": 304,
-    "cites_per_doc_2y": 7.82,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Water resources management",
+    "journal_name": "Water Resources Management",
     "journal_raw": "Water resources management",
     "publisher": "Springer Science+Business Media",
     "issn": "0920-4741; 1573-1650",
@@ -3408,7 +3184,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Water economics and policy",
+    "journal_name": "Water Economics and Policy",
     "journal_raw": "Water economics and policy",
     "publisher": "World Scientific",
     "issn": "2382-624X; 2382-6258",
@@ -3421,22 +3197,6 @@
     "sjr_quartile": "Q2",
     "h_index": 19,
     "cites_per_doc_2y": 1.46,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Utilities policy",
-    "journal_raw": "Utilities policy",
-    "publisher": "Elsevier BV",
-    "issn": "0957-1787; 1878-4356",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 4.9,
-    "impact_factor_5yr": 4.1,
-    "jcr_year": 2025,
-    "sjr": 1.073,
-    "sjr_quartile": "Q1",
-    "h_index": 72,
-    "cites_per_doc_2y": 5.88,
     "scimago_year": "2025"
   },
   {
@@ -3533,22 +3293,6 @@
     "sjr_quartile": "Q1",
     "h_index": 89,
     "cites_per_doc_2y": 3.41,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Marine and Freshwater Research",
-    "journal_raw": "Marine and Freshwater Research",
-    "publisher": "CSIRO Publishing",
-    "issn": "1323-1650; 1448-6059",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 1.8,
-    "impact_factor_5yr": 1.8,
-    "jcr_year": 2025,
-    "sjr": 0.516,
-    "sjr_quartile": "Q2",
-    "h_index": 108,
-    "cites_per_doc_2y": 1.76,
     "scimago_year": "2025"
   },
   {
@@ -3680,22 +3424,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Water Policy",
-    "journal_raw": "Water Policy",
-    "publisher": "UWA Publishing",
-    "issn": "1366-7017; 1996-9759",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.1,
-    "impact_factor_5yr": 2.2,
-    "jcr_year": 2025,
-    "sjr": 0.564,
-    "sjr_quartile": "Q2",
-    "h_index": 73,
-    "cites_per_doc_2y": 2.4,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "WIT Transactions on Ecology and the Environment",
     "journal_raw": "WIT Transactions on Ecology and the Environment",
     "publisher": "WIT Press",
@@ -3728,7 +3456,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "INTERNATIONAL JOURNAL OF TRAINING RESEARCH",
+    "journal_name": "International Journal of Training Research",
     "journal_raw": "INTERNATIONAL JOURNAL OF TRAINING RESEARCH",
     "publisher": "Taylor & Francis",
     "issn": "1448-0220; 2204-0544",
@@ -3920,35 +3648,19 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Korea Spatial Planning Review",
-    "journal_raw": "The Korea Spatial Planning Review",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Buildings",
-    "journal_raw": "Buildings",
-    "publisher": "Multidisciplinary Digital Publishing Institute",
-    "issn": "2075-5309",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 3.4,
-    "impact_factor_5yr": 3.6,
+    "journal_name": "International Journal of Tourism Research",
+    "journal_raw": "International Journal of Tourism Research",
+    "publisher": "Wiley",
+    "issn": "1099-2340; 1522-1970",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 5.9,
+    "impact_factor_5yr": 5.9,
     "jcr_year": 2025,
-    "sjr": 0.686,
+    "sjr": 1.01,
     "sjr_quartile": "Q1",
-    "h_index": 85,
-    "cites_per_doc_2y": 3.97,
+    "h_index": 96,
+    "cites_per_doc_2y": 6.55,
     "scimago_year": "2025"
   },
   {
@@ -3965,102 +3677,6 @@
     "sjr_quartile": "Q1",
     "h_index": 242,
     "cites_per_doc_2y": 5.28,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "International Review for Spatial Planning and Sustainable Development",
-    "journal_raw": "International Review for Spatial Planning and Sustainable Development",
-    "publisher": null,
-    "issn": "2187-3666",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 1.7,
-    "impact_factor_5yr": 1.8,
-    "jcr_year": 2025,
-    "sjr": 0.442,
-    "sjr_quartile": "Q2",
-    "h_index": 19,
-    "cites_per_doc_2y": 2.14,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "International Journal of Structural and Civil Engineering Research",
-    "journal_raw": "International Journal of Structural and Civil Engineering Research",
-    "publisher": null,
-    "issn": "2319-6009",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "International Journal of Knowledge-Based Development",
-    "journal_raw": "International Journal of Knowledge-Based Development",
-    "publisher": "Inderscience Publishers",
-    "issn": "2040-4468; 2040-4476",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 0.5,
-    "impact_factor_5yr": 0.5,
-    "jcr_year": 2025,
-    "sjr": 0.178,
-    "sjr_quartile": "Q3",
-    "h_index": 27,
-    "cites_per_doc_2y": 0.77,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Indoor and Built Environment",
-    "journal_raw": "Indoor and Built Environment",
-    "publisher": "SAGE Publishing",
-    "issn": "1420-326X; 1423-0070",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.7,
-    "impact_factor_5yr": 2.9,
-    "jcr_year": 2025,
-    "sjr": 0.614,
-    "sjr_quartile": "Q2",
-    "h_index": 66,
-    "cites_per_doc_2y": 3.29,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "International Case Studies in Food Tourism",
-    "journal_raw": "International Case Studies in Food Tourism",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "International Journal of Tourism Research",
-    "journal_raw": "International Journal of Tourism Research",
-    "publisher": "Wiley",
-    "issn": "1099-2340; 1522-1970",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 5.9,
-    "impact_factor_5yr": 5.9,
-    "jcr_year": 2025,
-    "sjr": 1.01,
-    "sjr_quartile": "Q1",
-    "h_index": 96,
-    "cites_per_doc_2y": 6.55,
     "scimago_year": "2025"
   },
   {
@@ -4160,7 +3776,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Food research international",
+    "journal_name": "Food Research International",
     "journal_raw": "Food research international",
     "publisher": "Elsevier BV",
     "issn": "0963-9969; 1873-7145",
@@ -4224,7 +3840,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Research in ethical issues in organizations",
+    "journal_name": "Research in Ethical Issues in Organizations",
     "journal_raw": "Research in ethical issues in organizations",
     "publisher": "Emerald Publishing Limited",
     "issn": "1529-2096",
@@ -4269,6 +3885,102 @@
     "sjr_quartile": "Q1",
     "h_index": 193,
     "cites_per_doc_2y": 13.09,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Korea Spatial Planning Review",
+    "journal_raw": "The Korea Spatial Planning Review",
+    "publisher": null,
+    "issn": null,
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "Buildings",
+    "journal_raw": "Buildings",
+    "publisher": "Multidisciplinary Digital Publishing Institute",
+    "issn": "2075-5309",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 3.4,
+    "impact_factor_5yr": 3.6,
+    "jcr_year": 2025,
+    "sjr": 0.686,
+    "sjr_quartile": "Q1",
+    "h_index": 85,
+    "cites_per_doc_2y": 3.97,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "International Review for Spatial Planning and Sustainable Development",
+    "journal_raw": "International Review for Spatial Planning and Sustainable Development",
+    "publisher": null,
+    "issn": "2187-3666",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 1.7,
+    "impact_factor_5yr": 1.8,
+    "jcr_year": 2025,
+    "sjr": 0.442,
+    "sjr_quartile": "Q2",
+    "h_index": 19,
+    "cites_per_doc_2y": 2.14,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "International Journal of Structural and Civil Engineering Research",
+    "journal_raw": "International Journal of Structural and Civil Engineering Research",
+    "publisher": null,
+    "issn": "2319-6009",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "International Journal of Knowledge-Based Development",
+    "journal_raw": "International Journal of Knowledge-Based Development",
+    "publisher": "Inderscience Publishers",
+    "issn": "2040-4468; 2040-4476",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 0.5,
+    "impact_factor_5yr": 0.5,
+    "jcr_year": 2025,
+    "sjr": 0.178,
+    "sjr_quartile": "Q3",
+    "h_index": 27,
+    "cites_per_doc_2y": 0.77,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Indoor and Built Environment",
+    "journal_raw": "Indoor and Built Environment",
+    "publisher": "SAGE Publishing",
+    "issn": "1420-326X; 1423-0070",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 2.7,
+    "impact_factor_5yr": 2.9,
+    "jcr_year": 2025,
+    "sjr": 0.614,
+    "sjr_quartile": "Q2",
+    "h_index": 66,
+    "cites_per_doc_2y": 3.29,
     "scimago_year": "2025"
   },
   {
@@ -4480,7 +4192,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International journal of corporate social responsibility",
+    "journal_name": "International Journal of Corporate Social Responsibility",
     "journal_raw": "International journal of corporate social responsibility",
     "publisher": "Springer Nature",
     "issn": "2366-0066; 2366-0074",
@@ -4512,23 +4224,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of the Asia Pacific Centre for environmental accountability",
-    "journal_raw": "Journal of the Asia Pacific Centre for environmental accountability",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Issues in social and environmental accounting",
+    "journal_name": "Issues in Social and Environmental Accounting",
     "journal_raw": "Issues in social and environmental accounting",
     "publisher": null,
     "issn": null,
@@ -4560,7 +4256,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International journal of management and decision making",
+    "journal_name": "International Journal of Management and Decision Making",
     "journal_raw": "International journal of management and decision making",
     "publisher": "Inderscience Publishers",
     "issn": "1462-4621; 1741-5187",
@@ -4592,7 +4288,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Philosophy and social criticism: an international, interdisciplinary journal",
+    "journal_name": "Philosophy and Social Criticism: An International, Interdisciplinary Journal",
     "journal_raw": "Philosophy and social criticism: an international, interdisciplinary journal",
     "publisher": "SAGE Publishing",
     "issn": "0011-2860; 0191-4537; 1461-734X",
@@ -4624,7 +4320,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Philosophy and social criticism",
+    "journal_name": "Philosophy and Social Criticism",
     "journal_raw": "Philosophy and social criticism",
     "publisher": "SAGE Publishing",
     "issn": "0011-2860; 0191-4537; 1461-734X",
@@ -4640,7 +4336,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of corporate citizenship",
+    "journal_name": "Journal of Corporate Citizenship",
     "journal_raw": "Journal of corporate citizenship",
     "publisher": null,
     "issn": null,
@@ -4832,7 +4528,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Ageing & Society",
+    "journal_name": "Ageing and Society",
     "journal_raw": "Ageing & Society",
     "publisher": "Cambridge University Press",
     "issn": "0144-686X; 1469-1779",
@@ -4848,7 +4544,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "PLoS ONE",
+    "journal_name": "PLOS ONE",
     "journal_raw": "PLoS ONE",
     "publisher": "Public Library of Science",
     "issn": "1932-6203",
@@ -4912,7 +4608,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Advances in investment analysis and portfolio management",
+    "journal_name": "Advances in Investment Analysis and Portfolio Management",
     "journal_raw": "Advances in investment analysis and portfolio management",
     "publisher": null,
     "issn": null,
@@ -4944,7 +4640,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of construction",
+    "journal_name": "Journal of Construction",
     "journal_raw": "Journal of construction",
     "publisher": null,
     "issn": null,
@@ -5136,23 +4832,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Corporate ownership and control",
-    "journal_raw": "Corporate ownership and control",
-    "publisher": "Publishing house \"Virtus Interpress\"",
-    "issn": "1727-9232; 1810-0368; 1810-3057",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "JASSA",
+    "journal_name": "Jassa",
     "journal_raw": "JASSA",
     "publisher": null,
     "issn": null,
@@ -5181,22 +4861,6 @@
     "sjr_quartile": "Q2",
     "h_index": 67,
     "cites_per_doc_2y": 3.9,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Research in Ethical Issues in Organizations",
-    "journal_raw": "Research in Ethical Issues in Organizations",
-    "publisher": "Emerald Publishing Limited",
-    "issn": "1529-2096",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": NaN,
-    "sjr_quartile": null,
-    "h_index": 12,
-    "cites_per_doc_2y": 0.55,
     "scimago_year": "2025"
   },
   {
@@ -5280,7 +4944,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "International journal of ethics education",
+    "journal_name": "International Journal of Ethics Education",
     "journal_raw": "International journal of ethics education",
     "publisher": "Springer Science+Business Media",
     "issn": "2363-9997; 2364-0006",
@@ -5296,7 +4960,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Ethics in the global south",
+    "journal_name": "Ethics in the Global South",
     "journal_raw": "Ethics in the global south",
     "publisher": "Emerald Publishing Limited",
     "issn": null,
@@ -5312,7 +4976,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Journal of the society of Christian ethics",
+    "journal_name": "Journal of the Society of Christian Ethics",
     "journal_raw": "Journal of the society of Christian ethics",
     "publisher": "Society of Christian Ethics",
     "issn": "1540-7942; 2326-2176",
@@ -5328,7 +4992,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Australian journal of liturgy",
+    "journal_name": "Australian Journal of Liturgy",
     "journal_raw": "Australian journal of liturgy",
     "publisher": null,
     "issn": null,
@@ -5344,7 +5008,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "The contribution of fiction to organizational ethics",
+    "journal_name": "Contribution of Fiction to Organizational Ethics",
     "journal_raw": "The contribution of fiction to organizational ethics",
     "publisher": "Emerald Publishing Limited",
     "issn": "1529-2096",
@@ -5408,7 +5072,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Australian journal of professional and applied ethics",
+    "journal_name": "Australian Journal of Professional and Applied Ethics",
     "journal_raw": "Australian journal of professional and applied ethics",
     "publisher": null,
     "issn": null,
@@ -5424,7 +5088,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International journal of product development",
+    "journal_name": "International Journal of Product Development",
     "journal_raw": "International journal of product development",
     "publisher": "Inderscience Publishers",
     "issn": "1477-9056; 1741-8178",
@@ -5600,23 +5264,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Australian Journal of Professional and Applied Ethics",
-    "journal_raw": "Australian Journal of Professional and Applied Ethics",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "New Engineer journal",
+    "journal_name": "New Engineer Journal",
     "journal_raw": "New Engineer journal",
     "publisher": null,
     "issn": null,
@@ -5648,7 +5296,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Archives of ophthalmology",
+    "journal_name": "Archives of Ophthalmology",
     "journal_raw": "Archives of ophthalmology",
     "publisher": "American Medical Association",
     "issn": "0003-9950; 1538-3601",
@@ -5693,22 +5341,6 @@
     "sjr_quartile": "Q1",
     "h_index": 123,
     "cites_per_doc_2y": 2.12,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Transportation Research Part E: Logistics and Transportation Review",
-    "journal_raw": "Transportation Research Part E: Logistics and Transportation Review",
-    "publisher": "Elsevier BV",
-    "issn": "1366-5545; 1878-5794",
-    "quality_rank": "A*",
-    "abdc_edition": "2025",
-    "impact_factor": 9.3,
-    "impact_factor_5yr": 10.4,
-    "jcr_year": 2025,
-    "sjr": 2.332,
-    "sjr_quartile": "Q1",
-    "h_index": 170,
-    "cites_per_doc_2y": 10.77,
     "scimago_year": "2025"
   },
   {
@@ -5824,7 +5456,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Explore: the journal of science and healing",
+    "journal_name": "Explore: The Journal of Science and Healing",
     "journal_raw": "Explore: the journal of science and healing",
     "publisher": "Elsevier BV",
     "issn": "1550-8307; 1878-7541",
@@ -5872,7 +5504,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of applied management accounting research",
+    "journal_name": "Journal of Applied Management Accounting Research",
     "journal_raw": "Journal of applied management accounting research",
     "publisher": null,
     "issn": null,
@@ -5888,7 +5520,23 @@
     "scimago_year": null
   },
   {
-    "journal_name": "SOUTHERN AFRICAN BUSINESS REVIEW",
+    "journal_name": "Transportation Research Part E: Logistics and Transportation Review",
+    "journal_raw": "Transportation Research Part E: Logistics and Transportation Review",
+    "publisher": "Elsevier BV",
+    "issn": "1366-5545; 1878-5794",
+    "quality_rank": "A*",
+    "abdc_edition": "2025",
+    "impact_factor": 9.3,
+    "impact_factor_5yr": 10.4,
+    "jcr_year": 2025,
+    "sjr": 2.332,
+    "sjr_quartile": "Q1",
+    "h_index": 170,
+    "cites_per_doc_2y": 10.77,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Southern African Business Review",
     "journal_raw": "SOUTHERN AFRICAN BUSINESS REVIEW",
     "publisher": null,
     "issn": null,
@@ -5904,7 +5552,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Journal of economic and financial sciences",
+    "journal_name": "Journal of Economic and Financial Sciences",
     "journal_raw": "Journal of economic and financial sciences",
     "publisher": null,
     "issn": null,
@@ -5968,7 +5616,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "DAAAM international scientific book",
+    "journal_name": "DAAAM International Scientific Book",
     "journal_raw": "DAAAM international scientific book",
     "publisher": "DAAAM International Vienna",
     "issn": null,
@@ -6128,7 +5776,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Physica A: statistical mechanics and its applications",
+    "journal_name": "Physica A: Statistical Mechanics and its Applications",
     "journal_raw": "Physica A: statistical mechanics and its applications",
     "publisher": "Elsevier BV",
     "issn": "0378-4371; 1873-2119",
@@ -6176,7 +5824,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "SURGERY",
+    "journal_name": "Surgery",
     "journal_raw": "SURGERY",
     "publisher": null,
     "issn": null,
@@ -6192,7 +5840,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International journal of teaching and learning in higher education",
+    "journal_name": "International Journal of Teaching and Learning in Higher Education",
     "journal_raw": "International journal of teaching and learning in higher education",
     "publisher": null,
     "issn": null,
@@ -6208,7 +5856,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Journal of business management",
+    "journal_name": "Journal of Business Management",
     "journal_raw": "Journal of business management",
     "publisher": null,
     "issn": null,
@@ -6304,7 +5952,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Corporate Board: role, duties and composition",
+    "journal_name": "Corporate Board: Role, Duties and Composition",
     "journal_raw": "Corporate Board: role, duties and composition",
     "publisher": "Publishing house \"Virtus Interpress\"",
     "issn": "1810-8601; 2312-2722",
@@ -6320,7 +5968,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "European journal of management and public policy",
+    "journal_name": "European Journal of Management and Public Policy",
     "journal_raw": "European journal of management and public policy",
     "publisher": null,
     "issn": null,
@@ -6416,70 +6064,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of Small Business Management",
-    "journal_raw": "Journal of small business management",
-    "publisher": "Wiley",
-    "issn": "0047-2778; 0447-2778; 1540-627X",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 5.7,
-    "impact_factor_5yr": 7.5,
-    "jcr_year": 2025,
-    "sjr": 2.351,
-    "sjr_quartile": "Q1",
-    "h_index": 148,
-    "cites_per_doc_2y": 11.43,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Controlling & management review",
-    "journal_raw": "Controlling & management review",
-    "publisher": "Springer Science+Business Media",
-    "issn": "2195-8262; 2195-8270",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Journal of education for sustainable development",
-    "journal_raw": "Journal of education for sustainable development",
-    "publisher": "SAGE Publishing",
-    "issn": "0973-4074; 0973-4082",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "The environmentalist",
-    "journal_raw": "The environmentalist",
-    "publisher": "Springer Science+Business Media",
-    "issn": "0251-1088; 1573-2991; 2194-5403; 2194-5411",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 3.7,
-    "impact_factor_5yr": null,
-    "jcr_year": 2025,
-    "sjr": 0.637,
-    "sjr_quartile": "Q2",
-    "h_index": 65,
-    "cites_per_doc_2y": 4.05,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Nature Communications",
     "journal_raw": "Nature Communications",
     "publisher": "Nature Portfolio",
@@ -6557,6 +6141,70 @@
     "sjr_quartile": "Q1",
     "h_index": 353,
     "cites_per_doc_2y": 11.68,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Journal of Small Business Management",
+    "journal_raw": "Journal of small business management",
+    "publisher": "Wiley",
+    "issn": "0047-2778; 0447-2778; 1540-627X",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 5.7,
+    "impact_factor_5yr": 7.5,
+    "jcr_year": 2025,
+    "sjr": 2.351,
+    "sjr_quartile": "Q1",
+    "h_index": 148,
+    "cites_per_doc_2y": 11.43,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Controlling and Management Review",
+    "journal_raw": "Controlling & management review",
+    "publisher": "Springer Science+Business Media",
+    "issn": "2195-8262; 2195-8270",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "Journal of Education for Sustainable Development",
+    "journal_raw": "Journal of education for sustainable development",
+    "publisher": "SAGE Publishing",
+    "issn": "0973-4074; 0973-4082",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "Environmentalist",
+    "journal_raw": "The environmentalist",
+    "publisher": "Springer Science+Business Media",
+    "issn": "0251-1088; 1573-2991; 2194-5403; 2194-5411",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": 3.7,
+    "impact_factor_5yr": null,
+    "jcr_year": 2025,
+    "sjr": 0.637,
+    "sjr_quartile": "Q2",
+    "h_index": 65,
+    "cites_per_doc_2y": 4.05,
     "scimago_year": "2025"
   },
   {
@@ -6704,22 +6352,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Foresight: the international journal of applied forecasting",
-    "journal_raw": "Foresight: the international journal of applied forecasting",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "INFORMS Journal on Applied Analytics",
     "journal_raw": "Interfaces",
     "publisher": "Institute for Operations Research and the Management Sciences",
@@ -6768,20 +6400,36 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "INTERFACES",
-    "journal_raw": "INTERFACES",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
+    "journal_name": "Computational Economics",
+    "journal_raw": "Computational Economics",
+    "publisher": "Springer Science+Business Media",
+    "issn": "0927-7099; 1572-9974",
+    "quality_rank": "B",
+    "abdc_edition": "2025",
+    "impact_factor": 2.1,
+    "impact_factor_5yr": 2.3,
+    "jcr_year": 2025,
+    "sjr": 0.459,
+    "sjr_quartile": "Q2",
+    "h_index": 56,
+    "cites_per_doc_2y": 3.12,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Omega",
+    "journal_raw": "Omega",
+    "publisher": "Elsevier BV",
+    "issn": "0305-0483; 1873-5274",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 6.9,
+    "impact_factor_5yr": 6.9,
+    "jcr_year": 2025,
+    "sjr": 2.428,
+    "sjr_quartile": "Q1",
+    "h_index": 183,
+    "cites_per_doc_2y": 8.59,
+    "scimago_year": "2025"
   },
   {
     "journal_name": "Organization Science",
@@ -6829,38 +6477,6 @@
     "sjr_quartile": "Q1",
     "h_index": 98,
     "cites_per_doc_2y": 6.0,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Computational Economics",
-    "journal_raw": "Computational Economics",
-    "publisher": "Springer Science+Business Media",
-    "issn": "0927-7099; 1572-9974",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": 2.1,
-    "impact_factor_5yr": 2.3,
-    "jcr_year": 2025,
-    "sjr": 0.459,
-    "sjr_quartile": "Q2",
-    "h_index": 56,
-    "cites_per_doc_2y": 3.12,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Omega",
-    "journal_raw": "Omega",
-    "publisher": "Elsevier BV",
-    "issn": "0305-0483; 1873-5274",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 6.9,
-    "impact_factor_5yr": 6.9,
-    "jcr_year": 2025,
-    "sjr": 2.428,
-    "sjr_quartile": "Q1",
-    "h_index": 183,
-    "cites_per_doc_2y": 8.59,
     "scimago_year": "2025"
   },
   {
@@ -7536,86 +7152,6 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Management Accounting Research",
-    "journal_raw": "Management Accounting Research",
-    "publisher": "Elsevier BV",
-    "issn": "1044-5005; 1096-1224",
-    "quality_rank": "A*",
-    "abdc_edition": "2025",
-    "impact_factor": 4.5,
-    "impact_factor_5yr": 5.6,
-    "jcr_year": 2025,
-    "sjr": 1.625,
-    "sjr_quartile": "Q1",
-    "h_index": 109,
-    "cites_per_doc_2y": 5.19,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Journal of Financial Reporting",
-    "journal_raw": "Journal of Financial Reporting",
-    "publisher": "American Accounting Association",
-    "issn": "2380-2146; 2380-2154",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 2.4,
-    "impact_factor_5yr": 3.4,
-    "jcr_year": 2025,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Journal of Accounting Auditing and Finance",
-    "journal_raw": "Journal of Accounting, Auditing & Finance",
-    "publisher": "SAGE Publishing",
-    "issn": "0148-558X; 2160-4061",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 1.3,
-    "impact_factor_5yr": 2.1,
-    "jcr_year": 2025,
-    "sjr": 0.965,
-    "sjr_quartile": "Q1",
-    "h_index": 68,
-    "cites_per_doc_2y": 1.91,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Agricultural Economics",
-    "journal_raw": "Agricultural Economics",
-    "publisher": "Wiley",
-    "issn": "0169-5150; 1574-0862",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 4.7,
-    "impact_factor_5yr": 5.4,
-    "jcr_year": 2025,
-    "sjr": 1.167,
-    "sjr_quartile": "Q1",
-    "h_index": 117,
-    "cites_per_doc_2y": 4.0,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "The Journal of Futures Markets",
-    "journal_raw": "Journal of Futures Markets",
-    "publisher": "Wiley",
-    "issn": "0270-7314; 1096-9934",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 2.8,
-    "impact_factor_5yr": 2.5,
-    "jcr_year": 2025,
-    "sjr": 0.599,
-    "sjr_quartile": "Q2",
-    "h_index": 69,
-    "cites_per_doc_2y": 2.93,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Asia Pacific Journal of Anthropology",
     "journal_raw": "Asia Pacific Journal of Anthropology",
     "publisher": "Taylor & Francis",
@@ -7728,22 +7264,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "POLITICS RELIGION & IDEOLOGY",
-    "journal_raw": "POLITICS RELIGION & IDEOLOGY",
-    "publisher": "Taylor & Francis",
-    "issn": "1469-0764; 1743-9647; 2156-7689; 2156-7697",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 0.7,
-    "impact_factor_5yr": 1.6,
-    "jcr_year": 2025,
-    "sjr": 0.605,
-    "sjr_quartile": "Q1",
-    "h_index": 21,
-    "cites_per_doc_2y": 1.14,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Development in Practice",
     "journal_raw": "Development in Practice",
     "publisher": "Taylor & Francis",
@@ -7792,7 +7312,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Sustainability Switzerland",
+    "journal_name": "Sustainability (Switzerland)",
     "journal_raw": "Sustainability Switzerland",
     "publisher": "Multidisciplinary Digital Publishing Institute",
     "issn": "2071-1050",
@@ -7808,7 +7328,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "REVISTA ROMANEASCA PENTRU EDUCATIE MULTIDIMENSIONALA",
+    "journal_name": "Revista Romaneasca Pentru Educatie Multidimensionala",
     "journal_raw": "REVISTA ROMANEASCA PENTRU EDUCATIE MULTIDIMENSIONALA",
     "publisher": null,
     "issn": "2066-7329; 2067-9270",
@@ -7822,6 +7342,86 @@
     "h_index": null,
     "cites_per_doc_2y": null,
     "scimago_year": null
+  },
+  {
+    "journal_name": "Management Accounting Research",
+    "journal_raw": "Management Accounting Research",
+    "publisher": "Elsevier BV",
+    "issn": "1044-5005; 1096-1224",
+    "quality_rank": "A*",
+    "abdc_edition": "2025",
+    "impact_factor": 4.5,
+    "impact_factor_5yr": 5.6,
+    "jcr_year": 2025,
+    "sjr": 1.625,
+    "sjr_quartile": "Q1",
+    "h_index": 109,
+    "cites_per_doc_2y": 5.19,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Journal of Financial Reporting",
+    "journal_raw": "Journal of Financial Reporting",
+    "publisher": "American Accounting Association",
+    "issn": "2380-2146; 2380-2154",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 2.4,
+    "impact_factor_5yr": 3.4,
+    "jcr_year": 2025,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "Journal of Accounting Auditing and Finance",
+    "journal_raw": "Journal of Accounting, Auditing & Finance",
+    "publisher": "SAGE Publishing",
+    "issn": "0148-558X; 2160-4061",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 1.3,
+    "impact_factor_5yr": 2.1,
+    "jcr_year": 2025,
+    "sjr": 0.965,
+    "sjr_quartile": "Q1",
+    "h_index": 68,
+    "cites_per_doc_2y": 1.91,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Agricultural Economics",
+    "journal_raw": "Agricultural Economics",
+    "publisher": "Wiley",
+    "issn": "0169-5150; 1574-0862",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 4.7,
+    "impact_factor_5yr": 5.4,
+    "jcr_year": 2025,
+    "sjr": 1.167,
+    "sjr_quartile": "Q1",
+    "h_index": 117,
+    "cites_per_doc_2y": 4.0,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "The Journal of Futures Markets",
+    "journal_raw": "Journal of Futures Markets",
+    "publisher": "Wiley",
+    "issn": "0270-7314; 1096-9934",
+    "quality_rank": "A",
+    "abdc_edition": "2025",
+    "impact_factor": 2.8,
+    "impact_factor_5yr": 2.5,
+    "jcr_year": 2025,
+    "sjr": 0.599,
+    "sjr_quartile": "Q2",
+    "h_index": 69,
+    "cites_per_doc_2y": 2.93,
+    "scimago_year": "2025"
   },
   {
     "journal_name": "Supply Chain Management: an international journal",
@@ -8288,7 +7888,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Ahuri Final Report",
+    "journal_name": "AHURI Final Report",
     "journal_raw": "Ahuri Final Report",
     "publisher": null,
     "issn": "1834-7223",
@@ -8317,22 +7917,6 @@
     "sjr_quartile": "Q1",
     "h_index": 157,
     "cites_per_doc_2y": 6.34,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "AHURI Final Report",
-    "journal_raw": "AHURI Final Report",
-    "publisher": null,
-    "issn": "1834-7223",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": 0.5,
-    "sjr_quartile": "Q2",
-    "h_index": 19,
-    "cites_per_doc_2y": 1.61,
     "scimago_year": "2025"
   },
   {
@@ -8400,7 +7984,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Geographical Journal",
+    "journal_name": "Geographical Journal",
     "journal_raw": "The Geographical Journal",
     "publisher": "Wiley",
     "issn": "0016-7398; 1475-4959",
@@ -8576,7 +8160,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Accounting and Management Review | Revista de Contabilidade e Gestão",
+    "journal_name": "Accounting and Management Review | Revista De Contabilidade E Gestão",
     "journal_raw": "Accounting and Management Review | Revista de Contabilidade e Gestão",
     "publisher": null,
     "issn": "1646-2750; 2184-0733",
@@ -8688,7 +8272,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International Journal of E-Business Research",
+    "journal_name": "International Journal of e-Business Research",
     "journal_raw": "International Journal of E-Business Research",
     "publisher": "IGI Global",
     "issn": "1548-1131; 1548-114X",
@@ -8816,7 +8400,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "International Journal of Technology Transfer adn Commercialisation",
+    "journal_name": "International Journal of Technology Transfer Adn Commercialisation",
     "journal_raw": "International Journal of Technology Transfer adn Commercialisation",
     "publisher": "Inderscience Publishers",
     "issn": "1470-6075; 1741-5284",
@@ -9200,7 +8784,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International journal of business and information/International journal of business & information",
+    "journal_name": "International Journal of Business and information/International Journal of Business and Information",
     "journal_raw": "International journal of business and information/International journal of business & information",
     "publisher": "The University of Adelaide",
     "issn": "1728-8673",

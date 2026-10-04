@@ -5,6 +5,7 @@ retrieval upstream is deliberately unfiltered so that exclusions are
 visible and reversible rather than baked into each source.
 """
 
+import csv
 import difflib
 import json
 import re
@@ -627,6 +628,66 @@ def _clean_issns(values):
     return out
 
 
+# ------------------------------------------------------- journal spelling
+#
+# The same journal reached the exports spelled several ways ("PLoS ONE",
+# "Plos One", "PLOS ONE"; "The Journal of Business", "JOURNAL OF BUSINESS"),
+# and journal_name is the key the publications and journals tables join on,
+# so each spelling became a separate journal. One spelling per journal, chosen
+# by a rule that gives the same answer in every university's export:
+#   1. the ABDC title, where the journal is on the ABDC list (as before);
+#   2. otherwise Scimago's title for the row's ISSN - but only when it is the
+#      same name spelled differently, never a rename: a wrong ISSN (an SSRN
+#      copy, the CIMA magazine sharing "Financial Management") must not turn
+#      a journal into another one;
+#   3. otherwise a fixed tidy: "&" -> "and", no leading "The", title case.
+
+_SMALL_WORDS = {"a", "an", "and", "as", "at", "by", "for", "from", "in", "into",
+                "of", "on", "or", "the", "to", "with", "o"}
+
+
+def _journal_key(name):
+    """Same journal -> same key: case, "&"/"and", a leading "The" and
+    punctuation are ignored."""
+    k = re.sub(r"[^a-z0-9]+", " ", (name or "").lower().replace("&", " and ")).strip()
+    return re.sub(r"^the\s+", "", k)
+
+
+def _tidy_journal_name(name):
+    t = " ".join((name or "").split())
+    t = re.sub(r"\s*&\s*", " and ", t)
+    t = re.sub(r"^the\s+", "", t, flags=re.I)
+    shouting = t.isupper()
+    words, out, start = t.split(" "), [], True
+    for w in words:
+        core = re.sub(r"[^A-Za-z]", "", w)
+        if not core:
+            out.append(w)
+        elif not shouting and (core[1:] != core[1:].lower()):
+            out.append(w)                       # acronym or camel case: PLoS, ISACA, eJournal
+        elif not start and core.lower() in _SMALL_WORDS:
+            out.append(w.lower())
+        else:
+            low = w.lower()
+            i = next((j for j, ch in enumerate(low) if ch.isalpha()), 0)
+            out.append(low[:i] + low[i].upper() + low[i + 1:])
+        start = w.endswith(":")
+    return " ".join(out)
+
+
+def canonical_journal_name(x):
+    """The one spelling of this publication's journal; see the note above."""
+    if x.get("abdc_title"):
+        return x["abdc_title"]
+    name = x.get("journal")
+    if not name:
+        return name
+    scimago = x.get("scimago_title")
+    if scimago and _journal_key(scimago) == _journal_key(name):
+        return scimago
+    return _tidy_journal_name(name)
+
+
 def build_journals(pubs, used_names=None):
     """One row per journal, keyed on the ABDC canonical title where we have
     one. Keying on ISSN splits print from online; keying on the raw name
@@ -638,7 +699,7 @@ def build_journals(pubs, used_names=None):
         # journal name and must be enough to create the referenced journal row.
         if not (x.get("abdc_title") or x.get("journal")):
             continue
-        key = x.get("abdc_title") or x.get("journal")
+        key = canonical_journal_name(x)
         if used_names is not None and key not in used_names:
             continue
         candidate = {
@@ -978,6 +1039,121 @@ def _anu_repair_title_text(rows, pubs, anu_names, crossref_fetch=None):
     return changes
 
 
+# Initials as a citation writes them: "G.", "C. A.", "R. C. W", "S", "J.-P.".
+# Single capitals only, so a short surname ("Ho", "Ng", "Wu") is not one.
+_INITIALS_RE = re.compile(r"^(?:[A-Z]\.?(?:\s+|-)?)+$")
+
+
+def normalize_authors(text):
+    r"""One author-list format for every university: "Given Surname; Given Surname".
+
+    Most sources already give that. Three do not:
+      Monash Pure / ANU profile citations
+          "van Mourik, G., Watson, J. & Onsman, A."  -> "G. van Mourik; J. Watson; A. Onsman"
+          "K.C. Ho, A. Karathanasopoulos, & J. Yu"   -> "K.C. Ho; A. Karathanasopoulos; J. Yu"
+      UWA Pure BibTeX, with escaped braces left behind
+          "Lyndie Bayne; Wee, \Marvin Ge Way\"       -> "Lyndie Bayne; Marvin Ge Way Wee"
+    Without semicolons a comma list cannot be split reliably, so names could
+    not be counted or searched.
+    """
+    if not text:
+        return text
+    bibtex = "\\" in text
+    t = " ".join(text.replace("\\", "").split())
+    t = re.sub(r"^with\s+", "", t, flags=re.I)
+    if ";" in t or bibtex:
+        # BibTeX names are already one per entry: "Smales, Lee Alan" is one person.
+        parts = [p.strip() for p in t.split(";") if p.strip()]
+    elif "," in t or " & " in t or " and " in t:
+        t = re.sub(r",?\s+(?:&|and)\s+", ", ", t)
+        tokens = [x.strip() for x in t.split(",") if x.strip()]
+        parts, i = [], 0
+        while i < len(tokens):
+            if i + 1 < len(tokens) and _INITIALS_RE.match(tokens[i + 1]) \
+                    and not _INITIALS_RE.match(tokens[i]):
+                parts.append(f"{tokens[i]}, {tokens[i + 1]}")
+                i += 2
+            else:
+                parts.append(tokens[i])
+                i += 1
+    else:
+        return t
+    out = []
+    for part in parts:
+        if part.count(",") == 1:
+            surname, given = (x.strip() for x in part.split(","))
+            if surname and given:
+                part = f"{given} {surname}"
+        out.append(part)
+    return "; ".join(out)
+
+
+# ------------------------------------------------------- non-articles
+#
+# The sources call many things a journal article that are not research:
+# editorials, book reviews, front matter, retractions. OpenAlex types each
+# DOI properly, so its type decides, for the kinds nobody would defend as a
+# research article; a retracted or withdrawn article is dropped too. Book
+# chapters, books, reports, preprints and "paratext" are only listed for
+# review: OpenAlex calls some real articles in book-series journals
+# chapters, and has typed A* papers as paratext. Every row dropped or
+# flagged is written to <uni>_type_review.csv. A DOI in data/publication_keep.csv is never dropped
+# (for OpenAlex mistakes).
+NON_ARTICLE_TYPES = {"editorial", "book-review", "retraction", "erratum",
+                     "letter", "conference-abstract"}
+REVIEW_TYPES = {"Book Chapter", "Book", "Research Report", "Preprint", "paratext"}
+_NON_ARTICLE_TITLE = re.compile(
+    r"^\W*(foreword|preface|prelims|front matter|back matter|in memoriam|"
+    r"obituary|editorial board|contents|index|errata|introduction|editorial|"
+    r"guest editorial|editorial introduction|editor'?s'? note)\W*$"
+    r"|^\W*(retraction|withdrawal) (note|notice)\b|^\W*(retracted|withdrawn)( article)?\s*:", re.I)
+# A discussant's piece on someone else's paper ("Discussion of ...",
+# "... - Discussion", "... - Comment"). Journals print them alongside the
+# paper, but they are not research articles.
+_DISCUSSION_TITLE = re.compile(
+    r"^\W*(discussion|comment)\W*$|^\W*discussion of\b"
+    r"|(\s[-\u2013\u2014]|:)\s*(discussion|comment)\W*$", re.I)
+TYPE_REVIEW_LOG = []
+
+_keep_path = Path(__file__).resolve().parent / "data" / "publication_keep.csv"
+_KEEP_DOIS = set()
+if _keep_path.exists():
+    with _keep_path.open(encoding="utf-8") as _f:
+        _KEEP_DOIS = {(r.get("doi") or "").strip().lower()
+                      for r in csv.DictReader(_f) if (r.get("doi") or "").strip()}
+
+
+def non_article_reason(x):
+    """Why this row is not a research article, or None. ('drop'|'review', why)."""
+    doi = (x.get("doi") or "").strip().lower()
+    if doi and doi in _KEEP_DOIS:
+        return None
+    t = x.get("oa_type")
+    if t in NON_ARTICLE_TYPES:
+        return ("drop", f"OpenAlex type: {t}")
+    # Frontiers registers its conference abstracts as 10.3389/conf.*, and
+    # OpenAlex types them as articles.
+    if doi.startswith("10.3389/conf."):
+        return ("drop", "conference abstract (Frontiers)")
+    if x.get("oa_retracted"):
+        return ("drop", "retracted or withdrawn (OpenAlex)")
+    if _NON_ARTICLE_TITLE.match(x.get("title") or ""):
+        return ("drop", "title marks it as front matter or a notice")
+    if _DISCUSSION_TITLE.search(x.get("title") or ""):
+        return ("drop", "discussant piece")
+    if t in REVIEW_TYPES:
+        return ("review", f"OpenAlex type: {t}")
+    return None
+
+
+def _log_non_article(x, action, why):
+    TYPE_REVIEW_LOG.append({
+        "action": action, "reason": why, "name": x.get("name"),
+        "title": x.get("title"), "year": x.get("year"),
+        "journal": x.get("journal"), "doi": x.get("doi"),
+        "source": x.get("source")})
+
+
 def build_publications(pubs, records=None, keep_type="Journal Article",
                        verbose=True):
     """Records sort DOI-first so the better-catalogued copy survives dedup.
@@ -987,6 +1163,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     key in a merged table.
     """
     SKIPPED_PREFIX_DUPS.clear()
+    TYPE_REVIEW_LOG.clear()
     orcid_by_name = {r["name_clean"]: r.get("orcid") for r in (records or [])}
     anu_names = _anu_staff_names(records)
     out = []
@@ -998,6 +1175,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     anu_repository_repairs = []
     anu_author_fallbacks = 0
     missing_journal = 0
+    # (name, title) of every dropped non-article, so a DOI-less copy of the
+    # same item (a profile page listing the editorial) cannot slip through.
+    dropped_non_articles = set()
     for x in sorted(pubs, key=lambda r: (r.get("doi") is None)):
         if x.get("type") != keep_type or not x.get("title"):
             continue
@@ -1008,6 +1188,15 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         # _is_prefix_duplicate. Applies to every university, not just ANU.
         if _is_correction_notice(x.get("title")):
             excluded_correction_notices += 1
+            continue
+        flag = non_article_reason(x)
+        title_key = (x.get("name"), _normalise_title(x["title"]))
+        if flag and flag[0] == "drop":
+            _log_non_article(x, "dropped", flag[1])
+            dropped_non_articles.add(title_key)
+            continue
+        if not x.get("doi") and title_key in dropped_non_articles:
+            _log_non_article(x, "dropped", "copy of a dropped non-article")
             continue
         # Title repair runs before anything reads the title: the dedup key
         # below is computed from it, so repairing afterwards would key the
@@ -1020,7 +1209,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         repaired_journal = _anu_repository_journal_repair(x, anu_names)
         if repaired_journal:
             anu_repository_repairs.append((x["name"], x["title"], repaired_journal))
-        journal_name = x.get("abdc_title") or x.get("journal")
+        journal_name = canonical_journal_name(x)
         # A row cannot be delivered as a verified journal article when no
         # journal can be named. Keep such records upstream for review, but do
         # not let them into the client-facing publication table.
@@ -1055,6 +1244,8 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             kept_dois_by_key[k].add(doi)
         if _anu_author_fallback(x, anu_names):
             anu_author_fallbacks += 1
+        if flag:
+            _log_non_article(x, "review", flag[1])
         out.append({
             "name": x["name"],
             "orcid": orcid_by_name.get(x["name"]),
@@ -1063,7 +1254,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "title": x["title"],
             "year": x.get("year"),
             "author_count": x.get("n_authors"),
-            "authors": x.get("authors"),
+            "authors": normalize_authors(x.get("authors")),
             "doi": x.get("doi"),
             "article_url": (f"https://doi.org/{x['doi']}" if x.get("doi")
                             else x.get("link")),
@@ -1093,6 +1284,11 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
                 print(f"    {n:4}  {s or '?':10} {t}")
         if missing_journal:
             print(f"  excluded {missing_journal} journal-article row(s) with no verified journal name")
+        _dropped = sum(1 for r in TYPE_REVIEW_LOG if r["action"] == "dropped")
+        _review = len(TYPE_REVIEW_LOG) - _dropped
+        if _dropped or _review:
+            print(f"  non-articles: dropped {_dropped}, {_review} flagged for review "
+                  f"(see <uni>_type_review.csv)")
         if excluded_correction_notices:
             print(f"  excluded {excluded_correction_notices} published-correction "
                   f"row(s) carrying a '(vol N, pg N, YYYY)' locator")
@@ -1287,4 +1483,11 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
         "harvest": build_harvest(records, pubs, publications),
     }
     write(tables, out_dir, verbose)
+    _review_dir = out_dir or OUTPUT_DIR
+    _prefix = f"{_review_dir.name}_" if _review_dir != OUTPUT_DIR else ""
+    _review_file = _review_dir / f"{_prefix}type_review.csv"
+    if TYPE_REVIEW_LOG:
+        pd.DataFrame(TYPE_REVIEW_LOG).to_csv(_review_file, index=False)
+    elif _review_file.exists():
+        _review_file.unlink()
     return tables

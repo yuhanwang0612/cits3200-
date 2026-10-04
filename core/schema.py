@@ -5,6 +5,8 @@ The retrieval, enrichment and export modules depend on these keys and
 nothing else, so a new university needs a new adapter and no other change.
 """
 
+import re
+
 # --- what an adapter must produce ----------------------------------------
 
 STAFF_REQUIRED = [
@@ -89,11 +91,21 @@ def norm_type(t):
     return TYPE_MAP.get(t.lower(), t if t in TYPES else t)
 
 
+# A working-paper series ("NBER Working Paper Series", "Federal Reserve Bank
+# of Dallas ... Working Papers") is not a journal. No ABDC title contains
+# the phrase.
+_WORKING_PAPER_SERIES = re.compile(r"\bworking papers?\b", re.I)
+
+
 def clean_journal(name):
-    """Blank out repository names masquerading as journals."""
+    """Blank out repository names and working-paper series masquerading as
+    journals."""
     if not name:
         return None
-    return None if name.strip().lower() in NOT_A_JOURNAL else name.strip()
+    name = name.strip()
+    if name.lower() in NOT_A_JOURNAL or _WORKING_PAPER_SERIES.search(name):
+        return None
+    return name
 
 
 def blank_pub(**kw):

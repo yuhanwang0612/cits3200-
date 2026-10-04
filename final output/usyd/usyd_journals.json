@@ -160,7 +160,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Foundations and Trends® in Technology Information and Operations Management",
+    "journal_name": "Foundations and Trends in Technology, Information and Operations Management",
     "journal_raw": "Foundations and Trends® in Technology Information and Operations Management",
     "publisher": "Emerald",
     "issn": "1571-9545; 1571-9553",
@@ -432,7 +432,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Linear Algebra and its Applications",
+    "journal_name": "Linear Algebra and Its Applications",
     "journal_raw": "Linear Algebra and its Applications",
     "publisher": "Elsevier",
     "issn": "0024-3795; 1873-1856",
@@ -768,7 +768,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Contaduría Universidad de Antioquia",
+    "journal_name": "Contaduría Universidad De Antioquia",
     "journal_raw": "Contaduría Universidad de Antioquia",
     "publisher": "Universidad de Antioquia",
     "issn": "0120-4203; 2590-4604",
@@ -800,7 +800,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Conversation",
+    "journal_name": "Conversation",
     "journal_raw": "The Conversation",
     "publisher": "The Conversation Media Group",
     "issn": "2201-5639",
@@ -1168,7 +1168,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "AIC reports. Research Report Series",
+    "journal_name": "AIC Reports. Research Report Series",
     "journal_raw": "AIC reports. Research Report Series",
     "publisher": "Australian Institute of Criminology",
     "issn": "2206-7280",
@@ -1280,7 +1280,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Stata Journal Promoting communications on statistics and Stata",
+    "journal_name": "Stata Journal Promoting Communications on Statistics and Stata",
     "journal_raw": "The Stata Journal Promoting communications on statistics and Stata",
     "publisher": "SAGE Publications",
     "issn": "1536-867X; 1536-8734",
@@ -1488,7 +1488,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Controlling & Management Review",
+    "journal_name": "Controlling and Management Review",
     "journal_raw": "Controlling & Management Review",
     "publisher": "Springer Nature",
     "issn": "2195-8262; 2195-8270",
@@ -1565,22 +1565,6 @@
     "sjr_quartile": "Q1",
     "h_index": 104,
     "cites_per_doc_2y": 2.74,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Organization Studies",
-    "journal_raw": "Organization Studies",
-    "publisher": "SAGE Publications",
-    "issn": "0170-8406; 1741-3044",
-    "quality_rank": "A*",
-    "abdc_edition": "2025",
-    "impact_factor": 6.4,
-    "impact_factor_5yr": 7.9,
-    "jcr_year": 2025,
-    "sjr": 4.358,
-    "sjr_quartile": "Q1",
-    "h_index": 197,
-    "cites_per_doc_2y": 6.86,
     "scimago_year": "2025"
   },
   {
@@ -1680,7 +1664,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Higher Education Research & Development",
+    "journal_name": "Higher Education Research and Development",
     "journal_raw": "Higher Education Research & Development",
     "publisher": "Taylor & Francis",
     "issn": "0729-4360; 1469-8366",
@@ -2352,7 +2336,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "International Journal of Work Integrated Learning",
+    "journal_name": "International Journal of Work-Integrated Learning",
     "journal_raw": "International Journal of Work Integrated Learning",
     "publisher": null,
     "issn": "2538-1032",
@@ -2386,22 +2370,6 @@
   {
     "journal_name": "Issues in Educational Research",
     "journal_raw": "Issues in Educational Research",
-    "publisher": null,
-    "issn": "0313-7155",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": 0.492,
-    "sjr_quartile": "Q2",
-    "h_index": 40,
-    "cites_per_doc_2y": 1.95,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Issues In Educational Research",
-    "journal_raw": "Issues In Educational Research",
     "publisher": "Western Australian Institute for Educational Research Inc",
     "issn": "0313-7155",
     "quality_rank": null,
@@ -2528,38 +2496,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Circulation Population Health and Outcomes",
-    "journal_raw": "Circulation Population Health and Outcomes",
-    "publisher": "Wolters Kluwer",
-    "issn": "3068-563X; 1941-7705; 1941-7713",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 6.9,
-    "impact_factor_5yr": 7.4,
-    "jcr_year": 2025,
-    "sjr": 2.493,
-    "sjr_quartile": "Q1",
-    "h_index": 123,
-    "cites_per_doc_2y": 4.04,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Advances in Credit Risk Modelling and Corporate Bankruptcy Prediction",
-    "journal_raw": "Advances in Credit Risk Modelling and Corporate Bankruptcy Prediction",
-    "publisher": "Cambridge University Press (CUP)",
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "The Economic Record",
     "journal_raw": "Economic Record",
     "publisher": "Wiley",
@@ -2624,7 +2560,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Accounting Business & Financial History",
+    "journal_name": "Accounting Business and Financial History",
     "journal_raw": "Accounting Business & Financial History",
     "publisher": "Taylor & Francis",
     "issn": "0958-5206; 1466-4275",
@@ -2688,7 +2624,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of Human Resource Costing & Accounting",
+    "journal_name": "Journal of Human Resource Costing and Accounting",
     "journal_raw": "Journal of Human Resource Costing & Accounting",
     "publisher": "Emerald",
     "issn": "1401-338X; 1758-745X",
@@ -2864,7 +2800,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Assessment & Evaluation in Higher Education",
+    "journal_name": "Assessment and Evaluation in Higher Education",
     "journal_raw": "Assessment & Evaluation in Higher Education",
     "publisher": "Taylor & Francis",
     "issn": "0260-2938; 0307-1367; 1469-297X",
@@ -2909,22 +2845,6 @@
     "sjr_quartile": "Q2",
     "h_index": 67,
     "cites_per_doc_2y": 1.4,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Journal of Public Policy and Marketing",
-    "journal_raw": "Journal of Public Policy & Marketing",
-    "publisher": "SAGE Publications",
-    "issn": "0743-9156; 1547-7207",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 5.3,
-    "impact_factor_5yr": 7.9,
-    "jcr_year": 2025,
-    "sjr": 2.165,
-    "sjr_quartile": "Q1",
-    "h_index": 98,
-    "cites_per_doc_2y": 6.5,
     "scimago_year": "2025"
   },
   {
@@ -3216,22 +3136,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Routledge Companion to Accounting Education",
-    "journal_raw": "Routledge Companion to Accounting Education",
-    "publisher": "Routledge",
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "Accounting Historians Journal",
     "journal_raw": "Accounting Historians Journal",
     "publisher": "American Accounting Association",
@@ -3267,7 +3171,7 @@
     "journal_name": "Museum Management and Curatorship",
     "journal_raw": "Museum Management and Curatorship",
     "publisher": "Butterworth–Heinemann",
-    "issn": "0964-7775; 0260-4779; 2352-0795; 1872-9185",
+    "issn": "0964-7775; 0260-4779; 2352-0795",
     "quality_rank": null,
     "abdc_edition": null,
     "impact_factor": 2.4,
@@ -3488,7 +3392,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Cesifo Forum",
+    "journal_name": "CESifo Forum",
     "journal_raw": "Cesifo Forum",
     "publisher": null,
     "issn": "1615-245X",
@@ -4128,7 +4032,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "REVIEW OF BUSINESS",
+    "journal_name": "Review of Business",
     "journal_raw": "REVIEW OF BUSINESS",
     "publisher": "ST JOHNS UNIV BUSINESS RESEARCH INST",
     "issn": "0034-6454",
@@ -4173,22 +4077,6 @@
     "sjr_quartile": "Q2",
     "h_index": 67,
     "cites_per_doc_2y": 3.9,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Academy of Management Proceedings",
-    "journal_raw": "Academy of Management Proceedings",
-    "publisher": "Academy of Management",
-    "issn": "0065-0668; 2151-6561; 2376-7197",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": 0.182,
-    "sjr_quartile": null,
-    "h_index": 27,
-    "cites_per_doc_2y": 0.22,
     "scimago_year": "2025"
   },
   {
@@ -5248,22 +5136,6 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Finance and Economics Discussion Series",
-    "journal_raw": "Finance and Economics Discussion Series",
-    "publisher": "Board of Governors of the Federal Reserve System",
-    "issn": "1936-2854; 2767-3898",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "Review of Derivatives Research",
     "journal_raw": "Review of Derivatives Research",
     "publisher": "Springer Nature",
@@ -5294,22 +5166,6 @@
     "h_index": 39,
     "cites_per_doc_2y": 1.71,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "CFA Digest",
-    "journal_raw": "CFA Digest",
-    "publisher": "CFA Institute",
-    "issn": "0046-9777; 1938-3320",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   },
   {
     "journal_name": "Journal of Multinational Financial Management",
@@ -5744,7 +5600,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The International Journal for Academic Development",
+    "journal_name": "International Journal for Academic Development",
     "journal_raw": "The International Journal for Academic Development",
     "publisher": "Taylor & Francis",
     "issn": "1360-144X; 1470-1324",
@@ -5838,6 +5694,22 @@
     "h_index": 205,
     "cites_per_doc_2y": 4.85,
     "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Finance and Economics Discussion Series",
+    "journal_raw": "Finance and Economics Discussion Series",
+    "publisher": "Board of Governors of the Federal Reserve System",
+    "issn": "1936-2854; 2767-3898",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
   },
   {
     "journal_name": "Harvard Business Law Review",
@@ -6064,6 +5936,38 @@
     "scimago_year": null
   },
   {
+    "journal_name": "Hong Kong Institute for Monetary and Financial Research (HKIMR) Research Paper WP",
+    "journal_raw": "Hong Kong Institute for Monetary and Financial Research (HKIMR) Research Paper WP",
+    "publisher": null,
+    "issn": null,
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "International Journal of Finance & Economics",
+    "journal_raw": "International Journal of Finance & Economics",
+    "publisher": "Wiley",
+    "issn": "1076-9307; 1099-1158",
+    "quality_rank": "B",
+    "abdc_edition": "2025",
+    "impact_factor": 3.7,
+    "impact_factor_5yr": 3.4,
+    "jcr_year": 2025,
+    "sjr": 0.807,
+    "sjr_quartile": "Q2",
+    "h_index": 64,
+    "cites_per_doc_2y": 5.2,
+    "scimago_year": "2025"
+  },
+  {
     "journal_name": "China Economic Review",
     "journal_raw": "China Economic Review",
     "publisher": "Elsevier BV",
@@ -6176,22 +6080,6 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Inorganic Chemistry",
-    "journal_raw": "Inorganic Chemistry",
-    "publisher": "American Chemical Society",
-    "issn": "0020-1669; 1520-510X",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 4.6,
-    "impact_factor_5yr": 4.2,
-    "jcr_year": 2025,
-    "sjr": 0.879,
-    "sjr_quartile": "Q1",
-    "h_index": 267,
-    "cites_per_doc_2y": 4.48,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Journal of the Association for Information Systems",
     "journal_raw": "Journal of the Association for Information Systems",
     "publisher": "Association for Information Systems",
@@ -6224,23 +6112,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Heart Lung and Circulation",
-    "journal_raw": "Heart Lung and Circulation",
-    "publisher": "Elsevier BV",
-    "issn": "1443-9506; 1444-2892",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.5,
-    "impact_factor_5yr": 2.4,
-    "jcr_year": 2025,
-    "sjr": 0.649,
-    "sjr_quartile": "Q2",
-    "h_index": 67,
-    "cites_per_doc_2y": 1.79,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Analysis & Policy Observatory",
+    "journal_name": "Analysis and Policy Observatory",
     "journal_raw": "Analysis & Policy Observatory",
     "publisher": null,
     "issn": null,
@@ -6310,6 +6182,22 @@
     "issn": "2050-2281; 2050-229X",
     "quality_rank": "C",
     "abdc_edition": "2025",
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
+    "journal_name": "BIS Quarterly Review",
+    "journal_raw": "BIS quarterly review",
+    "publisher": null,
+    "issn": "1683-0121",
+    "quality_rank": null,
+    "abdc_edition": null,
     "impact_factor": null,
     "impact_factor_5yr": null,
     "jcr_year": null,

@@ -203,6 +203,12 @@ def clean_doi(value):
     # returns HTTP 400, so remove URL-only decoration before validation.
     doi = re.sub(r"[?#].*$", "", doi)
     doi = re.sub(r"\.html?$", "", doi, flags=re.I)
+    # A publisher page path copied with the DOI: ".../00373.x/pdf",
+    # ".../full/pdf". No DOI in the data really ends in these.
+    doi = re.sub(r"(/(full|pdf|epdf|abstract|fulltext))+$", "", doi, flags=re.I)
+    # UNSW profiles write Journal of Banking & Finance as "j.bankfin"; the
+    # registered prefix is "j.jbankfin".
+    doi = re.sub(r"^10\.1016/j\.bankfin\.", "10.1016/j.jbankfin.", doi, flags=re.I)
     return doi if _DOI_RE.match(doi) else None
 
 
