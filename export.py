@@ -518,6 +518,71 @@ def merge_near_duplicates(rows):
     return kept
 
 
+
+# ------------------------------------------------------- academic/admin title
+#
+# Yuanji, 2 October: "For each individual researcher, it can have a column
+# Academic Level (B-E), Academic Title and Admin Title. Usually the Academic
+# Level determines the Academic Title. It means, both level BC calls 'Dr',
+# level D is 'Associate Professor', E js 'Professor'. You could put Admin
+# Title as a separate column additional info, because it cannot be inferred".
+#
+# job_title stays as the university's own raw string. These two are derived
+# beside it, so nothing downstream that reads job_title changes.
+
+ACADEMIC_TITLE_BY_LEVEL = {
+    "B": "Dr",
+    "C": "Dr",
+    "D": "Associate Professor",
+    "E": "Professor",
+}
+
+# Level A is deliberately absent. The spec says B-E and 8 people are at A
+# (UNSW 1, USyd 6, UWA 1); an Associate Lecturer does not necessarily hold a
+# doctorate, so guessing "Dr" for them would be inventing a credential.
+# They get a blank until the client says what A should read.
+
+# Sean's mapping table of 25 September, which the client approved ("Yes.
+# Note that these are administrative title, not academic title."). Longest
+# form first: "Deputy Head of School" has to be tested before "Head of
+# School", and "Associate Dean" before "Dean", or every deputy becomes a head.
+_ADMIN_TITLES = [
+    "Deputy Head of Department",
+    "Deputy Head of School",
+    "Head of Department",
+    "Head of School",
+    "Associate Dean",
+    "Assistant Dean",
+    "Deputy Dean",
+    "Dean",
+    "Program Director",
+    "Programme Director",
+    "Director",
+]
+
+
+def academic_title_for_level(level_code):
+    """'Dr' / 'Associate Professor' / 'Professor', or None off the scale."""
+    return ACADEMIC_TITLE_BY_LEVEL.get((level_code or "").strip().upper())
+
+
+def admin_title_from(job_title):
+    """The administrative role inside a raw job title, in its canonical form.
+
+    "Dean, School of Accounting and Finance" -> "Dean"
+    "Joint Deputy Head of Department (Research and Engagement)"
+        -> "Deputy Head of Department"
+    "Senior Lecturer" -> None, that is an academic rank, not an admin role.
+    """
+    text = (job_title or "").strip()
+    if not text:
+        return None
+    for role in _ADMIN_TITLES:
+        if re.search(r"\b" + re.escape(role) + r"\b", text, re.I):
+            return role
+    return None
+
+
 def build_staff(records):
     return [{
         "name": p["name_clean"],
@@ -526,6 +591,10 @@ def build_staff(records):
         # erased valid roles such as teaching-focused appointments.
         "job_title": p.get("title") or p.get("title_clean"),
         "academic_level": p.get("level_code") or level(p.get("title_clean")),
+        # Filled in export() once overrides and normalisation have run, but
+        # declared here so they sit beside academic_level in the CSV.
+        "academic_title": None,
+        "admin_title": None,
         "university": p["university"],
         "field_of_research": p["discipline"],
         "source_id": p.get("source_id"),
@@ -1170,6 +1239,29 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
                 _norm_count += 1
     if verbose and _norm_count:
         print(f"  normalised {_norm_count} job title(s)")
+
+    # The client's three columns. Runs after the overrides and the
+    # normalisation above, so it sees the job title the CSV will actually
+    # carry rather than the scraped one.
+    _titled = _admin = 0
+    _no_level = []
+    for _s in staff:
+        _s["academic_title"] = academic_title_for_level(_s.get("academic_level"))
+        _s["admin_title"] = admin_title_from(_s.get("job_title"))
+        if _s["academic_title"]:
+            _titled += 1
+        else:
+            _no_level.append(_s["name"])
+        if _s["admin_title"]:
+            _admin += 1
+    if verbose:
+        print(f"  academic_title set on {_titled} of {len(staff)} staff, "
+              f"admin_title on {_admin}")
+        if _no_level:
+            print(f"  {len(_no_level)} with no academic title, because their "
+                  f"academic_level is blank or outside B-E: "
+                  f"{', '.join(_no_level[:4])}"
+                  + (" ..." if len(_no_level) > 4 else ""))
 
 
     if drop_staff_without_pubs:

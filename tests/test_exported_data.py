@@ -32,9 +32,14 @@ PUBLICATION_COLUMNS = [
     "oa_status", "oa_url", "publication_status", "source",
 ]
 STAFF_COLUMNS = [
-    "name", "job_title", "academic_level", "university", "field_of_research",
-    "source_id", "orcid", "profile_url",
+    "name", "job_title", "academic_level", "academic_title", "admin_title",
+    "university", "field_of_research", "source_id", "orcid", "profile_url",
 ]
+
+# The client's 2 October spec: level B and C read "Dr", D "Associate
+# Professor", E "Professor". Level A is not in her list and is left blank.
+ACADEMIC_TITLES = {"B": "Dr", "C": "Dr", "D": "Associate Professor",
+                   "E": "Professor"}
 
 LEVELS = {"A", "B", "C", "D", "E"}
 RANKS = {"A*", "A", "B", "C"}
@@ -156,6 +161,29 @@ def test_issns_are_hyphenated_and_listed_once(tables, uni):
         bad = [v for v in values if not ISSN.match(v)]
         assert not bad, f"not an ISSN: {bad[:3]} in {cell!r}"
         assert len(values) == len(set(values)), f"repeated ISSN in {cell!r}"
+
+
+@pytest.mark.parametrize("uni", UNIS)
+def test_the_academic_title_follows_the_academic_level(tables, uni):
+    """The client derives one from the other, so the two columns disagreeing
+    is worse than either being empty: it would read as a second opinion."""
+    staff = data(tables, uni, "staff")
+    wrong = [(r["name"], r["academic_level"], r["academic_title"])
+             for _, r in staff.iterrows()
+             if r["academic_title"] != ACADEMIC_TITLES.get(r["academic_level"], "")]
+    assert not wrong, f"{len(wrong)} disagree, e.g. {wrong[:3]}"
+
+
+@pytest.mark.parametrize("uni", UNIS)
+def test_an_admin_title_is_never_an_academic_rank(tables, uni):
+    """Admin Title is for Dean, Head of School and the like. A rank landing
+    in it would merge the two columns the client asked to keep apart."""
+    ranks = {"Professor", "Associate Professor", "Senior Lecturer", "Lecturer",
+             "Dr", "Research Professor"}
+    staff = data(tables, uni, "staff")
+    wrong = [(r["name"], r["admin_title"]) for _, r in staff.iterrows()
+             if r["admin_title"] and r["admin_title"] in ranks]
+    assert not wrong, wrong[:3]
 
 
 # --------------------------------------------------------------- joins

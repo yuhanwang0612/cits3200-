@@ -197,3 +197,42 @@ def test_andrew_jacksons_clinical_papers_are_dropped():
                           "NUCLEAR MEDICINE AND BIOLOGY")]:
         assert clean_pubs([pub(name="Andrew Jackson", doi=doi,
                                journal=journal, title="A clinical paper")]) == []
+
+
+# ------------------------------------------------ third review pass
+
+def test_andrew_terrys_dental_education_paper_is_dropped():
+    """UNSW's own research profile publishes ORCID 0000-0002-0619-7233 for
+    Andrew Terry. His other 45 papers are franchising and business law from
+    1995 to 2021; that ORCID contributed one paper on dental education, so it
+    is somebody else's. The paper goes here, the wrong ORCID is raised with
+    whoever owns the UNSW identity data."""
+    wrong = pub(name="Andrew Terry", year="2021",
+                title="Using self-study as a methodology for dental educators' "
+                      "professional inquiry",
+                journal="European Journal of Dental Education",
+                doi="10.1111/eje.12606", source="ORCID")
+    assert clean_pubs([wrong]) == []
+
+
+def test_andrew_terrys_franchising_papers_are_untouched():
+    real = pub(name="Andrew Terry", year="2011",
+               title="Good Morning, Vietnam! Opportunities and Challenges in a "
+                     "Developing Franchise Sector",
+               journal="Journal of Marketing Channels",
+               doi="10.1080/1046669x.2011.558831")
+    assert len(clean_pubs([real])) == 1
+
+
+def test_every_exclusion_row_keeps_its_columns():
+    """Four rows were once written a column to the left, putting the reason in
+    the title field and the url in the reason field. A title that reads like a
+    reason would widen a DOI-less match to papers nobody reviewed, so the
+    shape of the shared file is worth asserting."""
+    import csv
+    with (ROOT / "data" / "publication_exclusions.csv").open(encoding="utf-8-sig") as handle:
+        for row in csv.DictReader(handle):
+            assert not row["title"].lower().startswith("namesake"), \
+                f"reason text sitting in the title column: {row['name']}"
+            assert not row["reason"].startswith("http"), \
+                f"url sitting in the reason column: {row['name']}"
