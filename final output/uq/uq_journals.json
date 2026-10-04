@@ -400,7 +400,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Journal of Business",
+    "journal_name": "Journal of Business",
     "journal_raw": "The Journal of Business",
     "publisher": "University of Chicago Press",
     "issn": "0021-9398; 1537-5374",
@@ -704,7 +704,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Materiały i Studia",
+    "journal_name": "Materiały I Studia",
     "journal_raw": "Materiały i Studia",
     "publisher": null,
     "issn": "2084-6258",
@@ -1120,7 +1120,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The International Journal of Life Cycle Assessment",
+    "journal_name": "International Journal of Life Cycle Assessment",
     "journal_raw": "The International Journal of Life Cycle Assessment",
     "publisher": "Springer",
     "issn": "0948-3349; 1614-7502",
@@ -1728,7 +1728,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Practice Manager",
+    "journal_name": "Practice Manager",
     "journal_raw": "The Practice Manager",
     "publisher": null,
     "issn": null,
@@ -1760,7 +1760,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Practice Manager Journal",
+    "journal_name": "Practice Manager Journal",
     "journal_raw": "The Practice Manager Journal",
     "publisher": null,
     "issn": null,
@@ -2112,7 +2112,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Allgemeine Forst- und Jagdzeitung (Journal for Forestry and Forest Science)",
+    "journal_name": "Allgemeine Forst- Und Jagdzeitung (Journal for Forestry and Forest Science)",
     "journal_raw": "Allgemeine Forst- und Jagdzeitung (Journal for Forestry and Forest Science)",
     "publisher": "J.D. Sauerlaender's Verlag",
     "issn": "0002-5852",
@@ -2128,7 +2128,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Centralblatt fuer das Gesamte Forstwesen",
+    "journal_name": "Centralblatt Fuer Das Gesamte Forstwesen",
     "journal_raw": "Centralblatt fuer das Gesamte Forstwesen",
     "publisher": null,
     "issn": "0379-5292",
@@ -2205,22 +2205,6 @@
     "sjr_quartile": "Q1",
     "h_index": 227,
     "cites_per_doc_2y": 4.34,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Society & Natural Resources",
-    "journal_raw": "Society & Natural Resources",
-    "publisher": "Taylor & Francis Inc.",
-    "issn": "0894-1920; 1521-0723",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.1,
-    "impact_factor_5yr": 2.6,
-    "jcr_year": 2025,
-    "sjr": 0.668,
-    "sjr_quartile": "Q1",
-    "h_index": 110,
-    "cites_per_doc_2y": 2.32,
     "scimago_year": "2025"
   },
   {
@@ -2400,7 +2384,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of Hotel & Business Management",
+    "journal_name": "Journal of Hotel and Business Management",
     "journal_raw": "Journal of Hotel & Business Management",
     "publisher": "Longdom Group SA",
     "issn": "2169-0286",
@@ -2544,10 +2528,10 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "ISACA journal",
+    "journal_name": "ISACA Journal",
     "journal_raw": "ISACA journal",
     "publisher": "Information Systems Audit & Control Association (I S A C A)",
-    "issn": "1944-1967; 1944-1975",
+    "issn": "1944-1967; 1944-1975; 1526-7407",
     "quality_rank": null,
     "abdc_edition": null,
     "impact_factor": null,
@@ -2606,22 +2590,6 @@
     "h_index": 42,
     "cites_per_doc_2y": 3.19,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "ISACA Journal",
-    "journal_raw": "ISACA Journal",
-    "publisher": "Information Systems Audit & Control Association (I S A C A)",
-    "issn": "1526-7407; 1944-1967; 1944-1975",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   },
   {
     "journal_name": "Safety Science",
@@ -2736,7 +2704,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Bančni vestnik (The Banking Journal)",
+    "journal_name": "Bančni Vestnik (the Banking Journal)",
     "journal_raw": "Bančni vestnik (The Banking Journal)",
     "publisher": "Zdruzenje Bank Slovenije,Bank Association of Slovenia",
     "issn": "0005-4631",
@@ -2752,7 +2720,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Revizor: revija o reviziji",
+    "journal_name": "Revizor: Revija o Reviziji",
     "journal_raw": "Revizor: revija o reviziji",
     "publisher": null,
     "issn": "0353-7935",
@@ -2784,23 +2752,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Revizor: Revija o reviziji",
-    "journal_raw": "Revizor: Revija o reviziji",
-    "publisher": null,
-    "issn": "0353-7935",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Gozdarski vestnik",
+    "journal_name": "Gozdarski Vestnik",
     "journal_raw": "Gozdarski vestnik",
     "publisher": "Zveza Gozdarskih Drustev Slovenije",
     "issn": "0017-2723",
@@ -2816,7 +2768,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Management Control & Accounting",
+    "journal_name": "Management Control and Accounting",
     "journal_raw": "Management Control & Accounting",
     "publisher": "Vakmedianet",
     "issn": "1386-3452",
@@ -2848,7 +2800,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Organizacija: revija za management, informatiko in kadre",
+    "journal_name": "Organizacija: Revija Za Management, Informatiko in Kadre",
     "journal_raw": "Organizacija: revija za management, informatiko in kadre",
     "publisher": "Univerza v Mariboru * Fakulteta za Organizacijske Vede,University of Maribor, School of Organizational Science",
     "issn": "1318-5454",
@@ -2864,7 +2816,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Revue internationale de sociologie",
+    "journal_name": "Revue Internationale De Sociologie",
     "journal_raw": "Revue internationale de sociologie",
     "publisher": "Routledge",
     "issn": "0390-6701; 1469-9273",
@@ -2880,7 +2832,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Računovodstvo i financije",
+    "journal_name": "Računovodstvo I Financije",
     "journal_raw": "Računovodstvo i financije",
     "publisher": "Hrvatska Zajednica Racunovoda i Financijskih Djelatnika",
     "issn": "0350-4506",

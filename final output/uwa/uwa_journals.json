@@ -464,7 +464,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Conversation",
+    "journal_name": "Conversation",
     "journal_raw": "The Conversation",
     "publisher": null,
     "issn": "2201-5639",
@@ -605,22 +605,6 @@
     "sjr_quartile": "Q3",
     "h_index": 39,
     "cites_per_doc_2y": 0.7,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Australian Historical Studies",
-    "journal_raw": "Australian Historical Studies",
-    "publisher": "Taylor \\& Francis",
-    "issn": "1940-5049; 0018-2559; 1031-461X",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 0.4,
-    "impact_factor_5yr": 0.6,
-    "jcr_year": 2025,
-    "sjr": 0.242,
-    "sjr_quartile": "Q1",
-    "h_index": 25,
-    "cites_per_doc_2y": 0.35,
     "scimago_year": "2025"
   },
   {
@@ -928,7 +912,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of risk and financial management",
+    "journal_name": "Journal of Risk and Financial Management",
     "journal_raw": "Journal of risk and financial management",
     "publisher": "MDPI AG",
     "issn": "1911-8074; 1911-8066",
@@ -1600,7 +1584,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "PLoS One",
+    "journal_name": "PLOS ONE",
     "journal_raw": "PLoS One",
     "publisher": "Public Library of Science (PLoS)",
     "issn": "1932-6203",
@@ -1920,7 +1904,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Sage Open",
+    "journal_name": "SAGE Open",
     "journal_raw": "Sage Open",
     "publisher": "SAGE Publications Ltd",
     "issn": "2158-2440",
@@ -2256,10 +2240,10 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Corporate Ownership & Control",
+    "journal_name": "Corporate Ownership and Control",
     "journal_raw": "Corporate Ownership & Control",
     "publisher": "Virtus Interpress",
-    "issn": "1727-9232",
+    "issn": "1727-9232; 1810-0368; 1810-3057",
     "quality_rank": null,
     "abdc_edition": null,
     "impact_factor": null,
@@ -2286,22 +2270,6 @@
     "h_index": 49,
     "cites_per_doc_2y": 3.17,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Corporate Ownership and Control",
-    "journal_raw": "Corporate Ownership and Control",
-    "publisher": "Virtus Interpress",
-    "issn": "1727-9232; 1810-0368; 1810-3057",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   },
   {
     "journal_name": "Accounting Accountability and Performance",
@@ -2512,7 +2480,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "La Revue du Financier",
+    "journal_name": "La Revue Du Financier",
     "journal_raw": "La Revue du Financier",
     "publisher": "Cybel",
     "issn": null,
@@ -3232,7 +3200,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "INTERNATIONAL JOURNAL OF AGING & HUMAN DEVELOPMENT",
+    "journal_name": "International Journal of Aging and Human Development",
     "journal_raw": "INTERNATIONAL JOURNAL OF AGING & HUMAN DEVELOPMENT",
     "publisher": "Baywood Publishing Co. Inc.",
     "issn": "0091-4150; 1541-3535",
@@ -3408,7 +3376,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "International Business & Economics Research Journal",
+    "journal_name": "International Business and Economics Research Journal",
     "journal_raw": "International Business & Economics Research Journal",
     "publisher": null,
     "issn": "1535-0754",
@@ -3520,7 +3488,7 @@
     "scimago_year": null
   },
   {
-    "journal_name": "JASSA",
+    "journal_name": "Jassa",
     "journal_raw": "JASSA",
     "publisher": "Financial Services Institute of Australasia",
     "issn": null,
@@ -3984,7 +3952,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "MUSIC.OLOGY.ECA",
+    "journal_name": "Music.ology.eca",
     "journal_raw": "MUSIC.OLOGY.ECA",
     "publisher": null,
     "issn": "2752-7069",
@@ -4112,23 +4080,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "PLOS ONE",
-    "journal_raw": "PLOS ONE",
-    "publisher": "Public Library of Science",
-    "issn": "1932-6203",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.8,
-    "impact_factor_5yr": 3.3,
-    "jcr_year": 2025,
-    "sjr": 0.726,
-    "sjr_quartile": "Q1",
-    "h_index": 500,
-    "cites_per_doc_2y": 2.95,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Mental Health & Prevention",
+    "journal_name": "Mental Health and Prevention",
     "journal_raw": "Mental Health & Prevention",
     "publisher": "Elsevier BV",
     "issn": "2212-6570",
@@ -4176,22 +4128,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "SAGE Open",
-    "journal_raw": "SAGE Open",
-    "publisher": "SAGE Publishing",
-    "issn": "2158-2440",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.4,
-    "impact_factor_5yr": 2.8,
-    "jcr_year": 2025,
-    "sjr": 0.541,
-    "sjr_quartile": "Q1",
-    "h_index": 90,
-    "cites_per_doc_2y": 3.12,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Technological Forecasting and Social Change",
     "journal_raw": "Technological Forecasting and Social Change",
     "publisher": "Elsevier BV",
@@ -4224,7 +4160,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "HO CHI MINH CITY OPEN UNIVERSITY JOURNAL OF SCIENCE - ECONOMICS AND BUSINESS ADMINISTRATION",
+    "journal_name": "Ho Chi Minh City Open University Journal of Science - Economics and Business Administration",
     "journal_raw": "HO CHI MINH CITY OPEN UNIVERSITY JOURNAL OF SCIENCE - ECONOMICS AND BUSINESS ADMINISTRATION",
     "publisher": null,
     "issn": "2734-9586; 2734-9314",
@@ -4480,22 +4416,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Journal of Risk and Financial Management",
-    "journal_raw": "Journal of Risk and Financial Management",
-    "publisher": "Multidisciplinary Digital Publishing Institute",
-    "issn": "1911-8066; 1911-8074",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": 0.506,
-    "sjr_quartile": "Q2",
-    "h_index": 69,
-    "cites_per_doc_2y": 3.55,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Agriculture",
     "journal_raw": "Agriculture",
     "publisher": "Multidisciplinary Digital Publishing Institute",
@@ -4608,7 +4528,7 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "The Journal of Asian Finance, Economics and Business",
+    "journal_name": "Journal of Asian Finance, Economics and Business",
     "journal_raw": "The Journal of Asian Finance, Economics and Business",
     "publisher": "Korean Distribution Science Association",
     "issn": "2288-4637; 2288-4645",

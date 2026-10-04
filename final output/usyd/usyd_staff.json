@@ -228,18 +228,6 @@
     "profile_url": "https://profiles.sydney.edu.au/fei.gao"
   },
   {
-    "name": "Wes Hamilton-Jessop",
-    "job_title": "Lecturer (Education Focused)",
-    "academic_level": "B",
-    "academic_title": "Dr",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "wes.hamilton-jessop",
-    "orcid": "0000-0003-1297-4497",
-    "profile_url": "https://profiles.sydney.edu.au/wes.hamilton-jessop"
-  },
-  {
     "name": "Angela Hecimovic",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -1054,5 +1042,17 @@
     "source_id": "yuyang.zhang",
     "orcid": "0000-0003-2790-9858",
     "profile_url": "https://profiles.sydney.edu.au/yuyang.zhang"
+  },
+  {
+    "name": "Eliza Wu",
+    "job_title": "Associate Dean (Research Education)",
+    "academic_level": "E",
+    "academic_title": "Professor",
+    "admin_title": "Associate Dean",
+    "university": "University of Sydney",
+    "field_of_research": "Finance",
+    "source_id": "eliza.wu",
+    "orcid": "0000-0003-3937-8660",
+    "profile_url": "https://profiles.sydney.edu.au/eliza.wu"
   }
 ]
