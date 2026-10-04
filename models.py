@@ -11,8 +11,9 @@ class Researcher(Base):
 
     name = Column(String, nullable=False)
     job_title = Column(String)
-    admin_title = Column(String)
     academic_level = Column(String)
+    academic_title = Column(String)
+    admin_title = Column(String)
     university = Column(String, nullable=False)
     field_of_research = Column(String)
     source_id = Column(String)
