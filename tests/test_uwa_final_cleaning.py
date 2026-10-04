@@ -85,3 +85,12 @@ def test_uwa_cross_affiliation_is_one_person_with_auditable_secondary_field():
     assert rows[0]["discipline"] == "Accounting"
     assert rows[0]["additional_disciplines"] == ["Finance"]
     assert audit[0]["primary_discipline"] == "Accounting"
+
+
+def test_pure_publication_status_is_mapped_to_the_export_vocabulary():
+    assert uwa.normalize_status("Published - Jun 2024") == "published"
+    assert uwa.normalize_status("Published - 2012") == "published"
+    assert uwa.normalize_status("Accepted/In press - 18 Aug 2026") == "forthcoming"
+    assert uwa.normalize_status("E-pub ahead of print - 13 Mar 2026") == "forthcoming"
+    assert uwa.normalize_status("") is None
+    assert uwa.normalize_status(None) is None
