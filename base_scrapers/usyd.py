@@ -22,6 +22,7 @@ import requests
 
 from core.schema import blank_pub, clean_journal
 from core.titles import level, rank
+from core.additions import staff_additions
 
 UNIVERSITY = "University of Sydney"
 ROR = "0384j8v12"
@@ -392,10 +393,22 @@ def collect(verbose: bool = True, refresh: bool = False):
     pubs: list[dict] = []
     seen_profiles: set[str] = set()
 
-    for group_url, discipline in TARGETS:
-        urls = collect_group_profile_urls(group_url, session=session)
-        if verbose:
-            print(f"  {discipline}: {len(urls)} Sydney Profiles members")
+    # Reviewed additions: academics the group pages miss, e.g. an Associate
+    # Dean listed under the Business School rather than a discipline group.
+    extra = staff_additions("usyd")
+    targets = list(TARGETS) + [("additions", "Addition")]
+
+    for group_url, discipline in targets:
+        if group_url == "additions":
+            urls = [row["profile_url"] for row in extra]
+            disciplines = {row["profile_url"]: row["field_of_research"] for row in extra}
+            if verbose and urls:
+                print(f"  {len(urls)} reviewed addition(s) from data/staff_additions.csv")
+        else:
+            urls = collect_group_profile_urls(group_url, session=session)
+            disciplines = {}
+            if verbose:
+                print(f"  {discipline}: {len(urls)} Sydney Profiles members")
 
         for i, profile_url in enumerate(urls, 1):
             slug = profile_slug(profile_url)
@@ -410,7 +423,8 @@ def collect(verbose: bool = True, refresh: bool = False):
                     print(f"  {discipline} {i}/{len(urls)}: stale profile {slug}, skipped")
                 continue
 
-            person = user_to_staff(user, profile_url, discipline)
+            person = user_to_staff(user, profile_url,
+                                   disciplines.get(profile_url, discipline))
             seen_profiles.add(slug)
             staff.append(person)
 
