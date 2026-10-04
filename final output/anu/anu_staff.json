@@ -2,7 +2,6 @@
   {
     "name": "Sarah Adams",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -13,7 +12,6 @@
   {
     "name": "Lily Chen",
     "job_title": "Associate Professor",
-    "admin_title": null,
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -24,7 +22,6 @@
   {
     "name": "Sorin Daniliuc",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -35,7 +32,6 @@
   {
     "name": "Neil Fargher",
     "job_title": "Emeritus Professor",
-    "admin_title": null,
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -46,7 +42,6 @@
   {
     "name": "Susanna Ho",
     "job_title": "Professor",
-    "admin_title": null,
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -57,7 +52,6 @@
   {
     "name": "Tejshree Kala",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -68,7 +62,6 @@
   {
     "name": "Eunice Khoo",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -78,8 +71,7 @@
   },
   {
     "name": "Janet Lee",
-    "job_title": "Associate Professor",
-    "admin_title": null,
+    "job_title": "Honorary Associate Professor",
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -90,7 +82,6 @@
   {
     "name": "Lingwei Li",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -101,7 +92,6 @@
   {
     "name": "Louise Lu",
     "job_title": "Professor",
-    "admin_title": "HDR Convenor; Co-Director",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -112,7 +102,6 @@
   {
     "name": "Scarlett Luo",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -122,8 +111,7 @@
   },
   {
     "name": "Juliana Ng",
-    "job_title": "Professor",
-    "admin_title": "Director",
+    "job_title": "Director, Research School of Accounting",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -134,7 +122,6 @@
   {
     "name": "Greg Shailer",
     "job_title": "Professor",
-    "admin_title": "Director",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -145,7 +132,6 @@
   {
     "name": "Madhukar Singh",
     "job_title": "Lecturer",
-    "admin_title": "Program Convenor",
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -156,7 +142,6 @@
   {
     "name": "Rebecca Tan",
     "job_title": "Senior Lecturer",
-    "admin_title": "Course Convenor",
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -167,7 +152,6 @@
   {
     "name": "Sonali Walpola",
     "job_title": "Associate Professor",
-    "admin_title": null,
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -178,7 +162,6 @@
   {
     "name": "Alex Wang",
     "job_title": "Senior Lecturer",
-    "admin_title": "CPA Liaison Officer",
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -189,7 +172,6 @@
   {
     "name": "Isabel Wang",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -200,7 +182,6 @@
   {
     "name": "Kathy Wang",
     "job_title": "Lecturer",
-    "admin_title": "Course Convenor",
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -211,7 +192,6 @@
   {
     "name": "Tracy (Kun) Wang",
     "job_title": "Professor",
-    "admin_title": null,
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -222,7 +202,6 @@
   {
     "name": "Marvin Wee",
     "job_title": "Professor",
-    "admin_title": "Deputy Director",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -233,7 +212,6 @@
   {
     "name": "Mark Wilson",
     "job_title": "Professor",
-    "admin_title": "Deputy Director",
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -244,7 +222,6 @@
   {
     "name": "Steven Wu",
     "job_title": "Associate Professor",
-    "admin_title": "HDR Director",
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -255,7 +232,6 @@
   {
     "name": "Wei Zeng",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -266,7 +242,6 @@
   {
     "name": "Lijuan Zhang",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -277,7 +252,6 @@
   {
     "name": "Xiu-Ye Zhang",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -288,7 +262,6 @@
   {
     "name": "Richard (Ruichao) Zhu",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Accounting",
@@ -299,7 +272,6 @@
   {
     "name": "Mohammed Abdullah Al Mamun",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -310,7 +282,6 @@
   {
     "name": "Antje Berndt",
     "job_title": "Professor",
-    "admin_title": null,
     "academic_level": "E",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -321,7 +292,6 @@
   {
     "name": "Jenni Bettman",
     "job_title": "Associate Professor",
-    "admin_title": null,
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -332,7 +302,6 @@
   {
     "name": "Hua Deng",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -343,7 +312,6 @@
   {
     "name": "Ding Ding",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -353,8 +321,7 @@
   },
   {
     "name": "Jo Drienko",
-    "job_title": "Associate Professor",
-    "admin_title": "Deputy Director",
+    "job_title": "Deputy Director (Education)",
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -365,7 +332,6 @@
   {
     "name": "Chao Gao",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -376,7 +342,6 @@
   {
     "name": "Lin Hu",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -387,7 +352,6 @@
   {
     "name": "Dean Katselas",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -398,7 +362,6 @@
   {
     "name": "Nhan Le",
     "job_title": "Senior Lecturer",
-    "admin_title": null,
     "academic_level": "C",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -409,7 +372,6 @@
   {
     "name": "Kun Li",
     "job_title": "Lecturer",
-    "admin_title": null,
     "academic_level": "B",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -420,7 +382,6 @@
   {
     "name": "Wai-Man (Raymond) Liu",
     "job_title": "Associate Professor",
-    "admin_title": null,
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Finance",
@@ -431,7 +392,6 @@
   {
     "name": "Xin (Kelly) Liu",
     "job_title": "Associate Professor",
-    "admin_title": null,
     "academic_level": "D",
     "university": "Australian National University",
     "field_of_research": "Finance",

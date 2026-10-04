@@ -181,6 +181,27 @@ def normalize_type(raw: str | None) -> str:
     return "Other"
 
 
+def normalize_status(raw: str | None) -> str | None:
+    """Map a Pure "Publication status" onto the export vocabulary.
+
+    Pure appends a date to the status ("Published - Jun 2024",
+    "Accepted/In press - 2026"), so the raw value never matches the
+    published / forthcoming / working_paper list the website filters on.
+    "E-pub ahead of print" counts as forthcoming, the same way the UNSW
+    adapter treats "advance online": the paper is not yet in an issue.
+    """
+    value = clean(raw).lower()
+    if not value:
+        return None
+    if value.startswith("published"):
+        return "published"
+    if value.startswith(("accepted", "in press", "e-pub ahead of print", "epub ahead of print")):
+        return "forthcoming"
+    if "submitted" in value or "unpublished" in value:
+        return "working_paper"
+    return None
+
+
 def stable_id(prefix: str, value: str) -> str:
     return f"{prefix}-{hashlib.sha256(value.encode('utf-8')).hexdigest()[:16]}"
 
@@ -382,7 +403,7 @@ def _parse_publication(html: str, article_url: str) -> dict[str, Any]:
         "doi": doi,
         "link": article_url,
         "source": "UWA Pure",
-        "publication_status": status or None,
+        "publication_status": normalize_status(status),
     }
 
 
