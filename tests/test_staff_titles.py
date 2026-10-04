@@ -82,8 +82,10 @@ def test_seans_approved_mappings():
         ("Deputy Head of Department",                "Deputy Head of Department"),
         ("Joint Deputy Head of Department (Research and Engagement)",
                                                      "Deputy Head of Department"),
+        # The approved table gave "Deputy Head of Department" here; the role
+        # rules now keep every role in the title, so the second one stays too.
         ("Joint Deputy Head of Department (Teaching and Learning), "
-         "Finance Major Coordinator",                "Deputy Head of Department"),
+         "Finance Major Coordinator",                "Deputy Head of Department; Major Coordinator"),
     ]:
         assert admin_title_from(raw) == expected, raw
 

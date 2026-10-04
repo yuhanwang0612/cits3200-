@@ -253,15 +253,16 @@ const ALL = await loadResearchers();
   });
 
   // As on researcher.html: the CSV carries every field the API returns, not
-  // only the columns the table shows. Job title is the standardised academic
-  // rank and admin title the administrative role (Dean, Head of School, ...),
-  // if any; the ORCID and profile URL are how a reader confirms the identity.
+  // only the columns the table shows. Job title is the university's own wording;
+  // academic title comes from the level and admin title is the role (Dean,
+  // Head of School, ...), if any; the ORCID and profile URL are how a reader confirms the identity.
   el('btn-export').addEventListener('click', () => exportCSV(view, [
     { key: 'name',              label: 'Researcher' },
     { key: 'university',        label: 'University' },
     { key: 'field_of_research', label: 'Field of Research' },
     { key: 'academic_level',    label: 'Academic Level' },
     { key: 'job_title',         label: 'Job Title' },
+    { key: 'academic_title',    label: 'Academic Title' },
     { key: 'admin_title',       label: 'Admin Title' },
     { key: 'orcid',             label: 'ORCID' },
     { key: 'profile_url',       label: 'Profile URL' },

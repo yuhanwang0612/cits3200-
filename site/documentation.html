@@ -250,7 +250,7 @@ code.field {
               <tbody>
                 <tr><td><code class="field">researcher_id</code></td><td class="type">INTEGER PK</td><td>Auto-increment</td></tr>
                 <tr><td><code class="field">name</code></td><td class="type">TEXT</td><td>Name with titles removed</td></tr>
-                <tr><td><code class="field">job_title</code></td><td class="type">TEXT</td><td>Academic rank, standardised (e.g. "Senior Lecturer"); administrative roles such as "Dean" are kept separately in the staff CSV's <code>admin_title</code> column</td></tr>
+                <tr><td><code class="field">job_title</code></td><td class="type">TEXT</td><td>Position as the university lists it; the staff CSV adds <code>academic_title</code> (from the level) and <code>admin_title</code> (e.g. "Dean")</td></tr>
                 <tr><td><code class="field">academic_level</code></td><td class="type">TEXT</td><td>A–E, derived from the job title; null when it doesn't map</td></tr>
                 <tr><td><code class="field">university</code></td><td class="type">TEXT</td><td>University name (see §8)</td></tr>
                 <tr><td><code class="field">field_of_research</code></td><td class="type">TEXT</td><td>Accounting or Finance</td></tr>
