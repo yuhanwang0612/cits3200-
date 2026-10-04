@@ -77,6 +77,6 @@ def test_different_years_are_not_merged():
 
 
 def test_a_short_repeated_title_is_not_merged():
-    a = pub(doi="10.1/a", title="Discussion")
-    b = pub(doi="10.1/b", title="Discussion")
+    a = pub(doi="10.1/a", title="Governance")
+    b = pub(doi="10.1/b", title="Governance")
     assert len(build_publications([a, b], verbose=False)) == 2

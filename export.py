@@ -1107,6 +1107,12 @@ _NON_ARTICLE_TITLE = re.compile(
     r"obituary|editorial board|contents|index|errata|introduction|editorial|"
     r"guest editorial|editorial introduction|editor'?s'? note)\W*$"
     r"|^\W*(retraction|withdrawal) (note|notice)\b|^\W*(retracted|withdrawn)( article)?\s*:", re.I)
+# A discussant's piece on someone else's paper ("Discussion of ...",
+# "... - Discussion", "... - Comment"). Journals print them alongside the
+# paper, but they are not research articles.
+_DISCUSSION_TITLE = re.compile(
+    r"^\W*(discussion|comment)\W*$|^\W*discussion of\b"
+    r"|(\s[-\u2013\u2014]|:)\s*(discussion|comment)\W*$", re.I)
 TYPE_REVIEW_LOG = []
 
 _keep_path = Path(__file__).resolve().parent / "data" / "publication_keep.csv"
@@ -1133,6 +1139,8 @@ def non_article_reason(x):
         return ("drop", "retracted or withdrawn (OpenAlex)")
     if _NON_ARTICLE_TITLE.match(x.get("title") or ""):
         return ("drop", "title marks it as front matter or a notice")
+    if _DISCUSSION_TITLE.search(x.get("title") or ""):
+        return ("drop", "discussant piece")
     if t in REVIEW_TYPES:
         return ("review", f"OpenAlex type: {t}")
     return None

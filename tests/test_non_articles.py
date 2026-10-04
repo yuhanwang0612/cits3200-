@@ -135,3 +135,23 @@ def test_the_review_file_is_named_like_the_other_tables(tmp_path, monkeypatch):
     out.mkdir()
     export.export([], [_pub(oa_type="editorial")], out_dir=out, verbose=False)
     assert (out / "uq_type_review.csv").exists()
+
+
+@pytest.mark.parametrize("title", [
+    "DISCUSSION", "Comment",
+    "Discussion of explaining the short- and long-term IPO anomalies",
+    "[Discussion of Accounting Methods and Management Decisions]",
+    "HOW BIG IS THE TAX-ADVANTAGE TO DEBT - DISCUSSION",
+    "Elusive return predictability: Discussion",
+    "Realized variance and market microstructure noise - Comment"])
+def test_a_discussant_piece_is_dropped(title):
+    assert build_publications([_pub(title=title, oa_type=None)], verbose=False) == []
+
+
+@pytest.mark.parametrize("title", [
+    "A discussion-based approach to audit judgement",
+    "Comment letters and the SEC review process",
+    "Discussions with management and auditor scepticism",
+    "Investor reply to dividend cuts"])
+def test_a_research_title_mentioning_discussion_is_kept(title):
+    assert len(build_publications([_pub(title=title, oa_type=None)], verbose=False)) == 1
