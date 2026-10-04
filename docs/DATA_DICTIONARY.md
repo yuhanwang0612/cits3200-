@@ -12,7 +12,9 @@ CSV and JSON (identical content):
 | `<uni>_harvest` | data source used in the run |
 
 Some folders also have `<uni>_screened_out.csv` (publications removed as
-probably belonging to someone else; see the end of this page).
+probably belonging to someone else) and `<uni>_type_review.csv` (items
+dropped or flagged as not research articles); both are described at the end
+of this page.
 
 ## Reading the data
 
@@ -25,8 +27,11 @@ probably belonging to someone else; see the end of this page).
 - **Citation figures change between runs.** `cited_by_count`, `fwci` and
   `citation_percentile` are live values from OpenAlex, so they drift every
   time the pipeline runs.
-- **Only journal articles are exported.** Books, chapters, conference papers
-  and working papers are collected but dropped at export.
+- **Only journal research articles are exported.** Books, chapters,
+  conference papers and working papers are collected but dropped at export,
+  as are editorials, book reviews, letters, conference abstracts, front
+  matter and retracted or withdrawn articles, even when they appeared in a
+  journal.
 
 ## Staff (`<uni>_staff`)
 
@@ -228,3 +233,24 @@ The rule lives in `screen.py`. To reinstate a wrongly removed publication, or
 remove a missed one, use the files in `data/` (for example
 `data/publication_exclusions.csv` and the per-university identity override
 files) rather than editing the output, which the next run would overwrite.
+
+## Non-article review (`<uni>_type_review.csv`)
+
+Items in journals that are not research articles. OpenAlex's own type for
+each DOI decides: editorials, book reviews, letters, conference abstracts,
+errata and retraction notices are dropped, as are retracted or withdrawn
+articles and titles that are only front matter ("Foreword", "Preface",
+"Prelims", "In Memoriam"). Items OpenAlex calls a book chapter, book, report,
+preprint or front matter ("paratext") stay in the data but are listed here
+for a person to check, because OpenAlex sometimes gives real articles those
+types.
+
+| Column | Meaning |
+|---|---|
+| `action` | `dropped` (removed from the publications table) or `review` (kept, but worth checking). |
+| `reason` | Why, e.g. "OpenAlex type: editorial". |
+| `name`, `title`, `year`, `journal`, `doi`, `source` | As in the publications table. |
+
+The rule is `non_article_reason` in `export.py`. To keep a dropped item, add
+its DOI and a reason to `data/publication_keep.csv`; to remove a flagged one,
+add it to `data/publication_exclusions.csv`.

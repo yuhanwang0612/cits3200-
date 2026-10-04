@@ -5,6 +5,7 @@ retrieval upstream is deliberately unfiltered so that exclusions are
 visible and reversible rather than baked into each source.
 """
 
+import csv
 import difflib
 import json
 import re
@@ -1087,6 +1088,51 @@ def normalize_authors(text):
     return "; ".join(out)
 
 
+# ------------------------------------------------------- non-articles
+#
+# The sources call many things a journal article that are not research:
+# editorials, book reviews, front matter, retractions. OpenAlex types each
+# DOI properly, so its type decides, for the kinds nobody would defend as a
+# research article; a retracted or withdrawn article is dropped too. Book
+# chapters, books, reports, preprints and "paratext" are only listed for
+# review: OpenAlex calls some real articles in book-series journals
+# chapters, and has typed A* papers as paratext. Every row dropped or flagged is written to
+# <uni>_type_review.csv. A DOI in data/publication_keep.csv is never dropped
+# (for OpenAlex mistakes).
+NON_ARTICLE_TYPES = {"editorial", "book-review", "retraction", "erratum",
+                     "letter", "conference-abstract"}
+REVIEW_TYPES = {"Book Chapter", "Book", "Research Report", "Preprint", "paratext"}
+_NON_ARTICLE_TITLE = re.compile(
+    r"^\W*(foreword|preface|prelims|front matter|back matter|in memoriam|"
+    r"obituary|editorial board|contents|index|errata)\W*$"
+    r"|^\W*(retraction|withdrawal) (note|notice)\b|^\W*(retracted|withdrawn)( article)?\s*:", re.I)
+TYPE_REVIEW_LOG = []
+
+_keep_path = Path(__file__).resolve().parent / "data" / "publication_keep.csv"
+_KEEP_DOIS = set()
+if _keep_path.exists():
+    with _keep_path.open(encoding="utf-8") as _f:
+        _KEEP_DOIS = {(r.get("doi") or "").strip().lower()
+                      for r in csv.DictReader(_f) if (r.get("doi") or "").strip()}
+
+
+def non_article_reason(x):
+    """Why this row is not a research article, or None. ('drop'|'review', why)."""
+    doi = (x.get("doi") or "").strip().lower()
+    if doi and doi in _KEEP_DOIS:
+        return None
+    t = x.get("oa_type")
+    if t in NON_ARTICLE_TYPES:
+        return ("drop", f"OpenAlex type: {t}")
+    if x.get("oa_retracted"):
+        return ("drop", "retracted or withdrawn (OpenAlex)")
+    if _NON_ARTICLE_TITLE.match(x.get("title") or ""):
+        return ("drop", "title marks it as front matter or a notice")
+    if t in REVIEW_TYPES:
+        return ("review", f"OpenAlex type: {t}")
+    return None
+
+
 def build_publications(pubs, records=None, keep_type="Journal Article",
                        verbose=True):
     """Records sort DOI-first so the better-catalogued copy survives dedup.
@@ -1096,6 +1142,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     key in a merged table.
     """
     SKIPPED_PREFIX_DUPS.clear()
+    TYPE_REVIEW_LOG.clear()
     orcid_by_name = {r["name_clean"]: r.get("orcid") for r in (records or [])}
     anu_names = _anu_staff_names(records)
     out = []
@@ -1118,6 +1165,16 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         if _is_correction_notice(x.get("title")):
             excluded_correction_notices += 1
             continue
+        flag = non_article_reason(x)
+        if flag:
+            action, why = flag
+            TYPE_REVIEW_LOG.append({
+                "action": "dropped" if action == "drop" else "review",
+                "reason": why, "name": x.get("name"), "title": x.get("title"),
+                "year": x.get("year"), "journal": x.get("journal"),
+                "doi": x.get("doi"), "source": x.get("source")})
+            if action == "drop":
+                continue
         # Title repair runs before anything reads the title: the dedup key
         # below is computed from it, so repairing afterwards would key the
         # row on the mangled form and defeat FIX K / FIX L.
@@ -1202,6 +1259,11 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
                 print(f"    {n:4}  {s or '?':10} {t}")
         if missing_journal:
             print(f"  excluded {missing_journal} journal-article row(s) with no verified journal name")
+        _dropped = sum(1 for r in TYPE_REVIEW_LOG if r["action"] == "dropped")
+        _review = len(TYPE_REVIEW_LOG) - _dropped
+        if _dropped or _review:
+            print(f"  non-articles: dropped {_dropped}, {_review} flagged for review "
+                  f"(see <uni>_type_review.csv)")
         if excluded_correction_notices:
             print(f"  excluded {excluded_correction_notices} published-correction "
                   f"row(s) carrying a '(vol N, pg N, YYYY)' locator")
@@ -1396,4 +1458,11 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
         "harvest": build_harvest(records, pubs, publications),
     }
     write(tables, out_dir, verbose)
+    _review_path = (out_dir or OUTPUT_DIR)
+    _review_file = _review_path / (f"{_review_path.name}_type_review.csv"
+                                   if out_dir else "type_review.csv")
+    if TYPE_REVIEW_LOG:
+        pd.DataFrame(TYPE_REVIEW_LOG).to_csv(_review_file, index=False)
+    elif _review_file.exists():
+        _review_file.unlink()
     return tables

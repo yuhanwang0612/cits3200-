@@ -28,6 +28,7 @@ import re
 
 from core.config import OA_HEADERS, OPENALEX_BASE, openalex_budget
 from core.http import cached_get
+from core.schema import norm_type
 
 CHUNK = 25          # 50 per filter times out on their side often enough to matter
 
@@ -188,6 +189,11 @@ def extract(work):
         # Carried so the aggregator check can be made against our row's
         # journal name rather than against OpenAlex's own source name.
         "_source_name": source.get("display_name") or None,
+        # OpenAlex's own type for the work ("editorial", "book-review", ...).
+        # Not in METRICS: it is read by export to drop non-articles, never
+        # written over the row's own type.
+        "_oa_type": norm_type(work.get("type")),
+        "_oa_retracted": bool(work.get("is_retracted")),
         "authors": "; ".join(names) or None, 
         "n_authors": len(names) or None,          
     }
@@ -222,6 +228,8 @@ def enrich(pubs, verbose=True):
 
         for k in METRICS:
             x[k] = hit.get(k)
+        x["oa_type"] = hit.get("_oa_type")
+        x["oa_retracted"] = hit.get("_oa_retracted")
 
         # Additive, and never destructive. A row that arrived with an ISSN or a
         # publisher from a repository record has the better one: theirs came
