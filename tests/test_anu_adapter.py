@@ -147,12 +147,13 @@ def test_publication_mapping_shape():
     assert mapped["doi"] == "10.1/abc"
     assert mapped["link"] == "https://rsa.anu.edu.au/x"
     # v26: a row with a DOI leaves author data to the DOI record (OpenAlex
-    # enrichment); the profile's own owner-inclusive count ("Bond, D" plus
-    # Sarah Adams herself) is kept only as a fallback.
+    # enrichment); the profile's own owner-inclusive list is kept only as a
+    # fallback. v27: that fallback is a name list holding the owner under
+    # their display name, and its count is its length.
     assert mapped["n_authors"] is None
     assert mapped["authors"] is None
     assert mapped["_anu_profile_n_authors"] == 2
-    assert mapped["_anu_profile_authors"] == "Bond, D"
+    assert mapped["_anu_profile_authors"] == "Sarah Adams; D Bond"
     assert mapped["issns"] == ["1234-5678"]
     assert mapped["source"] == "ANU staff profile"
     assert had_page_doi is True

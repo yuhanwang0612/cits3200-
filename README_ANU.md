@@ -76,7 +76,7 @@ for debugging the scraper itself in isolation. Writes to `./output/`:
 
 As of 28 Sep 2026, `./output/` holds none of these files — the copies that
 were there were a stale run from an earlier schema (296 publication rows,
-against the shared pipeline's current 508) and were deleted as dead weight
+against the shared pipeline's then-current 508) and were deleted as dead weight
 rather than left as a trap for anyone who opened them expecting current
 data. (One of them, a 23 Aug `anu_unparsed_publications.csv`, survived the
 22 Sep clean-up and was deleted on 28 Sep.) Running `anu_scraper.py` again writes fresh copies here; it does not
@@ -137,11 +137,37 @@ titles are frequently hyperlinked with no visible URL shown at all.
   Professional staff, Research student, Visitor/Honorary) — on the view that
   the Scope of Work's FR1 targets "academics" specifically, not students.
   Worth confirming with the team if students should be included.
-- The remaining unparsed entries (42 on 28 Sep 2026) are, on inspection,
+- The remaining unparsed entries (42 on 5 Oct 2026) are, on inspection,
   mostly not publications at all — sub-headings, award notes, footnote
-  keys, textbooks and working papers. 6 look like genuine journal
-  articles, of which 2 already reach the data through ORCID; the other 4
-  are a known, listed collection gap (see docs/DECISIONS.md, 28 Sep).
+  keys, textbooks and working papers. The 6 that are genuine journal
+  articles all reach the data: 5 through the researcher's ORCID or
+  OpenAlex record,
+  and Lily Chen's IEEE TKDE paper through the DOI printed in its own
+  citation (an unparsed entry is turned into a row only when its DOI
+  record is a journal article, its registered title appears in the
+  entry, and the researcher is among its authors). A coverage check of
+  every live profile on 5 Oct found no missing journal article (see
+  docs/DECISIONS.md, 5 Oct 2026 (v27)).
+- Author lists on profile rows are rebuilt from the citation so that the
+  profile owner always appears, once, in the citation's order;
+  `author_count` is the length of that list. For a row with a DOI, the
+  DOI record's author list is used instead.
+- ANU's export runs five ANU-only rules after the shared steps, each
+  documented in `export.py` and tested in `tests/test_anu_final_rules.py`:
+  one record per DOI (lowercase DOI, the DOI record's registered title
+  and print year), trailing footnote markers removed, book reviews
+  dropped, conference papers that OpenAlex files under a journal
+  dropped, and DOI-less profile copies of published rows dropped.
+
+## Data status (5 Oct 2026)
+
+`final output/anu/` holds 492 journal articles for 40 researchers
+(481 ABDC-ranked, 97.8%; 469 with a DOI; 4 forthcoming). ANU's cleaning is complete
+within the agreed sources: every known defect is fixed in the pipeline
+and locked by `tests/test_anu_final_data.py`, or listed as an accepted
+limitation in docs/ANU_DATA_SUMMARY.md (23 rows with no attachable DOI, 11
+unranked journals, the Pure portal out of scope). Five scope questions
+await the client.
 
 ## Politeness / compliance
 

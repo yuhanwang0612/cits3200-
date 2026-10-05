@@ -849,8 +849,18 @@ def _anu_author_fallback(x, anu_names):
     Returns True when the fallback was applied."""
     if x.get("name") not in anu_names:
         return False
-    if x.get("n_authors") or not x.get("_anu_profile_n_authors"):
+    if not x.get("_anu_profile_n_authors"):
         return False
+    if x.get("n_authors"):
+        # v28: a DOI record that names its authors by surname only ("Tam;
+        # Ho", the JSTOR record of Susanna Ho's MISQ 2006 paper) yields to
+        # the profile's readable list of the same people, same count.
+        names = [n.strip() for n in (x.get("authors") or "").split(";") if n.strip()]
+        if not (names and all(len(n.split()) == 1 for n in names)
+                and len(names) == x["_anu_profile_n_authors"] == x["n_authors"]):
+            return False
+        x["authors"] = x.get("_anu_profile_authors")
+        return True
     x["n_authors"] = x["_anu_profile_n_authors"]
     if not x.get("authors"):
         x["authors"] = x.get("_anu_profile_authors")
@@ -914,6 +924,48 @@ def _anu_repository_journal_repair(x, anu_names, fetch=None):
     if not x.get("issns"):
         x["issns"] = list(title_issns(normalise_title(journal)) or [])
     return journal
+
+
+# --- ANU-only (v28, docs/DECISIONS.md 5 Oct 2026): a rating for a journal
+# that did not yet exist ------------------------------------------------------
+#
+# The ABDC title fallback matches on the journal's NAME. Rebecca Tan's "Flights
+# of fancy", cited as "Journal of Financial Reporting, 1(2): 1-10 (2000)", was
+# rated A as the AAA's Journal of Financial Reporting, whose ABDC "Year
+# Inception" is 2016. A paper dated before the journal began cannot be in it,
+# so the rating is withdrawn rather than guessed. When the row's ISSNs came
+# from that same ABDC title match (`issn_source == "abdc_title"`), the
+# Scimago and Clarivate values joined on those ISSNs are withdrawn too.
+ANU_INCEPTION_LOG = []
+_ISSN_JOINED_FIELDS = ("sjr", "sjr_quartile", "h_index", "cites_per_doc_2y", "scimago_year",
+                       "scimago_title", "impact_factor", "impact_factor_5yr", "jcr_year")
+
+
+def _anu_predates_abdc_inception(x, anu_names):
+    """Withdraw the ABDC match from an ANU row dated before the matched
+    journal's ABDC inception year. Returns (journal, inception) when it
+    does, else None."""
+    if x.get("name") not in anu_names or not x.get("abdc_title"):
+        return None
+    from enrichment.abdc import normalise_title, title_inception
+
+    inception = title_inception(normalise_title(x["abdc_title"]))
+    try:
+        year = int(str(x.get("year"))[:4])
+    except (TypeError, ValueError):
+        return None
+    if not inception or year >= inception:
+        return None
+    journal = x["abdc_title"]
+    x["abdc"] = x["abdc_title"] = x["abdc_edition"] = None
+    x["abdc_match"] = f"withdrawn: {year} is before the ABDC inception year {inception}"
+    if x.get("issn_source") == "abdc_title":
+        x["issns"] = []
+        x["issn_source"] = None
+        for field in _ISSN_JOINED_FIELDS:
+            x[field] = None
+    ANU_INCEPTION_LOG.append((x["name"], x.get("title"), year, journal, inception))
+    return journal, inception
 
 
 _MOJIBAKE_MARKERS = ("â€", "Ã", "Â")
@@ -1039,6 +1091,548 @@ def _anu_repair_title_text(rows, pubs, anu_names, crossref_fetch=None):
     return changes
 
 
+# --- ANU-only (v27, docs/DECISIONS.md 5 Oct 2026): one record per DOI, book
+# reviews, profile copies of published rows --------------------------------
+#
+# Same gating as above: every function returns at once for a row whose
+# `name` is not an ANU staff member, and tests/test_anu_final_rules.py runs
+# each one on a non-ANU row and checks it comes back unchanged.
+
+# A book review: the Crossref record has a volume, runs to at most this many
+# pages, and registers no abstract. Measured on all 386 ANU DOIs with a
+# Crossref record on 5 Oct 2026 (313 register a page range): exactly two
+# span 4 pages or fewer (2 and 3 pages, both book reviews, no abstract); the
+# next shortest is 5 pages with an abstract, and the shortest with no
+# abstract is 9 pages. The volume test keeps out early-access records, which
+# Crossref registers as pages "1-1" before an issue is assigned.
+ANU_BOOK_REVIEW_MAX_PAGES = 4
+
+# A DOI-less ANU profile row is a copy of a published row when, for the same
+# researcher and the same journal, its year is within ANU_PROFILE_COPY_YEARS
+# of the DOI record's online or print year, its title shares at least
+# ANU_PROFILE_COPY_MIN_TITLE of its content words with the published title
+# (see _title_containment), and, where both rows name co-authors, they share
+# one. The title threshold sits in the gap measured on 5 Oct 2026: across
+# every same-researcher, same-journal pair the highest-scoring pair of two
+# different papers scored 0.50, and the lowest-scoring confirmed copy 0.67.
+ANU_PROFILE_COPY_YEARS = 2
+ANU_PROFILE_COPY_MIN_TITLE = 0.6
+
+_TITLE_STOPWORDS = {"a", "an", "the", "of", "and", "in", "on", "for", "to", "from",
+                    "with", "by", "at", "as", "is", "are", "do", "does", "its", "their"}
+# Spaces (not a line break) between two words: where the publisher's
+# metadata dropped an italic run ("The impact of   on generations of
+# research" for "The impact of Ball and Brown (1968) on ...").
+_DROPPED_RUN_RE = re.compile(r"[\w,)] {2,}[\w(]")
+# A footnote marker at the end of a title: a digit glued to the last word
+# ("...Consumer Search Theory1"), or an asterisk or dagger ("...Audit
+# Quality? *", "...Disclosures†"). Publishers register these in the title
+# field; they point to a footnote, not part of the title.
+_TRAILING_FOOTNOTE_RE = re.compile(r"(?:(?<=[a-z]{3})\d|\s*[*†‡]+)$")
+
+ANU_V27_LOG = []
+
+
+def _anu_crossref_message(doi, fetch=None):
+    """Crossref's record for `doi` ({} when there is none)."""
+    if fetch is None:
+        from core.config import CR_HEADERS, CROSSREF_BASE
+        from core.http import cached_get
+
+        def fetch(d):
+            data = cached_get(f"{CROSSREF_BASE}/{d}", headers=CR_HEADERS,
+                              sleep=0.5, allow_404=True)
+            return (data or {}).get("message")
+    try:
+        return fetch(doi) or {}
+    except Exception as e:
+        print(f"    ANU DOI record: Crossref lookup failed for {doi}: "
+              f"{type(e).__name__} {e}")
+        return {}
+
+
+def _loose_journal_key(name):
+    import html as _html
+    key = _normalise_title(_html.unescape(name or "").replace("&", " and "))
+    return re.sub(r"^the ", "", key)
+
+
+def _record_years(msg):
+    def year(k):
+        parts = ((msg.get(k) or {}).get("date-parts") or [[None]])[0]
+        return parts[0] if parts and parts[0] else None
+    return {k: year(k) for k in ("published-online", "published-print", "issued")}
+
+
+def _record_year(msg):
+    """The year this pipeline exports for a DOI: the print (issue) year when
+    the record has one, else the record's issued year. Measured on 5 Oct
+    2026, the existing pipeline already gave the print year on 96 of the 133
+    ANU DOI rows whose online and print years differ (the profile pages and
+    ORCID both cite the issue)."""
+    years = _record_years(msg)
+    return years["published-print"] or years["issued"] or years["published-online"]
+
+
+def _fill_dropped_run(raw_title, candidates):
+    """Repair a registered title whose italic run was dropped, from a
+    pipeline copy that matches it exactly on both sides of the gap."""
+    parts = [_normalise_title(p) for p in re.split(r" {2,}", raw_title)]
+    if len(parts) < 2 or not all(parts):
+        return None
+    pattern = re.compile(r"^" + r" (.{1,80}?) ".join(re.escape(p) for p in parts) + r"$")
+    for c in candidates:
+        if c and pattern.match(_normalise_title(c)):
+            return c
+    return None
+
+
+def _anu_registered_title(msg, candidates=()):
+    """(title, note) from a Crossref record: tags and entities removed,
+    whitespace collapsed, subtitle appended when registered separately. A
+    title with a dropped run is repaired from `candidates` or refused."""
+    from core.clean import clean_text
+
+    raw = ((msg.get("title") or [""])[0] or "")
+    if not raw.strip():
+        return None, "no registered title"
+    if _DROPPED_RUN_RE.search(raw.replace("\n", "\x00")):
+        filled = _fill_dropped_run(re.sub(r"\s*\n\s*", " ", raw), candidates)
+        if filled:
+            return filled, "dropped run filled from a pipeline copy"
+        # Layout spacing, not a gap: a pipeline copy reads the same with the
+        # spaces closed up ("...Evidence and               Issues").
+        closed = clean_text(raw)
+        if not any(_normalise_title(c) == _normalise_title(closed) for c in candidates if c):
+            return None, "registered title has a dropped run"
+        raw = closed
+    title = clean_text(raw)
+    subtitle = clean_text(((msg.get("subtitle") or [""])[0] or ""))
+    if subtitle and _normalise_title(subtitle) not in _normalise_title(title) \
+            and not _is_running_head(subtitle, title):
+        title = f"{title}: {subtitle}"
+    return title, "registered"
+
+
+def _is_running_head(subtitle, title):
+    """True when a registered `subtitle` is a running head (the journal's
+    short title), not part of the title. Wiley registers its running head in
+    Crossref's subtitle field: "Integrated Reporting for Not-for-Profit
+    Sector", "EARNINGS MANAGEMENT SIGNALS AND FORECAST ACCURACY". A running
+    head is all caps, or mostly repeats the main title: at least
+    ANU_PROFILE_COPY_MIN_TITLE of its content words already appear in it.
+    A genuine subtitle adds words ("The motivations behind private equity
+    activity in Australia")."""
+    letters = [c for c in subtitle if c.isalpha()]
+    if letters and all(c.isupper() for c in letters):
+        return True
+    words = set(_title_tokens(subtitle))
+    if not words:
+        return False
+    main = set(_title_tokens(title))
+    hit = sum(1 for w in words if w in main or any(
+        difflib.SequenceMatcher(None, w, o).ratio() >= 0.85 for o in main))
+    return hit / len(words) >= ANU_PROFILE_COPY_MIN_TITLE
+
+
+def _title_tokens(title):
+    words = _normalise_title(title).split()
+    return [w[:-1] if len(w) > 3 and w.endswith("s") else w
+            for w in words if w not in _TITLE_STOPWORDS and len(w) > 1]
+
+
+def _title_containment(a, b):
+    """Share of the shorter title's distinct content words found in the
+    other title (a near-identical spelling counts: "stakeholers"). Word order
+    and wording around them do not matter, which is how a working title
+    differs from the published one."""
+    ta, tb = set(_title_tokens(a)), set(_title_tokens(b))
+    if not ta or not tb:
+        return 0.0
+    short, other = (ta, tb) if len(ta) <= len(tb) else (tb, ta)
+    hit = sum(1 for w in short if w in other or any(
+        difflib.SequenceMatcher(None, w, o).ratio() >= 0.85 for o in other))
+    return hit / len(short)
+
+
+def _coauthor_surnames(authors, owner):
+    from base_scrapers.anu import _fold_name, _split_name
+
+    _, _, owner_surname = _split_name(owner)
+    out = set()
+    for name in (authors or "").split(";"):
+        words = name.replace(".", " ").split()
+        if words:
+            out.add(_fold_name(words[-1]))
+    out.discard(_fold_name(owner_surname))
+    return out
+
+
+def _anu_align_doi_records(rows, pubs, anu_names, fetch=None):
+    """Every ANU row with a DOI: the DOI is lowercase, and the title and year
+    are the DOI record's (the registered title; the print year, else the
+    issued year). Refused, with the reason logged, when the record names a
+    different journal or its title has lost words the row still has.
+    Returns {doi: Crossref message} for the later rules."""
+    from enrichment.abdc import normalise_title as abdc_key
+
+    titles_by_doi, issns_by_doi = {}, {}
+    for p in pubs:
+        doi = (p.get("doi") or "").strip().lower()
+        if doi and p.get("title"):
+            titles_by_doi.setdefault(doi, []).append(p["title"])
+        if doi:
+            issns_by_doi.setdefault(doi, set()).update(
+                i.replace("-", "").upper() for i in (p.get("issns") or []) if i)
+    all_titles = [p.get("title") for p in pubs]
+    records = {}
+    for row in rows:
+        if row.get("name") not in anu_names or not row.get("doi"):
+            continue
+        doi = row["doi"].strip().lower()
+        if doi != row["doi"]:
+            ANU_V27_LOG.append(("doi lowercased", row["name"], row["doi"], doi))
+            row["doi"] = doi
+            row["article_url"] = f"https://doi.org/{doi}"
+            if (row.get("link") or "").lower() == f"https://doi.org/{doi}":
+                row["link"] = row["article_url"]
+        if doi not in records:
+            records[doi] = _anu_crossref_message(doi, fetch)
+        msg = records[doi]
+        if not msg:
+            continue
+        journals = {_loose_journal_key(j) for j in msg.get("container-title") or []}
+        journals |= {_loose_journal_key(abdc_key(j)) for j in msg.get("container-title") or []}
+        mine = _loose_journal_key(row.get("journal_name"))
+        same_journal = (
+            mine in journals
+            # "International Small Business Journal" is registered with its
+            # subtitle ": Researching Entrepreneurship"
+            or any(j.startswith(mine + " ") for j in journals if mine)
+            or bool(issns_by_doi.get(doi, set())
+                    & {i.replace("-", "").upper() for i in msg.get("ISSN") or []}))
+        if not same_journal:
+            ANU_V27_LOG.append(("refused: record names another journal", row["name"], doi,
+                                f"{row.get('journal_name')!r} vs {msg.get('container-title')}"))
+            continue
+        title, note = _anu_registered_title(msg, titles_by_doi.get(doi, []) + all_titles)
+        # A single-case registered title ("GENERAL EQUILIBRIUM ANALYSIS OF
+        # HOLD-UP ...") takes the casing of a pipeline copy of the same title:
+        # this DOI's copies first, else any copy. When every copy is single-
+        # case it stays as registered (Greg Shailer's 1994 title).
+        if title and _single_case(title):
+            title = (_anu_cased_title(title, titles_by_doi.get(doi, []))
+                     or _anu_cased_title(title, all_titles) or title)
+        # A registered title that is the row's title with words missing from
+        # the end (a subtitle the registry lacks) is refused, unless those
+        # extra words only repeat the registered title (a doubled subtitle:
+        # "...: International Evidence: International Evidence").
+        current = _normalise_title(row.get("title"))
+        registered = _normalise_title(title)
+        if title and current.startswith(registered + " ") \
+                and not set(current[len(registered):].split()) <= set(registered.split()):
+            ANU_V27_LOG.append(("refused: registered title is shorter", row["name"], doi, title))
+            title = None
+        if title is None:
+            if note != "registered":
+                ANU_V27_LOG.append((f"refused: {note}", row["name"], doi, row.get("title")))
+        elif title != row.get("title"):
+            ANU_V27_LOG.append(("title from DOI record", row["name"], doi,
+                                f"{row.get('title')!r} -> {title!r}"))
+            row["title"] = title
+        year = _record_year(msg)
+        if year and str(year) != str(row.get("year") or ""):
+            ANU_V27_LOG.append(("year from DOI record", row["name"], doi,
+                                f"{row.get('year')} -> {year}"))
+            row["year"] = str(year)
+    return records
+
+
+def _anu_strip_footnote_marker(rows, anu_names):
+    """'...Personalization Contexts1' -> '...Personalization Contexts'."""
+    for row in rows:
+        if row.get("name") not in anu_names:
+            continue
+        title = row.get("title") or ""
+        if len(title.split()) >= 4 and _TRAILING_FOOTNOTE_RE.search(title):
+            fixed = _TRAILING_FOOTNOTE_RE.sub("", title).rstrip()
+            ANU_V27_LOG.append(("footnote marker stripped", row["name"], row.get("doi"), title))
+            row["title"] = fixed
+
+
+def _anu_one_title_per_doi(rows, anu_names):
+    """Where ANU rows sharing a DOI still disagree (the DOI record was
+    refused or missing for one of them), all take the most common title and
+    year; a tie goes to the fuller title and the later year."""
+    groups = {}
+    for row in rows:
+        if row.get("name") in anu_names and row.get("doi"):
+            groups.setdefault(row["doi"].lower(), []).append(row)
+    for doi, group in groups.items():
+        for field, tie in (("title", lambda v: len(_normalise_title(v))),
+                           ("year", lambda v: str(v))):
+            values = [r.get(field) for r in group if r.get(field) not in (None, "")]
+            if len(set(values)) < 2:
+                continue
+            counts = Counter(values)
+            chosen = max(values, key=lambda v: (counts[v], tie(v)))
+            for r in group:
+                if r.get(field) != chosen:
+                    ANU_V27_LOG.append((f"{field} unified across the DOI", r["name"], doi,
+                                        f"{r.get(field)!r} -> {chosen!r}"))
+                    r[field] = chosen
+
+
+def _page_span(page):
+    m = re.match(r"^\D*(\d+)\s*[-–]\s*\D*(\d+)$", (page or "").strip())
+    if not m:
+        return None
+    first, last = int(m.group(1)), int(m.group(2))
+    return last - first + 1 if last >= first else None
+
+
+def _is_book_review_record(msg):
+    if not msg or not msg.get("volume") or msg.get("abstract"):
+        return False
+    span = _page_span(msg.get("page"))
+    return span is not None and span <= ANU_BOOK_REVIEW_MAX_PAGES
+
+
+def _anu_drop_book_reviews(rows, anu_names, records):
+    """Drop ANU rows whose DOI record is a book review (see
+    ANU_BOOK_REVIEW_MAX_PAGES), and a DOI-less copy of the same title for
+    the same researcher."""
+    dropped = set()
+    for row in rows:
+        if row.get("name") in anu_names and row.get("doi") \
+                and _is_book_review_record(records.get(row["doi"].lower())):
+            dropped.add((row["name"], _normalise_title(row.get("title"))))
+    if not dropped:
+        return rows
+    kept = []
+    for row in rows:
+        if row.get("name") in anu_names and (row["name"], _normalise_title(row.get("title"))) in dropped:
+            ANU_V27_LOG.append(("dropped: book review", row["name"], row.get("doi"), row.get("title")))
+            TYPE_REVIEW_LOG.append({
+                "action": "dropped", "reason": "book review (Crossref: short, no abstract)",
+                "name": row["name"], "title": row.get("title"), "year": row.get("year"),
+                "journal": row.get("journal_name"), "doi": row.get("doi"), "source": row.get("source")})
+            continue
+        kept.append(row)
+    return kept
+
+
+# A DOI-less ANU row that only OpenAlex supplied, and whose OpenAlex record
+# names a conference as the source in its own citation text
+# (`raw_source_name`), is a proceedings paper. OpenAlex files several AIS
+# conference papers (PACIS 2008, 2010, 2015; ECIS 2009) under the Journal of
+# the Association for Information Systems, which is how they came to be
+# rated A*.
+_PROCEEDINGS_RE = re.compile(r"\b(proceedings|conference)\b", re.IGNORECASE)
+
+
+def _anu_openalex_proceedings_source(row, anu_names, fetch=None):
+    """The conference `raw_source_name` that marks this row as a
+    proceedings paper, else None."""
+    if row.get("name") not in anu_names or row.get("doi") or row.get("source") != "OpenAlex":
+        return None
+    work_id = (row.get("link") or "").rsplit("/", 1)[-1]
+    if not re.fullmatch(r"W\d+", work_id):
+        return None
+    if fetch is None:
+        from core.config import OA_HEADERS, OPENALEX_BASE
+        from core.http import cached_get
+
+        def fetch(wid):
+            return cached_get(f"{OPENALEX_BASE}/{wid}", headers=OA_HEADERS,
+                              sleep=0.5, allow_404=True)
+    try:
+        work = fetch(work_id) or {}
+    except Exception as e:
+        print(f"    ANU proceedings check: OpenAlex lookup failed for {work_id}: "
+              f"{type(e).__name__} {e}")
+        return None
+    names = [loc.get("raw_source_name") for loc in
+             [work.get("primary_location") or {}] + (work.get("locations") or [])]
+    return next((n for n in names if n and _PROCEEDINGS_RE.search(n)), None)
+
+
+def _anu_drop_openalex_proceedings(rows, anu_names, fetch=None):
+    kept = []
+    for row in rows:
+        venue = _anu_openalex_proceedings_source(row, anu_names, fetch)
+        if venue:
+            ANU_V27_LOG.append(("dropped: conference paper (OpenAlex)", row["name"],
+                                row.get("link"), f"{row.get('title')!r} - {venue}"))
+            TYPE_REVIEW_LOG.append({
+                "action": "dropped", "reason": f"conference paper (OpenAlex citation: {venue})",
+                "name": row["name"], "title": row.get("title"), "year": row.get("year"),
+                "journal": row.get("journal_name"), "doi": row.get("doi"), "source": row.get("source")})
+            continue
+        kept.append(row)
+    return kept
+
+
+def _anu_one_row_per_doi(rows, anu_names):
+    """A researcher keeps one row per DOI (the first, which build_publications
+    sorts DOI-first and source-ordered)."""
+    seen, kept = set(), []
+    for row in rows:
+        key = (row.get("name"), (row.get("doi") or "").lower())
+        if row.get("name") in anu_names and key[1]:
+            if key in seen:
+                ANU_V27_LOG.append(("dropped: second row for the same DOI", row["name"],
+                                    row["doi"], row.get("title")))
+                continue
+            seen.add(key)
+        kept.append(row)
+    return kept
+
+
+def anu_profile_copy_of(cand, published, record=None):
+    """True when DOI-less profile row `cand` is a copy of DOI row
+    `published` for the same researcher (see ANU_PROFILE_COPY_*)."""
+    if cand.get("doi") or cand.get("source") != "ANU staff profile" or not published.get("doi"):
+        return False
+    if cand.get("name") != published.get("name"):
+        return False
+    if _loose_journal_key(cand.get("journal_name")) != _loose_journal_key(published.get("journal_name")):
+        return False
+    years = {y for y in _record_years(record or {}).values() if y}
+    if published.get("year"):
+        years.add(int(published["year"]))
+    try:
+        if not any(abs(int(cand["year"]) - y) <= ANU_PROFILE_COPY_YEARS for y in years):
+            return False
+    except (KeyError, TypeError, ValueError):
+        return False
+    if _title_containment(cand.get("title"), published.get("title")) < ANU_PROFILE_COPY_MIN_TITLE:
+        return False
+    a = _coauthor_surnames(cand.get("authors"), cand["name"])
+    b = _coauthor_surnames(published.get("authors"), cand["name"])
+    return not (a and b) or bool(a & b)
+
+
+def _anu_drop_profile_copies(rows, anu_names, records):
+    by_name = {}
+    for row in rows:
+        if row.get("name") in anu_names and row.get("doi"):
+            by_name.setdefault(row["name"], []).append(row)
+    kept = []
+    for row in rows:
+        if row.get("name") in anu_names and not row.get("doi"):
+            match = next((p for p in by_name.get(row["name"], [])
+                          if anu_profile_copy_of(row, p, records.get(p["doi"].lower()))), None)
+            if match:
+                ANU_V27_LOG.append(("dropped: profile copy of a published row", row["name"],
+                                    match["doi"], f"{row.get('title')!r} ~ {match.get('title')!r}"))
+                continue
+        kept.append(row)
+    return kept
+
+
+# --- ANU-only (v28): forthcoming status ---------------------------------------
+#
+# Client's 19 Aug rule: a paper is forthcoming only when it is explicitly
+# labelled so, never inferred (on 2 Sep the client called "no volume yet" on
+# its own too broad). An ANU row is "forthcoming" when the researcher's own
+# profile entry for it says "forthcoming" or "in press" AND it is not yet in
+# an issue: it has no DOI, or its DOI record has neither a volume nor a print
+# date. A labelled entry that has since reached an issue is "published";
+# profile pages are often not updated.
+ANU_STATUS_LOG = []
+
+
+def _in_an_issue(record):
+    """True when a Crossref record shows the paper in an issue; None when
+    there is no record to tell."""
+    if not record:
+        return None
+    return bool(record.get("volume") or _record_years(record)["published-print"])
+
+
+def _labelled_profile_entry_for(row, labelled):
+    """The researcher's labelled profile entry that `row` is the exported
+    form of (same DOI, same title, or a profile copy of it), else None."""
+    doi = (row.get("doi") or "").lower()
+    for p in labelled.get(row.get("name"), []):
+        if doi and (p.get("doi") or "").lower() == doi:
+            return p
+        if _normalise_title(p.get("title")) == _normalise_title(row.get("title")):
+            return p
+        if not p.get("doi") and doi and anu_profile_copy_of(
+                {"name": p["name"], "doi": None, "source": "ANU staff profile",
+                 "title": p.get("title"), "year": p.get("year"),
+                 "journal_name": canonical_journal_name(p), "authors": p.get("authors")},
+                row):
+            return p
+    return None
+
+
+# A DOI-less row has no record to show whether it has reached an issue, so
+# its label is trusted only while recent: dated this year or last. Isabel
+# Wang's "2023 ... forthcoming" entry was printed in March 2023 (Crossref,
+# the record v28 deliberately leaves unattached). This can only keep a row
+# "published"; it never infers "forthcoming".
+ANU_FORTHCOMING_MAX_AGE_YEARS = 1
+
+
+def _anu_publication_status(rows, pubs, anu_names, records, this_year=None):
+    this_year = this_year or datetime.now(timezone.utc).year
+    labelled = {}
+    for p in pubs:
+        if p.get("name") in anu_names and p.get("_anu_forthcoming_label"):
+            labelled.setdefault(p["name"], []).append(p)
+    entries = {id(row): _labelled_profile_entry_for(row, labelled)
+               for row in rows if row.get("name") in anu_names}
+    # Status belongs to the paper: an ANU co-author's label covers every ANU
+    # row of the same DOI (Kun Li's copy of Xin (Kelly) Liu's paper).
+    labelled_dois = {(row.get("doi") or "").lower() for row in rows
+                     if entries.get(id(row)) and row.get("doi")}
+    for row in rows:
+        if row.get("name") not in anu_names:
+            continue
+        doi = (row.get("doi") or "").lower()
+        issue = _in_an_issue(records.get(doi)) if doi else False
+        entry = entries.get(id(row)) or (doi in labelled_dois or None)
+        recent = True
+        if entry and not doi:
+            try:
+                recent = int(str(row.get("year"))[:4]) >= this_year - ANU_FORTHCOMING_MAX_AGE_YEARS
+            except (TypeError, ValueError):
+                recent = False
+        if entry and recent and (not doi or issue is False):
+            row["publication_status"] = "forthcoming"
+            ANU_STATUS_LOG.append(("forthcoming", row["name"], doi, row.get("title")))
+        else:
+            row["publication_status"] = "published"
+            if entry:
+                why = ("no DOI and the label is not recent" if not recent else
+                       "no DOI record to check" if issue is None else "now in an issue")
+                ANU_STATUS_LOG.append((f"labelled, kept published: {why}", row["name"], doi,
+                                       row.get("title")))
+            elif doi and issue is False:
+                ANU_STATUS_LOG.append(("online-first, not labelled: published", row["name"], doi,
+                                       row.get("title")))
+
+
+def _anu_final_rules(rows, pubs, anu_names, crossref_fetch=None):
+    """The v27 ANU rules, in order. Non-ANU rows pass through untouched."""
+    records = _anu_align_doi_records(rows, pubs, anu_names, crossref_fetch)
+    _anu_strip_footnote_marker(rows, anu_names)
+    _anu_one_title_per_doi(rows, anu_names)
+    rows = _anu_one_row_per_doi(rows, anu_names)
+    rows = _anu_drop_book_reviews(rows, anu_names, records)
+    # A caller that supplies its own Crossref lookup (a test) is offline, so
+    # the OpenAlex lookup is stubbed too.
+    rows = _anu_drop_openalex_proceedings(rows, anu_names,
+                                          (lambda w: {}) if crossref_fetch else None)
+    rows = _anu_drop_profile_copies(rows, anu_names, records)
+    ANU_STATUS_LOG.clear()
+    _anu_publication_status(rows, pubs, anu_names, records)
+    return rows
+
+
 # Initials as a citation writes them: "G.", "C. A.", "R. C. W", "S", "J.-P.".
 # Single capitals only, so a short surname ("Ho", "Ng", "Wu") is not one.
 _INITIALS_RE = re.compile(r"^(?:[A-Z]\.?(?:\s+|-)?)+$")
@@ -1155,14 +1749,18 @@ def _log_non_article(x, action, why):
 
 
 def build_publications(pubs, records=None, keep_type="Journal Article",
-                       verbose=True):
+                       verbose=True, crossref_fetch=None):
     """Records sort DOI-first so the better-catalogued copy survives dedup.
+
+    `crossref_fetch` (doi -> Crossref message) replaces the live Crossref
+    lookup the ANU rules make; tests pass one so they stay offline.
 
     ORCID is carried onto each row: names collide across eight universities
     (two staff already share the surname Tan), so a name is not a safe join
     key in a merged table.
     """
     SKIPPED_PREFIX_DUPS.clear()
+    ANU_INCEPTION_LOG.clear()
     TYPE_REVIEW_LOG.clear()
     orcid_by_name = {r["name_clean"]: r.get("orcid") for r in (records or [])}
     anu_names = _anu_staff_names(records)
@@ -1209,6 +1807,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
         repaired_journal = _anu_repository_journal_repair(x, anu_names)
         if repaired_journal:
             anu_repository_repairs.append((x["name"], x["title"], repaired_journal))
+        _anu_predates_abdc_inception(x, anu_names)
         journal_name = canonical_journal_name(x)
         # A row cannot be delivered as a verified journal article when no
         # journal can be named. Keep such records upstream for review, but do
@@ -1274,6 +1873,9 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
     out = merge_near_duplicates(out)
     out = _harmonise_doi_metadata(out)
     anu_text_changes = _anu_repair_title_text(out, pubs, anu_names)
+    ANU_V27_LOG.clear()
+    if anu_names:
+        out = _anu_final_rules(out, pubs, anu_names, crossref_fetch)
 
     if verbose:
         dropped = Counter((x.get("source"), x.get("type"))
@@ -1308,6 +1910,18 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
                   f"author count (DOI enrichment returned no authors)")
         for name, field, before, after in anu_text_changes:
             print(f"  ANU {field} text repair: {name}: {before[:60]!r} -> {after[:60]!r}")
+        for status, name, doi, title in ANU_STATUS_LOG:
+            print(f"  ANU status: {status}: {name}: {doi or '(no DOI)'} {str(title)[:60]!r}")
+        for name, title, year, journal, inception in ANU_INCEPTION_LOG:
+            print(f"  ANU rating withdrawn: {name}: {title[:60]!r} ({year}) predates "
+                  f"{journal!r} (ABDC inception {inception})")
+        if ANU_V27_LOG:
+            print(f"  ANU DOI-record/duplicate rules (v27): "
+                  + ", ".join(f"{k} {n}" for k, n in
+                              Counter(e[0] for e in ANU_V27_LOG).most_common()))
+            for entry in ANU_V27_LOG:
+                if not entry[0].startswith(("title from", "year from")):
+                    print("    " + " | ".join(str(v)[:110] for v in entry))
         if anu_title_repairs:
             print(f"  repaired {anu_title_repairs} ANU title(s) at export "
                   f"time (FIX I, applied here for a row from a non-page source)")

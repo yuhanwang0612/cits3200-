@@ -2,6 +2,7 @@ journal_name,journal_raw,publisher,issn,quality_rank,abdc_edition,impact_factor,
 Australian Journal of Management,Australian Journal of Management,SAGE Publishing,0312-8962; 1327-2020,A,2025,3.1,5.0,2025,0.778,Q1,57,3.96,2025
 Australian Accounting Review,Australian Accounting Review,Wiley,1035-6908; 1835-2561,B,2025,2.8,3.1,2025,0.702,Q2,54,3.1,2025
 Accountants Digest,Accountants Digest,,,,,,,,,,,,
+IEEE Transactions on Knowledge and Data Engineering,IEEE Transactions on Knowledge and Data Engineering,IEEE Computer Society,1041-4347; 1558-2191; 2326-3865,,,11.6,10.9,2025,3.025,Q1,233,13.08,2025
 Natural Language Engineering,Natural Language Engineering,Cambridge University Press,1351-3249; 1469-8110,,,2.5,3.1,2025,,,,,
 The Accounting Review,The Accounting Review,American Accounting Association,0001-4826; 1558-7967,A*,2025,4.0,7.2,2025,4.403,Q1,217,3.71,2025
 Journal of Management Accounting Research,Journal of Management Accounting Research,American Accounting Association,1049-2127; 1558-8033,A*,2025,1.5,2.1,2025,1.248,Q1,38,1.91,2025
@@ -58,7 +59,7 @@ Accounting and Finance in Transition,Accounting and Finance in Transition,,,,,,,
 Journal of the Asia-pacific Centre for Environmental Accountability,Journal of the Asia-pacific Centre for Environmental Accountability,,,,,,,,,,,,
 International Business and Economics Research Journal,International Business and Economics Research Journal,,,,,,,,,,,,
 Asian Review of Accounting,Asian Review of Accounting,Emerald Publishing Limited,1758-8863; 1321-7348,B,2025,3.3,2.7,2025,0.556,Q2,38,4.6,2025
-Journal of Financial Reporting,Journal of Financial Reporting,,2380-2154; 2380-2146,A,2025,2.4,3.4,2025,,,,,
+Journal of Financial Reporting,Journal of Financial Reporting,,,,,,,,,,,,
 Australian Tax Forum,Australian Tax Forum,,0812-695X,A*,2025,,,,,,,,
 Australian Tax Review,Australian Tax Review,,0311-094X,A,2025,0.1,0.1,2025,,,,,
 Oxford University Commonwealth Law Journal,Oxford University Commonwealth Law Journal,Taylor & Francis,1472-9342; 1757-8469,A*,2025,,,,0.106,Q4,8,0.67,2025
@@ -101,9 +102,9 @@ Journal of Financial and Quantitative Analysis,Journal of Financial and Quantita
 Journal of Empirical Finance,Journal of Empirical Finance,Elsevier BV,0927-5398; 1879-1727,A,2025,2.5,2.6,2025,1.139,Q1,101,3.05,2025
 Financial Analysts Journal,Financial Analysts Journal,Taylor & Francis,0015-198X; 1938-3312,A,2025,2.2,4.2,2025,1.425,Q1,99,2.64,2025
 Critical Finance Review,Critical Finance Review,Now Publishers,2164-5744; 2164-5760,A*,2025,1.1,2.0,2025,6.838,Q1,17,1.6,2025
-Financial Management,Financial Management,,0046-3892; 1755-053X,A*,2025,7.5,5.3,2025,3.477,Q1,88,9.5,2025
+Financial Management,Financial Management,Wiley,0046-3892; 1755-053X,A*,2025,7.5,5.3,2025,3.477,Q1,88,9.5,2025
 Games and Economic Behavior,Games and Economic Behavior,Elsevier BV,0899-8256; 1090-2473,A*,2025,1.1,1.2,2025,1.11,Q1,114,1.17,2025
-Journal of Political Economy: Microeconomics,Journal of Political Economy Microeconomics,,2832-9368; 2832-9376,A,2025,,,,,,,,
+Journal of Political Economy: Microeconomics,Journal of Political Economy Microeconomics,University of Chicago Press,2832-9368; 2832-9376,A,2025,,,,,,,,
 Qualitative Research in Accounting and Management,Qualitative Research in Accounting and Management,Emerald Publishing Limited,1176-6093; 1758-7654,A,2025,2.8,2.9,2025,1.027,Q1,42,3.7,2025
 "Journal of Money, Credit and Banking","Journal of Money, Credit & Banking",Wiley,0022-2879; 1538-4616,A*,2025,1.9,2.2,2025,1.999,Q1,133,2.36,2025
 Annals of Operations Research,Annals of Operations Research,Springer Science+Business Media,0254-5330; 1572-9338,A,2025,4.1,4.9,2025,1.166,Q1,143,6.13,2025
@@ -135,7 +136,6 @@ International Journal of Electronic Commerce,International Journal of Electronic
 Data Base for Advances in Information Systems,ACM SIGMIS Database the DATABASE for Advances in Information Systems,Association for Computing Machinery,0095-0033; 1532-0936; 2331-1584; 2331-1622,A,2025,1.7,2.6,2025,0.433,Q2,73,2.38,2025
 Journal of the Association for Information Systems,Journal of the Association for Information Systems,Association for Information Systems,1536-9323,A*,2025,7.5,9.3,2025,2.577,Q1,117,8.63,2025
 Journal of Computer Information Systems,Journal of Computer Information Systems,Taylor & Francis,0887-4417; 2380-2057,A,2025,6.6,4.7,2025,0.978,Q1,89,6.71,2025
-Journal of the American Society for Information Science and Technology,Journal of the American Society for Information Science and Technology,Wiley,1532-2882; 1532-2890,,,,,,,,,,
 Asia-Pacific Journal of Accounting and Economics,Asia-Pacific Journal of Accounting & Economics,Taylor & Francis,1608-1625; 2164-2257,B,2025,2.1,1.8,2025,0.459,Q2,33,2.39,2025
 Australasian Journal of Information Systems,AJIS. Australasian journal of information systems/AJIS. Australian journal of information systems/Australian journal of information systems,Australasian Association for Information Systems,1039-7841; 1326-2238; 1449-8618,A,2025,1.4,2.4,2025,0.468,Q2,37,2.16,2025
 Journal of Finance and Banking,Journal of Finance and Banking,,2227-541X,,,,,,,,,,
