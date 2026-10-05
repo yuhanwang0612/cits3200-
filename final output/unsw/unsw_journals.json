@@ -256,22 +256,6 @@
     "scimago_year": null
   },
   {
-    "journal_name": "Journal of Business Finance & Accounting",
-    "journal_raw": "Journal of Business Finance and Accounting",
-    "publisher": "Wiley",
-    "issn": "0306-686X; 1468-5957",
-    "quality_rank": "A*",
-    "abdc_edition": "2025",
-    "impact_factor": 2.6,
-    "impact_factor_5yr": 3.5,
-    "jcr_year": 2025,
-    "sjr": 1.202,
-    "sjr_quartile": "Q1",
-    "h_index": 102,
-    "cites_per_doc_2y": 3.81,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Journal of Financial and Quantitative Analysis",
     "journal_raw": "Journal of Financial and Quantitative Analysis",
     "publisher": "Cambridge University Press",
@@ -450,18 +434,18 @@
   {
     "journal_name": "Tax Notes International",
     "journal_raw": "Tax Notes International",
-    "publisher": "Wiley",
-    "issn": "0024-3590; 1939-5590; 1939-5604",
+    "publisher": null,
+    "issn": null,
     "quality_rank": null,
     "abdc_edition": null,
-    "impact_factor": 3.5,
-    "impact_factor_5yr": 4.6,
-    "jcr_year": 2025,
-    "sjr": 1.527,
-    "sjr_quartile": "Q1",
-    "h_index": 236,
-    "cites_per_doc_2y": 3.95,
-    "scimago_year": "2025"
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
   },
   {
     "journal_name": "Australian Tax Forum",
@@ -1101,6 +1085,22 @@
     "sjr_quartile": "Q1",
     "h_index": 100,
     "cites_per_doc_2y": 8.33,
+    "scimago_year": "2025"
+  },
+  {
+    "journal_name": "Journal of Business Finance & Accounting",
+    "journal_raw": "Journal of Business Finance and Accounting",
+    "publisher": "Wiley",
+    "issn": "0306-686X; 1468-5957",
+    "quality_rank": "A*",
+    "abdc_edition": "2025",
+    "impact_factor": 2.6,
+    "impact_factor_5yr": 3.5,
+    "jcr_year": 2025,
+    "sjr": 1.202,
+    "sjr_quartile": "Q1",
+    "h_index": 102,
+    "cites_per_doc_2y": 3.81,
     "scimago_year": "2025"
   },
   {
@@ -1762,7 +1762,7 @@
   {
     "journal_name": "Journal of Accounting Literature",
     "journal_raw": "JOURNAL OF ACCOUNTING LITERATURE",
-    "publisher": "Elsevier BV",
+    "publisher": "Emerald",
     "issn": "0737-4607; 2452-1469",
     "quality_rank": "A",
     "abdc_edition": "2025",
@@ -4128,22 +4128,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "My Research Gateway 20130329 Test Case 2",
-    "journal_raw": "My Research Gateway 20130329 Test Case 2",
-    "publisher": "Oxford University Press",
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "Vanderbilt Law Review",
     "journal_raw": "Vanderbilt Law Review",
     "publisher": null,
@@ -4462,22 +4446,6 @@
     "h_index": 77,
     "cites_per_doc_2y": 3.62,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "ABACUS - a Journal of Accounting Finance and Business Studies",
-    "journal_raw": "ABACUS - A Journal of Accounting Finance and Business Studies",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   },
   {
     "journal_name": "Research in Accounting in Emerging Economies",
@@ -5376,22 +5344,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Population Index",
-    "journal_raw": "POPULATION INDEX",
-    "publisher": "Office of Population Research",
-    "issn": "0032-4701; 2325-7636",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "Journal of Public Economics",
     "journal_raw": "Journal of Public Economics",
     "publisher": "Elsevier BV",
@@ -5952,22 +5904,6 @@
     "scimago_year": null
   },
   {
-    "journal_name": "S Afr Med J",
-    "journal_raw": "S Afr Med J",
-    "publisher": "Health and Medical Publishing Group",
-    "issn": "0256-9574; 2078-5135",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 1.4,
-    "impact_factor_5yr": 1.4,
-    "jcr_year": 2025,
-    "sjr": 0.371,
-    "sjr_quartile": "Q3",
-    "h_index": 70,
-    "cites_per_doc_2y": 0.89,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "New Zealand Journal of Tax Law and Policy",
     "journal_raw": "New Zealand Journal of Tax Law and Policy",
     "publisher": null,
@@ -6402,22 +6338,6 @@
   {
     "journal_name": "New Age Journal",
     "journal_raw": "New Age Journal",
-    "publisher": null,
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Encyclopaedia Britannica",
-    "journal_raw": "Encyclopaedia Britannica",
     "publisher": null,
     "issn": null,
     "quality_rank": null,
@@ -7010,7 +6930,7 @@
   {
     "journal_name": "Agenda: a journal of policy analysis and reform",
     "journal_raw": "Agenda: A Journal of Policy Analysis and Reform",
-    "publisher": "ANU Press",
+    "publisher": null,
     "issn": "1322-1833; 1447-4735",
     "quality_rank": "B",
     "abdc_edition": "2025",
@@ -7680,22 +7600,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "NBER Working Paper Series",
-    "journal_raw": "NBER Working Paper Series",
-    "publisher": "National Bureau of Economic Research",
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
     "journal_name": "Applied Financial Economics",
     "journal_raw": "Applied Financial Economics",
     "publisher": "Chapman and Hall London",
@@ -7917,22 +7821,6 @@
     "sjr_quartile": "Q1",
     "h_index": 33,
     "cites_per_doc_2y": 3.93,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Journal of Cross-Cultural Psychology",
-    "journal_raw": "Journal of Cross-Cultural Psychology",
-    "publisher": "SAGE Publishing",
-    "issn": "0022-0221; 1552-5422",
-    "quality_rank": "A",
-    "abdc_edition": "2025",
-    "impact_factor": 3.6,
-    "impact_factor_5yr": 4.4,
-    "jcr_year": 2025,
-    "sjr": 1.378,
-    "sjr_quartile": "Q1",
-    "h_index": 143,
-    "cites_per_doc_2y": 3.71,
     "scimago_year": "2025"
   }
 ]

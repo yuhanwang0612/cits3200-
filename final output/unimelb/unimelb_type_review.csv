@@ -1,17 +1,17 @@
 action,reason,name,title,year,journal,doi,source
 review,OpenAlex type: paratext,André Gygax,Index composition changes and the cost of incumbency,2010,Journal of Banking & Finance,10.1016/j.jbankfin.2010.04.007,UniMelb Minerva
-review,OpenAlex type: Book Chapter,John Handley,On the upper bound of a call option,2005,Review of Derivatives Research,10.1007/s11147-005-0381-6,UniMelb Minerva
-review,OpenAlex type: Book Chapter,Matthew Pinnuck,Why did the Big Four get so large? Evidence from Australia,2025,Review of accounting studies,10.1007/s11142-025-09871-x,UniMelb Minerva
-dropped,OpenAlex type: editorial,Michael Davern,Celebrations and Reflections in Pursuit of Impact,2025,Australasian Journal of Information Systems,10.3127/ajis.v29.6415,UniMelb Minerva
-dropped,OpenAlex type: editorial,Stuart Black,Celebrations and Reflections in Pursuit of Impact,2025,Australasian Journal of Information Systems,10.3127/ajis.v29.6415,UniMelb Minerva
-dropped,OpenAlex type: editorial,Stuart Black,AJIS Thinking Differently in Service of The Community,2024,Australasian Journal of Information Systems,10.3127/ajis.v28.5427,ORCID
-dropped,OpenAlex type: editorial,Michael Davern,Editors’ Comments AJIS Thinking Differently in Service of The Community,2024,Australasian Journal of Information Systems,10.3127/ajis.v28.5427,ORCID
 review,OpenAlex type: Book Chapter,Anne Lillis,Simons’ Levers of Control Framework: Commensuration within and of the Framework,2017,Advances in Management Accounting,10.1108/s1474-787120170000028004,ORCID
 dropped,OpenAlex type: editorial,Naomi Soderstrom,"Approaching Research Broadly, Not Just Deeply: The Case of Real Activities Manipulation",2016,China Journal of Accounting Studies,10.1080/21697213.2016.1218634,ORCID
 dropped,OpenAlex type: book-review,Naomi Soderstrom,Accounting for Sustainability,2008,Accounting Review,10.2308/accr.2008.83.5.1383,ORCID
 dropped,OpenAlex type: letter,Carsten Murawski,Reply to: The Choice of Prior in Bayesian Modeling of the Information Sampling Task.,2017,Biological psychiatry,10.1016/j.biopsych.2017.05.023,ORCID
+dropped,conference abstract (Frontiers),Carsten Murawski,Predicting implicit abstract stimulus attributes from patterns of event-related potentials,2013,Frontiers in Human Neuroscience,10.3389/conf.fnhum.2013.212.00079,ORCID
 review,OpenAlex type: Book Chapter,Jun Yu,Asymptotic properties of Least Squares Estimator in local to unity processes with fractional Gaussian noises,2023,Essays in Honor of Joon Y. Park: Econometric Theory,10.1108/s0731-90532023000045a002,ORCID
 review,OpenAlex type: Book Chapter,Jun Yu,Model selection for explosive models,2016,Essays in Honor of Cheng Hsiao,10.1108/s0731-905320200000041003,ORCID
-review,OpenAlex type: Book Chapter,Jun Yu,Simulated maximum likelihood estimation of continuous time stochastic volatility models,2010,,10.1108/s0731-9053(2010)0000026009,ORCID
+dropped,discussant piece,Jun Yu,Realized variance and market microstructure noise - Comment,2006,,10.1198/073500106000000116,ORCID
 review,OpenAlex type: Preprint,Gary Biddle,How does financial reporting quality relate to investment efficiency?,2009,Journal of Accounting and Economics,10.1016/j.jacceco.2009.09.001,OpenAlex
 review,OpenAlex type: Preprint,Gary Biddle,Economic value added: some empirical EVAdence,1998,Managerial Finance,10.1108/03074359810765714,OpenAlex
+dropped,discussant piece,Gary Biddle,[Discussion of Accounting Methods and Management Decisions: The Case of Inventory Costing and Inventory Policy]: A Reply,1980,Journal of Accounting Research,10.2307/2490344,OpenAlex
+dropped,conference abstract (Frontiers),Carsten Murawski,Single-trial P300 amplitudes index feedback information in reinforcement learning,2013,Frontiers in Human Neuroscience,10.3389/conf.fnhum.2013.212.00075,OpenAlex
+dropped,conference abstract (Frontiers),Carsten Murawski,Financial decision-making tasks and simple perceptual tasks – a comparison,1970,Frontiers in Behavioral Neuroscience,10.3389/conf.neuro.08.2009.01.011,OpenAlex
+dropped,conference abstract (Frontiers),Carsten Murawski,Belief updating is indexed by single-trial P3 amplitude: a neurocognitive modelling approach to EEG,2015,Frontiers in Human Neuroscience,10.3389/conf.fnhum.2015.217.00025,OpenAlex
+dropped,conference abstract (Frontiers),Carsten Murawski,The effects of context priming on intertemporal decision-making,2013,Frontiers in Human Neuroscience,10.3389/conf.fnhum.2013.212.00077,OpenAlex

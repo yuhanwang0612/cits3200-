@@ -2000,38 +2000,6 @@
     "scimago_year": null
   },
   {
-    "journal_name": "World Journal of Surgical Oncology",
-    "journal_raw": "World Journal of Surgical Oncology",
-    "publisher": "BioMed Central Ltd.",
-    "issn": "1477-7819",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.8,
-    "impact_factor_5yr": 2.9,
-    "jcr_year": 2025,
-    "sjr": 0.761,
-    "sjr_quartile": "Q1",
-    "h_index": 87,
-    "cites_per_doc_2y": 2.72,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Clinical Imaging",
-    "journal_raw": "Clinical Imaging",
-    "publisher": "Elsevier Inc.",
-    "issn": "0899-7071; 1873-4499",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.2,
-    "impact_factor_5yr": 1.8,
-    "jcr_year": 2025,
-    "sjr": 0.565,
-    "sjr_quartile": "Q2",
-    "h_index": 63,
-    "cites_per_doc_2y": 2.08,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Pacific Accounting Review",
     "journal_raw": "Pacific Accounting Review",
     "publisher": "Emerald Publishing Limited",

@@ -2848,22 +2848,6 @@
     "scimago_year": "2025"
   },
   {
-    "journal_name": "Frontiers in Human Neuroscience",
-    "journal_raw": "Frontiers in Human Neuroscience",
-    "publisher": "Frontiers Media",
-    "issn": "1662-5161",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 3.6,
-    "impact_factor_5yr": 3.8,
-    "jcr_year": 2025,
-    "sjr": 0.908,
-    "sjr_quartile": "Q1",
-    "h_index": 180,
-    "cites_per_doc_2y": 3.26,
-    "scimago_year": "2025"
-  },
-  {
     "journal_name": "Journal of Contemporary Accounting and Economics",
     "journal_raw": "Journal of Contemporary Accounting & Economics",
     "publisher": "Elsevier BV",
@@ -3620,22 +3604,6 @@
     "journal_raw": "Applied Finance and Accounting",
     "publisher": null,
     "issn": "2374-2410; 2374-2429",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
-  },
-  {
-    "journal_name": "Internal Medicine News",
-    "journal_raw": "Internal Medicine News",
-    "publisher": "Wiley",
-    "issn": "1097-8690",
     "quality_rank": null,
     "abdc_edition": null,
     "impact_factor": null,
@@ -5038,21 +5006,5 @@
     "h_index": null,
     "cites_per_doc_2y": null,
     "scimago_year": null
-  },
-  {
-    "journal_name": "Journal of Electronic Materials",
-    "journal_raw": "Journal of Electronic Materials",
-    "publisher": "Springer Science+Business Media",
-    "issn": "0361-5235; 0381-5235; 1543-186X",
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": 2.8,
-    "impact_factor_5yr": 2.5,
-    "jcr_year": 2025,
-    "sjr": 0.471,
-    "sjr_quartile": "Q2",
-    "h_index": 121,
-    "cites_per_doc_2y": 3.0,
-    "scimago_year": "2025"
   }
 ]
