@@ -69,7 +69,9 @@ def _build():
                 f"ABDC title collision: {existing['title']!r} and {title!r} "
                 f"both normalise to {key!r} but carry different ratings "
                 f"({existing['rating']!r} vs {rating!r})")
-        _title_lookup[key] = {"rating": rating, "title": title, "issns": issns}
+        inception = re.sub(r"\D", "", str(row.get("Year Inception", "")))[:4]
+        _title_lookup[key] = {"rating": rating, "title": title, "issns": issns,
+                              "inception": int(inception) if inception else None}
 
     # A wrong header row or sheet name yields a lookup full of junk and
     # silently unrates everything, so fail loudly instead.
@@ -103,6 +105,15 @@ def title_issns(normalised_title):
     _build()
     hit = _title_lookup.get(normalised_title)
     return list(hit["issns"]) if hit else None
+
+
+def title_inception(normalised_title):
+    """The ABDC list's "Year Inception" for an already-normalised title, or
+    None. A publication dated before it cannot be in that journal: the list
+    rates the journal of that name, not an older one that shared it."""
+    _build()
+    hit = _title_lookup.get(normalised_title)
+    return hit["inception"] if hit else None
 
 
 def enrich(pubs, verbose=True):

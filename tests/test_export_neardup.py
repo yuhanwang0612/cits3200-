@@ -405,7 +405,8 @@ def test_anu_health_economics_row_is_not_excluded():
                 journal="European Journal of Health Economics")
     records = [{"name_clean": "Wai-Man (Raymond) Liu",
                 "university": "Australian National University"}]
-    out = build_publications([row], records=records, verbose=False)
+    out = build_publications([row], records=records, verbose=False,
+                             crossref_fetch=lambda doi: {})
     assert len(out) == 1
     assert out[0]["journal_name"] == "European Journal of Health Economics"
 

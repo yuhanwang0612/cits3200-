@@ -1,3 +1,6 @@
 action,reason,name,title,year,journal,doi,source
 dropped,OpenAlex type: editorial,Susanna Ho,Next-generation IS research methods – towards a better understanding of complex and dynamic phenomena … and generative AI as the elephant in the room,2025,Journal of Information Technology,10.1177/02683962251340699,ORCID
-review,OpenAlex type: Book Chapter,Mark Wilson,Was the Global Settlement Effective in Mitigating Systematic Bias in Affiliated Analyst Recommendations?,2017,Journal of Business Ethics,10.1007/s10551-015-2888-6,ORCID
+dropped,"book review (Crossref: short, no abstract)",Greg Shailer,Auditing and Assurance Services and Ethics in Australia: An Integrated Approach,2011,Journal of Accounting & Organizational Change,10.1108/18325911111182330,ORCID
+dropped,"book review (Crossref: short, no abstract)",Susanna Ho,Human‐computer interaction and management information systems: Foundations,2008,Journal of the American Society for Information Science and Technology,10.1002/asi.20821,OpenAlex
+dropped,conference paper (OpenAlex citation: PACIS 2010 Proceedings),Susanna Ho,The Effects of Location-Based Mobile Personalization on Users' Behavior,2010,Journal of the Association for Information Systems,,OpenAlex
+dropped,conference paper (OpenAlex citation: PACIS 2015 Proceedings),Susanna Ho,ICT Business Case Approach in Public-Sector: A Case Study of the Australian Federal Government,2015,Journal of the Association for Information Systems,,OpenAlex

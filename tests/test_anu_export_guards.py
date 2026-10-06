@@ -42,7 +42,7 @@ def test_doi_row_leaves_authors_to_enrichment_with_owner_inclusive_fallback():
     row, _ = anu._map_publication(pub, "Louise Lu", {}, Counter())
     assert row["n_authors"] is None and row["authors"] is None
     assert row["_anu_profile_n_authors"] == 4          # 3 named + Louise Lu herself
-    assert row["_anu_profile_authors"] == "Kathy Wang, Leye Li and Mark Wilson"
+    assert row["_anu_profile_authors"] == "Louise Lu; Kathy Wang; Leye Li; Mark Wilson"
 
 
 def test_doi_row_without_coauthor_text_has_no_fallback():
@@ -56,7 +56,8 @@ def test_no_doi_row_strips_list_number_and_counts_owner_once():
     pub = _publication(researcher_name="Wai-Man (Raymond) Liu",
                        coauthors="19. Liu, W.-M. , Yu, J. & Zhang, B", author_count=4)
     row, _ = anu._map_publication(pub, "Wai-Man (Raymond) Liu", {}, Counter())
-    assert row["authors"] == "Liu, W.-M. , Yu, J. & Zhang, B"
+    # v27: the owner keeps their place in the citation, under their display name.
+    assert row["authors"] == "Wai-Man (Raymond) Liu; J. Yu; B Zhang"
     assert row["n_authors"] == 3                         # owner already named
 
 
