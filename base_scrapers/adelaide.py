@@ -150,6 +150,17 @@ def _profile_position(soup):
     return text or None
 
 
+def _is_research_student(soup):
+    """A PhD/HDR candidate's profile, not a staff member's.
+
+    Researcher Profiles puts a student's status in p.hdr-desc ("Higher Degree
+    by Research Candidate") where staff have p.position; Sunze Yu came through
+    with a blank title that way. Someone with a staff position who is also
+    enrolled keeps their profile.
+    """
+    return bool(soup.select_one("p.hdr-desc")) and not _profile_position(soup)
+
+
 def _directory_position(session, username):
     """The position from the public People Directory, for a Researcher
     Profiles page whose position line is empty.
@@ -314,6 +325,8 @@ def _visit_profile(username):
             return None
         soup = BeautifulSoup(resp.text, "html.parser")
         if not _in_accounting_finance_school(soup):
+            return None
+        if _is_research_student(soup):
             return None
 
         h1 = soup.find("h1")
