@@ -259,7 +259,13 @@ def test_no_researcher_appears_at_two_universities(tables):
     for uni, t in tables.items():
         for name in t["staff"]["name"]:
             seen.setdefault(name, []).append(uni)
-    both = {n: u for n, u in seen.items() if len(u) > 1}
+    # Reviewed: listed at both on purpose, so the merged table keys on
+    # (name, university), never name alone.
+    reviewed = {
+        "Andrew Terry": "one person, currently employed at both UNSW and USyd",
+        "Lisa Powell": "two different people (different ORCIDs)",
+    }
+    both = {n: u for n, u in seen.items() if len(u) > 1 and n not in reviewed}
     assert not both, f"same name at more than one university: {both}"
 
 
