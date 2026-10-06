@@ -200,6 +200,11 @@ def user_to_staff(user: dict, profile_url: str, discipline: str) -> dict:
         if mapped:
             academic_title = mapped
             break
+    # A head of school can list only the admin role ("Head of School,
+    # Accounting, Governance and Regulation" for Martin Bugeja). The profile's
+    # own title field still says "Professor"; rank() ignores Dr/Mr/Ms there.
+    if not academic_title:
+        academic_title = rank(None, prefix=clean_space(user.get("title")) or None)
 
     raw_orcid = user.get("orcid")
     if isinstance(raw_orcid, dict):

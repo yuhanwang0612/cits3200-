@@ -581,6 +581,20 @@ _ADMIN_TITLES = [
 ]
 
 
+# FR4: education- and teaching-focused positions are excluded from the
+# rankings. UNSW's scraper already skips "Education Focused" titles; this
+# applies the same rule, plus plainly teaching-only titles, to every
+# university at export.
+TEACHING_ROLE = re.compile(
+    r"education[-\s]?focus|teaching[-\s]?focus"
+    r"|teaching (fellow|specialist|associate)|\btutor\b|casual teaching|\btchg\b",
+    re.I)
+
+
+def is_teaching_role(job_title):
+    return bool(job_title and TEACHING_ROLE.search(job_title))
+
+
 def academic_title_for_level(level_code, job_title=None):
     """The academic rank for a level ("Senior Lecturer"), or None off the
     scale. The job title's own rank wins when it is at the same level."""
@@ -2107,6 +2121,18 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
                   f"{', '.join(_no_level[:4])}"
                   + (" ..." if len(_no_level) > 4 else ""))
 
+
+    # Runs after the overrides so a title filled from staff_overrides.csv
+    # ("Teaching Specialist") counts too. Their publications go with them,
+    # and the journals table below is built from what is left.
+    _teaching = {s["name"] for s in staff if is_teaching_role(s.get("job_title"))}
+    if _teaching:
+        staff = [s for s in staff if s["name"] not in _teaching]
+        publications = [p for p in publications if p["name"] not in _teaching]
+        if verbose:
+            print(f"  excluded {len(_teaching)} teaching-focused staff (FR4): "
+                  f"{', '.join(sorted(_teaching)[:4])}"
+                  + (" ..." if len(_teaching) > 4 else ""))
 
     if drop_staff_without_pubs:
         have = {p["name"] for p in publications}

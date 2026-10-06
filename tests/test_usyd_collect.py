@@ -140,3 +140,24 @@ def test_mapped_rows_validate_against_shared_contract():
         "journal": "Accounting Review",
     }, staff[0])]
     assert validate(staff, pubs, verbose=False) == []
+
+
+def test_a_head_of_school_falls_back_to_the_profile_title():
+    """Martin Bugeja's only position is the admin role; USyd's title field
+    says Professor."""
+    user = {
+        "firstNameLastName": "Martin Bugeja",
+        "title": "Professor",
+        "positions": [{"position": "Head of School, Accounting, Governance and Regulation"}],
+    }
+    row = usyd.user_to_staff(user, "https://profiles.sydney.edu.au/martin.bugeja", "Accounting")
+    assert row["title"] == "Head of School, Accounting, Governance and Regulation"
+    assert row["title_clean"] == "Professor"
+    assert row["level_code"] == "E"
+
+
+def test_a_dr_title_field_gives_no_level():
+    user = {"firstNameLastName": "Example Person", "title": "Dr",
+            "positions": [{"position": "Program Director"}]}
+    row = usyd.user_to_staff(user, "https://profiles.sydney.edu.au/example.person", "Finance")
+    assert row["level_code"] is None

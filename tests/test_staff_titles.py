@@ -129,3 +129,44 @@ def test_the_roles_actually_in_the_data():
 def test_a_blank_job_title_has_no_admin_title():
     for value in ("", "   ", None):
         assert admin_title_from(value) is None
+
+
+# ------------------------------------------------ FR4: teaching-focused staff
+
+import pytest                                                      # noqa: E402
+from export import export, is_teaching_role                        # noqa: E402
+
+
+@pytest.mark.parametrize("title", [
+    "Lecturer (Education Focused)", "Senior Lecturer - Education Focussed",
+    "Lecturer in Audit (Teaching Focused)", "Associate Professor of Finance (Education Focused)",
+    "Tutor - Education Focussed", "Teaching Fellow", "Teaching Associate",
+    "Teaching Specialist", "Casual Teaching Lecturer", "P/T Tchg Lecturer"])
+def test_teaching_focused_titles_are_recognised(title):
+    assert is_teaching_role(title)
+
+
+@pytest.mark.parametrize("title", [
+    "Senior Lecturer", "Professor", "Associate Dean (Teaching and Learning)",
+    "Head of School", "Senior Research Fellow", "Lecturer in Finance", None, ""])
+def test_research_and_admin_titles_are_kept(title):
+    assert not is_teaching_role(title)
+
+
+def _record(name, title):
+    return {"name_clean": name, "title": title, "university": "University of Sydney",
+            "discipline": "Finance", "profile_url": "https://x"}
+
+
+def _paper(name, doi):
+    return {"type": "Journal Article", "name": name, "title": f"Paper {doi}",
+            "doi": doi, "year": "2020", "journal": "Accounting Review"}
+
+
+def test_export_drops_teaching_staff_and_their_papers(tmp_path):
+    records = [_record("Ann Research", "Senior Lecturer"),
+               _record("Ted Teach", "Lecturer (Education Focused)")]
+    pubs = [_paper("Ann Research", "10.1/a"), _paper("Ted Teach", "10.1/t")]
+    tables = export(records, pubs, out_dir=tmp_path / "usyd", verbose=False)
+    assert [s["name"] for s in tables["staff"]] == ["Ann Research"]
+    assert [p["name"] for p in tables["publications"]] == ["Ann Research"]
