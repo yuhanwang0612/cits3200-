@@ -170,3 +170,15 @@ def test_export_drops_teaching_staff_and_their_papers(tmp_path):
     tables = export(records, pubs, out_dir=tmp_path / "usyd", verbose=False)
     assert [s["name"] for s in tables["staff"]] == ["Ann Research"]
     assert [p["name"] for p in tables["publications"]] == ["Ann Research"]
+
+
+def test_an_override_fills_the_level_when_the_title_names_no_rank(tmp_path):
+    """Stuart Black: 'Enterprise Fellow in data, analytics, disruption and
+    innovation' has no rank word; staff_overrides.csv says Assistant Professor."""
+    records = [{"name_clean": "Stuart Black", "university": "University of Melbourne",
+                "title": "Enterprise Fellow in data, analytics, disruption and innovation",
+                "discipline": "Accounting", "profile_url": "https://x"}]
+    pubs = [_paper("Stuart Black", "10.1/s")]
+    staff = export(records, pubs, out_dir=tmp_path / "unimelb", verbose=False)["staff"]
+    assert staff[0]["academic_level"] == "B"
+    assert staff[0]["job_title"].startswith("Enterprise Fellow")

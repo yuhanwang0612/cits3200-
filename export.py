@@ -2084,7 +2084,9 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
     _applied = 0
     for _s in staff:
         _job, _ = split_job_title(_s.get("job_title"), _s.get("academic_level"))
-        if _job:
+        # A title with no rank in it ("Enterprise Fellow in data ...") still
+        # leaves the level blank, so an override applies there too.
+        if _job and _s.get("academic_level"):
             continue
         _ov = _override_for(_s)
         if not _ov:
