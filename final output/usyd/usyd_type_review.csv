@@ -1,7 +1,9 @@
 action,reason,name,title,year,journal,doi,source
 dropped,OpenAlex type: editorial,Eddie Anderson,Preface to the Special Issue on Information and Decisions in Social and Economic Networks,2016,Operations Research,10.1287/opre.2016.1513,Sydney Profiles
+dropped,OpenAlex type: editorial,Jane Andrew,Big data and accounting,2022,Critical Perspectives on Accounting,10.1016/j.cpa.2022.102478,Sydney Profiles
 dropped,OpenAlex type: editorial,Jane Andrew,Special Issue Editorial: Covid and the environment in crisis,2022,Critical Perspectives on Accounting,10.1016/j.cpa.2021.102413,Sydney Profiles
 dropped,OpenAlex type: editorial,Jane Andrew,"Special issue on Accounting, disasters and the government of biosecurity",2020,Critical Perspectives on Accounting,10.1016/j.cpa.2020.102206,Sydney Profiles
+dropped,OpenAlex type: editorial,Max Baker,Big data and accounting,2022,Critical Perspectives on Accounting,10.1016/j.cpa.2022.102478,Sydney Profiles
 review,OpenAlex type: Book,Wai-Fong Chua,Critical perspectives in management control,2015,Critical Perspectives in Management Control,10.1007/978-1-349-07658-1,Sydney Profiles
 dropped,OpenAlex type: book-review,Wai-Fong Chua,"Book Review: Controlling Strategy: Management, Accounting, and Performance Measurement",2006,Organization Studies,10.1177/0170840606066421,Sydney Profiles
 review,OpenAlex type: Book Chapter,Wai-Fong Chua,"Accounting and Control in Health Care: Behavioural, Organisational, Sociological and Critical Perspectives",2006,Handbooks of Management Accounting Research,10.1016/s1751-3243(06)02014-1,Sydney Profiles
@@ -11,12 +13,11 @@ dropped,OpenAlex type: editorial,Graeme Dean,Abacus: Editorial announcement,2009
 dropped,OpenAlex type: editorial,Graeme Dean,Commentary on Siena Open Forum: Conceptual Framework,2008,Abacus,10.1111/j.1467-6281.2008.00259.x,Sydney Profiles
 review,OpenAlex type: Book Chapter,Graeme Dean,Corporate Governance: A Case of ‘Misplaced Concreteness’?,2005,Advances in Public Interest Accounting,10.1016/s1041-7060(05)11002-5,Sydney Profiles
 dropped,OpenAlex type: editorial,Matthew Egan,"Finding Our Voices – Exploring Diversity, Inclusion and Accounting by the Marginalised and Managed Diverse",2024,Social and Environmental Accountability Journal,10.1080/0969160x.2024.2374244,Sydney Profiles
-dropped,OpenAlex type: book-review,Matthew Egan,Water Footprint: Help or Hindrance?,2013,Social and Environmental Accountability Journal,10.1080/0969160x.2013.820396,Sydney Profiles
 review,OpenAlex type: Book Chapter,Clinton Free,A research note on control practice and culture at Enron,2025,Advances in Management Accounting,10.1016/s1474-7871(08)17012-5,Sydney Profiles
-review,OpenAlex type: Book,Clinton Free,"Strain, coping and sustained fraud offending",2020,,10.52922/ti04367,Sydney Profiles
 dropped,OpenAlex type: book-review,Wes Hamilton-Jessop,Corporate Social Responsibility and Tax Aggressiveness: An Empirical Analysis,2013,Social and Environmental Accountability Journal,10.1080/0969160x.2013.820421,Sydney Profiles
 dropped,OpenAlex type: book-review,Angela Hecimovic,Stakeholder Inclusivity in Social and Environmental Report Assurance,2011,Social and Environmental Accountability Journal,10.1080/0969160x.2011.556414,Sydney Profiles
 dropped,OpenAlex type: editorial,Stewart Jones,Special Issue on Earnings Management,2018,Abacus,10.1111/abac.12129,Sydney Profiles
+review,OpenAlex type: Book Chapter,Stewart Jones,Corporate bankruptcy prediction: a high dimensional analysis,2017,Review of Accounting Studies,10.1007/s11142-017-9407-1,Sydney Profiles
 dropped,OpenAlex type: editorial,Stewart Jones,Abacus: Editorial announcement,2009,Abacus,10.1111/j.1467-6281.2009.00280.x,Sydney Profiles
 dropped,OpenAlex type: editorial,Stewart Jones,"Discussion of García Lara, García Osma and Gill de Albornoz Noguer",2006,Abacus,10.1111/j.1467-6281.2006.00210.x,Sydney Profiles
 dropped,OpenAlex type: book-review,John Roberts,"Disturbing Business Ethics: Emmanuel Levinas and the Politics of Organization, by Carl Rhodes. Abingdon, UK: Routledge, 2020. 148 pp.",2021,Business Ethics Quarterly,10.1017/beq.2021.20,Sydney Profiles
@@ -43,6 +44,7 @@ dropped,OpenAlex type: conference-abstract,Iftekhar Hasan,PROTECTION FROM THE MA
 dropped,OpenAlex type: conference-abstract,Iftekhar Hasan,"R&D, INSIDER OWNERSHIP, ANALYST COVERAGE, AND UNDERPRICING OF TECHNOLOGY IPOS.",2005,Academy of Management Proceedings,10.5465/ambpp.2005.18783578,Sydney Profiles
 dropped,OpenAlex type: editorial,Iftekhar Hasan,Overview of the special issue on the euro five years on,2004,Journal of International Money and Finance,10.1016/j.jimonfin.2004.09.003,Sydney Profiles
 dropped,OpenAlex type: editorial,Iftekhar Hasan,"Overview of the special issue on banking, development and structural change",2004,Journal of International Money and Finance,10.1016/j.jimonfin.2004.02.002,Sydney Profiles
+dropped,title marks it as front matter or a notice,Iftekhar Hasan,Introduction,2002,Journal of International Money and Finance,10.1016/s0261-5606(02)00047-5,Sydney Profiles
 dropped,OpenAlex type: book-review,Iftekhar Hasan,Economic models of technological change [Book Review],2002,IEEE Transactions on Engineering Management,10.1109/tem.2000.846795,Sydney Profiles
 review,OpenAlex type: Book Chapter,Suk-Joong Kim,The impact of domestic and international monetary policy news on U.S. and German Bank stocks,2013,"Global Banking, Financial Markets and Crises",10.1108/s1569-3767(2013)0000014010,Sydney Profiles
 review,OpenAlex type: Book Chapter,Suk-Joong Kim,Introduction to international banking in the new era: Post-crisis challenges and opportunities,2010,International Finance Review,10.1108/s1569-3767(2010)0000011004,Sydney Profiles
@@ -53,3 +55,4 @@ dropped,OpenAlex type: editorial,Joakim Westerholm,Guest editorial,2016,Internat
 review,OpenAlex type: Book Chapter,Eliza Wu,The impact of domestic and international monetary policy news on U.S. and German Bank stocks,2013,"Global Banking, Financial Markets and Crises",10.1108/s1569-3767(2013)0000014010,Sydney Profiles
 dropped,OpenAlex type: book-review,Anna Young-Ferris,Sustainability Accounting and Reporting: Fad or Trend?,2011,Social and Environmental Accountability Journal,10.1080/0969160x.2011.593829,ORCID
 dropped,OpenAlex type: retraction,Shan Zhou,"Heterogeneity in the integration of ESG measures in executive compensation: Determinants, contracting details and outcomes",2024,British Accounting Review,10.1016/j.bar.2024.101440,ORCID
+dropped,title marks it as front matter or a notice,Suk-Joong Kim,Introduction,2018,World Scientific Studies in International Economics,,Sydney Profiles

@@ -2464,6 +2464,22 @@
     "scimago_year": "2025"
   },
   {
+    "journal_name": "Journal of Investing",
+    "journal_raw": "Journal of Investing",
+    "publisher": "Portfolio Management Research",
+    "issn": "1068-0896; 2168-8613",
+    "quality_rank": "B",
+    "abdc_edition": "2025",
+    "impact_factor": 0.4,
+    "impact_factor_5yr": 0.5,
+    "jcr_year": 2025,
+    "sjr": 0.231,
+    "sjr_quartile": "Q3",
+    "h_index": 11,
+    "cites_per_doc_2y": 0.49,
+    "scimago_year": "2025"
+  },
+  {
     "journal_name": "Journal of Financial Economics",
     "journal_raw": "Journal of Financial Economics",
     "publisher": "Elsevier",
@@ -2621,22 +2637,6 @@
     "sjr_quartile": "Q2",
     "h_index": 31,
     "cites_per_doc_2y": 3.14,
-    "scimago_year": "2025"
-  },
-  {
-    "journal_name": "Journal of Investing",
-    "journal_raw": "Journal of Investing",
-    "publisher": "Portfolio Management Research",
-    "issn": "1068-0896; 2168-8613",
-    "quality_rank": "B",
-    "abdc_edition": "2025",
-    "impact_factor": 0.4,
-    "impact_factor_5yr": 0.5,
-    "jcr_year": 2025,
-    "sjr": 0.231,
-    "sjr_quartile": "Q3",
-    "h_index": 11,
-    "cites_per_doc_2y": 0.49,
     "scimago_year": "2025"
   },
   {

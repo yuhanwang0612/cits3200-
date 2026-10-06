@@ -31,6 +31,10 @@ from core.http import cached_get
 from core.schema import norm_type
 
 CHUNK = 25          # 50 per filter times out on their side often enough to matter
+# Results per batch. Larger than CHUNK because one DOI can match two OpenAlex
+# works: with per-page = CHUNK, a batch of 25 DOIs matching 28 works lost 3
+# papers to an unrequested page 2. OpenAlex allows up to 200.
+PER_PAGE = 100
 
 # A cached batch that came back without some of its DOIs is asked again once
 # it is this old. OpenAlex indexes new papers weeks after they appear, and
@@ -212,7 +216,7 @@ def enrich(pubs, verbose=True):
     for i in range(0, len(dois), CHUNK):
         chunk = dois[i:i + CHUNK]
         calls += 1
-        params = {"filter": "doi:" + "|".join(chunk), "per-page": CHUNK}
+        params = {"filter": "doi:" + "|".join(chunk), "per-page": PER_PAGE}
         try:
             data = cached_get(OPENALEX_BASE, params=params,
                               headers=OA_HEADERS, timeout=60, sleep=1.0)

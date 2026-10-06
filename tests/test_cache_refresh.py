@@ -117,3 +117,18 @@ def test_a_failed_retry_keeps_the_cached_partial_answer(monkeypatch):
     pubs = [blank_pub(doi="10.1/a"), blank_pub(doi="10.1/missing")]
     oa_enrich.enrich(pubs, verbose=False)
     assert pubs[0]["cited_by_count"] == 5
+
+
+def test_a_doi_with_two_openalex_works_does_not_push_others_off_the_page(monkeypatch):
+    """25 DOIs, three of which OpenAlex holds twice: 28 works must all fit."""
+    dois = [f"10.1/p{i:02d}" for i in range(25)]
+    works = [_work(d, 1) for d in dois] + [_work(d, 1) for d in dois[:3]]
+
+    def fake(url, params=None, **kw):
+        # OpenAlex returns the first per-page results and leaves the rest on page 2
+        return {"results": sorted(works, key=lambda w: w["doi"])[:params["per-page"]]}
+
+    monkeypatch.setattr(oa_enrich, "cached_get", fake)
+    pubs = [blank_pub(doi=d) for d in dois]
+    oa_enrich.enrich(pubs, verbose=False)
+    assert all(p["cited_by_count"] == 1 for p in pubs)

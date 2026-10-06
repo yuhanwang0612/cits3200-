@@ -110,8 +110,13 @@ def _harmonise_doi_metadata(rows):
     upstream indexes, so harmonisation is deliberately limited to groups
     whose titles are clearly the same work (normalised equality, one title
     being a subtitle-truncated prefix, or strong fuzzy similarity).
+
+    Once a group is the same work, one researcher keeps one copy: two ORCID
+    entries for one paper ("A Liberalization Spillover" and its full title)
+    otherwise survive the title-keyed dedup and come out identical here.
     """
     groups = {}
+    duplicates = set()
     for row in rows:
         doi = _dedup_doi(row.get("doi"))
         if doi:
@@ -159,10 +164,22 @@ def _harmonise_doi_metadata(rows):
             if values:
                 counts = Counter(values)
                 canonical[field] = max(values, key=lambda value: counts[value])
+        # Collapsing needs stronger evidence than harmonising: a one-word
+        # prefix ("Editorial" / "Editorial note on ...") can be two items.
+        collapse = (
+            len(set(nonempty)) == 1
+            or min_similarity >= NEAR_DUP_TITLE_RATIO
+            or (longest.startswith(shortest + " ")
+                and len(shortest) >= _PREFIX_DUP_MIN_TITLE_LEN)
+        )
+        seen_names = set()
         for row in group:
             row.update(canonical)
+            if collapse and row.get("name") in seen_names:
+                duplicates.add(id(row))
+            seen_names.add(row.get("name"))
 
-    return rows
+    return [row for row in rows if id(row) not in duplicates]
 
 
 def _differing_part_marker(title_a, title_b):
@@ -530,18 +547,20 @@ def merge_near_duplicates(rows):
 #
 # job_title stays as the university's own raw string. These two are derived
 # beside it, so nothing downstream that reads job_title changes.
+#
+# The team chose the academic rank over the quote's "Dr" for B and C: "Dr" is
+# a qualification, and the rank is what distinguishes a Lecturer from a
+# Senior Lecturer. The rank comes from the person's own title where it names
+# one at their level ("Senior Research Fellow" stays that, not "Senior
+# Lecturer"), else the generic rank for the level.
 
 ACADEMIC_TITLE_BY_LEVEL = {
-    "B": "Dr",
-    "C": "Dr",
+    "A": "Associate Lecturer",
+    "B": "Lecturer",
+    "C": "Senior Lecturer",
     "D": "Associate Professor",
     "E": "Professor",
 }
-
-# Level A is deliberately absent. The spec says B-E and 8 people are at A
-# (UNSW 1, USyd 6, UWA 1); an Associate Lecturer does not necessarily hold a
-# doctorate, so guessing "Dr" for them would be inventing a credential.
-# They get a blank until the client says what A should read.
 
 # Sean's mapping table of 25 September, which the client approved ("Yes.
 # Note that these are administrative title, not academic title."). Longest
@@ -562,9 +581,30 @@ _ADMIN_TITLES = [
 ]
 
 
-def academic_title_for_level(level_code):
-    """'Dr' / 'Associate Professor' / 'Professor', or None off the scale."""
-    return ACADEMIC_TITLE_BY_LEVEL.get((level_code or "").strip().upper())
+# FR4: education- and teaching-focused positions are excluded from the
+# rankings. UNSW's scraper already skips "Education Focused" titles; this
+# applies the same rule, plus plainly teaching-only titles, to every
+# university at export.
+TEACHING_ROLE = re.compile(
+    r"education[-\s]?focus|teaching[-\s]?focus"
+    r"|teaching (fellow|specialist|associate)|\btutor\b|casual teaching|\btchg\b",
+    re.I)
+
+
+def is_teaching_role(job_title):
+    return bool(job_title and TEACHING_ROLE.search(job_title))
+
+
+def academic_title_for_level(level_code, job_title=None):
+    """The academic rank for a level ("Senior Lecturer"), or None off the
+    scale. The job title's own rank wins when it is at the same level."""
+    code = (level_code or "").strip().upper()
+    if code not in ACADEMIC_TITLE_BY_LEVEL:
+        return None
+    own = rank(job_title) if job_title else None
+    if own and level(own) == code:
+        return own
+    return ACADEMIC_TITLE_BY_LEVEL[code]
 
 
 def admin_title_from(job_title):
@@ -1700,7 +1740,14 @@ _NON_ARTICLE_TITLE = re.compile(
     r"^\W*(foreword|preface|prelims|front matter|back matter|in memoriam|"
     r"obituary|editorial board|contents|index|errata|introduction|editorial|"
     r"guest editorial|editorial introduction|editor'?s'? note)\W*$"
-    r"|^\W*(retraction|withdrawal) (note|notice)\b|^\W*(retracted|withdrawn)( article)?\s*:", re.I)
+    r"|^\W*(retraction|withdrawal) (note|notice)\b|^\W*(retracted|withdrawn)( article)?\s*:"
+    # A title that opens with one of these is that kind of item, whatever
+    # follows: "Book Review: GDP ...", "In Memoriam Dr. ...". Foreword and
+    # preface need punctuation or on/to/by/for after them ("Foreword on
+    # Special Issue: ...", "Preface - Editors' Note"), so a research title
+    # such as "Foreword guidance and ..." is kept.
+    r"|^\W*(book reviews?|in memoriam|editor'?s'?\s+note|editorial note)\b"
+    r"|^\W*(foreword|preface)\s*([:\-–—]|(on|to|by|for)\b)", re.I)
 # A discussant's piece on someone else's paper ("Discussion of ...",
 # "... - Discussion", "... - Comment"). Journals print them alongside the
 # paper, but they are not research articles.
@@ -2044,7 +2091,9 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
     _applied = 0
     for _s in staff:
         _job, _ = split_job_title(_s.get("job_title"), _s.get("academic_level"))
-        if _job:
+        # A title with no rank in it ("Enterprise Fellow in data ...") still
+        # leaves the level blank, so an override applies there too.
+        if _job and _s.get("academic_level"):
             continue
         _ov = _override_for(_s)
         if not _ov:
@@ -2063,7 +2112,8 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
     _titled = _admin = 0
     _no_level = []
     for _s in staff:
-        _s["academic_title"] = academic_title_for_level(_s.get("academic_level"))
+        _s["academic_title"] = academic_title_for_level(_s.get("academic_level"),
+                                                        _s.get("job_title"))
         _s["admin_title"] = admin_title_from(_s.get("job_title"))
         if _s["academic_title"]:
             _titled += 1
@@ -2080,6 +2130,34 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
                   f"{', '.join(_no_level[:4])}"
                   + (" ..." if len(_no_level) > 4 else ""))
 
+
+    # Runs after the overrides so a title filled from staff_overrides.csv
+    # ("Teaching Specialist") counts too. Their publications go with them,
+    # and the journals table below is built from what is left.
+    _teaching = {s["name"] for s in staff if is_teaching_role(s.get("job_title"))}
+    # A person listed by two universities counts at one of them only:
+    # data/staff_exclusions.csv names the listing to drop and why.
+    _excl_path = Path(__file__).resolve().parent / "data" / "staff_exclusions.csv"
+    if _excl_path.exists():
+        import csv as _csv
+        with _excl_path.open(encoding="utf-8") as _f:
+            _excluded = {(row["university"].strip().lower(), row["name"].strip())
+                         for row in _csv.DictReader(_f) if row.get("name", "").strip()}
+        _dropped = {s["name"] for s in staff
+                    if any(n == s["name"] and _UNI_KEYS.get(u, u) in (s.get("university") or "").lower()
+                           for u, n in _excluded)}
+        staff = [s for s in staff if s["name"] not in _dropped]
+        publications = [p for p in publications if p["name"] not in _dropped]
+        if verbose and _dropped:
+            print(f"  excluded {len(_dropped)} staff listed in staff_exclusions.csv: "
+                  f"{', '.join(sorted(_dropped))}")
+    if _teaching:
+        staff = [s for s in staff if s["name"] not in _teaching]
+        publications = [p for p in publications if p["name"] not in _teaching]
+        if verbose:
+            print(f"  excluded {len(_teaching)} teaching-focused staff (FR4): "
+                  f"{', '.join(sorted(_teaching)[:4])}"
+                  + (" ..." if len(_teaching) > 4 else ""))
 
     if drop_staff_without_pubs:
         have = {p["name"] for p in publications}

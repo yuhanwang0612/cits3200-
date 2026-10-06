@@ -91,10 +91,14 @@ def norm_type(t):
     return TYPE_MAP.get(t.lower(), t if t in TYPES else t)
 
 
-# A working-paper series ("NBER Working Paper Series", "Federal Reserve Bank
-# of Dallas ... Working Papers") is not a journal. No ABDC title contains
-# the phrase.
-_WORKING_PAPER_SERIES = re.compile(r"\bworking papers?\b", re.I)
+# Working-paper and discussion-paper series, university repositories (OpenAlex
+# names them "Research Online (University of Wollongong)") and CFA Digest's
+# summaries of other people's papers are not journals. None of these matches
+# an ABDC or Scimago journal title except Scimago's own working-paper series.
+_WORKING_PAPER_SERIES = re.compile(
+    r"\bworking papers?\b|\bdiscussion (paper|series)\b|\brepository\b"
+    r"|research online \(|scholars hub|scholarspace|research database|agecon search"
+    r"|\bzenodo\b|^alexandria \(unisg\)|^qut business school$|^cfa digest$", re.I)
 
 
 def clean_journal(name):

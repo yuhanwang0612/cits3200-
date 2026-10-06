@@ -12,6 +12,9 @@ The client's own words, 2 October:
 
 and, on Sean's mapping table the week before, "Yes. Note that these are
 administrative title, not academic title."
+
+The team then chose the academic rank over "Dr" for B and C ("Dr" is a
+qualification), so Academic Title reads Lecturer / Senior Lecturer there.
 """
 
 import sys
@@ -27,16 +30,31 @@ from export import (                                               # noqa: E402
 
 # ------------------------------------------------ academic title
 
-def test_the_mapping_is_exactly_what_the_client_specified():
+def test_each_level_reads_as_its_rank():
     assert ACADEMIC_TITLE_BY_LEVEL == {
-        "B": "Dr", "C": "Dr",
+        "A": "Associate Lecturer",
+        "B": "Lecturer", "C": "Senior Lecturer",
         "D": "Associate Professor",
         "E": "Professor",
     }
 
 
-def test_b_and_c_both_read_dr():
-    assert academic_title_for_level("B") == academic_title_for_level("C") == "Dr"
+def test_b_and_c_are_ranks_not_dr():
+    assert academic_title_for_level("B") == "Lecturer"
+    assert academic_title_for_level("C") == "Senior Lecturer"
+
+
+def test_the_job_titles_own_rank_wins_at_the_same_level():
+    assert academic_title_for_level("C", "Senior Research Fellow") == "Senior Research Fellow"
+    assert academic_title_for_level("E", "Emeritus Professor") == "Emeritus Professor"
+    assert academic_title_for_level("C", "Senior Lecturer in Finance") == "Senior Lecturer"
+
+
+def test_a_job_title_at_another_level_does_not_override_the_level():
+    """A staff override can set the level when the title has no rank, or
+    disagree with it; the level decides."""
+    assert academic_title_for_level("E", "Dean, School of Accounting") == "Professor"
+    assert academic_title_for_level("C", "Program Director") == "Senior Lecturer"
 
 
 def test_d_and_e():
@@ -44,11 +62,9 @@ def test_d_and_e():
     assert academic_title_for_level("E") == "Professor"
 
 
-def test_level_a_is_left_blank_rather_than_guessed():
-    """The spec says B-E. 8 people sit at A (UNSW 1, USyd 6, UWA 1) and an
-    Associate Lecturer may hold no doctorate, so "Dr" would be invented.
-    Blank until the client answers."""
-    assert academic_title_for_level("A") is None
+def test_level_a_reads_associate_lecturer():
+    """With ranks rather than "Dr", level A has an honest title too."""
+    assert academic_title_for_level("A") == "Associate Lecturer"
 
 
 def test_a_missing_level_gives_no_title():
@@ -113,3 +129,67 @@ def test_the_roles_actually_in_the_data():
 def test_a_blank_job_title_has_no_admin_title():
     for value in ("", "   ", None):
         assert admin_title_from(value) is None
+
+
+# ------------------------------------------------ FR4: teaching-focused staff
+
+import pytest                                                      # noqa: E402
+from export import export, is_teaching_role                        # noqa: E402
+
+
+@pytest.mark.parametrize("title", [
+    "Lecturer (Education Focused)", "Senior Lecturer - Education Focussed",
+    "Lecturer in Audit (Teaching Focused)", "Associate Professor of Finance (Education Focused)",
+    "Tutor - Education Focussed", "Teaching Fellow", "Teaching Associate",
+    "Teaching Specialist", "Casual Teaching Lecturer", "P/T Tchg Lecturer"])
+def test_teaching_focused_titles_are_recognised(title):
+    assert is_teaching_role(title)
+
+
+@pytest.mark.parametrize("title", [
+    "Senior Lecturer", "Professor", "Associate Dean (Teaching and Learning)",
+    "Head of School", "Senior Research Fellow", "Lecturer in Finance", None, ""])
+def test_research_and_admin_titles_are_kept(title):
+    assert not is_teaching_role(title)
+
+
+def _record(name, title):
+    return {"name_clean": name, "title": title, "university": "University of Sydney",
+            "discipline": "Finance", "profile_url": "https://x"}
+
+
+def _paper(name, doi):
+    return {"type": "Journal Article", "name": name, "title": f"Paper {doi}",
+            "doi": doi, "year": "2020", "journal": "Accounting Review"}
+
+
+def test_export_drops_teaching_staff_and_their_papers(tmp_path):
+    records = [_record("Ann Research", "Senior Lecturer"),
+               _record("Ted Teach", "Lecturer (Education Focused)")]
+    pubs = [_paper("Ann Research", "10.1/a"), _paper("Ted Teach", "10.1/t")]
+    tables = export(records, pubs, out_dir=tmp_path / "usyd", verbose=False)
+    assert [s["name"] for s in tables["staff"]] == ["Ann Research"]
+    assert [p["name"] for p in tables["publications"]] == ["Ann Research"]
+
+
+def test_an_override_fills_the_level_when_the_title_names_no_rank(tmp_path):
+    """Stuart Black: 'Enterprise Fellow in data, analytics, disruption and
+    innovation' has no rank word; staff_overrides.csv says Assistant Professor."""
+    records = [{"name_clean": "Stuart Black", "university": "University of Melbourne",
+                "title": "Enterprise Fellow in data, analytics, disruption and innovation",
+                "discipline": "Accounting", "profile_url": "https://x"}]
+    pubs = [_paper("Stuart Black", "10.1/s")]
+    staff = export(records, pubs, out_dir=tmp_path / "unimelb", verbose=False)["staff"]
+    assert staff[0]["academic_level"] == "B"
+    assert staff[0]["job_title"].startswith("Enterprise Fellow")
+
+
+def test_a_staff_exclusion_drops_one_listing_and_its_papers(tmp_path):
+    """Roger Simnett counts at Monash; his UNSW Emeritus listing is dropped."""
+    unsw = [{"name_clean": "Roger Simnett", "title": "Emeritus Professor",
+             "university": "UNSW Sydney", "discipline": "Accounting", "profile_url": "https://x"}]
+    tables = export(unsw, [_paper("Roger Simnett", "10.1/r")], out_dir=tmp_path / "unsw", verbose=False)
+    assert tables["staff"] == [] and tables["publications"] == []
+    monash = [dict(unsw[0], name_clean="Roger Simnett", university="Monash University")]
+    tables = export(monash, [_paper("Roger Simnett", "10.1/r")], out_dir=tmp_path / "monash", verbose=False)
+    assert len(tables["staff"]) == 1

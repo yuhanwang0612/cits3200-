@@ -141,3 +141,21 @@ def test_same_doi_title_typo_and_truncation_are_harmonised():
 
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q"]))
+
+
+def test_two_copies_of_one_doi_with_a_truncated_title_are_one_paper():
+    """Kelly Liu: ORCID held the JFQA paper as both 'A Liberalization
+    Spillover' (2024) and the full title (2022), under one DOI."""
+    a = _pub(name="Xin (Kelly) Liu", title="A Liberalization Spillover",
+             doi="10.1017/s0022109022001466", year="2024")
+    b = _pub(name="Xin (Kelly) Liu", title="A Liberalization Spillover: From Equities to Loans",
+             doi="10.1017/s0022109022001466", year="2022")
+    out = build_publications([a, b], verbose=False)
+    assert len(out) == 1
+    assert out[0]["title"] == "A Liberalization Spillover: From Equities to Loans"
+
+
+def test_co_authors_keep_their_own_copy_of_a_shared_doi():
+    a = _pub(name="Sarah Adams", title="Shared paper", doi="10.1/shared")
+    b = _pub(name="Tom Brown", title="Shared paper: with subtitle", doi="10.1/shared")
+    assert len(build_publications([a, b], verbose=False)) == 2

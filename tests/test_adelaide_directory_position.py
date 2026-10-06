@@ -36,3 +36,29 @@ def test_position_from_directory_title(title, expected):
 
 def test_missing_directory_page_gives_none():
     assert _directory_position(FakeSession(404, ""), "x") is None
+
+
+# ------------------------------------------- research students are not staff
+
+from bs4 import BeautifulSoup                                   # noqa: E402
+from base_scrapers.adelaide import _is_research_student          # noqa: E402
+
+
+def profile(body):
+    return BeautifulSoup(f"<html><body><h1>Mr X</h1>{body}</body></html>", "html.parser")
+
+
+def test_an_hdr_candidate_is_not_staff():
+    soup = profile('<p class="u-lead-text hdr-desc">Higher Degree by Research Candidate</p>')
+    assert _is_research_student(soup)
+
+
+def test_a_staff_member_is_not_a_student():
+    soup = profile('<p class="u-lead-text position">Senior Lecturer, Accounting</p>')
+    assert not _is_research_student(soup)
+
+
+def test_a_staff_member_also_enrolled_stays_staff():
+    soup = profile('<p class="u-lead-text position">Lecturer</p>'
+                   '<p class="u-lead-text hdr-desc">Higher Degree by Research Candidate</p>')
+    assert not _is_research_student(soup)

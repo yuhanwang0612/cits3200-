@@ -36,10 +36,9 @@ STAFF_COLUMNS = [
     "university", "field_of_research", "source_id", "orcid", "profile_url",
 ]
 
-# The client's 2 October spec: level B and C read "Dr", D "Associate
-# Professor", E "Professor". Level A is not in her list and is left blank.
-ACADEMIC_TITLES = {"B": "Dr", "C": "Dr", "D": "Associate Professor",
-                   "E": "Professor"}
+# academic_title is the academic rank, which must sit at the person's level
+# ("Senior Lecturer" or "Senior Research Fellow" for C).
+from core.titles import level as level_of_rank                    # noqa: E402
 
 LEVELS = {"A", "B", "C", "D", "E"}
 RANKS = {"A*", "A", "B", "C"}
@@ -170,7 +169,7 @@ def test_the_academic_title_follows_the_academic_level(tables, uni):
     staff = data(tables, uni, "staff")
     wrong = [(r["name"], r["academic_level"], r["academic_title"])
              for _, r in staff.iterrows()
-             if r["academic_title"] != ACADEMIC_TITLES.get(r["academic_level"], "")]
+             if (level_of_rank(r["academic_title"]) or "") != (r["academic_level"] or "")]
     assert not wrong, f"{len(wrong)} disagree, e.g. {wrong[:3]}"
 
 
