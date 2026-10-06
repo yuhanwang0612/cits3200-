@@ -182,3 +182,14 @@ def test_an_override_fills_the_level_when_the_title_names_no_rank(tmp_path):
     staff = export(records, pubs, out_dir=tmp_path / "unimelb", verbose=False)["staff"]
     assert staff[0]["academic_level"] == "B"
     assert staff[0]["job_title"].startswith("Enterprise Fellow")
+
+
+def test_a_staff_exclusion_drops_one_listing_and_its_papers(tmp_path):
+    """Roger Simnett counts at Monash; his UNSW Emeritus listing is dropped."""
+    unsw = [{"name_clean": "Roger Simnett", "title": "Emeritus Professor",
+             "university": "UNSW Sydney", "discipline": "Accounting", "profile_url": "https://x"}]
+    tables = export(unsw, [_paper("Roger Simnett", "10.1/r")], out_dir=tmp_path / "unsw", verbose=False)
+    assert tables["staff"] == [] and tables["publications"] == []
+    monash = [dict(unsw[0], name_clean="Roger Simnett", university="Monash University")]
+    tables = export(monash, [_paper("Roger Simnett", "10.1/r")], out_dir=tmp_path / "monash", verbose=False)
+    assert len(tables["staff"]) == 1

@@ -2128,6 +2128,22 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
     # ("Teaching Specialist") counts too. Their publications go with them,
     # and the journals table below is built from what is left.
     _teaching = {s["name"] for s in staff if is_teaching_role(s.get("job_title"))}
+    # A person listed by two universities counts at one of them only:
+    # data/staff_exclusions.csv names the listing to drop and why.
+    _excl_path = Path(__file__).resolve().parent / "data" / "staff_exclusions.csv"
+    if _excl_path.exists():
+        import csv as _csv
+        with _excl_path.open(encoding="utf-8") as _f:
+            _excluded = {(row["university"].strip().lower(), row["name"].strip())
+                         for row in _csv.DictReader(_f) if row.get("name", "").strip()}
+        _dropped = {s["name"] for s in staff
+                    if any(n == s["name"] and _UNI_KEYS.get(u, u) in (s.get("university") or "").lower()
+                           for u, n in _excluded)}
+        staff = [s for s in staff if s["name"] not in _dropped]
+        publications = [p for p in publications if p["name"] not in _dropped]
+        if verbose and _dropped:
+            print(f"  excluded {len(_dropped)} staff listed in staff_exclusions.csv: "
+                  f"{', '.join(sorted(_dropped))}")
     if _teaching:
         staff = [s for s in staff if s["name"] not in _teaching]
         publications = [p for p in publications if p["name"] not in _teaching]
