@@ -2100,3 +2100,307 @@ The ANU code is a guard, not the fix.
   title (allowed) **and** Susanna Ho's PACIS 2008 row (see Task E).
 - The row diff against the v25 export has 208 changes (A 200, B 3, C 1, E 4).
   There is no live drift and nothing unexplained.
+
+## 5 Oct 2026 (v27) — ANU final cleaning: identity, one record per DOI, profile copies, book reviews and conference papers, owner-inclusive authors
+
+Full detail: `scratch/_anu27/REPORT.md`. Branch `jamie-anu-v27`, cut from `main` at
+`b7ddf6f`. ANU **505 → 492** rows. ABDC-ranked 495 → **482 (98.0%)**. DOIs 451 → **460
+(93.5%)**. Every change is in the pipeline: `data/anu_identity.csv`,
+`data/anu_doi_backfill.csv`, `data/publication_exclusions.csv`, `base_scrapers/anu.py` and
+ANU-gated functions in `export.py`. Nothing in `final output/` was edited by hand. No
+other university's output was regenerated or changed (checked by md5 over
+`final output/`).
+
+**Run:** the local HTTP cache was stale (it still held Tracy (Kun) Wang's 15 Sep OpenAlex
+query, among others). So the unchanged `main` code was first re-run with `--refresh`.
+That run reproduces the committed export except for 3 rows of live-data drift, all
+resolved by the rules below. Every later run used that refreshed cache. A repeat run with
+no change in between gave byte-identical publications, staff and journals files.
+
+### Task A — Kathy Wang's identity
+
+- **The seed identity was a namesake.** OpenAlex author `A5029534340` is "Kathy H. Wang"
+  at the **University of Washington**, with no ORCID. With the ANU ROR filter it returned
+  nothing, so Kathy Wang had only 3 rows.
+- **Evidence for her real identity:** she publishes as **Dongyue Wang**.
+  - Her ORCID `0000-0002-2170-2293` is "Dongyue Wang", employed by "Australian National
+    University, Lecturer".
+  - That record lists all 5 papers on her live RSA profile, plus 3 more.
+  - Crossref gives this ORCID and an ANU affiliation on the EAR, JBFA and A&F 2022 papers.
+  - OpenAlex resolves the ORCID to author `A5088282331` (ANU).
+- **Changed:** `data/anu_identity.csv` now gives that ORCID and `A5088282331`. No code
+  change was needed, because retrieval keys on the ORCID first.
+- **Result:** 3 → **8** rows, all with DOIs:
+  - JCAE 2026, Research Policy, A&F 2022 and 2025, JBFA 2025, JAAF 2025 and EAR;
+  - *Journal of Business Ethics* 2026, from her ORCID.
+
+  Her two DOI-less profile rows became their DOI'd versions, with no duplicates.
+
+### Task D/F — one DOI, one record (`export._anu_align_doi_records`, ANU only)
+
+**The rule.** Every ANU row with a DOI is aligned to the DOI's Crossref record:
+
+- the DOI is lowercased;
+- the **title** becomes the registered title, with markup removed and any separately
+  registered subtitle appended;
+- the **year** becomes the record's **print (issue) year**, or else its issued year.
+
+**Year convention.** None was documented, so it was measured. Of the 133 ANU DOI rows
+whose online and print years differ, the existing pipeline already gave the print year on
+96, because profile pages and ORCID cite the issue. v27 applies that majority convention
+consistently; it does not introduce a new one.
+
+**What is refused:**
+
+- a record naming another journal (a match on ISSN, or on the name with a registered
+  subtitle, counts as the same journal);
+- a registered title that has lost words the row still has.
+
+**Damaged titles.** Crossref's title for two Ball and Brown papers lost its italic run
+("The impact of   on generations of research"). The gap is filled only from a pipeline
+copy that matches exactly on both sides of it. Layout spacing is not mistaken for a gap.
+
+**After alignment:**
+
+- any remaining disagreement within a DOI is resolved by majority;
+- a researcher keeps one row per DOI.
+
+**Results:**
+
+- 175 titles and 55 years now follow the DOI record, and 13 DOIs were lowercased.
+- Xin (Kelly) Liu's duplicate JFQA row was dropped. It was an NBER DOI that
+  `data/overrides.csv` rewrites to the journal DOI.
+- Lily Chen's NLE title now reads "Anisotropic … empirical", with year 2024.
+- The Walpola/Tracy Wang EAR pair and the Shailer/Louise Lu JAAF pair each have one title
+  per DOI.
+- **JMIS "Gifting and Status in Virtual Worlds" is kept.** Crossref lists Goode, Shailer,
+  Wilson (all ANU) and Jankowski, and both rows now carry the registered title.
+- **Footnote markers** (`_anu_strip_footnote_marker`): a trailing digit glued to the last
+  word, or a trailing `*`/`†`, is removed ("Contexts1", "Theory1", "Audit Quality? *").
+  5 titles changed.
+- Greg Shailer's 1994 all-caps title is unchanged, because it is Crossref's registered
+  form.
+
+**Subtitles and casing (v27.1, same day).** A separately registered Crossref subtitle is
+appended only if it is not a running head. Wiley registers its short running head in that
+field, so a subtitle is refused when it is all caps, or when at least 0.6 of its content
+words already appear in the main title (`export._is_running_head`). Of the 5 ANU records
+with a registered subtitle, this refuses Sarah Adams's (AAR 2011), Mark Wilson's (*Abacus*
+2011) and Raymond Liu's (*Pacific Economic Review* 2010), and keeps Dean Katselas's and
+Susanna Ho's genuine subtitles. A single-case registered title takes the casing of a
+mixed-case pipeline copy of the same title, so Liu's title is back in sentence case. Where
+no such copy exists it stays as registered, which keeps Greg Shailer's 1994 title in
+capitals. The fix changed only those 3 titles.
+
+### Task B — profile copies of published rows (`export.anu_profile_copy_of`, ANU only)
+
+**The rule.** A DOI-less "ANU staff profile" row is dropped when, for a DOI row of the
+same researcher:
+
+- the normalised journal is the same;
+- the year is within **±2** of the DOI record's online or print year;
+- **title containment is at least 0.6** (the share of the shorter title's content words
+  found in the other title, counting near-identical spellings);
+- where both rows name co-authors, at least one co-author is shared.
+
+**Where the threshold comes from.** Over every same-researcher, same-journal pair on
+5 Oct:
+
+- the highest-scoring pair of *different* papers scored **0.50**. That is Marvin Wee's two
+  2019 Ball and Brown papers, which the co-author test also separates;
+- the lowest-scoring confirmed copy scored **0.667**. That is Wee's "Supply chain
+  management disclosure" against "Supply chain disclosure: stakeholder preferences…",
+  with the same three authors, journal and year.
+
+**Caught: 13 rows.**
+
+- The five named in the brief: Isabel Wang, Lijuan Zhang ×2, Mark Wilson, Xin (Kelly)
+  Liu and Janet Lee.
+  - Lijuan Zhang's A&F 2022 row was checked: Crossref `10.1111/acfi.13008` has the same
+    two authors and journal, online 2022 and print 2026, so it is the same paper.
+- Eight more: Mark Wilson ×2, Dean Katselas ×2 and Marvin Wee ×3. Each was checked
+  against Crossref (`scratch/_anu27/task_b_pairs.csv`).
+
+Five more profile rows are now their own DOI'd versions instead: Kathy Wang ×2 via ORCID,
+and three backfilled (Task G).
+
+### Task C — non-journal items
+
+**Book reviews** (`export._is_book_review_record`). A row is dropped when its Crossref
+record has a volume, runs to **4 pages or fewer**, and registers no abstract.
+
+- Over all 386 ANU DOIs with a Crossref record, exactly two qualify:
+  - Greg Shailer's *JAOC* 2011 review (3 pages, no authors registered);
+  - Susanna Ho's *JASIST* 2008 review (2 pages).
+- The next shortest record runs to 5 pages and has an abstract.
+- Crossref types both reviews "journal-article" and OpenAlex "article", so type alone
+  cannot catch them.
+- The volume test keeps early-access "1-1" page records out.
+
+**Conference papers that OpenAlex mislabels** (`export._anu_openalex_proceedings_source`).
+A DOI-less ANU row that only OpenAlex supplied is dropped when OpenAlex's own citation
+(`raw_source_name`) names a proceedings or conference. It caught two more Susanna Ho rows
+filed under JAIS and rated A\*: PACIS 2010 (`W70483390`) and PACIS 2015 (`W748712592`).
+
+**PACIS 2008.** The "THE EFFECTS OF WEB PERSONALIZATION…" row also has a reasoned,
+title-keyed exclusion in `data/publication_exclusions.csv`, as the brief asked. The rule
+catches it too.
+
+### Task E — owner-inclusive author lists (`base_scrapers/anu.py`)
+
+Every profile row now carries an explicit "Name; Name" list. The owner appears exactly
+once, under their display name, in the citation's own order, and the count is the length
+of the list.
+
+- A "with A and B" clause names only co-authors, so the owner comes first.
+- A citation that leads with its author list ("Lee, J. and Shailer, G. (2008) “…”") is now
+  read. The parser never captured these, which is why 22 rows showed blank authors.
+- An owner who publishes under another initial ("Z. Wang" for Isabel Z. Wang, "Wu, H." on
+  Steven Wu's page) is recognised when exactly one name carries their surname.
+- For DOI rows, the list is only a fallback for when enrichment returns no authors, and
+  only when it reads cleanly.
+
+**Result:** author_count equals the number of names on all 492 rows, and no row has blank
+authors.
+
+### Task G — coverage against the live profiles
+
+All 46 profiles were fetched on 5 Oct (`scratch/_anu27/coverage.csv`). The 40 exported
+researchers list **404** journal articles: **384** are in the export, **20** are Raymond
+Liu's clinical papers (out of scope), and **0 are missing**.
+
+**Recovered or explained:**
+
+- **Lily Chen, IEEE TKDE 2022**, recovered by a rule (`_rescue_unparsed_with_doi`). An
+  unparsed entry that prints its own DOI becomes a row only if Crossref types it as a
+  journal article, its registered title appears in the entry's text, and the owner's
+  surname is among its authors.
+- **Neil Fargher, A&F 53(1)** was already exported as
+  `10.1111/j.1467-629x.2011.00459.x` (via OpenAlex).
+- **Kathy Wang's two 2025 entries** are covered by Task A.
+
+**Three verified DOIs added to `data/anu_doi_backfill.csv`.** Each passes the v25 strict
+checks (title, journal, year ±1, owner among the authors):
+
+- Scarlett Luo, *Abacus*, `10.1111/abac.70030`;
+- Janet Lee, *AAR* 2008, `10.1111/j.1835-2561.2008.0014.x`;
+- Louise Lu, *JAPP*, `10.1016/j.jaccpubpol.2024.107263`. Crossref registers her family
+  name as "Yi Lu", so the check compares its last word.
+
+**The low counts are genuine:**
+
+- Scarlett Luo: 1 article on her profile, no ORCID, and Crossref shows only that paper.
+- Wei Zeng: 1 article on his profile, and his ORCID record lists no works.
+- Kun Li: 4 working papers on his profile, an empty ORCID record, and 1 journal article
+  found via Crossref.
+
+**Zero publications.** Bonnie Allan, Ian McPhee, Jean You, Keturah Whitford, Pat Barrett
+and Yue Cai have no Publications section on their profiles. They are dropped by the
+unchanged team default `drop_staff_without_pubs`.
+
+### Left for the client (unchanged)
+
+These are in `scratch/_anu27/client_questions.md`:
+
+- four practitioner or unclear periodicals: *Accountants Digest*, *Public Fund Digest*,
+  *Accounting and Finance in Transition* and the *Journal of the Asia-Pacific Centre for
+  Environmental Accountability*;
+- the Raymond Liu clinical rule, which excludes 51 rows (41 by the reviewed list, 10 by
+  the journal-name rule) and keeps 1 health-economics paper.
+
+### Accepted limitations (what "complete" does not cover)
+
+- **32 DOI-less rows, all from profile pages.** Each was searched on Crossref under the
+  strict check (`scratch/_anu27/doi_search_doiless.csv`):
+  - 3 matched and were added (Task G);
+  - the rest either have no Crossref record (law and tax journals, practitioner
+    periodicals, older titles), or have a likely match whose title differs (a working
+    title or a truncation). Those likely matches are left unattached rather than guessed,
+    and are listed in the report.
+- **10 unranked rows** are genuinely not on the ABDC list, or are not yet confirmed as
+  journals (see the client questions).
+- **The Pure portal stays out of scope** (bot protection). A researcher's count is their
+  profile plus their ORCID/OpenAlex record. The coverage check shows these agree for
+  every exported researcher.
+
+### Verification
+
+- **Tests:** `python -m pytest -q tests` gives 21 failed, 858 passed. These are the same
+  21 failures as on `main` (6 cp1252 in `test_merge_publications.py`, 15 non-ANU data
+  tests): 0 new, 0 ANU.
+- **New tests:**
+  - `tests/test_anu_final_rules.py`: 34 unit tests, including non-ANU gating for every
+    rule;
+  - `tests/test_anu_final_data.py`: 21 checks on `final output/anu/`.
+- **Load:** `python load.py` loads ANU 492/492, and all eight universities match at 100%.
+- **Data checks:** CSV and JSON agree. The journals JSON carries `NaN` for 3 blank `sjr`
+  values, as on `main`. There are:
+  - 0 exact or near duplicates, 0 mojibake, 0 all-lowercase titles, 0 blank years and 0
+    uppercase DOIs;
+  - one title and one year per DOI;
+  - author_count matching the names on every row.
+
+### v28 (same day) — inception year, nine reviewed DOIs, forthcoming status
+
+Full detail: `scratch/_anu28/REPORT.md`. Rows stay at 492. ABDC-ranked 482 → **481
+(97.8%)**. DOIs 460 → **469 (95.3%)**. 4 rows are now "forthcoming". No other
+university's output changed.
+
+**A. Ratings for a journal that did not yet exist.** `export._anu_predates_abdc_inception`
+withdraws the ABDC match from an ANU row dated before the matched journal's ABDC "Year
+Inception" (`enrichment.abdc.title_inception`, a read-only addition). When the row's ISSNs
+came from that same title match, the Scimago and JIF values joined on them go too. Over all
+ANU rows it catches exactly one: Rebecca Tan's "Flights of fancy" (2000), rated A as the
+*Journal of Financial Reporting*, whose ABDC inception is 2016.
+
+**B. Nine hand-verified DOIs** were added to `data/anu_doi_backfill.csv` (now 138 rows).
+These are the likely matches v27 refused only on its strict title check:
+
+- Susanna Ho, MISQ 2006;
+- Rebecca Tan, IJA 2002;
+- Alex Wang ×4;
+- Chao Gao, *Financial Management*;
+- Lin Hu, *JPE Micro*;
+- Nhan Le, *JFM*.
+
+The v27 rules then applied: registered titles (Tan's truncated Crossref title was refused,
+so her full title stays) and print years. 4 years moved: Wang AAAJ 2023→2024 and A&F
+2022→2023, Gao 2019→2020, Le 2019→2021. There were no new duplicates.
+
+Two were deliberately not attached:
+
+- Isabel Wang's AABR 2023 entry: Crossref types it a book chapter, so the type filter
+  could drop a row ABDC rates.
+- Rebecca Tan's IBER 2005 paper: its retrospective Crossref deposit is dated 2011.
+
+A side fix: an ANU DOI row whose enrichment author list is surname-only ("Tam; Ho") now
+takes the profile's readable list when the counts agree (`_anu_author_fallback`).
+
+**C. Forthcoming status** (client's 19 Aug rule: explicitly labelled, never inferred).
+`export._anu_publication_status` marks an ANU row "forthcoming" when two things hold:
+
+- the researcher's own profile entry for it says "forthcoming" or "in press";
+- it is not yet in an issue: no DOI, or a DOI record with no volume and no print date.
+
+Two refinements:
+
+- The status belongs to the paper, so every ANU row of a labelled DOI shares it (Kun Li's
+  copy of Xin (Kelly) Liu's paper).
+- A DOI-less row's label is trusted only if the row is dated this year or last. This can
+  only keep a row published. Isabel Wang's "2023 … forthcoming" chapter was printed in
+  March 2023.
+
+**Result:** 4 forthcoming rows: Xin (Kelly) Liu and Kun Li (*Management Science*,
+`10.1287/mnsc.2024.08157`), Sonali Walpola (*Australian Tax Forum* 2025, in press, no DOI)
+and Eunice Khoo (JAAF `10.1177/0148558x261483805`).
+
+- **Correction to the brief:** Khoo's profile says "Forthcoming" and her DOI record has no
+  volume yet, so she is labelled, not an unlabelled online-first case.
+- **Kept published:** 46 labelled rows now in an issue, and 8 unlabelled online-first
+  rows.
+- **Downstream:** `load.py` and the API carry the value.
+
+**Verification:** pytest gives the same 21 known failures, with 0 new and 0 ANU (887
+passed). `load.py` matches 100% on all 8 universities. `validate_data.py anu` reports 0
+failures.
+

@@ -23,7 +23,7 @@ requests anything from that host.
 THE TWO SEED FILES
 -------------------
 `data/anu_doi_backfill.csv` has since been edited by hand, one verified row
-at a time (see docs/DECISIONS.md, 28 Sep 2026): 126 rows now.
+at a time (see docs/DECISIONS.md, 28 Sep and 5 Oct 2026): 138 rows now.
 
 `data/anu_identity.csv` (23 rows) and `data/anu_doi_backfill.csv` (123 rows)
 were generated once, by a throwaway script, from two files that were already
@@ -504,7 +504,8 @@ def _is_prose_not_title(pub):
 # enrichment finds nothing — and only when real co-author text exists, with
 # the owner counted. A row WITHOUT a DOI keeps the profile values, with the
 # list number stripped and the owner counted.
-_LIST_NUMBER_RE = re.compile(r"^\s*\d{1,3}\.\s+")
+# "19. Liu, W.-M. , ..." and "25   Liu, J., ..." (no full stop).
+_LIST_NUMBER_RE = re.compile(r"^\s*\d{1,3}(?:\.\s*|\s+)(?=[A-Z])")
 
 
 def _strip_list_numbering(authors):
@@ -538,6 +539,186 @@ def _profile_author_count(researcher_name, authors):
 
 
 # ---------------------------------------------------------------------------
+# Owner-inclusive author names (v27, docs/DECISIONS.md 5 Oct 2026)
+# ---------------------------------------------------------------------------
+#
+# v26 counted the owner but left the author TEXT as the profile wrote it, so
+# 35 DOI-less rows had a count one higher than the names shown, or a count
+# of 1 beside a blank list. Two causes:
+#   - "Title, with A and B" citations name only the co-authors: the owner is
+#     implied, and reads first.
+#   - "Lee, J. and Shailer, G. (2008) “Title”" citations lead with the full
+#     author list, which anu_scraper does not capture as co-author text at
+#     all, so the row showed no authors.
+# Now every profile row gets an explicit "Name; Name" list that always holds
+# the owner, under their display name, in the citation's own order, and the
+# count is the length of that list.
+
+# Initials as citations write them: "W.-M.", "M.D", "X. H.", "Y-J.", "w."
+_INITIALS_TOKEN_RE = re.compile(r"^[A-Za-z]\.?(?:\s*-?\s*[A-Z]\.?)*$")
+# One person's name as one token: up to four words, each capitalised (inner
+# periods allowed: "Lee.J.", "Seve. F."), optionally after a lowercase
+# surname particle.
+_PARTICLE = r"(?:de|van|von|der|den|la|le|du|da|dos)"
+_NAME_TOKEN_RE = re.compile(
+    rf"^(?:{_PARTICLE}\s+)*\(?[A-Z][\w'’.\-]*\)?"
+    rf"(?:\s+(?:{_PARTICLE}\s+)*\(?[A-Z][\w'’.\-]*\)?){{0,3}}$")
+# Where a leading author list stops: a bracketed year or "(forthcoming)",
+# or a bare year after a comma, full stop or space ("Wilson, M. and G.
+# Shailer, 2015, 'Title'").
+_LEADING_LIST_END_RE = re.compile(
+    r"\(\s*(?:(?:19|20)\d{2}[a-z]?|forthcoming|in press)\s*\)"
+    r"|[,.]?\s(?:19|20)\d{2}[a-z]?(?=[\s,.]|$)", re.IGNORECASE)
+# A trailing co-author clause after a dash: "... Australian Tax Forum
+# (2025)—with J Minas; in press." (Sonali Walpola's citation style).
+_DASH_WITH_RE = re.compile(r"[—–]\s*with\s+(?P<names>[^;.]+?)\s*(?:[;.]|$)", re.IGNORECASE)
+_AND_RE = re.compile(r"\s*,?\s*(?:&|\band\b)\s*", re.IGNORECASE)
+
+
+def _is_initials(token):
+    return bool(_INITIALS_TOKEN_RE.match(token))
+
+
+def _split_author_names(text, researcher_name=None):
+    """'Kober, R., Lee, J. and Ng, J.' -> ['R. Kober', 'J. Lee', 'J. Ng'].
+    'Xuejun Jiang, Jeong-Bong Kim and Yangxin Yu' -> three names as written.
+    Returns (names, all_tokens_look_like_names)."""
+    text = re.sub(r"^\s*(?:with\s+)+", "", re.sub(r"\*+", "", text or ""), flags=re.IGNORECASE)
+    text = re.sub(r"\s+", " ", text)                      # incl. non-breaking spaces
+    text = re.sub(r"\s*\.+", ".", text)                   # "Wang, K.T ." / "K.T.." -> "K.T."
+    text = _AND_RE.sub(", ", text)
+    text = re.sub(r"\bet\.?\s*al\.?", "", text, flags=re.IGNORECASE).strip(" ,;")
+    # A full stop that ends a sentence ("... and Yangxin Yu."), not an initial.
+    text = re.sub(r"(?<=[a-z]{2})\.$", "", text).strip(" ,;")
+    tokens = [t.strip() for t in text.split(",") if t.strip()]
+    first, bracket, surname = _split_name(researcher_name or "")
+    given_names = {_fold_name(s) for s in (first, bracket) if s}
+    # Every author written "Surname, Given" ("Daniliuc, Sorin, Bilson, Chris
+    # and Shailer, Greg"): an even run of one-word names in which the owner
+    # appears surname-then-given-name.
+    if (len(tokens) >= 2 and len(tokens) % 2 == 0
+            and all(" " not in t and not _is_initials(t) and _NAME_TOKEN_RE.match(t)
+                    for t in tokens)
+            and any(_fold_name(tokens[j]) == _fold_name(surname)
+                    and _fold_name(tokens[j + 1]) in given_names
+                    for j in range(0, len(tokens), 2))):
+        return [f"{tokens[j + 1]} {tokens[j]}" for j in range(0, len(tokens), 2)], True
+    names, ok, i = [], True, 0
+    while i < len(tokens):
+        tok, nxt = tokens[i], tokens[i + 1] if i + 1 < len(tokens) else None
+        single = " " not in tok and not _is_initials(tok)
+        # "Surname, I." -> "I. Surname"; the surname may be several words
+        # ("von Reibnitz", "Douglas Foster", "Davis III").
+        if (nxt and _is_initials(nxt) and not _is_initials(tok)
+                and len(tok.split()) <= 3 and _NAME_TOKEN_RE.match(tok)):
+            names.append(f"{nxt} {tok}")
+            i += 2
+            continue
+        # The owner written "Surname, Given" ("Wilson, Mark and Greg Shailer").
+        if (single and nxt and surname and _fold_name(tok) == _fold_name(surname)
+                and _fold_name(nxt) in given_names):
+            names.append(f"{nxt} {tok}")
+            i += 2
+            continue
+        # A bare initial, a one-word surname with no initials beside it
+        # ("Hou, F. Wang, R. Ng" - a missing comma), or anything that is not
+        # name-shaped means the list cannot be read reliably.
+        if _is_initials(tok) or single or not _NAME_TOKEN_RE.match(tok):
+            ok = False
+        names.append(tok)
+        i += 1
+    return names, ok
+
+
+def _is_owner(name, researcher_name):
+    """Surname matches, and any initial given is compatible with the owner's
+    first or bracketed name ('C. Wang' is not Alex Wang; 'M. Wilson' is
+    Mark Wilson)."""
+    first, bracket, surname = _split_name(researcher_name)
+    words = [w for w in re.split(r"[\s.]+", name) if w]
+    if not surname or not words:
+        return False
+    sur = _fold_name(surname)
+    if _fold_name(words[-1]) == sur:
+        given = words[:-1]
+    elif _fold_name(words[0]) == sur:          # "Wu M." / "Wilson M."
+        given = words[1:]
+    else:
+        return False
+    if not given:
+        return True
+    starts = {s[0].lower() for s in (first, bracket) if s}
+    return given[0][0].lower() in starts
+
+
+def _leading_author_list(raw, researcher_name):
+    """The author list a citation starts with, before its year:
+    'Lee, J. and Shailer, G. (2008) “...”' -> 'Lee, J. and Shailer, G.'.
+    Only returned when every piece reads as a name and the owner is one of
+    them, so a citation that starts with its title is never misread."""
+    text = _LIST_NUMBER_RE.sub("", raw or "").strip()
+    m = _LEADING_LIST_END_RE.search(text)
+    if not m or m.start() == 0:
+        return None
+    prefix = text[:m.start()].strip(" ,;:")
+    if not prefix or any(q in prefix for q in "\"“”‘’") or prefix.startswith("'"):
+        return None
+    names, ok = _split_author_names(prefix, researcher_name)
+    if not ok or not names or len(names) > 30:
+        return None
+    if not any(_is_owner(n, researcher_name) for n in names):
+        return None
+    return prefix
+
+
+def _is_with_clause(coauthors, raw):
+    """True when the co-author text came from a 'with ...' clause, which
+    names only the people the owner wrote WITH."""
+    if not coauthors or not raw:
+        return False
+    head = re.escape(re.sub(r"^\s*with\s+", "", coauthors, flags=re.IGNORECASE)[:12])
+    return re.search(r"\bwith\s+(?:with\s+)?" + head, raw, re.IGNORECASE) is not None
+
+
+def _owner_inclusive_names(pub, researcher_name, display_name):
+    """(names, how, ok) for one profile citation. Every list holds the owner
+    exactly once, as `display_name`. `ok` is False when some piece of the
+    citation's author text did not read as a name."""
+    coauthors = _strip_list_numbering(pub.coauthors)
+    raw = getattr(pub, "raw", "") or ""
+    how = "coauthor text"
+    if not coauthors:
+        coauthors = _leading_author_list(raw, researcher_name)
+        how = "leading author list"
+    with_clause = False
+    if not coauthors:
+        m = _DASH_WITH_RE.search(raw)
+        if m:
+            coauthors, with_clause, how = m.group("names"), True, "dash with-clause"
+    if not coauthors:
+        return [display_name], "owner only", True
+    names, ok = _split_author_names(coauthors, researcher_name)
+    names = [n for n in names if n]
+    if with_clause or re.match(r"^\s*with\s", coauthors, re.IGNORECASE) \
+            or _is_with_clause(coauthors, raw):
+        others = [n for n in names if not _is_owner(n, researcher_name)]
+        return [display_name] + others, how + " (with)", ok
+    owner_at = [i for i, n in enumerate(names) if _is_owner(n, researcher_name)]
+    if not owner_at:
+        # Published under another given name or initial ("Wu, H." on Steven
+        # Wu's page, "Z. Wang" for Isabel Z. Wang): on the owner's own page,
+        # exactly one name with the owner's surname is the owner.
+        same_surname = [i for i, n in enumerate(names) if _is_owner(n.split()[-1], researcher_name)
+                        or _is_owner(n.split()[0], researcher_name)]
+        if len(same_surname) == 1:
+            owner_at = same_surname
+    if owner_at:
+        names[owner_at[0]] = display_name
+        return [n for i, n in enumerate(names) if i not in owner_at[1:]], how, ok
+    return [display_name] + names, how + " (owner added)", ok
+
+
+# ---------------------------------------------------------------------------
 # Publications
 # ---------------------------------------------------------------------------
 
@@ -568,14 +749,13 @@ def _map_publication(pub, name_clean, backfill_by_key, doi_stats):
         else:
             doi_stats["not_matched"] += 1
 
-    profile_authors = _strip_list_numbering(pub.coauthors)
-    profile_count = _profile_author_count(pub.researcher_name, profile_authors)
+    names, how, names_ok = _owner_inclusive_names(pub, pub.researcher_name, name_clean)
+    profile_authors = "; ".join(names)
+    profile_count = len(names)
     if doi:
         n_authors, authors = None, None
     else:
-        # No co-author text: keep anu_scraper's own default (1), as before.
-        n_authors = profile_count if profile_count is not None else pub.author_count
-        authors = profile_authors
+        n_authors, authors = profile_count, profile_authors
 
     row = blank_pub(
         name=name_clean,
@@ -591,10 +771,75 @@ def _map_publication(pub, name_clean, backfill_by_key, doi_stats):
         link=pub.article_url,
         source=SOURCE_NAME,
     )
-    if doi and profile_count is not None:
+    # For a DOI row the profile list is only a fallback for when enrichment
+    # returns no authors, and only when the citation names someone in a list
+    # that reads cleanly: an owner-only or garbled list would be a guess there,
+    # and blank is preferred.
+    if doi and how != "owner only" and names_ok:
         row["_anu_profile_n_authors"] = profile_count
         row["_anu_profile_authors"] = profile_authors
+    # The profile's own explicit "forthcoming"/"in press" label (client's
+    # 19 Aug rule); export._anu_publication_status decides the final status.
+    row["_anu_forthcoming_label"] = bool(getattr(pub, "forthcoming", False))
     return row, doi_from_page
+
+
+# ---------------------------------------------------------------------------
+# Unparsed entries that print their own DOI (v27, docs/DECISIONS.md 5 Oct)
+# ---------------------------------------------------------------------------
+#
+# anu_scraper leaves an entry unparsed when it cannot split the citation
+# reliably, e.g. Lily Chen's "2022. Wang, R., Hou, F.,Cahan, Chen, L., ...
+# Fine-grained entity typing ... doi: 10.1109/TKDE.2022.3148980", where a
+# garbled author list hides the title boundary. When the entry prints its
+# own DOI, the DOI record can stand in for the parse, but only if all of
+# these hold: Crossref types it as a journal article, its registered title
+# appears word for word in the entry's text, and the owner's surname is one
+# of its authors. Otherwise the entry stays unparsed, as before.
+RESCUED_UNPARSED = []
+
+
+def _crossref_work(doi):
+    from core.config import CR_HEADERS, CROSSREF_BASE
+    try:
+        data = cached_get(f"{CROSSREF_BASE}/{doi}", headers=CR_HEADERS, sleep=0.5, allow_404=True)
+    except Exception as e:
+        print(f"    Crossref lookup failed for {doi}: {type(e).__name__} {e}")
+        return {}
+    return (data or {}).get("message") or {}
+
+
+def _rescue_unparsed_with_doi(pub, name_clean, fetch=_crossref_work):
+    """A blank_pub() row for an unparsed entry that passes the checks above,
+    else None."""
+    doi = (pub.doi or "").strip().lower()
+    if not doi or pub.publication_type != "journal_article":
+        return None
+    msg = fetch(doi) or {}
+    if msg.get("type") != "journal-article" or not msg.get("container-title"):
+        return None
+    title = re.sub(r"<[^>]+>", "", (msg.get("title") or [""])[0] or "")
+    title = re.sub(r"\s+", " ", title).strip()
+    if not title or _normalise_title(title) not in _normalise_title(pub.raw):
+        return None
+    _, _, surname = _split_name(pub.researcher_name)
+    # Last word of the family name: Crossref registers Louise Lu as given
+    # "Louise", family "Yi Lu".
+    families = {_fold_name((a.get("family") or "").split()[-1:][0] if a.get("family") else "")
+                for a in msg.get("author") or []}
+    if _fold_name(surname) not in families:
+        return None
+    dates = {k: ((msg.get(k) or {}).get("date-parts") or [[None]])[0][0]
+             for k in ("published-print", "issued", "published-online")}
+    year = dates["published-print"] or dates["issued"] or dates["published-online"]
+    RESCUED_UNPARSED.append({"name": pub.researcher_name, "doi": doi, "title": title})
+    return blank_pub(
+        name=name_clean, source_id=None, title=title,
+        year=str(year) if year else None, type="Journal Article",
+        n_authors=None, authors=None, issns=list(msg.get("ISSN") or []),
+        journal=msg["container-title"][0], doi=doi, link=pub.article_url,
+        source=SOURCE_NAME, _anu_forthcoming_label=bool(pub.forthcoming),
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -637,6 +882,11 @@ def collect(verbose=True, refresh=False):
         rec = records[i - 1]
         confident, unparsed, had_section = anu_scraper.scrape_profile(r)
         unparsed_total += len(unparsed)
+        for pub in unparsed:
+            rescued = _rescue_unparsed_with_doi(pub, rec["name_clean"])
+            if rescued:
+                pubs.append(rescued)
+                pubs_by_name[r.name] += 1
         for pub in confident:
             mapped, had_page_doi = _map_publication(
                 pub, rec["name_clean"], backfill_by_key, doi_stats)
@@ -697,6 +947,9 @@ def collect(verbose=True, refresh=False):
               f"({doi_stats['ambiguous']} ambiguous, not carried; "
               f"{doi_stats['conflicts']} page/seed conflicts, page kept)")
         print(f"  {len(staff_no_pubs)} staff with no publications")
+        for row in RESCUED_UNPARSED:
+            print(f"  unparsed entry recovered from its own DOI: {row['name']}: "
+                  f"{row['doi']} {row['title'][:60]!r}")
         if TITLE_REPAIR_COUNTS:
             print(f"  title repairs (FIX I): "
                   + ", ".join(f"{k}={v}" for k, v in TITLE_REPAIR_COUNTS.items()))

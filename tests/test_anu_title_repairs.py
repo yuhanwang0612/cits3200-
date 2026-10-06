@@ -158,7 +158,10 @@ def test_mangled_review_title_is_repaired_even_from_an_orcid_sourced_row():
     )
     records = [{"name_clean": "Greg Shailer",
                 "university": "Australian National University"}]
-    out = build_publications([row], records=records, verbose=False)
+    # Offline: no DOI record, so the v27 book-review rule (which drops this
+    # row in a real run; tests/test_anu_final_rules.py) does not apply here.
+    out = build_publications([row], records=records, verbose=False,
+                             crossref_fetch=lambda doi: {})
     assert len(out) == 1
     assert out[0]["title"] == (
         "Auditing and Assurance Services and Ethics in Australia: An "
