@@ -48,18 +48,6 @@
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/1045278"
   },
   {
-    "name": "Noel Boys",
-    "job_title": "Teaching Fellow",
-    "academic_level": null,
-    "academic_title": null,
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://findanexpert.unimelb.edu.au/profile/11503"
-  },
-  {
     "name": "Albie Brooks",
     "job_title": "Professor",
     "academic_level": "E",
@@ -118,18 +106,6 @@
     "source_id": "151430",
     "orcid": "0000-0001-9335-6644",
     "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/tongqing-ding"
-  },
-  {
-    "name": "Matt Dyki",
-    "job_title": "Teaching Fellow",
-    "academic_level": null,
-    "academic_title": null,
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://findanexpert.unimelb.edu.au/profile/223994"
   },
   {
     "name": "Patrick Ferguson",
@@ -252,18 +228,6 @@
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/1093039"
   },
   {
-    "name": "Derick Lyle",
-    "job_title": "Teaching Fellow",
-    "academic_level": null,
-    "academic_title": null,
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://findanexpert.unimelb.edu.au/profile/826860"
-  },
-  {
     "name": "Rebecca Mattocks",
     "job_title": "Lecturer",
     "academic_level": "B",
@@ -274,18 +238,6 @@
     "source_id": null,
     "orcid": "0009-0007-8558-527X",
     "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/rebecca-mattocks"
-  },
-  {
-    "name": "Warren McKeown",
-    "job_title": "Teaching Fellow",
-    "academic_level": null,
-    "academic_title": null,
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Accounting",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://findanexpert.unimelb.edu.au/profile/178662"
   },
   {
     "name": "Vic Naiker",
@@ -358,18 +310,6 @@
     "source_id": "117320",
     "orcid": "0000-0002-3777-6756",
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/761836"
-  },
-  {
-    "name": "Maggie Singorahardjo",
-    "job_title": null,
-    "academic_level": null,
-    "academic_title": null,
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Accounting",
-    "source_id": "132066",
-    "orcid": "0000-0003-4778-3746",
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/accounting/maggie-singorahardjo"
   },
   {
     "name": "Naomi Soderstrom",
@@ -502,18 +442,6 @@
     "source_id": "12012",
     "orcid": "0000-0002-7688-0193",
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/181374"
-  },
-  {
-    "name": "Jon Gauntlett",
-    "job_title": "Tutor - Education Focussed",
-    "academic_level": null,
-    "academic_title": null,
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": null,
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/jon-gauntlett"
   },
   {
     "name": "Marina Gertsberg",
@@ -660,18 +588,6 @@
     "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/lucie-lu"
   },
   {
-    "name": "Maurice McCourt",
-    "job_title": "Senior Lecturer - Education Focussed & Deputy Program Director (Master of Management (Finance))",
-    "academic_level": "C",
-    "academic_title": "Senior Lecturer",
-    "admin_title": "Deputy Program Director",
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": "141610",
-    "orcid": "0000-0002-1808-8675",
-    "profile_url": "https://findanexpert.unimelb.edu.au/profile/833272"
-  },
-  {
     "name": "Mrinal Mishra",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -708,18 +624,6 @@
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/551184"
   },
   {
-    "name": "Anthony Ng",
-    "job_title": "Senior Lecturer - Education Focussed",
-    "academic_level": "C",
-    "academic_title": "Senior Lecturer",
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": "0000-0002-5098-5616",
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/anthony-ng"
-  },
-  {
     "name": "Hoonsuk Park",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -730,18 +634,6 @@
     "source_id": "158952",
     "orcid": "0000-0003-1271-4804",
     "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/hoonsuk-park"
-  },
-  {
-    "name": "Hung (Harry) Viet Pham",
-    "job_title": "Tutor - Education Focussed",
-    "academic_level": null,
-    "academic_title": null,
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": "182729",
-    "orcid": "0000-0001-8163-4010",
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/hung-harry-viet-pham"
   },
   {
     "name": "Sean Pinder",
@@ -792,18 +684,6 @@
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/810575"
   },
   {
-    "name": "Xiaoting Wei",
-    "job_title": "Lecturer - Education Focussed",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": null,
-    "orcid": "0000-0001-6490-9967",
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/xiaoting-wei"
-  },
-  {
     "name": "Nitin Yadav",
     "job_title": "Senior Lecturer PhD Coordinator (Centre for Brain, Mind and Markets)",
     "academic_level": "C",
@@ -850,29 +730,5 @@
     "source_id": "54898",
     "orcid": "0000-0001-6251-2552",
     "profile_url": "https://findanexpert.unimelb.edu.au/profile/667468"
-  },
-  {
-    "name": "Yun (Tracy) Zhou",
-    "job_title": "Tutor - Education Focussed",
-    "academic_level": null,
-    "academic_title": null,
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": "195949",
-    "orcid": "0000-0003-0115-3124",
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/yun-tracy-zhou"
-  },
-  {
-    "name": "Silvia Zia",
-    "job_title": "Lecturer - Education Focussed",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Melbourne",
-    "field_of_research": "Finance",
-    "source_id": "178941",
-    "orcid": "0009-0001-9381-1421",
-    "profile_url": "https://fbe.unimelb.edu.au/our-people/staff/finance/silvia-zia"
   }
 ]

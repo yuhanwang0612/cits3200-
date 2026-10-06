@@ -48,18 +48,6 @@
     "profile_url": "https://profiles.sydney.edu.au/max.baker"
   },
   {
-    "name": "Paul Blayney",
-    "job_title": "Lecturer (Education Focused)",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "paul.blayney",
-    "orcid": "0000-0002-5231-4306",
-    "profile_url": "https://profiles.sydney.edu.au/paul.blayney"
-  },
-  {
     "name": "Roel Boomsma",
     "job_title": "Senior Lecturer in Accounting",
     "academic_level": "C",
@@ -74,26 +62,14 @@
   {
     "name": "Martin Bugeja",
     "job_title": "Head of School, Accounting, Governance and Regulation",
-    "academic_level": null,
-    "academic_title": null,
+    "academic_level": "E",
+    "academic_title": "Professor",
     "admin_title": "Head of School",
     "university": "University of Sydney",
     "field_of_research": "Accounting",
     "source_id": "martin.bugeja",
     "orcid": "0000-0002-1941-5092",
     "profile_url": "https://profiles.sydney.edu.au/martin.bugeja"
-  },
-  {
-    "name": "Sara Cao",
-    "job_title": "Associate Lecturer (Education Focused)",
-    "academic_level": "A",
-    "academic_title": "Associate Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "sara.cao",
-    "orcid": "0000-0002-3779-7418",
-    "profile_url": "https://profiles.sydney.edu.au/sara.cao"
   },
   {
     "name": "David Chaikin",
@@ -228,18 +204,6 @@
     "profile_url": "https://profiles.sydney.edu.au/geoffrey.frost"
   },
   {
-    "name": "Fei Gao",
-    "job_title": "Lecturer in Business Law (Education Focused)",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "fei.gao",
-    "orcid": "0009-0007-6410-1547",
-    "profile_url": "https://profiles.sydney.edu.au/fei.gao"
-  },
-  {
     "name": "Angela Hecimovic",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -262,18 +226,6 @@
     "source_id": "eva.huang",
     "orcid": "0000-0002-5663-5828",
     "profile_url": "https://profiles.sydney.edu.au/eva.huang"
-  },
-  {
-    "name": "Tina Huynh",
-    "job_title": "Lecturer (Education Focused)",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "tina.huynh",
-    "orcid": "0000-0003-0194-8963",
-    "profile_url": "https://profiles.sydney.edu.au/tina.huynh"
   },
   {
     "name": "Kaiying Ji",
@@ -300,18 +252,6 @@
     "profile_url": "https://profiles.sydney.edu.au/stewart.jones"
   },
   {
-    "name": "Benjamin Lay",
-    "job_title": "Lecturer in International Accounting (Education Focused)",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "benjamin.lay",
-    "orcid": "0000-0003-4003-7695",
-    "profile_url": "https://profiles.sydney.edu.au/benjamin.lay"
-  },
-  {
     "name": "Chang-Yuan Loh",
     "job_title": "Lecturer",
     "academic_level": "B",
@@ -334,18 +274,6 @@
     "source_id": "vijaya.murthy",
     "orcid": "0000-0002-8473-7565",
     "profile_url": "https://profiles.sydney.edu.au/vijaya.murthy"
-  },
-  {
-    "name": "Camille Peng",
-    "job_title": "Associate Lecturer (Education Focused)",
-    "academic_level": "A",
-    "academic_title": "Associate Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Accounting",
-    "source_id": "shiyao.peng",
-    "orcid": "0009-0002-0853-1861",
-    "profile_url": "https://profiles.sydney.edu.au/shiyao.peng"
   },
   {
     "name": "Abdul Razeed",
@@ -672,30 +600,6 @@
     "profile_url": "https://profiles.sydney.edu.au/guanglian.hu"
   },
   {
-    "name": "He Huang",
-    "job_title": "Lecturer in Finance (Education focused)",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "he.huang",
-    "orcid": "0000-0003-3715-6490",
-    "profile_url": "https://profiles.sydney.edu.au/he.huang"
-  },
-  {
-    "name": "George Issa",
-    "job_title": "Lecturer (Education Focused)",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "george.issa",
-    "orcid": "0009-0008-1361-5764",
-    "profile_url": "https://profiles.sydney.edu.au/george.issa"
-  },
-  {
     "name": "Elvis Jarnecic",
     "job_title": "Senior Lecturer",
     "academic_level": "C",
@@ -732,18 +636,6 @@
     "profile_url": "https://profiles.sydney.edu.au/sukjoong.kim"
   },
   {
-    "name": "Doowon Lee",
-    "job_title": "Associate Professor of Finance (Education Focused)",
-    "academic_level": "D",
-    "academic_title": "Associate Professor",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "doowon.lee",
-    "orcid": "0000-0001-8251-0714",
-    "profile_url": "https://profiles.sydney.edu.au/doowon.lee"
-  },
-  {
     "name": "Haekwon Lee",
     "job_title": "Senior Lecturer in Finance",
     "academic_level": "C",
@@ -778,18 +670,6 @@
     "source_id": "lantian.liang",
     "orcid": null,
     "profile_url": "https://profiles.sydney.edu.au/lantian.liang"
-  },
-  {
-    "name": "Daisy Liu",
-    "job_title": "Associate Lecturer in Finance (Education Focused)",
-    "academic_level": "A",
-    "academic_title": "Associate Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "ya.liu",
-    "orcid": null,
-    "profile_url": "https://profiles.sydney.edu.au/ya.liu"
   },
   {
     "name": "Danilo Lopomo Beteto",
@@ -982,18 +862,6 @@
     "source_id": "joakim.westerholm",
     "orcid": "0000-0002-1533-8720",
     "profile_url": "https://profiles.sydney.edu.au/joakim.westerholm"
-  },
-  {
-    "name": "Vycke Wu",
-    "job_title": "Lecturer (Education Focused)",
-    "academic_level": "B",
-    "academic_title": "Lecturer",
-    "admin_title": null,
-    "university": "University of Sydney",
-    "field_of_research": "Finance",
-    "source_id": "vycke.wu",
-    "orcid": "0009-0007-3365-9441",
-    "profile_url": "https://profiles.sydney.edu.au/vycke.wu"
   },
   {
     "name": "Pramod Kumar Yadav",
