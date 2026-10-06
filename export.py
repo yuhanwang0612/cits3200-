@@ -547,18 +547,20 @@ def merge_near_duplicates(rows):
 #
 # job_title stays as the university's own raw string. These two are derived
 # beside it, so nothing downstream that reads job_title changes.
+#
+# The team chose the academic rank over the quote's "Dr" for B and C: "Dr" is
+# a qualification, and the rank is what distinguishes a Lecturer from a
+# Senior Lecturer. The rank comes from the person's own title where it names
+# one at their level ("Senior Research Fellow" stays that, not "Senior
+# Lecturer"), else the generic rank for the level.
 
 ACADEMIC_TITLE_BY_LEVEL = {
-    "B": "Dr",
-    "C": "Dr",
+    "A": "Associate Lecturer",
+    "B": "Lecturer",
+    "C": "Senior Lecturer",
     "D": "Associate Professor",
     "E": "Professor",
 }
-
-# Level A is deliberately absent. The spec says B-E and 8 people are at A
-# (UNSW 1, USyd 6, UWA 1); an Associate Lecturer does not necessarily hold a
-# doctorate, so guessing "Dr" for them would be inventing a credential.
-# They get a blank until the client says what A should read.
 
 # Sean's mapping table of 25 September, which the client approved ("Yes.
 # Note that these are administrative title, not academic title."). Longest
@@ -579,9 +581,16 @@ _ADMIN_TITLES = [
 ]
 
 
-def academic_title_for_level(level_code):
-    """'Dr' / 'Associate Professor' / 'Professor', or None off the scale."""
-    return ACADEMIC_TITLE_BY_LEVEL.get((level_code or "").strip().upper())
+def academic_title_for_level(level_code, job_title=None):
+    """The academic rank for a level ("Senior Lecturer"), or None off the
+    scale. The job title's own rank wins when it is at the same level."""
+    code = (level_code or "").strip().upper()
+    if code not in ACADEMIC_TITLE_BY_LEVEL:
+        return None
+    own = rank(job_title) if job_title else None
+    if own and level(own) == code:
+        return own
+    return ACADEMIC_TITLE_BY_LEVEL[code]
 
 
 def admin_title_from(job_title):
@@ -2080,7 +2089,8 @@ def export(records, pubs, out_dir=None, drop_staff_without_pubs=False,
     _titled = _admin = 0
     _no_level = []
     for _s in staff:
-        _s["academic_title"] = academic_title_for_level(_s.get("academic_level"))
+        _s["academic_title"] = academic_title_for_level(_s.get("academic_level"),
+                                                        _s.get("job_title"))
         _s["admin_title"] = admin_title_from(_s.get("job_title"))
         if _s["academic_title"]:
             _titled += 1

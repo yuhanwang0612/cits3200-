@@ -12,6 +12,9 @@ The client's own words, 2 October:
 
 and, on Sean's mapping table the week before, "Yes. Note that these are
 administrative title, not academic title."
+
+The team then chose the academic rank over "Dr" for B and C ("Dr" is a
+qualification), so Academic Title reads Lecturer / Senior Lecturer there.
 """
 
 import sys
@@ -27,16 +30,31 @@ from export import (                                               # noqa: E402
 
 # ------------------------------------------------ academic title
 
-def test_the_mapping_is_exactly_what_the_client_specified():
+def test_each_level_reads_as_its_rank():
     assert ACADEMIC_TITLE_BY_LEVEL == {
-        "B": "Dr", "C": "Dr",
+        "A": "Associate Lecturer",
+        "B": "Lecturer", "C": "Senior Lecturer",
         "D": "Associate Professor",
         "E": "Professor",
     }
 
 
-def test_b_and_c_both_read_dr():
-    assert academic_title_for_level("B") == academic_title_for_level("C") == "Dr"
+def test_b_and_c_are_ranks_not_dr():
+    assert academic_title_for_level("B") == "Lecturer"
+    assert academic_title_for_level("C") == "Senior Lecturer"
+
+
+def test_the_job_titles_own_rank_wins_at_the_same_level():
+    assert academic_title_for_level("C", "Senior Research Fellow") == "Senior Research Fellow"
+    assert academic_title_for_level("E", "Emeritus Professor") == "Emeritus Professor"
+    assert academic_title_for_level("C", "Senior Lecturer in Finance") == "Senior Lecturer"
+
+
+def test_a_job_title_at_another_level_does_not_override_the_level():
+    """A staff override can set the level when the title has no rank, or
+    disagree with it; the level decides."""
+    assert academic_title_for_level("E", "Dean, School of Accounting") == "Professor"
+    assert academic_title_for_level("C", "Program Director") == "Senior Lecturer"
 
 
 def test_d_and_e():
@@ -44,11 +62,9 @@ def test_d_and_e():
     assert academic_title_for_level("E") == "Professor"
 
 
-def test_level_a_is_left_blank_rather_than_guessed():
-    """The spec says B-E. 8 people sit at A (UNSW 1, USyd 6, UWA 1) and an
-    Associate Lecturer may hold no doctorate, so "Dr" would be invented.
-    Blank until the client answers."""
-    assert academic_title_for_level("A") is None
+def test_level_a_reads_associate_lecturer():
+    """With ranks rather than "Dr", level A has an honest title too."""
+    assert academic_title_for_level("A") == "Associate Lecturer"
 
 
 def test_a_missing_level_gives_no_title():

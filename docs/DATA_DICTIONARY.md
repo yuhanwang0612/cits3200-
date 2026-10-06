@@ -39,7 +39,7 @@ of this page.
 |---|---|
 | `name` | The researcher's name with titles removed ("Dr", "Prof"). |
 | `job_title` | The position as the university lists it, e.g. "Senior Lecturer in Finance". |
-| `academic_title` | The academic title implied by `academic_level`: "Dr" for B and C, "Associate Professor" for D, "Professor" for E. Blank for level A or no level. |
+| `academic_title` | The academic rank: "Associate Lecturer" (A), "Lecturer" (B), "Senior Lecturer" (C), "Associate Professor" (D), "Professor" (E). Where the job title names a rank at that level, that rank is used instead, e.g. "Senior Research Fellow" or "Emeritus Professor". Blank when there is no level. |
 | `admin_title` | The administrative role, if the person holds one, with the department detail removed, e.g. "Dean", "Head of School", "Program Director". Blank for most staff. |
 | `academic_level` | The Australian academic level derived from the listed title (below). Blank when the title does not map to one, e.g. an administrative role such as "Deputy Head of School". |
 | `university` | The university's name. |
