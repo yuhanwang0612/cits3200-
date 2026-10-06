@@ -110,8 +110,13 @@ def _harmonise_doi_metadata(rows):
     upstream indexes, so harmonisation is deliberately limited to groups
     whose titles are clearly the same work (normalised equality, one title
     being a subtitle-truncated prefix, or strong fuzzy similarity).
+
+    Once a group is the same work, one researcher keeps one copy: two ORCID
+    entries for one paper ("A Liberalization Spillover" and its full title)
+    otherwise survive the title-keyed dedup and come out identical here.
     """
     groups = {}
+    duplicates = set()
     for row in rows:
         doi = _dedup_doi(row.get("doi"))
         if doi:
@@ -159,10 +164,22 @@ def _harmonise_doi_metadata(rows):
             if values:
                 counts = Counter(values)
                 canonical[field] = max(values, key=lambda value: counts[value])
+        # Collapsing needs stronger evidence than harmonising: a one-word
+        # prefix ("Editorial" / "Editorial note on ...") can be two items.
+        collapse = (
+            len(set(nonempty)) == 1
+            or min_similarity >= NEAR_DUP_TITLE_RATIO
+            or (longest.startswith(shortest + " ")
+                and len(shortest) >= _PREFIX_DUP_MIN_TITLE_LEN)
+        )
+        seen_names = set()
         for row in group:
             row.update(canonical)
+            if collapse and row.get("name") in seen_names:
+                duplicates.add(id(row))
+            seen_names.add(row.get("name"))
 
-    return rows
+    return [row for row in rows if id(row) not in duplicates]
 
 
 def _differing_part_marker(title_a, title_b):
