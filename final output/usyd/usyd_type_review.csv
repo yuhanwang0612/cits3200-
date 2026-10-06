@@ -1,7 +1,9 @@
 action,reason,name,title,year,journal,doi,source
 dropped,OpenAlex type: editorial,Eddie Anderson,Preface to the Special Issue on Information and Decisions in Social and Economic Networks,2016,Operations Research,10.1287/opre.2016.1513,Sydney Profiles
+dropped,OpenAlex type: editorial,Jane Andrew,Big data and accounting,2022,Critical Perspectives on Accounting,10.1016/j.cpa.2022.102478,Sydney Profiles
 dropped,OpenAlex type: editorial,Jane Andrew,Special Issue Editorial: Covid and the environment in crisis,2022,Critical Perspectives on Accounting,10.1016/j.cpa.2021.102413,Sydney Profiles
 dropped,OpenAlex type: editorial,Jane Andrew,"Special issue on Accounting, disasters and the government of biosecurity",2020,Critical Perspectives on Accounting,10.1016/j.cpa.2020.102206,Sydney Profiles
+dropped,OpenAlex type: editorial,Max Baker,Big data and accounting,2022,Critical Perspectives on Accounting,10.1016/j.cpa.2022.102478,Sydney Profiles
 review,OpenAlex type: Book,Wai-Fong Chua,Critical perspectives in management control,2015,Critical Perspectives in Management Control,10.1007/978-1-349-07658-1,Sydney Profiles
 dropped,OpenAlex type: book-review,Wai-Fong Chua,"Book Review: Controlling Strategy: Management, Accounting, and Performance Measurement",2006,Organization Studies,10.1177/0170840606066421,Sydney Profiles
 review,OpenAlex type: Book Chapter,Wai-Fong Chua,"Accounting and Control in Health Care: Behavioural, Organisational, Sociological and Critical Perspectives",2006,Handbooks of Management Accounting Research,10.1016/s1751-3243(06)02014-1,Sydney Profiles
@@ -11,11 +13,11 @@ dropped,OpenAlex type: editorial,Graeme Dean,Abacus: Editorial announcement,2009
 dropped,OpenAlex type: editorial,Graeme Dean,Commentary on Siena Open Forum: Conceptual Framework,2008,Abacus,10.1111/j.1467-6281.2008.00259.x,Sydney Profiles
 review,OpenAlex type: Book Chapter,Graeme Dean,Corporate Governance: A Case of ‘Misplaced Concreteness’?,2005,Advances in Public Interest Accounting,10.1016/s1041-7060(05)11002-5,Sydney Profiles
 dropped,OpenAlex type: editorial,Matthew Egan,"Finding Our Voices – Exploring Diversity, Inclusion and Accounting by the Marginalised and Managed Diverse",2024,Social and Environmental Accountability Journal,10.1080/0969160x.2024.2374244,Sydney Profiles
-dropped,OpenAlex type: book-review,Matthew Egan,Water Footprint: Help or Hindrance?,2013,Social and Environmental Accountability Journal,10.1080/0969160x.2013.820396,Sydney Profiles
 review,OpenAlex type: Book Chapter,Clinton Free,A research note on control practice and culture at Enron,2025,Advances in Management Accounting,10.1016/s1474-7871(08)17012-5,Sydney Profiles
 dropped,OpenAlex type: book-review,Wes Hamilton-Jessop,Corporate Social Responsibility and Tax Aggressiveness: An Empirical Analysis,2013,Social and Environmental Accountability Journal,10.1080/0969160x.2013.820421,Sydney Profiles
 dropped,OpenAlex type: book-review,Angela Hecimovic,Stakeholder Inclusivity in Social and Environmental Report Assurance,2011,Social and Environmental Accountability Journal,10.1080/0969160x.2011.556414,Sydney Profiles
 dropped,OpenAlex type: editorial,Stewart Jones,Special Issue on Earnings Management,2018,Abacus,10.1111/abac.12129,Sydney Profiles
+review,OpenAlex type: Book Chapter,Stewart Jones,Corporate bankruptcy prediction: a high dimensional analysis,2017,Review of Accounting Studies,10.1007/s11142-017-9407-1,Sydney Profiles
 dropped,OpenAlex type: editorial,Stewart Jones,Abacus: Editorial announcement,2009,Abacus,10.1111/j.1467-6281.2009.00280.x,Sydney Profiles
 dropped,OpenAlex type: editorial,Stewart Jones,"Discussion of García Lara, García Osma and Gill de Albornoz Noguer",2006,Abacus,10.1111/j.1467-6281.2006.00210.x,Sydney Profiles
 dropped,OpenAlex type: book-review,John Roberts,"Disturbing Business Ethics: Emmanuel Levinas and the Politics of Organization, by Carl Rhodes. Abingdon, UK: Routledge, 2020. 148 pp.",2021,Business Ethics Quarterly,10.1017/beq.2021.20,Sydney Profiles
@@ -37,6 +39,7 @@ dropped,OpenAlex type: conference-abstract,Iftekhar Hasan,Knowledge Flows Within
 dropped,OpenAlex type: conference-abstract,Iftekhar Hasan,Employee Treatment and Contracting with Private Lenders,2014,Academy of Management Proceedings,10.5465/ambpp.2014.12364abstract,Sydney Profiles
 review,OpenAlex type: Book Chapter,Iftekhar Hasan,Mergers and target transparency,2014,Advances in Financial Economics,10.1108/s1569-373220140000017001,Sydney Profiles
 review,OpenAlex type: Book Chapter,Iftekhar Hasan,The influence of corporate venture capital investment on the likelihood of attracting a prestigious underwriter: An empirical investigation,2011,Advances in Financial Economics,10.1108/s1569-3732(2011)0000014010,Sydney Profiles
+review,OpenAlex type: Preprint,Iftekhar Hasan,Cross‐Border Bank M&As and Risk: Evidence from the Bond Market,2010,Journal of money credit and banking,10.1111/j.1538-4616.2010.00301.x,Sydney Profiles
 dropped,OpenAlex type: conference-abstract,Iftekhar Hasan,PROTECTION FROM THE MARKET FOR CORPORATE CONTROL AND THE INVENTIVE PRODUCTIVITY OF TECHNOLOGY-BASED FIRMS.,2008,Academy of Management Proceedings,10.5465/ambpp.2008.33661041,Sydney Profiles
 dropped,OpenAlex type: conference-abstract,Iftekhar Hasan,"R&D, INSIDER OWNERSHIP, ANALYST COVERAGE, AND UNDERPRICING OF TECHNOLOGY IPOS.",2005,Academy of Management Proceedings,10.5465/ambpp.2005.18783578,Sydney Profiles
 dropped,OpenAlex type: editorial,Iftekhar Hasan,Overview of the special issue on the euro five years on,2004,Journal of International Money and Finance,10.1016/j.jimonfin.2004.09.003,Sydney Profiles

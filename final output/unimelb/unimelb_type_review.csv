@@ -1,5 +1,7 @@
 action,reason,name,title,year,journal,doi,source
 review,OpenAlex type: paratext,André Gygax,Index composition changes and the cost of incumbency,2010,Journal of Banking & Finance,10.1016/j.jbankfin.2010.04.007,UniMelb Minerva
+review,OpenAlex type: Book Chapter,Paul Kofman,"Diversification, fee income, and credit union risk",2005,Journal of Financial Services Research,10.1007/s10693-005-1804-0,UniMelb Minerva
+dropped,OpenAlex type: editorial,Margaret Abernethy,Accounting and Finance: From the editor,2000,,10.1111/1467-629x.00031,ORCID
 review,OpenAlex type: Book Chapter,Anne Lillis,Simons’ Levers of Control Framework: Commensuration within and of the Framework,2017,Advances in Management Accounting,10.1108/s1474-787120170000028004,ORCID
 dropped,OpenAlex type: editorial,Naomi Soderstrom,"Approaching Research Broadly, Not Just Deeply: The Case of Real Activities Manipulation",2016,China Journal of Accounting Studies,10.1080/21697213.2016.1218634,ORCID
 dropped,OpenAlex type: book-review,Naomi Soderstrom,Accounting for Sustainability,2008,Accounting Review,10.2308/accr.2008.83.5.1383,ORCID
