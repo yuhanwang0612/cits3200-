@@ -28,3 +28,13 @@ from export import normalize_authors
 ])
 def test_normalize_authors(raw, expected):
     assert normalize_authors(raw) == expected
+
+
+@pytest.mark.parametrize("raw, count, expected", [
+    ("Slapnicar, Sergeja", 1, "Sergeja Slapnicar"),
+    ("Peters, Matthew Damon", "1", "Matthew Damon Peters"),
+    ("Do, Truc (Peter)", 1, "Truc (Peter) Do"),
+    ("K.C. Ho, A. Karathanasopoulos", 2, "K.C. Ho; A. Karathanasopoulos"),
+])
+def test_a_sole_author_in_surname_given_form_is_one_person(raw, count, expected):
+    assert normalize_authors(raw, count) == expected
