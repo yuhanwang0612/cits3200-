@@ -1740,7 +1740,14 @@ _NON_ARTICLE_TITLE = re.compile(
     r"^\W*(foreword|preface|prelims|front matter|back matter|in memoriam|"
     r"obituary|editorial board|contents|index|errata|introduction|editorial|"
     r"guest editorial|editorial introduction|editor'?s'? note)\W*$"
-    r"|^\W*(retraction|withdrawal) (note|notice)\b|^\W*(retracted|withdrawn)( article)?\s*:", re.I)
+    r"|^\W*(retraction|withdrawal) (note|notice)\b|^\W*(retracted|withdrawn)( article)?\s*:"
+    # A title that opens with one of these is that kind of item, whatever
+    # follows: "Book Review: GDP ...", "In Memoriam Dr. ...". Foreword and
+    # preface need punctuation or on/to/by/for after them ("Foreword on
+    # Special Issue: ...", "Preface - Editors' Note"), so a research title
+    # such as "Foreword guidance and ..." is kept.
+    r"|^\W*(book reviews?|in memoriam|editor'?s'?\s+note|editorial note)\b"
+    r"|^\W*(foreword|preface)\s*([:\-–—]|(on|to|by|for)\b)", re.I)
 # A discussant's piece on someone else's paper ("Discussion of ...",
 # "... - Discussion", "... - Comment"). Journals print them alongside the
 # paper, but they are not research articles.

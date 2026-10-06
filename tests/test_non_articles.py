@@ -155,3 +155,23 @@ def test_a_discussant_piece_is_dropped(title):
     "Investor reply to dividend cuts"])
 def test_a_research_title_mentioning_discussion_is_kept(title):
     assert len(build_publications([_pub(title=title, oa_type=None)], verbose=False)) == 1
+
+
+@pytest.mark.parametrize("title", [
+    "Book Review: GDP: A Brief But Affectionate History",
+    "Book review: Jane Gleeson-White, Six Capitals",
+    "Foreword on Special Issue: Informing Sustainability Assurance Regulators",
+    "Foreword - Journal of the Australasian Tax Teachers Association",
+    "Preface - Editors' Note",
+    "In Memoriam Dr. Chris Tsoumas (25 December 1964-1 April 2021)",
+    "Editor's note and ad hoc reviewers for 2010"])
+def test_a_title_opening_with_a_non_article_word_is_dropped(title):
+    assert build_publications([_pub(title=title, oa_type=None)], verbose=False) == []
+
+
+@pytest.mark.parametrize("title", [
+    "Forewords in annual reports and investor sentiment",
+    "Review of Post-CLERP 9 Australian Auditor Independence Research",
+    "Prefaced disclosures and analyst forecasts"])
+def test_research_titles_near_those_words_are_kept(title):
+    assert len(build_publications([_pub(title=title, oa_type=None)], verbose=False)) == 1

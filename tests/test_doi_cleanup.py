@@ -51,3 +51,18 @@ def test_a_real_journal_is_kept(name):
 ])
 def test_reviewed_wrong_dois_are_overridden(raw, fixed):
     assert override_fields({}, raw)["doi"] == fixed
+
+
+@pytest.mark.parametrize("name", [
+    "Finance and Economics Discussion Series", "Bank of Finland Research Discussion Paper",
+    "HKU Scholars Hub (University of Hong Kong)", "Research Online (University of Wollongong)",
+    "RMIT Research Repository (RMIT University Library)", "Zenodo (CERN European Organization for Nuclear Research)",
+    "AgEcon Search (University of Minnesota, USA)", "CFA Digest"])
+def test_discussion_series_and_repositories_are_not_journals(name):
+    assert clean_journal(name) is None
+
+
+@pytest.mark.parametrize("name", ["Sociological Research Online", "University of New South Wales Law Journal",
+                                  "Review of Applied Economics", "Journal of Banking & Finance"])
+def test_journals_with_similar_words_are_kept(name):
+    assert clean_journal(name) == name
