@@ -365,7 +365,7 @@ def _parse_pure_rss(xml_text, name, source_id=None):
         author_count = None
         if author_text:
             initials = re.findall(
-                r",\s*(?:[A-Z]\.\s*)+(?=,|\s*&|$)", author_text
+                r",\s*(?:[A-Z]\.[\s-]*)+(?=,|\s*&|$)", author_text
             )
             author_count = len(initials) or None
 

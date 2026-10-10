@@ -755,7 +755,7 @@
     "journal_name": "Financial Management",
     "journal_raw": "Financial Management",
     "publisher": "Wiley-Blackwell Publishing, Inc.",
-    "issn": "0046-3892; 1755-053X; 1471-9185",
+    "issn": "0046-3892; 1755-053X",
     "quality_rank": "A*",
     "abdc_edition": "2025",
     "impact_factor": 7.5,
@@ -2688,6 +2688,22 @@
     "scimago_year": null
   },
   {
+    "journal_name": "Financial Management (CIMA)",
+    "journal_raw": "Financial Management (CIMA)",
+    "publisher": "Wiley-Blackwell Publishing, Inc.",
+    "issn": "1471-9185",
+    "quality_rank": null,
+    "abdc_edition": null,
+    "impact_factor": null,
+    "impact_factor_5yr": null,
+    "jcr_year": null,
+    "sjr": null,
+    "sjr_quartile": null,
+    "h_index": null,
+    "cites_per_doc_2y": null,
+    "scimago_year": null
+  },
+  {
     "journal_name": "Revizor: Revija o Reviziji",
     "journal_raw": "Revizor: revija o reviziji",
     "publisher": null,
@@ -3086,21 +3102,5 @@
     "h_index": 58,
     "cites_per_doc_2y": 4.68,
     "scimago_year": "2025"
-  },
-  {
-    "journal_name": "QUT Business School",
-    "journal_raw": "QUT Business School",
-    "publisher": "Queensland University of Technology",
-    "issn": null,
-    "quality_rank": null,
-    "abdc_edition": null,
-    "impact_factor": null,
-    "impact_factor_5yr": null,
-    "jcr_year": null,
-    "sjr": null,
-    "sjr_quartile": null,
-    "h_index": null,
-    "cites_per_doc_2y": null,
-    "scimago_year": null
   }
 ]

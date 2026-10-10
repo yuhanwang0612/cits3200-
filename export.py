@@ -1678,7 +1678,7 @@ def _anu_final_rules(rows, pubs, anu_names, crossref_fetch=None):
 _INITIALS_RE = re.compile(r"^(?:[A-Z]\.?(?:\s+|-)?)+$")
 
 
-def normalize_authors(text):
+def normalize_authors(text, n_authors=None):
     r"""One author-list format for every university: "Given Surname; Given Surname".
 
     Most sources already give that. Three do not:
@@ -1695,6 +1695,11 @@ def normalize_authors(text):
     bibtex = "\\" in text
     t = " ".join(text.replace("\\", "").split())
     t = re.sub(r"^with\s+", "", t, flags=re.I)
+    # A sole author written "Surname, Given" (UQ eSpace: "Slapnicar, Sergeja")
+    # is one person, not two.
+    if str(n_authors) == "1" and t.count(",") == 1 and ";" not in t:
+        surname, given = (x.strip() for x in t.split(","))
+        return f"{given} {surname}" if surname and given else t
     if ";" in t or bibtex:
         # BibTeX names are already one per entry: "Smales, Lee Alan" is one person.
         parts = [p.strip() for p in t.split(";") if p.strip()]
@@ -1900,7 +1905,7 @@ def build_publications(pubs, records=None, keep_type="Journal Article",
             "title": x["title"],
             "year": x.get("year"),
             "author_count": x.get("n_authors"),
-            "authors": normalize_authors(x.get("authors")),
+            "authors": normalize_authors(x.get("authors"), x.get("n_authors")),
             "doi": x.get("doi"),
             "article_url": (f"https://doi.org/{x['doi']}" if x.get("doi")
                             else x.get("link")),
